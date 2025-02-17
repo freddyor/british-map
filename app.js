@@ -314,7 +314,7 @@ const locations = [
     "name": "Irish community", 
     "occupation": "[Your choice]", 
     "description": "[Your choice]",
-    "image": "images/irishcommunity.png",
+    "image": "images/irish.png",
     "events": []
 },
 
