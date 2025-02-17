@@ -18,15 +18,13 @@ stylePopup.innerHTML = `
     padding: 15px !important;
     font-family: Satoshi, sans-serif !important;
     border: 2px solid #8A2BE2 !important; /* Thin border matching marker outline */
-  }
-  .mapboxgl-popup-tip {
-    display: none; /* Hide the default pop-up pointer */
+    line-height:1.05;
   }
 
-  /* Remove blue border from close button */
-  .mapboxgl-popup-close-button {
-    border: none !important; /* No border */
-    outline: none !important; /* Remove outline */
+  .mapboxgl-popup-content img {
+    border: 2px solid #8A2BE2 !important; /* Same purple color */
+    border-radius: 8px; /* Optional, to round the corners of the image */
+
   }
 
   /* Remove focus outline on pop-up */
@@ -51,39 +49,9 @@ stylePopup.innerHTML = `
     margin-bottom: 5px; /* Space between title and description */
   }
 
-  /* Timeline line behind cards */
-  .timeline-wrapper {
-    position: relative;
-    padding-left: 20px;
-    margin-top: 10px;
-  }
-
-  .timeline-wrapper::before {
-    content: '';
-    position: absolute;
-    left: 10px;
-    top: 0;
-    bottom: 0;
-    width: 2px;
-    background-color: #666; /* Changed to the same color as Occupation title */
-    z-index: 0;
-  }
-
   /* Align all cards properly */
   .timeline-card {
     z-index: 1;
-  }
-
-  /* Horizontal line connecting the vertical timeline to each card */
-  .timeline-card::before {
-    content: '';
-    position: absolute;
-    left: -10px; /* Position the horizontal line to the left of the card */
-    top: 50%;
-    width: 15px; /* Length of the horizontal line */
-    height: 2px;
-    background-color: #666; /* Changed to the same color as Occupation title */
-    z-index: 0;
   }
 
   /* Divider style */
@@ -93,7 +61,37 @@ stylePopup.innerHTML = `
     height: 1px;
     background-color: #808080; /* Grey divider */
   }
+
+  /* TL;DR Card Styling */
+  .tldr-card {
+    background: #e8f5e9;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 1;
+  }
+
+  .tldr-card span {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+  }
+
+  .tldr-card p {
+    margin-bottom: 0;
+  }
+
+  /* Styling for TL;DR card divider */
+  .tldr-card-divider {
+    margin: 5px 0;
+    border: none;
+    height: 1px;
+    background-color: #4caf50; /* Green divider */
+  }
 `;
+
 document.head.appendChild(stylePopup);
 
 // Full array of locations with names, occupations, descriptions, images, and events
@@ -101,15 +99,20 @@ const locations = [
   { 
     coords: [ -1.076124, 53.9639651 ], 
     name: "George Hudson", 
-    occupation: "Railway Pioneer", 
+    occupation: "The Railway King", 
     description: "George Hudson lived here",
     image: "images/georgehudson.png",
+    tldr: "Born on a farm. Both his parents dead by 8 years old. Inherits money but is business smart. Becomes richest man in England and aristorcratic party host. Loses everything and flees to France.",
     events: [
-      { date: "1800", description: "Event 1" },
-      { date: "1820", description: "Event 2" },
-      { date: "1840", description: "Event 3" },
-      { date: "1860", description: "Event 4" },
-      { date: "1880", description: "Event 5" }
+      { date: "1800", description: "George was born in Howsam to farmer John Hudson and his wife Elizabeth." },
+      { date: "1806", description: "Elizabeth dies when George is six years old. John dies two years later, when George is eight." },
+      { date: "1821", description: "George completes a drapers apprenticeship at Bell & Nicholson on Goodramgate, gaining shares in the company. George marries Nicholsons daughter of whoch they have four successful children." },
+      { date: "1827", description: "George's great-uncle, Matthew Botterill, passes away. George inherits £5000 in legacy and substantially more in land value, making him one of the richest men in York. He moved into Matthew's Georgian townhouse here at 44 Monkgate." },
+      { date: "1833", description: "George played a leading part in the establishment of the York Union Banking Company, in which he was the largest shareholder. This bank was aquired by Barclay & Co in 1902 " },
+      { date: "1833", description: "George joined a scheme to prepare plans for a York to Leeds railway, in the process learning much about the railway business." },
+      { date: "1800", description: "George Hudson became Lord Mayor of York" },
+      { date: "1837", description: "This was the beginning of the reign of Queen Victoria and, to celebrate her birthday, George held a grand parade and dinner for 14,000 York people. His generous hosting of balls and dances continued over several years and the Hudsons entertained many members of the aristocracy at their Knightsbridge home in London in the 1840s." },
+      { date: "1800", description: "George was born in Howsam to farmer John Hudson and his wife Elizabeth." },
     ]
   },
   { 
@@ -373,7 +376,7 @@ const locations = [
 },
 
 { 
-    "coords": [53.9611485, 53.9611485], 
+    "coords": [-1.0829369, 53.9611485], 
     "name": "Laurence Stern", 
     "occupation": "Author", 
     "description": "Known for his work 'The Life and Opinions of Tristram Shandy, Gentleman.'",
@@ -561,31 +564,31 @@ locations.forEach(location => {
     .setLngLat(location.coords)
     .setPopup(new mapboxgl.Popup({ closeButton: true, closeOnClick: true })
       .setHTML(`
-        <!-- Bold Description at the top -->
-        <div style="font-size: 14px; margin-bottom: 10px; font-weight: bold;">${location.description}</div>
-
-        <!-- Divider below the description -->
-        <hr class="popup-description-divider">
-
-        <!-- Name and occupation below -->
-        <div style="display: flex; align-items: center; gap: 10px;">
-          <img src="${location.image}" style="width: 50px; height: 50px; object-fit: cover; border-radius: 50%;">
-          <div style="display: flex; flex-direction: column;">
-            <span style="font-weight: bold; font-size: 16px;">${location.name}</span>
-            <span style="font-size: 14px; color: #666;">${location.occupation}</span>
-          </div>
-        </div>
-
-        <!-- Timeline Cards with vertical line and horizontal lines -->
-        <div class="timeline-wrapper">
-          ${location.events.map(event => `
-            <div class="timeline-card">
-              <span>${event.date}</span> ${event.description}
-            </div>
-          `).join('')}
-        </div>
-      `))
-    .addTo(map);
+           <p style="font-size: 16px; font-weight: bold; margin-bottom: 10px;">${location.description}</p>
+                <div style="border-top: 2px solid #ccc; margin-bottom: 10px;"></div> <!-- Grey divider -->
+                <div style="display: flex; align-items: center; gap: 10px;">
+                    <img src="${location.image}" alt="${location.name}" style="width: 50px; height: 50px; object-fit: cover; border-radius: 50%;" />
+                    <div>
+                        <div style="font-size: 16px; font-weight: bold;">${location.name}</div>
+                        <div style="font-size: 14px; color: #666;">${location.occupation}</div>
+                    </div>
+                </div>
+                <div style="background: #e8f5e9; padding: 10px; margin-top: 10px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
+                    <span style="font-weight: bold; display: block; margin-bottom: 5px;">TL;DR</span>
+                    <p>${location.tldr}</p>
+                </div>
+                ${location.events.length ? `
+                    <div style="margin-top: 10px;">
+                        ${location.events.map(event => `
+                            <div style="background: #f9f9f9; border: 1px solid #ddd; border-radius: 8px; padding: 10px; margin-bottom: 10px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
+                                <strong style="color: #9b4dca;">${event.date}</strong>: ${event.description}
+                            </div>
+                        `).join('')}
+                    </div>
+                ` : ''}
+            `)
+        )
+        .addTo(map);
 });
 
 // Function to create a custom marker with an image inside a circle
