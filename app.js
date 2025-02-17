@@ -239,7 +239,7 @@ const locations = [
     events: []
   },
   { 
-    coords: [-1.0867494, 53.9600884], 
+    coords: [-1.0843668, 53.9600807], 
     name: "Frederick Belmont", 
     occupation: "Confectioner & Entrepreneur", 
     description: "Frederick Belmont founded Bettys Tea Rooms, a beloved Yorkshire institution.",
@@ -252,7 +252,7 @@ const locations = [
 },
 
 { 
-    "coords": [-1.0947093, 53.9671262], 
+    "coords": [-1.0928107, 53.9671791], 
     "name": "Edna Annie Crichton", 
     "occupation": "[Your choice]", 
     "description": "[Your choice]",
@@ -270,16 +270,16 @@ const locations = [
 },
 
 { 
-    "coords": [-1.0890382, 53.9635818], 
+    "coords": [-1.0919582, 53.9635731], 
     "name": "Dr William Arthur Evelyn", 
     "occupation": "[Your choice]", 
-    "description": "[Your choice]",
+    "description": "lived out the end of his life here",
     "image": "images/williamarthurevelyn.png",
     "events": []
 },
 
 { 
-    "coords": [-1.086027, 53.9609399], 
+    "coords": [-1.0830932, 53.961744], 
     "name": "Guy Fawkes", 
     "occupation": "Revolutionary", 
     "description": "Known for his failed attempt to blow up the Houses of Parliament.",
@@ -301,7 +301,7 @@ const locations = [
 },
 
 { 
-    "coords": [-1.0804871, 53.9484147], 
+    "coords": [-1.0778231, 53.9484063], 
     "name": "Frankie Howerd", 
     "occupation": "Comedian", 
     "description": "Known for his television and stage performances, particularly in British comedy.",
@@ -328,20 +328,11 @@ const locations = [
 },
 
 { 
-    "coords": [-1.0892216, 53.9593817], 
+    "coords": [-1.0843004, 53.9593267], 
     "name": "Yves Mahé", 
     "occupation": "[Your choice]", 
     "description": "[Your choice]",
     "image": "images/yvesmahe.png",
-    "events": []
-},
-
-{ 
-    "coords": [53.9625563, -1.0853565], 
-    "name": "George Walker Milburn", 
-    "occupation": "[Your choice]", 
-    "description": "[Your choice]",
-    "image": "images/georgewalkermilburn.png",
     "events": []
 },
 
@@ -364,7 +355,7 @@ const locations = [
 },
 
 { 
-    "coords": [-1.0734887, 53.9501603], 
+    "coords": [-1.0726007, 53.9504313], 
     "name": "James Pigott Pritchett", 
     "occupation": "[Your choice]", 
     "description": "[Your choice]",
@@ -382,7 +373,7 @@ const locations = [
 },
 
 { 
-    "coords": [-1.085456, 53.9611167], 
+    "coords": [53.9611485, 53.9611485], 
     "name": "Laurence Stern", 
     "occupation": "Author", 
     "description": "Known for his work 'The Life and Opinions of Tristram Shandy, Gentleman.'",
@@ -431,7 +422,7 @@ const locations = [
 },
 
 { 
-    coords: [-1.1134441, 53.9533872], 
+    coords: [-1.1107642, 53.953332], 
     name: "James Backhouse", 
     occupation: "Botanist & Quaker Missionary", 
     description: "James Backhouse was a botanist and philanthropist known for his work in York.",
@@ -457,7 +448,7 @@ const locations = [
 },
 
 { 
-    coords: [-1.0492763, 53.9539612], 
+    coords: [-1.0720158, 53.9361983], 
     name: "John Barry", 
     occupation: "Composer", 
     description: "John Barry was a film composer famous for his work on James Bond scores.",
@@ -484,7 +475,7 @@ const locations = [
 },
 
 { 
-    coords: [-1.0975646, 53.9520016], 
+    coords: [-1.0976615, 53.9520295], 
     name: "George Butterworth", 
     occupation: "Composer", 
     description: "George Butterworth was a composer known for his English folk music influences.",
@@ -511,21 +502,7 @@ const locations = [
 },
 
 { 
-    coords: [-1.0843169, 53.9618406], 
-    name: "Constantine", 
-    occupation: "Roman Emperor", 
-    description: "Constantine the Great was proclaimed Roman Emperor in York.",
-    image: "images/constantine.png",
-    events: [
-      { date: "272", description: "Born in Naissus (modern-day Serbia)." },
-      { date: "306", description: "Proclaimed Emperor in York after the death of his father." },
-      { date: "313", description: "Issued the Edict of Milan, legalizing Christianity." },
-      { date: "337", description: "Died in Nicomedia." }
-    ]
-},
-
-{ 
-    coords: [-1.0905875, 53.9612411], 
+    coords: [-1.0879721, 53.9612032], 
     name: "Thomas Cooke", 
     occupation: "Optician & Instrument Maker", 
     description: "Thomas Cooke was an optical designer and maker of telescopes.",
