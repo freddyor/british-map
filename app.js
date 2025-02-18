@@ -140,118 +140,196 @@ const locations = [
 { date: "2003", description: "Snow was ranked the greatest doctor of all time by a poll of doctors 🥇" },
 ]
   },
-  { 
+   {
     coords: [ -1.0911787, 53.9555643 ], 
     name: "George Leeman", 
     occupation: "Historian", 
-    description: "George Leeman was a notable figure in the history of railways.",
+    description: "xxx",
     image: "images/georgeleeman.png",
-    events: []
+    tldr: "Key figure in railway history and politics in York.",
+    events: [
+      { date: "1853", description: "Became Chairman of the North Eastern Railway." },
+      { date: "1865", description: "Elected as Member of Parliament for York." },
+      { date: "1882", description: "Passed away, leaving a strong legacy in York's railway development." },
+    ]
   },
-  { 
+  {
     coords: [ -1.0812717, 53.9628137 ], 
     name: "John Goodricke", 
     occupation: "Astronomer", 
-    description: "John Goodricke was a famous astronomer known for his work on variable stars.",
+    description: "xxx",
     image: "images/johngoodricke.png",
-    events: []
+    tldr: "Pioneering astronomer who studied variable stars.",
+    events: [
+      { date: "1783", description: "Discovered periodic dimming of Algol, a variable star." },
+      { date: "1784", description: "Awarded the Copley Medal by the Royal Society." },
+      { date: "1786", description: "Passed away at the age of 21, leaving a major impact on astronomy." },
+    ]
   },
-  { 
+  {
     coords: [ -1.0978319, 53.9526401 ], 
     name: "Judi Dench", 
     occupation: "Actress", 
-    description: "Judi Dench is a celebrated British actress known for her stage and film performances.",
+    description: "xxx",
     image: "images/judidench.png",
-    events: []
+    tldr: "Award-winning actress known for her roles in film, TV, and theatre.",
+    events: [
+      { date: "1957", description: "Made her professional debut with the Old Vic Company." },
+      { date: "1995", description: "Portrayed M in the James Bond franchise." },
+      { date: "2001", description: "Won an Academy Award for 'Shakespeare in Love'." },
+    ]
   },
-  { 
+  {
     coords: [ -1.0878828, 53.9642257 ], 
     name: "W.H. Auden", 
     occupation: "Poet", 
-    description: "W.H. Auden was a renowned poet who was influential in 20th-century English literature.",
+    description: "xxx",
     image: "images/whauden.png",
-    events: []
+    tldr: "Influential poet known for his modernist and political works.",
+    events: [
+      { date: "1930", description: "Published his first book of poetry." },
+      { date: "1939", description: "Moved to the U.S. and became an American citizen." },
+      { date: "1973", description: "Passed away, leaving behind a vast collection of poetry." },
+    ]
   },
-  { 
+  {
     coords: [ -1.0900558, 53.9488163 ], 
     name: "Steve McLaren", 
     occupation: "Football Manager", 
-    description: "Steve McLaren is a former football manager and player.",
+    description: "xxx",
     image: "images/stevemclaren.png",
-    events: []
+    tldr: "Football coach known for his tenure with England and club teams.",
+    events: [
+      { date: "2001", description: "Became Middlesbrough's first-team manager." },
+      { date: "2006", description: "Appointed England national team manager." },
+      { date: "2010", description: "Won the Eredivisie title with FC Twente." },
+    ]
   },
-  { 
+  {
     coords: [ -1.0761981, 53.9747056 ], 
     name: "David Bradley", 
     occupation: "Actor", 
-    description: "David Bradley is an actor, known for roles in popular films and TV shows.",
+    description: "xxx",
     image: "images/davidbradley.png",
-    events: []
+    tldr: "Versatile actor known for roles in TV and film.",
+    events: [
+      { date: "2002", description: "Played Argus Filch in the 'Harry Potter' series." },
+      { date: "2013", description: "Portrayed William Hartnell in 'An Adventure in Space and Time'." },
+      { date: "2017", description: "Became the First Doctor in 'Doctor Who'." },
+    ]
   },
-  { 
+ { 
     coords: [ -1.1035692, 53.9693209 ], 
     name: "Benjamin Seebohm Rowntree", 
     occupation: "Social Reformer", 
-    description: "Benjamin Seebohm Rowntree was a social reformer and philanthropist.",
-    image: "images/seebohmrowntree.png",
-    events: []
-  },
-  { 
+    description: "xxx", 
+    tldr: "Benjamin Seebohm Rowntree was a social reformer and philanthropist known for his influential studies on poverty and welfare.", 
+    image: "images/seebohmrowntree.png", 
+    events: [
+        { date: "1901", description: "Rowntree conducted his influential study on poverty in York, highlighting the social and economic disparities among the working class 📊" },
+        { date: "1904", description: "He founded the Rowntree Trust to support social reform projects aimed at reducing poverty and improving education 🏫" },
+        { date: "1920s", description: "Rowntree’s research significantly influenced British social policy, particularly in welfare and housing reform 🏘️" },
+    ]
+},
+
+{ 
     coords: [ -1.0797156, 53.9586856 ], 
     name: "Sir Robert Herbert", 
     occupation: "Politician", 
-    description: "Sir Robert Herbert was a prominent politician in 19th-century Britain.",
-    image: "images/robertherbert.png",
-    events: []
-  },
-  { 
+    description: "xxx", 
+    tldr: "Sir Robert Herbert was a prominent politician in 19th-century Britain, known for his role in public service and political leadership.", 
+    image: "images/robertherbert.png", 
+    events: [
+        { date: "1830s", description: "Herbert served as a key political figure, contributing to policy decisions and reforms in the British Parliament 🏛️" },
+        { date: "1840s", description: "He played a vital role in shaping educational and social reform policies in the British government 🎓" },
+        { date: "1850s", description: "Herbert became involved in the promotion of colonial interests, influencing British imperial policy 🌍" },
+    ]
+},
+
+{ 
     coords: [ -1.0793124, 53.9592983 ], 
     name: "Benedict of York", 
     occupation: "Religious Figure", 
-    description: "Benedict of York was an important religious figure during medieval times.",
-    image: "images/benedictofyork.png",
-    events: []
-  },
-  { 
+    description: "xxx", 
+    tldr: "Benedict of York was a religious figure during medieval times, known for his role in the early Christian church in York.", 
+    image: "images/benedictofyork.png", 
+    events: [
+        { date: "8th Century", description: "Benedict was one of the earliest Christian figures in York, establishing religious foundations in the region ✝️" },
+        { date: "9th Century", description: "He helped to spread Christianity across York and neighboring areas, influencing the religious culture in northern England 🕊️" },
+        { date: "Medieval Period", description: "Benedict’s work contributed to York’s rise as an important center for religious and cultural activity 🏰" },
+    ]
+},
+
+{ 
     coords: [ -1.0791789, 53.9589197 ], 
     name: "Josce of York", 
     occupation: "Religious Figure", 
-    description: "Josce of York was a key religious leader during the early medieval period.",
-    image: "images/josceofyork.png",
-    events: []
-  },
-  { 
+    description: "xxx", 
+    tldr: "Josce of York was a key religious leader in early medieval England, contributing significantly to the Christian community.", 
+    image: "images/josceofyork.png", 
+    events: [
+        { date: "9th Century", description: "Josce was an influential religious leader, playing a major role in spreading Christianity across York and northern England 🏰" },
+        { date: "Early Medieval Period", description: "He was part of the founding community that built the foundations for York’s cathedral and its religious traditions ⛪" },
+        { date: "10th Century", description: "Josce’s work shaped the religious landscape of York for generations, helping to cement its place as an important ecclesiastical center ✝️" },
+    ]
+},
+
+{ 
     coords: [ -1.0814422, 53.9576632 ], 
     name: "Christopher Levett", 
     occupation: "Explorer", 
-    description: "Christopher Levett was an English explorer and adventurer in the 17th century.",
-    image: "images/christopherlevett.png",
-    events: []
-  },
-  { 
+    description: "xxx", 
+    tldr: "Christopher Levett was an English explorer and adventurer in the 17th century, known for his expeditions to the Americas.", 
+    image: "images/christopherlevett.png", 
+    events: [
+        { date: "1623", description: "Levett sailed to New England, becoming one of the first to explore the region and document his findings 🌎" },
+        { date: "1624", description: "He led an expedition to establish a settlement in Maine, though it ultimately failed due to harsh conditions ⚓" },
+        { date: "17th Century", description: "Despite the failure of his settlement, Levett’s voyages contributed to early English exploration and colonization efforts in the Americas 🌍" },
+    ]
+},
+
+{ 
     coords: [ -1.0810119, 53.962882 ], 
     name: "Elizabeth Montagu", 
     occupation: "Philanthropist", 
-    description: "Elizabeth Montagu was a prominent philanthropist and writer.",
-    image: "images/elizabethmontagu.png",
-    events: []
-  },
-  { 
+    description: "xxx", 
+    tldr: "Elizabeth Montagu was a prominent philanthropist and writer, known for her intellectual contributions to British society.", 
+    image: "images/elizabethmontagu.png", 
+    events: [
+        { date: "18th Century", description: "Montagu became a key figure in the Bluestocking Society, a group that promoted women’s education and intellectual development 🎓" },
+        { date: "1740s", description: "She became known for her philanthropic work, supporting education and healthcare initiatives for women and children 👩‍🏫" },
+        { date: "1760s", description: "Montagu’s legacy lives on as a trailblazer in social reform and women’s rights, influencing later generations of philanthropists 🌟" },
+    ]
+},
+
+{ 
     coords: [ -1.0978319, 53.9526401 ], 
     name: "Tessa Rowntree", 
     occupation: "Philanthropist", 
-    description: "Tessa Rowntree was known for her charitable work and influence.",
-    image: "images/tessarowntree.png",
-    events: []
-  },
-  { 
+    description: "xxx", 
+    tldr: "Tessa Rowntree was known for her charitable work and influence, particularly in education and social reform.", 
+    image: "images/tessarowntree.png", 
+    events: [
+        { date: "Early 20th Century", description: "Tessa Rowntree worked to improve access to education and social services for underprivileged communities in York 📚" },
+        { date: "1910s", description: "She helped fund programs supporting women’s rights and healthcare, especially for working-class families 💪" },
+        { date: "1920s", description: "Her philanthropic efforts left a lasting impact on York’s educational and social landscape 🏫" },
+    ]
+},
+
+{ 
     coords: [ -1.0989721, 53.9498429 ], 
     name: "Lt Col Best-Dunkley", 
     occupation: "Military Officer", 
-    description: "Lt Col Best-Dunkley served in the military and contributed to various strategic efforts.",
-    image: "images/bestdunkley.png",
-    events: []
-  },
+    description: "xxx", 
+    tldr: "Lt Col Best-Dunkley was a distinguished military officer known for his strategic contributions during his service.", 
+    image: "images/bestdunkley.png", 
+    events: [
+        { date: "World War I", description: "Lt Col Best-Dunkley served with distinction during World War I, playing a critical role in battlefield strategy and leadership ⚔️" },
+        { date: "Post-WWI", description: "He contributed to military reforms and helped shape the future of the British armed forces 🇬🇧" },
+        { date: "Early 20th Century", description: "Best-Dunkley’s leadership was widely praised, and his legacy as a military strategist has influenced future generations of officers 🏅" },
+    ]
+},
+
   { 
     coords: [-1.0843668, 53.9600807], 
     name: "Frederick Belmont", 
@@ -261,311 +339,380 @@ const locations = [
     events: [
       { date: "1885", description: "Born in Switzerland." },
       { date: "1919", description: "Founded Bettys Tea Rooms in Harrogate." },
-      { date: "1952", description: "Passed away, leaving behind a legacy in Yorkshire hospitality." }
+      { date: "1952", description: "Passed away, leaving behind a legacy in Yorkshire hospitality." },
     ]
 },
 
-{ 
-    "coords": [-1.0928107, 53.9671791], 
-    "name": "Edna Annie Crichton", 
-    "occupation": "[Your choice]", 
-    "description": "[Your choice]",
-    "image": "images/ednaanniechrichton.png",
-    "events": []
+{
+  "coords": [-1.0928107, 53.9671791],
+  "name": "Edna Annie Crichton",
+  "occupation": "Mayor & Philanthropist",
+  "description": "xxx",
+  "tldr": "First female Lord Mayor of York, known for her contributions to social welfare.",
+  "image": "images/ednaanniechrichton.png",
+  "events": [
+    { "date": "1941", "description": "Became the first female Lord Mayor of York." },
+    { "date": "1950", "description": "Recognized for her contributions to social reform in York." },
+  ]
+},
+
+{
+  "coords": [-1.0824348, 53.9589197],
+  "name": "William Etty",
+  "occupation": "Painter",
+  "description": "xxx",
+  "tldr": "Renowned artist known for his large-scale historical and mythological paintings.",
+  "image": "images/williametty.png",
+  "events": [
+    { "date": "1787", "description": "Born in York, England." },
+    { "date": "1828", "description": "Elected as a full member of the Royal Academy." },
+    { "date": "1849", "description": "Led campaigns to preserve York’s city walls." },
+  ]
+},
+
+{
+  "coords": [-1.0919582, 53.9635731],
+  "name": "Dr William Arthur Evelyn",
+  "occupation": "Historian & Conservationist",
+  "description": "lived out the end of his life here",
+  "tldr": "A key figure in preserving York’s historic buildings and heritage.",
+  "image": "images/williamarthurevelyn.png",
+  "events": [
+    { "date": "1902", "description": "Helped found the Yorkshire Architectural and York Archaeological Society." },
+    { "date": "1935", "description": "Led efforts to save York’s historic structures from demolition." },
+  ]
 },
 
 { 
-    "coords": [-1.0824348, 53.9589197], 
-    "name": "William Etty", 
-    "occupation": "[Your choice]", 
-    "description": "[Your choice]",
-    "image": "images/williametty.png",
-    "events": []
-},
-
-{ 
-    "coords": [-1.0919582, 53.9635731], 
-    "name": "Dr William Arthur Evelyn", 
-    "occupation": "[Your choice]", 
-    "description": "lived out the end of his life here",
-    "image": "images/williamarthurevelyn.png",
-    "events": []
-},
-
-{ 
-    "coords": [-1.0830932, 53.961744], 
-    "name": "Guy Fawkes", 
-    "occupation": "Revolutionary", 
-    "description": "Guy Fawkes was born and raised here.",
-    "tldr": "Known for his failed attempt to blow up the Houses of Parliament. duehdueuferfu cuhjud wedued euweh we weenuwe uwf wefunwef whfuwef w.",
-    "image": "images/guyfawkes.png",
-    "events": []
-},
-
-{ 
-    "coords": [-1.0802024, 53.9603617], 
-    "name": "Lady Sarah Hewley", 
-    "occupation": "[Your choice]", 
-    "description": "[Your choice]",
-    "image": "images/ladysarahhewley.png",
-    "events": []
-},
-
-{ 
-    "coords": [-1.0778231, 53.9484063], 
-    "name": "Frankie Howerd", 
-    "occupation": "Comedian", 
-    "description": "Known for his television and stage performances, particularly in British comedy.",
-    "image": "images/frankiehowerd.png",
-    "events": []
-},
-
-{ 
-    "coords": [-1.0781188, 53.9568987], 
-    "name": "Irish community", 
-    "occupation": "[Your choice]", 
-    "description": "[Your choice]",
-    "image": "images/irish.png",
-    "events": []
-},
-
-{ 
-    "coords": [-1.0858436, 53.956914], 
-    "name": "Anne Lister", 
-    "occupation": "Writer & Diarist", 
-    "description": "Known for her detailed diaries documenting her life, including her same-sex relationships.",
-    "image": "images/annelister.png",
-    "events": []
-},
-
-{ 
-    "coords": [-1.0843004, 53.9593267], 
-    "name": "Yves Mahé", 
-    "occupation": "[Your choice]", 
-    "description": "[Your choice]",
-    "image": "images/yvesmahe.png",
-    "events": []
-},
-
-{ 
-    "coords": [-1.091256, 53.9693543], 
-    "name": "John Bowes Morrell", 
-    "occupation": "[Your choice]", 
-    "description": "[Your choice]",
-    "image": "images/johnbowesmorell.png",
-    "events": []
-},
-
-{ 
-    "coords": [-1.0895612, 53.9622175], 
-    "name": "John Philips", 
-    "occupation": "[Your choice]", 
-    "description": "[Your choice]",
-    "image": "images/johnphilips.png",
-    "events": []
-},
-
-{ 
-    "coords": [-1.0726007, 53.9504313], 
-    "name": "James Pigott Pritchett", 
-    "occupation": "[Your choice]", 
-    "description": "[Your choice]",
-    "image": "images/jamespigottpritchett.png",
-    "events": []
-},
-
-{ 
-    "coords": [-1.1002575, 53.9719364], 
-    "name": "Joseph Rowntree", 
-    "occupation": "Philanthropist & Social Reformist", 
-    "description": "Known for his work in social reform and his company Rowntree's chocolate.",
-    "image": "images/josephrowntree.png",
-    "events": []
-},
-
-{ 
-    "coords": [-1.0829369, 53.9611485], 
-    "name": "Laurence Stern", 
-    "occupation": "Author", 
-    "description": "Known for his work 'The Life and Opinions of Tristram Shandy, Gentleman.'",
-    "image": "images/laurencestern.png",
-    "events": []
-},
-
-{ 
-    "coords": [-1.0684547, 53.9545201], 
-    "name": "Samuel Tuke", 
-    "occupation": "Philanthropist", 
-    "description": "Known for his work with the York Retreat for mental health patients.",
-    "image": "images/samueltuke.png",
-    "events": []
-},
-
-{ 
-    "coords": [-1.0550529, 53.9668541], 
-    "name": "Mary Ward", 
-    "occupation": "[Your choice]", 
-    "description": "[Your choice]",
-    "image": "images/maryward.png",
-    "events": []
-},
-
-{ 
-    "coords": [-1.0904384, 53.9625133], 
-    "name": "John Woolman", 
-    "occupation": "Preacher & Writer", 
-    "description": "Known for his writings and activism for abolition and the treatment of Native Americans.",
-    "image": "images/johnwoolman.png",
-    "events": []
-},
-
-{ 
-    coords: [-1.1034446, 53.9450711], 
-    name: "Joseph Terry", 
-    occupation: "Confectioner", 
-    description: "Joseph Terry founded Terry’s Chocolate Company, known for its Chocolate Orange.",
-    image: "images/josephterry.png",
+    coords: [-1.0830932, 53.961744], 
+    name: "Guy Fawkes", 
+    occupation: "Revolutionary", 
+    description: "xxx", 
+    tldr: "Known for his failed attempt to blow up the Houses of Parliament, Guy Fawkes became an infamous figure in British history.", 
+    image: "images/guyfawkes.png", 
     events: [
-      { date: "1828", description: "Born in York." },
-      { date: "1867", description: "Established Terry’s Chocolate Company." },
-      { date: "1898", description: "Died in York." }
+        { date: "1605", description: "Fawkes was part of the Gunpowder Plot, a failed attempt to assassinate King James I and blow up the Houses of Parliament 💥" },
+        { date: "1606", description: "After the plot failed, Fawkes was arrested and executed, becoming a symbol of rebellion and resistance 🔥" },
+        { date: "Modern Day", description: "Guy Fawkes’ legacy lives on every November 5th, celebrated as Guy Fawkes Night (or Bonfire Night) with fireworks and bonfires across the UK 🎆" },
+    ]
+},
+
+{
+  "coords": [-1.0802024, 53.9603617],
+  "name": "Lady Sarah Hewley",
+  "occupation": "Philanthropist",
+  "description": "xxx",
+  "tldr": "Noted for her charitable work and establishment of almshouses in York.",
+  "image": "images/ladysarahhewley.png",
+  "events": [
+    { "date": "1705", "description": "Founded almshouses for the elderly and disadvantaged in York." },
+    { "date": "1710", "description": "Established a trust to continue charitable work beyond her lifetime." },
+  ]
+},
+
+{ 
+    coords: [-1.0778231, 53.9484063], 
+    name: "Frankie Howerd", 
+    occupation: "Comedian", 
+    description: "xxx", 
+    image: "images/frankiehowerd.png", 
+    tldr: "Frankie Howerd was a legendary comedian known for his unique style in television and stage performances in British comedy.", 
+    events: [
+        { date: "1960s", description: "Howerd became famous for his slapstick humor and witty performances on British television, including his sitcoms and stand-up acts 📺" },
+        { date: "1970s", description: "He achieved national fame with his appearances on 'Howerd's World' and 'Up Pompeii!' 🎭" },
+        { date: "1980s", description: "Howerd continued to perform, becoming a beloved figure in British comedy, earning a lasting legacy with his unique comedic style 🤣" },
     ]
 },
 
 { 
-    coords: [-1.1107642, 53.953332], 
-    name: "James Backhouse", 
-    occupation: "Botanist & Quaker Missionary", 
-    description: "James Backhouse was a botanist and philanthropist known for his work in York.",
+    coords: [-1.0858436, 53.956914], 
+    name: "Anne Lister", 
+    occupation: "Writer & Diarist", 
+    description: "xxx", 
+    image: "images/annelister.png", 
+    tldr: "Anne Lister was a pioneering diarist and writer known for documenting her life and same-sex relationships in her detailed journals.", 
+    events: [
+        { date: "Early 1800s", description: "Lister began writing extensive diaries that chronicled her life and relationships, particularly with women 📖" },
+        { date: "1830s", description: "Her diaries became an important document of LGBTQ+ history, offering an unflinching insight into her personal life during a repressive era 🏳️‍🌈" },
+        { date: "1980s", description: "Anne Lister's diaries were rediscovered and published, bringing her story into the public eye and earning her a place in LGBTQ+ history 🌟" },
+    ]
+},
+
+{
+  "coords": [-1.0843004, 53.9593267],
+  "name": "Yves Mahé",
+  "occupation": "WWII Pilot",
+  "description": "xxx",
+  "tldr": "French pilot credited with defending York during the Baedeker Raids in WWII.",
+  "image": "images/yvesmahe.png",
+  "events": [
+    { "date": "1942", "description": "Played a key role in defending York from German air raids." },
+    { "date": "1945", "description": "Recognized for his wartime contributions by both Britain and France." },
+  ]
+},
+
+{
+  "coords": [-1.091256, 53.9693543],
+  "name": "John Bowes Morrell",
+  "occupation": "Historian & Philanthropist",
+  "description": "xxx",
+  "tldr": "Historian and benefactor who played a major role in preserving York’s heritage.",
+  "image": "images/johnbowesmorell.png",
+  "events": [
+    { "date": "1923", "description": "Helped found the York Conservation Trust." },
+    { "date": "1946", "description": "Instrumental in the creation of the Borthwick Institute for Archives." },
+  ]
+},
+
+{
+  "coords": [-1.0895612, 53.9622175],
+  "name": "John Philips",
+  "occupation": "Geologist",
+  "description": "xxx",
+  "tldr": "Pioneering geologist who helped establish the concept of the geological time scale.",
+  "image": "images/johnphilips.png",
+  "events": [
+    { "date": "1841", "description": "Published influential work defining the geological time scale." },
+    { "date": "1853", "description": "Appointed Keeper of the Ashmolean Museum, Oxford." },
+  ]
+},
+
+{
+  "coords": [-1.0726007, 53.9504313],
+  "name": "James Pigott Pritchett",
+  "occupation": "Architect",
+  "description": "xxx",
+  "tldr": "Architect known for his work on York Cemetery and many churches in Yorkshire.",
+  "image": "images/jamespigottpritchett.png",
+  "events": [
+    { "date": "1837", "description": "Designed the York Cemetery Chapel and gatehouse." },
+    { "date": "1850", "description": "Contributed to numerous church restorations in Yorkshire." },
+  ]
+},
+
+{ 
+    coords: [-1.1002575, 53.9719364], 
+    name: "Joseph Rowntree", 
+    occupation: "Philanthropist & Social Reformist", 
+    description: "xxx", 
+    image: "images/josephrowntree.png", 
+    tldr: "Joseph Rowntree was a philanthropist and social reformist, known for his impact on social welfare and his association with Rowntree's chocolate.", 
+    events: [
+        { date: "Late 1800s", description: "Rowntree's established his chocolate company, which became an iconic name in the chocolate industry 🍫" },
+        { date: "1904", description: "He pioneered progressive welfare policies, including the creation of the 'Rowntree Report' on poverty, which influenced social policy in the UK 📊" },
+        { date: "1917", description: "Rowntree created a company town in York, improving the lives of workers by providing affordable housing and better working conditions 🏘️" },
+  ]
+},
+
+{ 
+    coords: [-1.0829369, 53.9611485], 
+    name: "Laurence Stern", 
+    occupation: "Author", 
+    description: "xxx", 
+    image: "images/laurencestern.png", 
+    tldr: "Laurence Stern was the author of *The Life and Opinions of Tristram Shandy, Gentleman*, a groundbreaking work in literature.", 
+    events: [
+        { date: "1759", description: "Published *The Life and Opinions of Tristram Shandy, Gentleman*, a pioneering work of modernist literature that broke traditional narrative structures 📚" },
+        { date: "1767", description: "Stern’s innovative storytelling techniques influenced later writers such as James Joyce and Virginia Woolf 📝" },
+        { date: "1770", description: "His works became a key part of English literary culture, gaining attention for their wit and unconventional style 📖" },
+    ]
+},
+
+{ 
+    coords: [-1.0684547, 53.9545201], 
+    name: "Samuel Tuke", 
+    occupation: "Philanthropist", 
+    description: "xxx", 
+    image: "images/samueltuke.png", 
+    tldr: "Samuel Tuke was a philanthropist who is renowned for his work with the York Retreat, an institution for mental health patients.", 
+    events: [
+        { date: "1796", description: "Samuel Tuke helped establish the York Retreat, a progressive facility focused on humane treatment for mental health patients 🏥" },
+        { date: "1815", description: "He wrote *Description of the Retreat*, which became a foundational text in the treatment of mental health issues at the time 📖" },
+        { date: "1829", description: "Tuke’s work contributed to the development of new, compassionate approaches to mental health care across Europe 🌍" },
+    ]
+},
+
+{
+  "coords": [-1.0550529, 53.9668541],
+  "name": "Mary Ward",
+  "occupation": "Scientist & Author",
+  "description": "xxx",
+  "tldr": "One of the first women known to have written about science in Victorian Britain.",
+  "image": "images/maryward.png",
+  "events": [
+    { "date": "1869", "description": "Published ‘The Microscope’ to popular acclaim." },
+    { "date": "1869", "description": "Tragically became one of the first recorded automobile accident fatalities." },
+  ]
+},
+  { 
+    coords: [-1.0904384, 53.9625133],
+    name: "John Woolman",
+    occupation: "1720-1772",
+    description: "John Woolman died in this house.",
+    image: "images/johnwoolman.png",
+    tldr: "John Woolman was an American anti-slavery campaigner, who died in York.",
+    events: [
+      { date: "1928", description: "He created Joseph Terry & Co in St Helen's Square" },
+      { date: "1928", description: "He created Joseph Terry & Co in St Helen's Square" },
+      { date: "1928", description: "He created Joseph Terry & Co in St Helen's Square" },
+    ]
+  },
+  { 
+    coords: [-1.1034446, 53.9450711],
+    name: "Joseph Terry",
+    occupation: "1793-1850",
+    description: "Joseph Terry lived here on Tadcaster Road",
+    image: "images/josephterry1.png",
+    tldr: "Joseph Terry is the founder of the company behind Chocolate Orange and many more famous chocolates.",
+    events: [
+      { date: "CHEMIST", description: "Joseph apprenticed as a chemist, utilising these skills to make cakes, sweets, marmalade, candied peel, mushroom ketchup and lozenges 🍫" },
+      { date: "1928", description: "He created Joseph Terry & Co in St Helen's Square" },
+      { date: "2025", description: "Multiple takeovers have happened since WW2, but Terry's is now a £60 million/year business 💸" },
+    ]
+  },
+  { 
+    coords: [-1.084409, 53.9602144],
+    name: "Joseph Terry",
+    occupation: "1793-1850",
+    description: "This is where Joseph Terry founded the chocolate brand",
+    image: "images/josephterry1.png",
+    tldr: "Joseph Terry is the founder of the company behind Chocolate Orange and many more famous chocolates.",
+    events: [
+      { date: "CHEMIST", description: "Joseph apprenticed as a chemist, utilising these skills to make cakes, sweets, marmalade, candied peel, mushroom ketchup and lozenges 🍫" },
+      { date: "1928", description: "He created Joseph Terry & Co in St Helen's Square" },
+      { date: "2025", description: "Multiple takeovers have happened since WW2, but Terry's is now a £60 million/year business 💸" },
+    ]
+  },
+  { 
+    coords: [-1.1107642, 53.953332],
+    name: "James Backhouse",
+    occupation: "1794-1869",
+    description: "James Backhouse ran his botanic nursery here.",
     image: "images/jamesbackhouse.png",
+    tldr: "James Backhouse was a botanist, missionary and philanthropist.",
     events: [
-      { date: "1794", description: "Born in Darlington." },
-      { date: "1831", description: "Began missionary work and botanical research." },
-      { date: "1869", description: "Established Backhouse Nurseries in York." }
+      { date: "1815", description: "James bought a York botanic nursery and allowed it to flourish." },
+      { date: "TOUR", description: "He visited all the British colonies and campaigned for fairer conditions for prisoners and aboriginals. He also sent plants back to his nursery." },
+      { date: "PHILANTHROPY", description: "James generously gave financial aid and gave hundreds of public speeches over his life." },
     ]
-},
-
-{ 
-    coords: [-1.0872622, 53.961437], 
-    name: "Henry Baines", 
-    occupation: "Botanist", 
-    description: "Henry Baines was a 19th-century botanist who studied Yorkshire’s plant life.",
+  },
+  { 
+    coords: [-1.0872622, 53.961437],
+    name: "Henry Baines",
+    occupation: "1793-1878",
+    description: "This is where Henry Baines first put a shovel in the ground.",
     image: "images/henrybaines.png",
+    tldr: "Henry Baines is the man to whom we owe gratitude for Museum Gardens.",
     events: [
-      { date: "1793", description: "Born in York." },
-      { date: "1840", description: "Published 'Flora of Yorkshire'." },
-      { date: "1878", description: "Passed away in York." }
+      { date: "1830", description: "The Yorkshire Museum opened and the initial three acres of Museum Gardens were landscaped and planted by Henry 🌷" },
+      { date: "1840", description: "At his own expense, Henry Baines published Flora of Yorkshire 📖" },
+      { date: "1840", description: "Henry lived on Museum Garden grounds his entire life, so did his daughter." },
     ]
-},
-
-{ 
-    coords: [-1.0720158, 53.9361983], 
-    name: "John Barry", 
-    occupation: "Composer", 
-    description: "John Barry was a film composer famous for his work on James Bond scores.",
+  },
+  { 
+    coords: [-1.0720158, 53.9361983],
+    name: "John Barry OBE",
+    occupation: "1933-2011",
+    description: "John Barry grew up here.",
     image: "images/johnbarry.png",
+    tldr: "John Barry is the man behind the James Bond theme tune.",
     events: [
-      { date: "1933", description: "Born in York." },
-      { date: "1962", description: "Scored his first James Bond film." },
-      { date: "1999", description: "Won five Academy Awards for his film music." },
-      { date: "2011", description: "Passed away." }
+      { date: "1947", description: "John worked as a projectionist at the York Rialto cinema from the age of 14. He also played in a York jazz band called the Modernaires 📽️" },
+      { date: "1950s", description: "He played with and arranged for various army ensembles whilst on service in Cyprus and Egypt." },
+      { date: "1962", description: "He was paid £250 to create the soundtrack for the first Bond film, Dr No. This theme tune was used in 11 Bond films." },
+      { date: "AWARDS", description: "John won four Grammys, two Academy Awards, a BAFTA and a Golden Globe - but none for any of the Bond scores 🏆" },
     ]
-},
-
-{ 
-    coords: [-1.0846533, 53.9614767], 
-    name: "Mary Ellen Best", 
-    occupation: "Artist", 
-    description: "Mary Ellen Best was a watercolor artist known for documenting 19th-century life.",
+  },
+  { 
+    coords: [1.0917633, 53.9663689],
+    name: "Mary Ellen Best",
+    occupation: "1809-1891",
+    description: "Mary Ellen Best lived here in number 14.",
     image: "images/maryellenbest.png",
+    tldr: "Mary Ellen Best was a prominent York water-colour artist.",
     events: [
-      { date: "1809", description: "Born in York." },
-      { date: "1830s", description: "Produced extensive watercolor works." },
-      { date: "1891", description: "Passed away." }
-    ]
- },
-  { 
-    "coords": [-1.0976615, 53.9520295], 
-    "name": "George Butterworth", 
-    "occupation": "1885-1916", 
-    "description": "George Butterworth grew up here on Driffield Terrace.",
-    "image": "images/georgebutterworth.png",
-    "tldr": "George Butterworth was a folksinger and composer.",
-    "events": [
-      { "date": "EDUCATED", "description": "George won a scholarship to Eton College in 1899. 5 years later he joined Trinity College, Oxford 🎓" },
-      { "date": "1913", "description": "George performed his hit songs at Leeds Festival 🎼" },
-      { "date": "1916", "description": "Killed in action during WW1, less than a month after receiving the Military Cross. A citation states that he had commanded the Company when the Captain was wounded ‘with great ability and coolness … and total disregard of personal safety’." },
-      { "date": "ETERNAL", "description": "Butterworth trench is officially named after George as he was in charge of a group digging a trench under heavy German fire 🪦" }
+      { date: "1840", description: "Mary went on three continental tours of Europe, painting people and places. She then moved to Germany with her new husband." },
+      { date: "1830s", description: "Most of her paintings, estimated to be around 1500, featured scenes around York and in her own home in Clifton 🖼️" },
     ]
   },
-  
   { 
-    "coords": [-1.0837224, 53.9553593], 
-    "name": "Hans Hess OBE", 
-    "occupation": "1907–1975", 
-    "description": "Hans Hess lived here in Skeldergate.",
-    "image": "images/hanshess.png",
-    "tldr": "German born Jew Hans Hess was a German museum curator and art historian.",
-    "events": [
-      { "date": "UPBRINGING", "description": "His wealthy father won the contract to provide boots for the Soviet Red Army 🥾" },
-      { "date": "1935", "description": "Moved to London to escape Nazi Germany." },
-      { "date": "1948", "description": "Hess was appointed Curator at York Art Gallery 🎨" }
+    coords: [-1.0976615, 53.9520295],
+    name: "George Butterworth",
+    occupation: "1885-1916",
+    description: "George Butterworth grew up here on Driffield Terrace.",
+    image: "images/georgebutterworth.png",
+    tldr: "George Butterworth was a folksinger and composer.",
+    events: [
+      { date: "EDUCATED", description: "George won a scholarship to Eton College in 1899. Five years later he joined Trinity College, Oxford 🎓" },
+      { date: "1913", description: "George performed his hit songs at Leeds Festival 🎼" },
+      { date: "1916", description: "Killed in action during WW1, less than a month after receiving the Military Cross. A citation states that he had commanded the Company when the Captain was wounded ‘with great ability and coolness … and total disregard of personal safety’." },
+      { date: "ETERNAL", description: "Butterworth trench is officially named after George as he was in charge of a group digging a trench under heavy German fire 🪦" },
     ]
   },
-  
   { 
-    "coords": [-1.0879721, 53.9612032], 
-    "name": "Thomas Cooke", 
-    "occupation": "1807-1868", 
-    "description": "Thomas Cooke's 1850 telescope is housed here.",
-    "image": "images/thomascooke.png",
-    "tldr": "Self-made Thomas Cooke was one of England's leading optical instrument makers.",
-    "events": [
-      { "date": "1860", "description": "He was invited by Prince Albert to Osborne House where he received an order for a 51/4 -inch telescope 👑" },
-      { "date": "ATHENS", "description": "Cooke built the largest telescope in the world at the time, which is now stored in Athens Observatory 🔭" }
+    coords: [-1.0837224, 53.9553593],
+    name: "Hans Hess OBE",
+    occupation: "1907–1975",
+    description: "Hans Hess lived here in Skeldergate. He once hosted Charlie Chaplin.",
+    image: "images/hanshess.png",
+    tldr: "German-born Jew Hans Hess was a German museum curator and art historian.",
+    events: [
+      { date: "UPBRINGING", description: "His wealthy father won the contract to provide boots for the Soviet Red Army 🥾" },
+      { date: "1935", description: "Moved to London to escape Nazi Germany." },
+      { date: "1948", description: "Hess was appointed Curator at York Art Gallery 🎨" },
     ]
-},
-
-{ 
-    coords: [-1.0906194, 53.9647176], 
-    name: "Stephen Corder", 
-    occupation: "1918-1990", 
-    description: "Stephen Corder was born here in Bootham",
+  },
+  { 
+    coords: [-1.0879721, 53.9612032],
+    name: "Thomas Cooke",
+    occupation: "1807-1868",
+    description: "Thomas Cooke's 1850 telescope is housed here.",
+    image: "images/thomascooke.png",
+    tldr: "Self-made Thomas Cooke was one of England's leading optical instrument makers.",
+    events: [
+      { date: "1860", description: "He was invited by Prince Albert to Osborne House where he received an order for a 5¼-inch telescope 👑" },
+      { date: "ATHENS", description: "Cooke built the largest telescope in the world at the time, which is now stored in Athens Observatory 🔭" },
+    ]
+  },
+  { 
+    coords: [-1.0906194, 53.9647176],
+    name: "Stephen Corder",
+    occupation: "1918-1990",
+    description: "Stephen Corder was born here in Bootham.",
     image: "images/stephencorder.png",
     tldr: "Stephen Corder was one of the founding fathers of applied linguistics and founding chair of the British Association for Applied Linguistics (BAAL).",
     events: [
       { date: "1918", description: "Corder acquired a second language at birth from his Dutch mother 🇳🇱" },
       { date: "1964", description: "Corder became Director of the School of Applied Linguistics at the University of Edinburgh 👨‍🎓" },
-      { date: "2022", description: "BAAL community stands at over 1400 members." }
+      { date: "2022", description: "BAAL community stands at over 1400 members." },
     ]
-},
-
-{  
-  coords: [-1.0715834, 53.9658982], 
-    name: "Mary Ann Craven", 
-    occupation: "1826-1900", 
+  },
+  { 
+    coords: [-1.0715834, 53.9658982],
+    name: "Mary Ann Craven",
+    occupation: "1826-1900",
     description: "This is where Mary Ann Craven moved her family to after her heroic business success.",
     image: "images/maryanncraven.png",
     tldr: "Mary Ann Craven was known for building one of the largest boiled sweets businesses of her time whilst dealing with personal setbacks remarkably.",
     events: [
       { date: "1860", description: "Her father and husband both died within two years. She faced raising three young children whilst running two businesses." },
-      { date: "1890", description: "Due to Mary Ann's legacy, by 1980 the Craven's business was producing 5,000 tons of sweets annually with a workforce of 380 🍬" }
+      { date: "1890", description: "Due to Mary Ann's legacy, by 1980 the Craven's business was producing 5,000 tons of sweets annually with a workforce of 380 🍬" },
     ]
   },
-  {
-    coords: [-1.0807703, 53.957878], 
-    name: "Mary Ann Craven", 
-    occupation: "1826-1900", 
+  { 
+    coords: [-1.0807703, 53.957878],
+    name: "Mary Ann Craven",
+    occupation: "1826-1900",
     description: "This is where Mary Ann Craven built her business and raised her three kids.",
     image: "images/maryanncraven.png",
     tldr: "Mary Ann Craven was known for building one of the largest boiled sweets businesses of her time whilst dealing with personal setbacks remarkably.",
     events: [
       { date: "1860", description: "Her father and husband both died within two years. She faced raising three young children whilst running two businesses." },
-      { date: "1890", description: "Due to Mary Ann's legacy, by 1980 the Craven's business was producing 5,000 tons of sweets annually with a workforce of 380 🍬" }
+      { date: "1890", description: "Due to Mary Ann's legacy, by 1980 the Craven's business was producing 5,000 tons of sweets annually with a workforce of 380 🍬" },
     ]
-}
-
+  }
 ];
+
 
 locations.forEach(location => {
   const marker = new mapboxgl.Marker({
@@ -597,6 +744,10 @@ locations.forEach(location => {
         )
         .addTo(map);
 });
+
+
+
+
 
 // Function to create a custom marker with an image inside a circle
 function createCustomMarker(imageUrl) {
