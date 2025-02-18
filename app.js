@@ -9,30 +9,44 @@ var map = new mapboxgl.Map({
     bearing: -17.6
 });
 
-// Apply custom pop-up styling
+// Create a <style> element to add the CSS
 const stylePopup = document.createElement('style');
+
+// Add the link to Google Fonts for Poppins
+const link = document.createElement('link');
+link.href = "https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap";
+link.rel = "stylesheet";
+document.head.appendChild(link);
+
+// Style for the popup
 stylePopup.innerHTML = `
   .mapboxgl-popup-content {
-    border-radius: 12px !important; /* Slightly less rounded */
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3) !important; /* Stronger shadow */
+    border-radius: 12px !important;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3) !important;
     padding: 15px !important;
-    font-family: Satoshi, sans-serif !important;
-    border: 2px solid #8A2BE2 !important; /* Thin border matching marker outline */
-    line-height:1.05;
+    font-family: 'Poppins', sans-serif !important; /* Apply Poppins font */
+    background: #E6F2E9;
+    border: 2px solid #f0f0f0 !important;
+    line-height: 1.05;
   }
 
   .mapboxgl-popup-content img {
-    border: 2px solid #8A2BE2 !important; /* Same purple color */
-    border-radius: 8px; /* Optional, to round the corners of the image */
-
+    border: 2px solid #f0f0f0 !important;
+    border-radius: 8px;
   }
 
-  /* Remove focus outline on pop-up */
   .mapboxgl-popup-close-button:focus {
-    outline: none !important; /* Prevent focus outline */
+    outline: none !important;
   }
 
-  /* Card styling */
+  /* Style for the description text */
+  .mapboxgl-popup-content p {
+    font-weight: normal !important; /* Ensure the description text is not bold */
+    text-align: center; /* Align text centrally */
+    font-size: 16px !important; /* Ensure the size matches the text size used for the cards */
+    margin-bottom: 20px !important; /* Add bottom margin */
+  }
+
   .timeline-card {
     background: #f8f9fa;
     padding: 10px;
@@ -45,26 +59,20 @@ stylePopup.innerHTML = `
 
   .timeline-card span {
     font-weight: bold;
-    display: block; /* Ensures title is on its own line */
-    margin-bottom: 5px; /* Space between title and description */
+    display: block;
+    margin-bottom: 5px;
   }
 
-  /* Align all cards properly */
-  .timeline-card {
-    z-index: 1;
-  }
-
-  /* Divider style */
   .popup-description-divider {
     margin: 10px 0;
     border: none;
     height: 1px;
-    background-color: #808080; /* Grey divider */
+    background-color: #808080;
   }
 
-  /* TL;DR Card Styling */
+  /* Updated styles for the TLDR card */
   .tldr-card {
-    background: #e8f5e9;
+    background: white !important; /* Set background to white */
     padding: 10px;
     margin-top: 10px;
     border-radius: 8px;
@@ -73,26 +81,26 @@ stylePopup.innerHTML = `
     z-index: 1;
   }
 
+  /* Remove the title (span) from the tldr card */
   .tldr-card span {
-    font-weight: bold;
-    display: block;
-    margin-bottom: 5px;
+    display: none !important; /* Completely hide the title */
   }
 
   .tldr-card p {
     margin-bottom: 0;
   }
 
-  /* Styling for TL;DR card divider */
   .tldr-card-divider {
     margin: 5px 0;
     border: none;
     height: 1px;
-    background-color: #4caf50; /* Green divider */
+    background-color: #4caf50;
   }
 `;
 
+// Append the style to the document
 document.head.appendChild(stylePopup);
+
 
 // Full array of locations with names, occupations, descriptions, images, and events
 const locations = [
