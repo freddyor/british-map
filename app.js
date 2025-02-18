@@ -23,13 +23,11 @@ stylePopup.innerHTML = `
   .mapboxgl-popup-content {
     border-radius: 12px !important;
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3) !important;
-    padding: 15px !important;
+    padding: 10px !important;
     font-family: 'Poppins', sans-serif !important; /* Apply Poppins font */
     background: #E9E8E0 ;
     border: 2px solid #f0f0f0 !important;
     line-height: 1.05;
-    margin-top: 0 !important;
-    margin-bottom: 0 !important;
   }
 
   .mapboxgl-popup-content {
@@ -44,10 +42,6 @@ stylePopup.innerHTML = `
     border-radius: 8px;
   }
 
-  .mapboxgl-popup-close-button:focus {
-    outline: none !important;
-  }
-
   /* Style for the description text */
   .mapboxgl-popup-content p {
     font-weight: normal !important; /* Ensure the description text is not bold */
@@ -57,6 +51,10 @@ stylePopup.innerHTML = `
     margin-bottom: 10px !important; /* Add bottom margin */
   }
 
+   .mapboxgl-popup-close-button {
+    display: none !important;
+  }
+  
   .timeline-card {
     background: #f8f9fa;
     padding: 10px;
@@ -67,10 +65,8 @@ stylePopup.innerHTML = `
     z-index: 1;
   }
 
-  .timeline-card span {
-    font-weight: bold;
-    display: block;
-    margin-bottom: 5px;
+  .timeline-card .date, .timeline-card span, .timeline-card p {
+  display: none !important;
   }
 
   .popup-description-divider {
@@ -128,30 +124,20 @@ const locations = [
     image: "images/georgehudson.png",
     tldr: "Born on a farm. Both his parents dead by 8 years old. Inherits money but is business smart. Becomes richest man in England and aristorcratic party host. Loses everything and flees to France.",
     events: [
-      { date: "1800", description: "George was born in Howsam to farmer John Hudson and his wife Elizabeth." },
-      { date: "1806", description: "Elizabeth dies when George is six years old. John dies two years later, when George is eight." },
-      { date: "1821", description: "George completes a drapers apprenticeship at Bell & Nicholson on Goodramgate, gaining shares in the company. George marries Nicholsons daughter of whoch they have four successful children." },
-      { date: "1827", description: "George's great-uncle, Matthew Botterill, passes away. George inherits £5000 in legacy and substantially more in land value, making him one of the richest men in York. He moved into Matthew's Georgian townhouse here at 44 Monkgate." },
-      { date: "1833", description: "George played a leading part in the establishment of the York Union Banking Company, in which he was the largest shareholder. This bank was aquired by Barclay & Co in 1902 " },
-      { date: "1833", description: "George joined a scheme to prepare plans for a York to Leeds railway, in the process learning much about the railway business." },
-      { date: "1800", description: "George Hudson became Lord Mayor of York" },
-      { date: "1837", description: "This was the beginning of the reign of Queen Victoria and, to celebrate her birthday, George held a grand parade and dinner for 14,000 York people. His generous hosting of balls and dances continued over several years and the Hudsons entertained many members of the aristocracy at their Knightsbridge home in London in the 1840s." },
-      { date: "1800", description: "George was born in Howsam to farmer John Hudson and his wife Elizabeth." },
-    ]
+{ date: "2003", description: "George was ranked the greatest doctor of all time by a poll of doctors." },
+]
   },
   { 
     coords: [ -1.0861561, 53.9587634 ], 
     name: "John Snow", 
-    occupation: "Physician", 
-    description: "John Snow was born here and is memorialized here.",
+    occupation: "1813-1858", 
+    description: "John Snow was born here on 15 March 1813 and is memorialized in the garden opposite.",
     image: "images/johnsnow.png",
-    events: [
-      { date: "1810", description: "Event 1" },
-      { date: "1830", description: "Event 2" },
-      { date: "1850", description: "Event 3" },
-      { date: "1870", description: "Event 4" },
-      { date: "1890", description: "Event 5" }
-    ]
+    tldr: "Snow is famous for proving choleria was waterborne during a 1854 cholera outbreak. He was also a pioneer in the use of chloroform.",
+     events: [
+{ date: "2001", description: "John Snow College was founded in Durham 👨‍🎓" },
+{ date: "2003", description: "George was ranked the greatest doctor of all time by a poll of doctors 🥇" },
+]
   },
   { 
     coords: [ -1.0911787, 53.9555643 ], 
@@ -585,7 +571,7 @@ locations.forEach(location => {
     .setPopup(new mapboxgl.Popup({ closeButton: true, closeOnClick: true })
       .setHTML(`
            <p style="font-size: 6px; font-weight: bold; margin-bottom: 10px;">${location.description}</p>
-                <div style="border-top: 2px solid #ccc; margin-bottom: 10px;"></div> <!-- Grey divider -->
+                <div style="border-top: 1px solid #ccc; margin-bottom: 10px;"></div> <!-- Grey divider -->
                 <div style="display: flex; align-items: center; gap: 10px;">
                     <img src="${location.image}" alt="${location.name}" style="width: 40px; height: 40px; object-fit: cover; border-radius: 50%;" />
                     <div>
@@ -607,11 +593,6 @@ locations.forEach(location => {
         )
         .addTo(map);
 });
-
-
-
-
-
 // Function to create a custom marker with an image inside a circle
 function createCustomMarker(imageUrl) {
   const markerDiv = document.createElement('div');
