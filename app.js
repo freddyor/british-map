@@ -135,6 +135,7 @@ const locations = [
     image: "images/johnsnow.png",
     tldr: "Snow is famous for proving choleria was waterborne during a 1854 cholera outbreak. He was also a pioneer in the use of chloroform.",
      events: [
+{ date: "Royalty", description: " Snow’s reputation for safety and skill led to his successful administration of chloroform to Queen Victoria during the births of Prince Leopold (1853) and Princess Beatrice (1857)👑"},
 { date: "2001", description: "John Snow College was founded in Durham 👨‍🎓" },
 { date: "2003", description: "Snow was ranked the greatest doctor of all time by a poll of doctors 🥇" },
 ]
