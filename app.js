@@ -483,82 +483,85 @@ const locations = [
       { date: "1830s", description: "Produced extensive watercolor works." },
       { date: "1891", description: "Passed away." }
     ]
-},
-
-{ 
-    coords: [-1.0976615, 53.9520295], 
-    name: "George Butterworth", 
-    occupation: "Composer", 
-    description: "George Butterworth was a composer known for his English folk music influences.",
-    image: "images/georgebutterworth.png",
-    events: [
-      { date: "1885", description: "Born in York." },
-      { date: "1911", description: "Composed 'The Banks of Green Willow'." },
-      { date: "1916", description: "Killed in action during World War I." }
+ },
+  { 
+    "coords": [-1.0976615, 53.9520295], 
+    "name": "George Butterworth", 
+    "occupation": "1885-1916", 
+    "description": "George Butterworth grew up here on Driffield Terrace.",
+    "image": "images/georgebutterworth.png",
+    "tldr": "George Butterworth was a folksinger and composer.",
+    "events": [
+      { "date": "EDUCATED", "description": "George won a scholarship to Eton College in 1899. 5 years later he joined Trinity College, Oxford 🎓" },
+      { "date": "1913", "description": "George performed his hit songs at Leeds Festival 🎼" },
+      { "date": "1916", "description": "Killed in action during WW1, less than a month after receiving the Military Cross. A citation states that he had commanded the Company when the Captain was wounded ‘with great ability and coolness … and total disregard of personal safety’." },
+      { "date": "ETERNAL", "description": "Butterworth trench is officially named after George as he was in charge of a group digging a trench under heavy German fire 🪦" }
     ]
-},
-
-{ 
-    coords: [-1.0837224, 53.9553593], 
-    name: "Hans Hess", 
-    occupation: "Art Historian", 
-    description: "Hans Hess was a German art historian who contributed to British modern art.",
-    image: "images/hanshess.png",
-    events: [
-      { date: "1908", description: "Born in Germany." },
-      { date: "1930s", description: "Fled Nazi Germany and settled in Britain." },
-      { date: "1960s", description: "Worked as curator in York." },
-      { date: "1975", description: "Passed away." }
+  },
+  
+  { 
+    "coords": [-1.0837224, 53.9553593], 
+    "name": "Hans Hess OBE", 
+    "occupation": "1907–1975", 
+    "description": "Hans Hess lived here in Skeldergate.",
+    "image": "images/hanshess.png",
+    "tldr": "German born Jew Hans Hess was a German museum curator and art historian.",
+    "events": [
+      { "date": "UPBRINGING", "description": "His wealthy father won the contract to provide boots for the Soviet Red Army 🥾" },
+      { "date": "1935", "description": "Moved to London to escape Nazi Germany." },
+      { "date": "1948", "description": "Hess was appointed Curator at York Art Gallery 🎨" }
     ]
-},
-
-{ 
-    coords: [-1.0879721, 53.9612032], 
-    name: "Thomas Cooke", 
-    occupation: "Optician & Instrument Maker", 
-    description: "Thomas Cooke was an optical designer and maker of telescopes.",
-    image: "images/thomascooke.png",
-    events: [
-      { date: "1807", description: "Born in York." },
-      { date: "1857", description: "Designed and built large refracting telescopes." },
-      { date: "1868", description: "Died in York." }
+  },
+  
+  { 
+    "coords": [-1.0879721, 53.9612032], 
+    "name": "Thomas Cooke", 
+    "occupation": "1807-1868", 
+    "description": "Thomas Cooke's 1850 telescope is housed here.",
+    "image": "images/thomascooke.png",
+    "tldr": "Self-made Thomas Cooke was one of England's leading optical instrument makers.",
+    "events": [
+      { "date": "1860", "description": "He was invited by Prince Albert to Osborne House where he received an order for a 51/4 -inch telescope 👑" },
+      { "date": "ATHENS", "description": "Cooke built the largest telescope in the world at the time, which is now stored in Athens Observatory 🔭" }
     ]
 },
 
 { 
     coords: [-1.0906194, 53.9647176], 
-    name: "Stephen (Pit) Corder", 
-    occupation: "Linguist", 
-    description: "Stephen Corder was a scholar known for his work in applied linguistics.",
+    name: "Stephen Corder", 
+    occupation: "1918-1990", 
+    description: "Stephen Corder was born here in Bootham",
     image: "images/stephencorder.png",
+    tldr: "Stephen Corder was one of the founding fathers of applied linguistics and founding chair of the British Association for Applied Linguistics (BAAL).",
     events: [
-      { date: "1910", description: "Born in York." },
-      { date: "1960s", description: "Developed influential linguistic theories." },
-      { date: "1990s", description: "His research influenced modern second-language acquisition." }
+      { date: "1918", description: "Corder acquired a second language at birth from his Dutch mother 🇳🇱" },
+      { date: "1964", description: "Corder became Director of the School of Applied Linguistics at the University of Edinburgh 👨‍🎓" },
+      { date: "2022", description: "BAAL community stands at over 1400 members." }
     ]
 },
 
-{ 
-    coords: [-1.0715834, 53.9658982], 
+{  
+  coords: [-1.0715834, 53.9658982], 
     name: "Mary Ann Craven", 
-    occupation: "Confectioner", 
-    description: "Mary Ann Craven was a successful businesswoman in the confectionery industry.",
+    occupation: "1826-1900", 
+    description: "This is where Mary Ann Craven moved her family to after her heroic business success.",
     image: "images/maryanncraven.png",
+    tldr: "Mary Ann Craven was known for building one of the largest boiled sweets businesses of her time whilst dealing with personal setbacks remarkably.",
     events: [
-      { date: "1800s", description: "Founded Craven’s, a famous confectionery company in York." },
-      { date: "1880s", description: "Expanded business operations across England." }
+      { date: "1860", description: "Her father and husband both died within two years. She faced raising three young children whilst running two businesses." },
+      { date: "1890", description: "Due to Mary Ann's legacy, by 1980 the Craven's business was producing 5,000 tons of sweets annually with a workforce of 380 🍬" }
     ]
-},
-
-{ 
-    coords: [-1.0798248, 53.9588623], 
+  },
+  {
+    coords: [-1.0807703, 53.957878], 
     name: "Mary Ann Craven", 
-    occupation: "Confectioner", 
-    description: "Mary Ann Craven’s business played a key role in York’s sweet-making industry.",
+    occupation: "1826-1900", 
+    description: "This is where Mary Ann Craven built her business and raised her three kids.",
     image: "images/maryanncraven.png",
+    tldr: "Mary Ann Craven was known for building one of the largest boiled sweets businesses of her time whilst dealing with personal setbacks remarkably.",
     events: [
-      { date: "1850", description: "Opened a shop producing boiled sweets." },
-      { date: "1890", description: "Craven’s sweets gained national recognition." }
+      { date: "1860", description: "Her father and husband both died within two years. She faced raising three young children whilst running two businesses." },
+      { date: "1890", description: "Due to Mary Ann's legacy, by 1980 the Craven's business was producing 5,000 tons of sweets annually with a workforce of 380 🍬" }
     ]
 }
 
@@ -594,10 +597,6 @@ locations.forEach(location => {
         )
         .addTo(map);
 });
-
-
-
-
 
 // Function to create a custom marker with an image inside a circle
 function createCustomMarker(imageUrl) {
