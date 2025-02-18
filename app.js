@@ -131,12 +131,12 @@ const locations = [
     coords: [ -1.0861561, 53.9587634 ], 
     name: "John Snow", 
     occupation: "1813-1858", 
-    description: "John Snow was born here on 15 March 1813 and is memorialized in the garden opposite.",
+    description: "John Snow was born into poverty here on 15 March 1813 and is memorialized in the garden opposite.",
     image: "images/johnsnow.png",
     tldr: "Snow is famous for proving choleria was waterborne during a 1854 cholera outbreak. He was also a pioneer in the use of chloroform.",
      events: [
 { date: "2001", description: "John Snow College was founded in Durham 👨‍🎓" },
-{ date: "2003", description: "George was ranked the greatest doctor of all time by a poll of doctors 🥇" },
+{ date: "2003", description: "Snow was ranked the greatest doctor of all time by a poll of doctors 🥇" },
 ]
   },
   { 
@@ -593,6 +593,11 @@ locations.forEach(location => {
         )
         .addTo(map);
 });
+
+
+
+
+
 // Function to create a custom marker with an image inside a circle
 function createCustomMarker(imageUrl) {
   const markerDiv = document.createElement('div');
