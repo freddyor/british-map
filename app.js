@@ -28,6 +28,13 @@ stylePopup.innerHTML = `
     background: #E6F2E9;
     border: 2px solid #f0f0f0 !important;
     line-height: 1.05;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+  }
+
+  .mapboxgl-popup-content {
+    padding-top: 0 !important;  
+    padding-bottom: 0 !important;
   }
 
   .mapboxgl-popup-content img {
@@ -43,8 +50,8 @@ stylePopup.innerHTML = `
   .mapboxgl-popup-content p {
     font-weight: normal !important; /* Ensure the description text is not bold */
     text-align: center; /* Align text centrally */
-    font-size: 16px !important; /* Ensure the size matches the text size used for the cards */
-    margin-bottom: 20px !important; /* Add bottom margin */
+    font-size: 13px !important; /* Ensure the size matches the text size used for the cards */
+    margin-bottom: 10px !important; /* Add bottom margin */
   }
 
   .timeline-card {
@@ -86,9 +93,11 @@ stylePopup.innerHTML = `
     display: none !important; /* Completely hide the title */
   }
 
-  .tldr-card p {
+.tldr-card p {
+    font-size: 14px !important; /* Set desired font size */
+    line-height: 1.4; /* Optional: set line height for readability */
     margin-bottom: 0;
-  }
+}
 
   .tldr-card-divider {
     margin: 5px 0;
@@ -293,13 +302,10 @@ const locations = [
     "coords": [-1.0830932, 53.961744], 
     "name": "Guy Fawkes", 
     "occupation": "Revolutionary", 
-    "description": "Known for his failed attempt to blow up the Houses of Parliament.",
+    "description": "Guy Fawkes was born and raised here.",
+    "tldr": "Known for his failed attempt to blow up the Houses of Parliament. duehdueuferfu cuhjud wedued euweh we weenuwe uwf wefunwef whfuwef w.",
     "image": "images/guyfawkes.png",
-    "events": [
-        { "date": "1570", "description": "Born in York." },
-        { "date": "1605", "description": "Failed Gunpowder Plot." },
-        { "date": "1606", "description": "Executed for his role in the plot." }
-    ]
+    "events": []
 },
 
 { 
@@ -564,7 +570,6 @@ const locations = [
 
 ];
 
-// Loop through locations and add markers with pop-ups
 locations.forEach(location => {
   const marker = new mapboxgl.Marker({
     element: createCustomMarker(location.image)
@@ -572,7 +577,7 @@ locations.forEach(location => {
     .setLngLat(location.coords)
     .setPopup(new mapboxgl.Popup({ closeButton: true, closeOnClick: true })
       .setHTML(`
-           <p style="font-size: 16px; font-weight: bold; margin-bottom: 10px;">${location.description}</p>
+           <p style="font-size: 6px; font-weight: bold; margin-bottom: 10px;">${location.description}</p>
                 <div style="border-top: 2px solid #ccc; margin-bottom: 10px;"></div> <!-- Grey divider -->
                 <div style="display: flex; align-items: center; gap: 10px;">
                     <img src="${location.image}" alt="${location.name}" style="width: 50px; height: 50px; object-fit: cover; border-radius: 50%;" />
@@ -581,15 +586,12 @@ locations.forEach(location => {
                         <div style="font-size: 14px; color: #666;">${location.occupation}</div>
                     </div>
                 </div>
-                <div style="background: #e8f5e9; padding: 10px; margin-top: 10px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
-                    <span style="font-weight: bold; display: block; margin-bottom: 5px;">TL;DR</span>
-                    <p>${location.tldr}</p>
-                </div>
+                <p style="background: #f9f9f9; padding: 10px; margin-top: 10px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); font-size: 12px;">${location.tldr}</p>
                 ${location.events.length ? `
                     <div style="margin-top: 10px;">
                         ${location.events.map(event => `
                             <div style="background: #f9f9f9; border: 1px solid #ddd; border-radius: 8px; padding: 10px; margin-bottom: 10px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
-                                <strong style="color: #9b4dca;">${event.date}</strong>: ${event.description}
+                                <strong style="color: #9b4dca; font-size: 14px;">${event.date}</strong>: <span style="font-size: 12px;">${event.description}</span>
                             </div>
                         `).join('')}
                     </div>
@@ -599,7 +601,7 @@ locations.forEach(location => {
         .addTo(map);
 });
 
-// Function to create a custom marker with an image inside a circle
+
 function createCustomMarker(imageUrl) {
   const markerDiv = document.createElement('div');
   markerDiv.className = 'custom-marker';
