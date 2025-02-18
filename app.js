@@ -12,7 +12,7 @@ var map = new mapboxgl.Map({
 // Create a <style> element to add the CSS
 const stylePopup = document.createElement('style');
 
-// Add the link to Google Fonts for Poppins
+// Add the link to Google Fonts for Poppinse
 const link = document.createElement('link');
 link.href = "https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap";
 link.rel = "stylesheet";
@@ -495,7 +495,7 @@ const locations = [
     name: "Joseph Rowntree", 
     occupation: "Philanthropist & Social Reformist", 
     description: "xxx", 
-    image: "images/josephrowntree.png", 
+    image: "images/josephrowntree1.png", 
     tldr: "Joseph Rowntree was a philanthropist and social reformist, known for his impact on social welfare and his association with Rowntree's chocolate.", 
     events: [
         { date: "Late 1800s", description: "Rowntree's established his chocolate company, which became an iconic name in the chocolate industry 🍫" },
