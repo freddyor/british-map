@@ -25,7 +25,7 @@ stylePopup.innerHTML = `
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3) !important;
     padding: 15px !important;
     font-family: 'Poppins', sans-serif !important; /* Apply Poppins font */
-    background: #E6F2E9;
+    background: #E9E8E0 ;
     border: 2px solid #f0f0f0 !important;
     line-height: 1.05;
     margin-top: 0 !important;
@@ -35,6 +35,8 @@ stylePopup.innerHTML = `
   .mapboxgl-popup-content {
     padding-top: 0 !important;  
     padding-bottom: 0 !important;
+    margin-left: 3;
+    margin-right: 5;
   }
 
   .mapboxgl-popup-content img {
@@ -50,6 +52,7 @@ stylePopup.innerHTML = `
   .mapboxgl-popup-content p {
     font-weight: normal !important; /* Ensure the description text is not bold */
     text-align: center; /* Align text centrally */
+    letter-spacing: -0.5x;
     font-size: 13px !important; /* Ensure the size matches the text size used for the cards */
     margin-bottom: 10px !important; /* Add bottom margin */
   }
@@ -72,8 +75,8 @@ stylePopup.innerHTML = `
 
   .popup-description-divider {
     margin: 10px 0;
-    border: none;
-    height: 1px;
+    border: 0;
+    height: 0.2px;
     background-color: #808080;
   }
 
@@ -86,6 +89,8 @@ stylePopup.innerHTML = `
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     position: relative;
     z-index: 1;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
 
   /* Remove the title (span) from the tldr card */
@@ -94,9 +99,11 @@ stylePopup.innerHTML = `
   }
 
 .tldr-card p {
-    font-size: 14px !important; /* Set desired font size */
+    font-size: 10px !important; /* Set desired font size */
     line-height: 1.4; /* Optional: set line height for readability */
     margin-bottom: 0;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
   .tldr-card-divider {
@@ -580,7 +587,7 @@ locations.forEach(location => {
            <p style="font-size: 6px; font-weight: bold; margin-bottom: 10px;">${location.description}</p>
                 <div style="border-top: 2px solid #ccc; margin-bottom: 10px;"></div> <!-- Grey divider -->
                 <div style="display: flex; align-items: center; gap: 10px;">
-                    <img src="${location.image}" alt="${location.name}" style="width: 50px; height: 50px; object-fit: cover; border-radius: 50%;" />
+                    <img src="${location.image}" alt="${location.name}" style="width: 40px; height: 40px; object-fit: cover; border-radius: 50%;" />
                     <div>
                         <div style="font-size: 16px; font-weight: bold;">${location.name}</div>
                         <div style="font-size: 14px; color: #666;">${location.occupation}</div>
@@ -602,6 +609,10 @@ locations.forEach(location => {
 });
 
 
+
+
+
+// Function to create a custom marker with an image inside a circle
 function createCustomMarker(imageUrl) {
   const markerDiv = document.createElement('div');
   markerDiv.className = 'custom-marker';
