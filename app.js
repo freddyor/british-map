@@ -495,7 +495,7 @@ const locations = [
     name: "Joseph Rowntree", 
     occupation: "Philanthropist & Social Reformist", 
     description: "xxx", 
-    image: "images/josephrowntree1.png", 
+    image: "images/josephrowntree.png", 
     tldr: "Joseph Rowntree was a philanthropist and social reformist, known for his impact on social welfare and his association with Rowntree's chocolate.", 
     events: [
         { date: "Late 1800s", description: "Rowntree's established his chocolate company, which became an iconic name in the chocolate industry 🍫" },
