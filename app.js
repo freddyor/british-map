@@ -576,7 +576,7 @@ const locations = [
     name: "Joseph Terry",
     occupation: "1793-1850",
     description: "This is where Joseph Terry founded the chocolate brand",
-    image: "images/josephterry1.png",
+    image: "images/josephterry2.png",
     tldr: "Joseph Terry is the founder of the company behind Chocolate Orange and many more famous chocolates.",
     events: [
       { date: "CHEMIST", description: "Joseph apprenticed as a chemist in York, utilising these skills to make cakes, sweets, marmalade, candied peel, mushroom ketchup and lozenges 🍫" },
