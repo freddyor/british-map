@@ -482,7 +482,7 @@ const locations = [
   "name": "James Pigott Pritchett",
   "occupation": "1789-1868",
   "description": "James Pigott Pritchett was the architect of this cemetery and was buried here",
-  "tldr": "Pritchett was a renowned architect, responsible for much of York's buildings",
+  "tldr": "Pritchett was a renowned architect, responsible for many of York's buildings",
   "image": "images/jamespigottpritchett.png",
   "events": [
     { "date": "1845", "description": "Pritchett was the architect of Huddersfield Railway Station, considered one of the most impressive stations in England 🚂" },
