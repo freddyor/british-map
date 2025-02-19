@@ -121,7 +121,7 @@ const locations = [
     name: "George Hudson", 
     occupation: "1800-1871", 
     description: "George Hudson lived here at number 44",
-    image: "images/georgehudson.png",
+    image: "images/josephterry.png",
     tldr: "George Hudson, known as 'the Railway King', was once the richest man in England. His business ultimately declined and he died with large debt.",
     events: [
 { date: "1837", description: "George became Lord Mayor of York whilst being the wealthiest resident of the city. He held a grand parade and dinner for 14,000 York people to celebrate Queen Victoria 🥳" },
