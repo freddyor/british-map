@@ -119,12 +119,13 @@ const locations = [
   { 
     coords: [ -1.076124, 53.9639651 ], 
     name: "George Hudson", 
-    occupation: "The Railway King", 
-    description: "George Hudson lived here",
+    occupation: "1800-1871", 
+    description: "George Hudson lived here at number 44",
     image: "images/georgehudson.png",
-    tldr: "Born on a farm. Both his parents dead by 8 years old. Inherits money but is business smart. Becomes richest man in England and aristorcratic party host. Loses everything and flees to France.",
+    tldr: "George Hudson, known as 'the Railway King', was once the richest man in England. His business ultimately declined and he died with large debt.",
     events: [
-{ date: "2003", description: "George was ranked the greatest doctor of all time by a poll of doctors." },
+{ date: "1837", description: "George became Lord Mayor of York whilst being the wealthiest resident of the city. He held a grand parade and dinner for 14,000 York people to celebrate Queen Victoria 🥳" },
+{ date: "RAIL", description: "On paper, he owned a quarter of all the country's rail network at his height. Most of York's railway system can be attributed to him as well as Lendal Bridge 🚂" },
 ]
   },
   { 
@@ -133,7 +134,7 @@ const locations = [
     occupation: "1813-1858", 
     description: "John Snow was born into poverty here on 15 March 1813 and is memorialized in the garden opposite.",
     image: "images/johnsnow.png",
-    tldr: "Snow is famous for proving choleria was waterborne during a 1854 cholera outbreak. He was also a pioneer in the use of chloroform.",
+    tldr: "Snow is famous for proving cholera was waterborne during an 1854 cholera outbreak. He was also a pioneer in the use of chloroform.",
      events: [
 { date: "Royalty", description: " Snow’s reputation for safety and skill led to his successful administration of chloroform to Queen Victoria during the births of Prince Leopold (1853) and Princess Beatrice (1857)👑"},
 { date: "2001", description: "John Snow College was founded in Durham 👨‍🎓" },
@@ -143,27 +144,26 @@ const locations = [
    {
     coords: [ -1.0911787, 53.9555643 ], 
     name: "George Leeman", 
-    occupation: "Historian", 
-    description: "xxx",
+    occupation: "1809-1882", 
+    description: "George Leeman once lived here with his family",
     image: "images/georgeleeman.png",
-    tldr: "Key figure in railway history and politics in York.",
+    tldr: "George Leeman is a vital figure in York history, politics and rail.",
     events: [
-      { date: "1853", description: "Became Chairman of the North Eastern Railway." },
-      { date: "1865", description: "Elected as Member of Parliament for York." },
-      { date: "1882", description: "Passed away, leaving a strong legacy in York's railway development." },
+      { date: "1853", description: "He became Chairman of the North Eastern Railway after succeeding Hudson and merging three Northern railways. He had played a large role in the legal investigations that brought down Hudson, the York-born richest man in England 🚂" },
+      { date: "SERVICE", description: "Leeman was elected as Member of Parliament for York 1865-1880. He was also Lord Mayor three times." },
+      { date: "LEGACY", description: "Leeman's statue stands near the York Railway Station." },
     ]
   },
   {
     coords: [ -1.0812717, 53.9628137 ], 
     name: "John Goodricke", 
-    occupation: "Astronomer", 
-    description: "xxx",
+    occupation: "1764-1786", 
+    description: "John Goodricke recorded his planetary discoveries in this location",
     image: "images/johngoodricke.png",
-    tldr: "Pioneering astronomer who studied variable stars.",
+    tldr: "John Goodricke was a pioneering astronomer and inspiration for all deaf people.",
     events: [
-      { date: "1783", description: "Discovered periodic dimming of Algol, a variable star." },
-      { date: "1784", description: "Awarded the Copley Medal by the Royal Society." },
-      { date: "1786", description: "Passed away at the age of 21, leaving a major impact on astronomy." },
+      { date: "1783", description: "John won the Copley Medal for his observations of the variable star Algol, the highest scientific honour of the Royal Society of London (RSL) 🔭" },
+      { date: "1784", description: "He was invited to become a Fellow at RSL at just 21 years old, but tragically died before he received it." },
     ]
   },
   {
@@ -174,8 +174,8 @@ const locations = [
     image: "images/judidench.png",
     tldr: "Judi Dench needs no introduction, she is one of the greatest actors of all time.",
     events: [
-      { date: "1998", description: "Dench won an Academy Award for playing Queen Elizabeth in 'Shakespeare in Love.' She has won over 20 prestigious awards over her seven-decade career, including two Golden Globes." },
-      { date: "1995", description: "Dench is the longest-serving cast member of the James Bond franchise, playing M until 2015." },
+      { date: "1998", description: "Dench won an Academy Award for playing Queen Elizabeth in 'Shakespeare in Love.' She has won over 20 prestigious awards over her seven-decade career, including two Golden Globes 🎭" },
+      { date: "1995", description: "Dench is the longest-serving cast member of the James Bond franchise, playing M until 2015 🤵" },
       { date: "CHARITY", description: "By the late 1990s she was patron of over 180 charities, including York Against Cancer." },
     ]
   },
@@ -183,25 +183,25 @@ const locations = [
     coords: [ -1.0878828, 53.9642257 ], 
     name: "W.H. Auden", 
     occupation: "1907-1973", 
-    description: "W.H.Auden was born and lived his inital years at this location",
+    description: "W.H.Auden was born and lived his initial years at this location",
     image: "images/whauden.png",
     tldr: "Wystan Hugh Auden is often classed as Britain's greatest 20th century writer.",
     events: [
-      { date: "1948", description: "He won the Pulitzer Prize for 'The Age of Anxiety'." },
-      { date: "1967", description: "Auden was considered to be Poet Laureate of the United Kingdom but was rejected due to his American citizenship." },
+      { date: "1948", description: "He won the Pulitzer Prize for 'The Age of Anxiety'✒️" },
+      { date: "1967", description: "Auden was considered to be Poet Laureate of the United Kingdom but was rejected due to his American citizenship 🇬🇧" },
     ]
   },
   {
     coords: [ -1.0900558, 53.9488163 ], 
     name: "Steve McLaren", 
     occupation: "1961-", 
-    description: "Steve McLaren studied here as a child",
+    description: "Steve McClaren studied here as a child",
     image: "images/stevemclaren.png",
-    tldr: "Steve McLaren is oone of England's greatest football managers.",
+    tldr: "Steve McClaren is one of England's greatest football managers.",
     events: [
       { date: "1970s", description: "Steve chose to cycle 4 miles a day to Nunthorpe school due to its emphasis on sports 🚴" },
       { date: "2006", description: "Appointed England national team manager." },
-      { date: "SUCCESS", description: "He won one champions league and three Premier Leagues as assistant Manchester United manager 🏆" },
+      { date: "SUCCESS", description: "He won one Champions League and three Premier Leagues as assistant Manchester United manager 🏆" },
     ]
   },
   {
@@ -219,28 +219,27 @@ const locations = [
  { 
     coords: [ -1.1035692, 53.9693209 ], 
     name: "Benjamin Seebohm Rowntree", 
-    occupation: "Social Reformer", 
-    description: "xxx", 
-    tldr: "Benjamin Seebohm Rowntree was a social reformer and philanthropist known for his influential studies on poverty and welfare.", 
+    occupation: "1871-1954", 
+    description: "Joseph Seebohm Rowntree lived here for most of his life", 
+    tldr: "Son of Joseph Rowntree, Benjamin was also Rowntrees chairman and a stark social reformer.", 
     image: "images/seebohmrowntree.png", 
     events: [
-        { date: "1901", description: "Rowntree conducted his influential study on poverty in York, highlighting the social and economic disparities among the working class 📊" },
-        { date: "1904", description: "He founded the Rowntree Trust to support social reform projects aimed at reducing poverty and improving education 🏫" },
-        { date: "1920s", description: "Rowntree’s research significantly influenced British social policy, particularly in welfare and housing reform 🏘️" },
+        { date: "1941", description: "Seebohm retired as chair after 17 years, leaving the third largest business of its kind in the world 🍫" },
+        { date: "REFORM", description: "He produced some of the most influential research in British history, exposing the truths of poverty in York in 'Poverty: A Study in Town Life'. His work changed the course of British society forever." },
     ]
 },
 
 { 
     coords: [ -1.0797156, 53.9586856 ], 
-    name: "Sir Robert Herbert", 
-    occupation: "Politician", 
-    description: "xxx", 
-    tldr: "Sir Robert Herbert was a prominent politician in 19th-century Britain, known for his role in public service and political leadership.", 
+    name: "Sir Thomas Herbert", 
+    occupation: "1606-1682", 
+    description: "Sir Thomas Herbert was born and raised on this site", 
+    tldr: "Sir Thomas Herbert was a traveller and gentlemann to King Charles I.", 
     image: "images/robertherbert.png", 
     events: [
-        { date: "1830s", description: "Herbert served as a key political figure, contributing to policy decisions and reforms in the British Parliament 🏛️" },
-        { date: "1840s", description: "He played a vital role in shaping educational and social reform policies in the British government 🎓" },
-        { date: "1850s", description: "Herbert became involved in the promotion of colonial interests, influencing British imperial policy 🌍" },
+        { date: "1649", description: "On behalf of England, he sailed around Africa to Persia on a diplomatic mission ⛵" },
+        { date: "1649", description: "He was the only servant to stay with Charles I until the moment of his execution. On the last walk they made together through St James’s Park, the king gave Thomas a silver clock for memory." },
+        { date: "1660", description: "Herbert returned to London where he was made a Baronet by Charles II 👑" },
     ]
 },
 
@@ -252,9 +251,9 @@ const locations = [
     tldr: "Benedict of York was a leading York Jew and the second-greatest moneylender behind Josce.", 
     image: "images/benedictofyork.png", 
     events: [
-        { date: "WEALTH", description: "William of Newbury described Benedict's house as \"unto a royal palace in size and strength\"." },
+        { date: "WEALTH", description: "William of Newburgh described Benedict's house as \"unto a royal palace in size and strength\" 🏘️" },
         { date: "1189", description: "Benedict attended the coronation of King Richard I where he was forcibly baptised. He was killed shortly after." },
-        { date: "1190", description: "His children and widow were burned alive in his house during the Easter York riot." },
+        { date: "1190", description: "His children and widow were burned alive in his house during the Easter riot in York." },
     ]
 },
 
@@ -267,7 +266,7 @@ const locations = [
     image: "images/josceofyork.png", 
     events: [
         { date: "JEWISH", description: "Josce owned the land of which the Chief Synagogue in London was built." },
-        { date: "1190", description: "When an angry mob trapped York's Jewish community in Clifford's Tower, the decision was made to mutually committ suicide rather than face the mob. Josce was the first to act, slaying his wife and children." },
+        { date: "1190", description: "When an angry mob trapped York's Jewish community in Clifford's Tower, the decision was made to mutually commit suicide rather than face the mob. Josce was the first to act, slaying his wife and children." },
     ]
 },
 
@@ -279,9 +278,9 @@ const locations = [
     tldr: "Christopher Levett was a key figure in the New World discovery.", 
     image: "images/christopherlevett.png", 
     events: [
-        { date: "1623", description: "Levett became the first European to settle present-day Maine after securing 6000 acres from the King. He called the settlement York, this was the orginal New York 🌎" },
+        { date: "1623", description: "Levett became the first European to settle present-day Maine after securing 6000 acres from the King. He called the settlement York, this was the original New York 🌎" },
         { date: "1624", description: "He commanded HMS Susan and Ellen during the attack of the Spanish at Cadiz ⚓" },
-        { date: "1624", description: "Fort Levett in Maine is named after Christopher. Also, present-day York County, Maine, derives its name from his ambitions. " },
+        { date: "1624", description: "Fort Levett in Maine is named after Christopher. Present-day York County, Maine, also derives its name from his ambitions. " },
     ]
 },
 
@@ -290,12 +289,12 @@ const locations = [
     name: "Elizabeth Montagu", 
     occupation: "1718-1800", 
     description: "Elizabeth Montagu was raised here in Treasurer's House", 
-    tldr: "Elizabeth Montagu was a philanthropist who used her priveledged social position to advance the status od women.", 
+    tldr: "Elizabeth Montagu was a philanthropist who used her privileged social position to advance the status of women.", 
     image: "images/elizabethmontagu.png", 
     events: [
-        { date: "WEALTH", description: "Elizabeth married into the extrmemely wealth Montagu family. She inherites substantial amounts upon her husbands death 💰" },
+        { date: "WEALTH", description: "Elizabeth married into the extremely wealthy Montagu family. She inherited substantial amounts upon her husband's death 💰" },
         { date: "Late 1800s", description: "Elizabeth used her London mansion to hold Bluestocking meetings, which gave women the chance to join debate. Queen Charlotte and her daughters even visited 👑" },
-        { date: "LEGACY", description: "Elizabeth and the Bluestockings were mentioned in the works of most future womens rights activists." },
+        { date: "LEGACY", description: "Elizabeth and the Bluestockings were mentioned in the works of most future women's rights activists." },
     ]
 },
 
@@ -304,12 +303,12 @@ const locations = [
     name: "Tessa Rowntree", 
     occupation: "1909-1999", 
     description: "Tessa Rowntree went to school here at The Mount", 
-    tldr: "Tessa Rowntree was a charity worker, descendent of Joseph Rowntree.", 
+    tldr: "Tessa Rowntree was a charity worker, descendant of Joseph Rowntree.", 
     image: "images/tessarowntree.png", 
     events: [
         { date: "1938", description: "Tessa was in Germany when she saw Hitler. She saw his personal magnetism despite his 'horrid little voice'. She also saw Joseph Goebbels." },
-        { date: "1939", description: "She helped evacuate and settle hundreds of refugees from Europe in England. She escorted 66 kindergarten children to England." },
-        { date: "1946", description: "Tessa and her partner settled in New Jersey, where she worked as a librarian until death 🇺🇸" },
+        { date: "1939", description: "She helped evacuate and settle hundreds of refugees from Europe in England. She escorted 66 kindergarten children to England 🏴󠁧󠁢󠁥󠁮󠁧󠁿" },
+        { date: "1946", description: "Tessa and her partner settled in New Jersey, where she worked as a librarian until her death 🇺🇸" },
     ]
 },
 
@@ -317,13 +316,13 @@ const locations = [
     coords: [ -1.0989721, 53.9498429 ], 
     name: "Lt Col Best-Dunkley", 
     occupation: "1890-1917", 
-    description: "Brtram Best-Dunkley grew up on this street", 
-    tldr: "Lt Col Best-Dunkley was a heroic military captain who died in Belgium..", 
+    description: "Bertram Best-Dunkley grew up on this street", 
+    tldr: "Lt Col Best-Dunkley was a heroic military captain who died in Belgium.", 
     image: "images/bestdunkley.png", 
     events: [
         { date: "CHINA", description: "Before the war, Best-Dunkley was a teacher at Tienstin Grammar School, China 🇨🇳" },
         { date: "1917", description: "\"Lt.-Col. Best-Dunkley dashed forward, rallied his leading waves, and personally led them to the assault of these positions, which, despite heavy losses, were carried. He continued to lead his battalion until all their objectives had been gained. This gallant officer has since died of wounds\"." },
-        { date: "1917", description: "He was awarded the Victoria Cross 0 the highest award in British armed forces 🎖️" },
+        { date: "1917", description: "He was awarded the Victoria Cross - the highest award in British armed forces 🎖️" },
     ]
 },
 
@@ -336,116 +335,117 @@ const locations = [
     tldr: "Frederick Belmont was a Swiss orphan who founded Bettys Tea Rooms.",
     events: [
       { date: "YOUTH", description: "He was orphaned at five years and effectively auctioned off to a farmer." },
-      { date: "1919", description: "Bettys Tea Rooms in Harrogate was first opened. He described it as \"sink or swim\". He had trained to be a baker in France and crossed the Channel to make a life in England. " },
-      { date: "1936", description: "Frederick looked out from the deck onto New York during the Queen Mary maiden voyage. His jounrey was inspirational." },
+      { date: "1919", description: "Bettys Tea Rooms in Harrogate was first opened. He described it as \"sink or swim\". He had trained to be a baker in France and crossed the Channel to make a life in England 🥖" },
+      { date: "1936", description: "Frederick looked out from the deck onto New York during the Queen Mary maiden voyage. His journey was inspirational 🗽" },
     ]
 },
 
 {
   "coords": [-1.0928107, 53.9671791],
   "name": "Edna Annie Crichton",
-  "occupation": "Mayor & Philanthropist",
-  "description": "xxx",
-  "tldr": "First female Lord Mayor of York, known for her contributions to social welfare.",
+  "occupation": "1876-1970",
+  "description": "Edna Annie Crichton moved here to be closer to her constituents",
+  "tldr": "Crichton was an influential bipartisan social reformer and servant to York.",
   "image": "images/ednaanniechrichton.png",
   "events": [
-    { "date": "1941", "description": "Became the first female Lord Mayor of York." },
-    { "date": "1950", "description": "Recognized for her contributions to social reform in York." },
+    { "date": "1941", "description": "Edna became the first female Lord Mayor of York in its 700 year history 🎉" },
+    { "date": "1955", "description": "Edna was awarded the honorary freedom of the City of York, the second woman to be honoured after Mary, Princess Royal 👸" },
+    { "date": "REFORM", "description": "She chaired the Housing Committee for 20 years, visiting every house that was removed due to slum conditions." },
   ]
 },
 
 {
   "coords": [-1.0824348, 53.9589197],
   "name": "William Etty",
-  "occupation": "Painter",
-  "description": "xxx",
-  "tldr": "Renowned artist known for his large-scale historical and mythological paintings.",
+  "occupation": "1787-1849",
+  "description": "William Etty was born here above his father's bakery shop",
+  "tldr": "William Etty was a renowned York artist and Royal Academy member.",
   "image": "images/williametty.png",
   "events": [
-    { "date": "1787", "description": "Born in York, England." },
-    { "date": "1828", "description": "Elected as a full member of the Royal Academy." },
-    { "date": "1849", "description": "Led campaigns to preserve York’s city walls." },
+    { "date": "1823", "description": "Etty became a memeber of the Royal Academy after travelling to Italy and France to further his painting skills 🌍" },
+    { "date": "WALLS", "description": "He is credited with saving the York City Walls, after donating to campaigns and giving lectures." },
+    { "date": "LEGACY", "description": "A statue of Etty stands outside the York Art Gallery in Exhibition Square, where many of his paintings now live 🖼️" },
   ]
 },
 
 {
   "coords": [-1.0919582, 53.9635731],
   "name": "Dr William Arthur Evelyn",
-  "occupation": "Historian & Conservationist",
-  "description": "lived out the end of his life here",
-  "tldr": "A key figure in preserving York’s historic buildings and heritage.",
+  "occupation": "1860-1935",
+  "description": "Dr Evelyn lived out the end of his life here",
+  "tldr": "There are few people who have done more to preserve York than Dr Evelyn.",
   "image": "images/williamarthurevelyn.png",
   "events": [
-    { "date": "1902", "description": "Helped found the Yorkshire Architectural and York Archaeological Society." },
-    { "date": "1935", "description": "Led efforts to save York’s historic structures from demolition." },
+    { "date": "1912", "description": "Evelyn campaigned for the poor and was instrumental in the opening of an open-air ward in Heworth 🏥" },
+    { "date": "1948", "description": "His enthusiasm for the wellbeing of the city inspired the York Civic Trust and prevented many buildings from being demolished 🏛️" },
+    { "date": "DONOR", "description": "He gave lectures to fundraise to keep St Stephen's Orphanage open during financial stress." },
   ]
 },
 
 { 
     coords: [-1.0830932, 53.961744], 
     name: "Guy Fawkes", 
-    occupation: "Revolutionary", 
-    description: "xxx", 
-    tldr: "Known for his failed attempt to blow up the Houses of Parliament, Guy Fawkes became an infamous figure in British history.", 
+    occupation: "1570-1606", 
+    description: "Guy Fawkes grew up in this very location", 
+    tldr: "Guy Fawkes is the most famous figure to come from York.", 
     image: "images/guyfawkes.png", 
     events: [
-        { date: "1605", description: "Fawkes was part of the Gunpowder Plot, a failed attempt to assassinate King James I and blow up the Houses of Parliament 💥" },
-        { date: "1606", description: "After the plot failed, Fawkes was arrested and executed, becoming a symbol of rebellion and resistance 🔥" },
-        { date: "Modern Day", description: "Guy Fawkes’ legacy lives on every November 5th, celebrated as Guy Fawkes Night (or Bonfire Night) with fireworks and bonfires across the UK 🎆" },
+        { date: "1592", description: "Fawkes sold his property to go and fight Protestants in Netherlands 🇳🇱" },
+        { date: "1606", description: "Fawkes was executed after his failed plot to blow up Protestant Royalty and the Houses of Parliament." },
+        { date: "BONFIRE", description: "His death is celebrated on the 5th November every year with bonfired and fireworks 🧨" },
     ]
 },
 
 {
   "coords": [-1.0802024, 53.9603617],
   "name": "Lady Sarah Hewley",
-  "occupation": "Philanthropist",
-  "description": "xxx",
-  "tldr": "Noted for her charitable work and establishment of almshouses in York.",
+  "occupation": "1627-1710",
+  "description": "Lady Hewley grew up and created her trust fund on this street",
+  "tldr": "Lady Hewley is noted for providing charity that would far outlive her existence.",
   "image": "images/ladysarahhewley.png",
   "events": [
-    { "date": "1705", "description": "Founded almshouses for the elderly and disadvantaged in York." },
-    { "date": "1710", "description": "Established a trust to continue charitable work beyond her lifetime." },
+    { "date": "1705", "description": "Lady Hewley founded almshouses for the elderly and disadvantaged in York. Personally financing the project and setting up a large trust for when she passed. 300 years later, the Trust still maintains the almshouses in St Saviourgate 🏘️" },
+
   ]
 },
 
 { 
     coords: [-1.0778231, 53.9484063], 
-    name: "Frankie Howerd", 
-    occupation: "Comedian", 
-    description: "xxx", 
+    name: "Frankie Howerd OBE", 
+    occupation: "1917-1992", 
+    description: "Frankie Howerd grew up in this location", 
     image: "images/frankiehowerd.png", 
-    tldr: "Frankie Howerd was a legendary comedian known for his unique style in television and stage performances in British comedy.", 
+    tldr: "Frankie Howerd was one of the greatest British entertainers of the 20th century. His plaque reads: 'Son of York.", 
     events: [
-        { date: "1960s", description: "Howerd became famous for his slapstick humor and witty performances on British television, including his sitcoms and stand-up acts 📺" },
-        { date: "1970s", description: "He achieved national fame with his appearances on 'Howerd's World' and 'Up Pompeii!' 🎭" },
-        { date: "1980s", description: "Howerd continued to perform, becoming a beloved figure in British comedy, earning a lasting legacy with his unique comedic style 🤣" },
+        { date: "1940", description: "Howerd served in the Royal Artillery which he became popular in - as an entertainer for the troops 🪖" },
+        { date: "ROYALTY", description: "He was a favourite of the Queen Mother, appearing at Royal Variety performances eight times 1950-1978 👑" },
+        { date: "LEGACY", description: "It came out after his death that Howerd was gay. He received an OBE in 1977 🏳️‍🌈" },
     ]
 },
 
 { 
     coords: [-1.0858436, 53.956914], 
     name: "Anne Lister", 
-    occupation: "Writer & Diarist", 
+    occupation: "1791-1840", 
     description: "xxx", 
     image: "images/annelister.png", 
     tldr: "Anne Lister was a pioneering diarist and writer known for documenting her life and same-sex relationships in her detailed journals.", 
     events: [
-        { date: "Early 1800s", description: "Lister began writing extensive diaries that chronicled her life and relationships, particularly with women 📖" },
-        { date: "1830s", description: "Her diaries became an important document of LGBTQ+ history, offering an unflinching insight into her personal life during a repressive era 🏳️‍🌈" },
-        { date: "1980s", description: "Anne Lister's diaries were rediscovered and published, bringing her story into the public eye and earning her a place in LGBTQ+ history 🌟" },
+        { date: "1798", description: "At the age of only 7, Anne was sent to school in Ripon, an unheard-of show of her intelligence and independence 👩‍🎓" },
+        { date: "2011", description: "She wrote almost four million words in her diaries, mostly about her same-sex orientation. These diaries were recognised as a 'pivotal' moment in British history by the United Nations in 2011 📔" },
     ]
 },
 
 {
   "coords": [-1.0843004, 53.9593267],
   "name": "Yves Mahé",
-  "occupation": "WWII Pilot",
-  "description": "xxx",
-  "tldr": "French pilot credited with defending York during the Baedeker Raids in WWII.",
+  "occupation": "1919-1962",
+  "description": "Yves Mahe is commemorated here",
+  "tldr": "Yves Mahe was a French WW2 hero to the city of York",
   "image": "images/yvesmahe.png",
   "events": [
-    { "date": "1942", "description": "Played a key role in defending York from German air raids." },
-    { "date": "1945", "description": "Recognized for his wartime contributions by both Britain and France." },
+    { "date": "1940", "description": "Yves refused to accept French defeat in the war, so he flew to Gibraltar and then England to join Charles De Gaulle's exiled forces 🇫🇷" },
+    { "date": "1945", "description": "During the Baedeker Blitz on York, Yves attacked the whole Luftwaffe fleet alone with all 8 machine guns blazing, shooting a bomber down. Yves, by himself, caused the enemy aircraft to retreat, preventing them from wiping out the Rowntree's factory 🛩️" },
   ]
 },
 
@@ -457,7 +457,7 @@ const locations = [
   "tldr": "J.B. Morrell turned down a seat in parliament and a knighthood, putting every ounce of his life into York.",
   "image": "images/johnbowesmorell.png",
   "events": [
-    { "date": "1914", "description": "John was appointed Lord Mayor due to his abilities on the York council. He became Lord Mayor again in 1949, whilst already chairing 6 public committies.." },
+    { "date": "1914", "description": "John was appointed Lord Mayor due to his abilities on the York council. He became Lord Mayor again in 1949, whilst already chairing 6 public committees." },
     { "date": "1914", "description": "John released a book named The City of our Dreams, which analysed the past and future of York 📖" },
     { "date": "1914", "description": "John created the York Conservation Trust that now manages a large number of historic York buildings. Members of the Morrell family still run it 🏛️" },
     { "date": "1914", "description": "John was the driving force behind the creation of York University and the library was named after him 🏫" },
@@ -466,10 +466,10 @@ const locations = [
 
 {
   "coords": [-1.0895612, 53.9622175],
-  "name": "John Philips",
+  "name": "John Phillips",
   "occupation": "1800-1874",
-  "description": "John Philips chose to refurbish and live here in St Mary's Lodge.",
-  "tldr": "Orphaned at 7 years old, John Philips become one of England's finest geologists and once debated Charles Darwin.",
+  "description": "John Phillips chose to refurbish and live here in St Mary's Lodge.",
+  "tldr": "Orphaned at 7 years old, John Phillips became one of England's finest geologists and once debated Charles Darwin.",
   "image": "images/johnphilips.png",
   "events": [
     { "date": "1831", "description": "John founded the British Association for the Advancement of Science in 1831. He was secretary until 1863, then becoming President." },
@@ -485,22 +485,22 @@ const locations = [
   "tldr": "Pritchett was a renowned architect, responsible for much of York's buildings",
   "image": "images/jamespigottpritchett.png",
   "events": [
-    { "date": "1845", "description": "Pritchett was the architect of Huddersfield Railway Station, one of the most impressive stations in England 🚂" },
-    { "date": "YORK", "description": "He was also the architect the chapel – now Zizzi’s restaurant – on Lendal (1816), the Chapel on Little Stonegate (1851, now The Banyan bar) and York County Savings Bank in St Helen’s Square (1829-30). " },
+    { "date": "1845", "description": "Pritchett was the architect of Huddersfield Railway Station, considered one of the most impressive stations in England 🚂" },
+    { "date": "YORK", "description": "He was also the architect of the chapel – now Zizzi’s restaurant – on Lendal (1816), the Chapel on Little Stonegate (1851, now The Banyan bar) and York County Savings Bank in St Helen’s Square (1829-30). " },
   ]
 },
 
 { 
     coords: [-1.1002575, 53.9719364], 
     name: "Joseph Rowntree", 
-    occupation: "Philanthropist & Social Reformist", 
-    description: "xxx", 
+    occupation: "1836-1925", 
+    description: "Joseph Rowntree lived out the end of his life right here", 
     image: "images/josephrowntree.png", 
-    tldr: "Joseph Rowntree was a philanthropist and social reformist, known for his impact on social welfare and his association with Rowntree's chocolate.", 
+    tldr: "Joseph Rowntree was the son of Rowntrees founder and one of the first radical supporters of social welfare.", 
     events: [
-        { date: "Late 1800s", description: "Rowntree's established his chocolate company, which became an iconic name in the chocolate industry 🍫" },
-        { date: "1904", description: "He pioneered progressive welfare policies, including the creation of the 'Rowntree Report' on poverty, which influenced social policy in the UK 📊" },
-        { date: "1917", description: "Rowntree created a company town in York, improving the lives of workers by providing affordable housing and better working conditions 🏘️" },
+        { date: "1902", description: "Joseph founded the village of New Earswick for people of low incomes, 'for the improvement of the condition of the working classes' 🏠" },
+        { date: "1923", description: "Joseph retired as company chairman from Rowntree's with 7,000 employees and a turnover of £3 million 🍫" },
+        { date: "LEGACY", description: "Joseph's legacy is everywhere in York. Joseph Rowntree School, Theatre, Park, Baths and Joseph Rowntree Foundation 🏞️" },
   ]
 },
 
@@ -521,13 +521,13 @@ const locations = [
     coords: [-1.0684547, 53.9545201], 
     name: "Samuel Tuke", 
     occupation: "1784-1857", 
-    description: "xxx", 
+    description: "Samuel Tuke lived here for most of his life", 
     image: "images/samueltuke.png", 
-    tldr: "Samuel Tuke was a philanthropist who is renowned for his work with the York Retreat, an institution for mental health patients.", 
+    tldr: "Samuel was a pioneer of mental health healing, calling it a 'divine art'.", 
     events: [
-        { date: "1759", description: "Samuel Tuke helped establish the York Retreat, a progressive facility focused on humane treatment for mental health patients 🏥" },
-        { date: "1815", description: "He wrote *Description of the Retreat*, which became a foundational text in the treatment of mental health issues at the time 📖" },
-        { date: "1829", description: "Tuke’s work contributed to the development of new, compassionate approaches to mental health care across Europe 🌍" },
+        { date: "1813", description: "Samuel published 'Description of the Retreat' which helped publicise the term 'moral treatment' for mental health patients. " },
+        { date: "1815", description: "Samuel Tuke was manager and treasurer of The Retreat for over 40 years. The Retreat, which still operates today, changed the way 'lunatic asylums' were run across the country. " },
+        { date: "1833", description: "Samuel declined an invitation to stand as an MP." },
     ]
 },
 
@@ -539,10 +539,10 @@ const locations = [
   "tldr": "Mary Ward was a Catholic missionary who has one of the greatest religious legacies of all time.",
   "image": "images/maryward.png",
   "events": [
-    { "date": "1869", "description": "Two of Mary’s uncles and a brother-in-law were killed after the Gun Powder Plot." },
-    { "date": "1869", "description": "Mary founded 7 institutions across Europe, beleiving there should be no differnece between men and women being able to do God's work." },
-    { "date": "1869", "description": "She was imprisoned in Munich for heresy." },
-    { "date": "1869", "description": "Her institution became the Congregation of Jesus and is now spread all over the world with 200 schools. Pope Benedict XVI granted her the title 'Venerable' for her 'heroic virtue', 364 years after her death ." },
+    { "date": "1605", "description": "Two of Mary’s uncles and a brother-in-law were killed after the Gunpowder Plot 🧨" },
+    { "date": "1620s", "description": "Mary founded 7 institutions across Europe, believing there should be no difference between men and women being able to do God's work." },
+    { "date": "1631", "description": "She was imprisoned in Munich for heresy by order of Pope Urban VIII ⛓️" },
+    { "date": "LEGACY", "description": "Her institution became the Congregation of Jesus and is now spread all over the world with 200 schools. Pope Benedict XVI granted her the title 'Venerable' for her 'heroic virtue', 364 years after her death ." },
   ]
 },
   { 
@@ -551,11 +551,11 @@ const locations = [
     occupation: "1720-1772",
     description: "John Woolman died in this house.",
     image: "images/johnwoolman.png",
-    tldr: "John Woolman was an American anti-slavery campaigner, who died in York.",
+    tldr: "John Woolman was an American anti-slavery campaigner, who died in York. Before his death he said 'York looks like home to me'.",
     events: [
-      { date: "1928", description: "He created Joseph Terry & Co in St Helen's Square" },
-      { date: "1928", description: "He created Joseph Terry & Co in St Helen's Square" },
-      { date: "1928", description: "He created Joseph Terry & Co in St Helen's Square" },
+      { date: "1758", description: "Woolman made a passionate speech to his fellow Quakers to abolish holding slaves. The Quakers then became the first large body to free slaves in America." },
+      { date: "1772", description: "He travelled to England to campaign in steerage rather than cabin accommodation, to emulate what the slaves felt ⛵" },
+      { date: "ETHICS", description: "He wore all-white attire due to his refusal to use slave-grown products, mainly indigo dye 🥼" },
     ]
   },
   { 
@@ -567,7 +567,7 @@ const locations = [
     tldr: "Joseph Terry is the founder of the company behind Chocolate Orange and many more famous chocolates.",
     events: [
       { date: "CHEMIST", description: "Joseph apprenticed as a chemist, utilising these skills to make cakes, sweets, marmalade, candied peel, mushroom ketchup and lozenges 🍫" },
-      { date: "1928", description: "He created Joseph Terry & Co in St Helen's Square" },
+      { date: "1828", description: "He created Joseph Terry & Co in St Helen's Square." },
       { date: "2025", description: "Multiple takeovers have happened since WW2, but Terry's is now a £60 million/year business 💸" },
     ]
   },
@@ -579,7 +579,7 @@ const locations = [
     image: "images/josephterry1.png",
     tldr: "Joseph Terry is the founder of the company behind Chocolate Orange and many more famous chocolates.",
     events: [
-      { date: "CHEMIST", description: "Joseph apprenticed as a chemist, utilising these skills to make cakes, sweets, marmalade, candied peel, mushroom ketchup and lozenges 🍫" },
+      { date: "CHEMIST", description: "Joseph apprenticed as a chemist in York, utilising these skills to make cakes, sweets, marmalade, candied peel, mushroom ketchup and lozenges 🍫" },
       { date: "1928", description: "He created Joseph Terry & Co in St Helen's Square" },
       { date: "2025", description: "Multiple takeovers have happened since WW2, but Terry's is now a £60 million/year business 💸" },
     ]
@@ -592,8 +592,8 @@ const locations = [
     image: "images/jamesbackhouse.png",
     tldr: "James Backhouse was a botanist, missionary and philanthropist.",
     events: [
-      { date: "1815", description: "James bought a York botanic nursery and allowed it to flourish." },
-      { date: "TOUR", description: "He visited all the British colonies and campaigned for fairer conditions for prisoners and aboriginals. He also sent plants back to his nursery." },
+      { date: "1815", description: "James bought a York botanic nursery and allowed it to flourish 🌿" },
+      { date: "TOUR", description: "He visited all the British colonies and campaigned for fairer conditions for prisoners and Aboriginal people. He also sent plants back to his nursery 🌏" },
       { date: "PHILANTHROPY", description: "James generously gave financial aid and gave hundreds of public speeches over his life." },
     ]
   },
@@ -607,7 +607,7 @@ const locations = [
     events: [
       { date: "1830", description: "The Yorkshire Museum opened and the initial three acres of Museum Gardens were landscaped and planted by Henry 🌷" },
       { date: "1840", description: "At his own expense, Henry Baines published Flora of Yorkshire 📖" },
-      { date: "1840", description: "Henry lived on Museum Garden grounds his entire life, so did his daughter." },
+      { date: "1840", description: "Henry lived on Museum Garden grounds his entire life, as did his daughter." },
     ]
   },
   { 
@@ -620,7 +620,7 @@ const locations = [
     events: [
       { date: "1947", description: "John worked as a projectionist at the York Rialto cinema from the age of 14. He also played in a York jazz band called the Modernaires 📽️" },
       { date: "1950s", description: "He played with and arranged for various army ensembles whilst on service in Cyprus and Egypt." },
-      { date: "1962", description: "He was paid £250 to create the soundtrack for the first Bond film, Dr No. This theme tune was used in 11 Bond films." },
+      { date: "1962", description: "He was paid £250 to create the theme tune for the first Bond film, Dr No. This theme tune was used in 11 Bond films." },
       { date: "AWARDS", description: "John won four Grammys, two Academy Awards, a BAFTA and a Golden Globe - but none for any of the Bond scores 🏆" },
     ]
   },
@@ -632,8 +632,8 @@ const locations = [
     image: "images/maryellenbest.png",
     tldr: "Mary Ellen Best was a prominent York water-colour artist.",
     events: [
-      { date: "1840", description: "Mary went on three continental tours of Europe, painting people and places. She then moved to Germany with her new husband." },
-      { date: "1830s", description: "Most of her paintings, estimated to be around 1500, featured scenes around York and in her own home in Clifton 🖼️" },
+      { date: "1840", description: "Mary went on three continental tours of Europe, painting various people and places. She then moved to Germany with her new husband." },
+      { date: "1830s", description: "Most of her paintings, estimated to number around 1500, featured scenes around York and in her own home in Clifton 🖼️" },
     ]
   },
   { 
@@ -647,7 +647,7 @@ const locations = [
       { date: "EDUCATED", description: "George won a scholarship to Eton College in 1899. Five years later he joined Trinity College, Oxford 🎓" },
       { date: "1913", description: "George performed his hit songs at Leeds Festival 🎼" },
       { date: "1916", description: "Killed in action during WW1, less than a month after receiving the Military Cross. A citation states that he had commanded the Company when the Captain was wounded ‘with great ability and coolness … and total disregard of personal safety’." },
-      { date: "ETERNAL", description: "Butterworth trench is officially named after George as he was in charge of a group digging a trench under heavy German fire 🪦" },
+      { date: "ETERNAL", description: "The Butterworth Trench was officially named in his honour as he was in charge of a group digging a trench under heavy German fire 🪦" },
     ]
   },
   { 
@@ -656,7 +656,7 @@ const locations = [
     occupation: "1907–1975",
     description: "Hans Hess lived here in Skeldergate. He once hosted Charlie Chaplin.",
     image: "images/hanshess.png",
-    tldr: "German-born Jew Hans Hess was a German museum curator and art historian.",
+    tldr: "German-born Jew Hans Hess was a museum curator and art historian.",
     events: [
       { date: "UPBRINGING", description: "His wealthy father won the contract to provide boots for the Soviet Red Army 🥾" },
       { date: "1935", description: "Moved to London to escape Nazi Germany." },
@@ -683,9 +683,9 @@ const locations = [
     image: "images/stephencorder.png",
     tldr: "Stephen Corder was one of the founding fathers of applied linguistics and founding chair of the British Association for Applied Linguistics (BAAL).",
     events: [
-      { date: "1918", description: "Corder acquired a second language at birth from his Dutch mother 🇳🇱" },
+      { date: "1918", description: "Raised by a Dutch mother, Corder was bilingual from birth 🇳🇱" },
       { date: "1964", description: "Corder became Director of the School of Applied Linguistics at the University of Edinburgh 👨‍🎓" },
-      { date: "2022", description: "BAAL community stands at over 1400 members." },
+      { date: "2022", description: "BAAL community now stands at over 1400 members." },
     ]
   },
   { 
@@ -697,7 +697,7 @@ const locations = [
     tldr: "Mary Ann Craven was known for building one of the largest boiled sweets businesses of her time whilst dealing with personal setbacks remarkably.",
     events: [
       { date: "1860", description: "Her father and husband both died within two years. She faced raising three young children whilst running two businesses." },
-      { date: "1890", description: "Due to Mary Ann's legacy, by 1980 the Craven's business was producing 5,000 tons of sweets annually with a workforce of 380 🍬" },
+      { date: "1980", description: "Due to Mary Ann's legacy, by 1980 the Craven's business was producing 5,000 tons of sweets annually with a workforce of 380 🍬" },
     ]
   },
   { 
@@ -709,7 +709,7 @@ const locations = [
     tldr: "Mary Ann Craven was known for building one of the largest boiled sweets businesses of her time whilst dealing with personal setbacks remarkably.",
     events: [
       { date: "1860", description: "Her father and husband both died within two years. She faced raising three young children whilst running two businesses." },
-      { date: "1890", description: "Due to Mary Ann's legacy, by 1980 the Craven's business was producing 5,000 tons of sweets annually with a workforce of 380 🍬" },
+      { date: "1980", description: "Due to Mary Ann's legacy, by 1980 the Craven's business was producing 5,000 tons of sweets annually with a workforce of 380 🍬" },
     ]
   }
 ];
