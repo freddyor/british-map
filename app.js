@@ -44,7 +44,7 @@ stylePopup.innerHTML = `
 
   /* Style for the description text */
   .mapboxgl-popup-content p {
-    font-weight: normal !important; /* Ensure the description text is not bold */
+    font-weight: bold !important; /* Ensure the description text is not bold */
     text-align: center; /* Align text centrally */
     letter-spacing: -0.5x;
     font-size: 13px !important; /* Ensure the size matches the text size used for the cards */
