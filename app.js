@@ -12,7 +12,7 @@ var map = new mapboxgl.Map({
 // Create a <style> element to add the CSS
 const stylePopup = document.createElement('style');
 
-// Add the link to Google Fonts for Poppinse
+// Add the link to Google Fonts for Poppins
 const link = document.createElement('link');
 link.href = "https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap";
 link.rel = "stylesheet";
@@ -167,55 +167,53 @@ const locations = [
     ]
   },
   {
-    coords: [ -1.0978319, 53.9526401 ], 
+    coords: [ -1.0854884, 53.9618703 ], 
     name: "Judi Dench", 
-    occupation: "Actress", 
-    description: "xxx",
+    occupation: "1934-", 
+    description: "Judi Dench watched her first plays here as a child",
     image: "images/judidench.png",
-    tldr: "Award-winning actress known for her roles in film, TV, and theatre.",
+    tldr: "Judi Dench needs no introduction, she is one of the greatest actors of all time.",
     events: [
-      { date: "1957", description: "Made her professional debut with the Old Vic Company." },
-      { date: "1995", description: "Portrayed M in the James Bond franchise." },
-      { date: "2001", description: "Won an Academy Award for 'Shakespeare in Love'." },
+      { date: "1998", description: "Dench won an Academy Award for playing Queen Elizabeth in 'Shakespeare in Love.' She has won over 20 prestigious awards over her seven-decade career, including two Golden Globes." },
+      { date: "1995", description: "Dench is the longest-serving cast member of the James Bond franchise, playing M until 2015." },
+      { date: "CHARITY", description: "By the late 1990s she was patron of over 180 charities, including York Against Cancer." },
     ]
   },
   {
     coords: [ -1.0878828, 53.9642257 ], 
     name: "W.H. Auden", 
-    occupation: "Poet", 
-    description: "xxx",
+    occupation: "1907-1973", 
+    description: "W.H.Auden was born and lived his inital years at this location",
     image: "images/whauden.png",
-    tldr: "Influential poet known for his modernist and political works.",
+    tldr: "Wystan Hugh Auden is often classed as Britain's greatest 20th century writer.",
     events: [
-      { date: "1930", description: "Published his first book of poetry." },
-      { date: "1939", description: "Moved to the U.S. and became an American citizen." },
-      { date: "1973", description: "Passed away, leaving behind a vast collection of poetry." },
+      { date: "1948", description: "He won the Pulitzer Prize for 'The Age of Anxiety'." },
+      { date: "1967", description: "Auden was considered to be Poet Laureate of the United Kingdom but was rejected due to his American citizenship." },
     ]
   },
   {
     coords: [ -1.0900558, 53.9488163 ], 
     name: "Steve McLaren", 
-    occupation: "Football Manager", 
-    description: "xxx",
+    occupation: "1961-", 
+    description: "Steve McLaren studied here as a child",
     image: "images/stevemclaren.png",
-    tldr: "Football coach known for his tenure with England and club teams.",
+    tldr: "Steve McLaren is oone of England's greatest football managers.",
     events: [
-      { date: "2001", description: "Became Middlesbrough's first-team manager." },
+      { date: "1970s", description: "Steve chose to cycle 4 miles a day to Nunthorpe school due to its emphasis on sports 🚴" },
       { date: "2006", description: "Appointed England national team manager." },
-      { date: "2010", description: "Won the Eredivisie title with FC Twente." },
+      { date: "SUCCESS", description: "He won one champions league and three Premier Leagues as assistant Manchester United manager 🏆" },
     ]
   },
   {
     coords: [ -1.0761981, 53.9747056 ], 
     name: "David Bradley", 
-    occupation: "Actor", 
-    description: "xxx",
+    occupation: "1942-", 
+    description: "Award-winning David Bradley performed stage musicals here as a child",
     image: "images/davidbradley.png",
-    tldr: "Versatile actor known for roles in TV and film.",
+    tldr: "David Bradley is one of the finest actors Britain has produced.",
     events: [
-      { date: "2002", description: "Played Argus Filch in the 'Harry Potter' series." },
-      { date: "2013", description: "Portrayed William Hartnell in 'An Adventure in Space and Time'." },
-      { date: "2017", description: "Became the First Doctor in 'Doctor Who'." },
+      { date: "FILCH", description: "He played Argus Filch in the 'Harry Potter' series 🪄" },
+      { date: "2017", description: "Bradley played 'The First Doctor' in Doctor Who in 2017 and 2023." },
     ]
   },
  { 
@@ -249,97 +247,97 @@ const locations = [
 { 
     coords: [ -1.0793124, 53.9592983 ], 
     name: "Benedict of York", 
-    occupation: "Religious Figure", 
-    description: "xxx", 
-    tldr: "Benedict of York was a religious figure during medieval times, known for his role in the early Christian church in York.", 
+    occupation: "1189", 
+    description: "Benedict of York once lived here", 
+    tldr: "Benedict of York was a leading York Jew and the second-greatest moneylender behind Josce.", 
     image: "images/benedictofyork.png", 
     events: [
-        { date: "8th Century", description: "Benedict was one of the earliest Christian figures in York, establishing religious foundations in the region ✝️" },
-        { date: "9th Century", description: "He helped to spread Christianity across York and neighboring areas, influencing the religious culture in northern England 🕊️" },
-        { date: "Medieval Period", description: "Benedict’s work contributed to York’s rise as an important center for religious and cultural activity 🏰" },
+        { date: "WEALTH", description: "William of Newbury described Benedict's house as \"unto a royal palace in size and strength\"." },
+        { date: "1189", description: "Benedict attended the coronation of King Richard I where he was forcibly baptised. He was killed shortly after." },
+        { date: "1190", description: "His children and widow were burned alive in his house during the Easter York riot." },
     ]
 },
 
 { 
     coords: [ -1.0791789, 53.9589197 ], 
     name: "Josce of York", 
-    occupation: "Religious Figure", 
-    description: "xxx", 
-    tldr: "Josce of York was a key religious leader in early medieval England, contributing significantly to the Christian community.", 
+    occupation: "1190", 
+    description: "Josce of York once lived here", 
+    tldr: "Josce of York was the wealthy leader of the Jewish community in York.", 
     image: "images/josceofyork.png", 
     events: [
-        { date: "9th Century", description: "Josce was an influential religious leader, playing a major role in spreading Christianity across York and northern England 🏰" },
-        { date: "Early Medieval Period", description: "He was part of the founding community that built the foundations for York’s cathedral and its religious traditions ⛪" },
-        { date: "10th Century", description: "Josce’s work shaped the religious landscape of York for generations, helping to cement its place as an important ecclesiastical center ✝️" },
+        { date: "JEWISH", description: "Josce owned the land of which the Chief Synagogue in London was built." },
+        { date: "1190", description: "When an angry mob trapped York's Jewish community in Clifford's Tower, the decision was made to mutually committ suicide rather than face the mob. Josce was the first to act, slaying his wife and children." },
     ]
 },
 
 { 
     coords: [ -1.0814422, 53.9576632 ], 
     name: "Christopher Levett", 
-    occupation: "Explorer", 
-    description: "xxx", 
-    tldr: "Christopher Levett was an English explorer and adventurer in the 17th century, known for his expeditions to the Americas.", 
+    occupation: "1586-1630", 
+    description: "Christopher Levett was born and raised here", 
+    tldr: "Christopher Levett was a key figure in the New World discovery.", 
     image: "images/christopherlevett.png", 
     events: [
-        { date: "1623", description: "Levett sailed to New England, becoming one of the first to explore the region and document his findings 🌎" },
-        { date: "1624", description: "He led an expedition to establish a settlement in Maine, though it ultimately failed due to harsh conditions ⚓" },
-        { date: "17th Century", description: "Despite the failure of his settlement, Levett’s voyages contributed to early English exploration and colonization efforts in the Americas 🌍" },
+        { date: "1623", description: "Levett became the first European to settle present-day Maine after securing 6000 acres from the King. He called the settlement York, this was the orginal New York 🌎" },
+        { date: "1624", description: "He commanded HMS Susan and Ellen during the attack of the Spanish at Cadiz ⚓" },
+        { date: "1624", description: "Fort Levett in Maine is named after Christopher. Also, present-day York County, Maine, derives its name from his ambitions. " },
     ]
 },
 
 { 
     coords: [ -1.0810119, 53.962882 ], 
     name: "Elizabeth Montagu", 
-    occupation: "Philanthropist", 
-    description: "xxx", 
-    tldr: "Elizabeth Montagu was a prominent philanthropist and writer, known for her intellectual contributions to British society.", 
+    occupation: "1718-1800", 
+    description: "Elizabeth Montagu was raised here in Treasurer's House", 
+    tldr: "Elizabeth Montagu was a philanthropist who used her priveledged social position to advance the status od women.", 
     image: "images/elizabethmontagu.png", 
     events: [
-        { date: "18th Century", description: "Montagu became a key figure in the Bluestocking Society, a group that promoted women’s education and intellectual development 🎓" },
-        { date: "1740s", description: "She became known for her philanthropic work, supporting education and healthcare initiatives for women and children 👩‍🏫" },
-        { date: "1760s", description: "Montagu’s legacy lives on as a trailblazer in social reform and women’s rights, influencing later generations of philanthropists 🌟" },
+        { date: "WEALTH", description: "Elizabeth married into the extrmemely wealth Montagu family. She inherites substantial amounts upon her husbands death 💰" },
+        { date: "Late 1800s", description: "Elizabeth used her London mansion to hold Bluestocking meetings, which gave women the chance to join debate. Queen Charlotte and her daughters even visited 👑" },
+        { date: "LEGACY", description: "Elizabeth and the Bluestockings were mentioned in the works of most future womens rights activists." },
     ]
 },
 
 { 
     coords: [ -1.0978319, 53.9526401 ], 
     name: "Tessa Rowntree", 
-    occupation: "Philanthropist", 
-    description: "xxx", 
-    tldr: "Tessa Rowntree was known for her charitable work and influence, particularly in education and social reform.", 
+    occupation: "1909-1999", 
+    description: "Tessa Rowntree went to school here at The Mount", 
+    tldr: "Tessa Rowntree was a charity worker, descendent of Joseph Rowntree.", 
     image: "images/tessarowntree.png", 
     events: [
-        { date: "Early 20th Century", description: "Tessa Rowntree worked to improve access to education and social services for underprivileged communities in York 📚" },
-        { date: "1910s", description: "She helped fund programs supporting women’s rights and healthcare, especially for working-class families 💪" },
-        { date: "1920s", description: "Her philanthropic efforts left a lasting impact on York’s educational and social landscape 🏫" },
+        { date: "1938", description: "Tessa was in Germany when she saw Hitler. She saw his personal magnetism despite his 'horrid little voice'. She also saw Joseph Goebbels." },
+        { date: "1939", description: "She helped evacuate and settle hundreds of refugees from Europe in England. She escorted 66 kindergarten children to England." },
+        { date: "1946", description: "Tessa and her partner settled in New Jersey, where she worked as a librarian until death 🇺🇸" },
     ]
 },
 
 { 
     coords: [ -1.0989721, 53.9498429 ], 
     name: "Lt Col Best-Dunkley", 
-    occupation: "Military Officer", 
-    description: "xxx", 
-    tldr: "Lt Col Best-Dunkley was a distinguished military officer known for his strategic contributions during his service.", 
+    occupation: "1890-1917", 
+    description: "Brtram Best-Dunkley grew up on this street", 
+    tldr: "Lt Col Best-Dunkley was a heroic military captain who died in Belgium..", 
     image: "images/bestdunkley.png", 
     events: [
-        { date: "World War I", description: "Lt Col Best-Dunkley served with distinction during World War I, playing a critical role in battlefield strategy and leadership ⚔️" },
-        { date: "Post-WWI", description: "He contributed to military reforms and helped shape the future of the British armed forces 🇬🇧" },
-        { date: "Early 20th Century", description: "Best-Dunkley’s leadership was widely praised, and his legacy as a military strategist has influenced future generations of officers 🏅" },
+        { date: "CHINA", description: "Before the war, Best-Dunkley was a teacher at Tienstin Grammar School, China 🇨🇳" },
+        { date: "1917", description: "\"Lt.-Col. Best-Dunkley dashed forward, rallied his leading waves, and personally led them to the assault of these positions, which, despite heavy losses, were carried. He continued to lead his battalion until all their objectives had been gained. This gallant officer has since died of wounds\"." },
+        { date: "1917", description: "He was awarded the Victoria Cross 0 the highest award in British armed forces 🎖️" },
     ]
 },
 
   { 
     coords: [-1.0843668, 53.9600807], 
     name: "Frederick Belmont", 
-    occupation: "Confectioner & Entrepreneur", 
-    description: "Frederick Belmont founded Bettys Tea Rooms, a beloved Yorkshire institution.",
+    occupation: "-1952", 
+    description: "This is where Frederick Belmont opened up the second Bettys",
     image: "images/frederickbelmont.png",
+    tldr: "Frederick Belmont was a Swiss orphan who founded Bettys Tea Rooms.",
     events: [
-      { date: "1885", description: "Born in Switzerland." },
-      { date: "1919", description: "Founded Bettys Tea Rooms in Harrogate." },
-      { date: "1952", description: "Passed away, leaving behind a legacy in Yorkshire hospitality." },
+      { date: "YOUTH", description: "He was orphaned at five years and effectively auctioned off to a farmer." },
+      { date: "1919", description: "Bettys Tea Rooms in Harrogate was first opened. He described it as \"sink or swim\". He had trained to be a baker in France and crossed the Channel to make a life in England. " },
+      { date: "1936", description: "Frederick looked out from the deck onto New York during the Queen Mary maiden voyage. His jounrey was inspirational." },
     ]
 },
 
@@ -454,39 +452,41 @@ const locations = [
 {
   "coords": [-1.091256, 53.9693543],
   "name": "John Bowes Morrell",
-  "occupation": "Historian & Philanthropist",
-  "description": "xxx",
-  "tldr": "Historian and benefactor who played a major role in preserving York’s heritage.",
+  "occupation": "1873-1963",
+  "description": "This was the home of J.B. Morrell",
+  "tldr": "J.B. Morrell turned down a seat in parliament and a knighthood, putting every ounce of his life into York.",
   "image": "images/johnbowesmorell.png",
   "events": [
-    { "date": "1923", "description": "Helped found the York Conservation Trust." },
-    { "date": "1946", "description": "Instrumental in the creation of the Borthwick Institute for Archives." },
+    { "date": "1914", "description": "John was appointed Lord Mayor due to his abilities on the York council. He became Lord Mayor again in 1949, whilst already chairing 6 public committies.." },
+    { "date": "1914", "description": "John released a book named The City of our Dreams, which analysed the past and future of York 📖" },
+    { "date": "1914", "description": "John created the York Conservation Trust that now manages a large number of historic York buildings. Members of the Morrell family still run it 🏛️" },
+    { "date": "1914", "description": "John was the driving force behind the creation of York University and the library was named after him 🏫" },
   ]
 },
 
 {
   "coords": [-1.0895612, 53.9622175],
   "name": "John Philips",
-  "occupation": "Geologist",
-  "description": "xxx",
-  "tldr": "Pioneering geologist who helped establish the concept of the geological time scale.",
+  "occupation": "1800-1874",
+  "description": "John Philips chose to refurbish and live here in St Mary's Lodge.",
+  "tldr": "Orphaned at 7 years old, John Philips become one of England's finest geologists and once debated Charles Darwin.",
   "image": "images/johnphilips.png",
   "events": [
-    { "date": "1841", "description": "Published influential work defining the geological time scale." },
-    { "date": "1853", "description": "Appointed Keeper of the Ashmolean Museum, Oxford." },
+    { "date": "1831", "description": "John founded the British Association for the Advancement of Science in 1831. He was secretary until 1863, then becoming President." },
+    { "date": "1856", "description": "He became Professor of Geology at University of Oxford and was elected President to the Geological Society of London 🏫" },
   ]
 },
 
 {
   "coords": [-1.0726007, 53.9504313],
   "name": "James Pigott Pritchett",
-  "occupation": "Architect",
-  "description": "xxx",
-  "tldr": "Architect known for his work on York Cemetery and many churches in Yorkshire.",
+  "occupation": "1789-1868",
+  "description": "James Pigott Pritchett was the architect of this cemetery and was buried here",
+  "tldr": "Pritchett was a renowned architect, responsible for much of York's buildings",
   "image": "images/jamespigottpritchett.png",
   "events": [
-    { "date": "1837", "description": "Designed the York Cemetery Chapel and gatehouse." },
-    { "date": "1850", "description": "Contributed to numerous church restorations in Yorkshire." },
+    { "date": "1845", "description": "Pritchett was the architect of Huddersfield Railway Station, one of the most impressive stations in England 🚂" },
+    { "date": "YORK", "description": "He was also the architect the chapel – now Zizzi’s restaurant – on Lendal (1816), the Chapel on Little Stonegate (1851, now The Banyan bar) and York County Savings Bank in St Helen’s Square (1829-30). " },
   ]
 },
 
@@ -507,26 +507,25 @@ const locations = [
 { 
     coords: [-1.0829369, 53.9611485], 
     name: "Laurence Stern", 
-    occupation: "Author", 
-    description: "xxx", 
+    occupation: "1713-1768", 
+    description: "This is where Tristam Shandy was first published. ", 
     image: "images/laurencestern.png", 
-    tldr: "Laurence Stern was the author of *The Life and Opinions of Tristram Shandy, Gentleman*, a groundbreaking work in literature.", 
+    tldr: "Laurence Stern was the author of The Life and Opinions of Tristram Shandy, Gentleman, a groundbreaking yet divisive work in literature.", 
     events: [
-        { date: "1759", description: "Published *The Life and Opinions of Tristram Shandy, Gentleman*, a pioneering work of modernist literature that broke traditional narrative structures 📚" },
-        { date: "1767", description: "Stern’s innovative storytelling techniques influenced later writers such as James Joyce and Virginia Woolf 📝" },
-        { date: "1770", description: "His works became a key part of English literary culture, gaining attention for their wit and unconventional style 📖" },
+        { date: "1759", description: "First 200 copies of Tristam Shandy were sold in Stonegate. A London bookseller turned him down so he did this at his own expense. 📚" },
+        { date: "INFLUENCE", description: "George Washington, Karl Marx and Goethe were all fans of Tristam Shandy. The book is still printed today all over the world. 📝" },
     ]
 },
 
 { 
     coords: [-1.0684547, 53.9545201], 
     name: "Samuel Tuke", 
-    occupation: "Philanthropist", 
+    occupation: "1784-1857", 
     description: "xxx", 
     image: "images/samueltuke.png", 
     tldr: "Samuel Tuke was a philanthropist who is renowned for his work with the York Retreat, an institution for mental health patients.", 
     events: [
-        { date: "1796", description: "Samuel Tuke helped establish the York Retreat, a progressive facility focused on humane treatment for mental health patients 🏥" },
+        { date: "1759", description: "Samuel Tuke helped establish the York Retreat, a progressive facility focused on humane treatment for mental health patients 🏥" },
         { date: "1815", description: "He wrote *Description of the Retreat*, which became a foundational text in the treatment of mental health issues at the time 📖" },
         { date: "1829", description: "Tuke’s work contributed to the development of new, compassionate approaches to mental health care across Europe 🌍" },
     ]
@@ -535,13 +534,15 @@ const locations = [
 {
   "coords": [-1.0550529, 53.9668541],
   "name": "Mary Ward",
-  "occupation": "Scientist & Author",
-  "description": "xxx",
-  "tldr": "One of the first women known to have written about science in Victorian Britain.",
+  "occupation": "1585-1645",
+  "description": "Mary Ward died here at Heworth Manor",
+  "tldr": "Mary Ward was a Catholic missionary who has one of the greatest religious legacies of all time.",
   "image": "images/maryward.png",
   "events": [
-    { "date": "1869", "description": "Published ‘The Microscope’ to popular acclaim." },
-    { "date": "1869", "description": "Tragically became one of the first recorded automobile accident fatalities." },
+    { "date": "1869", "description": "Two of Mary’s uncles and a brother-in-law were killed after the Gun Powder Plot." },
+    { "date": "1869", "description": "Mary founded 7 institutions across Europe, beleiving there should be no differnece between men and women being able to do God's work." },
+    { "date": "1869", "description": "She was imprisoned in Munich for heresy." },
+    { "date": "1869", "description": "Her institution became the Congregation of Jesus and is now spread all over the world with 200 schools. Pope Benedict XVI granted her the title 'Venerable' for her 'heroic virtue', 364 years after her death ." },
   ]
 },
   { 
@@ -562,7 +563,7 @@ const locations = [
     name: "Joseph Terry",
     occupation: "1793-1850",
     description: "Joseph Terry lived here on Tadcaster Road",
-    image: "images/josephterry1.png",
+    image: "images/josephterry2.png",
     tldr: "Joseph Terry is the founder of the company behind Chocolate Orange and many more famous chocolates.",
     events: [
       { date: "CHEMIST", description: "Joseph apprenticed as a chemist, utilising these skills to make cakes, sweets, marmalade, candied peel, mushroom ketchup and lozenges 🍫" },
@@ -624,7 +625,7 @@ const locations = [
     ]
   },
   { 
-    coords: [1.0917633, 53.9663689],
+    coords: [-1.0917633, 53.9663689],
     name: "Mary Ellen Best",
     occupation: "1809-1891",
     description: "Mary Ellen Best lived here in number 14.",
