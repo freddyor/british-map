@@ -33,10 +33,13 @@
             z-index: 1000;
         }
 
-        /* Optional centering */
-        #bmc-button-container > div {
-            display: flex;
-            justify-content: center;
+        /* Styles to force text in one line */
+        #bmc-button-container .bmc-btn {
+            white-space: nowrap !important;
+            overflow: visible !important;
+            text-overflow: clip !important;
+            width: auto !important;
+            min-width: max-content !important;
         }
 
         /* Responsive styles for mobile */
@@ -44,21 +47,18 @@
             #bmc-button-container {
                 transform: translateX(-50%) scale(0.6);
                 bottom: 10px;
-                width: auto;
-                padding-left: 20px;
-                padding-right: 20px;
+                width: 90vw; /* Use viewport width */
+                max-width: none;
+                padding: 0;
             }
             
             #bmc-button-container > div {
-                width: auto;
-                max-width: 200px;
+                width: 100%;
             }
 
             #bmc-button-container .bmc-btn {
-                width: 100%;
-                white-space: normal;
-                line-height: 1.2;
-                padding: 8px 12px;
+                font-size: 14px !important; /* Adjust if needed */
+                padding: 8px 12px !important;
             }
         }
     </style>
