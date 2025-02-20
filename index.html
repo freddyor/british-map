@@ -25,10 +25,11 @@
             height: 100vh;
         }
 
-        /* Example styling for the button container - adjust as needed */
-        .bmc-button-container {
-            text-align: center; /* Center the button */
-            margin-top: 20px;   /* Add some space above */
+        #bmc-wbtn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            z-index: 1000;
         }
     </style>
 </head>
@@ -36,12 +37,10 @@
 
     <div id="map"></div>
 
-    <!-- Buy Me a Coffee Button -->
-    <div class="bmc-button-container">
-        <script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" data-slug="britmap" data-color="#BD5FFF" data-emoji="☕"  data-font="Poppins" data-text="Buy me a coffee" data-outline-color="#000000" data-font-color="#ffffff" data-coffee-color="#FFDD00" ></script>
-    </div>
-
     <script src="index.js" type="module" defer></script>
+
+    <div id="bmc-wbtn"></div>
+    <script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" data-slug="britmap" data-color="#BD5FFF" data-emoji="☕"  data-font="Poppins" data-text="Buy me a coffee" data-outline-color="#000000" data-font-color="#ffffff" data-coffee-color="#FFDD00" ></script>
 
 </body>
 </html>
