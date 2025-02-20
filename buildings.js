@@ -8,7 +8,7 @@ export const buildings = [
     tldr: "The Minster is the largest Gothic Cathedral in Northern Europe.",
     events: [
       { date: "WW2", description: "During World War II, 109 stained glass windows were removed and hidden in secret locations to protect them from bombing." },
-      { date: "2022", description: "King Charles III visited York Minster to unveil a statue of Queen Elizabeth II." },
+      { date: "2022", description: "King Charles III visited York Minster to unveil a statue of Queen Elizabeth II." }
     ]
   },
     {
@@ -44,7 +44,7 @@ export const buildings = [
     tldr: "A preserved Georgian townhouse, unique in that 99% of the furniture is English made.",
     events: [
      { date: "1984", description: "The Duchess of Kent opened the restored house to the public. It had previously been used as a cinema." },
-      { date: "TERRY'S", description: "This building is home to the furniture collection of Noel Terry, founder of Terry's chocolate business." },
+      { date: "TERRY'S", description: "This building is home to the furniture collection of Noel Terry, founder of Terry's chocolate business." }
     ]
   },
 {
@@ -56,7 +56,7 @@ export const buildings = [
     tldr: "A historic civic originally built as a meeting place for the City's guilds (merchants).",
     events: [
       { date: "1483", description: "King Richard III was entertained here." },
-      { date: "1647", description: "During the English Civil War, a ransom of £200,000 was counted within its walls to secure the release of Charles I from the Scots." },
+      { date: "1647", description: "During the English Civil War, a ransom of £200,000 was counted within its walls to secure the release of Charles I from the Scots." }
     ]
   },
  {
