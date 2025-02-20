@@ -27,24 +27,16 @@
 
         #bmc-button-container {
             position: fixed;
-            bottom: 20px;
+            bottom: 10px;
             left: 50%;
-            transform: translateX(-50%);
+            transform: translateX(-50%) scale(0.5); /* Adjust scale factor as needed */
             z-index: 1000;
         }
 
-        /* Reduce button size for all screens */
-        #bmc-button-container .bmc-button {
-            font-size: 14px; /* Adjust font size */
-            padding: 8px 12px; /* Adjust padding */
-        }
-
-        /* Mobile-specific styles */
-        @media (max-width: 768px) {
-            #bmc-button-container .bmc-button {
-                font-size: 12px; /* Smaller font size for mobile */
-                padding: 6px 10px; /* Smaller padding for mobile */
-            }
+        /* Optional centering */
+        #bmc-button-container > div {
+            display: flex;
+            justify-content: center;
         }
     </style>
 </head>
