@@ -1,7 +1,7 @@
 export const buildings = [
   {
     name: "York Minster",
-    coords: [-1.0834619, 53.9622239],
+    coords: [-1.0834619, 53.9622239]
     image: "images/yorkminster.png",
     description: "",
     occupation: "1220",
@@ -25,7 +25,7 @@ export const buildings = [
   },
 {
     name: "Clifford's Tower",
-    coords: [-1.0804, 53.9645],
+    coords: [-1.0795551, 53.9555807],
     image: "images/cliffordstower.png",
     description: "",
     occupation: "1086",
@@ -37,31 +37,31 @@ export const buildings = [
   },
 {
     name: "Fairfax House",
-    coords: [-1.0799, 53.9592], // Approximate coordinates
+    coords: [-1.0801434, 53.9567042], // Approximate coordinates
     image: "images/fairfaxhouse.png", // Replace with actual image path
     description: "",
     occupation: "1740s",
     tldr: "A preserved Georgian townhouse, unique in that 99% of the furniture is English made.",
     events: [
-     { date: "October 31, 1984", description: "The Duchess of Kent opened the restored house to the public." },
-      { date: "TERRY'S", description: "This buidling is home to the furniture collectioN of Noel Terry, founder of Terry's chocolate business." },
+     { date: "1984", description: "The Duchess of Kent opened the restored house to the public. It had previously been used as a cinema." },
+      { date: "TERRY'S", description: "This buidling is home to the furniture collection of Noel Terry, founder of Terry's chocolate business." },
     ]
   },
 {
     name: "York Guildhall",
-    coords: [-1.0783, 53.9585], // Approximate coordinates
+    coords: [,-1.0847032, 53.9600261], // Approximate coordinates
     image: "images/yorkguildhall.png", // Replace with actual image path
     description: "",
     occupation: "1459",
     tldr: "A historic civic building with a rich political and social history.",
     events: [
       { date: "1647", description: "During the English Civil War, a ransom of £200,000 was counted within its walls to secure the release of Charles I from the Scots." },
-      { date: "October 1850", description: "Prince Albert, the Prince Consort to Queen Victoria, attended a royal banquet here." }
+      { date: "1850", description: "Prince Albert, the Prince Consort to Queen Victoria, attended a royal banquet here." }
     ]
   },
  {
     name: "King's Manor",
-    coords: [ -1.0853, 53.9638], // Replace with accurate coordinates
+    coords: [ -1.0861623, 53.9623288], // Replace with accurate coordinates
     image: "images/kingsmanor.png", // Replace with actual image path
     description: "",
     occupation: "Medieval", // Replace with accurate date
