@@ -25,58 +25,39 @@
             height: 100vh;
         }
 
-        #bmc-button-container {
+        #custom-bmc-button {
             position: fixed;
             left: 50%;
-            top: 1%; /* Position the button near the top */
+            top: 10px;
             transform: translateX(-50%);
             z-index: 1000;
-            width: auto; /* Allow container to expand based on content */
+            background-color: #FFDD00;
+            color: black;
+            border: none;
+            padding: 5px 10px;
+            font-size: 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            font-family: 'Arial', sans-serif;
         }
 
-        /* Styles to force text in one line */
-        #bmc-button-container .bmc-btn {
-            white-space: nowrap !important;
-            overflow: visible !important;
-            text-overflow: clip !important;
-            width: auto !important;
-            min-width: max-content !important;
-            background-color: #FFDD00 !important; /* Button color */
-            color: black !important; /* Text color */
-            padding: 2px 8px !important; /* Reduced padding for a smaller button */
-            margin: 0 !important; /* Remove any default margins */
-            font-size: 12px !important; /* Smaller font size for the button */
-            border-radius: 8px; /* Slightly rounded corners */
+        #custom-bmc-button:hover {
+            background-color: #E5C700;
         }
 
-        /* Responsive styles for mobile */
         @media (max-width: 750px) {
-            #bmc-button-container {
-                transform: translateX(-50%);
-                top: 1%; /* Keep the button near the top for mobile */
-                width: auto; /* Dynamically adjust based on content */
-                max-width: none;
-                padding: 0;
-            }
-            
-            #bmc-button-container > div {
-                width: auto;
-                text-align: center; /* Center align the button inside the container */
-            }
-
-            #bmc-button-container .bmc-btn {
-                font-size: 14px !important; /* Slightly larger font for mobile */
-                padding: 4px 10px !important; /* Adjust padding for mobile devices */
-                margin: 0 !important; /* Remove any extra margins on mobile */
-                border-radius: 8px; /* Ensure rounded corners on mobile as well */
+            #custom-bmc-button {
+                font-size: 14px;
+                padding: 6px 12px;
             }
         }
 
-        /* High contrast styles */
         @media (prefers-contrast: more) {
-            #bmc-button-container .bmc-btn {
-                background-color: #000000 !important;
-                color: #FFFFFF !important;
+            #custom-bmc-button {
+                background-color: #000000;
+                color: #FFFFFF;
             }
         }
     </style>
@@ -85,9 +66,9 @@
 
     <div id="map"></div>
 
-    <div id="bmc-button-container">
-        <script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" data-slug="britmap" data-color="#FFDD00" data-emoji="☕" data-font="Poppins" data-text="Buy me a coffee" data-outline-color="#000000" data-font-color="#000000" data-coffee-color="#FFDD00"></script>
-    </div>
+    <a href="https://www.buymeacoffee.com/britmap" target="_blank" id="custom-bmc-button">
+        ☕ Buy me a coffee
+    </a>
 
     <script src="index.js" type="module" defer></script>
 
