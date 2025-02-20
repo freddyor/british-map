@@ -27,10 +27,10 @@
 
         #bmc-button-container {
             position: fixed;
-            bottom: 5px;
             left: 50%;
             transform: translateX(-50%) scale(0.5);
             z-index: 1000;
+            bottom: 2.5px; /* Reduced gap from bottom */
         }
 
         /* Styles to force text in one line */
@@ -42,15 +42,15 @@
             min-width: max-content !important;
             background-color: #FFDD00 !important; /* Button color */
             color: black !important; /* Text color */
-            padding: 16px 24px !important; /* Increased padding for larger button */
-            border-radius: 5px; /* Optional rounded corners */
+            padding: 8px 24px !important; /* Reduced top/bottom padding */
+            border-radius: 15px; /* Slightly more rounded corners */
         }
 
         /* Responsive styles for mobile */
         @media (max-width: 750px) {
             #bmc-button-container {
                 transform: translateX(-50%) scale(0.6);
-                bottom: 2.5px;
+                bottom: 2.5px; /* Keep reduced gap for mobile */
                 width: 90vw; /* Use viewport width */
                 max-width: none;
                 padding: 0;
@@ -61,8 +61,9 @@
             }
 
             #bmc-button-container .bmc-btn {
-                font-size: 20px !important; /* Adjust font size if needed */
-                padding: 10px 10px !important; /* Maintain larger padding on mobile */
+                font-size: 16px !important; /* Adjust font size if needed */
+                padding: 8px 24px !important; /* Maintain reduced top/bottom padding on mobile */
+                border-radius: 15px; /* Ensure rounded corners on mobile as well */
             }
         }
     </style>
