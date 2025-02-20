@@ -1,7 +1,7 @@
 export const buildings = [
   {
     name: "Building B",
-    coords: [-1.0830, 53.9633],
+    coords: [-1.0834619, 53.9622239],
     image: "images/georgehudson.png",
     description: "A historic landmark",
     occupation: "Museum",
