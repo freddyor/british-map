@@ -1,7 +1,7 @@
 export const buildings = [
   {
     name: "York Minster",
-    coords: [-1.0834619, 53.9622239]
+    coords: [-1.0834619, 53.9622239],
     image: "images/yorkminster.png",
     description: "",
     occupation: "1220",
