@@ -1,14 +1,14 @@
 export const buildings = [
   {
-    name: "Building B",
+    name: "York Minster",
     coords: [-1.0834619, 53.9622239],
-    image: "images/georgehudson.png",
-    description: "A historic landmark",
-    occupation: "Museum",
-    tldr: "19th century building now serving as a local history museum",
+    image: "images/yorkminster.png",
+    description: "",
+    occupation: "1220",
+    tldr: "A stunning Gothic cathedral, it is the largest of its kind in Northern Europe.",
     events: [
-      { date: "1850", description: "Original construction" },
-      { date: "1995", description: "Converted to museum" }
+      { date: "WW2", description: "During World War II, 109 stained glass windows were removed and hidden in secret locations to protect them from bombing." },
+      { date: "2022", description: "King Charles III visited York Minster to unveil a statue of Queen Elizabeth II." }
     ]
   },
   // Add more buildings as needed
