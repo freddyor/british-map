@@ -32,6 +32,12 @@
             transform: translateX(-50%);
             z-index: 1000;
         }
+
+        /* Scale down the button */
+        .bmc-button {
+            transform: scale(0.5); /* Scale down to half size */
+            transform-origin: center; /* Keep scaling centered */
+        }
     </style>
 </head>
 <body>
@@ -39,7 +45,7 @@
     <div id="map"></div>
 
     <div id="bmc-button-container">
-        <script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" data-slug="britmap" data-color="#BD5FFF" data-emoji="☕"  data-font="Poppins" data-text="Buy me a coffee" data-outline-color="#000000" data-font-color="#ffffff" data-coffee-color="#FFDD00" ></script>
+        <script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" data-slug="britmap" data-color="#BD5FFF" data-emoji="☕" data-font="Poppins" data-text="Buy me a coffee" data-outline-color="#000000" data-font-color="#ffffff" data-coffee-color="#FFDD00"></script>
     </div>
 
     <script src="index.js" type="module" defer></script>
