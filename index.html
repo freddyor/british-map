@@ -29,19 +29,8 @@
             position: fixed;
             bottom: 5px;
             left: 50%;
-            transform: translateX(-50%) scale(0.5); /* Adjust scale factor as needed */
+            transform: translateX(-50%) scale(0.5); /* Default scale */
             z-index: 1000;
-        }
-
-        /* Reset button appearance */
-        button {
-            -webkit-appearance: none;
-            -moz-appearance: none;
-            appearance: none;
-            font-family: Poppins, sans-serif; /* Ensure consistent font */
-            font-size: 16px; /* Maintain size */
-            padding: 10px 15px; /* Padding for better touch targets */
-            border-radius: 5px; /* Rounded corners */
         }
 
         /* Optional centering */
@@ -50,15 +39,19 @@
             justify-content: center;
         }
 
+        /* Responsive styles for mobile */
         @media (max-width: 750px) {
             #bmc-button-container {
-                transform: translateX(-50%) scale(0.5); /* Keep the button size consistent */
+                transform: translateX(-50%) scale(0.6); /* Slightly larger scale for better visibility */
                 bottom: 10px; /* Adjust bottom spacing for mobile */
+                width: auto; /* Allow the container to expand */
+                padding-left: 20px;
+                padding-right: 20px;
             }
             
-            button {
-                font-size: 14px; /* Slightly smaller font for mobile */
-                padding: 8px 12px; /* Adjust padding if necessary */
+            #bmc-button-container > div {
+                width: 200px; /* Make the button wider on mobile */
+                text-align: center; /* Ensure text stays centered */
             }
         }
     </style>
@@ -68,7 +61,7 @@
     <div id="map"></div>
 
     <div id="bmc-button-container">
-        <script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" data-slug="britmap" data-color="#BD5FFF" data-emoji="☕" data-font="Poppins" data-text="Buy me a coffee" data-outline-color="#000000" data-font-color="#ffffff" data-coffee-color="#FFDD00"></script>
+        <script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" data-slug="britmap" data-color="#FFDD00" data-emoji="☕" data-font="Poppins" data-text="Buy me a coffee" data-outline-color="#000000" data-font-color="#ffffff" data-coffee-color="#FFDD00"></script>
     </div>
 
     <script src="index.js" type="module" defer></script>
