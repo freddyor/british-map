@@ -8,6 +8,9 @@
     <!-- Add your favicon here -->
     <link rel="icon" type="image/png" href="images/favicon.png">
 
+    <!-- Google Fonts for Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
     <!-- Mapbox GL JS & CSS -->
     <link href="https://api.mapbox.com/mapbox-gl-js/v3.10.0/mapbox-gl.css" rel="stylesheet">
     <script src="https://api.mapbox.com/mapbox-gl-js/v3.10.0/mapbox-gl.js"></script>
@@ -18,6 +21,7 @@
             padding: 0;
             width: 100%;
             height: 100%;
+            font-family: 'Poppins', sans-serif; /* Set default font for body */
         }
 
         #map {
@@ -36,11 +40,11 @@
             border: none;
             padding: 5px 10px;
             font-size: 12px;
+            font-weight: bold; /* Make the text bold */
             border-radius: 8px;
             cursor: pointer;
             text-decoration: none;
             display: inline-block;
-            font-family: 'Arial', sans-serif;
         }
 
         #custom-bmc-button:hover {
@@ -49,8 +53,8 @@
 
         @media (max-width: 750px) {
             #custom-bmc-button {
-                font-size: 14px;
-                padding: 6px 12px;
+                font-size: 14px; /* Slightly larger font for mobile */
+                padding: 6px 12px; /* Adjust padding for mobile devices */
             }
         }
 
