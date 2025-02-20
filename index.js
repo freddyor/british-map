@@ -14,6 +14,7 @@ var map = new mapboxgl.Map({
 });
 
 map.on('load', () => {
+ addLocationMarkers();
   addBuildingMarkers();
 });
 
