@@ -29,7 +29,7 @@
             position: fixed;
             bottom: 5px;
             left: 50%;
-            transform: translateX(-50%) scale(0.5); /* Default scale */
+            transform: translateX(-50%) scale(0.5);
             z-index: 1000;
         }
 
@@ -42,16 +42,23 @@
         /* Responsive styles for mobile */
         @media (max-width: 750px) {
             #bmc-button-container {
-                transform: translateX(-50%) scale(0.6); /* Slightly larger scale for better visibility */
-                bottom: 10px; /* Adjust bottom spacing for mobile */
-                width: auto; /* Allow the container to expand */
+                transform: translateX(-50%) scale(0.6);
+                bottom: 10px;
+                width: auto;
                 padding-left: 20px;
                 padding-right: 20px;
             }
             
             #bmc-button-container > div {
-                width: 200px; /* Make the button wider on mobile */
-                text-align: center; /* Ensure text stays centered */
+                width: auto;
+                max-width: 200px;
+            }
+
+            #bmc-button-container .bmc-btn {
+                width: 100%;
+                white-space: normal;
+                line-height: 1.2;
+                padding: 8px 12px;
             }
         }
     </style>
@@ -61,7 +68,7 @@
     <div id="map"></div>
 
     <div id="bmc-button-container">
-        <script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" data-slug="britmap" data-color="#FFDD00" data-emoji="☕" data-font="Poppins" data-text="Buy me a coffee" data-outline-color="#000000" data-font-color="#ffffff" data-coffee-color="#FFDD00"></script>
+        <script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" data-slug="britmap" data-color="#BD5FFF" data-emoji="☕" data-font="Poppins" data-text="Buy me a coffee" data-outline-color="#000000" data-font-color="#ffffff" data-coffee-color="#FFDD00"></script>
     </div>
 
     <script src="index.js" type="module" defer></script>
