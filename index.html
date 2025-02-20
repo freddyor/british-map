@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Britmap - York</title>
 
     <!-- Add your favicon here -->
@@ -27,16 +27,39 @@
 
         #bmc-button-container {
             position: fixed;
-            bottom: 10px;
+            bottom: 5px;
             left: 50%;
             transform: translateX(-50%) scale(0.5); /* Adjust scale factor as needed */
             z-index: 1000;
+        }
+
+        /* Reset button appearance */
+        button {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            font-family: Poppins, sans-serif; /* Ensure consistent font */
+            font-size: 16px; /* Maintain size */
+            padding: 10px 15px; /* Padding for better touch targets */
+            border-radius: 5px; /* Rounded corners */
         }
 
         /* Optional centering */
         #bmc-button-container > div {
             display: flex;
             justify-content: center;
+        }
+
+        @media (max-width: 750px) {
+            #bmc-button-container {
+                transform: translateX(-50%) scale(0.5); /* Keep the button size consistent */
+                bottom: 10px; /* Adjust bottom spacing for mobile */
+            }
+            
+            button {
+                font-size: 14px; /* Slightly smaller font for mobile */
+                padding: 8px 12px; /* Adjust padding if necessary */
+            }
         }
     </style>
 </head>
