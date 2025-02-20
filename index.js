@@ -58,7 +58,7 @@ stylePopup.innerHTML = `
     height: 20px;
     background-color: white;
     border: 3px solid #87CEFA;
-    border-radius: 50%;
+    border-radius: 100%;
     box-shadow: 0 0 0 2px white, 0 0 0 4px #87CEFA; /* This creates the outer blue ring */
   }
 `;
