@@ -47,18 +47,6 @@ export const buildings = [
       { date: "TERRY'S", description: "This building is home to the furniture collection of Noel Terry, founder of Terry's chocolate business." }
     ]
   },
- {
-    name: "King's Manor",
-    coords: [-1.0861623, 53.9623288], // Replace with accurate coordinates
-    image: "images/kingsmanor.png", // Replace with actual image path
-    description: "",
-    occupation: "11th Century", // Replace with accurate date
-    tldr: "A historic building, originally built to house the abbots of St Mary's Abbey.",
-    events: [
-      { date: "1688", description: "During the Glorious Revolution, the building was dramatically seized from Sir John Reresby, who remained loyal to James II, by forces loyal to William of Orange." },
-      { date: "Henry VIII", description: "King Henry VIII stayed at King's Manor when it served as the headquarters of the Council of the North." }
-    ]
-  },
 
   // Add more buildings as needed
 ];
