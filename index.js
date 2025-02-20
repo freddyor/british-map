@@ -26,17 +26,14 @@ stylePopup.innerHTML = `
     border-radius: 12px !important;
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3) !important;
     padding: 10px !important;
-    font-family: 'Poppins', sans-serif !important; /* Apply Poppins font */
-    background: #E9E8E0 ;
+    font-family: 'Poppins', sans-serif !important;
+    background: #E9E8E0;
     border: 2px solid #f0f0f0 !important;
     line-height: 1.05;
-  }
-
-  .mapboxgl-popup-content {
     padding-top: 0 !important;
     padding-bottom: 0 !important;
-    margin-left: 3;
-    margin-right: 5;
+    margin-left: 3px;
+    margin-right: 5px;
   }
 
   .mapboxgl-popup-content img {
@@ -44,102 +41,41 @@ stylePopup.innerHTML = `
     border-radius: 8px;
   }
 
-  /* Style for the description text */
   .mapboxgl-popup-content p {
-    font-weight: bold !important; /* Ensure the description text is not bold */
-    text-align: center; /* Align text centrally */
-    letter-spacing: -0.5x;
-    font-size: 13px !important; /* Ensure the size matches the text size used for the cards */
-    margin-bottom: 10px !important; /* Add bottom margin */
+    font-weight: bold !important;
+    text-align: center;
+    letter-spacing: -0.5px;
+    font-size: 13px !important;
+    margin-bottom: 10px !important;
   }
 
-   .mapboxgl-popup-close-button {
+  .mapboxgl-popup-close-button {
     display: none !important;
   }
 
-  .timeline-card {
-    background: #f8f9fa;
-    padding: 10px;
-    margin-top: 10px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    position: relative;
-    z-index: 1;
-  }
-
-  .timeline-card .date, .timeline-card span, .timeline-card p {
-  display: none !important;
-  }
-
-  .popup-description-divider {
-    margin: 10px 0;
-    border: 0;
-    height: 0.2px;
-    background-color: #808080;
-  }
-
-  /* Updated styles for the TLDR card */
-  .tldr-card {
-    background: white !important; /* Set background to white */
-    padding: 10px;
-    margin-top: 10px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    position: relative;
-    z-index: 1;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-
-  /* Remove the title (span) from the tldr card */
-  .tldr-card span {
-    display: none !important; /* Completely hide the title */
-  }
-
-.tldr-card p {
-    font-size: 10px !important; /* Set desired font size */
-    line-height: 1.4; /* Optional: set line height for readability */
-    margin-bottom: 0;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-  .tldr-card-divider {
-    margin: 5px 0;
-    border: none;
-    height: 1px;
-    background-color: #4caf50;
-  }
-
-  /* Style for the user location marker */
   .user-location-marker {
     width: 20px;
     height: 20px;
     background-color: white;
-    border: 3px solid #87CEFA; /* Light blue border */
+    border: 3px solid #87CEFA;
     border-radius: 50%;
-    box-shadow: 0 0 0 2px white; /* White outline to make the blue border stand out */
+    box-shadow: 0 0 0 2px white, 0 0 0 4px #87CEFA; /* This creates the outer blue ring */
   }
 `;
 
 // Append the style to the document
 document.head.appendChild(stylePopup);
 
-// New geolocation code
+// Geolocation code
 if ("geolocation" in navigator) {
     navigator.geolocation.getCurrentPosition(
         (position) => {
             const userCoords = [position.coords.longitude, position.coords.latitude];
-
-            // Center the map on the user's location
             map.setCenter(userCoords);
-            map.setZoom(15); // Zoom in closer
+            map.setZoom(15);
 
-            // Create a custom HTML element for the marker
             const el = document.createElement('div');
             el.className = 'user-location-marker';
-
-            // Add a marker for the user's location
             new mapboxgl.Marker({element: el})
                 .setLngLat(userCoords)
                 .addTo(map);
@@ -161,7 +97,7 @@ locations.forEach(location => {
     .setPopup(new mapboxgl.Popup({ closeButton: true, closeOnClick: true })
       .setHTML(`
            <p style="font-size: 6px; font-weight: bold; margin-bottom: 10px;">${location.description}</p>
-                <div style="border-top: 1px solid #ccc; margin-bottom: 10px;"></div> <!-- Grey divider -->
+                <div style="border-top: 1px solid #ccc; margin-bottom: 10px;"></div>
                 <div style="display: flex; align-items: center; gap: 10px;">
                     <img src="${location.image}" alt="${location.name}" style="width: 40px; height: 40px; object-fit: cover; border-radius: 50%;" />
                     <div>
@@ -184,18 +120,16 @@ locations.forEach(location => {
         .addTo(map);
 });
 
-// Function to create a custom marker with an image inside a circle
 function createCustomMarker(imageUrl) {
   const markerDiv = document.createElement('div');
   markerDiv.className = 'custom-marker';
-
-  // Set the marker size
   markerDiv.style.width = '3em';
   markerDiv.style.height = '3em';
   markerDiv.style.position = 'absolute';
   markerDiv.style.borderRadius = '50%';
+  markerDiv.style.border = '0.25em solid #8A2BE2';
+  markerDiv.style.boxSizing = 'border-box';
 
-  // Create the image element
   const imageElement = document.createElement('img');
   imageElement.src = imageUrl;
   imageElement.style.width = '100%';
@@ -203,15 +137,6 @@ function createCustomMarker(imageUrl) {
   imageElement.style.objectFit = 'cover';
   imageElement.style.borderRadius = '50%';
 
-  // Add the image element to the marker div
   markerDiv.appendChild(imageElement);
-
-  // Create a border around the marker (thinner than before)
-  markerDiv.style.border = '0.25em solid #8A2BE2'; // Reduced thickness
-  markerDiv.style.boxSizing = 'border-box';
-
   return markerDiv;
 }
-
-// Apply global font styling
-document.body.style.fontFamily = 'Satoshi, sans-serif';
