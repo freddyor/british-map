@@ -25,25 +25,12 @@
             height: 100vh;
         }
 
-        #bmc-button {
-            position: absolute;
-            top: 10px;
-            right: 10px;
+        #bmc-button-container {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
             z-index: 1000;
-            background-color: #BD5FFF;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            padding: 10px 20px;
-            font-family: 'Poppins', sans-serif;
-            cursor: pointer;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-        }
-
-        #bmc-button:hover {
-            background-color: #A346E8;
         }
     </style>
 </head>
@@ -51,9 +38,9 @@
 
     <div id="map"></div>
 
-    <a href="https://www.buymeacoffee.com/britmap" target="_blank" id="bmc-button">
-        ☕ Buy me a coffee
-    </a>
+    <div id="bmc-button-container">
+        <script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" data-slug="britmap" data-color="#BD5FFF" data-emoji="☕"  data-font="Poppins" data-text="Buy me a coffee" data-outline-color="#000000" data-font-color="#ffffff" data-coffee-color="#FFDD00" ></script>
+    </div>
 
     <script src="index.js" type="module" defer></script>
 
