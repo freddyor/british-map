@@ -183,6 +183,6 @@ document.body.style.fontFamily = 'Satoshi, sans-serif';
 document.addEventListener('DOMContentLoaded', function() {
     const buttonContainer = document.querySelector('#bmc-button-container');
     if (buttonContainer) {
-        buttonContainer.style.bottom = '-40px';  // Adjust this value as needed
+        buttonContainer.style.bottom = '-70px';  // Adjust this value as needed
     }
 });
