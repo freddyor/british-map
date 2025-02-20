@@ -1,4 +1,3 @@
-// index.js
 import { locations } from './locations.js';
 
 mapboxgl.accessToken = 'pk.eyJ1IjoiZnJlZGRvbWF0ZSIsImEiOiJjbTc1bm5zYnQwaG1mMmtxeDdteXNmeXZ0In0.PuDNORq4qExIJ_fErdO_8g';
@@ -116,6 +115,30 @@ stylePopup.innerHTML = `
 // Append the style to the document
 document.head.appendChild(stylePopup);
 
+// New geolocation code
+if ("geolocation" in navigator) {
+    navigator.geolocation.getCurrentPosition(
+        (position) => {
+            const userCoords = [position.coords.longitude, position.coords.latitude];
+
+            // Center the map on the user's location
+            map.setCenter(userCoords);
+            map.setZoom(15); // Zoom in closer
+
+            // Add a marker for the user's location
+            new mapboxgl.Marker({color: '#FF0000'}) // Red marker
+                .setLngLat(userCoords)
+                .addTo(map);
+        },
+        (error) => {
+            console.error("Error getting location: ", error);
+            alert("Unable to retrieve your location. Please ensure location services are enabled.");
+        }
+    );
+} else {
+    alert("Geolocation is not supported by your browser.");
+}
+
 locations.forEach(location => {
   const marker = new mapboxgl.Marker({
     element: createCustomMarker(location.image)
@@ -147,34 +170,4 @@ locations.forEach(location => {
         .addTo(map);
 });
 
-// Function to create a custom marker with an image inside a circle
-function createCustomMarker(imageUrl) {
-  const markerDiv = document.createElement('div');
-  markerDiv.className = 'custom-marker';
-
-  // Set the marker size
-  markerDiv.style.width = '3em';
-  markerDiv.style.height = '3em';
-  markerDiv.style.position = 'absolute';
-  markerDiv.style.borderRadius = '50%';
-
-  // Create the image element
-  const imageElement = document.createElement('img');
-  imageElement.src = imageUrl;
-  imageElement.style.width = '100%';
-  imageElement.style.height = '100%';
-  imageElement.style.objectFit = 'cover';
-  imageElement.style.borderRadius = '50%';
-
-  // Add the image element to the marker div
-  markerDiv.appendChild(imageElement);
-
-  // Create a border around the marker (thinner than before)
-  markerDiv.style.border = '0.25em solid #8A2BE2'; // Reduced thickness
-  markerDiv.style.boxSizing = 'border-box';
-
-  return markerDiv;
-}
-
-// Apply global font styling
-document.body.style.fontFamily = 'Satoshi, sans-serif';
+// Func
