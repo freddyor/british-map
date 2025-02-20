@@ -28,9 +28,9 @@
         #bmc-button-container {
             position: fixed;
             left: 50%;
-            transform: translateX(-50%) scale(0.5);
+            top: 1%; /* Position the button near the top */
+            transform: translateX(-50%);
             z-index: 1000;
-            bottom: 0.5%; /* Reduced gap from bottom */
         }
 
         /* Styles to force text in one line */
@@ -49,8 +49,8 @@
         /* Responsive styles for mobile */
         @media (max-width: 750px) {
             #bmc-button-container {
-                transform: translateX(-50%) scale(0.5);
-                bottom: 0.5%; /* Keep reduced gap for mobile */
+                transform: translateX(-50%);
+                top: 1%; /* Keep the button near the top for mobile */
                 width: 90vw; /* Use viewport width */
                 max-width: none;
                 padding: 0;
@@ -73,10 +73,4 @@
     <div id="map"></div>
 
     <div id="bmc-button-container">
-        <script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" data-slug="britmap" data-color="#FFDD00" data-emoji="☕" data-font="Poppins" data-text="Buy me a coffee" data-outline-color="#000000" data-font-color="#000000" data-coffee-color="#FFDD00"></script>
-    </div>
-
-    <script src="index.js" type="module" defer></script>
-
-</body>
-</html>
+        <script type="text/javascript" src="https://cdnjs.buymeacoffee
