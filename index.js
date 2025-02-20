@@ -1,4 +1,6 @@
 import { locations } from './locations.js';
+import { buildings } from './buildings.js';
+
 
 mapboxgl.accessToken = 'pk.eyJ1IjoiZnJlZGRvbWF0ZSIsImEiOiJjbTc1bm5zYnQwaG1mMmtxeDdteXNmeXZ0In0.PuDNORq4qExIJ_fErdO_8g';
 
@@ -10,6 +12,11 @@ var map = new mapboxgl.Map({
     pitch: 45,
     bearing: -17.6
 });
+
+map.on('load', () => {
+  addBuildingMarkers();
+});
+
 
 // Create a <style> element to add the CSS
 const stylePopup = document.createElement('style');
@@ -120,14 +127,14 @@ locations.forEach(location => {
         .addTo(map);
 });
 
-function createCustomMarker(imageUrl) {
+function createCustomMarker(imageUrl, color = '#8A2BE2') {
   const markerDiv = document.createElement('div');
   markerDiv.className = 'custom-marker';
   markerDiv.style.width = '3em';
   markerDiv.style.height = '3em';
   markerDiv.style.position = 'absolute';
   markerDiv.style.borderRadius = '50%';
-  markerDiv.style.border = '0.25em solid #8A2BE2';
+  markerDiv.style.border = `0.25em solid ${color}`; // This line uses the color parameter
   markerDiv.style.boxSizing = 'border-box';
 
   const imageElement = document.createElement('img');
@@ -139,4 +146,37 @@ function createCustomMarker(imageUrl) {
 
   markerDiv.appendChild(imageElement);
   return markerDiv;
+}
+
+function addBuildingMarkers() {
+  buildings.forEach(building => {
+    const marker = new mapboxgl.Marker({
+      element: createCustomMarker(building.image, '#FFD700') // Gold color
+    })
+      .setLngLat(building.coords)
+      .setPopup(new mapboxgl.Popup({ closeButton: true, closeOnClick: true })
+        .setHTML(`
+           <p style="font-size: 6px; font-weight: bold; margin-bottom: 10px;">${building.description}</p>
+                <div style="border-top: 1px solid #ccc; margin-bottom: 10px;"></div>
+                <div style="display: flex; align-items: center; gap: 10px;">
+                    <img src="${building.image}" alt="${building.name}" style="width: 40px; height: 40px; object-fit: cover; border-radius: 50%;" />
+                    <div>
+                        <div style="font-size: 16px; font-weight: bold;">${building.name}</div>
+                        <div style="font-size: 14px; color: #666;">${building.occupation}</div>
+                    </div>
+                </div>
+                <p style="background: #f9f9f9; padding: 10px; margin-top: 10px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); font-size: 12px;">${building.tldr}</p>
+                ${building.events.length ? `
+                    <div style="margin-top: 10px;">
+                        ${building.events.map(event => `
+                            <div style="background: #f9f9f9; border: 1px solid #ddd; border-radius: 8px; padding: 10px; margin-bottom: 10px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
+                                <strong style="color: #9b4dca; font-size: 14px;">${event.date}</strong>: <span style="font-size: 12px;">${event.description}</span>
+                            </div>
+                        `).join('')}
+                    </div>
+                ` : ''}
+        `)
+      )
+      .addTo(map);
+  });
 }
