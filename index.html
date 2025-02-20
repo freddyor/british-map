@@ -43,9 +43,10 @@
             min-width: max-content !important;
             background-color: #FFDD00 !important; /* Button color */
             color: black !important; /* Text color */
-            padding: 2px 10px !important; /* Reduced padding for a smaller button */
+            padding: 2px 8px !important; /* Reduced padding for a smaller button */
+            margin: 0 !important; /* Remove any default margins */
             font-size: 12px !important; /* Smaller font size for the button */
-            border-radius: 10px; /* Slightly rounded corners */
+            border-radius: 8px; /* Slightly rounded corners */
         }
 
         /* Responsive styles for mobile */
@@ -53,20 +54,21 @@
             #bmc-button-container {
                 transform: translateX(-50%);
                 top: 1%; /* Keep the button near the top for mobile */
-                width: 90vw; /* Use viewport width */
+                width: auto; /* Dynamically adjust based on content */
                 max-width: none;
                 padding: 0;
             }
             
             #bmc-button-container > div {
-                width: 100%;
+                width: auto;
                 text-align: center; /* Center align the button inside the container */
             }
 
             #bmc-button-container .bmc-btn {
                 font-size: 14px !important; /* Slightly larger font for mobile */
-                padding: 4px 12px !important; /* Adjust padding for mobile devices */
-                border-radius: 10px; /* Ensure rounded corners on mobile as well */
+                padding: 4px 10px !important; /* Adjust padding for mobile devices */
+                margin: 0 !important; /* Remove any extra margins on mobile */
+                border-radius: 8px; /* Ensure rounded corners on mobile as well */
             }
         }
 
