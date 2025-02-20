@@ -33,10 +33,19 @@
             z-index: 1000;
         }
 
-        /* Scale down the button */
+        /* Responsive styling for the button */
         .bmc-button {
-            transform: scale(0.5); /* Scale down to half size */
-            transform-origin: center; /* Keep scaling centered */
+            font-size: 12px !important; /* Adjust font size */
+            padding: 5px 10px !important; /* Adjust padding */
+            height: auto !important; /* Ensure proper height */
+            width: auto !important; /* Ensure proper width */
+        }
+
+        @media (max-width: 768px) {
+            .bmc-button {
+                font-size: 10px !important; /* Smaller font size for mobile */
+                padding: 4px 8px !important; /* Adjust padding for mobile */
+            }
         }
     </style>
 </head>
