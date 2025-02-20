@@ -110,6 +110,16 @@ stylePopup.innerHTML = `
     height: 1px;
     background-color: #4caf50;
   }
+
+  /* Style for the user location marker */
+  .user-location-marker {
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    border: 3px solid #87CEFA; /* Light blue border */
+    border-radius: 50%;
+    box-shadow: 0 0 0 2px white; /* White outline to make the blue border stand out */
+  }
 `;
 
 // Append the style to the document
@@ -125,8 +135,12 @@ if ("geolocation" in navigator) {
             map.setCenter(userCoords);
             map.setZoom(15); // Zoom in closer
 
+            // Create a custom HTML element for the marker
+            const el = document.createElement('div');
+            el.className = 'user-location-marker';
+
             // Add a marker for the user's location
-            new mapboxgl.Marker({color: '#FF0000'}) // Red marker
+            new mapboxgl.Marker({element: el})
                 .setLngLat(userCoords)
                 .addTo(map);
         },
@@ -170,4 +184,34 @@ locations.forEach(location => {
         .addTo(map);
 });
 
-// Func
+// Function to create a custom marker with an image inside a circle
+function createCustomMarker(imageUrl) {
+  const markerDiv = document.createElement('div');
+  markerDiv.className = 'custom-marker';
+
+  // Set the marker size
+  markerDiv.style.width = '3em';
+  markerDiv.style.height = '3em';
+  markerDiv.style.position = 'absolute';
+  markerDiv.style.borderRadius = '50%';
+
+  // Create the image element
+  const imageElement = document.createElement('img');
+  imageElement.src = imageUrl;
+  imageElement.style.width = '100%';
+  imageElement.style.height = '100%';
+  imageElement.style.objectFit = 'cover';
+  imageElement.style.borderRadius = '50%';
+
+  // Add the image element to the marker div
+  markerDiv.appendChild(imageElement);
+
+  // Create a border around the marker (thinner than before)
+  markerDiv.style.border = '0.25em solid #8A2BE2'; // Reduced thickness
+  markerDiv.style.boxSizing = 'border-box';
+
+  return markerDiv;
+}
+
+// Apply global font styling
+document.body.style.fontFamily = 'Satoshi, sans-serif';
