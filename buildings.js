@@ -47,18 +47,6 @@ export const buildings = [
       { date: "TERRY'S", description: "This building is home to the furniture collection of Noel Terry, founder of Terry's chocolate business." }
     ]
   },
-{
-    name: "York Guildhall",
-    coords: [-1.0847032, 53.9600261], // Approximate coordinates
-    image: "images/yorkguildhall.png", // Replace with actual image path
-    description: "",
-    occupation: "1459",
-    tldr: "A historic civic originally built as a meeting place for the City's guilds (merchants).",
-    events: [
-      { date: "1483", description: "King Richard III was entertained here." },
-      { date: "1647", description: "During the English Civil War, a ransom of £200,000 was counted within its walls to secure the release of Charles I from the Scots." }
-    ]
-  },
  {
     name: "King's Manor",
     coords: [-1.0861623, 53.9623288], // Replace with accurate coordinates
