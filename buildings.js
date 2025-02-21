@@ -48,6 +48,17 @@ export const buildings = [
     ]
   },
 {
+    name: "Bootham Park Hospital",
+    coords: [-1.0854450823370998, 53.9675999686222],
+    image: null,
+    description: null,
+    occupation: "1777",
+    tldr: "Originally known as 'County Lunatic Asylum, York'. Criticism about the handling of inmates at the asylum and the death of Hannah Mills, who was a Quaker, led the local Quaker community to found a new asylum known as The Retreat in 1790, effectively replacing this asylum.",
+    events: [
+      { date: "1948", description: "It joined the NHS" }
+    ]
+  },
+{
     name: "York Guildhall",
     coords: [-1.085562497555408, 53.95955051105805], // Approximate coordinates
     image: "images/yorkguildhall.png", // Replace with actual image path
@@ -70,7 +81,6 @@ export const buildings = [
       { date: "1688", description: "During the Glorious Revolution, the building was dramatically seized from Sir John Reresby, who remained loyal to James II, by forces loyal to William of Orange." },
       { date: "Henry VIII", description: "King Henry VIII stayed at King's Manor when it served as the headquarters of the Council of the North." }
     ]
-  }
+  },
 
-  // Add more buildings as needed
 ];
