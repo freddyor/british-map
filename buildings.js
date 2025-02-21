@@ -51,7 +51,7 @@ export const buildings = [
     name: "Bootham Park Hospital",
     coords: [-1.0854450823370998, 53.9675999686222],
     image: "images/bootham.png",
-    description: null,
+    description: ,
     occupation: "1777",
     tldr: "Originally known as 'County Lunatic Asylum, York'. Criticism about the handling of inmates at the asylum and the death of Hannah Mills, who was a Quaker, led the local Quaker community to found a new asylum known as The Retreat in 1790, effectively replacing this asylum.",
     events: [
@@ -86,7 +86,7 @@ export const buildings = [
     name: "Castlegate House",
     coords: [-1.0862176206651686, 53.96250673808531],
     image: "images/castlegatehouse.png",
-    description: null,
+    description: ,
     occupation: "1763",
     tldr: "The house is currently used as a Masonic temple.",
     events: [
@@ -97,7 +97,7 @@ export const buildings = [
     name: "Bishopbarns",
     coords: [-1.1030560599151018, 53.94874114129173],
     image: "images/bishopbarns.png",
-    description: null,
+    description: ,
     occupation: "1905",
     tldr: "Walter Brierley, architect of many of York's greatest buildings, built this house for himself.",
     events: [
@@ -108,7 +108,7 @@ export const buildings = [
     name: "Cumberland House",
     coords: [-1.0828489169782274, 53.956814504153286],
     image: "images/cumberlandhouse.png",
-    description: null,
+    description: ,
     occupation: "1710",
     tldr: "It was built by Lord Mayor William Cornwell.",
     events: [
@@ -119,7 +119,7 @@ export const buildings = [
     name: "Red Tower",
     coords: [-1.0713779227295128, 53.95795987409401],
     image: "images/redtower.png",
-    description: null,
+    description: ,
     occupation: "1490",
     tldr: "It is the only brick tower in the city.",
     events: [
@@ -131,7 +131,7 @@ export const buildings = [
     name: "Grays Court",
     coords: [-1.0803656155532937, 53.96293921598464],
     image: "images/grayscourt.png",
-    description: null,
+    description: ,
     occupation: "1080",
     tldr: "Now a hotel, it is one of the oldest continuously occupied dwellings in the UK.",
     events: [
@@ -143,7 +143,7 @@ export const buildings = [
     name: "Goddards",
     coords: [-1.1039493013859114, 53.940387597936834],
     image: "images/goddards.png",
-    description: null,
+    description: ,
     occupation: "1927",
     tldr: "This building was built for Noel Terry MBE, from the famous Terry family (Terry's chocolate).",
     events: [
@@ -154,7 +154,7 @@ export const buildings = [
     name: "Garforth House",
     coords: [-1.0872525932033406, 53.95744218582411],
     image: "images/garforthhouse.png",
-    description: null,
+    description: ,
     occupation: "1757",
     tldr: "The Georgian townhouse was St Margaret's Independent Grammar School for Girls, run by nuns from 1918-1968. Each year, the current owners host the nuns, now in their 90s, for a school reunion.",
     events: []
@@ -163,7 +163,7 @@ export const buildings = [
     name: "The Grand",
     coords: [-1.0889314522636129, 53.9585617368568],
     image: "images/thegrand.png",
-    description: null,
+    description: ,
     occupation: "1906",
     tldr: "The Grand was originally the headquarters of North Eastern Railway, then one of the richest businesses in Britain.",
     events: [
@@ -175,27 +175,49 @@ export const buildings = [
     name: "Jacobs Well",
     coords: [-1.0884877806115956, 53.9568223082359],
     image: "images/jacobswell.png",
-    description: null,
+    description: ,
     occupation: "1474",
     tldr: "The building is named after Jacob's Well in Palestine, where Jesus is said to have spoken to a Samaritan woman.",
     events: []
   },
   {
+    name: "Judges Lodging",
+    coords: [-1.085422730301877, 53.9605969994961],
+    image: "images/judgeslodging.png",
+    description: ,
+    occupation: "1711",
+    tldr: "It was used by judges when they attended the sessions of the Assize Courts which were held four times each year in York.",
+    events: [
+   { date: "1736", description: "Author Francis Drake recorded it was one of the 'best built houses in the city' but when the foudnations were dug 'several cart loads of human bones were thrown up'."
+]
+  },
+  {
     name: "Micklegate House",
     coords: [-1.0891909200470318, 53.95703137954276],
     image: "images/micklegatehouse.png",
-    description: null,
+    description: ,
     occupation: "1752",
     tldr: "Now a hotel, it was built to be a town house for John Bourchier, owner of Beningborough House",
     events: [
       { date: "1960", description: "It housed the Depart of Mathematics for York University, then the Department of Archaeology 1978-1996." }
     ]
   },
+{
+    name: "Heslington Hall",
+    coords: [-1.0470142651058612, 53.945832347388134,
+    image: "images/heslingtonhall.png",
+    description: ,
+    occupation: "1565",
+    tldr: "Now part of the administrative HQ of York University, this manor house was built for the Secretary to the Council of the North.",
+    events: [
+      { date: "WW2", description: "The house was vacated by the Yarbugh family who allowed it to be taken over by the Royal Air Force." }
+    ]
+  },
   {
     name: "The Bar Convent",
     coords: [-1.0913957008761188, 53.9552023778525],
     image: "images/barcovenant.png",
-    description: null,
+    description: ,
     occupation: "1686",
     tldr: "It is the oldest surviving Catholic covenant on the British isles.",
     events: [
