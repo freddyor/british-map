@@ -25,7 +25,7 @@ link.href = "https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&displ
 link.rel = "stylesheet";
 document.head.appendChild(link);
 
-// Style for the popup
+// Style for the popup and markers
 stylePopup.innerHTML = `
   .mapboxgl-popup-content {
     border-radius: 12px !important;
@@ -65,6 +65,14 @@ stylePopup.innerHTML = `
     border: 3px solid #87CEFA;
     border-radius: 100%;
     box-shadow: 0 0 0 2px white, 0 0 0 4px #87CEFA;
+  }
+
+  .location-marker {
+    z-index: 2;
+  }
+
+  .building-marker {
+    z-index: 1;
   }
 `;
 
@@ -109,8 +117,10 @@ geolocate.on('geolocate', (e) => {
 });
 
 locations.forEach(location => {
+  const markerElement = createCustomMarker(location.image, '#FFD700');
+  markerElement.className += ' location-marker';
   const marker = new mapboxgl.Marker({
-    element: createCustomMarker(location.image)
+    element: markerElement
   })
     .setLngLat(location.coords)
     .setPopup(new mapboxgl.Popup({ closeButton: true, closeOnClick: true })
@@ -139,7 +149,7 @@ locations.forEach(location => {
         .addTo(map);
 });
 
-function createCustomMarker(imageUrl, color = '#8A2BE2') {
+function createCustomMarker(imageUrl, color = '#FFD700') {
   const markerDiv = document.createElement('div');
   markerDiv.className = 'custom-marker';
   markerDiv.style.width = '3em';
@@ -162,8 +172,10 @@ function createCustomMarker(imageUrl, color = '#8A2BE2') {
 
 function addBuildingMarkers() {
   buildings.forEach(building => {
+    const markerElement = createCustomMarker(building.image, '#8A2BE2');
+    markerElement.className += ' building-marker';
     const marker = new mapboxgl.Marker({
-      element: createCustomMarker(building.image, '#FFD700')
+      element: markerElement
     })
       .setLngLat(building.coords)
       .setPopup(new mapboxgl.Popup({ closeButton: true, closeOnClick: true })
