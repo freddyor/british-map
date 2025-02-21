@@ -596,7 +596,7 @@ export const locations = [
     ]
   },
 { 
-    coords: [-1.0906194, 53.9647176],
+    coords: [-1.0817422717809677, 53.961837766479135],
     name: "Constantine",
     occupation: "272-337",
     description: "Constantine was proclaimed Roman Emporer on this spot.",
