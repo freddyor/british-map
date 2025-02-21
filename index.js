@@ -1,7 +1,6 @@
 import { buildings } from './buildings.js';
 import { locations } from './locations.js';
 
-
 mapboxgl.accessToken = 'pk.eyJ1IjoiZnJlZGRvbWF0ZSIsImEiOiJjbTc1bm5zYnQwaG1mMmtxeDdteXNmeXZ0In0.PuDNORq4qExIJ_fErdO_8g';
 
 var map = new mapboxgl.Map({
@@ -65,35 +64,49 @@ stylePopup.innerHTML = `
     background-color: white;
     border: 3px solid #87CEFA;
     border-radius: 100%;
-    box-shadow: 0 0 0 2px white, 0 0 0 4px #87CEFA; /* This creates the outer blue ring */
+    box-shadow: 0 0 0 2px white, 0 0 0 4px #87CEFA;
   }
 `;
 
 // Append the style to the document
 document.head.appendChild(stylePopup);
 
-// Geolocation code
-if ("geolocation" in navigator) {
-    navigator.geolocation.getCurrentPosition(
-        (position) => {
-            const userCoords = [position.coords.longitude, position.coords.latitude];
-            map.setCenter(userCoords);
-            map.setZoom(15);
+// Geolocation control
+const geolocate = new mapboxgl.GeolocateControl({
+  positionOptions: {
+    enableHighAccuracy: true
+  },
+  trackUserLocation: true,
+  showUserHeading: true,
+  showAccuracyCircle: false,
+  fitBoundsOptions: {
+    maxZoom: 15
+  }
+});
 
-            const el = document.createElement('div');
-            el.className = 'user-location-marker';
-            new mapboxgl.Marker({element: el})
-                .setLngLat(userCoords)
-                .addTo(map);
-        },
-        (error) => {
-            console.error("Error getting location: ", error);
-            alert("Unable to retrieve your location. Please ensure location services are enabled.");
-        }
-    );
-} else {
-    alert("Geolocation is not supported by your browser.");
-}
+map.addControl(geolocate);
+
+geolocate.on('error', (e) => {
+  if (e.code === 1) {
+    console.log('Location access denied by user');
+    // You can update UI or take other actions here
+  }
+  e.preventDefault(); // Prevent the default error pop-up
+});
+
+geolocate.on('geolocate', (e) => {
+  const lon = e.coords.longitude;
+  const lat = e.coords.latitude;
+  const position = [lon, lat];
+  console.log(position);
+
+  // Add user location marker
+  const el = document.createElement('div');
+  el.className = 'user-location-marker';
+  new mapboxgl.Marker({element: el})
+    .setLngLat(position)
+    .addTo(map);
+});
 
 locations.forEach(location => {
   const marker = new mapboxgl.Marker({
@@ -133,7 +146,7 @@ function createCustomMarker(imageUrl, color = '#8A2BE2') {
   markerDiv.style.height = '3em';
   markerDiv.style.position = 'absolute';
   markerDiv.style.borderRadius = '50%';
-  markerDiv.style.border = `0.25em solid ${color}`; // This line uses the color parameter
+  markerDiv.style.border = `0.25em solid ${color}`;
   markerDiv.style.boxSizing = 'border-box';
 
   const imageElement = document.createElement('img');
@@ -150,7 +163,7 @@ function createCustomMarker(imageUrl, color = '#8A2BE2') {
 function addBuildingMarkers() {
   buildings.forEach(building => {
     const marker = new mapboxgl.Marker({
-      element: createCustomMarker(building.image, '#FFD700') // Gold color
+      element: createCustomMarker(building.image, '#FFD700')
     })
       .setLngLat(building.coords)
       .setPopup(new mapboxgl.Popup({ closeButton: true, closeOnClick: true })
