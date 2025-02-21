@@ -226,5 +226,27 @@ export const buildings = [
       { date: "WW2", description: "5 nuns were killed as the building was bombed." }
     ]
   },
+  {
+    name: "Multangular Tower",
+    coords: [-1.0869876618159724, 53.96134725163458],
+    image: "images/multangulartower.png",
+    description: "",
+    occupation: "71-74AD",
+    tldr: "The original defenses on this site were built by the Roman Ninth Legion.",
+    events: [
+      { date: "1640s", description: "The tower was still being used for deference during the English civil war, hence why there is a cannonball hole.     ." },
+      { date: "ROMANS", description: "There are five Roman coffins sat in the tower." },
+    ]
+  },
+  {
+    name: "York Magistrates' Court",
+    coords: [-1.0817351891167126, 53.95632576626781],
+    image: "images/magistrates.png",
+    description: "",
+    occupation: "1892",
+    tldr: "In the apex of the pediment is carved the arms of the city of York and above them a figure of Justice holding the scale.",
+    events: [
+      { date: "COST", description: "The cost of construction was 317,050 (£2,342,000 in 2023)." },
+  },
 
 ];
