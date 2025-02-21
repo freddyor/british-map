@@ -67,6 +67,10 @@ stylePopup.innerHTML = `
     box-shadow: 0 0 0 2px white, 0 0 0 4px #87CEFA;
   }
 
+  .mapboxgl-popup {
+    z-index: 3 !important;
+  }
+
   .location-marker {
     z-index: 2;
   }
@@ -117,7 +121,7 @@ geolocate.on('geolocate', (e) => {
 });
 
 locations.forEach(location => {
-  const markerElement = createCustomMarker(location.image, '#FFD700');
+  const markerElement = createCustomMarker(location.image, '#FFD700', true);
   markerElement.className += ' location-marker';
   const marker = new mapboxgl.Marker({
     element: markerElement
@@ -149,7 +153,7 @@ locations.forEach(location => {
         .addTo(map);
 });
 
-function createCustomMarker(imageUrl, color = '#FFD700') {
+function createCustomMarker(imageUrl, color = '#FFD700', isLocation = false) {
   const markerDiv = document.createElement('div');
   markerDiv.className = 'custom-marker';
   markerDiv.style.width = '3em';
@@ -158,6 +162,7 @@ function createCustomMarker(imageUrl, color = '#FFD700') {
   markerDiv.style.borderRadius = '50%';
   markerDiv.style.border = `0.25em solid ${color}`;
   markerDiv.style.boxSizing = 'border-box';
+  markerDiv.style.zIndex = isLocation ? '2' : '1';
 
   const imageElement = document.createElement('img');
   imageElement.src = imageUrl;
@@ -172,7 +177,7 @@ function createCustomMarker(imageUrl, color = '#FFD700') {
 
 function addBuildingMarkers() {
   buildings.forEach(building => {
-    const markerElement = createCustomMarker(building.image, '#8A2BE2');
+    const markerElement = createCustomMarker(building.image, '#8A2BE2', false);
     markerElement.className += ' building-marker';
     const marker = new mapboxgl.Marker({
       element: markerElement
