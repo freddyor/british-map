@@ -226,6 +226,150 @@ export const buildings = [
       { date: "WW2", description: "5 nuns were killed as the building was bombed." }
     ]
   },
+{
+    "name": "Church of All Saints",
+    "coords": [-1.0862106605831179, 53.958459482618274],
+    "image": "images/churchofallsaints.png",
+    "description": "",
+    "occupation": "12th century",
+    "tldr": "The church is said to have the finest collection of medieval glass in York except that of the Minster.",
+    "events": []
+  },
+  {
+    "name": "Church of St Denys",
+    "coords": [-1.0761695874054933, 53.95668650245543],
+    "image": "images/churchofstdenys.png",
+    "description": "",
+    "occupation": "1154",
+    "tldr": "One of less than 40 churches in England are dedicated to this French saint, St Denys.",
+    "events": [
+      {
+        "date": "HISTORIC",
+        "description": "Built on the site of a Saxon church and a Roman temple"
+      },
+      {
+        "date": "YORKISTS",
+        "description": "Henry Percy, leading Lancastrian during War of the Roses, was killed by the Yorkists and buried here."
+      },
+      {
+        "date": "17TH CENTURY",
+        "description": "Originally had a spire but it was hit by a cannon ball and by lightning"
+      }
+    ]
+  },
+  {
+    "name": "Lady Row",
+    "coords": [-1.0800538837309381, 53.96089531337014],
+    "image": "images/ladyrow.png",
+    "description": "",
+    "occupation": "1316",
+    "tldr": "Historic England describe it as some of the earliest urban vernacular building surviving in England.",
+    "events": [
+      {
+        "date": "CRAMPED",
+        "description": "This tony row initially housed ten tenants at once."
+      }
+    ]
+  },
+  {
+    "name": "Lendal Tower",
+    "coords": [-1.0871091424158719, 53.9603294803262],
+    "image": "images/lendaltower.png",
+    "description": "",
+    "occupation": "c1300",
+    "tldr": "Its original use was for placing an iron chain across the river, to impose toll payments and to act as a ferry across the river.",
+    "events": [
+      {
+        "date": "RUINS",
+        "description": "Some of the magnesium limestone is thought to be from at Mary's abbey in Museum Gardens."
+      },
+      {
+        "date": "1616",
+        "description": "It became a waterworks for 230 years"
+      }
+    ]
+  },
+  {
+    "name": "Merchant Taylors Hall",
+    "coords": [-1.0771926242468943, 53.961906350283115],
+    "image": "images/merchanttaylorshall.png",
+    "description": "",
+    "occupation": "1415",
+    "tldr": "Built by fraternity of St John the Baptist. Originally used for banquets and entertainment for the Taylor's guild.",
+    "events": [
+      {
+        "date": "QUEEN",
+        "description": "The south window shows Queen Anne to commentate her accession to the throne"
+      }
+    ]
+  },
+  {
+    "name": "The Assembly Rooms",
+    "coords": [-1.0848699826058827, 53.961106870895996],
+    "image": "images/assemblyrooms.png",
+    "description": "",
+    "occupation": "1735",
+    "tldr": "Originally built for high class social gatherings, but is now an Italian restaurant.",
+    "events": [
+      {
+        "date": "FIRST",
+        "description": "Thought to be the earliest neoclassical building in Europe and One of the earliest Palladian buildings in the north"
+      }
+    ]
+  },
+  {
+    "name": "The Norman House",
+    "coords": [-1.0832804552932895, 53.96153403928001],
+    "image": "images/normanhouse.png",
+    "description": "",
+    "occupation": "12th Century",
+    "tldr": "Known as 'York's oldest house', it was only discovered in 1939.",
+    "events": [
+      {
+        "date": "OWNER",
+        "description": "The York Civic Trust speculate it may have been home to a Jewish financier"
+      },
+      {
+        "date": "LAYOUT",
+        "description": "It was once a two story house made of magnesian limestone."
+      }
+    ]
+  },
+  {
+    "name": "St William's College",
+    "coords": [-1.0802937994910167, 53.96232365544075],
+    "image": "images/stwilliamscollege.png",
+    "description": "",
+    "occupation": "1460",
+    "tldr": "Founded by the Earl of Warwick to house 23 priests.",
+    "events": [
+      {
+        "date": "HENRY VIII",
+        "description": "Charles Howard, Lord Justice of the Realm, lived here for a period. He was the brother of Katherine Howard (Henry VIII's executed wife))"
+      }
+    ]
+  },
+  {
+    "name": "The Wealden Hall",
+    "coords": [-1.0797475920280974, 53.961484770887544],
+    "image": "images/wealdenhall.png",
+    "description": "",
+    "occupation": "1500",
+    "tldr": "It is the northernmost example of a Wealden Hall, which was a common design in South East England.",
+    "events": []
+  },
+  {
+    "name": "St Lawrence Tower",
+    "coords": [-1.0684695655948095, 53.954238193527765],
+    "image": "images/stlawrencetower.png",
+    "description": "",
+    "occupation": "12th",
+    "tldr": "Only the tower remains of the old St Lawrence Church.",
+    "events": [
+      {
+        "date": "1719",
+        "description": "Sir John Vanbrugh, architect of Blenheim palace (birthplace of Winston Churchill) and Castle Howard, was married here."
+      },
   {
     name: "Multangular Tower",
     coords: [-1.0869876618159724, 53.96134725163458],
