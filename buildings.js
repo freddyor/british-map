@@ -188,7 +188,7 @@ export const buildings = [
     occupation: "1711",
     tldr: "It was used by judges when they attended the sessions of the Assize Courts which were held four times each year in York.",
     events: [
-   { date: "1736", description: "Author Francis Drake recorded it was one of the 'best built houses in the city' but when the foudnations were dug 'several cart loads of human bones were thrown up'.",
+   { date: "1736", description: "Author Francis Drake recorded it was one of the 'best built houses in the city' but when the foudnations were dug 'several cart loads of human bones were thrown up'." }
 ]
   },
   {
