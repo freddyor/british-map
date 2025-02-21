@@ -84,7 +84,7 @@ export const buildings = [
   },
  {
     name: "Castlegate House",
-    coords: [-1.0862176206651686, 53.96250673808531],
+    coords: [-1.0805699292451987, 53.95674650725818],
     image: "images/castlegatehouse.png",
     description: "",
     occupation: "1763",
