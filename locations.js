@@ -55,7 +55,7 @@ export const locations = [
     occupation: "1934-", 
     description: "Judi Dench watched her first plays here as a child",
     image: "images/judidench.png",
-    tldr: "Judi Dench needs no introduction, she is one of the greatest actors of all time.",
+    tldr: "Judi Dench needs no introduction, she is one of the greatest actresses of all time.",
     events: [
       { date: "1998", description: "Dench won an Academy Award for playing Queen Elizabeth in 'Shakespeare in Love.' She has won over 20 prestigious awards over her seven-decade career, including two Golden Globes 🎭" },
       { date: "1995", description: "Dench is the longest-serving cast member of the James Bond franchise, playing M until 2015 🤵" },
@@ -307,10 +307,10 @@ export const locations = [
 },
 
 { 
-    coords: [-1.0858436, 53.956914], 
+    coords: [-1.0803772971693881, 53.961013235822165], 
     name: "Anne Lister", 
     occupation: "1791-1840", 
-    description: "xxx", 
+    description: "The first modern lesbian marriage happened here", 
     image: "images/annelister.png", 
     tldr: "Anne Lister was a pioneering diarist and writer known for documenting her life and same-sex relationships in her detailed journals.", 
     events: [
