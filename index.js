@@ -13,11 +13,6 @@ var map = new mapboxgl.Map({
     bearing: -17.6
 });
 
-map.on('load', () => {
-  addBuildingMarkers();
-});
-
-
 // Create a <style> element to add the CSS
 const stylePopup = document.createElement('style');
 
