@@ -204,7 +204,7 @@ export const buildings = [
   },
 {
     name: "Heslington Hall",
-    coords: [-1.0470142651058612, 53.945832347388134,
+    coords: [-1.0470142651058612, 53.945832347388134], 
     image: "images/heslingtonhall.png",
     description: ,
     occupation: "1565",
