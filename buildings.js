@@ -199,7 +199,7 @@ export const buildings = [
     occupation: "1752",
     tldr: "Now a hotel, it was built to be a town house for John Bourchier, owner of Beningborough House",
     events: [
-      { date: "1960", description: "It housed the Depart of Mathematics for York University, then the Department of Archaeology 1978-1996." }
+      { date: "1960", description: "It housed the Departmrnt of Mathematics for York University, then the Department of Archaeology 1978-1996." }
     ]
   },
 {
