@@ -595,6 +595,18 @@ export const locations = [
       { date: "2022", description: "BAAL community now stands at over 1400 members." },
     ]
   },
+{ 
+    coords: [-1.0906194, 53.9647176],
+    name: "Constantine",
+    occupation: "272-337",
+    description: "Constantine was proclaimed Roman Emporer on this spot.",
+    image: "images/constantine.png",
+    tldr: "Constantine the Great is one of the most impactful Roman Emporers there ever was.",
+    events: [
+      { date: "LEGACY", description: "He founded the city of Constantinople and made it the capital of the Empire, which it remained for over a millennium." },
+      { date: "1964", description: "He was the first Roman Emporer to convert to Christianity ✝️" },
+    ]
+  },
   { 
     coords: [-1.0715834, 53.9658982],
     name: "Mary Ann Craven",
