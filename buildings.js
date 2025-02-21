@@ -392,5 +392,199 @@ export const buildings = [
       { date: "COST", description: "The cost of construction was 317,050 (£2,342,000 in 2023)." },
       ]
   },
+  {
+    "name": "Treasurer's House",
+    "coords": [-1.080868905218737, 53.96297535292601],
+    "image": "images/treasurershouse.png",
+    "description": "",
+    "occupation": "1091",
+    "tldr": "This was the office for treasurer of York Minster until the Reformation brought this job to an end in 1547.",
+    "events": [
+      {
+        "date": "1617",
+        "description": "James 1 visited, hosted by the Young family who are entirely responsible for how it looks today"
+      },
+      {
+        "date": "1900",
+        "description": "Prince Albert Edward, princess Alexandra of Denmark and princess Victoria visited"
+      },
+      {
+        "date": "ROMAN",
+        "description": "The building is built directly over a Roman road, four columns were discovered during renovation"
+      }
+    ]
+  },
+  {
+    "name": "Memorial Gardens",
+    "coords": [-1.0895344308173005, 53.95991546490111],
+    "image": "images/memorialgardens.png",
+    "description": "",
+    "occupation": "1925",
+    "tldr": "'Their name liveth forever more",
+    "events": [
+      {
+        "date": "1925",
+        "description": "King George VI unveiled the memorial"
+      },
+      {
+        "date": "CENOTAPH",
+        "description": "It was designed by Sir Edwin Luxten, who also designed the Cenotaph in London"
+      }
+    ]
+  },
+  {
+    "name": "The Five Sisters Window",
+    "coords": [-1.0808863982124306, 53.96225159740778],
+    "image": "images/fivesisterswindow.png",
+    "description": "",
+    "occupation": "1270",
+    "tldr": "The largest ancient stained-glass window in the British Isles, it is now a war memorial.",
+    "events": [
+      {
+        "date": "DISSOLUTION",
+        "description": "It was spared dissolution by Thomas Cromwell because York-born parliamentarian Lord Fairfax issued an order saying \"the man who damages the windows would be shot at sight\""
+      },
+      {
+        "date": "1925",
+        "description": "It was restored and The Duchess of York unveiled it as the only memorial in the UK dedicated to all the women of the British Empire who were killed in WW1."
+      }
+    ]
+  },
+  {
+    "name": "The Milner York",
+    "coords": [-1.091757496638528, 53.95866308006686],
+    "image": "images/themilneryork.png",
+    "description": "",
+    "occupation": "1878",
+    "tldr": "The building was originally opened as an addition to the railways station, but has changed hands ever since.",
+    "events": [
+      {
+        "date": "1854",
+        "description": "Queen Victoria visited the hotel, thus it became the Royal Station Hotel for a while."
+      },
+      {
+        "date": "2024",
+        "description": "It was named The Milner York after the war hero who died inside here. William Milner's 95-year-old granddaughter cut the ribbon at the opening ceremony."
+      }
+    ]
+  },
+  {
+    "name": "Minster Library",
+    "coords": [-1.0825304416262571, 53.96356910961066],
+    "image": "images/minsterlibrary.png",
+    "description": "",
+    "occupation": "1230",
+    "tldr": "The building is home to numerous notable items, including cathedral records dating back to 1150.",
+    "events": [
+      {
+        "date": "1628",
+        "description": "Archbishop of York Tobias Matthew died and left his books to the Minster. The collection was said to be 'the largest private collection in England'"
+      }
+    ]
+  },
+  {
+    "name": "Merchant Adventurers Hall",
+    "coords": [-1.0788504196503679, 53.9575713904461],
+    "image": "images/merchantadventurershall.png",
+    "description": "",
+    "occupation": "1357",
+    "tldr": "The largest timber-framed building in the UK still in use.",
+    "events": [
+      {
+        "date": "1430",
+        "description": "The fraternity here were granted a royal charter by King Henry VI and became 'The Mistry of Mercers'."
+      },
+      {
+        "date": "ETTY",
+        "description": "Inside is a portrait by William Etty, of his brother John Etty"
+      }
+    ]
+  },
+  {
+    "name": "York Art Gallery",
+    "coords": [-1.0860314377071778, 53.96288376514518],
+    "image": "images/yorkartgallery.png",
+    "description": "",
+    "occupation": "1882",
+    "tldr": "This building was only meant for temporary exhibitions, but became York Art Gallery.",
+    "events": [
+      {
+        "date": "1866",
+        "description": "The gallery hosted an exhibition in which 400,000 people turned up"
+      },
+      {
+        "date": "THEFT",
+        "description": "In 1979, five 15th-century paintings were stolen - they were not recovered until 2023 when a Dorchester auction house noticed it on the Loss register. Also, in 1999, staff were tied up and £700,000 worth of art was stolen during an armed robbery."
+      }
+    ]
+  },
+  {
+    "name": "Mansion House",
+    "coords": [-1.0847663447126155, 53.95994355324871],
+    "image": "images/mansionhouse.png",
+    "description": "",
+    "occupation": "1732",
+    "tldr": "Home of the Lord Mayor of York, it is the earliest purpose built house for a Lord Mayor in existence, predating London mansion by 20 years.",
+    "events": [
+      {
+        "date": "SILVER",
+        "description": "Holds one of the largest civic silver collections in England"
+      },
+      {
+        "date": "1545",
+        "description": "The house is home to The Bowes Sword, donated by York-born Mayor of London in 1545."
+      },
+      {
+        "date": "ROMAN EMPEROR",
+        "description": "The house is also home to the Sigismund sword, owned by the Holy Roman Emporer Sigismund when he part of the Order of the Garter of the Knights of St. George with Henry V."
+      }
+    ]
+  },
+  {
+    "name": "St Marys Abbey Remains",
+    "coords": [-1.0878747049737392, 53.96235328206902],
+    "image": "images/stmarysabbeyremains.png",
+    "description": "",
+    "occupation": "1086",
+    "tldr": "The abbey was the wealthiest monastary in the North of England until it was dissoyled by Henry VIII in 1539.",
+    "events": []
+  },
+  {
+    "name": "St Leonard's Hospital remains",
+    "image": "images/stleonardshospital.png",
+    "coords": "1225",
+    "description": "",
+    "occupation": "1225",
+    "tldr": "This was the largest hospital in England during the Middle Ages. It was also dissolved with the monastery",
+    "events": []
+  },
+  {
+    "name": "Yorkshire Museum",
+    "coords": [-1.0876926493525807, 53.96171044482128],
+    "image": "images/yorkshiremuseum.png",
+    "description": "",
+    "occupation": "1830",
+    "tldr": "The Yorkshire Museum was built by the Yorkshire Philosophical Society, one of the first purpose-built museums in Britain",
+    "events": [
+      {
+        "date": "EXTINCT",
+        "description": "The biology section contains 2000,000 specimens, including many extinct birds, elephants, cave bears and hyena from the Yorkshire region."
+      },
+      {
+        "date": "ANGLO-SAXON",
+        "description": "The museum contain the Coppergate Helmet, one of six Anglo-Saxon helmets survived to present day and by the far the best preserved."
+      }
+    ]
+  },
+  {
+    "name": "Le Belfrey",
+    "coords": [-1.0829730981909202, 53.961806064609014],
+    "image": "images/lebelfrey.png",
+    "description": "",
+    "occupation": "1525",
+    "tldr": "This is where Guy Fawkes was baptized, before he became a Catholic",
+    "events": []
+  }
+
 
 ];
