@@ -29,17 +29,12 @@
             height: 100vh;
         }
 
-        .button-container {
+        #custom-bmc-button {
             position: fixed;
             left: 50%;
             top: 10px;
             transform: translateX(-50%);
             z-index: 1000;
-            display: flex;
-            gap: 10px; /* Space between buttons */
-        }
-
-        .custom-button {
             background-color: #e9e8e0; /* Updated background color */
             color: black;
             border: 2px solid #f0f0f0; /* Added border */
@@ -53,19 +48,19 @@
             box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); /* Added box shadow */
         }
 
-        .custom-button:hover {
+        #custom-bmc-button:hover {
             background-color: #d1d0c6; /* Optional hover effect */
         }
 
         @media (max-width: 750px) {
-            .custom-button {
+            #custom-bmc-button {
                 font-size: 14px; /* Slightly larger font for mobile */
                 padding: 4px 10px; /* Adjusted padding for mobile devices */
             }
         }
 
         @media (prefers-contrast: more) {
-            .custom-button {
+            #custom-bmc-button {
                 background-color: #000000;
                 color: #FFFFFF;
                 border-color: #FFFFFF; /* Change border color in high contrast mode */
@@ -78,13 +73,10 @@
 
     <div id="map"></div>
 
-    <!-- Button Container -->
-    <div class="button-container">
-        <a href="https://www.buymeacoffee.com/britmap" target="_blank" class="custom-button">
-            ☕ Buy me a coffee
-        </a>
-        <button id="add-marker-button" class="custom-button">Add a Marker</button>
-    </div>
+    <!-- Buy Me a Coffee Button -->
+    <a href="https://www.buymeacoffee.com/britmap" target="_blank" id="custom-bmc-button">
+        ☕ Buy me a coffee
+    </a>
 
     <script src="index.js" type="module" defer></script>
 
