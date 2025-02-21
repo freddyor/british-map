@@ -306,7 +306,7 @@ export const buildings = [
   {
     "name": "The Assembly Rooms",
     "coords": [-1.0848699826058827, 53.961106870895996],
-    "image": "images/assemblyrooms.png",
+    "image": "images/assemblyhall.png",
     "description": "",
     "occupation": "1735",
     "tldr": "Originally built for high class social gatherings, but is now an Italian restaurant.",
