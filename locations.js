@@ -24,6 +24,30 @@ export const locations = [
 { date: "2003", description: "Snow was ranked the greatest doctor of all time by a poll of doctors 🥇" },
 ]
   },
+ { 
+    coords: [ -1.0800987482070923, 53.95683360321331 ], 
+    name: "John Carr", 
+    occupation: "1813-1858", 
+    description: "This is another example of John Carr's architectural prowess.",
+    image: "images/johncarr.png",
+    tldr: "John Carr is the most renowned architect in York's history, best known for Buxton Crescent in Derbyshire and Harewood House.",
+     events: [
+{ date: "MAYOR", description: "Carr became Lord Mayor in 1770 and 1785." },
+{ date: "1770", description: "His largest work was the Hopsital de Santo Antono in Oporto, Portugal 🇵🇹" },
+{ date: "LEGACY", description: "He has built a large amount of York's grade listed buildings, such as the York Crown Court, York Castle Museum, Fairfax House, Bootham Mental Hospital and Micklegate House 🏛️" },
+]
+  },
+{ 
+    coords: [ -1.0916981690535232, 53.95852196150802 ], 
+    name: "William Milner", 
+    occupation: "1900-1942", 
+    description: "William Milner heroically lost his life here during the Blitz.",
+    image: "images/williammilner.png",
+    tldr: "During the Baedeker Blitz, William Milner, Station Foreman, ran into this burning building to obtain a medical box to treat the wounded. He didn't make it back out.",
+     events: [
+{ date: "2001", description: "When his body was discovered, he was still clutching the first-aid box." },
+]
+  },
    {
     coords: [ -1.0911787, 53.9555643 ], 
     name: "George Leeman", 
