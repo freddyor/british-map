@@ -366,10 +366,9 @@ export const buildings = [
     "occupation": "12th",
     "tldr": "Only the tower remains of the old St Lawrence Church.",
     "events": [
-      {
-        "date": "1719",
-        "description": "Sir John Vanbrugh, architect of Blenheim palace (birthplace of Winston Churchill) and Castle Howard, was married here."
-      },
+      { "date": "1719", "description": "Sir John Vanbrugh, architect of Blenheim palace (birthplace of Winston Churchill) and Castle Howard, was married here." },
+      ]
+  },
   {
     name: "Multangular Tower",
     coords: [-1.0869876618159724, 53.96134725163458],
@@ -378,7 +377,7 @@ export const buildings = [
     occupation: "71-74AD",
     tldr: "The original defenses on this site were built by the Roman Ninth Legion.",
     events: [
-      { date: "1640s", description: "The tower was still being used for deference during the English civil war, hence why there is a cannonball hole.     ." },
+      { date: "1640s", description: "The tower was still being used for deference during the English civil war, hence why there is a cannonball hole." },
       { date: "ROMANS", description: "There are five Roman coffins sat in the tower." },
     ]
   },
