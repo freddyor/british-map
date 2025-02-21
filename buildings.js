@@ -247,6 +247,7 @@ export const buildings = [
     tldr: "In the apex of the pediment is carved the arms of the city of York and above them a figure of Justice holding the scale.",
     events: [
       { date: "COST", description: "The cost of construction was 317,050 (£2,342,000 in 2023)." },
+      ]
   },
 
 ];
