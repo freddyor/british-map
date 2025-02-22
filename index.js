@@ -97,6 +97,13 @@ const geolocate = new mapboxgl.GeolocateControl({
 
 map.addControl(geolocate);
 
+// Create a single marker for user location
+const userLocationEl = document.createElement('div');
+userLocationEl.className = 'user-location-marker';
+const userLocationMarker = new mapboxgl.Marker({element: userLocationEl})
+  .setLngLat([0, 0]) // Set initial coordinates, will be updated later
+  .addTo(map);
+
 geolocate.on('error', (e) => {
   if (e.code === 1) {
     console.log('Location access denied by user');
@@ -111,12 +118,8 @@ geolocate.on('geolocate', (e) => {
   const position = [lon, lat];
   console.log(position);
 
-  // Add user location marker
-  const el = document.createElement('div');
-  el.className = 'user-location-marker';
-  new mapboxgl.Marker({element: el})
-    .setLngLat(position)
-    .addTo(map);
+  // Update the user location marker position
+  userLocationMarker.setLngLat(position);
 });
 
 function createCustomMarker(imageUrl, color = '#9b4dca', isLocation = false) {
