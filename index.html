@@ -1,6 +1,7 @@
 import { locations } from './locations.js';
 import { buildings } from './buildings.js';
 
+
 mapboxgl.accessToken = 'pk.eyJ1IjoiZnJlZGRvbWF0ZSIsImEiOiJjbTc1bm5zYnQwaG1mMmtxeDdteXNmeXZ0In0.PuDNORq4qExIJ_fErdO_8g';
 
 var map = new mapboxgl.Map({
@@ -15,6 +16,7 @@ var map = new mapboxgl.Map({
 map.on('load', () => {
   addBuildingMarkers();
 });
+
 
 // Create a <style> element to add the CSS
 const stylePopup = document.createElement('style');
@@ -125,7 +127,7 @@ locations.forEach(location => {
         .addTo(map);
 });
 
-function createCustomMarker(imageUrl, color = '#E9E8E0') {
+function createCustomMarker(imageUrl, color = '#8A2BE2') {
   const markerDiv = document.createElement('div');
   markerDiv.className = 'custom-marker';
   markerDiv.style.width = '3em';
@@ -149,7 +151,7 @@ function createCustomMarker(imageUrl, color = '#E9E8E0') {
 function addBuildingMarkers() {
   buildings.forEach(building => {
     const marker = new mapboxgl.Marker({
-      element: createCustomMarker(building.image, '#9b4dca') // Purple color for buildings
+      element: createCustomMarker(building.image, '#FFD700') // Gold color
     })
       .setLngLat(building.coords)
       .setPopup(new mapboxgl.Popup({ closeButton: true, closeOnClick: true })
