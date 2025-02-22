@@ -64,7 +64,6 @@ stylePopup.innerHTML = `
     background-color: white;
     border: 3px solid #87CEFA;
     border-radius: 100%;
-    box-shadow: 0 0 0 2px white, 0 0 0 4px #87CEFA;
   }
 
   .location-marker {
