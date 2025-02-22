@@ -1,6 +1,6 @@
 export const locations = [
   { 
-    coords: [ -1.076124, 53.9639651 ], 
+    coords: [ -1.0760704677429955, 53.9638539316183 ], 
     name: "George Hudson", 
     occupation: "1800-1871", 
     description: "George Hudson lived here at number 44",
@@ -49,7 +49,7 @@ export const locations = [
 ]
   },
    {
-    coords: [ -1.0911787, 53.9555643 ], 
+    coords: [ -1.0910483420666228, 53.95554211040348 ], 
     name: "George Leeman", 
     occupation: "1809-1882", 
     description: "George Leeman once lived here with his family",
@@ -74,7 +74,7 @@ export const locations = [
     ]
   },
   {
-    coords: [ -1.0854884, 53.9618703 ], 
+    coords: [ -1.0852773667164484, 53.961914429368385 ], 
     name: "Judi Dench", 
     occupation: "1934-", 
     description: "Judi Dench watched her first plays here as a child",
@@ -112,7 +112,7 @@ export const locations = [
     ]
   },
   {
-    coords: [ -1.0761981, 53.9747056 ], 
+    coords: [ -1.0758452629637105, 53.974766837614766 ], 
     name: "David Bradley", 
     occupation: "1942-", 
     description: "Award-winning David Bradley performed stage musicals here as a child",
@@ -165,7 +165,7 @@ export const locations = [
 },
 
 { 
-    coords: [ -1.0791789, 53.9589197 ], 
+    coords: [ -1.0791602088937657, 53.95885818419487 ], 
     name: "Josce of York", 
     occupation: "1190", 
     description: "Josce of York once lived here", 
@@ -234,7 +234,7 @@ export const locations = [
 },
 
   { 
-    coords: [-1.0843668, 53.9600807], 
+    coords: [-1.08416161016206, 53.9601495686014], 
     name: "Frederick Belmont", 
     occupation: "-1952", 
     description: "This is where Frederick Belmont opened up the second Bettys",
@@ -479,7 +479,7 @@ export const locations = [
     ]
   },
   { 
-    coords: [-1.084409, 53.9602144],
+    coords: [-1.0844636776550787, 53.96031702728158],
     name: "Joseph Terry",
     occupation: "1793-1850",
     description: "This is where Joseph Terry founded the chocolate brand",
@@ -532,7 +532,7 @@ export const locations = [
     ]
   },
   { 
-    coords: [-1.0917633, 53.9663689],
+    coords: [-1.09154017364131, 53.96649177815924],
     name: "Mary Ellen Best",
     occupation: "1809-1891",
     description: "Mary Ellen Best lived here in number 14.",
@@ -596,7 +596,7 @@ export const locations = [
     ]
   },
 { 
-    coords: [-1.0817422717809677, 53.961837766479135],
+    coords: [-1.0906194, 53.9647176],
     name: "Constantine",
     occupation: "272-337",
     description: "Constantine was proclaimed Roman Emporer on this spot.",
