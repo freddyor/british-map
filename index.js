@@ -14,6 +14,7 @@ var map = new mapboxgl.Map({
 
 map.on('load', () => {
   addBuildingMarkers();
+  geolocate.trigger(); // Trigger geolocation on map load
 });
 
 // Create a <style> element to add the CSS
@@ -92,7 +93,8 @@ const geolocate = new mapboxgl.GeolocateControl({
   showAccuracyCircle: false,
   fitBoundsOptions: {
     maxZoom: 15
-  }
+  },
+  showUserLocation: false // Disable the default blue dot
 });
 
 map.addControl(geolocate);
