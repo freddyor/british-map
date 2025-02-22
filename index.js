@@ -120,7 +120,7 @@ geolocate.on('geolocate', (e) => {
     .addTo(map);
 });
 
-function createCustomMarker(imageUrl, color = '#FFD700', isLocation = false) {
+function createCustomMarker(imageUrl, color = '#9b4dca', isLocation = false) {
   const markerDiv = document.createElement('div');
   markerDiv.className = 'custom-marker';
   markerDiv.style.width = '3em';
@@ -146,7 +146,7 @@ function createCustomMarker(imageUrl, color = '#FFD700', isLocation = false) {
 }
 
 locations.forEach(location => {
-  const { element: markerElement, id } = createCustomMarker(location.image, '#FFD700', true);
+  const { element: markerElement, id } = createCustomMarker(location.image, '#9B4DCA', true);
   markerElement.className += ' location-marker';
   const marker = new mapboxgl.Marker({
     element: markerElement
@@ -190,7 +190,7 @@ locations.forEach(location => {
 
 function addBuildingMarkers() {
   buildings.forEach(building => {
-    const { element: markerElement, id } = createCustomMarker(building.image, '#8A2BE2', false);
+    const { element: markerElement, id } = createCustomMarker(building.image, '#E9E8E0', false);
     markerElement.className += ' building-marker';
     const marker = new mapboxgl.Marker({
       element: markerElement
