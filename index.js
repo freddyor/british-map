@@ -31,7 +31,7 @@ stylePopup.innerHTML = `
   .mapboxgl-popup-content {
     border-radius: 12px !important;
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3) !important;
-    padding: 10px 10px 0 10px !important;
+    padding: 5px 10px 0 10px !important;
     font-family: 'Poppins', sans-serif !important;
     background: #E9E8E0;
     border: 2px solid #f0f0f0 !important;
@@ -95,8 +95,9 @@ stylePopup.innerHTML = `
     background-color: #f0f0f0;
     border-radius: 0 0 10px 10px;
     margin-top: 0px;
-    width: 100%;
+    width: calc(100% + 20px);
     margin-left: -10px;
+    margin-right: -10px;
     margin-bottom: -2px;
    }
 
