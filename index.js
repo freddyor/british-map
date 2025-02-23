@@ -88,19 +88,19 @@ stylePopup.innerHTML = `
 
   .collapsible-header {
     cursor: pointer;
-    padding: 5px; /* Keep padding */
+    padding: 5px;
     text-align: center;
-    background-color: #f0f0f0; /* Button background color */
-    border-radius: 5px; /* Slightly rounded corners */
-    margin-top: 2px; /* Reduced top margin */
-    margin-bottom: 2px; /* Reduced bottom margin */
-    width: calc(100% - 20px); /* Extend to fill most of the popup width */
-    margin-left: auto; /* Center horizontally */
-    margin-right: auto; /* Center horizontally */
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    width: calc(100% - 10px);
+    margin-left: auto;
+    margin-right: auto;
    }
 
    .collapsible-header:hover {
-     background-color: #e0e0e0; /* Hover effect */
+     background-color: #e0e0e0;
    }
 `;
 
@@ -189,4 +189,105 @@ function createCustomMarker(imageUrl, color = '#9b4dca', isLocation = false) {
 
 function createPopupHTML(location) {
    return `
-     <p style="font-size:
+     <p style="font-size: 6px; font-weight: bold; margin-bottom: 10px;">${location.description}</p>
+     <div class="collapsible-header"><span>&#9660;</span></div>
+     <div class="collapsible-content">
+       <div style="border-top: 1px solid #ccc; margin-bottom: 10px;"></div>
+       <div style="display: flex; align-items: center; gap: 10px;">
+         <img src="${location.image}" alt="${location.name}" style="width: 40px; height: 40px; object-fit: cover; border-radius: 50%;" />
+         <div>
+           <div style="font-size: 16px; font-weight: bold;">${location.name}</div>
+           <div style="font-size: 14px; color: #666;">${location.occupation}</div>
+         </div>
+       </div>
+       <p style="background: #f9f9f9; padding: 10px; margin-top: 10px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); font-size: 12px;">${location.tldr}</p>
+       ${location.events.length ? `
+         <div style="margin-top: 10px;">
+           ${location.events.map(event => `
+             <div style="background: #f9f9f9; border: 1px solid #ddd; border-radius: 8px; padding: 10px; margin-bottom: 10px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
+               <strong style="color: #9b4dca; font-size: 14px;">${event.date}</strong>: <span style="font-size: 12px;">${event.description}</span>
+             </div>
+           `).join('')}
+         </div>
+       ` : ''}
+     </div>
+   `;
+}
+
+locations.forEach(location => {
+   const { element: markerElement, id } = createCustomMarker(location.image, '#9B4DCA', true);
+   markerElement.className += ' location-marker';
+   const marker = new mapboxgl.Marker({
+     element: markerElement
+   })
+     .setLngLat(location.coords)
+     .addTo(map);
+
+   const popup = new mapboxgl.Popup({
+     closeButton: true,
+     closeOnClick: true,
+     className: 'custom-popup'
+   }).setHTML(createPopupHTML(location));
+
+   marker.setPopup(popup);
+
+   marker.getElement().addEventListener('click', () => {
+     map.getCanvas().style.cursor = 'pointer';
+     popup.addTo(map);
+
+     // Add event listener to toggle collapsible content
+     const header = popup._content.querySelector('.collapsible-header');
+     const content = popup._content.querySelector('.collapsible-content');
+     const headerSpan = header.querySelector('span');
+
+     header.addEventListener('click', () => {
+       if (content.style.display === 'none') {
+         content.style.display = 'block';
+         headerSpan.innerHTML = '&#9650;'; // Up-facing triangle
+       } else {
+         content.style.display = 'none';
+         headerSpan.innerHTML = '&#9660;'; // Down-facing triangle
+       }
+     });
+   });
+});
+
+function addBuildingMarkers() {
+  buildings.forEach(building => {
+    const { element: markerElement, id } = createCustomMarker(building.image, '#E9E8E0', false);
+    markerElement.className += ' building-marker';
+    const marker = new mapboxgl.Marker({
+      element: markerElement
+    })
+      .setLngLat(building.coords)
+      .addTo(map);
+
+    const popup = new mapboxgl.Popup({
+      closeButton: true,
+      closeOnClick: true,
+      className: 'custom-popup'
+    }).setHTML(createPopupHTML(building));
+
+    marker.setPopup(popup);
+
+    marker.getElement().addEventListener('click', () => {
+      map.getCanvas().style.cursor = 'pointer';
+      popup.addTo(map);
+
+      // Add event listener to toggle collapsible content
+      const header = popup._content.querySelector('.collapsible-header');
+      const content = popup._content.querySelector('.collapsible-content');
+      const headerSpan = header.querySelector('span');
+
+      header.addEventListener('click', () => {
+        if (content.style.display === 'none') {
+          content.style.display = 'block';
+          headerSpan.innerHTML = '&#9650;'; // Up-facing triangle
+        } else {
+          content.style.display = 'none';
+          headerSpan.innerHTML = '&#9660;'; // Down-facing triangle
+        }
+      });
+    });
+  });
+}
