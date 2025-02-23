@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Britmap - York</title>
 
-    <!-- Add your favicon here -->
+    <!-- Favicon -->
     <link rel="icon" href="/favicon.png" type="image/png" sizes="32x32">
 
-    <!-- Google Fonts for Poppins -->
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 
     <!-- Mapbox GL JS & CSS -->
@@ -21,7 +21,7 @@
             padding: 0;
             width: 100%;
             height: 100%;
-            font-family: 'Poppins', sans-serif; /* Set default font for body */
+            font-family: 'Poppins', sans-serif;
         }
 
         #map {
@@ -35,42 +35,54 @@
             top: 10px;
             transform: translateX(-50%);
             z-index: 1000;
-            background-color: #e9e8e0; /* Updated background color */
+            background-color: #e9e8e0;
             color: black;
-            border: 2px solid #f0f0f0; /* Added border */
-            padding: 3px 8px; /* Reduced padding for less space around text */
+            border: 2px solid #f0f0f0;
+            padding: 3px 8px;
             font-size: 12px;
-            font-weight: bold; /* Make the text bold */
+            font-weight: bold;
             border-radius: 8px;
             cursor: pointer;
             text-decoration: none;
             display: inline-block;
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); /* Added box shadow */
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
         }
 
-        #custom-bmc-button:hover {
-            background-color: #d1d0c6; /* Optional hover effect */
+        #auth-container {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            z-index: 1001;
+            background: white;
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
-        @media (max-width: 750px) {
-            #custom-bmc-button {
-                font-size: 14px; /* Slightly larger font for mobile */
-                padding: 4px 10px; /* Adjusted padding for mobile devices */
-            }
+        input, button {
+            display: block;
+            margin: 5px 0;
+            padding: 8px;
+            width: 100%;
+            border: 1px solid #ddd;
+            border-radius: 4px;
         }
 
-        @media (prefers-contrast: more) {
-            #custom-bmc-button {
-                background-color: #000000;
-                color: #FFFFFF;
-                border-color: #FFFFFF; /* Change border color in high contrast mode */
-                box-shadow: none; /* Remove shadow in high contrast mode for better visibility */
-            }
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
         }
     </style>
 </head>
 <body>
 
+    <!-- Map Container -->
     <div id="map"></div>
 
     <!-- Buy Me a Coffee Button -->
@@ -78,7 +90,107 @@
         ☕ Buy me a coffee
     </a>
 
-    <script src="index.js" type="module" defer></script>
+    <!-- Authentication Forms -->
+    <div id="auth-container">
+        <h3>User Authentication</h3>
+
+        <!-- Sign Up Form -->
+        <div id="sign-up-form">
+            <h4>Sign Up</h4>
+            <input type="text" id="signUpName" placeholder="Name" required>
+            <input type="email" id="signUpEmail" placeholder="Email" required>
+            <input type="password" id="signUpPassword" placeholder="Password" required>
+            <button onclick="signUp()">Sign Up</button>
+        </div>
+
+        <!-- Log In Form -->
+        <div id="login-form">
+            <h4>Log In</h4>
+            <input type="email" id="loginEmail" placeholder="Email" required>
+            <input type="password" id="loginPassword" placeholder="Password" required>
+            <button onclick="logIn()">Log In</button>
+        </div>
+
+        <!-- User Info & Logout -->
+        <div id="user-info" style="display:none;">
+            <p id="userName"></p>
+            <button onclick="logOut()">Log Out</button>
+        </div>
+    </div>
+
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/11.3.1/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.3.1/firebase-analytics.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "AIzaSyDjv5uUNOx86FvYsXdKSMkl8vui2Jynt7M",
+    authDomain: "britmap-64cb3.firebaseapp.com",
+    projectId: "britmap-64cb3",
+    storageBucket: "britmap-64cb3.firebasestorage.app",
+    messagingSenderId: "821384262397",
+    appId: "1:821384262397:web:ca81d64ab6a8dea562c494",
+    measurementId: "G-03E2BB7BQH"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+</script>
+
+        // Sign Up Function
+        async function signUp() {
+            const name = signUpName.value;
+            const email = signUpEmail.value;
+            const password = signUpPassword.value;
+
+            try {
+                const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+                await setDoc(doc(db, "users", userCredential.user.uid), { name, email });
+                showUserInfo(name);
+            } catch (error) {
+                alert(error.message);
+            }
+        }
+
+        // Log In Function
+        async function logIn() {
+            const email = loginEmail.value;
+            const password = loginPassword.value;
+
+            try {
+                const userCredential = await signInWithEmailAndPassword(auth, email, password);
+                const docSnap = await getDoc(doc(db, "users", userCredential.user.uid));
+
+                if (docSnap.exists()) {
+                    showUserInfo(docSnap.data().name);
+                }
+            } catch (error) {
+                alert(error.message);
+            }
+        }
+
+        // Log Out Function
+        function logOut() {
+            signOut(auth).then(() => {
+                user-info.style.display = 'none';
+                sign-up-form.style.display = 'block';
+                login-form.style.display = 'block';
+            });
+        }
+
+        // Show User Info
+        function showUserInfo(name) {
+            userName.textContent = `Welcome, ${name}!`;
+            user-info.style.display = 'block';
+            sign-up-form.style.display = 'none';
+            login-form.style.display = 'none';
+        }
+    </script>
 
 </body>
 </html>
