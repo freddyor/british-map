@@ -105,10 +105,10 @@ stylePopup.innerHTML = `
    .toggle-button {
      background-color: #f0f0f0;
      border: none;
-     padding: 10px;
+     padding: 2px;
      cursor: pointer;
      font-family: 'Poppins', sans-serif;
-     font-size: 12px;
+     font-size: 10px;
      width: calc(100% + 20px);
      display: flex;
      align-items: center;
@@ -117,8 +117,8 @@ stylePopup.innerHTML = `
      margin-right:-10px; /* Align with popup edges */
      border-top-left-radius: 0; /* Rounded corners only at the bottom */
      border-top-right-radius: 0; /* Rounded corners only at the bottom */
-     border-bottom-left-radius:12px; /* Rounded corners at bottom left */
-     border-bottom-right-radius :12px; /* Rounded corners at bottom right */
+     border-bottom-left-radius:0px; /* Rounded corners at bottom left */
+     border-bottom-right-radius :0px; /* Rounded corners at bottom right */
    }
   
    .arrow {
