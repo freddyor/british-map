@@ -36,10 +36,12 @@ stylePopup.innerHTML = `
     background: #E9E8E0;
     border: 2px solid #f0f0f0 !important;
     line-height: 1.05;
-    padding-top: 0 !important;
+    padding-top: 10px !important;
     padding-bottom: 0 !important;
     margin-left: 3px;
     margin-right: 5px;
+    display: flex;
+    flex-direction: column;
   }
 
   .mapboxgl-popup-content img {
@@ -91,17 +93,16 @@ stylePopup.innerHTML = `
   .toggle-button {
     background-color: #f0f0f0;
     border: none;
-    padding: 5px 10px;
-    border-radius: 5px;
+    padding: 10px;
     cursor: pointer;
-    margin-bottom: 5px;
     font-family: 'Poppins', sans-serif;
     font-size: 12px;
-    width: 30px; /* Adjust as needed */
-    height: 25px; /* Adjust as needed */
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-top: auto;
+    border-top: 1px solid #ccc;
   }
   .arrow {
     border: solid black;
@@ -205,27 +206,29 @@ function createCustomMarker(imageUrl, color = '#9b4dca', isLocation = false) {
 
 function createPopupContent(data) {
   return `
-    <p style="font-size: 6px; font-weight: bold; margin-bottom: 10px;">${data.description}</p>
-    <button class="toggle-button"><i class="arrow down"></i></button>
-    <div class="collapsible-content">
-      <div style="display: flex; align-items: center; gap: 10px;">
-        <img src="${data.image}" alt="${data.name}" style="width: 40px; height: 40px; object-fit: cover; border-radius: 50%;" />
-        <div>
-          <div style="font-size: 16px; font-weight: bold;">${data.name}</div>
-          <div style="font-size: 14px; color: #666;">${data.occupation}</div>
+    <div style="flex-grow: 1;">
+      <p style="font-size: 6px; font-weight: bold; margin-bottom: 10px;">${data.description}</p>
+      <div class="collapsible-content">
+        <div style="display: flex; align-items: center; gap: 10px;">
+          <img src="${data.image}" alt="${data.name}" style="width: 40px; height: 40px; object-fit: cover; border-radius: 50%;" />
+          <div>
+            <div style="font-size: 16px; font-weight: bold;">${data.name}</div>
+            <div style="font-size: 14px; color: #666;">${data.occupation}</div>
+          </div>
         </div>
+        <p style="background: #f9f9f9; padding: 10px; margin-top: 10px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); font-size: 12px;">${data.tldr}</p>
+        ${data.events.length ? `
+          <div style="margin-top: 10px;">
+            ${data.events.map(event => `
+              <div style="background: #f9f9f9; border: 1px solid #ddd; border-radius: 8px; padding: 10px; margin-bottom: 10px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
+                <strong style="color: #9b4dca; font-size: 14px;">${event.date}</strong>: <span style="font-size: 12px;">${event.description}</span>
+              </div>
+            `).join('')}
+          </div>
+        ` : ''}
       </div>
-      <p style="background: #f9f9f9; padding: 10px; margin-top: 10px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); font-size: 12px;">${data.tldr}</p>
-      ${data.events.length ? `
-        <div style="margin-top: 10px;">
-          ${data.events.map(event => `
-            <div style="background: #f9f9f9; border: 1px solid #ddd; border-radius: 8px; padding: 10px; margin-bottom: 10px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
-              <strong style="color: #9b4dca; font-size: 14px;">${event.date}</strong>: <span style="font-size: 12px;">${event.description}</span>
-            </div>
-          `).join('')}
-        </div>
-      ` : ''}
     </div>
+    <button class="toggle-button"><i class="arrow down"></i></button>
   `;
 }
 
