@@ -29,37 +29,37 @@ document.head.appendChild(link);
 // Style for the popup and markers
 stylePopup.innerHTML = `
   .mapboxgl-popup-content {
-    border-radius: 12px 12px 0 0 !important;
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3) !important;
-    padding: 10px !important;
+    border-radius: 18px 18px 0 0 !important;
+    box-shadow: 0 9px 22px rgba(0, 0, 0, 0.3) !important;
+    padding: 15px !important;
     font-family: 'Poppins', sans-serif !important;
     background: #E9E8E0;
-    border: 2px solid #f0f0f0 !important;
+    border: 3px solid #f0f0f0 !important;
     border-bottom: none !important;
     line-height: 1.05;
-    padding-top: 10px !important;
+    padding-top: 15px !important;
     padding-bottom: 0 !important;
-    margin-left: 3px;
-    margin-right: 5px;
+    margin-left: 4.5px;
+    margin-right: 7.5px;
     display: flex;
     flex-direction: column;
   }
 
   .mapboxgl-popup-content img {
-    border: 2px solid #f0f0f0 !important;
-    border-radius: 8px;
-    width: auto; /* Maintain original image size */
-    height: auto; /* Maintain original image size */
-    max-width: 100%; /* Responsive */
-    max-height: 40px; /* Set a max height for consistency */
+    border: 3px solid #f0f0f0 !important;
+    border-radius: 12px;
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 60px;
   }
 
   .mapboxgl-popup-content p {
     font-weight: bold !important;
     text-align: center;
-    letter-spacing: -0.5px;
-    font-size: 13px !important;
-    margin-bottom: 10px !important;
+    letter-spacing: -0.75px;
+    font-size: 19.5px !important;
+    margin-bottom: 15px !important;
   }
 
   .mapboxgl-popup-close-button {
@@ -67,24 +67,24 @@ stylePopup.innerHTML = `
   }
 
   .user-location-marker {
-    width: 20px; /* Keep marker size small */
-    height: 20px; /* Keep marker size small */
+    width: 30px;
+    height: 30px;
     background-color: white;
-    border: 3px solid #87CEFA;
+    border: 4.5px solid #87CEFA;
     border-radius: 100%;
     position: relative;
   }
 
   .location-marker {
     z-index: 2;
-    width: 25px; /* Adjusted size for location markers */
-    height: 25px; /* Adjusted size for location markers */
+    width: 37.5px;
+    height: 37.5px;
   }
 
   .building-marker {
     z-index: 1;
-    width: 25px; /* Adjusted size for building markers */
-    height: 25px; /* Adjusted size for building markers */
+    width: 37.5px;
+    height: 37.5px;
   }
 
   .mapboxgl-popup {
@@ -98,44 +98,44 @@ stylePopup.innerHTML = `
    }
   
    .collapsible-content.show {
-     max-height: none; /* Allow full height when expanded */
+     max-height: none;
      transition: max-height 0.3s ease-in;
    }
   
    .toggle-button {
      background-color: #f0f0f0;
      border: none;
-     padding: 2px;
+     padding: 5px 15px;
      cursor: pointer;
      font-family: 'Poppins', sans-serif;
-     font-size: 10px;
-     width: calc(100% + 20px);
+     font-size: 18px;
+     width: calc(100% + 30px);
      display: flex;
      align-items: center;
      justify-content: center;
-     margin-left: -10px; /* Align with popup edges */
-     margin-right:-10px; /* Align with popup edges */
-     border-top-left-radius: 0; /* Rounded corners only at the bottom */
-     border-top-right-radius: 0; /* Rounded corners only at the bottom */
-     border-bottom-left-radius:0px; /* Rounded corners at bottom left */
-     border-bottom-right-radius :0px; /* Rounded corners at bottom right */
+     margin-left: -15px;
+     margin-right: -15px;
+     border-top-left-radius: 0;
+     border-top-right-radius: 0;
+     border-bottom-left-radius: 18px;
+     border-bottom-right-radius: 18px;
    }
   
    .arrow {
      border: solid black;
-     border-width: 0 2px 2px 0;
-     display:inline-block ;
-     padding :3 px ;
+     border-width: 0 3px 3px 0;
+     display: inline-block;
+     padding: 4.5px;
    }
   
    .down {
-      transform :rotate(45deg);
-      -webkit-transform :rotate(45deg);
+      transform: rotate(45deg);
+      -webkit-transform: rotate(45deg);
    }
   
    .up {
-      transform :rotate(-135deg);
-      -webkit-transform :rotate(-135deg);
+      transform: rotate(-135deg);
+      -webkit-transform: rotate(-135deg);
    }
 `;
 
@@ -144,16 +144,16 @@ document.head.appendChild(stylePopup);
 
 // Geolocation control
 const geolocate = new mapboxgl.GeolocateControl({
- positionOptions :{
- enableHighAccuracy :true
- },
- trackUserLocation :true,
- showUserHeading :true,
- showAccuracyCircle :false,
- fitBoundsOptions :{
- maxZoom :15
- },
- showUserLocation :false // Disable the default blue dot
+  positionOptions: {
+    enableHighAccuracy: true
+  },
+  trackUserLocation: true,
+  showUserHeading: true,
+  showAccuracyCircle: false,
+  fitBoundsOptions: {
+    maxZoom: 15
+  },
+  showUserLocation: false // Disable the default blue dot
 });
 
 map.addControl(geolocate);
@@ -175,143 +175,143 @@ textEl.textContent = 'me';
 
 userLocationEl.appendChild(textEl);
 
-const userLocationMarker = new mapboxgl.Marker({element:userLocationEl})
-.setLngLat([0,0]) // Set initial coordinates, will be updated later
-.addTo(map);
+const userLocationMarker = new mapboxgl.Marker({element: userLocationEl})
+  .setLngLat([0, 0]) // Set initial coordinates, will be updated later
+  .addTo(map);
 
-geolocate.on('error',(e) => {
- if (e.code ===1) {
- console.log('Location access denied by user');
- // You can update UI or take other actions here
- }
- e.preventDefault(); // Prevent the default error pop-up
+geolocate.on('error', (e) => {
+  if (e.code === 1) {
+    console.log('Location access denied by user');
+    // You can update UI or take other actions here
+  }
+  e.preventDefault(); // Prevent the default error pop-up
 });
 
-geolocate.on('geolocate',(e) => {
- const lon = e.coords.longitude ;
- const lat = e.coords.latitude ;
- const position =[lon,lat];
- console.log(position);
+geolocate.on('geolocate', (e) => {
+  const lon = e.coords.longitude;
+  const lat = e.coords.latitude;
+  const position = [lon, lat];
+  console.log(position);
 
- // Update the user location marker position
- userLocationMarker.setLngLat(position);
+  // Update the user location marker position
+  userLocationMarker.setLngLat(position);
 });
 
-function createCustomMarker(imageUrl,color ='#9b4dca',isLocation=false) {
- const markerDiv = document.createElement('div');
- markerDiv.className ='custom-marker';
- markerDiv.style.width ='25px'; // Normalized marker size
- markerDiv.style.height ='25px'; // Normalized marker size
- markerDiv.style.position ='absolute';
- markerDiv.style.borderRadius ='50%';
- markerDiv.style.border=`0.25em solid ${color}`;
- markerDiv.style.boxSizing='border-box';
+function createCustomMarker(imageUrl, color = '#9b4dca', isLocation = false) {
+  const markerDiv = document.createElement('div');
+  markerDiv.className = 'custom-marker';
+  markerDiv.style.width = '37.5px';
+  markerDiv.style.height = '37.5px';
+  markerDiv.style.position = 'absolute';
+  markerDiv.style.borderRadius = '50%';
+  markerDiv.style.border = `0.375em solid ${color}`;
+  markerDiv.style.boxSizing = 'border-box';
 
- const imageElement=document.createElement('img');
- imageElement.src=imageUrl ;
- imageElement.style.width='100%';
- imageElement.style.height='100%';
- imageElement.style.objectFit='cover';
- imageElement.style.borderRadius='50%';
+  const imageElement = document.createElement('img');
+  imageElement.src = imageUrl;
+  imageElement.style.width = '100%';
+  imageElement.style.height = '100%';
+  imageElement.style.objectFit = 'cover';
+  imageElement.style.borderRadius = '50%';
 
- markerDiv.appendChild(imageElement);
-
- return{
- element :markerDiv,
- id:`marker-${Date.now()}-${Math.random()}`
- };
+  markerDiv.appendChild(imageElement);
+  
+  return {
+    element: markerDiv,
+    id: `marker-${Date.now()}-${Math.random()}`
+  };
 }
 
 function createPopupContent(data) {
- return `
- <div style="flex-grow :1;">
- <p style="font-size :6 px; font-weight:bold;margin-bottom :10 px;">${data.description}</p>
- <div class="collapsible-content">
- <div style="display:flex;align-items:center;gap :10 px;">
- <img src="${data.image}" alt="${data.name}" style="width :40 px;height :40 px;object-fit :cover;border-radius :50%;" />
- <div>
- <div style="font-size :16 px;font-weight:bold;">${data.name}</div>
- <div style="font-size :14 px;color:#666;">${data.occupation}</div>
- </div>
- </div>
- <p style="background:#f9f9f9;padding :10 px;margin-top :10 px;border-radius :8 px;box-shadow :02 px4 px rgba(0,0,0,0.1);font-size :12 px;">${data.tldr}</p>
- ${data.events.length ? `
- <div style="margin-top :10 px;">
- ${data.events.map(event => `
- <div style="background:#f9f9f9;border :1 px solid #ddd;border-radius :8 px;padding :10 px;margin-bottom :10 px;box-shadow :02 px4 px rgba(0,0,0,0.1);">
- <strong style="color:#9b4dca;font-size :14 px;">${event.date}</strong>:<span style="font-size :12 px;">${event.description}</span>
- </div>
- `).join('')}
- </div>
- `:''}
- </div>
- </div>
- <button class="toggle-button"><i class="arrow down"></i></button>
- `;
+  return `
+    <div style="flex-grow: 1;">
+      <p style="font-size: 9px; font-weight: bold; margin-bottom: 15px;">${data.description}</p>
+      <div class="collapsible-content">
+        <div style="display: flex; align-items: center; gap: 15px;">
+          <img src="${data.image}" alt="${data.name}" style="width: 60px; height: 60px; object-fit: cover; border-radius: 50%;" />
+          <div>
+            <div style="font-size: 24px; font-weight: bold;">${data.name}</div>
+            <div style="font-size: 21px; color: #666;">${data.occupation}</div>
+          </div>
+        </div>
+        <p style="background: #f9f9f9; padding: 15px; margin-top: 15px; border-radius: 12px; box-shadow: 0 3px 6px rgba(0,0,0,0.1); font-size: 18px;">${data.tldr}</p>
+        ${data.events.length ? `
+          <div style="margin-top: 15px;">
+            ${data.events.map(event => `
+              <div style="background: #f9f9f9; border: 1.5px solid #ddd; border-radius: 12px; padding: 15px; margin-bottom: 15px; box-shadow: 0 3px 6px rgba(0,0,0,0.1);">
+                <strong style="color: #9b4dca; font-size: 21px;">${event.date}</strong>: <span style="font-size: 18px;">${event.description}</span>
+              </div>
+            `).join('')}
+          </div>
+        ` : ''}
+      </div>
+    </div>
+    <button class="toggle-button"><i class="arrow down"></i></button>
+  `;
 }
 
 function setupToggleButton(popup) {
- const toggleButton=popup._content.querySelector('.toggle-button');
- const collapsibleContent=popup._content.querySelector('.collapsible-content');
+  const toggleButton = popup._content.querySelector('.toggle-button');
+  const collapsibleContent = popup._content.querySelector('.collapsible-content');
 
- toggleButton.addEventListener('click',() => {
- collapsibleContent.classList.toggle('show');
- const arrow=toggleButton.querySelector('.arrow');
- arrow.classList.toggle('down');
- arrow.classList.toggle('up');
- });
+  toggleButton.addEventListener('click', () => {
+    collapsibleContent.classList.toggle('show');
+    const arrow = toggleButton.querySelector('.arrow');
+    arrow.classList.toggle('down');
+    arrow.classList.toggle('up');
+  });
 }
 
 locations.forEach(location => {
- const {element :markerElement,id}=createCustomMarker(location.image,'#9B4DCA',true);
- markerElement.className += ' location-marker';
+  const { element: markerElement, id } = createCustomMarker(location.image, '#9B4DCA', true);
+  markerElement.className += ' location-marker';
 
- const popupContent=createPopupContent(location);
+  const popupContent = createPopupContent(location);
 
- const popup=new mapboxgl.Popup({
- closeButton:true,
- closeOnClick:true,
- className:'custom-popup'
- }).setHTML(popupContent);
+  const popup = new mapboxgl.Popup({
+    closeButton: true,
+    closeOnClick: true,
+    className: 'custom-popup'
+  }).setHTML(popupContent);
 
- const marker=new mapboxgl.Marker({
- element :markerElement
- })
- .setLngLat(location.coords)
- .setPopup(popup)
- .addTo(map);
+  const marker = new mapboxgl.Marker({
+    element: markerElement
+  })
+    .setLngLat(location.coords)
+    .setPopup(popup)
+    .addTo(map);
 
- marker.getElement().addEventListener('click',() => {
- map.getCanvas().style.cursor='pointer';
- popup.addTo(map);
- setupToggleButton(popup);
- });
+  marker.getElement().addEventListener('click', () => {
+    map.getCanvas().style.cursor = 'pointer';
+    popup.addTo(map);
+    setupToggleButton(popup);
+  });
 });
 
 function addBuildingMarkers() {
- buildings.forEach(building => {
- const {element :markerElement,id}=createCustomMarker(building.image,'#E9E8E0',false);
- markerElement.className += ' building-marker';
+  buildings.forEach(building => {
+    const { element: markerElement, id } = createCustomMarker(building.image, '#E9E8E0', false);
+    markerElement.className += ' building-marker';
 
- const popupContent=createPopupContent(building);
+    const popupContent = createPopupContent(building);
 
- const popup=new mapboxgl.Popup({
- closeButton:true,
- closeOnClick:true,
- className:'custom-popup'
- }).setHTML(popupContent);
+    const popup = new mapboxgl.Popup({
+      closeButton: true,
+      closeOnClick: true,
+      className: 'custom-popup'
+    }).setHTML(popupContent);
 
- const marker=new mapboxgl.Marker({
- element :markerElement
- })
- .setLngLat(building.coords)
- .setPopup(popup)
- .addTo(map);
+    const marker = new mapboxgl.Marker({
+      element: markerElement
+    })
+      .setLngLat(building.coords)
+      .setPopup(popup)
+      .addTo(map);
 
- marker.getElement().addEventListener('click',() => {
- map.getCanvas().style.cursor='pointer';
- popup.addTo(map);
- setupToggleButton(popup);
- });
- });
+    marker.getElement().addEventListener('click', () => {
+      map.getCanvas().style.cursor = 'pointer';
+      popup.addTo(map);
+      setupToggleButton(popup);
+    });
+  });
 }
