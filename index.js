@@ -187,7 +187,7 @@ function createCustomMarker(imageUrl, color = '#9b4dca', isLocation = false) {
 function createPopupHTML(location) {
   return `
     <p style="font-size: 6px; font-weight: bold; margin-bottom: 10px;">${location.description}</p>
-    <div class="collapsible-header">More Info</div>
+    <div class="collapsible-header"><span>&#9660;</span> More Info</div>
     <div class="collapsible-content">
       <div style="border-top: 1px solid #ccc; margin-bottom: 10px;"></div>
       <div style="display: flex; align-items: center; gap: 10px;">
@@ -235,9 +235,16 @@ locations.forEach(location => {
     // Add event listener to toggle collapsible content
     const header = popup._content.querySelector('.collapsible-header');
     const content = popup._content.querySelector('.collapsible-content');
+    const headerSpan = header.querySelector('span');
 
     header.addEventListener('click', () => {
-      content.style.display = content.style.display === 'none' ? 'block' : 'none';
+      if (content.style.display === 'none') {
+        content.style.display = 'block';
+        headerSpan.innerHTML = '&#9650;';  // Up-facing triangle
+      } else {
+        content.style.display = 'none';
+        headerSpan.innerHTML = '&#9660;';  // Down-facing triangle
+      }
     });
   });
 });
@@ -267,9 +274,16 @@ function addBuildingMarkers() {
       // Add event listener to toggle collapsible content
       const header = popup._content.querySelector('.collapsible-header');
       const content = popup._content.querySelector('.collapsible-content');
+      const headerSpan = header.querySelector('span');
 
       header.addEventListener('click', () => {
-        content.style.display = content.style.display === 'none' ? 'block' : 'none';
+        if (content.style.display === 'none') {
+          content.style.display = 'block';
+          headerSpan.innerHTML = '&#9650;';  // Up-facing triangle
+        } else {
+          content.style.display = 'none';
+          headerSpan.innerHTML = '&#9660;';  // Down-facing triangle
+        }
       });
     });
   });
