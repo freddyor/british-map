@@ -29,37 +29,30 @@ document.head.appendChild(link);
 // Style for the popup and markers
 stylePopup.innerHTML = `
   .mapboxgl-popup-content {
-    border-radius: 18px 18px 0 0 !important;
-    box-shadow: 0 9px 22px rgba(0, 0, 0, 0.3) !important;
-    padding: 15px !important;
+    border-radius: 12px !important;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3) !important;
+    padding: 10px !important;
     font-family: 'Poppins', sans-serif !important;
     background: #E9E8E0;
-    border: 3px solid #f0f0f0 !important;
-    border-bottom: none !important;
+    border: 2px solid #f0f0f0 !important;
     line-height: 1.05;
-    padding-top: 15px !important;
+    padding-top: 0 !important;
     padding-bottom: 0 !important;
-    margin-left: 4.5px;
-    margin-right: 7.5px;
-    display: flex;
-    flex-direction: column;
+    margin-left: 3px;
+    margin-right: 5px;
   }
 
   .mapboxgl-popup-content img {
-    border: 3px solid #f0f0f0 !important;
-    border-radius: 12px;
-    width: auto;
-    height: auto;
-    max-width: 100%;
-    max-height: 60px;
+    border: 2px solid #f0f0f0 !important;
+    border-radius: 8px;
   }
 
   .mapboxgl-popup-content p {
     font-weight: bold !important;
     text-align: center;
-    letter-spacing: -0.75px;
-    font-size: 19.5px !important;
-    margin-bottom: 15px !important;
+    letter-spacing: -0.5px;
+    font-size: 13px !important;
+    margin-bottom: 10px !important;
   }
 
   .mapboxgl-popup-close-button {
@@ -67,76 +60,25 @@ stylePopup.innerHTML = `
   }
 
   .user-location-marker {
-    width: 30px;
-    height: 30px;
+    width: 20px;
+    height: 20px;
     background-color: white;
-    border: 4.5px solid #87CEFA;
+    border: 3px solid #87CEFA;
     border-radius: 100%;
     position: relative;
   }
 
   .location-marker {
     z-index: 2;
-    width: 37.5px;
-    height: 37.5px;
   }
 
   .building-marker {
     z-index: 1;
-    width: 37.5px;
-    height: 37.5px;
   }
 
   .mapboxgl-popup {
     z-index: 9999 !important;
   }
-  
-  .collapsible-content {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease-out;
-   }
-  
-   .collapsible-content.show {
-     max-height: none;
-     transition: max-height 0.3s ease-in;
-   }
-  
-   .toggle-button {
-     background-color: #f0f0f0;
-     border: none;
-     padding: 5px 15px;
-     cursor: pointer;
-     font-family: 'Poppins', sans-serif;
-     font-size: 18px;
-     width: calc(100% + 30px);
-     display: flex;
-     align-items: center;
-     justify-content: center;
-     margin-left: -15px;
-     margin-right: -15px;
-     border-top-left-radius: 0;
-     border-top-right-radius: 0;
-     border-bottom-left-radius: 18px;
-     border-bottom-right-radius: 18px;
-   }
-  
-   .arrow {
-     border: solid black;
-     border-width: 0 3px 3px 0;
-     display: inline-block;
-     padding: 4.5px;
-   }
-  
-   .down {
-      transform: rotate(45deg);
-      -webkit-transform: rotate(45deg);
-   }
-  
-   .up {
-      transform: rotate(-135deg);
-      -webkit-transform: rotate(-135deg);
-   }
 `;
 
 // Append the style to the document
@@ -200,11 +142,11 @@ geolocate.on('geolocate', (e) => {
 function createCustomMarker(imageUrl, color = '#9b4dca', isLocation = false) {
   const markerDiv = document.createElement('div');
   markerDiv.className = 'custom-marker';
-  markerDiv.style.width = '37.5px';
-  markerDiv.style.height = '37.5px';
+  markerDiv.style.width = '3em';
+  markerDiv.style.height = '3em';
   markerDiv.style.position = 'absolute';
   markerDiv.style.borderRadius = '50%';
-  markerDiv.style.border = `0.375em solid ${color}`;
+  markerDiv.style.border = `0.25em solid ${color}`;
   markerDiv.style.boxSizing = 'border-box';
 
   const imageElement = document.createElement('img');
@@ -222,69 +164,46 @@ function createCustomMarker(imageUrl, color = '#9b4dca', isLocation = false) {
   };
 }
 
-function createPopupContent(data) {
-  return `
-    <div style="flex-grow: 1;">
-      <p style="font-size: 9px; font-weight: bold; margin-bottom: 15px;">${data.description}</p>
-      <div class="collapsible-content">
-        <div style="display: flex; align-items: center; gap: 15px;">
-          <img src="${data.image}" alt="${data.name}" style="width: 60px; height: 60px; object-fit: cover; border-radius: 50%;" />
-          <div>
-            <div style="font-size: 24px; font-weight: bold;">${data.name}</div>
-            <div style="font-size: 21px; color: #666;">${data.occupation}</div>
-          </div>
-        </div>
-        <p style="background: #f9f9f9; padding: 15px; margin-top: 15px; border-radius: 12px; box-shadow: 0 3px 6px rgba(0,0,0,0.1); font-size: 18px;">${data.tldr}</p>
-        ${data.events.length ? `
-          <div style="margin-top: 15px;">
-            ${data.events.map(event => `
-              <div style="background: #f9f9f9; border: 1.5px solid #ddd; border-radius: 12px; padding: 15px; margin-bottom: 15px; box-shadow: 0 3px 6px rgba(0,0,0,0.1);">
-                <strong style="color: #9b4dca; font-size: 21px;">${event.date}</strong>: <span style="font-size: 18px;">${event.description}</span>
-              </div>
-            `).join('')}
-          </div>
-        ` : ''}
-      </div>
-    </div>
-    <button class="toggle-button"><i class="arrow down"></i></button>
-  `;
-}
-
-function setupToggleButton(popup) {
-  const toggleButton = popup._content.querySelector('.toggle-button');
-  const collapsibleContent = popup._content.querySelector('.collapsible-content');
-
-  toggleButton.addEventListener('click', () => {
-    collapsibleContent.classList.toggle('show');
-    const arrow = toggleButton.querySelector('.arrow');
-    arrow.classList.toggle('down');
-    arrow.classList.toggle('up');
-  });
-}
-
 locations.forEach(location => {
   const { element: markerElement, id } = createCustomMarker(location.image, '#9B4DCA', true);
   markerElement.className += ' location-marker';
-
-  const popupContent = createPopupContent(location);
+  const marker = new mapboxgl.Marker({
+    element: markerElement
+  })
+    .setLngLat(location.coords)
+    .addTo(map);
 
   const popup = new mapboxgl.Popup({
     closeButton: true,
     closeOnClick: true,
     className: 'custom-popup'
-  }).setHTML(popupContent);
+  }).setHTML(`
+    <p style="font-size: 6px; font-weight: bold; margin-bottom: 10px;">${location.description}</p>
+    <div style="border-top: 1px solid #ccc; margin-bottom: 10px;"></div>
+    <div style="display: flex; align-items: center; gap: 10px;">
+      <img src="${location.image}" alt="${location.name}" style="width: 40px; height: 40px; object-fit: cover; border-radius: 50%;" />
+      <div>
+        <div style="font-size: 16px; font-weight: bold;">${location.name}</div>
+        <div style="font-size: 14px; color: #666;">${location.occupation}</div>
+      </div>
+    </div>
+    <p style="background: #f9f9f9; padding: 10px; margin-top: 10px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); font-size: 12px;">${location.tldr}</p>
+    ${location.events.length ? `
+      <div style="margin-top: 10px;">
+        ${location.events.map(event => `
+          <div style="background: #f9f9f9; border: 1px solid #ddd; border-radius: 8px; padding: 10px; margin-bottom: 10px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
+            <strong style="color: #9b4dca; font-size: 14px;">${event.date}</strong>: <span style="font-size: 12px;">${event.description}</span>
+          </div>
+        `).join('')}
+      </div>
+    ` : ''}
+  `);
 
-  const marker = new mapboxgl.Marker({
-    element: markerElement
-  })
-    .setLngLat(location.coords)
-    .setPopup(popup)
-    .addTo(map);
+  marker.setPopup(popup);
 
   marker.getElement().addEventListener('click', () => {
     map.getCanvas().style.cursor = 'pointer';
     popup.addTo(map);
-    setupToggleButton(popup);
   });
 });
 
@@ -292,26 +211,43 @@ function addBuildingMarkers() {
   buildings.forEach(building => {
     const { element: markerElement, id } = createCustomMarker(building.image, '#E9E8E0', false);
     markerElement.className += ' building-marker';
-
-    const popupContent = createPopupContent(building);
+    const marker = new mapboxgl.Marker({
+      element: markerElement
+    })
+      .setLngLat(building.coords)
+      .addTo(map);
 
     const popup = new mapboxgl.Popup({
       closeButton: true,
       closeOnClick: true,
       className: 'custom-popup'
-    }).setHTML(popupContent);
+    }).setHTML(`
+      <p style="font-size: 6px; font-weight: bold; margin-bottom: 10px;">${building.description}</p>
+      <div style="border-top: 1px solid #ccc; margin-bottom: 10px;"></div>
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <img src="${building.image}" alt="${building.name}" style="width: 40px; height: 40px; object-fit: cover; border-radius: 50%;" />
+        <div>
+          <div style="font-size: 16px; font-weight: bold;">${building.name}</div>
+          <div style="font-size: 14px; color: #666;">${building.occupation}</div>
+        </div>
+      </div>
+      <p style="background: #f9f9f9; padding: 10px; margin-top: 10px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); font-size: 12px;">${building.tldr}</p>
+      ${building.events.length ? `
+        <div style="margin-top: 10px;">
+          ${building.events.map(event => `
+            <div style="background: #f9f9f9; border: 1px solid #ddd; border-radius: 8px; padding: 10px; margin-bottom: 10px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
+              <strong style="color: #9b4dca; font-size: 14px;">${event.date}</strong>: <span style="font-size: 12px;">${event.description}</span>
+            </div>
+          `).join('')}
+        </div>
+      ` : ''}
+    `);
 
-    const marker = new mapboxgl.Marker({
-      element: markerElement
-    })
-      .setLngLat(building.coords)
-      .setPopup(popup)
-      .addTo(map);
+    marker.setPopup(popup);
 
     marker.getElement().addEventListener('click', () => {
       map.getCanvas().style.cursor = 'pointer';
       popup.addTo(map);
-      setupToggleButton(popup);
     });
   });
 }
