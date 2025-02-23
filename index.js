@@ -14,8 +14,7 @@ var map = new mapboxgl.Map({
 
 map.on('load', () => {
   addBuildingMarkers();
-  addLocationMarkers(); // This should now work correctly
-  geolocate.trigger();
+  geolocate.trigger(); // Trigger geolocation on map load
 });
 
 // Create a <style> element to add the CSS
@@ -80,35 +79,6 @@ stylePopup.innerHTML = `
   .mapboxgl-popup {
     z-index: 9999 !important;
   }
-
-  .popup-content {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .additional-info {
-    display: none;
-    margin-top: 10px;
-    border-top: 1px solid #ccc;
-    padding-top: 10px;
-  }
-
-  .toggle-button {
-    background-color: white;
-    color: #333;
-    border: 1px solid #ccc;
-    padding: 8px 12px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-family: 'Poppins', sans-serif;
-    font-size: 12px;
-    align-self: center;
-    margin-top: 10px;
-  }
-
-  .toggle-button:hover {
-    background-color: #f0f0f0;
-  }
 `;
 
 // Append the style to the document
@@ -125,7 +95,7 @@ const geolocate = new mapboxgl.GeolocateControl({
   fitBoundsOptions: {
     maxZoom: 15
   },
-  showUserLocation: false
+  showUserLocation: false // Disable the default blue dot
 });
 
 map.addControl(geolocate);
@@ -148,14 +118,15 @@ textEl.textContent = 'me';
 userLocationEl.appendChild(textEl);
 
 const userLocationMarker = new mapboxgl.Marker({element: userLocationEl})
-  .setLngLat([0, 0])
+  .setLngLat([0, 0]) // Set initial coordinates, will be updated later
   .addTo(map);
 
 geolocate.on('error', (e) => {
   if (e.code === 1) {
     console.log('Location access denied by user');
+    // You can update UI or take other actions here
   }
-  e.preventDefault();
+  e.preventDefault(); // Prevent the default error pop-up
 });
 
 geolocate.on('geolocate', (e) => {
@@ -164,15 +135,16 @@ geolocate.on('geolocate', (e) => {
   const position = [lon, lat];
   console.log(position);
 
+  // Update the user location marker position
   userLocationMarker.setLngLat(position);
 });
 
 function createCustomMarker(imageUrl, color = '#9b4dca', isLocation = false) {
   const markerDiv = document.createElement('div');
-  markerDiv.className = isLocation ? 'custom-marker location-marker' : 'custom-marker building-marker';
+  markerDiv.className = 'custom-marker';
   markerDiv.style.width = '3em';
   markerDiv.style.height = '3em';
-  markerDiv.style.position = 'relative';
+  markerDiv.style.position = 'absolute';
   markerDiv.style.borderRadius = '50%';
   markerDiv.style.border = `0.25em solid ${color}`;
   markerDiv.style.boxSizing = 'border-box';
@@ -192,90 +164,53 @@ function createCustomMarker(imageUrl, color = '#9b4dca', isLocation = false) {
   };
 }
 
-function createPopupContent(data, type) {
-  const popupContent = document.createElement('div');
-  popupContent.className = 'popup-content';
+locations.forEach(location => {
+  const { element: markerElement, id } = createCustomMarker(location.image, '#9B4DCA', true);
+  markerElement.className += ' location-marker';
+  const marker = new mapboxgl.Marker({
+    element: markerElement
+  })
+    .setLngLat(location.coords)
+    .addTo(map);
 
-  // Initial Description
-  const descriptionParagraph = document.createElement('p');
-  descriptionParagraph.style.fontSize = '13px';
-  descriptionParagraph.style.fontWeight = 'bold';
-  descriptionParagraph.style.marginBottom = '10px';
-  descriptionParagraph.textContent = data.description;
-  popupContent.appendChild(descriptionParagraph);
-
-  // Additional Info Div (initially hidden)
-  const additionalInfoDiv = document.createElement('div');
-  additionalInfoDiv.className = 'additional-info';
-
-  // Content of the additional info
-  additionalInfoDiv.innerHTML = `
+  const popup = new mapboxgl.Popup({
+    closeButton: true,
+    closeOnClick: true,
+    className: 'custom-popup'
+  }).setHTML(`
+    <p style="font-size: 6px; font-weight: bold; margin-bottom: 10px;">${location.description}</p>
     <div style="border-top: 1px solid #ccc; margin-bottom: 10px;"></div>
     <div style="display: flex; align-items: center; gap: 10px;">
-      <img src="${data.image}" alt="${data.name}" style="width: 40px; height: 40px; object-fit: cover; border-radius: 50%;" />
+      <img src="${location.image}" alt="${location.name}" style="width: 40px; height: 40px; object-fit: cover; border-radius: 50%;" />
       <div>
-        <div style="font-size: 16px; font-weight: bold;">${data.name}</div>
-        <div style="font-size: 14px; color: #666;">${data.occupation}</div>
+        <div style="font-size: 16px; font-weight: bold;">${location.name}</div>
+        <div style="font-size: 14px; color: #666;">${location.occupation}</div>
       </div>
     </div>
-    <p style="background: #f9f9f9; padding: 10px; margin-top: 10px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); font-size: 12px;">${data.tldr}</p>
-    ${data.events && data.events.length ? `
+    <p style="background: #f9f9f9; padding: 10px; margin-top: 10px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); font-size: 12px;">${location.tldr}</p>
+    ${location.events.length ? `
       <div style="margin-top: 10px;">
-        ${data.events.map(event => `
+        ${location.events.map(event => `
           <div style="background: #f9f9f9; border: 1px solid #ddd; border-radius: 8px; padding: 10px; margin-bottom: 10px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
             <strong style="color: #9b4dca; font-size: 14px;">${event.date}</strong>: <span style="font-size: 12px;">${event.description}</span>
           </div>
         `).join('')}
       </div>
     ` : ''}
-  `;
-  popupContent.appendChild(additionalInfoDiv);
+  `);
 
-  // Toggle Button
-  const toggleButton = document.createElement('button');
-  toggleButton.className = 'toggle-button';
-  toggleButton.textContent = 'Show More';
-  toggleButton.addEventListener('click', function() {
-      if (additionalInfoDiv.style.display === 'none') {
-          additionalInfoDiv.style.display = 'block';
-          toggleButton.textContent = 'Show Less';
-      } else {
-          additionalInfoDiv.style.display = 'none';
-          toggleButton.textContent = 'Show More';
-      }
+  marker.setPopup(popup);
+
+  marker.getElement().addEventListener('click', () => {
+    map.getCanvas().style.cursor = 'pointer';
+    popup.addTo(map);
   });
-  popupContent.appendChild(toggleButton);
-
-  return popupContent;
-}
-
-function addLocationMarkers() {
-    locations.forEach(location => {
-        const { element: markerElement, id } = createCustomMarker(location.image, '#9B4DCA', true);
-        const marker = new mapboxgl.Marker({
-            element: markerElement
-        })
-            .setLngLat(location.coords)
-            .addTo(map);
-
-        const popup = new mapboxgl.Popup({
-            closeButton: true,
-            closeOnClick: true,
-            className: 'custom-popup'
-        }).setDOMContent(createPopupContent(location, 'location'));
-
-        marker.setPopup(popup);
-
-        marker.getElement().addEventListener('click', () => {
-            map.getCanvas().style.cursor = 'pointer';
-            popup.addTo(map);
-        });
-    });
-}
+});
 
 function addBuildingMarkers() {
   buildings.forEach(building => {
     const { element: markerElement, id } = createCustomMarker(building.image, '#E9E8E0', false);
+    markerElement.className += ' building-marker';
     const marker = new mapboxgl.Marker({
       element: markerElement
     })
@@ -286,7 +221,27 @@ function addBuildingMarkers() {
       closeButton: true,
       closeOnClick: true,
       className: 'custom-popup'
-    }).setDOMContent(createPopupContent(building, 'building'));
+    }).setHTML(`
+      <p style="font-size: 6px; font-weight: bold; margin-bottom: 10px;">${building.description}</p>
+      <div style="border-top: 1px solid #ccc; margin-bottom: 10px;"></div>
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <img src="${building.image}" alt="${building.name}" style="width: 40px; height: 40px; object-fit: cover; border-radius: 50%;" />
+        <div>
+          <div style="font-size: 16px; font-weight: bold;">${building.name}</div>
+          <div style="font-size: 14px; color: #666;">${building.occupation}</div>
+        </div>
+      </div>
+      <p style="background: #f9f9f9; padding: 10px; margin-top: 10px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); font-size: 12px;">${building.tldr}</p>
+      ${building.events.length ? `
+        <div style="margin-top: 10px;">
+          ${building.events.map(event => `
+            <div style="background: #f9f9f9; border: 1px solid #ddd; border-radius: 8px; padding: 10px; margin-bottom: 10px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
+              <strong style="color: #9b4dca; font-size: 14px;">${event.date}</strong>: <span style="font-size: 12px;">${event.description}</span>
+            </div>
+          `).join('')}
+        </div>
+      ` : ''}
+    `);
 
     marker.setPopup(popup);
 
