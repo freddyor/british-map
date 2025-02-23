@@ -65,6 +65,7 @@ stylePopup.innerHTML = `
     background-color: white;
     border: 3px solid #87CEFA;
     border-radius: 100%;
+    position: relative;
   }
 
   .location-marker {
@@ -102,6 +103,20 @@ map.addControl(geolocate);
 // Create a single marker for user location
 const userLocationEl = document.createElement('div');
 userLocationEl.className = 'user-location-marker';
+
+const textEl = document.createElement('div');
+textEl.style.position = 'absolute';
+textEl.style.top = '50%';
+textEl.style.left = '50%';
+textEl.style.transform = 'translate(-50%, -50%)';
+textEl.style.fontFamily = 'Poppins, sans-serif';
+textEl.style.fontWeight = 'bold';
+textEl.style.fontSize = '10px';
+textEl.style.color = '#87CEFA';
+textEl.textContent = 'me';
+
+userLocationEl.appendChild(textEl);
+
 const userLocationMarker = new mapboxgl.Marker({element: userLocationEl})
   .setLngLat([0, 0]) // Set initial coordinates, will be updated later
   .addTo(map);
