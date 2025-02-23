@@ -31,13 +31,11 @@ stylePopup.innerHTML = `
   .mapboxgl-popup-content {
     border-radius: 12px !important;
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3) !important;
-    padding: 10px !important;
+    padding: 10px 10px 0 10px !important;
     font-family: 'Poppins', sans-serif !important;
     background: #E9E8E0;
     border: 2px solid #f0f0f0 !important;
     line-height: 1.05;
-    padding-top: 0 !important;
-    padding-bottom: 0 !important;
     margin-left: 3px;
     margin-right: 5px;
   }
@@ -56,6 +54,10 @@ stylePopup.innerHTML = `
   }
 
   .mapboxgl-popup-close-button {
+    display: none !important;
+  }
+
+  .mapboxgl-popup-tip {
     display: none !important;
   }
 
@@ -81,22 +83,21 @@ stylePopup.innerHTML = `
   }
 
   .collapsible-content {
-    display: none; /* Initially hide the content */
+    display: none;
     overflow: hidden;
-    transition: height 0.3s ease; /* Add a smooth transition for the expanding/collapsing effect */
+    transition: height 0.3s ease;
   }
 
   .collapsible-header {
     cursor: pointer;
     padding: 5px;
-    text-align: center;
+    text-align: center; 
     background-color: #f0f0f0;
-    border-radius: 5px;
+    border-radius: 0 0 10px 10px;
     margin-top: 2px;
-    margin-bottom: 2px;
-    width: calc(100% - 10px);
-    margin-left: auto;
-    margin-right: auto;
+    width: calc(100% + 20px);
+    margin-left: -10px;
+    margin-bottom: -2px;
    }
 
    .collapsible-header:hover {
@@ -192,20 +193,19 @@ function createPopupHTML(location) {
      <p style="font-size: 6px; font-weight: bold; margin-bottom: 10px;">${location.description}</p>
      <div class="collapsible-header"><span>&#9660;</span></div>
      <div class="collapsible-content">
-       <div style="border-top: 1px solid #ccc; margin-bottom: 10px;"></div>
-       <div style="display: flex; align-items: center; gap: 10px;">
-         <img src="${location.image}" alt="${location.name}" style="width: 40px; height: 40px; object-fit: cover; border-radius: 50%;" />
+       <div style="display:flex; align-items:center; gap:.5em;">
+         <img src="${location.image}" alt="${location.name}" style="width:40px; height:auto; object-fit-cover; border-radius:.5em;" />
          <div>
-           <div style="font-size: 16px; font-weight: bold;">${location.name}</div>
-           <div style="font-size: 14px; color: #666;">${location.occupation}</div>
+           <div style="font-size:.9em; font-weight:bold;">${location.name}</div>
+           <div style="font-size:.8em; color:#666;">${location.occupation}</div>
          </div>
        </div>
-       <p style="background: #f9f9f9; padding: 10px; margin-top: 10px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); font-size: 12px;">${location.tldr}</p>
+       <p style="background:#f9f9f9; padding:.5em; margin-top:.5em; border-radius:.5em; box-shadow:.1em .1em .2em rgba(0,0,0,.1); font-size:.8em;">${location.tldr}</p>
        ${location.events.length ? `
-         <div style="margin-top: 10px;">
+         <div style="margin-top:.5em;">
            ${location.events.map(event => `
-             <div style="background: #f9f9f9; border: 1px solid #ddd; border-radius: 8px; padding: 10px; margin-bottom: 10px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
-               <strong style="color: #9b4dca; font-size: 14px;">${event.date}</strong>: <span style="font-size: 12px;">${event.description}</span>
+             <div style="background:#f9f9f9; border:.1em solid #ddd; border-radius:.5em; padding:.5em; margin-bottom:.5em;">
+               <strong style="color:#9b4dca;">${event.date}</strong>: <span>${event.description}</span>
              </div>
            `).join('')}
          </div>
