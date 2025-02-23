@@ -31,7 +31,7 @@ stylePopup.innerHTML = `
   .mapboxgl-popup-content {
     border-radius: 12px !important;
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3) !important;
-    padding: 5px 10px 0 10px !important;
+    padding: 5px 0 0 0 !important;
     font-family: 'Poppins', sans-serif !important;
     background: #E9E8E0;
     border: 2px solid #f0f0f0 !important;
@@ -50,7 +50,7 @@ stylePopup.innerHTML = `
     text-align: center;
     letter-spacing: -0.5px;
     font-size: 13px !important;
-    margin-bottom: 5px !important;
+    margin: 0 10px 5px 10px !important;
   }
 
   .mapboxgl-popup-close-button {
@@ -86,6 +86,7 @@ stylePopup.innerHTML = `
     display: none;
     overflow: hidden;
     transition: height 0.3s ease;
+    padding: 0 10px;
   }
 
   .collapsible-header {
@@ -95,10 +96,8 @@ stylePopup.innerHTML = `
     background-color: #f0f0f0;
     border-radius: 0 0 10px 10px;
     margin-top: 0px;
-    width: calc(100% + 0px);
-    margin-left: -10px;
-    margin-right: -10px;
-    margin-bottom: 5px;
+    width: 100%;
+    margin-bottom: -2px;
    }
 
    .collapsible-header:hover {
