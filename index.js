@@ -96,10 +96,8 @@ stylePopup.innerHTML = `
     background-color: #f0f0f0;
     border-radius: 0 0 10px 10px;
     margin-top: 0px;
-    width: 100%;
-    margin-bottom: -2px;
-    height: 0.75em; 
-    line-height: 0.75em; 
+    width: 90%;
+    margin-bottom: 5px;
    }
 
    .collapsible-header:hover {
