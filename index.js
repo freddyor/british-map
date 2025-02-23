@@ -88,12 +88,15 @@ stylePopup.innerHTML = `
 
   .collapsible-header {
     cursor: pointer;
-    padding: 10px;
+    padding: 2px;
     text-align: center;
-    font-weight: bold;
     background-color: #f0f0f0;
-    border-radius: 5px;
-    margin-bottom: 5px;
+    border-radius: 50%;
+    margin: 2px auto;
+    width: 16px;
+    height: 16px;
+    line-height: 16px;
+    font-size: 10px;
   }
 
   .collapsible-header:hover {
@@ -187,7 +190,7 @@ function createCustomMarker(imageUrl, color = '#9b4dca', isLocation = false) {
 function createPopupHTML(location) {
   return `
     <p style="font-size: 6px; font-weight: bold; margin-bottom: 10px;">${location.description}</p>
-    <div class="collapsible-header"><span>&#9660;</span> More Info</div>
+    <div class="collapsible-header"><span>&#9660;</span></div>
     <div class="collapsible-content">
       <div style="border-top: 1px solid #ccc; margin-bottom: 10px;"></div>
       <div style="display: flex; align-items: center; gap: 10px;">
