@@ -80,9 +80,13 @@ stylePopup.innerHTML = `
     z-index: 9999 !important;
   }
   .collapsible-content {
-    display: none;
+    max-height: 0;
     overflow: hidden;
-    transition: height 0.3s ease;
+    transition: max-height 0.3s ease-out;
+  }
+  .collapsible-content.show {
+    max-height: 1000px; /* Adjust this value based on your content */
+    transition: max-height 0.3s ease-in;
   }
   .toggle-button {
     background-color: #f0f0f0;
@@ -91,6 +95,28 @@ stylePopup.innerHTML = `
     border-radius: 5px;
     cursor: pointer;
     margin-bottom: 5px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 12px;
+    width: 30px; /* Adjust as needed */
+    height: 25px; /* Adjust as needed */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .arrow {
+    border: solid black;
+    border-width: 0 2px 2px 0;
+    display: inline-block;
+    padding: 3px;
+  }
+
+  .down {
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+  }
+  .up {
+    transform: rotate(-135deg);
+    -webkit-transform: rotate(-135deg);
   }
 `;
 
@@ -180,7 +206,7 @@ function createCustomMarker(imageUrl, color = '#9b4dca', isLocation = false) {
 function createPopupContent(data) {
   return `
     <p style="font-size: 6px; font-weight: bold; margin-bottom: 10px;">${data.description}</p>
-    <button class="toggle-button">Show More</button>
+    <button class="toggle-button"><i class="arrow down"></i></button>
     <div class="collapsible-content">
       <div style="display: flex; align-items: center; gap: 10px;">
         <img src="${data.image}" alt="${data.name}" style="width: 40px; height: 40px; object-fit: cover; border-radius: 50%;" />
@@ -201,6 +227,18 @@ function createPopupContent(data) {
       ` : ''}
     </div>
   `;
+}
+
+function setupToggleButton(popup) {
+  const toggleButton = popup._content.querySelector('.toggle-button');
+  const collapsibleContent = popup._content.querySelector('.collapsible-content');
+
+  toggleButton.addEventListener('click', () => {
+    collapsibleContent.classList.toggle('show');
+    const arrow = toggleButton.querySelector('.arrow');
+    arrow.classList.toggle('down');
+    arrow.classList.toggle('up');
+  });
 }
 
 locations.forEach(location => {
@@ -225,15 +263,7 @@ locations.forEach(location => {
   marker.getElement().addEventListener('click', () => {
     map.getCanvas().style.cursor = 'pointer';
     popup.addTo(map);
-
-    const toggleButton = popup._content.querySelector('.toggle-button');
-    const collapsibleContent = popup._content.querySelector('.collapsible-content');
-
-    toggleButton.addEventListener('click', () => {
-      const isCollapsed = collapsibleContent.style.display === 'none';
-      collapsibleContent.style.display = isCollapsed ? 'block' : 'none';
-      toggleButton.textContent = isCollapsed ? 'Show Less' : 'Show More';
-    });
+    setupToggleButton(popup);
   });
 });
 
@@ -260,15 +290,7 @@ function addBuildingMarkers() {
     marker.getElement().addEventListener('click', () => {
       map.getCanvas().style.cursor = 'pointer';
       popup.addTo(map);
-
-       const toggleButton = popup._content.querySelector('.toggle-button');
-        const collapsibleContent = popup._content.querySelector('.collapsible-content');
-
-        toggleButton.addEventListener('click', () => {
-            const isCollapsed = collapsibleContent.style.display === 'none';
-            collapsibleContent.style.display = isCollapsed ? 'block' : 'none';
-            toggleButton.textContent = isCollapsed ? 'Show Less' : 'Show More';
-        });
+      setupToggleButton(popup);
     });
   });
 }
