@@ -50,7 +50,7 @@ stylePopup.innerHTML = `
     text-align: center;
     letter-spacing: -0.5px;
     font-size: 13px !important;
-    margin-bottom: 10px !important;
+    margin-bottom: 5px !important;
   }
 
   .mapboxgl-popup-close-button {
@@ -94,15 +94,27 @@ stylePopup.innerHTML = `
     text-align: center; 
     background-color: #f0f0f0;
     border-radius: 0 0 10px 10px;
-    margin-top: 2px;
+    margin-top: 0px;
     width: calc(100% + 20px);
     margin-left: -10px;
+    margin-right: -10px;
     margin-bottom: -2px;
    }
 
    .collapsible-header:hover {
      background-color: #e0e0e0;
    }
+
+   .toggle-symbol {
+        width: 16px;
+        height: 16px;
+        display: inline-block;
+        vertical-align: middle;
+        transition: transform 0.2s ease-in-out;
+    }
+    .toggle-symbol.rotated {
+        transform: rotate(180deg);
+    }
 `;
 
 // Append the style to the document
@@ -189,9 +201,11 @@ function createCustomMarker(imageUrl, color = '#9b4dca', isLocation = false) {
 }
 
 function createPopupHTML(location) {
+    const downArrowSvg = `<svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M8.707 12.707a1 1 0 0 0 1.414 0L12 10.414l1.879 2.293a1 1 0 0 0 1.414-1.414l-3-3a1 1 0 0 0-1.414 0l-3 3a1 1 0 0 0 0 1.414z"/></svg>`;
+    const upArrowSvg = `<svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M15.293 11.293a1 1 0 0 0-1.414 0L12 13.586l-1.879-2.293a1 1 0 0 0-1.414 1.414l3 3a1 1 0 0 0 1.414 0l3-3a1 1 0 0 0 0-1.414z"/></svg>`;
    return `
-     <p style="font-size: 6px; font-weight: bold; margin-bottom: 10px;">${location.description}</p>
-     <div class="collapsible-header"><span>&#9660;</span></div>
+     <p style="font-size: 6px; font-weight: bold; margin-bottom: 5px;">${location.description}</p>
+     <div class="collapsible-header"><span class="toggle-symbol">${downArrowSvg}</span></div>
      <div class="collapsible-content">
        <div style="display:flex; align-items:center; gap:.5em;">
          <img src="${location.image}" alt="${location.name}" style="width:40px; height:auto; object-fit-cover; border-radius:.5em;" />
@@ -238,16 +252,19 @@ locations.forEach(location => {
      // Add event listener to toggle collapsible content
      const header = popup._content.querySelector('.collapsible-header');
      const content = popup._content.querySelector('.collapsible-content');
-     const headerSpan = header.querySelector('span');
+     const headerSpan = header.querySelector('.toggle-symbol');
 
      header.addEventListener('click', () => {
        if (content.style.display === 'none') {
          content.style.display = 'block';
-         headerSpan.innerHTML = '&#9650;'; // Up-facing triangle
-       } else {
+         headerSpan.innerHTML = upArrowSvg
+           
+    } else {
          content.style.display = 'none';
-         headerSpan.innerHTML = '&#9660;'; // Down-facing triangle
+         headerSpan.innerHTML = downArrowSvg
+     
        }
+       headerSpan.classList.toggle('rotated');
      });
    });
 });
@@ -277,16 +294,22 @@ function addBuildingMarkers() {
       // Add event listener to toggle collapsible content
       const header = popup._content.querySelector('.collapsible-header');
       const content = popup._content.querySelector('.collapsible-content');
-      const headerSpan = header.querySelector('span');
+      const headerSpan = header.querySelector('.toggle-symbol');
 
       header.addEventListener('click', () => {
         if (content.style.display === 'none') {
           content.style.display = 'block';
-          headerSpan.innerHTML = '&#9650;'; // Up-facing triangle
-        } else {
+          headerSpan.innerHTML = upArrowSvg
+        
+       
+          
+       } else {
           content.style.display = 'none';
-          headerSpan.innerHTML = '&#9660;'; // Down-facing triangle
-        }
+          headerSpan.innerHTML = downArrowSvg
+       
+          
+       }
+       headerSpan.classList.toggle('rotated');
       });
     });
   });
