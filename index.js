@@ -95,9 +95,8 @@ stylePopup.innerHTML = `
     background-color: #f0f0f0;
     border-radius: 0 0 10px 10px;
     margin-top: 0px;
-    width: calc(100% + 20px);
+    width: 100%;
     margin-left: -10px;
-    margin-right: -10px;
     margin-bottom: -2px;
    }
 
@@ -111,9 +110,6 @@ stylePopup.innerHTML = `
         display: inline-block;
         vertical-align: middle;
         transition: transform 0.2s ease-in-out;
-    }
-    .toggle-symbol.rotated {
-        transform: rotate(180deg);
     }
 `;
 
@@ -201,11 +197,10 @@ function createCustomMarker(imageUrl, color = '#9b4dca', isLocation = false) {
 }
 
 function createPopupHTML(location) {
-    const downArrowSvg = `<svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M8.707 12.707a1 1 0 0 0 1.414 0L12 10.414l1.879 2.293a1 1 0 0 0 1.414-1.414l-3-3a1 1 0 0 0-1.414 0l-3 3a1 1 0 0 0 0 1.414z"/></svg>`;
-    const upArrowSvg = `<svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M15.293 11.293a1 1 0 0 0-1.414 0L12 13.586l-1.879-2.293a1 1 0 0 0-1.414 1.414l3 3a1 1 0 0 0 1.414 0l3-3a1 1 0 0 0 0-1.414z"/></svg>`;
+    const arrowSvg = `<svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg>`;
    return `
      <p style="font-size: 6px; font-weight: bold; margin-bottom: 5px;">${location.description}</p>
-     <div class="collapsible-header"><span class="toggle-symbol">${downArrowSvg}</span></div>
+     <div class="collapsible-header"><span class="toggle-symbol">${arrowSvg}</span></div>
      <div class="collapsible-content">
        <div style="display:flex; align-items:center; gap:.5em;">
          <img src="${location.image}" alt="${location.name}" style="width:40px; height:auto; object-fit-cover; border-radius:.5em;" />
@@ -257,14 +252,11 @@ locations.forEach(location => {
      header.addEventListener('click', () => {
        if (content.style.display === 'none') {
          content.style.display = 'block';
-         headerSpan.innerHTML = upArrowSvg
-           
-    } else {
+         headerSpan.style.transform = 'rotate(180deg)';
+       } else {
          content.style.display = 'none';
-         headerSpan.innerHTML = downArrowSvg
-     
+         headerSpan.style.transform = 'rotate(0deg)';
        }
-       headerSpan.classList.toggle('rotated');
      });
    });
 });
@@ -299,17 +291,11 @@ function addBuildingMarkers() {
       header.addEventListener('click', () => {
         if (content.style.display === 'none') {
           content.style.display = 'block';
-          headerSpan.innerHTML = upArrowSvg
-        
-       
-          
-       } else {
+          headerSpan.style.transform = 'rotate(180deg)';
+        } else {
           content.style.display = 'none';
-          headerSpan.innerHTML = downArrowSvg
-       
-          
-       }
-       headerSpan.classList.toggle('rotated');
+          headerSpan.style.transform = 'rotate(0deg)';
+        }
       });
     });
   });
