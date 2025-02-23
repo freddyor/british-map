@@ -29,12 +29,13 @@ document.head.appendChild(link);
 // Style for the popup and markers
 stylePopup.innerHTML = `
   .mapboxgl-popup-content {
-    border-radius: 12px !important;
+    border-radius: 12px 12px 0 0 !important;
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3) !important;
     padding: 10px !important;
     font-family: 'Poppins', sans-serif !important;
     background: #E9E8E0;
     border: 2px solid #f0f0f0 !important;
+    border-bottom: none !important;
     line-height: 1.05;
     padding-top: 10px !important;
     padding-bottom: 0 !important;
@@ -97,12 +98,13 @@ stylePopup.innerHTML = `
     cursor: pointer;
     font-family: 'Poppins', sans-serif;
     font-size: 12px;
-    width: 100%;
+    width: calc(100% + 20px);
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: auto;
+    margin: 0 -10px;
     border-top: 1px solid #ccc;
+    border-radius: 0 0 12px 12px;
   }
   .arrow {
     border: solid black;
