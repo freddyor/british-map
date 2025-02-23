@@ -95,7 +95,7 @@ stylePopup.innerHTML = `
     background-color: #f0f0f0;
     border-radius: 0 0 10px 10px;
     margin-top: 0px;
-    width: calc(100% + 20px);
+    width: calc(100% + 0px);
     margin-left: -10px;
     margin-right: -10px;
     margin-bottom: -2px;
