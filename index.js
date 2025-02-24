@@ -70,11 +70,15 @@ function addLocationsList() {
     list.style.padding = '0';
     list.style.margin = '0';
 
+        const sortedLocations = locations.sort((a, b) => {
+        return a.name.localeCompare(b.name);
+    });
+    
     locations.forEach(location => {
         const listItem = document.createElement('li');
         listItem.textContent = location.name;
         listItem.style.cursor = 'pointer';
-        listItem.style.padding = '1.25px'; // Reduced by 75% from 5px
+        listItem.style.padding = '1px'; // Reduced by 75% from 5px
         listItem.style.fontSize = '12px';
         listItem.style.fontFamily = 'Poppins, sans-serif';
 
