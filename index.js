@@ -14,8 +14,10 @@ var map = new mapboxgl.Map({
 
 map.on('load', () => {
   addBuildingMarkers();
+  addLocationsList(); // Add this line to create the list when the map loads
   geolocate.trigger(); // Trigger geolocation on map load
 });
+
 const toggleContainerButton = document.createElement('button');
 toggleContainerButton.id = 'toggle-container-button';
 toggleContainerButton.textContent = '📦 Open Container';
@@ -50,9 +52,8 @@ openableContainer.style.boxShadow = '0 6px 15px rgba(0, 0, 0, 0.3)';
 openableContainer.style.padding = '10px';
 openableContainer.style.width = '200px';
 openableContainer.style.textAlign = 'center';
-openableContainer.textContent = 'This is an openable container!';
+//openableContainer.textContent = 'This is an openable container!';  Remove this line
 document.body.appendChild(openableContainer);
-
 
 toggleContainerButton.addEventListener('click', () => {
     if (openableContainer.style.display === 'none' || openableContainer.style.display === '') {
@@ -63,6 +64,33 @@ toggleContainerButton.addEventListener('click', () => {
         toggleContainerButton.textContent = '📦 Open Container';
     }
 });
+
+// Function to add the list of locations to the openable container
+function addLocationsList() {
+    const list = document.createElement('ul');
+    list.style.listStyleType = 'none';
+    list.style.padding = '0';
+    list.style.margin = '0';
+
+    locations.forEach(location => {
+        const listItem = document.createElement('li');
+        listItem.textContent = location.name;
+        listItem.style.cursor = 'pointer';
+        listItem.style.padding = '5px';
+
+        listItem.addEventListener('click', () => {
+            map.flyTo({
+                center: location.coords,
+                zoom: 15
+            });
+        });
+        list.appendChild(listItem);
+    });
+    
+    // Append the list to the openable container
+    openableContainer.innerHTML = ''; // Clear existing content
+    openableContainer.appendChild(list);
+}
 
 // Create a <style> element to add the CSS
 const stylePopup = document.createElement('style');
