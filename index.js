@@ -29,11 +29,30 @@ buttonContainer.style.top = '10px';
 buttonContainer.style.transform = 'translateX(-50%)';
 buttonContainer.style.zIndex = '1000';
 buttonContainer.style.display = 'flex';
+buttonContainer.style.alignItems = 'center'; /* Vertically center the buttons */
 buttonContainer.style.gap = '10px';
 
-// Move the "Buy Me a Coffee" button into the new container
-bmcButton.remove();
-buttonContainer.appendChild(bmcButton);
+// Create the new Buy Me a Coffee button
+const newBmcButton = document.createElement('a');
+newBmcButton.href = 'https://www.buymeacoffee.com/britmap';
+newBmcButton.target = '_blank';
+newBmcButton.style.backgroundColor = '#e9e8e0';
+newBmcButton.style.color = 'black';
+newBmcButton.style.border = '2px solid #f0f0f0';
+newBmcButton.style.padding = '3px 8px';
+newBmcButton.style.fontSize = '12px';
+newBmcButton.style.fontWeight = 'bold';
+newBmcButton.style.borderRadius = '8px';
+newBmcButton.style.cursor = 'pointer';
+newBmcButton.style.boxShadow = '0 6px 15px rgba(0, 0, 0, 0.3)';
+newBmcButton.textContent = '☕ Buy me a coffee';
+newBmcButton.style.textDecoration = 'none'; // Remove underline
+buttonContainer.appendChild(newBmcButton);
+
+// Remove the old "Buy Me a Coffee" button if it exists
+if (bmcButton) {
+    bmcButton.remove();
+}
 
 const toggleContainerButton = document.createElement('button');
 toggleContainerButton.id = 'toggle-container-button';
