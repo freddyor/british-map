@@ -54,7 +54,7 @@
 
         #locations-list-button {
             position: fixed;
-            left: 60%; /* Positioned to the right of the BMC button */
+            left: 60%;
             top: 10px;
             transform: translateX(-50%);
             z-index: 1000;
@@ -73,6 +73,11 @@
 
         #locations-list-button:hover {
             background-color: #d1d0c6;
+        }
+
+        .locations-list-popup .mapboxgl-popup-content {
+            padding: 0;
+            width: 250px;
         }
 
         @media (max-width: 750px) {
