@@ -1,4 +1,3 @@
-import mapboxgl from 'mapbox-gl';
 import { buildings } from './buildings.js';
 import { locations } from './locations.js';
 
@@ -6,7 +5,7 @@ mapboxgl.accessToken = 'pk.eyJ1IjoiZnJlZGRvbWF0ZSIsImEiOiJjbTc1bm5zYnQwaG1mMmtxe
 
 const map = new mapboxgl.Map({
     container: 'map',
-    style: 'mapbox://styles/freddomate/cm785h0qv00cf01r0e8xxaxbc',
+    style: 'mapbox://styles/mapbox/streets-v12',
     center: [-1.0803, 53.9583],
     zoom: 15,
     pitch: 45,
