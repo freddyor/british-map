@@ -16,6 +16,53 @@ map.on('load', () => {
   addBuildingMarkers();
   geolocate.trigger(); // Trigger geolocation on map load
 });
+const toggleContainerButton = document.createElement('button');
+toggleContainerButton.id = 'toggle-container-button';
+toggleContainerButton.textContent = '📦 Open Container';
+toggleContainerButton.style.position = 'fixed';
+toggleContainerButton.style.left = '50%';
+toggleContainerButton.style.top = '50px';
+toggleContainerButton.style.transform = 'translateX(-50%)';
+toggleContainerButton.style.zIndex = '1000';
+toggleContainerButton.style.backgroundColor = '#e9e8e0';
+toggleContainerButton.style.color = 'black';
+toggleContainerButton.style.border = '2px solid #f0f0f0';
+toggleContainerButton.style.padding = '3px 8px';
+toggleContainerButton.style.fontSize = '12px';
+toggleContainerButton.style.fontWeight = 'bold';
+toggleContainerButton.style.borderRadius = '8px';
+toggleContainerButton.style.cursor = 'pointer';
+toggleContainerButton.style.boxShadow = '0 6px 15px rgba(0, 0, 0, 0.3)';
+document.body.appendChild(toggleContainerButton);
+
+const openableContainer = document.createElement('div');
+openableContainer.id = 'openable-container';
+openableContainer.style.display = 'none';
+openableContainer.style.position = 'fixed';
+openableContainer.style.left = '50%';
+openableContainer.style.top = '80px';
+openableContainer.style.transform = 'translateX(-50%)';
+openableContainer.style.zIndex = '999';
+openableContainer.style.backgroundColor = '#fff';
+openableContainer.style.border = '2px solid #f0f0f0';
+openableContainer.style.borderRadius = '8px';
+openableContainer.style.boxShadow = '0 6px 15px rgba(0, 0, 0, 0.3)';
+openableContainer.style.padding = '10px';
+openableContainer.style.width = '200px';
+openableContainer.style.textAlign = 'center';
+openableContainer.textContent = 'This is an openable container!';
+document.body.appendChild(openableContainer);
+
+
+toggleContainerButton.addEventListener('click', () => {
+    if (openableContainer.style.display === 'none' || openableContainer.style.display === '') {
+        openableContainer.style.display = 'block';
+        toggleContainerButton.textContent = '📦 Close Container';
+    } else {
+        openableContainer.style.display = 'none';
+        toggleContainerButton.textContent = '📦 Open Container';
+    }
+});
 
 // Create a <style> element to add the CSS
 const stylePopup = document.createElement('style');
