@@ -29,42 +29,52 @@
             height: 100vh;
         }
 
-        #custom-bmc-button {
+        #button-container {
             position: fixed;
             left: 50%;
             top: 10px;
             transform: translateX(-50%);
             z-index: 1000;
-            background-color: #e9e8e0; /* Updated background color */
+            display: flex;
+            gap: 10px;
+        }
+
+        .map-button {
+            background-color: #e9e8e0;
             color: black;
-            border: 2px solid #f0f0f0; /* Added border */
-            padding: 3px 8px; /* Reduced padding for less space around text */
+            border: 2px solid #f0f0f0;
+            padding: 3px 8px;
             font-size: 12px;
-            font-weight: bold; /* Make the text bold */
+            font-weight: bold;
             border-radius: 8px;
             cursor: pointer;
             text-decoration: none;
-            display: inline-block;
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); /* Added box shadow */
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            height: 26px;
+            min-width: 180px; /* Adjust this value as needed */
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
         }
 
-        #custom-bmc-button:hover {
-            background-color: #d1d0c6; /* Optional hover effect */
+        .map-button:hover {
+            background-color: #d1d0c6;
         }
 
         @media (max-width: 750px) {
-            #custom-bmc-button {
-                font-size: 14px; /* Slightly larger font for mobile */
-                padding: 4px 10px; /* Adjusted padding for mobile devices */
+            .map-button {
+                font-size: 10px;
+                padding: 2px 6px;
+                min-width: 140px; /* Adjust for mobile */
             }
         }
 
         @media (prefers-contrast: more) {
-            #custom-bmc-button {
+            .map-button {
                 background-color: #000000;
                 color: #FFFFFF;
-                border-color: #FFFFFF; /* Change border color in high contrast mode */
-                box-shadow: none; /* Remove shadow in high contrast mode for better visibility */
+                border-color: #FFFFFF;
+                box-shadow: none;
             }
         }
     </style>
@@ -72,11 +82,7 @@
 <body>
 
     <div id="map"></div>
-
-    <!-- Buy Me a Coffee Button -->
-    <a href="https://www.buymeacoffee.com/britmap" target="_blank" id="custom-bmc-button">
-        ☕ Buy me a coffee
-    </a>
+    <div id="button-container"></div>
 
     <script src="index.js" type="module" defer></script>
 
