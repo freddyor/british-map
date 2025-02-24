@@ -18,26 +18,14 @@ map.on('load', () => {
   geolocate.trigger();
 });
 
-// Find the existing "Buy Me a Coffee" button
-const bmcButton = document.getElementById('custom-bmc-button');
-
-// Create a container for both buttons
-const buttonContainer = document.createElement('div');
-buttonContainer.style.position = 'fixed';
-buttonContainer.style.left = '50%';
-buttonContainer.style.top = '10px';
-buttonContainer.style.transform = 'translateX(-50%)';
-buttonContainer.style.zIndex = '1000';
-buttonContainer.style.display = 'flex';
-buttonContainer.style.gap = '10px';
-
-// Move the "Buy Me a Coffee" button into the new container
-bmcButton.remove();
-buttonContainer.appendChild(bmcButton);
-
 const toggleContainerButton = document.createElement('button');
 toggleContainerButton.id = 'toggle-container-button';
-toggleContainerButton.textContent = '📦 Locations';
+toggleContainerButton.textContent = 'Find person';
+toggleContainerButton.style.position = 'fixed';
+toggleContainerButton.style.left = '50%';
+toggleContainerButton.style.top = '50px';
+toggleContainerButton.style.transform = 'translateX(-50%)';
+toggleContainerButton.style.zIndex = '1000';
 toggleContainerButton.style.backgroundColor = '#e9e8e0';
 toggleContainerButton.style.color = 'black';
 toggleContainerButton.style.border = '2px solid #f0f0f0';
@@ -47,16 +35,14 @@ toggleContainerButton.style.fontWeight = 'bold';
 toggleContainerButton.style.borderRadius = '8px';
 toggleContainerButton.style.cursor = 'pointer';
 toggleContainerButton.style.boxShadow = '0 6px 15px rgba(0, 0, 0, 0.3)';
-buttonContainer.appendChild(toggleContainerButton);
-
-document.body.appendChild(buttonContainer);
+document.body.appendChild(toggleContainerButton);
 
 const openableContainer = document.createElement('div');
 openableContainer.id = 'openable-container';
 openableContainer.style.display = 'none';
 openableContainer.style.position = 'fixed';
 openableContainer.style.left = '50%';
-openableContainer.style.top = '45px';
+openableContainer.style.top = '80px';
 openableContainer.style.transform = 'translateX(-50%)';
 openableContainer.style.zIndex = '999';
 openableContainer.style.backgroundColor = '#fff';
@@ -65,10 +51,11 @@ openableContainer.style.borderRadius = '8px';
 openableContainer.style.boxShadow = '0 6px 15px rgba(0, 0, 0, 0.3)';
 openableContainer.style.padding = '10px';
 openableContainer.style.width = '200px';
-openableContainer.style.maxHeight = '300px';
-openableContainer.style.overflowY = 'auto';
-openableContainer.style.scrollbarWidth = 'none';
-openableContainer.style.msOverflowStyle = 'none';
+openableContainer.style.textAlign = 'center';
+openableContainer.style.height = '300px'; // Fixed height
+openableContainer.style.overflowY = 'auto'; // Enable vertical scrolling
+openableContainer.style.scrollbarWidth = 'none'; // Hide scrollbar in Firefox
+openableContainer.style.msOverflowStyle = 'none'; // Hide scrollbar in IE/Edge
 document.body.appendChild(openableContainer);
 
 // Add a style to hide the scrollbar in WebKit browsers
@@ -83,10 +70,10 @@ document.head.appendChild(style);
 toggleContainerButton.addEventListener('click', () => {
     if (openableContainer.style.display === 'none' || openableContainer.style.display === '') {
         openableContainer.style.display = 'block';
-        toggleContainerButton.textContent = '📦 Close';
+        toggleContainerButton.textContent = 'Show less';
     } else {
         openableContainer.style.display = 'none';
-        toggleContainerButton.textContent = '📦 Locations';
+        toggleContainerButton.textContent = 'Find person';
     }
 });
 
@@ -105,18 +92,18 @@ function addLocationsList() {
         const listItem = document.createElement('li');
         listItem.textContent = location.name;
         listItem.style.cursor = 'pointer';
-        listItem.style.padding = '1.25px';
+        listItem.style.padding = '1px';
         listItem.style.fontSize = '12px';
         listItem.style.fontFamily = 'Poppins, sans-serif';
 
         listItem.addEventListener('click', () => {
             map.flyTo({
                 center: location.coords,
-                zoom: 17,
+                zoom: 5,
                 duration: 2000
             });
             openableContainer.style.display = 'none';
-            toggleContainerButton.textContent = '📦 Locations';
+            toggleContainerButton.textContent = 'Find person';
         });
         list.appendChild(listItem);
     });
@@ -345,4 +332,9 @@ function addBuildingMarkers() {
 
     marker.setPopup(popup);
 
-    marker.getElement().addEventListener('click', () =>
+    marker.getElement().addEventListener('click', () => {
+      map.getCanvas().style.cursor = 'pointer';
+      popup.addTo(map);
+    });
+  });
+}
