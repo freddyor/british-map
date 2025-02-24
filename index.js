@@ -23,6 +23,7 @@ const bmcButton = document.getElementById('custom-bmc-button');
 
 // Create a container for both buttons
 const buttonContainer = document.createElement('div');
+buttonContainer.id = 'button-container'; // Add an ID for easier targeting
 buttonContainer.style.position = 'fixed';
 buttonContainer.style.left = '50%';
 buttonContainer.style.top = '10px';
@@ -31,6 +32,8 @@ buttonContainer.style.zIndex = '1000';
 buttonContainer.style.display = 'flex';
 buttonContainer.style.alignItems = 'center'; /* Vertically center the buttons */
 buttonContainer.style.gap = '10px';
+// Add these styles to handle potential overflow on smaller screens
+buttonContainer.style.whiteSpace = 'nowrap'; /* Prevent wrapping */
 
 // Create the new Buy Me a Coffee button
 const newBmcButton = document.createElement('a');
@@ -248,7 +251,6 @@ geolocate.on('error', (e) => {
   }
   e.preventDefault();
 });
-
 geolocate.on('geolocate', (e) => {
   const lon = e.coords.longitude;
   const lat = e.coords.latitude;
@@ -393,3 +395,24 @@ geocoder.on('result', function(e) {
     zoom: 15
   });
 });
+
+// Add media query for mobile devices
+const mediaQuery = `@media (max-width: 600px) {
+  #button-container {
+    width: 90%; /* Take up most of the screen width */
+    justify-content: center; /* Center buttons horizontally */
+    gap: 5px; /* Reduce gap between buttons on mobile */
+  }
+
+  #button-container a,
+  #button-container button {
+    font-size: 10px; /* Reduce font size on mobile */
+    padding: 2px 6px; /* Adjust padding */
+  }
+}`;
+
+// Add the media query to the document head
+const styleSheet = document.createElement("style");
+styleSheet.type = "text/css";
+styleSheet.innerText = mediaQuery;
+document.head.appendChild(styleSheet);
