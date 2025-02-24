@@ -768,7 +768,7 @@ export const buildings = [
   },
   {
     "name": "Severus Hill",
-    "coords": [-1.1168110689753956, 53.959792278666024],
+    "coords": [-1.1178571416241811, 53.95914276260406],
     "image": "images/severushill.png",
     "description": "",
     "occupation": "",
