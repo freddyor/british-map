@@ -91,14 +91,14 @@ function addLocationsList() {
         const listItem = document.createElement('li');
         listItem.textContent = location.name;
         listItem.style.cursor = 'pointer';
-        listItem.style.padding = '1.25px';
+        listItem.style.padding = '1.05px';
         listItem.style.fontSize = '12px';
         listItem.style.fontFamily = 'Poppins, sans-serif';
 
         listItem.addEventListener('click', () => {
             map.flyTo({
                 center: location.coords,
-                zoom: 17,
+                zoom: 5,
                 duration: 2000
             });
             openableContainer.style.display = 'none';
