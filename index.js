@@ -16,24 +16,6 @@ map.on('load', () => {
   addBuildingMarkers();
   geolocate.trigger(); // Trigger geolocation on map load
 });
-const toggleContainerButton = document.createElement('button');
-toggleContainerButton.id = 'toggle-container-button';
-toggleContainerButton.textContent = '📦 Open Container';
-toggleContainerButton.style.position = 'fixed';
-toggleContainerButton.style.left = '50%';
-toggleContainerButton.style.top = '50px';
-toggleContainerButton.style.transform = 'translateX(-50%)';
-toggleContainerButton.style.zIndex = '1000';
-toggleContainerButton.style.backgroundColor = '#e9e8e0';
-toggleContainerButton.style.color = 'black';
-toggleContainerButton.style.border = '2px solid #f0f0f0';
-toggleContainerButton.style.padding = '3px 8px';
-toggleContainerButton.style.fontSize = '12px';
-toggleContainerButton.style.fontWeight = 'bold';
-toggleContainerButton.style.borderRadius = '8px';
-toggleContainerButton.style.cursor = 'pointer';
-toggleContainerButton.style.boxShadow = '0 6px 15px rgba(0, 0, 0, 0.3)';
-document.body.appendChild(toggleContainerButton);
 
 const openableContainer = document.createElement('div');
 openableContainer.id = 'openable-container';
