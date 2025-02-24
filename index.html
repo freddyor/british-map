@@ -46,6 +46,8 @@
             text-decoration: none;
             display: inline-block;
             box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); /* Added box shadow */
+            white-space: nowrap; /* Prevents text from wrapping to a new line */
+            text-align: center; /* Centers the text within the button */
         }
 
         #custom-bmc-button:hover {
@@ -56,6 +58,13 @@
             #custom-bmc-button {
                 font-size: 14px; /* Slightly larger font for mobile */
                 padding: 4px 10px; /* Adjusted padding for mobile devices */
+            }
+        }
+
+        @media (max-width: 400px) {
+            #custom-bmc-button {
+                font-size: 12px; /* Smaller font size for very small screens */
+                padding: 2px 6px; /* Reduced padding for very small screens */
             }
         }
 
