@@ -1,7 +1,7 @@
 export const buildings = [
   {
     name: "York Minster",
-    coords: [-1.0834619, 53.9622239],
+    coords: [-1.0831787084457822, 53.96223749484881],
     image: "images/yorkminster.png",
     description: "",
     occupation: "1220",
@@ -802,7 +802,7 @@ export const buildings = [
   },
   {
     "name": "De Grey Rooms",
-    "coords": [-1.0853110056501206, 53.963242560425639],
+    "coords": [-1.0853403171638432, 53.96233937601278],
     "image": "images/degreyrooms.png",
     "description": "",
     "occupation": "1842",
