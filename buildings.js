@@ -726,7 +726,7 @@ export const buildings = [
   {
     "name": "20 Coney Street",
     "coords": [-1.0839929192233622, 53.95921245695626],
-    "image": "images/building.png",
+    "image": "images/20coneystreet.png",
     "description": "",
     "occupation": "1500",
     "tldr": "Percy Bysshe Shelley, one of the most famous poets of all time, stayed here with his wife in Autumn 1811.",
