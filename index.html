@@ -29,12 +29,19 @@
             height: 100vh;
         }
 
-        #custom-bmc-button, #toggle-container-button {
+        #button-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
             position: fixed;
-            left: 50%;
             top: 10px;
+            left: 50%;
             transform: translateX(-50%);
             z-index: 1000;
+        }
+
+        #custom-bmc-button, #toggle-container-button {
             background-color: #e9e8e0;
             color: black;
             border: 2px solid #f0f0f0;
@@ -46,7 +53,6 @@
             text-decoration: none;
             display: inline-block;
             box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
-            margin-left: 10px;
         }
 
         #custom-bmc-button:hover, #toggle-container-button:hover {
@@ -73,13 +79,15 @@
 
     <div id="map"></div>
 
-    <!-- Buy Me a Coffee Button -->
-    <a href="https://www.buymeacoffee.com/britmap" target="_blank" id="custom-bmc-button">
-        ☕ Buy me a coffee
-    </a>
+    <div id="button-container">
+        <!-- Buy Me a Coffee Button -->
+        <a href="https://www.buymeacoffee.com/britmap" target="_blank" id="custom-bmc-button">
+            ☕ Buy me a coffee
+        </a>
 
-    <!-- Openable Container Button -->
-    <button id="toggle-container-button">📦 Open Container</button>
+        <!-- Openable Container Button -->
+        <button id="toggle-container-button">📦 Open Container</button>
+    </div>
 
     <!-- The Openable Container -->
     <div id="openable-container">
