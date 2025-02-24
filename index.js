@@ -14,87 +14,15 @@ var map = new mapboxgl.Map({
 
 map.on('load', () => {
   addBuildingMarkers();
-  addLocationsList();
-  geolocate.trigger();
+  geolocate.trigger(); // Trigger geolocation on map load
 });
 
-// Create a container for both buttons
-const buttonContainer = document.createElement('div');
-buttonContainer.className = 'button-container';
-buttonContainer.style.position = 'fixed';
-buttonContainer.style.left = '50%';
-buttonContainer.style.top = '10px';
-buttonContainer.style.transform = 'translateX(-50%)';
-buttonContainer.style.zIndex = '1000';
-buttonContainer.style.display = 'flex';
-buttonContainer.style.alignItems = 'center';
-buttonContainer.style.gap = '10px';
-
-// Create the new Buy Me a Coffee button
-const newBmcButton = document.createElement('a');
-newBmcButton.href = 'https://www.buymeacoffee.com/britmap';
-newBmcButton.target = '_blank';
-newBmcButton.className = 'button';
-newBmcButton.textContent = '☕ Buy me a coffee';
-
-// Create the Locations button
-const toggleContainerButton = document.createElement('button');
-toggleContainerButton.id = 'toggle-container-button';
-toggleContainerButton.className = 'button';
-toggleContainerButton.textContent = '📦 Locations';
-
-buttonContainer.appendChild(newBmcButton);
-buttonContainer.appendChild(toggleContainerButton);
-document.body.appendChild(buttonContainer);
-
-// Add styles for buttons and container
-const style = document.createElement('style');
-style.textContent = `
-  .button-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .button {
-    background-color: #e9e8e0;
-    color: black;
-    border: 2px solid #f0f0f0;
-    padding: 3px 8px;
-    font-size: calc(12px + 0.5vw);
-    font-weight: bold;
-    border-radius: 8px;
-    cursor: pointer;
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
-    text-decoration: none;
-    white-space: nowrap;
-  }
-
-  @media screen and (max-width: 768px) {
-    .button-container {
-      flex-direction: column;
-    }
-
-    .button {
-      width: 100%;
-      max-width: 300px;
-      margin-bottom: 10px;
-      padding: 10px;
-      font-size: 14px;
-    }
-  }
-`;
-document.head.appendChild(style);
-
-// ... (rest of your existing code)
-
-// The following is your existing code for the openable container
 const openableContainer = document.createElement('div');
 openableContainer.id = 'openable-container';
 openableContainer.style.display = 'none';
 openableContainer.style.position = 'fixed';
 openableContainer.style.left = '50%';
-openableContainer.style.top = '45px';
+openableContainer.style.top = '80px';
 openableContainer.style.transform = 'translateX(-50%)';
 openableContainer.style.zIndex = '999';
 openableContainer.style.backgroundColor = '#fff';
@@ -103,74 +31,31 @@ openableContainer.style.borderRadius = '8px';
 openableContainer.style.boxShadow = '0 6px 15px rgba(0, 0, 0, 0.3)';
 openableContainer.style.padding = '10px';
 openableContainer.style.width = '200px';
-openableContainer.style.maxHeight = '300px';
-openableContainer.style.overflowY = 'auto';
-openableContainer.style.scrollbarWidth = 'none';
-openableContainer.style.msOverflowStyle = 'none';
+openableContainer.style.textAlign = 'center';
+openableContainer.textContent = 'This is an openable container!';
 document.body.appendChild(openableContainer);
 
-
-// Add a style to hide the scrollbar in WebKit browsers
-const style = document.createElement('style');
-style.textContent = `
-  #openable-container::-webkit-scrollbar {
-    display: none;
-  }
-`;
-document.head.appendChild(style);
 
 toggleContainerButton.addEventListener('click', () => {
     if (openableContainer.style.display === 'none' || openableContainer.style.display === '') {
         openableContainer.style.display = 'block';
-        toggleContainerButton.textContent = '📦 Close';
+        toggleContainerButton.textContent = '📦 Close Container';
     } else {
         openableContainer.style.display = 'none';
-        toggleContainerButton.textContent = '📦 Locations';
+        toggleContainerButton.textContent = '📦 Open Container';
     }
 });
 
-function addLocationsList() {
-    const list = document.createElement('ul');
-    list.style.listStyleType = 'none';
-    list.style.padding = '0';
-    list.style.margin = '0';
-
-    // Sort locations by name in alphabetical order
-    const sortedLocations = locations.sort((a, b) => {
-        return a.name.localeCompare(b.name);
-    });
-
-    sortedLocations.forEach(location => {
-        const listItem = document.createElement('li');
-        listItem.textContent = location.name;
-        listItem.style.cursor = 'pointer';
-        listItem.style.padding = '1.25px';
-        listItem.style.fontSize = '12px';
-        listItem.style.fontFamily = 'Poppins, sans-serif';
-
-        listItem.addEventListener('click', () => {
-            map.flyTo({
-                center: location.coords,
-                zoom: 17,
-                duration: 2000
-            });
-            openableContainer.style.display = 'none';
-            toggleContainerButton.textContent = '📦 Locations';
-        });
-        list.appendChild(listItem);
-    });
-    
-    openableContainer.innerHTML = '';
-    openableContainer.appendChild(list);
-}
-
+// Create a <style> element to add the CSS
 const stylePopup = document.createElement('style');
 
+// Add the link to Google Fonts for Poppins
 const link = document.createElement('link');
 link.href = "https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap";
 link.rel = "stylesheet";
 document.head.appendChild(link);
 
+// Style for the popup and markers
 stylePopup.innerHTML = `
   .mapboxgl-popup-content {
     border-radius: 12px !important;
@@ -225,8 +110,10 @@ stylePopup.innerHTML = `
   }
 `;
 
+// Append the style to the document
 document.head.appendChild(stylePopup);
 
+// Geolocation control
 const geolocate = new mapboxgl.GeolocateControl({
   positionOptions: {
     enableHighAccuracy: true
@@ -237,11 +124,12 @@ const geolocate = new mapboxgl.GeolocateControl({
   fitBoundsOptions: {
     maxZoom: 15
   },
-  showUserLocation: false
+  showUserLocation: false // Disable the default blue dot
 });
 
 map.addControl(geolocate);
 
+// Create a single marker for user location
 const userLocationEl = document.createElement('div');
 userLocationEl.className = 'user-location-marker';
 
@@ -259,14 +147,15 @@ textEl.textContent = 'me';
 userLocationEl.appendChild(textEl);
 
 const userLocationMarker = new mapboxgl.Marker({element: userLocationEl})
-  .setLngLat([0, 0])
+  .setLngLat([0, 0]) // Set initial coordinates, will be updated later
   .addTo(map);
 
 geolocate.on('error', (e) => {
   if (e.code === 1) {
     console.log('Location access denied by user');
+    // You can update UI or take other actions here
   }
-  e.preventDefault();
+  e.preventDefault(); // Prevent the default error pop-up
 });
 
 geolocate.on('geolocate', (e) => {
@@ -275,6 +164,7 @@ geolocate.on('geolocate', (e) => {
   const position = [lon, lat];
   console.log(position);
 
+  // Update the user location marker position
   userLocationMarker.setLngLat(position);
 });
 
@@ -390,32 +280,3 @@ function addBuildingMarkers() {
     });
   });
 }
-
-// Add zoom controls
-map.addControl(new mapboxgl.NavigationControl(), 'top-right');
-
-// Add fullscreen control
-map.addControl(new mapboxgl.FullscreenControl(), 'top-right');
-
-// Initialize search functionality
-const geocoder = new MapboxGeocoder({
-  accessToken: mapboxgl.accessToken,
-  mapboxgl: mapboxgl,
-  marker: false,
-  placeholder: 'Search for places in York'
-});
-
-map.addControl(geocoder);
-
-geocoder.on('result', function(e) {
-  const coord = e.result.center;
-  const popup = new mapboxgl.Popup()
-    .setLngLat(coord)
-    .setHTML(`<h3>${e.result.place_name}</h3>`)
-    .addTo(map);
-  
-  map.flyTo({
-    center: coord,
-    zoom: 15
-  });
-});
