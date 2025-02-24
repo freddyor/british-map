@@ -22,19 +22,33 @@ openableContainer.id = 'openable-container';
 openableContainer.style.display = 'none';
 openableContainer.style.position = 'fixed';
 openableContainer.style.left = '50%';
-openableContainer.style.top = '80px';
+openableContainer.style.top = '40px'; // Halved from 80px
 openableContainer.style.transform = 'translateX(-50%)';
 openableContainer.style.zIndex = '999';
 openableContainer.style.backgroundColor = '#fff';
-openableContainer.style.border = '2px solid #f0f0f0';
-openableContainer.style.borderRadius = '8px';
-openableContainer.style.boxShadow = '0 6px 15px rgba(0, 0, 0, 0.3)';
-openableContainer.style.padding = '10px';
-openableContainer.style.width = '200px';
+openableContainer.style.border = '1px solid #f0f0f0'; // Halved border
+openableContainer.style.borderRadius = '4px'; // Halved border radius
+openableContainer.style.boxShadow = '0 3px 7.5px rgba(0, 0, 0, 0.15)'; // Halved shadow values
+openableContainer.style.padding = '5px'; // Halved padding
+openableContainer.style.width = '100px'; // Halved width
 openableContainer.style.textAlign = 'center';
 openableContainer.textContent = 'This is an openable container!';
 document.body.appendChild(openableContainer);
 
+const toggleContainerButton = document.createElement('button');
+toggleContainerButton.textContent = '📦 Open Container';
+toggleContainerButton.style.position = 'fixed';
+toggleContainerButton.style.left = '50%';
+toggleContainerButton.style.bottom = '20px';
+toggleContainerButton.style.transform = 'translateX(-50%)';
+toggleContainerButton.style.zIndex = '1000';
+toggleContainerButton.style.padding = '5px 10px';
+toggleContainerButton.style.backgroundColor = '#4CAF50';
+toggleContainerButton.style.color = 'white';
+toggleContainerButton.style.border = 'none';
+toggleContainerButton.style.borderRadius = '4px';
+toggleContainerButton.style.cursor = 'pointer';
+document.body.appendChild(toggleContainerButton);
 
 toggleContainerButton.addEventListener('click', () => {
     if (openableContainer.style.display === 'none' || openableContainer.style.display === '') {
@@ -58,30 +72,32 @@ document.head.appendChild(link);
 // Style for the popup and markers
 stylePopup.innerHTML = `
   .mapboxgl-popup-content {
-    border-radius: 12px !important;
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3) !important;
-    padding: 10px !important;
+    border-radius: 6px !important; /* Halved */
+    box-shadow: 0 3px 7.5px rgba(0, 0, 0, 0.15) !important; /* Halved */
+    padding: 5px !important; /* Halved */
     font-family: 'Poppins', sans-serif !important;
     background: #E9E8E0;
-    border: 2px solid #f0f0f0 !important;
+    border: 1px solid #f0f0f0 !important; /* Halved */
     line-height: 1.05;
     padding-top: 0 !important;
     padding-bottom: 0 !important;
-    margin-left: 3px;
-    margin-right: 5px;
+    margin-left: 1.5px; /* Halved */
+    margin-right: 2.5px; /* Halved */
   }
 
   .mapboxgl-popup-content img {
-    border: 2px solid #f0f0f0 !important;
-    border-radius: 8px;
+    border: 1px solid #f0f0f0 !important; /* Halved */
+    border-radius: 4px; /* Halved */
+    width: 20px;
+    height: 20px;
   }
 
   .mapboxgl-popup-content p {
     font-weight: bold !important;
     text-align: center;
-    letter-spacing: -0.5px;
-    font-size: 13px !important;
-    margin-bottom: 10px !important;
+    letter-spacing: -0.25px; /* Halved */
+    font-size: 6.5px !important; /* Halved */
+    margin-bottom: 5px !important; /* Halved */
   }
 
   .mapboxgl-popup-close-button {
@@ -89,11 +105,11 @@ stylePopup.innerHTML = `
   }
 
   .user-location-marker {
-    width: 20px;
-    height: 20px;
+    width: 10px; /* Halved */
+    height: 10px; /* Halved */
     background-color: white;
-    border: 3px solid #87CEFA;
-    border-radius: 100%;
+    border: 1.5px solid #87CEFA; /* Halved */
+    border-radius: 50%; /* Halved */
     position: relative;
   }
 
@@ -140,7 +156,7 @@ textEl.style.left = '50%';
 textEl.style.transform = 'translate(-50%, -50%)';
 textEl.style.fontFamily = 'Poppins, sans-serif';
 textEl.style.fontWeight = 'bold';
-textEl.style.fontSize = '10px';
+textEl.style.fontSize = '5px'; /* Halved */
 textEl.style.color = '#87CEFA';
 textEl.textContent = 'me';
 
@@ -171,11 +187,11 @@ geolocate.on('geolocate', (e) => {
 function createCustomMarker(imageUrl, color = '#9b4dca', isLocation = false) {
   const markerDiv = document.createElement('div');
   markerDiv.className = 'custom-marker';
-  markerDiv.style.width = '3em';
-  markerDiv.style.height = '3em';
+  markerDiv.style.width = '1.5em'; // Halved
+  markerDiv.style.height = '1.5em'; // Halved
   markerDiv.style.position = 'absolute';
   markerDiv.style.borderRadius = '50%';
-  markerDiv.style.border = `0.25em solid ${color}`;
+  markerDiv.style.border = `0.125em solid ${color}`; // Halved
   markerDiv.style.boxSizing = 'border-box';
 
   const imageElement = document.createElement('img');
@@ -207,21 +223,21 @@ locations.forEach(location => {
     closeOnClick: true,
     className: 'custom-popup'
   }).setHTML(`
-    <p style="font-size: 6px; font-weight: bold; margin-bottom: 10px;">${location.description}</p>
-    <div style="border-top: 1px solid #ccc; margin-bottom: 10px;"></div>
-    <div style="display: flex; align-items: center; gap: 10px;">
-      <img src="${location.image}" alt="${location.name}" style="width: 40px; height: 40px; object-fit: cover; border-radius: 50%;" />
+    <p style="font-size: 3px; font-weight: bold; margin-bottom: 5px;">${location.description}</p>
+    <div style="border-top: 0.5px solid #ccc; margin-bottom: 5px;"></div>
+    <div style="display: flex; align-items: center; gap: 5px;">
+      <img src="${location.image}" alt="${location.name}" style="width: 20px; height: 20px; object-fit: cover; border-radius: 50%;" />
       <div>
-        <div style="font-size: 16px; font-weight: bold;">${location.name}</div>
-        <div style="font-size: 14px; color: #666;">${location.occupation}</div>
+        <div style="font-size: 8px; font-weight: bold;">${location.name}</div>
+        <div style="font-size: 7px; color: #666;">${location.occupation}</div>
       </div>
     </div>
-    <p style="background: #f9f9f9; padding: 10px; margin-top: 10px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); font-size: 12px;">${location.tldr}</p>
+    <p style="background: #f9f9f9; padding: 5px; margin-top: 5px; border-radius: 4px; box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05); font-size: 6px;">${location.tldr}</p>
     ${location.events.length ? `
-      <div style="margin-top: 10px;">
+      <div style="margin-top: 5px;">
         ${location.events.map(event => `
-          <div style="background: #f9f9f9; border: 1px solid #ddd; border-radius: 8px; padding: 10px; margin-bottom: 10px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
-            <strong style="color: #9b4dca; font-size: 14px;">${event.date}</strong>: <span style="font-size: 12px;">${event.description}</span>
+          <div style="background: #f9f9f9; border: 0.5px solid #ddd; border-radius: 4px; padding: 5px; margin-bottom: 5px; box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);">
+            <strong style="color: #9b4dca; font-size: 7px;">${event.date}</strong>: <span style="font-size: 6px;">${event.description}</span>
           </div>
         `).join('')}
       </div>
@@ -251,21 +267,21 @@ function addBuildingMarkers() {
       closeOnClick: true,
       className: 'custom-popup'
     }).setHTML(`
-      <p style="font-size: 6px; font-weight: bold; margin-bottom: 10px;">${building.description}</p>
-      <div style="border-top: 1px solid #ccc; margin-bottom: 10px;"></div>
-      <div style="display: flex; align-items: center; gap: 10px;">
-        <img src="${building.image}" alt="${building.name}" style="width: 40px; height: 40px; object-fit: cover; border-radius: 50%;" />
+      <p style="font-size: 3px; font-weight: bold; margin-bottom: 5px;">${building.description}</p>
+      <div style="border-top: 0.5px solid #ccc; margin-bottom: 5px;"></div>
+      <div style="display: flex; align-items: center; gap: 5px;">
+        <img src="${building.image}" alt="${building.name}" style="width: 20px; height: 20px; object-fit: cover; border-radius: 50%;" />
         <div>
-          <div style="font-size: 16px; font-weight: bold;">${building.name}</div>
-          <div style="font-size: 14px; color: #666;">${building.occupation}</div>
+          <div style="font-size: 8px; font-weight: bold;">${building.name}</div>
+          <div style="font-size: 7px; color: #666;">${building.occupation}</div>
         </div>
       </div>
-      <p style="background: #f9f9f9; padding: 10px; margin-top: 10px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); font-size: 12px;">${building.tldr}</p>
+      <p style="background: #f9f9f9; padding: 5px; margin-top: 5px; border-radius: 4px; box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05); font-size: 6px;">${building.tldr}</p>
       ${building.events.length ? `
-        <div style="margin-top: 10px;">
+        <div style="margin-top: 5px;">
           ${building.events.map(event => `
-            <div style="background: #f9f9f9; border: 1px solid #ddd; border-radius: 8px; padding: 10px; margin-bottom: 10px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
-              <strong style="color: #9b4dca; font-size: 14px;">${event.date}</strong>: <span style="font-size: 12px;">${event.description}</span>
+            <div style="background: #f9f9f9; border: 0.5px solid #ddd; border-radius: 4px; padding: 5px; margin-bottom: 5px; box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);">
+              <strong style="color: #9b4dca; font-size: 7px;">${event.date}</strong>: <span style="font-size: 6px;">${event.description}</span>
             </div>
           `).join('')}
         </div>
