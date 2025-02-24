@@ -11,6 +11,7 @@ export const locations = [
 { date: "RAIL", description: "On paper, he owned a quarter of all the country's rail network at his height. Most of York's railway system can be attributed to him as well as Lendal Bridge 🚂" },
 ]
   },
+  {
   coords: [ -1.0760945617966278, 53.95174477535229],
   name: "The Beatles",
   occupation: "1960-1970",
@@ -18,6 +19,7 @@ export const locations = [
   image: "images/therialto.png", 
   tldr: "This location was once home to The York Rialto. before international stardom, the most iconic band of all time performed right here 🎙️",
   events: []
+  },
   { 
     coords: [ -1.0861561, 53.9587634 ], 
     name: "John Snow", 
