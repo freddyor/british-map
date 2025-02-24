@@ -15,7 +15,7 @@ export const locations = [
   coords: [ -1.0760945617966278, 53.95174477535229],
   name: "The Beatles",
   occupation: "1960-1970",
-  description: "The Beatles played here 4 times in 1963."
+  description: "The Beatles played here 4 times in 1963.",
   image: "images/therialto.png", 
   tldr: "This location was once home to The York Rialto. before international stardom, the most iconic band of all time performed right here 🎙️",
   events: []
