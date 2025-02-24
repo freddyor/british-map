@@ -20,7 +20,7 @@ map.on('load', () => {
 
 const toggleContainerButton = document.createElement('button');
 toggleContainerButton.id = 'toggle-container-button';
-toggleContainerButton.textContent = '📦 Open Container';
+toggleContainerButton.textContent = 'Find people 🔍';
 toggleContainerButton.style.position = 'fixed';
 toggleContainerButton.style.left = '50%';
 toggleContainerButton.style.top = '50px';
@@ -58,10 +58,10 @@ document.body.appendChild(openableContainer);
 toggleContainerButton.addEventListener('click', () => {
     if (openableContainer.style.display === 'none' || openableContainer.style.display === '') {
         openableContainer.style.display = 'block';
-        toggleContainerButton.textContent = '📦 Close Container';
+        toggleContainerButton.textContent = 'Find people 🔍';
     } else {
         openableContainer.style.display = 'none';
-        toggleContainerButton.textContent = '📦 Open Container';
+        toggleContainerButton.textContent = 'Find people 🔍';
     }
 });
 
