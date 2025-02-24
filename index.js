@@ -20,7 +20,7 @@ map.on('load', () => {
 
 const toggleContainerButton = document.createElement('button');
 toggleContainerButton.id = 'toggle-container-button';
-toggleContainerButton.textContent = '📦 Open Container';
+toggleContainerButton.textContent = 'Find person';
 toggleContainerButton.style.position = 'fixed';
 toggleContainerButton.style.left = '50%';
 toggleContainerButton.style.top = '50px';
@@ -92,14 +92,14 @@ function addLocationsList() {
         const listItem = document.createElement('li');
         listItem.textContent = location.name;
         listItem.style.cursor = 'pointer';
-        listItem.style.padding = '1.25px';
+        listItem.style.padding = '1px';
         listItem.style.fontSize = '12px';
         listItem.style.fontFamily = 'Poppins, sans-serif';
 
         listItem.addEventListener('click', () => {
             map.flyTo({
                 center: location.coords,
-                zoom: 17,
+                zoom: 5,
                 duration: 2000
             });
             openableContainer.style.display = 'none';
