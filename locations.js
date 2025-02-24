@@ -836,7 +836,7 @@ export const locations = [
     "occupation": "1060-1100",
     "description": "William II visited here in 1089 to lay the foundation stone for St. Mary's Abbey",
     "image": "images/williamii.png",
-    "tldr": "William (Rufus) It was King of England 1087-1100 and son of William the Conqueror",
+    "tldr": "William (Rufus) II was King of England 1087-1100 and son of William the Conqueror",
     "events": [
       {
         "date": "HATED",
