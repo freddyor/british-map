@@ -596,7 +596,7 @@ export const locations = [
     ]
   },
 { 
-    coords: [ -1.0817327444201275, 53.961835027357814],
+    coords: [-1.0906194, 53.9647176],
     name: "Constantine",
     occupation: "272-337",
     description: "Constantine was proclaimed Roman Emporer on this spot.",
@@ -605,6 +605,177 @@ export const locations = [
     events: [
       { date: "LEGACY", description: "He founded the city of Constantinople and made it the capital of the Empire, which it remained for over a millennium." },
       { date: "1964", description: "He was the first Roman Emporer to convert to Christianity ✝️" },
+    ]
+  },
+  {
+    "coords": [-1.0856458395165403, 53.96034199750734],
+    "name": "Richard III",
+    "occupation": "1452-1485",
+    "description": "Richard III would stay here when he visited York, where the Augustin Friary used to lay...",
+    "image": "images/richardiii.png",
+    "tldr": "He was the last king of the House of York, His death at the Battle of Bosworth Field marked the end of the Middle Ages in England.",
+    "events": [
+      {
+        "date": "DEATH",
+        "description": "He is the only English king to be killed in battle since 1066 ⚔️"
+      },
+      {
+        "date": "2012",
+        "description": "His remains were found under a car park in Leicester."
+      }
+    ]
+  },
+  {
+    "coords": [-1.0775199477702802, 53.97183820061223],
+    "name": "Sarah Booth",
+    "occupation": null,
+    "description": "Sarah Booth lived here",
+    "image": "images/sarahbooth.png",
+    "tldr": "Sarah Booth is the first ever woman to vote in York, at 8am on the 14th December 1918. This was when women voted in a general election for the first time 🗳️",
+    "events": []
+  },
+  {
+    "coords": [-1.074206471799719, 53.95128885479212],
+    "name": "Annie Coultate",
+    "occupation": "1856-1931",
+    "description": "Annie Coultate lived in this location.",
+    "image": "images/anniecoultate.png",
+    "tldr": "Annie Coultate was one of the best-known suffragettes in York.",
+    "events": [
+      {
+        "date": "SECRETARY",
+        "description": "As secretary of York's suffragette branch, she was regularly selling large numbers of the newspaper from door to door and on the street in York."
+      },
+      {
+        "date": "TEACHER",
+        "description": "She was also head mistress at Fishergate Primary School 🏫"
+      }
+    ]
+  },
+  {
+    "coords": [-1.1032791368654538, 53.948777175075776],
+    "name": "Walter Brierley",
+    "occupation": "1862-1926",
+    "description": "Walter Brierley lived here in his self-built home",
+    "image": "images/walterbrierley.png",
+    "tldr": "Known as 'the Yorkshire Luytens', this architect was responsible for over 300 beautiful buildings in York and the north 🏘️",
+    "events": [
+      {
+        "date": "LEGACY",
+        "description": "Brierley Groom is the oldest architectural practice in the UK and one of the oldest in the world, practicing since 1750."
+      },
+      {
+        "date": "2013",
+        "description": "Pocklington School unveiled a clock based on plans drawn up by Brierley 116 years earlier 🕰️"
+      }
+    ]
+  },
+  {
+    "coords": [-1.0812917226015228, 53.961857974224145],
+    "name": "Alcuin",
+    "occupation": "735-804",
+    "description": "Alcuin was educated here at what was York School",
+    "image": "images/alcuin.png",
+    "tldr": "\"The most learned man anywhere to be found\", Alcuin is one of the most important intellectual figures in European history.",
+    "events": [
+      {
+        "date": "CHARLEMAGNE",
+        "description": "At Charlemagne's (King Charles the Great) invitation, Alcuin joined the royal court in 781, and became one of Charlemagne's chief advisers on religious and educational matters."
+      },
+      {
+        "date": "LEGACY",
+        "description": "Alcuin College at the University of York is named after him 🏫"
+      }
+    ]
+  },
+  {
+    "coords": [-1.101438198296787, 53.94634583082444],
+    "name": "Dick Turpin",
+    "occupation": "1705-1739",
+    "description": "Dick Turpin was executed on this spot",
+    "image": "images/dickturpin.png",
+    "tldr": "Dick Turpin was an infamous highwayman and robber.",
+    "events": [
+      {
+        "date": "IRONY",
+        "description": "Turpin's executioner, Thomas Hadfield, was also a former highwayman"
+      },
+      {
+        "date": "BODY",
+        "description": "After he was hanged, his body was interred at St George's Church in York where it was quickly stolen by body-snatchers 🪦"
+      }
+    ]
+  },
+  {
+    "coords": [-1.0549557751989558, 53.94580169288192],
+    "name": "Tom Scott",
+    "occupation": "1984-",
+    "description": "Tom Scott was elected president of the Students Union here",
+    "image": "images/tomscott.png",
+    "tldr": "Tom Scott is an educational YouTuber and web-developer.",
+    "events": [
+      {
+        "date": "IMPACT",
+        "description": "Scott has almost 8 million subscribers and 1.93 billion views 📈"
+      },
+      {
+        "date": "PRESIDENT",
+        "description": "Despite running as a joke, Scott gained over 3000 votes and became the 48th President of the University of York Students Union 2022: Scott won the Streamy Award for Learning and Education 🧑‍🎓"
+      }
+    ]
+  },
+  {
+    "coords": [-1.047540677837906, 53.94958210717943],
+    "name": "Gavin Wood",
+    "occupation": "1980-",
+    "description": "Gavin Wood studied his Masters and PhD here and has been back to give talks",
+    "image": "images/gavinwood.png",
+    "tldr": "Gavin Wood is a computer scientist and co-founder of Ethereum.",
+    "events": [
+      {
+        "date": "ETHEREUM",
+        "description": "Ethereum is now valued at $329billion and impacting the entire planet 🌍"
+      },
+      {
+        "date": "LEGACY",
+        "description": "Scott founded the Web3 Foundation, a nonprofit organization focusing on decentralized internet infrastructure and technology."
+      }
+    ]
+  },
+  {
+    "coords": [-1.0311153250522476, 53.94855431564174],
+    "name": "Harriet Harman",
+    "occupation": "1950-",
+    "description": "Harriet Harman studied and engaged in student politics here at Goodricke College",
+    "image": "images/harrietharman.png",
+    "tldr": "Harriet Harman is one of the most decorated politicians int he UK.",
+    "events": [
+      {
+        "date": "LEADER",
+        "description": "She became Leader of the Labour Party in 2010 and 2015 after resignations."
+      },
+      {
+        "date": "2007",
+        "description": "Harman became Leader of the House of Commons 🏛️"
+      }
+    ]
+  },
+  {
+    "coords": [-1.0540578170695625, 53.94817372974372],
+    "name": "Anthony Horowitz CBE",
+    "occupation": "1955-",
+    "description": "Anthony Horowitz studied here at Vanburgh College",
+    "image": "images/anthonyhorowitz.png",
+    "tldr": "Anthony Horowitz is a world-famous novelist",
+    "events": [
+      {
+        "date": "BOND",
+        "description": "The estate of James Bond owner Ian Fleming chose Horowitz to write Bond novels utilising unpublished material by Fleming"
+      },
+      {
+        "date": "LEGACY",
+        "description": "He was awarded an OBE in 2014 and a CBE in 2022 for his services to literature 🧑‍🎓"
+      }
     ]
   },
   { 
