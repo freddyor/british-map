@@ -700,6 +700,71 @@ export const buildings = [
       { "date": "FIRST", "description": "It was the first restaurant in York to ever receive a Michelin Star ⭐" },
       { "date": "FIREPLACES", "description": "The building still contains two timber fireplaces dating back to 1898 🪵" }
     ]
+  },
+{
+    "name": "York Synagogue",
+    "coords": [-1.084060797136304, 53.959033596043196],
+    "image": "images/yorksynagogue.png",
+    "description": "",
+    "occupation": "1205-1290",
+    "tldr": "York Synagogue was built following the massacre of the Jews at Clifford's Tower.",
+    "events": [
+      { "date": "AARON", "description": "Aaron of York also lived next to the Synagogue. He was justiciar, of the English Jews, a role appointed by the Crown to oversee the financial administration of the Jewry in England 🕍" }
+    ]
+  },
+  {
+    "name": "Judges Court",
+    "coords": [-1.0835171327012416, 53.958203012451382],
+    "image": "images/judgescourt.png",
+    "description": "",
+    "occupation": "1720",
+    "tldr": "It served as lodgings for judges presiding over Assize Courts in the city.",
+    "events": [
+      { "date": "1806", "description": "The judges were relocated to The Judges Lodging, this building became a short-stay hotel. This building was effectively the original Judges Lodging ⚖️" }
+    ]
+  },
+  {
+    "name": "20 Coney Street",
+    "coords": [-1.0839929192233622, 53.95921245695626],
+    "image": "images/building.png",
+    "description": "",
+    "occupation": "1500",
+    "tldr": "Percy Bysshe Shelley, one of the most famous poets of all time, stayed here with his wife in Autumn 1811.",
+    "events": []
+  },
+  {
+    "name": "Henry Sotheran Ltd",
+    "coords": [-1.0840602691735393, 53.958254146663948],
+    "image": "images/henrysotheran.png",
+    "description": "",
+    "occupation": "1500",
+    "tldr": "In the 19th century, numbers 16 and 18 were ran by well-know bookshop Henry Sotheran.",
+    "events": [
+      { "date": "LEGACY", "description": "Founded in these buildings, Henry Sotheran Ltd is a bookshop in London that claims to be the oldest continuously operating bookshop in the UK and oldest antiquarian bookshop in the world 📚" }
+    ]
+  },
+  {
+    "name": "St Helen's Square",
+    "coords": [-1.0844389540252952, 53.960155934644228],
+    "image": "images/sthelenssquare.png",
+    "description": "",
+    "occupation": "1745",
+    "tldr": "The name comes from the Church that stands on the edge of the square.",
+    "events": [
+      { "date": "ROMAN", "description": "During the Roman era, a south-western gate, lay in this exact spot." },
+      { "date": "GRAVEYARD", "description": "Until 1745 this square was just a graveyard for St Helen's church ⛪" }
+    ]
+  },
+  {
+    "name": "Women's Social and Political Union",
+    "coords": [-1.0836029919773678, 53.959093608022772],
+    "image": "images/yorksuffragettes.png",
+    "description": "",
+    "occupation": "EARLY 17TH",
+    "tldr": "Now a toy shop - this building was once the local headquarters of the Women's Social and Political Union, otherwise known as the Suffragettes.",
+    "events": [
+      { "date": "1913", "description": "A parcel containing a bomb was left on the doorstep of the office of the Yorkshire Evening Press and the Yorkshire Herald newspapers at No.9 Coney Street. The parcel contained cards and paper on which were written 'Votes for Women' and 'We will have votes 🗳️'" }
+    ]
   }
 
 
