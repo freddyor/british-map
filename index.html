@@ -21,7 +21,7 @@
             padding: 0;
             width: 100%;
             height: 100%;
-            font-family: 'Poppins', sans-serif; /* Set default font for body */
+            font-family: 'Poppins', sans-serif;
         }
 
         #map {
@@ -29,43 +29,43 @@
             height: 100vh;
         }
 
-        #custom-bmc-button {
+        #custom-bmc-button, #toggle-container-button {
             position: fixed;
             left: 50%;
             top: 10px;
             transform: translateX(-50%);
             z-index: 1000;
-            background-color: #e9e8e0; /* Updated background color */
+            background-color: #e9e8e0;
             color: black;
-            border: 2px solid #f0f0f0; /* Added border */
-            padding: 3px 8px; /* Reduced padding for less space around text */
+            border: 2px solid #f0f0f0;
+            padding: 3px 8px;
             font-size: 12px;
-            font-weight: bold; /* Make the text bold */
+            font-weight: bold;
             border-radius: 8px;
             cursor: pointer;
             text-decoration: none;
             display: inline-block;
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); /* Added box shadow */
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+            margin-left: 10px;
         }
 
-        #custom-bmc-button:hover {
-            background-color: #d1d0c6; /* Optional hover effect */
+        #custom-bmc-button:hover, #toggle-container-button:hover {
+            background-color: #d1d0c6;
         }
 
-        @media (max-width: 750px) {
-            #custom-bmc-button {
-                font-size: 14px; /* Slightly larger font for mobile */
-                padding: 4px 10px; /* Adjusted padding for mobile devices */
-            }
-        }
-
-        @media (prefers-contrast: more) {
-            #custom-bmc-button {
-                background-color: #000000;
-                color: #FFFFFF;
-                border-color: #FFFFFF; /* Change border color in high contrast mode */
-                box-shadow: none; /* Remove shadow in high contrast mode for better visibility */
-            }
+        #openable-container {
+            display: none;
+            position: fixed;
+            top: 50px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1000;
+            width: 200px;
+            padding: 10px;
+            background-color: #e9e8e0;
+            border: 2px solid #f0f0f0;
+            border-radius: 8px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
         }
     </style>
 </head>
@@ -77,6 +77,14 @@
     <a href="https://www.buymeacoffee.com/britmap" target="_blank" id="custom-bmc-button">
         ☕ Buy me a coffee
     </a>
+
+    <!-- Openable Container Button -->
+    <button id="toggle-container-button">📦 Open Container</button>
+
+    <!-- The Openable Container -->
+    <div id="openable-container">
+        <p>This is the openable container content!</p>
+    </div>
 
     <script src="index.js" type="module" defer></script>
 
