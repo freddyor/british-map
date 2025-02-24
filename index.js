@@ -9,40 +9,40 @@ var map = new mapboxgl.Map({
     center: [-1.0820, 53.9623],
     zoom: 15,
     pitch: 45,
-    bearing: -17.6,
-    attributionControl: false
+    bearing: -17.6
 });
 
 map.on('load', () => {
   addBuildingMarkers();
-  addLocationsList();
-  geolocate.trigger();
+  addLocationsList(); // Add this line to create the list when the map loads
+  geolocate.trigger(); // Trigger geolocation on map load
 });
 
-// Create button container
-const buttonContainer = document.getElementById('button-container');
-
-// Create "Buy Me a Coffee" button
-const newBmcButton = document.createElement('a');
-newBmcButton.href = 'https://www.buymeacoffee.com/britmap';
-newBmcButton.target = '_blank';
-newBmcButton.className = 'map-button';
-newBmcButton.textContent = 'This project needs support';
-buttonContainer.appendChild(newBmcButton);
-
-// Create "Look for people" button
 const toggleContainerButton = document.createElement('button');
 toggleContainerButton.id = 'toggle-container-button';
-toggleContainerButton.className = 'map-button';
-toggleContainerButton.textContent = 'Find people 🔍';
-buttonContainer.appendChild(toggleContainerButton);
+toggleContainerButton.textContent = '📦 Open Container';
+toggleContainerButton.style.position = 'fixed';
+toggleContainerButton.style.left = '50%';
+toggleContainerButton.style.top = '50px';
+toggleContainerButton.style.transform = 'translateX(-50%)';
+toggleContainerButton.style.zIndex = '1000';
+toggleContainerButton.style.backgroundColor = '#e9e8e0';
+toggleContainerButton.style.color = 'black';
+toggleContainerButton.style.border = '2px solid #f0f0f0';
+toggleContainerButton.style.padding = '3px 8px';
+toggleContainerButton.style.fontSize = '12px';
+toggleContainerButton.style.fontWeight = 'bold';
+toggleContainerButton.style.borderRadius = '8px';
+toggleContainerButton.style.cursor = 'pointer';
+toggleContainerButton.style.boxShadow = '0 6px 15px rgba(0, 0, 0, 0.3)';
+document.body.appendChild(toggleContainerButton);
 
 const openableContainer = document.createElement('div');
 openableContainer.id = 'openable-container';
 openableContainer.style.display = 'none';
 openableContainer.style.position = 'fixed';
 openableContainer.style.left = '50%';
-openableContainer.style.top = '45px';
+openableContainer.style.top = '80px';
 openableContainer.style.transform = 'translateX(-50%)';
 openableContainer.style.zIndex = '999';
 openableContainer.style.backgroundColor = '#fff';
@@ -51,68 +51,57 @@ openableContainer.style.borderRadius = '8px';
 openableContainer.style.boxShadow = '0 6px 15px rgba(0, 0, 0, 0.3)';
 openableContainer.style.padding = '10px';
 openableContainer.style.width = '200px';
-openableContainer.style.maxHeight = '300px';
-openableContainer.style.overflowY = 'auto';
-openableContainer.style.scrollbarWidth = 'none';
-openableContainer.style.msOverflowStyle = 'none';
+openableContainer.style.textAlign = 'center';
+//openableContainer.textContent = 'This is an openable container!';  Remove this line
 document.body.appendChild(openableContainer);
-
-// Add a style to hide the scrollbar in WebKit browsers
-const style = document.createElement('style');
-style.textContent = `
-  #openable-container::-webkit-scrollbar {
-    display: none;
-  }
-`;
-document.head.appendChild(style);
 
 toggleContainerButton.addEventListener('click', () => {
     if (openableContainer.style.display === 'none' || openableContainer.style.display === '') {
         openableContainer.style.display = 'block';
-        toggleContainerButton.textContent = 'Close';
+        toggleContainerButton.textContent = '📦 Close Container';
     } else {
         openableContainer.style.display = 'none';
-        toggleContainerButton.textContent = 'Find 🔍';
+        toggleContainerButton.textContent = '📦 Open Container';
     }
 });
 
+// Function to add the list of locations to the openable container
 function addLocationsList() {
     const list = document.createElement('ul');
     list.style.listStyleType = 'none';
     list.style.padding = '0';
     list.style.margin = '0';
 
-    // Sort locations by name in alphabetical order
-    const sortedLocations = locations.sort((a, b) => {
-        return a.name.localeCompare(b.name);
-    });
-
-    sortedLocations.forEach(location => {
+    locations.forEach(location => {
         const listItem = document.createElement('li');
         listItem.textContent = location.name;
         listItem.style.cursor = 'pointer';
-        listItem.style.padding = '1.05px';
-        listItem.style.fontSize = '12px';
-        listItem.style.fontFamily = 'Poppins, sans-serif';
+        listItem.style.padding = '5px';
 
         listItem.addEventListener('click', () => {
             map.flyTo({
                 center: location.coords,
-                zoom: 5,
-                duration: 2000
+                zoom: 15
             });
-            openableContainer.style.display = 'none';
-            toggleContainerButton.textContent = 'Find people 🔍';
         });
         list.appendChild(listItem);
     });
     
-    openableContainer.innerHTML = '';
+    // Append the list to the openable container
+    openableContainer.innerHTML = ''; // Clear existing content
     openableContainer.appendChild(list);
 }
 
+// Create a <style> element to add the CSS
 const stylePopup = document.createElement('style');
 
+// Add the link to Google Fonts for Poppins
+const link = document.createElement('link');
+link.href = "https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap";
+link.rel = "stylesheet";
+document.head.appendChild(link);
+
+// Style for the popup and markers
 stylePopup.innerHTML = `
   .mapboxgl-popup-content {
     border-radius: 12px !important;
@@ -167,8 +156,10 @@ stylePopup.innerHTML = `
   }
 `;
 
+// Append the style to the document
 document.head.appendChild(stylePopup);
 
+// Geolocation control
 const geolocate = new mapboxgl.GeolocateControl({
   positionOptions: {
     enableHighAccuracy: true
@@ -179,11 +170,12 @@ const geolocate = new mapboxgl.GeolocateControl({
   fitBoundsOptions: {
     maxZoom: 15
   },
-  showUserLocation: false
+  showUserLocation: false // Disable the default blue dot
 });
 
 map.addControl(geolocate);
 
+// Create a single marker for user location
 const userLocationEl = document.createElement('div');
 userLocationEl.className = 'user-location-marker';
 
@@ -201,21 +193,24 @@ textEl.textContent = 'me';
 userLocationEl.appendChild(textEl);
 
 const userLocationMarker = new mapboxgl.Marker({element: userLocationEl})
-  .setLngLat([0, 0])
+  .setLngLat([0, 0]) // Set initial coordinates, will be updated later
   .addTo(map);
 
 geolocate.on('error', (e) => {
   if (e.code === 1) {
     console.log('Location access denied by user');
+    // You can update UI or take other actions here
   }
-  e.preventDefault();
+  e.preventDefault(); // Prevent the default error pop-up
 });
+
 geolocate.on('geolocate', (e) => {
   const lon = e.coords.longitude;
   const lat = e.coords.latitude;
   const position = [lon, lat];
   console.log(position);
 
+  // Update the user location marker position
   userLocationMarker.setLngLat(position);
 });
 
@@ -331,26 +326,3 @@ function addBuildingMarkers() {
     });
   });
 }
-
-// Initialize search functionality
-const geocoder = new MapboxGeocoder({
-  accessToken: mapboxgl.accessToken,
-  mapboxgl: mapboxgl,
-  marker: false,
-  placeholder: 'Search for places in York'
-});
-
-map.addControl(geocoder);
-
-geocoder.on('result', function(e) {
-  const coord = e.result.center;
-  const popup = new mapboxgl.Popup()
-    .setLngLat(coord)
-    .setHTML(`<h3>${e.result.place_name}</h3>`)
-    .addTo(map);
-  
-  map.flyTo({
-    center: coord,
-    zoom: 15
-  });
-});
