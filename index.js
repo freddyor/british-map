@@ -81,7 +81,7 @@ function addLocationsList() {
         listItem.addEventListener('click', () => {
             map.flyTo({
                 center: location.coords,
-                zoom: 17,
+                zoom: 5,
                 duration: 2000
             });
         });
