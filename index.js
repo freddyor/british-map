@@ -43,7 +43,7 @@ newBmcButton.target = '_blank';
 newBmcButton.style.backgroundColor = '#e9e8e0';
 newBmcButton.style.color = 'black';
 newBmcButton.style.border = '2px solid #f0f0f0';
-newBmcButton.style.padding = '3px 8px';
+newBmcButton.style.padding = '3px 3px';
 newBmcButton.style.fontSize = '12px';
 newBmcButton.style.fontWeight = 'bold';
 newBmcButton.style.borderRadius = '8px';
@@ -73,7 +73,7 @@ toggleContainerButton.style.fontWeight = 'bold';
 toggleContainerButton.style.borderRadius = '8px';
 toggleContainerButton.style.cursor = 'pointer';
 toggleContainerButton.style.boxShadow = '0 6px 15px rgba(0, 0, 0, 0.3)';
-toggleContainerButton.style.height = '26px'; /* Set the same fixed height */
+toggleContainerButton.style.height = '20px'; /* Set the same fixed height */
 toggleContainerButton.style.display = 'inline-flex'; /* Use flexbox for vertical centering */
 toggleContainerButton.style.alignItems = 'center'; /* Vertically center the text */
 buttonContainer.appendChild(toggleContainerButton);
@@ -112,10 +112,10 @@ document.head.appendChild(style);
 toggleContainerButton.addEventListener('click', () => {
     if (openableContainer.style.display === 'none' || openableContainer.style.display === '') {
         openableContainer.style.display = 'block';
-        toggleContainerButton.textContent = '📦 Close';
+        toggleContainerButton.textContent = 'Close';
     } else {
         openableContainer.style.display = 'none';
-        toggleContainerButton.textContent = '📦 Locations';
+        toggleContainerButton.textContent = 'Find 🔍';
     }
 });
 
@@ -134,18 +134,18 @@ function addLocationsList() {
         const listItem = document.createElement('li');
         listItem.textContent = location.name;
         listItem.style.cursor = 'pointer';
-        listItem.style.padding = '1.25px';
+        listItem.style.padding = '1.1px';
         listItem.style.fontSize = '12px';
         listItem.style.fontFamily = 'Poppins, sans-serif';
 
         listItem.addEventListener('click', () => {
             map.flyTo({
                 center: location.coords,
-                zoom: 17,
+                zoom: 5,
                 duration: 2000
             });
             openableContainer.style.display = 'none';
-            toggleContainerButton.textContent = '📦 Locations';
+            toggleContainerButton.textContent = 'Find 🔍';
         });
         list.appendChild(listItem);
     });
