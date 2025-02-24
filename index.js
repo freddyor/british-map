@@ -10,7 +10,7 @@ var map = new mapboxgl.Map({
     zoom: 15,
     pitch: 45,
     bearing: -17.6,
-    attributionControl: false // This line removes the attribution control
+    attributionControl: false
 });
 
 map.on('load', () => {
@@ -19,66 +19,23 @@ map.on('load', () => {
   geolocate.trigger();
 });
 
-// Find the existing "Buy Me a Coffee" button
-const bmcButton = document.getElementById('custom-bmc-button');
+// Create button container
+const buttonContainer = document.getElementById('button-container');
 
-// Create a container for both buttons
-const buttonContainer = document.createElement('div');
-buttonContainer.id = 'button-container'; // Add an ID for easier targeting
-buttonContainer.style.position = 'fixed';
-buttonContainer.style.left = '50%';
-buttonContainer.style.top = '10px';
-buttonContainer.style.transform = 'translateX(-50%)';
-buttonContainer.style.zIndex = '1000';
-buttonContainer.style.display = 'flex';
-buttonContainer.style.alignItems = 'center'; /* Vertically center the buttons */
-buttonContainer.style.gap = '10px';
-// Add these styles to handle potential overflow on smaller screens
-buttonContainer.style.whiteSpace = 'nowrap'; /* Prevent wrapping */
-
-// Create the new Buy Me a Coffee button
+// Create "Buy Me a Coffee" button
 const newBmcButton = document.createElement('a');
 newBmcButton.href = 'https://www.buymeacoffee.com/britmap';
 newBmcButton.target = '_blank';
-newBmcButton.style.backgroundColor = '#e9e8e0';
-newBmcButton.style.color = 'black';
-newBmcButton.style.border = '2px solid #f0f0f0';
-newBmcButton.style.padding = '3px 3px';
-newBmcButton.style.fontSize = '12px';
-newBmcButton.style.fontWeight = 'bold';
-newBmcButton.style.borderRadius = '8px';
-newBmcButton.style.cursor = 'pointer';
-newBmcButton.style.boxShadow = '0 6px 15px rgba(0, 0, 0, 0.3)';
+newBmcButton.className = 'map-button';
 newBmcButton.textContent = 'This project needs support';
-newBmcButton.style.textDecoration = 'none'; // Remove underline
-newBmcButton.style.height = '26px'; /* Set a fixed height */
-newBmcButton.style.display = 'inline-flex'; /* Use flexbox for vertical centering */
-newBmcButton.style.alignItems = 'center'; /* Vertically center the text */
 buttonContainer.appendChild(newBmcButton);
 
-// Remove the old "Buy Me a Coffee" button if it exists
-if (bmcButton) {
-    bmcButton.remove();
-}
-
+// Create "Look for people" button
 const toggleContainerButton = document.createElement('button');
 toggleContainerButton.id = 'toggle-container-button';
-toggleContainerButton.textContent = 'Find people 🔍';
-toggleContainerButton.style.backgroundColor = '#e9e8e0';
-toggleContainerButton.style.color = 'black';
-toggleContainerButton.style.border = '2px solid #f0f0f0';
-toggleContainerButton.style.padding = '12px 3px';
-toggleContainerButton.style.fontSize = '12px';
-toggleContainerButton.style.fontWeight = 'bold';
-toggleContainerButton.style.borderRadius = '8px';
-toggleContainerButton.style.cursor = 'pointer';
-toggleContainerButton.style.boxShadow = '0 6px 15px rgba(0, 0, 0, 0.3)';
-toggleContainerButton.style.height = '26px'; /* Set the same fixed height */
-toggleContainerButton.style.display = 'inline-flex'; /* Use flexbox for vertical centering */
-toggleContainerButton.style.alignItems = 'center'; /* Vertically center the text */
+toggleContainerButton.className = 'map-button';
+toggleContainerButton.textContent = 'Look for people 🔍';
 buttonContainer.appendChild(toggleContainerButton);
-
-document.body.appendChild(buttonContainer);
 
 const openableContainer = document.createElement('div');
 openableContainer.id = 'openable-container';
@@ -112,10 +69,10 @@ document.head.appendChild(style);
 toggleContainerButton.addEventListener('click', () => {
     if (openableContainer.style.display === 'none' || openableContainer.style.display === '') {
         openableContainer.style.display = 'block';
-        toggleContainerButton.textContent = 'Close';
+        toggleContainerButton.textContent = '📦 Close';
     } else {
         openableContainer.style.display = 'none';
-        toggleContainerButton.textContent = 'Find 🔍';
+        toggleContainerButton.textContent = 'Look for people 🔍';
     }
 });
 
@@ -134,18 +91,18 @@ function addLocationsList() {
         const listItem = document.createElement('li');
         listItem.textContent = location.name;
         listItem.style.cursor = 'pointer';
-        listItem.style.padding = '1.1px';
+        listItem.style.padding = '1.25px';
         listItem.style.fontSize = '12px';
         listItem.style.fontFamily = 'Poppins, sans-serif';
 
         listItem.addEventListener('click', () => {
             map.flyTo({
                 center: location.coords,
-                zoom: 5,
+                zoom: 17,
                 duration: 2000
             });
             openableContainer.style.display = 'none';
-            toggleContainerButton.textContent = 'Find 🔍';
+            toggleContainerButton.textContent = 'Look for people 🔍';
         });
         list.appendChild(listItem);
     });
@@ -155,11 +112,6 @@ function addLocationsList() {
 }
 
 const stylePopup = document.createElement('style');
-
-const link = document.createElement('link');
-link.href = "https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap";
-link.rel = "stylesheet";
-document.head.appendChild(link);
 
 stylePopup.innerHTML = `
   .mapboxgl-popup-content {
@@ -402,24 +354,3 @@ geocoder.on('result', function(e) {
     zoom: 15
   });
 });
-
-// Add media query for mobile devices
-const mediaQuery = `@media (max-width: 600px) {
-  #button-container {
-    width: 90%; /* Take up most of the screen width */
-    justify-content: center; /* Center buttons horizontally */
-    gap: 5px; /* Reduce gap between buttons on mobile */
-  }
-
-  #button-container a,
-  #button-container button {
-    font-size: 10px; /* Reduce font size on mobile */
-    padding: 2px 6px; /* Adjust padding */
-  }
-}`;
-
-// Add the media query to the document head
-const styleSheet = document.createElement("style");
-styleSheet.type = "text/css";
-styleSheet.innerText = mediaQuery;
-document.head.appendChild(styleSheet);
