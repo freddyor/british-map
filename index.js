@@ -34,7 +34,7 @@ buttonContainer.appendChild(newBmcButton);
 const toggleContainerButton = document.createElement('button');
 toggleContainerButton.id = 'toggle-container-button';
 toggleContainerButton.className = 'map-button';
-toggleContainerButton.textContent = 'Look for people 🔍';
+toggleContainerButton.textContent = 'Find people 🔍';
 buttonContainer.appendChild(toggleContainerButton);
 
 const openableContainer = document.createElement('div');
@@ -69,10 +69,10 @@ document.head.appendChild(style);
 toggleContainerButton.addEventListener('click', () => {
     if (openableContainer.style.display === 'none' || openableContainer.style.display === '') {
         openableContainer.style.display = 'block';
-        toggleContainerButton.textContent = '📦 Close';
+        toggleContainerButton.textContent = 'Close';
     } else {
         openableContainer.style.display = 'none';
-        toggleContainerButton.textContent = 'Look for people 🔍';
+        toggleContainerButton.textContent = 'Find 🔍';
     }
 });
 
@@ -102,7 +102,7 @@ function addLocationsList() {
                 duration: 2000
             });
             openableContainer.style.display = 'none';
-            toggleContainerButton.textContent = 'Look for people 🔍';
+            toggleContainerButton.textContent = 'Find people 🔍';
         });
         list.appendChild(listItem);
     });
