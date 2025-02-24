@@ -90,10 +90,10 @@ export const buildings = [
   },
  {
     name: "King's Manor",
-    coords: [-1.0862176206651686, 53.96250673808531], // Replace with accurate coordinates
-    image: "images/kingsmanor.png", // Replace with actual image path
+    coords: [-1.0862176206651686, 53.96250673808531], 
+    image: "images/kingsmanor.png", 
     description: "",
-    occupation: "11th Century", // Replace with accurate date
+    occupation: "11th Century", 
     tldr: "A historic building, originally built to house the abbots of St Mary's Abbey.",
     events: [
       { date: "1688", description: "During the Glorious Revolution, the building was dramatically seized from Sir John Reresby, who remained loyal to James II, by forces loyalists to William of Orange." },
@@ -611,6 +611,95 @@ export const buildings = [
     "occupation": "1525",
     "tldr": "This is where Guy Fawkes was baptized, before he became a Catholic ⛪️",
     "events": []
+  },
+  {
+    "name": "York Racecourse",
+    "coords": [-1.0927808550189244, 53.941079123315035],
+    "image": "images/racecourse.png",
+    "description": "",
+    "occupation": "",
+    "tldr": "Not only did the Romans have races here, there is evidence of equine activities here as far back as the neolithic times. It now attracts around 350,000 racegoers a year.",
+    "events": [
+      { "date": "1982", "description": "Pope John Paul II visited, drawing an audience of 190,000 🧎" },
+      { "date": "2014", "description": "The second day of the Tour de France started here 🚴" }
+    ]
+  },
+  {
+    "name": "Cold War Bunker",
+    "coords": [-1.116776691855308, 53.956871860223686],
+    "image": "images/coldwarbunker.png",
+    "description": "",
+    "occupation": "1961",
+    "tldr": "It was built to monitor nuclear explosions and fallout in Yorkshire in the event of nuclear war.",
+    "events": [
+      { "date": "RARE", "description": "It is one of 30 of the kind in the UK, but the only one still left in operational condition ☢️" }
+    ]
+  },
+  {
+    "name": "Jubbergate",
+    "coords": [-1.08116092937947, 53.95928389428395],
+    "image": "images/jubbergate.png",
+    "description": "",
+    "occupation": "",
+    "tldr": "Jubbergate was originally the southern point to a Roman fortress, built on the site if York Minster.",
+    "events": [
+      { "date": "JEWISH", "description": "The street was originally called Brettegate (the street where the Celtic Britons lived), and when the Jewish community moved in 1280, it became Jewbrettgate, later becoming Jubbergate ✡️" }
+    ]
+  },
+  {
+    "name": "Micklegate Bar",
+    "coords": [-1.090917692536728, 53.95583630365481],
+    "image": "images/micklegatebar.png",
+    "description": "",
+    "occupation": "12th CENTURY",
+    "tldr": "At least six reigning monarchs passed through this gate 👑",
+    "events": [
+      { "date": "WAR OF THE ROSES", "description": "Following the Battle of Wakefield, the heads of Richard Plantagenet, 3rd Duke of York (father of Edward IV and Richard III), Edmund, Earl of Rutland (another son of Richard) and Richard Neville, 5th Earl of Salisbury were displayed on Micklegate, Bar." }
+    ]
+  },
+  {
+    "name": "York Institute of Art, Science and Literature",
+    "coords": [-1.0818792916585918, 53.95690100278569],
+    "image": "images/yorkinstitute.png",
+    "description": "",
+    "occupation": "1885",
+    "tldr": "Now Kuda nightclub and York Dungeons, this magnificent building is steeped in history.",
+    "events": [
+      { "date": "1883", "description": "The foundation stone for the building was laid by Edward VII in a ceremony of masonic ritual." },
+      { "date": "1892", "description": "It became a public library, opened by the King George V the year he became Duke of York 👑" }
+    ]
+  },
+  {
+    "name": "St Olave's House",
+    "coords": [-1.0894952182964301, 53.96245652784396],
+    "image": "images/stolaveshouse.png",
+    "description": "",
+    "occupation": "17th CENTURY",
+    "tldr": "Sold in 2021 for £2.25m, York Civic Trust describe this house as 'the best address in York' 🏘️",
+    "events": []
+  },
+  {
+    "name": "The Garth",
+    "coords": [-1.0900307667121645, 53.962093881573686],
+    "image": "images/thegarth.png",
+    "description": "",
+    "occupation": "1705",
+    "tldr": "The building was constructed for the Grey Coat School, a charity for girls.",
+    "events": [
+      { "date": "SCHOOL", "description": "It accommodated up to 40 girls, who were fed, clothed and housed, and trained for domestic service 🧑‍🎓" }
+    ]
+  },
+  {
+    "name": "Roots",
+    "coords": [-1.0905273634412826, 53.961781626628245],
+    "image": "images/roots.png",
+    "description": "",
+    "occupation": "1894",
+    "tldr": "It was a pub all the way up until 2018, when chef Tommy Banks turned the building into Roots restaurant.",
+    "events": [
+      { "date": "FIRST", "description": "It was the first restaurant in York to ever receive a Michelin Star ⭐" },
+      { "date": "FIREPLACES", "description": "The building still contains two timber fireplaces dating back to 1898 🪵" }
+    ]
   }
 
 
