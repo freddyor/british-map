@@ -577,15 +577,6 @@ export const buildings = [
     "events": []
   },
   {
-    "name": "The York Rialto",
-    "image": "images/therialto.png",
-    "coords": [-1.0760945617966278, 53.95174477535229],
-    "description": "",
-    "occupation": "1908-2003",
-    "tldr": "The York Rialto once existed on this site. The Beatles, before international stardom, performed here 4 times in 1963 🎙️",
-    "events": []
-  },
-  {
     "name": "Yorkshire Museum",
     "coords": [-1.0876926493525807, 53.96171044482128],
     "image": "images/yorkshiremuseum.png",
