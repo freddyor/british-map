@@ -801,5 +801,74 @@ export const locations = [
       { date: "1860", description: "Her father and husband both died within two years. She faced raising three young children whilst running two businesses." },
       { date: "1980", description: "Due to Mary Ann's legacy, by 1980 the Craven's business was producing 5,000 tons of sweets annually with a workforce of 380 🍬" },
     ]
+   },
+  {
+    "coords": [-1.1168415941066212, 53.959917366464338],
+    "name": "Septimius Severus",
+    "occupation": "145-211",
+    "description": "Emperor Severus was cremated on this hill",
+    "image": "images/severus.png",
+    "tldr": "Lucius Septimius Severus was Roman emperor from 193 to 211 after advancing under the reigns of Marcus Aurelius 👑",
+    "events": [
+      {
+        "date": "FIRST",
+        "description": "He was the first mixed-race Roman emperor. He is also Britain's first and only mixed-race leader."
+      }
+    ]
+  },
+  {
+    "coords": [-1.0002242676864474, 53.955604758652154],
+    "name": "William the Conqueror",
+    "occupation": "1028-1087",
+    "description": "William the Conqueror marched on York and built two castles by the river here",
+    "image": "images/williamtheconqueror.png",
+    "tldr": "William the Conqueror is the most consequential figure in English History 👑",
+    "events": [
+      {
+        "date": "1066",
+        "description": "After victory at the Battle of Hastings, William became the fist Norman King of England. ROYAL: Even to this day, our royal family are direct descendants of William the Conqueror 👑"
+      }
+    ]
+  },
+  {
+    "coords": [-1.00789742367974, 53.962198077032005],
+    "name": "William II",
+    "occupation": "1060-1100",
+    "description": "William II visited here in 1089 to lay the foundation stone for St. Mary's Abbey",
+    "image": "images/williamii.png",
+    "tldr": "William (Rufus) It was King of England 1087-1100 and son of William the Conqueror",
+    "events": [
+      {
+        "date": "HATED",
+        "description": "It is said that William I was 'hated by almost all his people'. It is likely that he was assassinated by his own brother Henry."
+      }
+    ]
+  },
+  {
+    "coords": [-1.0072902501902639, 53.959586422618],
+    "name": "Florence Nightingale",
+    "occupation": "1820-1910",
+    "description": "Florence Nightingale crossed the river here in 1852.",
+    "image": "images/florencenightingale.png",
+    "tldr": "Lendal bridge was built on the site where the old rope-ferry used to operate. In 1852, en route to Castle Howard, Florence Nightingale crossed at this exact point, using the ferry ⛴️",
+    "events": []
+  },
+  {
+    "coords": [-1.0055509777000222, 53.96263308153205],
+    "name": "Emmeline Pankhurst",
+    "occupation": "1858-1928",
+    "description": "Emmeline Pankhurst spoke to an audience of women here in the square in 1903",
+    "image": "images/emmelinepankhurst.png",
+    "tldr": "Pankhurst was the instrumental figure in achieving women's suffrage in the UK.",
+    "events": [
+      {
+        "date": "1903",
+        "description": "Pankhurst founded the Women's Social and Political Union, of which there was a York chapter on Coney Street 🎗️"
+      },
+      {
+        "date": "LEGACY",
+        "description": "Time named her as one of the most important people of the 20th century, saying 'She shook society into a new pattern from which there could be no going back' 🕰️"
+      }
+    ]
   }
 ];
