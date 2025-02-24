@@ -52,15 +52,28 @@ openableContainer.style.boxShadow = '0 6px 15px rgba(0, 0, 0, 0.3)';
 openableContainer.style.padding = '10px';
 openableContainer.style.width = '200px';
 openableContainer.style.textAlign = 'center';
+openableContainer.style.height = '300px'; // Fixed height
+openableContainer.style.overflowY = 'auto'; // Enable vertical scrolling
+openableContainer.style.scrollbarWidth = 'none'; // Hide scrollbar in Firefox
+openableContainer.style.msOverflowStyle = 'none'; // Hide scrollbar in IE/Edge
 document.body.appendChild(openableContainer);
+
+// Add a style to hide the scrollbar in WebKit browsers
+const style = document.createElement('style');
+style.textContent = `
+  #openable-container::-webkit-scrollbar {
+    display: none;
+  }
+`;
+document.head.appendChild(style);
 
 toggleContainerButton.addEventListener('click', () => {
     if (openableContainer.style.display === 'none' || openableContainer.style.display === '') {
         openableContainer.style.display = 'block';
-        toggleContainerButton.textContent = '📦 Close Container';
+        toggleContainerButton.textContent = 'Show less';
     } else {
         openableContainer.style.display = 'none';
-        toggleContainerButton.textContent = '📦 Open Container';
+        toggleContainerButton.textContent = 'Find person';
     }
 });
 
@@ -70,15 +83,16 @@ function addLocationsList() {
     list.style.padding = '0';
     list.style.margin = '0';
 
-        const sortedLocations = locations.sort((a, b) => {
+    // Sort locations by name in alphabetical order
+    const sortedLocations = locations.sort((a, b) => {
         return a.name.localeCompare(b.name);
     });
-    
-    locations.forEach(location => {
+
+    sortedLocations.forEach(location => {
         const listItem = document.createElement('li');
         listItem.textContent = location.name;
         listItem.style.cursor = 'pointer';
-        listItem.style.padding = '1px'; // Reduced by 75% from 5px
+        listItem.style.padding = '1.25px';
         listItem.style.fontSize = '12px';
         listItem.style.fontFamily = 'Poppins, sans-serif';
 
@@ -89,7 +103,7 @@ function addLocationsList() {
                 duration: 2000
             });
             openableContainer.style.display = 'none';
-            toggleContainerButton.textContent = '📦 Open Container';
+            toggleContainerButton.textContent = 'Find person';
         });
         list.appendChild(listItem);
     });
