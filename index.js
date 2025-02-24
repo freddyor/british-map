@@ -51,7 +51,7 @@ newBmcButton.style.cursor = 'pointer';
 newBmcButton.style.boxShadow = '0 6px 15px rgba(0, 0, 0, 0.3)';
 newBmcButton.textContent = 'This project needs support';
 newBmcButton.style.textDecoration = 'none'; // Remove underline
-newBmcButton.style.height = '26px'; /* Set a fixed height */
+newBmcButton.style.height = '20px'; /* Set a fixed height */
 newBmcButton.style.display = 'inline-flex'; /* Use flexbox for vertical centering */
 newBmcButton.style.alignItems = 'center'; /* Vertically center the text */
 buttonContainer.appendChild(newBmcButton);
