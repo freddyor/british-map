@@ -9,7 +9,8 @@ var map = new mapboxgl.Map({
     center: [-1.0820, 53.9623],
     zoom: 15,
     pitch: 45,
-    bearing: -17.6
+    bearing: -17.6,
+    attributionControl: false // This line removes the attribution control
 });
 
 map.on('load', () => {
