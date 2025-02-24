@@ -88,6 +88,7 @@ function addLocationsList() {
                 center: location.coords,
                 zoom: 15
             });
+             openableContainer.style.display = 'none';
         });
         list.appendChild(listItem);
     });
@@ -306,7 +307,7 @@ function addBuildingMarkers() {
       .setLngLat(building.coords)
       .addTo(map);
 
-      const popup = new mapboxgl.Popup({
+    const popup = new mapboxgl.Popup({
       closeButton: true,
       closeOnClick: true,
       className: 'custom-popup'
