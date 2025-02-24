@@ -765,6 +765,52 @@ export const buildings = [
     "events": [
       { "date": "1913", "description": "A parcel containing a bomb was left on the doorstep of the office of the Yorkshire Evening Press and the Yorkshire Herald newspapers at No.9 Coney Street. The parcel contained cards and paper on which were written 'Votes for Women' and 'We will have votes 🗳️'" }
     ]
+  },
+  {
+    "name": "Severus Hill",
+    "coords": [-1.1168110689753956, 53.959792278666024],
+    "image": "images/severushill.png",
+    "description": "",
+    "occupation": "",
+    "tldr": "Emperor Severus was cremated here because it was Roman custom to cremate at the highest point outside the fortress",
+    "events": [
+      { "date": "BEACON", "description": "The hill was known as Beacon Hill in the early 1800s during fears of Napoleonic invasion 🏕️" },
+      { "date": "WWII", "description": "Several bombs fell on Severus Hill during the aerial bombing of April 1942" }
+    ]
+  },
+  {
+    "name": "Baile Hill",
+    "coords": [-1.082972820397241323, 53.95394761457478],
+    "image": "images/baillehill.png",
+    "description": "",
+    "occupation": "1068",
+    "tldr": "William the Conqueror built Baile Hill on the other side of the Ouse to Clifford's Tower after seizing York in 1068.",
+    "events": [
+      { "date": "IMPORTANCE", "description": "The city's continuing importance was thus confirmed - it was the only place in the country with two castles outside London 🏰" }
+    ]
+  },
+  {
+    "name": "Roman Bath",
+    "coords": [-1.08194029561872668, 53.96015993464105],
+    "image": "images/romanbath.png",
+    "description": "",
+    "occupation": "1st CENTURY",
+    "tldr": "Whilst erecting the current pub on this site in 1929, the remains of a Roman bath house were discovered beneath",
+    "events": [
+      { "date": "LEGION", "description": "The baths were constructed by the Roman Ninth legion to serve the 5,000 military personnel ⛲" }
+    ]
+  },
+  {
+    "name": "De Grey Rooms",
+    "coords": [-1.0853110056501206, 53.963242560425639],
+    "image": "images/degreyrooms.png",
+    "description": "",
+    "occupation": "1842",
+    "tldr": "The building was commissioned by Thomas de Grey, Commanding Officer of the Yorkshire Hussars, for the regiments Annual Mess",
+    "events": [
+      { "date": "TREASURE", "description": "During construction, workmen discovered around 10,000 Anglo-Saxon coins 💰" },
+      { "date": "USES", "description": "The room was initially used for military occasions and as extra accommodation for the Assembly Rooms down the road, but now it is used as storage for York Theater next door 🎭" }
+    ]
   }
 
 
