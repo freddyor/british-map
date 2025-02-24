@@ -641,7 +641,7 @@ export const buildings = [
     "image": "images/jubbergate.png",
     "description": "",
     "occupation": "",
-    "tldr": "Jubbergate was originally the southern point to a Roman fortress, built on the site if York Minster.",
+    "tldr": "Jubbergate was originally the southern point to a Roman fortress, built on the site of York Minster.",
     "events": [
       { "date": "JEWISH", "description": "The street was originally called Brettegate (the street where the Celtic Britons lived), and when the Jewish community moved in 1280, it became Jewbrettgate, later becoming Jubbergate ✡️" }
     ]
