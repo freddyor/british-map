@@ -200,8 +200,7 @@ geolocate.on('error', (e) => {
   if (e.code === 1) {
     console.log('Location access denied by user');
     // You can update UI or take other actions here
-  }
-  e.preventDefault(); // Prevent the default error pop-up
+  }// Prevent the default error pop-up
 });
 
 geolocate.on('geolocate', (e) => {
