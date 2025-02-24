@@ -125,9 +125,9 @@ export const locations = [
   },
  { 
     coords: [ -1.1035692, 53.9693209 ], 
-    name: "Benjamin Seebohm Rowntree", 
+    name: "Seebohm Rowntree", 
     occupation: "1871-1954", 
-    description: "Joseph Seebohm Rowntree lived here for most of his life", 
+    description: "Bnejamin Seebohm Rowntree lived here for most of his life", 
     tldr: "Son of Joseph Rowntree, Benjamin was also Rowntrees chairman and a stark social reformer.", 
     image: "images/seebohmrowntree.png", 
     events: [
