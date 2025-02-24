@@ -45,7 +45,7 @@ newBmcButton.style.fontWeight = 'bold';
 newBmcButton.style.borderRadius = '8px';
 newBmcButton.style.cursor = 'pointer';
 newBmcButton.style.boxShadow = '0 6px 15px rgba(0, 0, 0, 0.3)';
-newBmcButton.textContent = '☕ Buy me a coffee';
+newBmcButton.textContent = 'This project needs support';
 newBmcButton.style.textDecoration = 'none'; // Remove underline
 buttonContainer.appendChild(newBmcButton);
 
@@ -56,7 +56,7 @@ if (bmcButton) {
 
 const toggleContainerButton = document.createElement('button');
 toggleContainerButton.id = 'toggle-container-button';
-toggleContainerButton.textContent = '📦 Locations';
+toggleContainerButton.textContent = 'Look for people 🔍';
 toggleContainerButton.style.backgroundColor = '#e9e8e0';
 toggleContainerButton.style.color = 'black';
 toggleContainerButton.style.border = '2px solid #f0f0f0';
