@@ -17,7 +17,7 @@ export const locations = [
   occupation: "1960-1970",
   description: "The Beatles played here 4 times in 1963.",
   image: "images/therialto.png", 
-  tldr: "This location was once home to The York Rialto. before international stardom, the most iconic band of all time performed right here 🎙️",
+  tldr: "This location was once home to The York Rialto. Before international stardom, the most iconic band of all time performed right here 🎙️",
   events: []
   },
   { 
