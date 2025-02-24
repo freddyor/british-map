@@ -714,7 +714,7 @@ export const buildings = [
   },
   {
     "name": "Judges Court",
-    "coords": [-1.0835171327012416, 53.958203012451382],
+    "coords": [-1.0836136853486988, 53.959103592652625],
     "image": "images/judgescourt.png",
     "description": "",
     "occupation": "1720",
@@ -734,7 +734,7 @@ export const buildings = [
   },
   {
     "name": "Henry Sotheran Ltd",
-    "coords": [-1.0840602691735393, 53.958254146663948],
+    "coords": [-1.0840508854181263, 53.95925903633209],
     "image": "images/henrysotheran.png",
     "description": "",
     "occupation": "1500",
@@ -757,7 +757,7 @@ export const buildings = [
   },
   {
     "name": "Women's Social and Political Union",
-    "coords": [-1.0836029919773678, 53.959093608022772],
+    "coords": [-1.0836686706335041, 53.95889431152987],
     "image": "images/yorksuffragettes.png",
     "description": "",
     "occupation": "EARLY 17TH",
