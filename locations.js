@@ -757,7 +757,7 @@ export const locations = [
     "occupation": "1950-",
     "description": "Harriet Harman studied and engaged in student politics here at Goodricke College",
     "image": "images/harrietharman.png",
-    "tldr": "Harriet Harman is one of the most decorated politicians int he UK.",
+    "tldr": "Harriet Harman is one of the most decorated politicians in the UK.",
     "events": [
       {
         "date": "LEADER",
