@@ -12,8 +12,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 
     <!-- Mapbox GL JS & CSS -->
-    <script src="https://api.mapbox.com/mapbox-gl-js/v3.10.0/mapbox-gl.js"></script>
     <link href="https://api.mapbox.com/mapbox-gl-js/v3.10.0/mapbox-gl.css" rel="stylesheet">
+    <script src="https://api.mapbox.com/mapbox-gl-js/v3.10.0/mapbox-gl.js"></script>
 
     <style>
         body, html {
@@ -21,7 +21,7 @@
             padding: 0;
             width: 100%;
             height: 100%;
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Poppins', sans-serif; /* Set default font for body */
         }
 
         #map {
@@ -35,64 +35,36 @@
             top: 10px;
             transform: translateX(-50%);
             z-index: 1000;
-            background-color: #e9e8e0;
+            background-color: #e9e8e0; /* Updated background color */
             color: black;
-            border: 2px solid #f0f0f0;
-            padding: 3px 8px;
+            border: 2px solid #f0f0f0; /* Added border */
+            padding: 3px 8px; /* Reduced padding for less space around text */
             font-size: 12px;
-            font-weight: bold;
+            font-weight: bold; /* Make the text bold */
             border-radius: 8px;
             cursor: pointer;
             text-decoration: none;
             display: inline-block;
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); /* Added box shadow */
         }
 
         #custom-bmc-button:hover {
-            background-color: #d1d0c6;
-        }
-
-        #locations-list-button {
-            position: fixed;
-            left: 60%;
-            top: 10px;
-            transform: translateX(-50%);
-            z-index: 1000;
-            background-color: #e9e8e0;
-            color: black;
-            border: 2px solid #f0f0f0;
-            padding: 3px 8px;
-            font-size: 12px;
-            font-weight: bold;
-            border-radius: 8px;
-            cursor: pointer;
-            text-decoration: none;
-            display: inline-block;
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
-        }
-
-        #locations-list-button:hover {
-            background-color: #d1d0c6;
-        }
-
-        .locations-list-popup .mapboxgl-popup-content {
-            padding: 0;
-            width: 250px;
+            background-color: #d1d0c6; /* Optional hover effect */
         }
 
         @media (max-width: 750px) {
-            #custom-bmc-button, #locations-list-button {
-                font-size: 14px;
-                padding: 4px 10px;
+            #custom-bmc-button {
+                font-size: 14px; /* Slightly larger font for mobile */
+                padding: 4px 10px; /* Adjusted padding for mobile devices */
             }
         }
 
         @media (prefers-contrast: more) {
-            #custom-bmc-button, #locations-list-button {
+            #custom-bmc-button {
                 background-color: #000000;
                 color: #FFFFFF;
-                border-color: #FFFFFF;
-                box-shadow: none;
+                border-color: #FFFFFF; /* Change border color in high contrast mode */
+                box-shadow: none; /* Remove shadow in high contrast mode for better visibility */
             }
         }
     </style>
@@ -106,12 +78,7 @@
         ☕ Buy me a coffee
     </a>
 
-    <!-- Locations List Button -->
-    <button id="locations-list-button">
-        Show Locations
-    </button>
-
-    <script src="index.js" defer></script>
+    <script src="index.js" type="module" defer></script>
 
 </body>
 </html>
