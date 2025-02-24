@@ -803,7 +803,7 @@ export const locations = [
     ]
    },
   {
-    "coords": [-1.1168415941066212, 53.959917366464338],
+    "coords": [-1.1168415941066212, 53.95917366464338],
     "name": "Septimius Severus",
     "occupation": "145-211",
     "description": "Emperor Severus was cremated on this hill",
@@ -817,7 +817,7 @@ export const locations = [
     ]
   },
   {
-    "coords": [-1.0002242676864474, 53.955604758652154],
+    "coords": [-1.0802214267864474, 53.955604759652154],
     "name": "William the Conqueror",
     "occupation": "1028-1087",
     "description": "William the Conqueror marched on York and built two castles by the river here",
@@ -831,7 +831,7 @@ export const locations = [
     ]
   },
   {
-    "coords": [-1.00789742367974, 53.962198077032005],
+    "coords": [-1.0879142387479734, 53.96219607702085],
     "name": "William II",
     "occupation": "1060-1100",
     "description": "William II visited here in 1089 to lay the foundation stone for St. Mary's Abbey",
@@ -845,7 +845,7 @@ export const locations = [
     ]
   },
   {
-    "coords": [-1.0072902501902639, 53.959586422618],
+    "coords": [-1.0872901902658239, 53.9599545422618],
     "name": "Florence Nightingale",
     "occupation": "1820-1910",
     "description": "Florence Nightingale crossed the river here in 1852.",
@@ -854,7 +854,7 @@ export const locations = [
     "events": []
   },
   {
-    "coords": [-1.0055509777000222, 53.96263308153205],
+    "coords": [-1.0855097700040228, 53.96263388135285],
     "name": "Emmeline Pankhurst",
     "occupation": "1858-1928",
     "description": "Emmeline Pankhurst spoke to an audience of women here in the square in 1903",
