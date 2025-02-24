@@ -71,10 +71,13 @@ function addLocationsList() {
     list.style.listStyleType = 'none';
     list.style.padding = '0';
     list.style.margin = '0';
-    list.style.fontSize = '12px'; // Set font size to 12px
-    list.style.lineHeight = '0.25'; // Reduce line spacing by 75% (original is 1, so 1 - 0.75 = 0.25)
+    list.style.fontSize = '12px';
+    list.style.lineHeight = '0.25';
 
-    locations.forEach(location => {
+    // Sort locations alphabetically by name
+    const sortedLocations = [...locations].sort((a, b) => a.name.localeCompare(b.name));
+
+    sortedLocations.forEach(location => {
         const listItem = document.createElement('li');
         listItem.textContent = location.name;
         listItem.style.cursor = 'pointer';
@@ -89,11 +92,15 @@ function addLocationsList() {
         list.appendChild(listItem);
     });
     
-    // Append the list to the openable container
-    openableContainer.innerHTML = ''; // Clear existing content
-    openableContainer.style.maxHeight = '150px'; // Set a maximum height for the container
-    openableContainer.style.overflowY = 'scroll'; // Enable vertical scrolling
+    openableContainer.innerHTML = '';
+    openableContainer.style.maxHeight = '150px';
+    openableContainer.style.overflowY = 'scroll';
+    openableContainer.style.scrollbarWidth = 'none'; // Hide scrollbar for Firefox
+    openableContainer.style.msOverflowStyle = 'none';  // Hide scrollbar for IE and Edge
     openableContainer.appendChild(list);
+
+    // Hide scrollbar for Chrome, Safari and Opera
+    openableContainer.classList.add('hide-scrollbar');
 }
 
 // Create a <style> element to add the CSS
@@ -158,6 +165,10 @@ stylePopup.innerHTML = `
   .mapboxgl-popup {
     z-index: 9999 !important;
   }
+
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
 `;
 
 // Append the style to the document
@@ -172,7 +183,7 @@ const geolocate = new mapboxgl.GeolocateControl({
   showUserHeading: true,
   showAccuracyCircle: false,
   fitBoundsOptions: {
-    maxZoom: 5
+    maxZoom: 15
   },
   showUserLocation: false // Disable the default blue dot
 });
