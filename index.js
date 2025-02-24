@@ -286,6 +286,11 @@ locations.forEach(location => {
         `).join('')}
       </div>
     ` : ''}
+      <div style="margin-top: 10px; white-space: nowrap;">
+        <a href="https://www.buymeacoffee.com/freddomate" target="_blank" style="display: inline-block; padding: 10px 20px; background-color: #FFDD00; color: black; text-decoration: none; border-radius: 5px; font-weight: bold;">
+          ❤️ This project relies on support ❤️
+        </a>
+      </div>
   `);
 
   marker.setPopup(popup);
@@ -330,6 +335,11 @@ function addBuildingMarkers() {
           `).join('')}
         </div>
       ` : ''}
+      <div style="margin-top: 10px; white-space: nowrap;">
+        <a href="https://www.buymeacoffee.com/freddomate" target="_blank" style="display: inline-block; padding: 10px 20px; background-color: #FFDD00; color: black; text-decoration: none; border-radius: 5px; font-weight: bold;">
+          ❤️ This project relies on support ❤️
+        </a>
+      </div>
     `);
 
     marker.setPopup(popup);
