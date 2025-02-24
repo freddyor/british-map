@@ -71,6 +71,8 @@ function addLocationsList() {
     list.style.listStyleType = 'none';
     list.style.padding = '0';
     list.style.margin = '0';
+    list.style.fontSize = '12px'; // Set font size to 12px
+    list.style.lineHeight = '0.25'; // Reduce line spacing by 75% (original is 1, so 1 - 0.75 = 0.25)
 
     locations.forEach(location => {
         const listItem = document.createElement('li');
@@ -89,6 +91,8 @@ function addLocationsList() {
     
     // Append the list to the openable container
     openableContainer.innerHTML = ''; // Clear existing content
+    openableContainer.style.maxHeight = '150px'; // Set a maximum height for the container
+    openableContainer.style.overflowY = 'scroll'; // Enable vertical scrolling
     openableContainer.appendChild(list);
 }
 
