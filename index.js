@@ -74,16 +74,18 @@ function addLocationsList() {
         const listItem = document.createElement('li');
         listItem.textContent = location.name;
         listItem.style.cursor = 'pointer';
-        listItem.style.padding = '5px';
+        listItem.style.padding = '1.25px'; // Reduced by 75% from 5px
         listItem.style.fontSize = '12px';
         listItem.style.fontFamily = 'Poppins, sans-serif';
 
         listItem.addEventListener('click', () => {
             map.flyTo({
                 center: location.coords,
-                zoom: 5,
+                zoom: 17,
                 duration: 2000
             });
+            openableContainer.style.display = 'none';
+            toggleContainerButton.textContent = '📦 Open Container';
         });
         list.appendChild(listItem);
     });
