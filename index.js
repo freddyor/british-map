@@ -262,7 +262,7 @@ locations.forEach(location => {
     .setLngLat(location.coords)
     .addTo(map);
 
-  const popup = new mapboxgl.Popup({
+    const popup = new mapboxgl.Popup({
     closeButton: true,
     closeOnClick: true,
     className: 'custom-popup'
@@ -286,9 +286,6 @@ locations.forEach(location => {
         `).join('')}
       </div>
     ` : ''}
-      <div style="margin-top: 10px; white-space: nowrap;">
-        </a>
-      </div>
   `);
 
   marker.setPopup(popup);
@@ -309,7 +306,7 @@ function addBuildingMarkers() {
       .setLngLat(building.coords)
       .addTo(map);
 
-    const popup = new mapboxgl.Popup({
+      const popup = new mapboxgl.Popup({
       closeButton: true,
       closeOnClick: true,
       className: 'custom-popup'
@@ -333,9 +330,6 @@ function addBuildingMarkers() {
           `).join('')}
         </div>
       ` : ''}
-      <div style="margin-top: 10px; white-space: nowrap;">
-        </a>
-      </div>
     `);
 
     marker.setPopup(popup);
