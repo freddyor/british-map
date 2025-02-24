@@ -18,58 +18,77 @@ map.on('load', () => {
   geolocate.trigger();
 });
 
-// Find the existing "Buy Me a Coffee" button
-const bmcButton = document.getElementById('custom-bmc-button');
-
 // Create a container for both buttons
 const buttonContainer = document.createElement('div');
+buttonContainer.className = 'button-container';
 buttonContainer.style.position = 'fixed';
 buttonContainer.style.left = '50%';
 buttonContainer.style.top = '10px';
 buttonContainer.style.transform = 'translateX(-50%)';
 buttonContainer.style.zIndex = '1000';
 buttonContainer.style.display = 'flex';
-buttonContainer.style.alignItems = 'center'; /* Vertically center the buttons */
+buttonContainer.style.alignItems = 'center';
 buttonContainer.style.gap = '10px';
 
 // Create the new Buy Me a Coffee button
 const newBmcButton = document.createElement('a');
 newBmcButton.href = 'https://www.buymeacoffee.com/britmap';
 newBmcButton.target = '_blank';
-newBmcButton.style.backgroundColor = '#e9e8e0';
-newBmcButton.style.color = 'black';
-newBmcButton.style.border = '2px solid #f0f0f0';
-newBmcButton.style.padding = '3px 8px';
-newBmcButton.style.fontSize = '12px';
-newBmcButton.style.fontWeight = 'bold';
-newBmcButton.style.borderRadius = '8px';
-newBmcButton.style.cursor = 'pointer';
-newBmcButton.style.boxShadow = '0 6px 15px rgba(0, 0, 0, 0.3)';
+newBmcButton.className = 'button';
 newBmcButton.textContent = '☕ Buy me a coffee';
-newBmcButton.style.textDecoration = 'none'; // Remove underline
-buttonContainer.appendChild(newBmcButton);
 
-// Remove the old "Buy Me a Coffee" button if it exists
-if (bmcButton) {
-    bmcButton.remove();
-}
-
+// Create the Locations button
 const toggleContainerButton = document.createElement('button');
 toggleContainerButton.id = 'toggle-container-button';
+toggleContainerButton.className = 'button';
 toggleContainerButton.textContent = '📦 Locations';
-toggleContainerButton.style.backgroundColor = '#e9e8e0';
-toggleContainerButton.style.color = 'black';
-toggleContainerButton.style.border = '2px solid #f0f0f0';
-toggleContainerButton.style.padding = '3px 8px';
-toggleContainerButton.style.fontSize = '12px';
-toggleContainerButton.style.fontWeight = 'bold';
-toggleContainerButton.style.borderRadius = '8px';
-toggleContainerButton.style.cursor = 'pointer';
-toggleContainerButton.style.boxShadow = '0 6px 15px rgba(0, 0, 0, 0.3)';
-buttonContainer.appendChild(toggleContainerButton);
 
+buttonContainer.appendChild(newBmcButton);
+buttonContainer.appendChild(toggleContainerButton);
 document.body.appendChild(buttonContainer);
 
+// Add styles for buttons and container
+const style = document.createElement('style');
+style.textContent = `
+  .button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .button {
+    background-color: #e9e8e0;
+    color: black;
+    border: 2px solid #f0f0f0;
+    padding: 3px 8px;
+    font-size: calc(12px + 0.5vw);
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+    text-decoration: none;
+    white-space: nowrap;
+  }
+
+  @media screen and (max-width: 768px) {
+    .button-container {
+      flex-direction: column;
+    }
+
+    .button {
+      width: 100%;
+      max-width: 300px;
+      margin-bottom: 10px;
+      padding: 10px;
+      font-size: 14px;
+    }
+  }
+`;
+document.head.appendChild(style);
+
+// ... (rest of your existing code)
+
+// The following is your existing code for the openable container
 const openableContainer = document.createElement('div');
 openableContainer.id = 'openable-container';
 openableContainer.style.display = 'none';
@@ -89,6 +108,7 @@ openableContainer.style.overflowY = 'auto';
 openableContainer.style.scrollbarWidth = 'none';
 openableContainer.style.msOverflowStyle = 'none';
 document.body.appendChild(openableContainer);
+
 
 // Add a style to hide the scrollbar in WebKit browsers
 const style = document.createElement('style');
