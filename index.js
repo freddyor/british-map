@@ -172,7 +172,7 @@ const geolocate = new mapboxgl.GeolocateControl({
   showUserHeading: true,
   showAccuracyCircle: false,
   fitBoundsOptions: {
-    maxZoom: 15
+    maxZoom: 5
   },
   showUserLocation: false // Disable the default blue dot
 });
