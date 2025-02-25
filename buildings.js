@@ -20,7 +20,7 @@ export const buildings = [
     tldr: "A museum showcasing York's rich history with exhibits from different eras, including a recreated Victorian street.",
     events: [
       { date: "1829", description: "The museum was established in the former prison buildings of York Castle 🏰" },
-      { date: "1879", description: "The infamous highwayman Dick Turpin was executed at York Castle, a key event in local lore." }
+      { date: "TURPIN", description: "The infamous highwayman Dick Turpin was held here before his execution, a key event in local lore." }
     ]
   },
 {
