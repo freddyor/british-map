@@ -33,7 +33,7 @@ export const buildings = [
     tldr: "Built originally for The York Dispensary, who provided treatment to the poor and needed larger premises.",
     events: [
       { date: "1948", description: "The dispensary closed following the creation of the National Health Service 👨‍⚕️" },
-      { date: "GRAY'S", description: "Iconic local business Gray’s Solicitors, who occupied the next-door building, moved in here too. Incredibly, they have worked with one client continuously since 1699 🕰️" }
+      { date: "GRAYS", description: "Iconic local business Grays Solicitors, who occupied the next-door building, moved in here too. Incredibly, they have worked with one client continuously since 1699 🕰️" }
     ]
   },
 {
