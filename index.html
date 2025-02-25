@@ -37,7 +37,15 @@
             z-index: 1001;
         }
 
-        #custom-bmc-button {
+        .dropdown-bottom {
+            position: fixed;
+            left: 50%;
+            bottom: 10px;
+            transform: translateX(-50%);
+            z-index: 1001;
+        }
+
+        .custom-button {
             background-color: #e9e8e0;
             color: black;
             border: 2px solid #f0f0f0;
@@ -117,6 +125,11 @@
             font-weight: bold;
         }
 
+        .contribution-count {
+            color: #9b4dca;
+            font-weight: bold;
+        }
+
         .donation-comment {
             font-size: 12px;
             color: #666;
@@ -131,21 +144,21 @@
         }
 
         @media (max-width: 750px) {
-            #custom-bmc-button {
+            .custom-button {
                 font-size: 14px;
                 padding: 4px 10px;
             }
         }
 
         @media (max-width: 400px) {
-            #custom-bmc-button {
+            .custom-button {
                 font-size: 12px;
                 padding: 2px 6px;
             }
         }
 
         @media (prefers-contrast: more) {
-            #custom-bmc-button {
+            .custom-button {
                 background-color: #000000;
                 color: #FFFFFF;
                 border-color: #FFFFFF;
@@ -159,7 +172,7 @@
     <div id="map"></div>
 
     <div class="dropdown">
-        <button id="custom-bmc-button">
+        <button id="custom-bmc-button" class="custom-button">
             ❤️ This project relies on your support ❤️
         </button>
         <div class="dropdown-content">
@@ -181,6 +194,25 @@
         </div>
     </div>
 
+    <div class="dropdown-bottom">
+        <button id="add-data-button" class="custom-button">
+            Add data ➕
+        </button>
+        <div class="dropdown-content">
+            <a href="YOUR_GOOGLE_FORM_URL" class="support-button" target="_blank">
+                <span>Add data</span>
+            </a>
+            <div class="top-supporters">
+                <h4>Top Contributors:</h4>
+                <ul>
+                    <li>
+                        buffsteve24 <span class="contribution-count">5</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
     <script>
         document.getElementById('custom-bmc-button').addEventListener('click', function(e) {
             e.preventDefault();
@@ -188,9 +220,15 @@
             dropdownContent.style.display = dropdownContent.style.display === 'block' ? 'none' : 'block';
         });
 
-        // Close the dropdown if the user clicks outside of it
+        document.getElementById('add-data-button').addEventListener('click', function(e) {
+            e.preventDefault();
+            var dropdownContent = this.nextElementSibling;
+            dropdownContent.style.display = dropdownContent.style.display === 'block' ? 'none' : 'block';
+        });
+
+        // Close the dropdowns if the user clicks outside of them
         window.onclick = function(event) {
-            if (!event.target.matches('#custom-bmc-button')) {
+            if (!event.target.matches('.custom-button')) {
                 var dropdowns = document.getElementsByClassName("dropdown-content");
                 for (var i = 0; i < dropdowns.length; i++) {
                     var openDropdown = dropdowns[i];
@@ -202,9 +240,11 @@
         }
 
         // Set the width of the dropdown content to match the button's width
-        const button = document.getElementById('custom-bmc-button');
-        const dropdownContent = document.querySelector('.dropdown-content');
-        dropdownContent.style.width = `${button.offsetWidth}px`;
+        const buttons = document.querySelectorAll('.custom-button');
+        buttons.forEach(button => {
+            const dropdownContent = button.nextElementSibling;
+            dropdownContent.style.width = `${button.offsetWidth}px`;
+        });
     </script>
 
     <script src="index.js" type="module" defer></script>
