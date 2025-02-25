@@ -815,6 +815,153 @@ export const buildings = [
       { "date": "TREASURE", "description": "During construction, workmen discovered around 10,000 Anglo-Saxon coins 💰" },
       { "date": "USES", "description": "The room was initially used for military occasions and as extra accommodation for the Assembly Rooms down the road, but now it is used as storage for York Theater next door 🎭" }
     ]
+  },
+ {
+    "name": "Victorian Masonic Lodge",
+    "coords": [-1.0837350458212902, 53.96139528212042],
+    "image": "images/masoniclodge.png",
+    "description": "",
+    "occupation": "1863",
+    "tldr": "It is home to the York Lodge, founded in 1777.",
+    "events": [
+      { "date": "HISTORY", "description": "It is the oldest purpose-built masonic hall in the city 📿" }
+    ]
+  },
+  {
+    "name": "Boer War Memorial",
+    "coords": [-1.083711260281606, 53.961706893935734],
+    "image": "images/boerwarmemorial.png",
+    "description": "",
+    "occupation": "1905",
+    "tldr": "It commemorates the soldiers from Yorkshire who died during the Second Boer War (1899–1902).",
+    "events": [
+      { "date": "NAMES", "description": "There are 1,499 names on the plinth 📜" },
+      { "date": "GUN", "description": "The initial statue showed the soldier holding a Lee-Enfield rifle, which was rejected as overly aggressive, and installed instead at the infantry training depot" }
+    ]
+  },
+  {
+    "name": "The Red House",
+    "coords": [-1.085078985835525, 53.96151492963061],
+    "image": "images/theredhouse.png",
+    "description": "",
+    "occupation": "1714",
+    "tldr": "This building was made for Sir William Robinson, MP for York.",
+    "events": [
+      { "date": "MANSION HOUSE", "description": "This building was supposed to be the original York Mansion House (home of the Lord Mayor), but Sir William refused" }
+    ]
+  },
+  {
+    "name": "Dean Court Armorial Plaque",
+    "coords": [-1.0863029184687848, 53.96290930785174],
+    "image": "images/armorialplaque.png",
+    "description": "",
+    "occupation": "1864",
+    "tldr": "Dean Court Armorial plaque is sculpted on the wall of Dean Court Hotel.",
+    "events": [
+      { "date": "DEAN", "description": "This armorial plaque denotes the building was once owned by the Dean and Chapter of York Minster 🛡️" }
+    ]
+  },
+  {
+    "name": "Kings Square",
+    "coords": [-1.080603334364728, 53.96000724821722],
+    "image": "images/kingssquare.png",
+    "description": "",
+    "occupation": "",
+    "tldr": "Until 1837, this area was completely covered by a now-demolished Holy Trinity Church.",
+    "events": [
+      { "date": "PALACE", "description": "This spot is believed to be the location of the royal palace of Danelaw, then the Kingdom of Northumbria and then the Kingdom of Deira 👑" }
+    ]
+  },
+  {
+    "name": "St Andrews Church",
+    "coords": [-1.07833811617738115, 53.960886774895389],
+    "image": "images/standrewschurch.png",
+    "description": "",
+    "occupation": "11th CENTURY",
+    "tldr": "The church was closed in 1548 and was sold to the city council in 1581 - it then became a brothel.",
+    "events": [
+      { "date": "ST PETERS", "description": "Before the Civil War, the church was home to St Peter's School for a short while ⛪" }
+    ]
+  },
+  {
+    "name": "Collegiate Drill Hall",
+    "coords": [-1.07295251420336, 53.96038710557679],
+    "image": "images/colliergatedrillhall.png",
+    "description": "",
+    "occupation": "1872",
+    "tldr": "Now used as a hardware store, the building was built for The Prince of Wales's Own Regiment of Yorkshire.",
+    "events": [
+      { "date": "1914", "description": "The battalion was mobilized here before being sent to the Western Front on 1914 🪖" }
+    ]
+  },
+  {
+    "name": "The Bay Horse",
+    "coords": [-1.082373545836503, 53.954108365763683],
+    "image": "images/thebayhorse.png",
+    "description": "",
+    "occupation": "1644",
+    "tldr": "Originally built as a farmhouse, it became inn in 1748.",
+    "events": [
+      { "date": "1978", "description": "The name is believed to come from Bay Malton, a thoroughbred who won a major race at York Racecourse 🐎" },
+      { "date": "1862", "description": "for 12 years, the building was owned by the Institute of the Blessed Virgin Mary, created by York's famous Mary Ward" }
+    ]
+  },
+  {
+    "name": "The Windmill Inn",
+    "coords": [-1.0815208213902031, 53.95555644207015],
+    "image": "images/thewindmillinn.png",
+    "description": "",
+    "occupation": "1644",
+    "tldr": "Similar to The Bay Horse, it was at first built after the Siege of York in 1644.",
+    "events": [
+      { "date": "HAUNTED", "description": "York Press list The Windmill Inn as one of the five most haunted pubs in York, haunted by the ghost of a girl who was killed outside the pub by a cart 👻" }
+    ]
+  },
+   {
+    "name": "49 Bootham",
+    "coords": [-1.0833520029008619, 53.96411757575337],
+    "image": "images/49bootham.png",
+    "description": "",
+    "occupation": "17th century",
+    "tldr": "This building has been owned by Bootham School since 1846, when it became the home of the Headmaster 🏫",
+    "events": [
+      { "date": "ROWNTREE", "description": "Between 1875 to 1882, one of York's most prominent ever figures, Joseph Rowntree lived here, renting from Bootham School." }
+    ]
+  },
+  {
+    "name": "The Churchill Hotel, York",
+    "coords": [-1.08897352684095575, 53.965670561542666],
+    "image": "images/thechurchillhotel.png",
+    "description": "",
+    "occupation": "1827",
+    "tldr": "Originally built as a house, it was made into Bootham Girls School for a short period in 1879.",
+    "events": [
+      { "date": "MILITARY", "description": "In 1942 it was sold to the War Department and became home to the General Commander of the Northern Districts 🎖️" }
+    ]
+  },
+  {
+    "name": "Ingram House",
+    "coords": [-1.092073925379825, 53.96538478283576],
+    "image": "images/ingramhouse.png",
+    "description": "",
+    "occupation": "1640",
+    "tldr": "It was built as an almshouse for ten poor widows by Sir Arthur Ingram MP.",
+    "events": [
+      { "date": "1642", "description": "Charles I stayed in the building" },
+      { "date": "HISTORIC", "description": "The middle doorway dates back to the Norman Period and was once a doorway to the Holy Trinity Priory ⛪" }
+    ]
+  },
+  {
+    "name": "Wandesford House",
+    "coords": [-1.0862328691738727, 53.963808611599372],
+    "image": "images/wandesfordhouse.png",
+    "description": "",
+    "occupation": "1743",
+    "tldr": "This building is the oldest still-functioning almshouse in the city",
+    "events": [
+      { "date": "PURPOSE", "description": "Mary Wandesford left this building in her will to house ten non-married religious women. The house is still owned by Wandesfords Foundation 🏡" },
+      { "date": "WILBERFORCE", "description": "The land was secured from William Wilberforce of Hull, grandfather of anti-slave trade campaigner William Wilberforce." }
+    ]
   }
 
 
