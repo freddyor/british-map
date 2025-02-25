@@ -819,7 +819,7 @@ export const buildings = [
  {
     "name": "Victorian Masonic Lodge",
     "coords": [-1.0837350458212902, 53.96139528212042],
-    "image": "images/masoniclodge.png",
+    "image": "images/masonichall.png",
     "description": "",
     "occupation": "1863",
     "tldr": "It is home to the York Lodge, founded in 1777.",
