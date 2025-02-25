@@ -11,15 +11,6 @@ export const locations = [
 { date: "RAIL", description: "On paper, he owned a quarter of all the country's rail network at his height. Most of York's railway system can be attributed to him as well as Lendal Bridge 🚂" },
 ]
   },
-  {
-  coords: [ -1.0760945617966278, 53.95174477535229],
-  name: "The Beatles",
-  occupation: "1960-1970",
-  description: "The Beatles played here 4 times in 1963.",
-  image: "images/therialto.png", 
-  tldr: "This location was once home to The York Rialto. Before international stardom, the most iconic band of all time performed right here 🎙️",
-  events: []
-  },
   { 
     coords: [ -1.0861561, 53.9587634 ], 
     name: "John Snow", 
@@ -134,9 +125,9 @@ export const locations = [
   },
  { 
     coords: [ -1.1035692, 53.9693209 ], 
-    name: "Seebohm Rowntree", 
+    name: "Benjamin Seebohm Rowntree", 
     occupation: "1871-1954", 
-    description: "Bnejamin Seebohm Rowntree lived here for most of his life", 
+    description: "Joseph Seebohm Rowntree lived here for most of his life", 
     tldr: "Son of Joseph Rowntree, Benjamin was also Rowntrees chairman and a stark social reformer.", 
     image: "images/seebohmrowntree.png", 
     events: [
@@ -757,7 +748,7 @@ export const locations = [
     "occupation": "1950-",
     "description": "Harriet Harman studied and engaged in student politics here at Goodricke College",
     "image": "images/harrietharman.png",
-    "tldr": "Harriet Harman is one of the most decorated politicians in the UK.",
+    "tldr": "Harriet Harman is one of the most decorated politicians int he UK.",
     "events": [
       {
         "date": "LEADER",
@@ -877,6 +868,108 @@ export const locations = [
       {
         "date": "LEGACY",
         "description": "Time named her as one of the most important people of the 20th century, saying 'She shook society into a new pattern from which there could be no going back' 🕰️"
+      }
+    ]
+  },
+{
+    "coords": [-1.014971212740215, 53.96150423944602],
+    "name": "Sir William Robinson",
+    "occupation": "1655-1736",
+    "description": "This was the house of Sir William Robinson",
+    "image": "images/sirwilliamrobinson.png",
+    "tldr": "Robinson was Lord Mayor of York in 1700 and MP for York from 1698 to 1722.",
+    "events": [
+      {
+        "date": "1688",
+        "description": "Robinson was captain of the Bulmer Troop and played a role in the Glorious Revolution, when both England and Scotland's kings were dethroned ⚔️ FAMILY: his father has also been Lord Mayor and MP. His son went on to become a Baron and Leader of the House of Commons 🏛️"
+      }
+    ]
+  },
+  {
+    "coords": [-1.0373388980007222, 53.964360696921295],
+    "name": "John Bright",
+    "occupation": "1811-1889",
+    "description": "John Bright studied here, it is now called John Bright Library",
+    "image": "images/johnbright.png",
+    "tldr": "John Bright is seen as the greatest reformist liberal politicians of the 19th Century.",
+    "events": [
+      {
+        "date": "LAW",
+        "description": "Founder of the Anti-Corn Laws which change how the landed aristocracy were taxed forever"
+      },
+      {
+        "date": "MP",
+        "description": "He was a Member of Parliament from 1843 until 1889. he has the first ever recorded use of the term to 'flog a dead horse' whilst referring the Reform Act of 1867 in parliament."
+      },
+      {
+        "date": "US",
+        "description": "He did more than any other man to stop Britain joining the South in the American Civil War 🇺🇲"
+      },
+      {
+        "date": "LEGACY",
+        "description": "He was the first Honorary Member of Cornell University New York's first literary society. Also, Bright on Victoria, Australia is named after him 🧑‍🎓"
+      }
+    ]
+  },
+  {
+    "coords": [-1.027728704810808, 53.964237359986546],
+    "name": "Lord Philip Noel-Baker",
+    "occupation": "1889-1982",
+    "description": "Lord Philip Noel-Baker studied here",
+    "image": "images/philipnoelbaker.png",
+    "tldr": "Noel-Baker is the only person to have won an Olympic medal and a Nobel Prize.",
+    "events": [
+      {
+        "date": "OLYMPICS",
+        "description": "He was captain of the British track team at the 1920 and 1924 Olympics."
+      },
+      {
+        "date": "WW2",
+        "description": "He received military medals from UK, France and Italy for his service in the Red Cross 🎖️"
+      },
+      {
+        "date": "LEGACY",
+        "description": "He was a lecturer at LSE and Yale University. He was also one of the longest, highest-ranking parliamentarians ever, being one of they key figures in the creation of the League of Nations 🕊️"
+      }
+    ]
+  },
+  {
+    "coords": [-1.08760310549019501, 53.964190930373025],
+    "name": "Lord Stuart Rose",
+    "occupation": "1949-",
+    "description": "Lord Stuart Rose studied here",
+    "image": "images/lordstuartrose.png",
+    "tldr": "Lord Stuart Rose, Baron Rose of Monewden, is a businessman and MP",
+    "events": [
+      {
+        "date": "1917",
+        "description": "His grandparents fled to China during the 1917 Russian Revolution. Stuart grew up in a caravan in Warickshire 🚐"
+      },
+      {
+        "date": "BREXIT",
+        "description": "He was chair of Britain Stronger in Europe, the official remain party during Brexit 💔"
+      },
+      {
+        "date": "CAREER",
+        "description": "He is currently CEO of Asda and was previously CEO of Argos, Arcadia and M&S."
+      }
+    ]
+  },
+  {
+    "coords": [-1.00672050733176, 53.96308788501176],
+    "name": "Mary Wandesford",
+    "occupation": "1655-1726",
+    "description": "Mary Wandesford devoted this building in her will",
+    "image": "images/marywandesford.png",
+    "tldr": "Mary Wandesford was a devious religious unmarried woman",
+    "events": [
+      {
+        "date": "WEALTH",
+        "description": "She was born into vast wealth, her father having been richly rewarded by William II, mostly through lead mines 💰"
+      },
+      {
+        "date": "YORK",
+        "description": "She moved the estate to York, giving large donations to get closer to the religious sphere. The black golden iron pules outside the Minster were gifted by Mary (TBA: in her will she set up Wandesford house for women like her religious and unmarried) 🕯️"
       }
     ]
   }
