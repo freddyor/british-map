@@ -37,11 +37,13 @@
             z-index: 1001;
         }
 
-        .dropdown-bottom {
+        .button-group {
             position: fixed;
             left: 50%;
             bottom: 10px;
             transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
             z-index: 1001;
         }
 
@@ -194,10 +196,16 @@
         </div>
     </div>
 
-    <div class="dropdown-bottom">
+    <div class="button-group">
+        <button id="find-people-button" class="custom-button">
+            Find People
+        </button>
         <button id="add-data-button" class="custom-button">
             Add data ➕
         </button>
+    </div>
+
+    <div class="dropdown" id="add-data-dropdown">
         <div class="dropdown-content">
             <a href="YOUR_GOOGLE_FORM_URL" class="support-button" target="_blank">
                 <span>Add data</span>
@@ -222,7 +230,7 @@
 
         document.getElementById('add-data-button').addEventListener('click', function(e) {
             e.preventDefault();
-            var dropdownContent = this.nextElementSibling;
+            var dropdownContent = document.getElementById('add-data-dropdown').querySelector('.dropdown-content');
             dropdownContent.style.display = dropdownContent.style.display === 'block' ? 'none' : 'block';
         });
 
@@ -243,7 +251,9 @@
         const buttons = document.querySelectorAll('.custom-button');
         buttons.forEach(button => {
             const dropdownContent = button.nextElementSibling;
-            dropdownContent.style.width = `${button.offsetWidth}px`;
+            if (dropdownContent) {
+                dropdownContent.style.width = `${button.offsetWidth}px`;
+            }
         });
     </script>
 
