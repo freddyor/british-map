@@ -931,7 +931,7 @@ export const buildings = [
   {
     "name": "The Churchill Hotel, York",
     "coords": [-1.0897352684093575, 53.965679561540966],
-    "image": "images/thechurchillhotel.png",
+    "image": "images/thechurchill.png",
     "description": "",
     "occupation": "1827",
     "tldr": "Originally built as a house, it was made into Bootham Girls School for a short period in 1879.",
