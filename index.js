@@ -72,8 +72,63 @@ toggleContainerButton.addEventListener('click', () => {
     }
 });
 
+// Add data button functionality - POPUP
 addDataButton.addEventListener('click', () => {
-    window.open('https://forms.gle/1gS4BZhRk3fRjhjMA', '_blank');
+    // Create a new popup div
+    const popupContainer = document.createElement('div');
+    popupContainer.style.position = 'fixed';
+    popupContainer.style.top = '50%';
+    popupContainer.style.left = '50%';
+    popupContainer.style.transform = 'translate(-50%, -50%)';
+    popupContainer.style.backgroundColor = '#fff';
+    popupContainer.style.border = '2px solid #f0f0f0';
+    popupContainer.style.borderRadius = '8px';
+    popupContainer.style.boxShadow = '0 6px 15px rgba(0, 0, 0, 0.3)';
+    popupContainer.style.padding = '20px';
+    popupContainer.style.zIndex = '1001'; // Ensure it's on top of other elements
+    popupContainer.style.textAlign = 'center';
+
+    // Create the form button
+    const formButton = document.createElement('button');
+    formButton.textContent = 'Contribute Data';
+    formButton.className = 'custom-button';  // Use your existing button style
+    formButton.style.marginBottom = '10px';
+    formButton.addEventListener('click', () => {
+        window.open('https://forms.gle/1gS4BZhRk3fRjhjMA', '_blank');
+    });
+    popupContainer.appendChild(formButton);
+
+    // Create the "Top Contributors" heading
+    const contributorsHeading = document.createElement('h3');
+    contributorsHeading.textContent = 'Top Contributors';
+    contributorsHeading.style.marginBottom = '10px';
+    popupContainer.appendChild(contributorsHeading);
+
+    // Create the list of top contributors
+    const topContributorsList = document.createElement('ul');
+    topContributorsList.style.listStyleType = 'none';
+    topContributorsList.style.padding = '0';
+
+    const contributors = ['Alice Smith', 'Bob Johnson', 'Charlie Brown']; // Replace with your actual data
+    contributors.forEach(contributor => {
+        const listItem = document.createElement('li');
+        listItem.textContent = contributor;
+        topContributorsList.appendChild(listItem);
+    });
+    popupContainer.appendChild(topContributorsList);
+
+    // Create a close button
+    const closeButton = document.createElement('button');
+    closeButton.textContent = 'Close';
+    closeButton.className = 'custom-button';
+    closeButton.style.marginTop = '10px';
+    closeButton.addEventListener('click', () => {
+        document.body.removeChild(popupContainer);
+    });
+    popupContainer.appendChild(closeButton);
+
+    // Add the popup to the body
+    document.body.appendChild(popupContainer);
 });
 
 // Function to add the list of locations to the openable container
