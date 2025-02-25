@@ -853,7 +853,7 @@ export const buildings = [
   {
     "name": "Dean Court Armorial Plaque",
     "coords": [-1.0863029184687848, 53.96290930785174],
-    "image": "images/armorialplaque.png",
+    "image": "images/crosskeys.png",
     "description": "",
     "occupation": "1864",
     "tldr": "Dean Court Armorial plaque is sculpted on the wall of Dean Court Hotel.",
