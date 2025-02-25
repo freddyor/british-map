@@ -34,30 +34,14 @@ document.body.appendChild(buttonGroup);
 const toggleContainerButton = document.createElement('button');
 toggleContainerButton.id = 'toggle-container-button';
 toggleContainerButton.textContent = 'Find people 🔍';
-toggleContainerButton.style.backgroundColor = '#e9e8e0';
-toggleContainerButton.style.color = 'black';
-toggleContainerButton.style.border = '2px solid #f0f0f0';
-toggleContainerButton.style.padding = '3px 8px';
-toggleContainerButton.style.fontSize = '12px';
-toggleContainerButton.style.fontWeight = 'bold';
-toggleContainerButton.style.borderRadius = '8px';
-toggleContainerButton.style.cursor = 'pointer';
-toggleContainerButton.style.boxShadow = '0 6px 15px rgba(0, 0, 0, 0.3)';
+toggleContainerButton.className = 'custom-button';
 buttonGroup.appendChild(toggleContainerButton); // Add to buttonGroup
 
 // Add data button
 const addDataButton = document.createElement('button');
 addDataButton.id = 'add-data-button';
 addDataButton.textContent = 'Add data ➕';
-addDataButton.style.backgroundColor = '#e9e8e0';
-addDataButton.style.color = 'black';
-addDataButton.style.border = '2px solid #f0f0f0';
-addDataButton.style.padding = '3px 8px';
-addDataButton.style.fontSize = '12px';
-addDataButton.style.fontWeight = 'bold';
-addDataButton.style.borderRadius = '8px';
-addDataButton.style.cursor = 'pointer';
-addDataButton.style.boxShadow = '0 6px 15px rgba(0, 0, 0, 0.3)';
+addDataButton.className = 'custom-button';
 buttonGroup.appendChild(addDataButton); // Add to buttonGroup
 
 const openableContainer = document.createElement('div');
@@ -75,6 +59,7 @@ openableContainer.style.boxShadow = '0 6px 15px rgba(0, 0, 0, 0.3)';
 openableContainer.style.padding = '10px';
 openableContainer.style.width = '200px';
 openableContainer.style.textAlign = 'center';
+//openableContainer.textContent = 'This is an openable container!';  Remove this line
 document.body.appendChild(openableContainer);
 
 toggleContainerButton.addEventListener('click', () => {
@@ -88,7 +73,7 @@ toggleContainerButton.addEventListener('click', () => {
 });
 
 addDataButton.addEventListener('click', () => {
-    window.open('YOUR_GOOGLE_FORM_URL', '_blank'); // Replace with your form URL
+    window.open('https://forms.gle/1gS4BZhRk3fRjhjMA', '_blank');
 });
 
 // Function to add the list of locations to the openable container
@@ -197,14 +182,30 @@ stylePopup.innerHTML = `
     display: none;
   }
 
+  .custom-button {
+    background-color: #e9e8e0;
+    color: black;
+    border: 2px solid #f0f0f0;
+    padding: 3px 8px;
+    font-size: 12px;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+    white-space: nowrap;
+    text-align: center;
+  }
+
   #button-group {
-      position: fixed;
-      top: 50px;
-      left: 50%;
-      transform: translateX(-50%);
-      display: flex;
-      gap: 10px;
-      z-index: 1000;
+    position: fixed;
+    top: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    z-index: 1000;
   }
 `;
 
