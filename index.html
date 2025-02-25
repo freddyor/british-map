@@ -196,6 +196,15 @@
         </div>
     </div>
 
+    <div class="button-group">
+        <button id="find-people-button" class="custom-button">
+            Find People 🔍
+        </button>
+        <button id="add-data-button" class="custom-button">
+            Add data ➕
+        </button>
+    </div>
+
     <script>
         document.getElementById('custom-bmc-button').addEventListener('click', function(e) {
             e.preventDefault();
@@ -205,8 +214,7 @@
 
         document.getElementById('add-data-button').addEventListener('click', function(e) {
             e.preventDefault();
-            var dropdownContent = document.getElementById('add-data-dropdown').querySelector('.dropdown-content');
-            dropdownContent.style.display = dropdownContent.style.display === 'block' ? 'none' : 'block';
+            window.open('https://forms.gle/1gS4BZhRk3fRjhjMA', '_blank');
         });
 
         // Close the dropdowns if the user clicks outside of them
