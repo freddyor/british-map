@@ -84,10 +84,10 @@ addDataButton.addEventListener('click', (event) => {
     popupContainer.className = 'dropdown-content';
     popupContainer.style.display = 'block';
     popupContainer.style.position = 'absolute';
-    popupContainer.style.bottom = '100%'; // Position above the button
+    popupContainer.style.top = '0'; // Position at the top of the button
     popupContainer.style.left = '50%';
-    popupContainer.style.transform = 'translateX(-50%)';
-    popupContainer.style.marginBottom = '10px'; // Add some space between button and popup
+    popupContainer.style.transform = 'translate(-50%, -100%)'; // Move up by 100% of its height
+    popupContainer.style.marginTop = '-10px'; // Add some space between button and popup
     popupContainer.style.zIndex = '1002';
 
     const formButton = document.createElement('a');
