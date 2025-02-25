@@ -18,14 +18,22 @@ map.on('load', () => {
   geolocate.trigger(); // Trigger geolocation on map load
 });
 
+// Container for both buttons
+const buttonGroup = document.createElement('div');
+buttonGroup.id = 'button-group';
+buttonGroup.style.position = 'fixed';
+buttonGroup.style.left = '50%';
+buttonGroup.style.top = '50px';
+buttonGroup.style.transform = 'translateX(-50%)';
+buttonGroup.style.zIndex = '1000';
+buttonGroup.style.display = 'flex'; // Use flex to arrange buttons horizontally
+buttonGroup.style.gap = '10px'; // Space between the buttons
+document.body.appendChild(buttonGroup);
+
+// Find People button
 const toggleContainerButton = document.createElement('button');
 toggleContainerButton.id = 'toggle-container-button';
 toggleContainerButton.textContent = 'Find people 🔍';
-toggleContainerButton.style.position = 'fixed';
-toggleContainerButton.style.left = '50%';
-toggleContainerButton.style.top = '50px';
-toggleContainerButton.style.transform = 'translateX(-50%)';
-toggleContainerButton.style.zIndex = '1000';
 toggleContainerButton.style.backgroundColor = '#e9e8e0';
 toggleContainerButton.style.color = 'black';
 toggleContainerButton.style.border = '2px solid #f0f0f0';
@@ -35,7 +43,22 @@ toggleContainerButton.style.fontWeight = 'bold';
 toggleContainerButton.style.borderRadius = '8px';
 toggleContainerButton.style.cursor = 'pointer';
 toggleContainerButton.style.boxShadow = '0 6px 15px rgba(0, 0, 0, 0.3)';
-document.body.appendChild(toggleContainerButton);
+buttonGroup.appendChild(toggleContainerButton); // Add to buttonGroup
+
+// Add data button
+const addDataButton = document.createElement('button');
+addDataButton.id = 'add-data-button';
+addDataButton.textContent = 'Add data ➕';
+addDataButton.style.backgroundColor = '#e9e8e0';
+addDataButton.style.color = 'black';
+addDataButton.style.border = '2px solid #f0f0f0';
+addDataButton.style.padding = '3px 8px';
+addDataButton.style.fontSize = '12px';
+addDataButton.style.fontWeight = 'bold';
+addDataButton.style.borderRadius = '8px';
+addDataButton.style.cursor = 'pointer';
+addDataButton.style.boxShadow = '0 6px 15px rgba(0, 0, 0, 0.3)';
+buttonGroup.appendChild(addDataButton); // Add to buttonGroup
 
 const openableContainer = document.createElement('div');
 openableContainer.id = 'openable-container';
@@ -52,7 +75,6 @@ openableContainer.style.boxShadow = '0 6px 15px rgba(0, 0, 0, 0.3)';
 openableContainer.style.padding = '10px';
 openableContainer.style.width = '200px';
 openableContainer.style.textAlign = 'center';
-//openableContainer.textContent = 'This is an openable container!';  Remove this line
 document.body.appendChild(openableContainer);
 
 toggleContainerButton.addEventListener('click', () => {
@@ -63,6 +85,10 @@ toggleContainerButton.addEventListener('click', () => {
         openableContainer.style.display = 'none';
         toggleContainerButton.textContent = 'Find people 🔍';
     }
+});
+
+addDataButton.addEventListener('click', () => {
+    window.open('YOUR_GOOGLE_FORM_URL', '_blank'); // Replace with your form URL
 });
 
 // Function to add the list of locations to the openable container
@@ -170,6 +196,16 @@ stylePopup.innerHTML = `
   .hide-scrollbar::-webkit-scrollbar {
     display: none;
   }
+
+  #button-group {
+      position: fixed;
+      top: 50px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 10px;
+      z-index: 1000;
+  }
 `;
 
 // Append the style to the document
@@ -238,6 +274,7 @@ function createCustomMarker(imageUrl, color = '#9b4dca', isLocation = false) {
   markerDiv.style.borderRadius = '50%';
   markerDiv.style.border = `0.25em solid ${color}`;
   markerDiv.style.boxSizing = 'border-box';
+  markerDiv.style.overflow = 'hidden';
 
   const imageElement = document.createElement('img');
   imageElement.src = imageUrl;
