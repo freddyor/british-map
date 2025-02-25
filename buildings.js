@@ -818,7 +818,7 @@ export const buildings = [
   },
  {
     "name": "Victorian Masonic Lodge",
-    "coords": [-1.0837350458212902, 53.96139528212042],
+    "coords": [-1.0837350458212902, 53.9613925212342],
     "image": "images/masonichall.png",
     "description": "",
     "occupation": "1863",
@@ -829,7 +829,7 @@ export const buildings = [
   },
   {
     "name": "Boer War Memorial",
-    "coords": [-1.083711260281606, 53.961706893935734],
+    "coords": [-1.083717126021606, 53.961700693395734],
     "image": "images/boerwarmemorial.png",
     "description": "",
     "occupation": "1905",
@@ -841,7 +841,7 @@ export const buildings = [
   },
   {
     "name": "The Red House",
-    "coords": [-1.085078985835525, 53.96151492963061],
+    "coords": [-1.0850877895635525, 53.96151482928061],
     "image": "images/theredhouse.png",
     "description": "",
     "occupation": "1714",
@@ -852,7 +852,7 @@ export const buildings = [
   },
   {
     "name": "Dean Court Armorial Plaque",
-    "coords": [-1.0863029184687848, 53.96290930785174],
+    "coords": [-1.0839206184987948, 53.9620920783174],
     "image": "images/crosskeys.png",
     "description": "",
     "occupation": "1864",
@@ -863,7 +863,7 @@ export const buildings = [
   },
   {
     "name": "Kings Square",
-    "coords": [-1.080603334364728, 53.96000724821722],
+    "coords": [-1.0801333346364728, 53.96007249021722],
     "image": "images/kingssquare.png",
     "description": "",
     "occupation": "",
@@ -874,7 +874,7 @@ export const buildings = [
   },
   {
     "name": "St Andrews Church",
-    "coords": [-1.07833811617738115, 53.960886774895389],
+    "coords": [-1.0783811617738115, 53.96086734865589],
     "image": "images/standrewschurch.png",
     "description": "",
     "occupation": "11th CENTURY",
@@ -884,8 +884,8 @@ export const buildings = [
     ]
   },
   {
-    "name": "Collegiate Drill Hall",
-    "coords": [-1.07295251420336, 53.96038710557679],
+    "name": "Colliergiate Drill Hall",
+    "coords": [-1.0795023251420366, 53.96036710551679],
     "image": "images/colliergatedrillhall.png",
     "description": "",
     "occupation": "1872",
@@ -896,7 +896,7 @@ export const buildings = [
   },
   {
     "name": "The Bay Horse",
-    "coords": [-1.082373545836503, 53.954108365763683],
+    "coords": [-1.0932737545556503, 53.95418036576363],
     "image": "images/thebayhorse.png",
     "description": "",
     "occupation": "1644",
@@ -908,7 +908,7 @@ export const buildings = [
   },
   {
     "name": "The Windmill Inn",
-    "coords": [-1.0815208213902031, 53.95555644207015],
+    "coords": [-1.091528213902031, 53.95555842077015],
     "image": "images/thewindmillinn.png",
     "description": "",
     "occupation": "1644",
@@ -919,7 +919,7 @@ export const buildings = [
   },
    {
     "name": "49 Bootham",
-    "coords": [-1.0833520029008619, 53.96411757575337],
+    "coords": [-1.0873532002903619, 53.96411725759337],
     "image": "images/49bootham.png",
     "description": "",
     "occupation": "17th century",
@@ -930,7 +930,7 @@ export const buildings = [
   },
   {
     "name": "The Churchill Hotel, York",
-    "coords": [-1.08897352684095575, 53.965670561542666],
+    "coords": [-1.0897352684093575, 53.965679561540966],
     "image": "images/thechurchillhotel.png",
     "description": "",
     "occupation": "1827",
@@ -941,7 +941,7 @@ export const buildings = [
   },
   {
     "name": "Ingram House",
-    "coords": [-1.092073925379825, 53.96538478283576],
+    "coords": [-1.0902817392673825, 53.965384792879576],
     "image": "images/ingramhouse.png",
     "description": "",
     "occupation": "1640",
@@ -953,7 +953,7 @@ export const buildings = [
   },
   {
     "name": "Wandesford House",
-    "coords": [-1.0862328691738727, 53.963808611599372],
+    "coords": [-1.0866278691728737, 53.96388611595972],
     "image": "images/wandesfordhouse.png",
     "description": "",
     "occupation": "1743",
