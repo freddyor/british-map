@@ -972,5 +972,15 @@ export const locations = [
         "description": "She moved the estate to York, giving large donations to get closer to the religious sphere. The black golden iron pules outside the Minster were gifted by Mary (TBA: in her will she set up Wandesford house for women like her religious and unmarried) 🕯️"
       }
     ]
-  }
+  },
+{
+  coords: [ -1.0760945617966278, 53.95174477535229],
+  name: "The Beatles",
+  occupation: "1960-1970",
+  description: "",
+  image: "images/therialto.png", 
+  tldr: "This location was once home to The York Rialto. Before international stardom, the most iconic band of all time performed here 4 times in 1963 🎙️",
+  events: []
+}
+
 ];
