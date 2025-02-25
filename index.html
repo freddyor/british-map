@@ -66,6 +66,7 @@
             left: 50%;
             transform: translateX(-50%);
             padding: 5px;
+            box-sizing: border-box;
         }
 
         .support-button {
@@ -81,6 +82,7 @@
             cursor: pointer;
             border-radius: 4px;
             margin: 5px;
+            box-sizing: border-box;
         }
 
         .support-button:hover {
@@ -101,13 +103,23 @@
 
         .top-supporters ul {
             margin: 0;
-            padding-left: 20px;
+            padding-left: 0;
             list-style-type: none;
+        }
+
+        .top-supporters li {
+            margin-bottom: 10px;
         }
 
         .donation-amount {
             color: #9b4dca;
             font-weight: bold;
+        }
+
+        .donation-comment {
+            font-size: 12px;
+            color: #666;
+            margin-top: 2px;
         }
 
         .project-info {
@@ -158,9 +170,18 @@
             <div class="top-supporters">
                 <h4>Top Supporters:</h4>
                 <ul>
-                    <li>John Doe <span class="donation-amount">£5</span></li>
-                    <li>Jane Smith <span class="donation-amount">£5</span></li>
-                    <li>Bob Johnson <span class="donation-amount">£5</span></li>
+                    <li>
+                        John Doe <span class="donation-amount">£5</span>
+                        <div class="donation-comment">Great project, keep it up!</div>
+                    </li>
+                    <li>
+                        Jane Smith <span class="donation-amount">£5</span>
+                        <div class="donation-comment">Love using this map, thanks!</div>
+                    </li>
+                    <li>
+                        Bob Johnson <span class="donation-amount">£5</span>
+                        <div class="donation-comment">Happy to support this initiative.</div>
+                    </li>
                 </ul>
             </div>
         </div>
