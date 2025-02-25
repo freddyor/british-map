@@ -97,7 +97,7 @@ function addLocationsList() {
         listItem.addEventListener('click', () => {
             map.flyTo({
                 center: location.coords,
-                zoom: 15
+                zoom: 5
             });
              openableContainer.style.display = 'none';
         });
