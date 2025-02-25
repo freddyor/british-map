@@ -70,14 +70,24 @@ toggleContainerButton.addEventListener('click', () => {
 });
 
 // Add data button functionality - POPUP
-addDataButton.addEventListener('click', () => {
+addDataButton.addEventListener('click', (event) => {
+    event.stopPropagation(); // Prevent this click from immediately closing the popup
+
+    // Remove existing popup if it's already open
+    const existingPopup = document.getElementById('add-data-popup');
+    if (existingPopup) {
+        existingPopup.remove();
+    }
+
     const popupContainer = document.createElement('div');
+    popupContainer.id = 'add-data-popup';
     popupContainer.className = 'dropdown-content';
     popupContainer.style.display = 'block';
-    popupContainer.style.position = 'fixed';
-    popupContainer.style.top = '50%';
+    popupContainer.style.position = 'absolute';
+    popupContainer.style.bottom = '100%'; // Position above the button
     popupContainer.style.left = '50%';
-    popupContainer.style.transform = 'translate(-50%, -50%)';
+    popupContainer.style.transform = 'translateX(-50%)';
+    popupContainer.style.marginBottom = '10px'; // Add some space between button and popup
     popupContainer.style.zIndex = '1002';
 
     const formButton = document.createElement('a');
@@ -105,16 +115,16 @@ addDataButton.addEventListener('click', () => {
     `;
     popupContainer.appendChild(topContributorsDiv);
 
-    const closeButton = document.createElement('button');
-    closeButton.className = 'custom-button';
-    closeButton.textContent = 'Close';
-    closeButton.style.marginTop = '10px';
-    closeButton.addEventListener('click', () => {
-        document.body.removeChild(popupContainer);
-    });
-    popupContainer.appendChild(closeButton);
+    // Append the popup to the button's parent (buttonGroup)
+    buttonGroup.appendChild(popupContainer);
 
-    document.body.appendChild(popupContainer);
+    // Close the popup when clicking outside of it
+    document.addEventListener('click', function closePopup(e) {
+        if (popupContainer && !popupContainer.contains(e.target) && e.target !== addDataButton) {
+            popupContainer.remove();
+            document.removeEventListener('click', closePopup);
+        }
+    });
 });
 
 // Function to add the list of locations to the openable container
