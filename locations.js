@@ -87,7 +87,7 @@ export const locations = [
     ]
   },
   {
-    coords: [ -1.0878828, 53.9642257 ], 
+    coords: [ -1.0878911010154835, 53.9643879596796 ], 
     name: "W.H. Auden", 
     occupation: "1907-1973", 
     description: "W.H.Auden was born and lived his initial years at this location",
