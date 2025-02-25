@@ -200,9 +200,24 @@
         <button id="find-people-button" class="custom-button">
             Find People 🔍
         </button>
-        <button id="add-data-button" class="custom-button">
-            Add data ➕
-        </button>
+        <div class="dropdown" id="add-data-dropdown">
+            <button id="add-data-button" class="custom-button">
+                Add data ➕
+            </button>
+            <div class="dropdown-content">
+                <a href="https://forms.gle/1gS4BZhRk3fRjhjMA" class="support-button" target="_blank">
+                    <span>Add data</span>
+                </a>
+                <div class="top-supporters">
+                    <h4>Top Contributors:</h4>
+                    <ul>
+                        <li>
+                            buffsteve24 <span class="contribution-count">5</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </div>
 
     <script>
@@ -214,7 +229,8 @@
 
         document.getElementById('add-data-button').addEventListener('click', function(e) {
             e.preventDefault();
-            window.open('https://forms.gle/1gS4BZhRk3fRjhjMA', '_blank');
+            var dropdownContent = this.nextElementSibling;
+            dropdownContent.style.display = dropdownContent.style.display === 'block' ? 'none' : 'block';
         });
 
         // Close the dropdowns if the user clicks outside of them
