@@ -23,6 +23,19 @@ export const buildings = [
       { date: "TURPIN", description: "The infamous highwayman Dick Turpin was held here before his execution, a key event in local lore." }
     ]
   },
+
+    {
+    name: "York Dispensary",
+    coords: [-1.0846377100592663, 53.961304511725615],
+    image: "images/yorkdispensary.png",
+    description: "",
+    occupation: "1899",
+    tldr: "Built originally for The York Dispensary, who provided treatment to the poor and needed larger premises.",
+    events: [
+      { date: "1948", description: "The dispensary closed following the creation of the National Health Service 👨‍⚕️" },
+      { date: "GRAY'S", description: "Iconic local business Gray’s Solicitors, who occupied the next-door building, moved in here too. Incredibly, they have worked with one client continuously since 1699 🕰️" }
+    ]
+  },
 {
     name: "Clifford's Tower",
     coords: [-1.07983518896210381, 53.955735358823574],
