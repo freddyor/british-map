@@ -14,8 +14,8 @@ var map = new mapboxgl.Map({
 
 map.on('load', () => {
   addBuildingMarkers();
-  addLocationsList(); // Add this line to create the list when the map loads
-  geolocate.trigger(); // Trigger geolocation on map load
+  addLocationsList();
+  geolocate.trigger();
 });
 
 // Container for both buttons
@@ -23,11 +23,11 @@ const buttonGroup = document.createElement('div');
 buttonGroup.id = 'button-group';
 buttonGroup.style.position = 'fixed';
 buttonGroup.style.left = '50%';
-buttonGroup.style.top = '50px';
+buttonGroup.style.bottom = '10px';
 buttonGroup.style.transform = 'translateX(-50%)';
 buttonGroup.style.zIndex = '1000';
-buttonGroup.style.display = 'flex'; // Use flex to arrange buttons horizontally
-buttonGroup.style.gap = '10px'; // Space between the buttons
+buttonGroup.style.display = 'flex';
+buttonGroup.style.gap = '10px';
 document.body.appendChild(buttonGroup);
 
 // Find People button
@@ -35,21 +35,21 @@ const toggleContainerButton = document.createElement('button');
 toggleContainerButton.id = 'toggle-container-button';
 toggleContainerButton.textContent = 'Find people 🔍';
 toggleContainerButton.className = 'custom-button';
-buttonGroup.appendChild(toggleContainerButton); // Add to buttonGroup
+buttonGroup.appendChild(toggleContainerButton);
 
 // Add data button
 const addDataButton = document.createElement('button');
 addDataButton.id = 'add-data-button';
 addDataButton.textContent = 'Add data ➕';
 addDataButton.className = 'custom-button';
-buttonGroup.appendChild(addDataButton); // Add to buttonGroup
+buttonGroup.appendChild(addDataButton);
 
 const openableContainer = document.createElement('div');
 openableContainer.id = 'openable-container';
 openableContainer.style.display = 'none';
 openableContainer.style.position = 'fixed';
 openableContainer.style.left = '50%';
-openableContainer.style.top = '80px';
+openableContainer.style.bottom = '60px';
 openableContainer.style.transform = 'translateX(-50%)';
 openableContainer.style.zIndex = '999';
 openableContainer.style.backgroundColor = '#fff';
@@ -59,75 +59,61 @@ openableContainer.style.boxShadow = '0 6px 15px rgba(0, 0, 0, 0.3)';
 openableContainer.style.padding = '10px';
 openableContainer.style.width = '200px';
 openableContainer.style.textAlign = 'center';
-//openableContainer.textContent = 'This is an openable container!';  Remove this line
 document.body.appendChild(openableContainer);
 
 toggleContainerButton.addEventListener('click', () => {
     if (openableContainer.style.display === 'none' || openableContainer.style.display === '') {
         openableContainer.style.display = 'block';
-        toggleContainerButton.textContent = 'Find people 🔍';
     } else {
         openableContainer.style.display = 'none';
-        toggleContainerButton.textContent = 'Find people 🔍';
     }
 });
 
 // Add data button functionality - POPUP
 addDataButton.addEventListener('click', () => {
-    // Create a new popup div
     const popupContainer = document.createElement('div');
+    popupContainer.className = 'dropdown-content';
+    popupContainer.style.display = 'block';
     popupContainer.style.position = 'fixed';
     popupContainer.style.top = '50%';
     popupContainer.style.left = '50%';
     popupContainer.style.transform = 'translate(-50%, -50%)';
-    popupContainer.style.backgroundColor = '#fff';
-    popupContainer.style.border = '2px solid #f0f0f0';
-    popupContainer.style.borderRadius = '8px';
-    popupContainer.style.boxShadow = '0 6px 15px rgba(0, 0, 0, 0.3)';
-    popupContainer.style.padding = '20px';
-    popupContainer.style.zIndex = '1001'; // Ensure it's on top of other elements
-    popupContainer.style.textAlign = 'center';
+    popupContainer.style.zIndex = '1002';
 
-    // Create the form button
-    const formButton = document.createElement('button');
-    formButton.textContent = 'Contribute Data';
-    formButton.className = 'custom-button';  // Use your existing button style
-    formButton.style.marginBottom = '10px';
-    formButton.addEventListener('click', () => {
-        window.open('https://forms.gle/1gS4BZhRk3fRjhjMA', '_blank');
-    });
+    const formButton = document.createElement('a');
+    formButton.href = 'https://forms.gle/1gS4BZhRk3fRjhjMA';
+    formButton.className = 'support-button';
+    formButton.target = '_blank';
+    formButton.innerHTML = '<span>Contribute Data</span>';
     popupContainer.appendChild(formButton);
 
-    // Create the "Top Contributors" heading
-    const contributorsHeading = document.createElement('h3');
-    contributorsHeading.textContent = 'Top Contributors';
-    contributorsHeading.style.marginBottom = '10px';
-    popupContainer.appendChild(contributorsHeading);
+    const topContributorsDiv = document.createElement('div');
+    topContributorsDiv.className = 'top-supporters';
+    topContributorsDiv.innerHTML = `
+        <h4>Top Contributors:</h4>
+        <ul>
+            <li>
+                Alice Smith <span class="contribution-count">5 contributions</span>
+            </li>
+            <li>
+                Bob Johnson <span class="contribution-count">3 contributions</span>
+            </li>
+            <li>
+                Charlie Brown <span class="contribution-count">2 contributions</span>
+            </li>
+        </ul>
+    `;
+    popupContainer.appendChild(topContributorsDiv);
 
-    // Create the list of top contributors
-    const topContributorsList = document.createElement('ul');
-    topContributorsList.style.listStyleType = 'none';
-    topContributorsList.style.padding = '0';
-
-    const contributors = ['Alice Smith', 'Bob Johnson', 'Charlie Brown']; // Replace with your actual data
-    contributors.forEach(contributor => {
-        const listItem = document.createElement('li');
-        listItem.textContent = contributor;
-        topContributorsList.appendChild(listItem);
-    });
-    popupContainer.appendChild(topContributorsList);
-
-    // Create a close button
     const closeButton = document.createElement('button');
-    closeButton.textContent = 'Close';
     closeButton.className = 'custom-button';
+    closeButton.textContent = 'Close';
     closeButton.style.marginTop = '10px';
     closeButton.addEventListener('click', () => {
         document.body.removeChild(popupContainer);
     });
     popupContainer.appendChild(closeButton);
 
-    // Add the popup to the body
     document.body.appendChild(popupContainer);
 });
 
@@ -140,7 +126,6 @@ function addLocationsList() {
     list.style.fontSize = '12px';
     list.style.lineHeight = '0.25';
 
-    // Sort locations alphabetically by name
     const sortedLocations = [...locations].sort((a, b) => a.name.localeCompare(b.name));
 
     sortedLocations.forEach(location => {
@@ -152,7 +137,7 @@ function addLocationsList() {
         listItem.addEventListener('click', () => {
             map.flyTo({
                 center: location.coords,
-                zoom: 20
+                zoom: 5
             });
              openableContainer.style.display = 'none';
         });
@@ -162,110 +147,12 @@ function addLocationsList() {
     openableContainer.innerHTML = '';
     openableContainer.style.maxHeight = '150px';
     openableContainer.style.overflowY = 'scroll';
-    openableContainer.style.scrollbarWidth = 'none'; // Hide scrollbar for Firefox
-    openableContainer.style.msOverflowStyle = 'none';  // Hide scrollbar for IE and Edge
+    openableContainer.style.scrollbarWidth = 'none';
+    openableContainer.style.msOverflowStyle = 'none';
     openableContainer.appendChild(list);
 
-    // Hide scrollbar for Chrome, Safari and Opera
     openableContainer.classList.add('hide-scrollbar');
 }
-
-// Create a <style> element to add the CSS
-const stylePopup = document.createElement('style');
-
-// Add the link to Google Fonts for Poppins
-const link = document.createElement('link');
-link.href = "https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap";
-link.rel = "stylesheet";
-document.head.appendChild(link);
-
-// Style for the popup and markers
-stylePopup.innerHTML = `
-  .mapboxgl-popup-content {
-    border-radius: 12px !important;
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3) !important;
-    padding: 10px !important;
-    font-family: 'Poppins', sans-serif !important;
-    background: #E9E8E0;
-    border: 2px solid #f0f0f0 !important;
-    line-height: 1.05;
-    padding-top: 0 !important;
-    padding-bottom: 0 !important;
-    margin-left: 3px;
-    margin-right: 5px;
-  }
-
-  .mapboxgl-popup-content img {
-    border: 2px solid #f0f0f0 !important;
-    border-radius: 8px;
-  }
-
-  .mapboxgl-popup-content p {
-    font-weight: bold !important;
-    text-align: center;
-    letter-spacing: -0.5px;
-    font-size: 13px !important;
-    margin-bottom: 10px !important;
-  }
-
-  .mapboxgl-popup-close-button {
-    display: none !important;
-  }
-
-  .user-location-marker {
-    width: 20px;
-    height: 20px;
-    background-color: white;
-    border: 3px solid #87CEFA;
-    border-radius: 100%;
-    position: relative;
-  }
-
-  .location-marker {
-    z-index: 2;
-  }
-
-  .building-marker {
-    z-index: 1;
-  }
-
-  .mapboxgl-popup {
-    z-index: 9999 !important;
-  }
-
-  .hide-scrollbar::-webkit-scrollbar {
-    display: none;
-  }
-
-  .custom-button {
-    background-color: #e9e8e0;
-    color: black;
-    border: 2px solid #f0f0f0;
-    padding: 3px 8px;
-    font-size: 12px;
-    font-weight: bold;
-    border-radius: 8px;
-    cursor: pointer;
-    text-decoration: none;
-    display: inline-block;
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
-    white-space: nowrap;
-    text-align: center;
-  }
-
-  #button-group {
-    position: fixed;
-    top: 50px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    gap: 10px;
-    z-index: 1000;
-  }
-`;
-
-// Append the style to the document
-document.head.appendChild(stylePopup);
 
 // Geolocation control
 const geolocate = new mapboxgl.GeolocateControl({
@@ -278,7 +165,7 @@ const geolocate = new mapboxgl.GeolocateControl({
   fitBoundsOptions: {
     maxZoom: 5
   },
-  showUserLocation: false // Disable the default blue dot
+  showUserLocation: false
 });
 
 map.addControl(geolocate);
@@ -301,14 +188,13 @@ textEl.textContent = 'me';
 userLocationEl.appendChild(textEl);
 
 const userLocationMarker = new mapboxgl.Marker({element: userLocationEl})
-  .setLngLat([0, 0]) // Set initial coordinates, will be updated later
+  .setLngLat([0, 0])
   .addTo(map);
 
 geolocate.on('error', (e) => {
   if (e.code === 1) {
     console.log('Location access denied by user');
-    // You can update UI or take other actions here
-  }// Prevent the default error pop-up
+  }
 });
 
 geolocate.on('geolocate', (e) => {
@@ -317,7 +203,6 @@ geolocate.on('geolocate', (e) => {
   const position = [lon, lat];
   console.log(position);
 
-  // Update the user location marker position
   userLocationMarker.setLngLat(position);
 });
 
