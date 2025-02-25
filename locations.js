@@ -872,7 +872,7 @@ export const locations = [
     ]
   },
 {
-    "coords": [-1.014971212740215, 53.96150423944602],
+    "coords": [-1.0849712112742305, 53.96150423948602],
     "name": "Sir William Robinson",
     "occupation": "1655-1736",
     "description": "This was the house of Sir William Robinson",
@@ -886,7 +886,7 @@ export const locations = [
     ]
   },
   {
-    "coords": [-1.0373388980007222, 53.964360696921295],
+    "coords": [-1.087373638880722, 53.96436886923295],
     "name": "John Bright",
     "occupation": "1811-1889",
     "description": "John Bright studied here, it is now called John Bright Library",
@@ -912,7 +912,7 @@ export const locations = [
     ]
   },
   {
-    "coords": [-1.027728704810808, 53.964237359986546],
+    "coords": [-1.0877264871048808, 53.964273659986546],
     "name": "Lord Philip Noel-Baker",
     "occupation": "1889-1982",
     "description": "Lord Philip Noel-Baker studied here",
@@ -934,7 +934,7 @@ export const locations = [
     ]
   },
   {
-    "coords": [-1.08760310549019501, 53.964190930373025],
+    "coords": [-1.0876031054901958, 53.964190030373025],
     "name": "Lord Stuart Rose",
     "occupation": "1949-",
     "description": "Lord Stuart Rose studied here",
@@ -956,7 +956,7 @@ export const locations = [
     ]
   },
   {
-    "coords": [-1.00672050733176, 53.96308788501176],
+    "coords": [-1.08672850733176, 53.96380196501176],
     "name": "Mary Wandesford",
     "occupation": "1655-1726",
     "description": "Mary Wandesford devoted this building in her will",
