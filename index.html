@@ -21,7 +21,7 @@
             padding: 0;
             width: 100%;
             height: 100%;
-            font-family: 'Poppins', sans-serif; /* Set default font for body */
+            font-family: 'Poppins', sans-serif;
         }
 
         #map {
@@ -34,22 +34,22 @@
             left: 50%;
             top: 10px;
             transform: translateX(-50%);
-            z-index: 1000;
+            z-index: 1001; /* Increased z-index to be above other elements */
         }
 
         #custom-bmc-button {
-            background-color: #e9e8e0; /* Updated background color */
+            background-color: #e9e8e0;
             color: black;
-            border: 2px solid #f0f0f0; /* Added border */
-            padding: 3px 8px; /* Reduced padding for less space around text */
+            border: 2px solid #f0f0f0;
+            padding: 3px 8px;
             font-size: 12px;
-            font-weight: bold; /* Make the text bold */
+            font-weight: bold;
             border-radius: 8px;
             cursor: pointer;
             text-decoration: none;
             display: inline-block;
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); /* Added box shadow */
-            white-space: nowrap; /* Prevents text from wrapping to a new line */
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+            white-space: nowrap;
             text-align: center;
         }
 
@@ -59,9 +59,12 @@
             background-color: #f9f9f9;
             min-width: 160px;
             box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-            z-index: 1;
+            z-index: 1002; /* Ensure this is above other elements */
             border-radius: 8px;
             overflow: hidden;
+            top: 100%; /* Position below the button */
+            left: 50%;
+            transform: translateX(-50%);
         }
 
         .dropdown-content a {
@@ -73,10 +76,6 @@
 
         .dropdown-content a:hover {
             background-color: #f1f1f1;
-        }
-
-        .dropdown:hover .dropdown-content {
-            display: block;
         }
 
         .top-donors {
@@ -94,15 +93,15 @@
 
         @media (max-width: 750px) {
             #custom-bmc-button {
-                font-size: 14px; /* Slightly larger font for mobile */
-                padding: 4px 10px; /* Adjusted padding for mobile devices */
+                font-size: 14px;
+                padding: 4px 10px;
             }
         }
 
         @media (max-width: 400px) {
             #custom-bmc-button {
-                font-size: 12px; /* Smaller font size for very small screens */
-                padding: 2px 6px; /* Reduced padding for very small screens */
+                font-size: 12px;
+                padding: 2px 6px;
             }
         }
 
@@ -110,8 +109,8 @@
             #custom-bmc-button {
                 background-color: #000000;
                 color: #FFFFFF;
-                border-color: #FFFFFF; /* Change border color in high contrast mode */
-                box-shadow: none; /* Remove shadow in high contrast mode for better visibility */
+                border-color: #FFFFFF;
+                box-shadow: none;
             }
         }
     </style>
@@ -140,8 +139,22 @@
     <script>
         document.getElementById('custom-bmc-button').addEventListener('click', function(e) {
             e.preventDefault();
-            this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'block' ? 'none' : 'block';
+            var dropdownContent = this.nextElementSibling;
+            dropdownContent.style.display = dropdownContent.style.display === 'block' ? 'none' : 'block';
         });
+
+        // Close the dropdown if the user clicks outside of it
+        window.onclick = function(event) {
+            if (!event.target.matches('#custom-bmc-button')) {
+                var dropdowns = document.getElementsByClassName("dropdown-content");
+                for (var i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.style.display === 'block') {
+                        openDropdown.style.display = 'none';
+                    }
+                }
+            }
+        }
     </script>
 
     <script src="index.js" type="module" defer></script>
