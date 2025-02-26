@@ -80,11 +80,6 @@
             box-sizing: border-box;
         }
 
-        .dropdown-content * {
-            font-size: 12px;
-            font-weight: bold;
-        }
-
         .support-button {
             display: flex;
             justify-content: center;
@@ -150,6 +145,28 @@
             line-height: 1.2;
         }
 
+        #form-container {
+            display: none;
+            position: fixed;
+            left: 50%;
+            bottom: 60px;
+            transform: translateX(-50%);
+            width: 90%;
+            max-width: 600px;
+            background-color: #e9e8e0;
+            border: 2px solid #f0f0f0;
+            border-radius: 8px;
+            padding: 10px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+        }
+
+        #form-container iframe {
+            width: 100%;
+            height: 500px;
+            border: none;
+        }
+
         @media (max-width: 750px) {
             .custom-button {
                 font-size: 14px;
@@ -201,39 +218,64 @@
         </div>
     </div>
 
+    <div class="button-group">
+        <button id="add-data-button" class="custom-button">Add data ➕</button>
+        <div id="form-container"></div>
+    </div>
+
     <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const button = document.getElementById('custom-bmc-button');
-        const dropdownContent = button.nextElementSibling;
+        document.addEventListener('DOMContentLoaded', function() {
+            const button = document.getElementById('custom-bmc-button');
+            const dropdownContent = button.nextElementSibling;
 
-        function setDropdownWidth() {
-            if (dropdownContent) {
-                dropdownContent.style.width = `${button.offsetWidth}px`;
-                dropdownContent.style.left = '50%';
-                dropdownContent.style.transform = 'translateX(-50%)';
-            }
-        }
-
-        button.addEventListener('click', function(e) {
-            e.preventDefault();
-            dropdownContent.style.display = dropdownContent.style.display === 'block' ? 'none' : 'block';
-            setDropdownWidth();
-        });
-
-        window.addEventListener('resize', setDropdownWidth);
-
-        // Close the dropdown if the user clicks outside of it
-        window.onclick = function(event) {
-            if (!event.target.matches('.custom-button')) {
-                if (dropdownContent.style.display === 'block') {
-                    dropdownContent.style.display = 'none';
+            function setDropdownWidth() {
+                if (dropdownContent) {
+                    dropdownContent.style.width = `${button.offsetWidth}px`;
+                    dropdownContent.style.left = '50%';
+                    dropdownContent.style.transform = 'translateX(-50%)';
                 }
             }
-        }
 
-        // Initial set of dropdown width
-        setDropdownWidth();
-    });
+            button.addEventListener('click', function(e) {
+                e.preventDefault();
+                dropdownContent.style.display = dropdownContent.style.display === 'block' ? 'none' : 'block';
+                setDropdownWidth();
+            });
+
+            window.addEventListener('resize', setDropdownWidth);
+
+            // Close the dropdown if the user clicks outside of it
+            window.onclick = function(event) {
+                if (!event.target.matches('.custom-button')) {
+                    if (dropdownContent.style.display === 'block') {
+                        dropdownContent.style.display = 'none';
+                    }
+                    var formContainer = document.getElementById('form-container');
+                    if (formContainer.style.display === 'block') {
+                        formContainer.style.display = 'none';
+                        formContainer.innerHTML = '';
+                        document.getElementById('add-data-button').textContent = 'Add data ➕';
+                    }
+                }
+            }
+
+            // Initial set of dropdown width
+            setDropdownWidth();
+
+            document.getElementById('add-data-button').addEventListener('click', function(e) {
+                e.preventDefault();
+                var formContainer = document.getElementById('form-container');
+                if (formContainer.style.display === 'none' || formContainer.style.display === '') {
+                    formContainer.style.display = 'block';
+                    formContainer.innerHTML = '<iframe src="https://docs.google.com/forms/d/e/1TcYK1nTioHdXbCyB8x3CESNiMPwhbekNedPIDTajFnk/viewform?embedded=true" width="100%" height="500" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>';
+                    this.textContent = 'Hide form ➖';
+                } else {
+                    formContainer.style.display = 'none';
+                    formContainer.innerHTML = '';
+                    this.textContent = 'Add data ➕';
+                }
+            });
+        });
     </script>
 
     <script src="index.js" type="module" defer></script>
