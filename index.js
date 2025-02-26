@@ -1,5 +1,5 @@
-import firebase from 'firebase/app';
-import 'firebase/database';
+import { buildings } from './buildings.js';
+import { locations } from './locations.js';
 
 // Firebase configuration
 const firebaseConfig = {
@@ -16,49 +16,22 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 const database = firebase.database();
 
-mapboxgl.accessToken = 'YOUR_MAPBOX_ACCESS_TOKEN'; // Replace with your Mapbox token
+mapboxgl.accessToken = 'pk.eyJ1IjoiZnJlZGRvbWF0ZSIsImEiOiJjbTc1bm5zYnQwaG1mMmtxeDdteXNmeXZ0In0.PuDNORq4qExIJ_fErdO_8g';
 
 var map = new mapboxgl.Map({
     container: 'map',
-    style: 'mapbox://styles/mapbox/streets-v12',
+    style: 'mapbox://styles/freddomate/cm785h0qv00cf01r0e8xxaxbc',
     center: [-1.0820, 53.9623],
     zoom: 15,
     pitch: 45,
     bearing: -17.6
 });
 
-// Sample data for locations and buildings
-const locations = [
-    {
-        name: 'York Minster',
-        description: 'A beautiful cathedral',
-        image: 'https://example.com/yorkminster.jpg',
-        coords: [-1.0820, 53.9623],
-        occupation: 'Historic Site',
-        tldr: 'A must-visit in York',
-        events: [
-            { date: '2023-01-01', description: 'New Year\'s Eve' }
-        ]
-    }
-];
-
-const buildings = [
-    {
-        name: 'The Shambles',
-        description: 'Historic street',
-        image: 'https://example.com/shambles.jpg',
-        coords: [-1.0800, 53.9600],
-        occupation: 'Shopping Street',
-        tldr: 'Famous for its timber-framed buildings',
-        events: []
-    }
-];
-
 map.on('load', () => {
     addBuildingMarkers();
-    addLocationsList();
-    loadMarkersFromFirebase();
-    geolocate.trigger();
+    addLocationsList(); // Add this line to create the list when the map loads
+    loadMarkersFromFirebase(); // Load markers from Firebase on map load
+    geolocate.trigger(); // Trigger geolocation on map load
 });
 
 // Load markers from Firebase
@@ -66,6 +39,14 @@ function loadMarkersFromFirebase() {
     database.ref('markers').on('value', (snapshot) => {
         const markers = snapshot.val();
         if (markers) {
+            // Clear existing markers
+            Object.keys(markers).forEach(key => {
+                if (map.getLayer(key)) {
+                    map.removeLayer(key);
+                    map.removeSource(key);
+                }
+            });
+
             Object.entries(markers).forEach(([key, markerData]) => {
                 addMarkerToMap(markerData.title, markerData.lat, markerData.lng, key);
             });
@@ -81,7 +62,7 @@ function addMarkerToMap(title, lat, lng, markerId) {
         .addTo(map);
 }
 
-// Container for buttons
+// Container for both buttons
 const buttonGroup = document.createElement('div');
 buttonGroup.id = 'button-group';
 buttonGroup.style.position = 'fixed';
@@ -89,23 +70,23 @@ buttonGroup.style.left = '50%';
 buttonGroup.style.top = '50px';
 buttonGroup.style.transform = 'translateX(-50%)';
 buttonGroup.style.zIndex = '1000';
-buttonGroup.style.display = 'flex';
-buttonGroup.style.gap = '10px';
+buttonGroup.style.display = 'flex'; // Use flex to arrange buttons horizontally
+buttonGroup.style.gap = '10px'; // Space between the buttons
 document.body.appendChild(buttonGroup);
 
 // Find People button
 const toggleContainerButton = document.createElement('button');
 toggleContainerButton.id = 'toggle-container-button';
-toggleContainerButton.textContent = 'Find people ';
+toggleContainerButton.textContent = 'Find people 🔍';
 toggleContainerButton.className = 'custom-button';
-buttonGroup.appendChild(toggleContainerButton);
+buttonGroup.appendChild(toggleContainerButton); // Add to buttonGroup
 
 // Add data button
 const addDataButton = document.createElement('button');
 addDataButton.id = 'add-data-button';
-addDataButton.textContent = 'Add data ';
+addDataButton.textContent = 'Add data ➕';
 addDataButton.className = 'custom-button';
-buttonGroup.appendChild(addDataButton);
+buttonGroup.appendChild(addDataButton); // Add to buttonGroup
 
 const openableContainer = document.createElement('div');
 openableContainer.id = 'openable-container';
@@ -122,13 +103,16 @@ openableContainer.style.boxShadow = '0 6px 15px rgba(0, 0, 0, 0.3)';
 openableContainer.style.padding = '10px';
 openableContainer.style.width = '200px';
 openableContainer.style.textAlign = 'center';
+//openableContainer.textContent = 'This is an openable container!';  Remove this line
 document.body.appendChild(openableContainer);
 
 toggleContainerButton.addEventListener('click', () => {
     if (openableContainer.style.display === 'none' || openableContainer.style.display === '') {
         openableContainer.style.display = 'block';
+        toggleContainerButton.textContent = 'Find people 🔍';
     } else {
         openableContainer.style.display = 'none';
+        toggleContainerButton.textContent = 'Find people 🔍';
     }
 });
 
@@ -145,6 +129,7 @@ function addLocationsList() {
     list.style.fontSize = '12px';
     list.style.lineHeight = '0.25';
 
+    // Sort locations alphabetically by name
     const sortedLocations = [...locations].sort((a, b) => a.name.localeCompare(b.name));
 
     sortedLocations.forEach(location => {
@@ -166,13 +151,24 @@ function addLocationsList() {
     openableContainer.innerHTML = '';
     openableContainer.style.maxHeight = '150px';
     openableContainer.style.overflowY = 'scroll';
-    openableContainer.style.scrollbarWidth = 'none';
-    openableContainer.style.msOverflowStyle = 'none';
+    openableContainer.style.scrollbarWidth = 'none'; // Hide scrollbar for Firefox
+    openableContainer.style.msOverflowStyle = 'none';  // Hide scrollbar for IE and Edge
     openableContainer.appendChild(list);
+
+    // Hide scrollbar for Chrome, Safari and Opera
+    openableContainer.classList.add('hide-scrollbar');
 }
 
-// Style for the popup and markers
+// Create a <style> element to add the CSS
 const stylePopup = document.createElement('style');
+
+// Add the link to Google Fonts for Poppins
+const link = document.createElement('link');
+link.href = "https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap";
+link.rel = "stylesheet";
+document.head.appendChild(link);
+
+// Style for the popup and markers
 stylePopup.innerHTML = `
   .mapboxgl-popup-content {
     border-radius: 12px !important;
@@ -257,6 +253,7 @@ stylePopup.innerHTML = `
   }
 `;
 
+// Append the style to the document
 document.head.appendChild(stylePopup);
 
 // Geolocation control
@@ -270,11 +267,12 @@ const geolocate = new mapboxgl.GeolocateControl({
     fitBoundsOptions: {
         maxZoom: 5
     },
-    showUserLocation: false
+    showUserLocation: false // Disable the default blue dot
 });
 
 map.addControl(geolocate);
 
+// Create a single marker for user location
 const userLocationEl = document.createElement('div');
 userLocationEl.className = 'user-location-marker';
 
@@ -292,20 +290,23 @@ textEl.textContent = 'me';
 userLocationEl.appendChild(textEl);
 
 const userLocationMarker = new mapboxgl.Marker({ element: userLocationEl })
-    .setLngLat([0, 0])
+    .setLngLat([0, 0]) // Set initial coordinates, will be updated later
     .addTo(map);
 
 geolocate.on('error', (e) => {
     if (e.code === 1) {
         console.log('Location access denied by user');
-    }
+        // You can update UI or take other actions here
+    }// Prevent the default error pop-up
 });
 
 geolocate.on('geolocate', (e) => {
     const lon = e.coords.longitude;
     const lat = e.coords.latitude;
     const position = [lon, lat];
+    console.log(position);
 
+    // Update the user location marker position
     userLocationMarker.setLngLat(position);
 });
 
@@ -336,7 +337,7 @@ function createCustomMarker(imageUrl, color = '#9b4dca', isLocation = false) {
 }
 
 locations.forEach(location => {
-    const { element: markerElement } = createCustomMarker(location.image, '#9B4DCA', true);
+    const { element: markerElement, id } = createCustomMarker(location.image, '#9B4DCA', true);
     markerElement.className += ' location-marker';
     const marker = new mapboxgl.Marker({
         element: markerElement
@@ -380,7 +381,7 @@ locations.forEach(location => {
 
 function addBuildingMarkers() {
     buildings.forEach(building => {
-        const { element: markerElement } = createCustomMarker(building.image, '#E9E8E0', false);
+        const { element: markerElement, id } = createCustomMarker(building.image, '#E9E8E0', false);
         markerElement.className += ' building-marker';
         const marker = new mapboxgl.Marker({
             element: markerElement
@@ -424,15 +425,15 @@ function addBuildingMarkers() {
 }
 
 // Add marker function
-document.getElementById('markerForm').addEventListener('submit', function(e) {
+document.getElementById('addMarkerBtn').addEventListener('click', function (e) {
     e.preventDefault();
     const title = document.getElementById('markerTitle').value;
     const lat = parseFloat(document.getElementById('markerLat').value);
     const lng = parseFloat(document.getElementById('markerLng').value);
-  
+
     if (title && !isNaN(lat) && !isNaN(lng)) {
         addMarkerToFirebase(title, lat, lng);
-        this.reset();
+        document.getElementById('markerForm').reset();
     }
 });
 
@@ -442,18 +443,5 @@ function addMarkerToFirebase(title, lat, lng) {
         title: title,
         lat: lat,
         lng: lng
-    }).then(() => {
-        console.log('Marker added successfully');
-        addMarkerToMap(title, lat, lng);
-    }).catch((error) => {
-        console.error('Error adding marker: ', error);
     });
-}
-
-// Function to add a marker to the map
-function addMarkerToMap(title, lat, lng) {
-    new mapboxgl.Marker()
-        .setLngLat([lng, lat])
-        .setPopup(new mapboxgl.Popup().setHTML(`<h3>${title}</h3>`))
-        .addTo(map);
 }
