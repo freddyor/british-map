@@ -1,31 +1,5 @@
-import { initializeApp } from "firebase/app";
-import { getFirestore, collection, addDoc, getDocs } from "firebase/firestore";
 import { buildings } from './buildings.js';
 import { locations } from './locations.js';
-
-// Your Firebase configuration
-const firebaseConfig = {
-
-  apiKey: "AIzaSyDjv5uUNOx86FvYsXdKSMkl8vui2Jynt7M",
-
-  authDomain: "britmap-64cb3.firebaseapp.com",
-
-  projectId: "britmap-64cb3",
-
-  storageBucket: "britmap-64cb3.firebasestorage.app",
-
-  messagingSenderId: "821384262397",
-
-  appId: "1:821384262397:web:ca81d64ab6a8dea562c494",
-
-  measurementId: "G-03E2BB7BQH"
-
-};
-
-
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);
 
 mapboxgl.accessToken = 'pk.eyJ1IjoiZnJlZGRvbWF0ZSIsImEiOiJjbTc1bm5zYnQwaG1mMmtxeDdteXNmeXZ0In0.PuDNORq4qExIJ_fErdO_8g';
 
@@ -38,19 +12,10 @@ var map = new mapboxgl.Map({
     bearing: -17.6
 });
 
-async function loadUserMarkers() {
-    const querySnapshot = await getDocs(collection(db, "userMarkers"));
-    querySnapshot.forEach((doc) => {
-        const markerData = doc.data();
-        addUserMarker(markerData);
-    });
-}
-
 map.on('load', () => {
-    addBuildingMarkers();
-    addLocationsList(); // Add this line to create the list when the map loads
-    geolocate.trigger(); // Trigger geolocation on map load
-    loadUserMarkers(); // Load markers from Firestore on map load
+  addBuildingMarkers();
+  addLocationsList(); // Add this line to create the list when the map loads
+  geolocate.trigger(); // Trigger geolocation on map load
 });
 
 // Container for both buttons
@@ -94,6 +59,7 @@ openableContainer.style.boxShadow = '0 6px 15px rgba(0, 0, 0, 0.3)';
 openableContainer.style.padding = '10px';
 openableContainer.style.width = '200px';
 openableContainer.style.textAlign = 'center';
+//openableContainer.textContent = 'This is an openable container!';  Remove this line
 document.body.appendChild(openableContainer);
 
 toggleContainerButton.addEventListener('click', () => {
@@ -106,9 +72,8 @@ toggleContainerButton.addEventListener('click', () => {
     }
 });
 
-// Modify the "Add Data" button's event listener:
 addDataButton.addEventListener('click', () => {
-    toggleForm(); // Call function to show/hide the form
+    window.open('https://forms.gle/1gS4BZhRk3fRjhjMA', '_blank');
 });
 
 // Function to add the list of locations to the openable container
@@ -132,13 +97,13 @@ function addLocationsList() {
         listItem.addEventListener('click', () => {
             map.flyTo({
                 center: location.coords,
-                zoom: 5
+                zoom: 20
             });
-            openableContainer.style.display = 'none';
+             openableContainer.style.display = 'none';
         });
         list.appendChild(listItem);
     });
-
+    
     openableContainer.innerHTML = '';
     openableContainer.style.maxHeight = '150px';
     openableContainer.style.overflowY = 'scroll';
@@ -249,16 +214,16 @@ document.head.appendChild(stylePopup);
 
 // Geolocation control
 const geolocate = new mapboxgl.GeolocateControl({
-    positionOptions: {
-        enableHighAccuracy: true
-    },
-    trackUserLocation: true,
-    showUserHeading: true,
-    showAccuracyCircle: false,
-    fitBoundsOptions: {
-        maxZoom: 5
-    },
-    showUserLocation: false // Disable the default blue dot
+  positionOptions: {
+    enableHighAccuracy: true
+  },
+  trackUserLocation: true,
+  showUserHeading: true,
+  showAccuracyCircle: false,
+  fitBoundsOptions: {
+    maxZoom: 5
+  },
+  showUserLocation: false // Disable the default blue dot
 });
 
 map.addControl(geolocate);
@@ -280,67 +245,67 @@ textEl.textContent = 'me';
 
 userLocationEl.appendChild(textEl);
 
-const userLocationMarker = new mapboxgl.Marker({ element: userLocationEl })
-    .setLngLat([0, 0]) // Set initial coordinates, will be updated later
-    .addTo(map);
+const userLocationMarker = new mapboxgl.Marker({element: userLocationEl})
+  .setLngLat([0, 0]) // Set initial coordinates, will be updated later
+  .addTo(map);
 
 geolocate.on('error', (e) => {
-    if (e.code === 1) {
-        console.log('Location access denied by user');
-        // You can update UI or take other actions here
-    }// Prevent the default error pop-up
+  if (e.code === 1) {
+    console.log('Location access denied by user');
+    // You can update UI or take other actions here
+  }// Prevent the default error pop-up
 });
 
 geolocate.on('geolocate', (e) => {
-    const lon = e.coords.longitude;
-    const lat = e.coords.latitude;
-    const position = [lon, lat];
-    console.log(position);
+  const lon = e.coords.longitude;
+  const lat = e.coords.latitude;
+  const position = [lon, lat];
+  console.log(position);
 
-    // Update the user location marker position
-    userLocationMarker.setLngLat(position);
+  // Update the user location marker position
+  userLocationMarker.setLngLat(position);
 });
 
 function createCustomMarker(imageUrl, color = '#9b4dca', isLocation = false) {
-    const markerDiv = document.createElement('div');
-    markerDiv.className = 'custom-marker';
-    markerDiv.style.width = '3em';
-    markerDiv.style.height = '3em';
-    markerDiv.style.position = 'absolute';
-    markerDiv.style.borderRadius = '50%';
-    markerDiv.style.border = `0.25em solid ${color}`;
-    markerDiv.style.boxSizing = 'border-box';
-    markerDiv.style.overflow = 'hidden';
+  const markerDiv = document.createElement('div');
+  markerDiv.className = 'custom-marker';
+  markerDiv.style.width = '3em';
+  markerDiv.style.height = '3em';
+  markerDiv.style.position = 'absolute';
+  markerDiv.style.borderRadius = '50%';
+  markerDiv.style.border = `0.25em solid ${color}`;
+  markerDiv.style.boxSizing = 'border-box';
+  markerDiv.style.overflow = 'hidden';
 
-    const imageElement = document.createElement('img');
-    imageElement.src = imageUrl;
-    imageElement.style.width = '100%';
-    imageElement.style.height = '100%';
-    imageElement.style.objectFit = 'cover';
-    imageElement.style.borderRadius = '50%';
+  const imageElement = document.createElement('img');
+  imageElement.src = imageUrl;
+  imageElement.style.width = '100%';
+  imageElement.style.height = '100%';
+  imageElement.style.objectFit = 'cover';
+  imageElement.style.borderRadius = '50%';
 
-    markerDiv.appendChild(imageElement);
-
-    return {
-        element: markerDiv,
-        id: `marker-${Date.now()}-${Math.random()}`
-    };
+  markerDiv.appendChild(imageElement);
+  
+  return {
+    element: markerDiv,
+    id: `marker-${Date.now()}-${Math.random()}`
+  };
 }
 
 locations.forEach(location => {
-    const { element: markerElement, id } = createCustomMarker(location.image, '#9B4DCA', true);
-    markerElement.className += ' location-marker';
-    const marker = new mapboxgl.Marker({
-        element: markerElement
-    })
-        .setLngLat(location.coords)
-        .addTo(map);
+  const { element: markerElement, id } = createCustomMarker(location.image, '#9B4DCA', true);
+  markerElement.className += ' location-marker';
+  const marker = new mapboxgl.Marker({
+    element: markerElement
+  })
+    .setLngLat(location.coords)
+    .addTo(map);
 
     const popup = new mapboxgl.Popup({
-        closeButton: true,
-        closeOnClick: true,
-        className: 'custom-popup'
-    }).setHTML(`
+    closeButton: true,
+    closeOnClick: true,
+    className: 'custom-popup'
+  }).setHTML(`
     <p style="font-size: 6px; font-weight: bold; margin-bottom: 10px;">${location.description}</p>
     <div style="border-top: 1px solid #ccc; margin-bottom: 10px;"></div>
     <div style="display: flex; align-items: center; gap: 10px;">
@@ -362,29 +327,29 @@ locations.forEach(location => {
     ` : ''}
   `);
 
-    marker.setPopup(popup);
+  marker.setPopup(popup);
 
-    marker.getElement().addEventListener('click', () => {
-        map.getCanvas().style.cursor = 'pointer';
-        popup.addTo(map);
-    });
+  marker.getElement().addEventListener('click', () => {
+    map.getCanvas().style.cursor = 'pointer';
+    popup.addTo(map);
+  });
 });
 
 function addBuildingMarkers() {
-    buildings.forEach(building => {
-        const { element: markerElement, id } = createCustomMarker(building.image, '#E9E8E0', false);
-        markerElement.className += ' building-marker';
-        const marker = new mapboxgl.Marker({
-            element: markerElement
-        })
-            .setLngLat(building.coords)
-            .addTo(map);
+  buildings.forEach(building => {
+    const { element: markerElement, id } = createCustomMarker(building.image, '#E9E8E0', false);
+    markerElement.className += ' building-marker';
+    const marker = new mapboxgl.Marker({
+      element: markerElement
+    })
+      .setLngLat(building.coords)
+      .addTo(map);
 
-        const popup = new mapboxgl.Popup({
-            closeButton: true,
-            closeOnClick: true,
-            className: 'custom-popup'
-        }).setHTML(`
+    const popup = new mapboxgl.Popup({
+      closeButton: true,
+      closeOnClick: true,
+      className: 'custom-popup'
+    }).setHTML(`
       <p style="font-size: 6px; font-weight: bold; margin-bottom: 10px;">${building.description}</p>
       <div style="border-top: 1px solid #ccc; margin-bottom: 10px;"></div>
       <div style="display: flex; align-items: center; gap: 10px;">
@@ -400,158 +365,8 @@ function addBuildingMarkers() {
           ${building.events.map(event => `
             <div style="background: #f9f9f9; border: 1px solid #ddd; border-radius: 8px; padding: 10px; margin-bottom: 10px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
               <strong style="color: #9b4dca; font-size: 14px;">${event.date}</strong>: <span style="font-size: 12px;">${event.description}</span>
-          </div>
-        `).join('')}
-        </div>
-      ` : ''}
-    `);
-
-        marker.setPopup(popup);
-
-        marker.getElement().addEventListener('click', () => {
-            map.getCanvas().style.cursor = 'pointer';
-            popup.addTo(map);
-        });
-    });
-}
-
-// --- ADD DATA FORM ---
-// Create the form container
-const formContainer = document.createElement('div');
-formContainer.id = 'add-marker-form';
-formContainer.style.display = 'none'; // Hidden by default
-formContainer.style.position = 'fixed';
-formContainer.style.top = '50%';
-formContainer.style.left = '50%';
-formContainer.style.transform = 'translate(-50%, -50%)';
-formContainer.style.backgroundColor = 'white';
-formContainer.style.padding = '20px';
-formContainer.style.border = '1px solid #ccc';
-formContainer.style.zIndex = '1001'; // Ensure it's above other elements
-document.body.appendChild(formContainer);
-
-// Create the form
-const addMarkerForm = document.createElement('form');
-addMarkerForm.innerHTML = `
-  <label for="latitude">Latitude:</label><br>
-  <small>Enter the latitude coordinate for the marker location.</small><br>
-  <input type="number" id="latitude" name="latitude" step="any" required><br><br>
-
-  <label for="longitude">Longitude:</label><br>
-  <small>Enter the longitude coordinate for the marker location.</small><br>
-  <input type="number" id="longitude" name="longitude" step="any" required><br><br>
-
-  <label for="name">Name:</label><br>
-  <small>Enter a name or title for this location.</small><br>
-  <input type="text" id="name" name="name" required><br><br>
-
-  <label for="whyHere">Why here?</label><br>
-  <small>Explain why this location is significant or why you chose it.</small><br>
-  <textarea id="whyHere" name="whyHere" rows="2" cols="30"></textarea><br><br>
-
-  <label for="description">Description:</label><br>
-  <small>Provide a brief description of this location.</small><br>
-  <textarea id="description" name="description" rows="4" cols="30"></textarea><br><br>
-
-  <label for="funFact1">Fun Fact 1 (Optional):</label><br>
-  <small>Share an interesting fact about this location.</small><br>
-  <input type="text" id="funFact1" name="funFact1"><br><br>
-
-  <label for="funFact2">Fun Fact 2 (Optional):</label><br>
-  <small>Share another interesting fact about this location.</small><br>
-  <input type="text" id="funFact2" name="funFact2"><br><br>
-
-  <label for="funFact3">Fun Fact 3 (Optional):</label><br>
-  <small>Share one more interesting fact about this location.</small><br>
-  <input type="text" id="funFact3" name="funFact3"><br><br>
-
-  <label for="image">Image URL (Optional):</label><br>
-  <small>Provide a URL to an image representing this location.</small><br>
-  <input type="url" id="image" name="image"><br><br>
-
-  <button type="submit">Add Marker</button>
-`;
-formContainer.appendChild(addMarkerForm);
-
-// Function to toggle the form's visibility
-function toggleForm() {
-    const form = document.getElementById('add-marker-form');
-    form.style.display = form.style.display === 'none' ? 'block' : 'none';
-}
-
-// Handle form submission
-addMarkerForm.addEventListener('submit', async function (event) {
-    event.preventDefault();
-
-    const latitude = parseFloat(document.getElementById('latitude').value);
-    const longitude = parseFloat(document.getElementById('longitude').value);
-    const name = document.getElementById('name').value;
-    const whyHere = document.getElementById('whyHere').value;
-    const description = document.getElementById('description').value;
-    const funFact1 = document.getElementById('funFact1').value;
-    const funFact2 = document.getElementById('funFact2').value;
-    const funFact3 = document.getElementById('funFact3').value;
-    const image = document.getElementById('image').value;
-
-    if (isNaN(latitude) || isNaN(longitude)) {
-        alert('Invalid latitude or longitude.');
-        return;
-    }
-
-    const newMarker = {
-        coords: [longitude, latitude],
-        name: name,
-        whyHere: whyHere,
-        description: description,
-        funFact1: funFact1 || null,
-        funFact2: funFact2 || null,
-        funFact3: funFact3 || null,
-        image: image || 'URL_TO_DEFAULT_IMAGE',
-    };
-
-    try {
-        const docRef = await addDoc(collection(db, "userMarkers"), newMarker);
-        console.log("Document written with ID: ", docRef.id);
-        addUserMarker(newMarker);
-        addMarkerForm.reset();
-        toggleForm();
-    } catch (e) {
-        console.error("Error adding document: ", e);
-        alert('Error saving marker. Please try again.');
-    }
-});
-
-function addUserMarker(markerData) {
-    const { element: markerElement } = createCustomMarker(markerData.image, '#4CAF50', false);
-    const marker = new mapboxgl.Marker({
-        element: markerElement
-    })
-        .setLngLat(markerData.coords)
-        .addTo(map);
-
-    const funFactsHTML = [markerData.funFact1, markerData.funFact2, markerData.funFact3]
-        .filter(fact => fact)
-        .map(fact => `<li>${fact}</li>`)
-        .join('');
-
-    const popup = new mapboxgl.Popup({
-        closeButton: true,
-        closeOnClick: true,
-        className: 'custom-popup'
-    }).setHTML(`
-      <p style="font-size: 6px; font-weight: bold; margin-bottom: 10px;">${markerData.description}</p>
-      <div style="border-top: 1px solid #ccc; margin-bottom: 10px;"></div>
-      <div style="display: flex; align-items: center; gap: 10px;">
-        <img src="${markerData.image}" alt="${markerData.name}" style="width: 40px; height: 40px; object-fit: cover; border-radius: 50%;" />
-        <div>
-          <div style="font-size: 16px; font-weight: bold;">${markerData.name}</div>
-        </div>
-      </div>
-      <p style="margin-top: 10px;">Why here? ${markerData.whyHere}</p>
-      ${funFactsHTML ? `
-        <div style="margin-top: 10px;">
-          <strong>Fun Facts:</strong>
-          <ul>${funFactsHTML}</ul>
+            </div>
+          `).join('')}
         </div>
       ` : ''}
     `);
@@ -559,7 +374,8 @@ function addUserMarker(markerData) {
     marker.setPopup(popup);
 
     marker.getElement().addEventListener('click', () => {
-        map.getCanvas().style.cursor = 'pointer';
-        popup.addTo(map);
+      map.getCanvas().style.cursor = 'pointer';
+      popup.addTo(map);
     });
+  });
 }
