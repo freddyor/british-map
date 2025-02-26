@@ -947,7 +947,7 @@ export const locations = [
       },
       {
         "date": "BREXIT",
-        "description": "He was chair of Britain Stronger in Europe, the official remain party during Brexit 💔"
+        "description": "He was chair of Britain Stronger in Europe, the official remain party during Brexit."
       },
       {
         "date": "CAREER",
