@@ -203,12 +203,6 @@
             dropdownContent.style.display = dropdownContent.style.display === 'block' ? 'none' : 'block';
         });
 
-        document.getElementById('add-data-button').addEventListener('click', function(e) {
-            e.preventDefault();
-            var dropdownContent = document.getElementById('add-data-dropdown').querySelector('.dropdown-content');
-            dropdownContent.style.display = dropdownContent.style.display === 'block' ? 'none' : 'block';
-        });
-
         // Close the dropdowns if the user clicks outside of them
         window.onclick = function(event) {
             if (!event.target.matches('.custom-button')) {
