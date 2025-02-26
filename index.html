@@ -15,6 +15,12 @@
     <link href="https://api.mapbox.com/mapbox-gl-js/v3.10.0/mapbox-gl.css" rel="stylesheet">
     <script src="https://api.mapbox.com/mapbox-gl-js/v3.10.0/mapbox-gl.js"></script>
 
+    <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+
+    <!-- Add Firebase products that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+
     <style>
         body, html {
             margin: 0;
@@ -144,6 +150,32 @@
             line-height: 1.2;
         }
 
+        .marker-form {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            background-color: #e9e8e0;
+            padding: 10px;
+            border-radius: 8px;
+            z-index: 1001;
+        }
+
+        .marker-form input {
+            display: block;
+            margin-bottom: 5px;
+            padding: 5px;
+            width: 200px;
+        }
+
+        .marker-form button {
+            background-color: #9b4dca;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
         @media (max-width: 750px) {
             .custom-button {
                 font-size: 14px;
@@ -193,6 +225,13 @@
                 </ul>
             </div>
         </div>
+    </div>
+
+    <div id="markerForm" class="marker-form">
+        <input type="text" id="markerTitle" placeholder="Marker Title" required>
+        <input type="number" id="markerLat" placeholder="Latitude" step="any" required>
+        <input type="number" id="markerLng" placeholder="Longitude" step="any" required>
+        <button type="submit" id="addMarkerBtn">Add Marker</button>
     </div>
 
     <script>
