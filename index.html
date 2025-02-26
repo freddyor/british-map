@@ -68,7 +68,6 @@
             position: absolute;
             background-color: #e9e8e0;
             border: 2px solid #f0f0f0;
-            min-width: 160px;
             box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
             z-index: 1002;
             border-radius: 8px;
@@ -78,6 +77,10 @@
             transform: translateX(-50%);
             padding: 5px;
             box-sizing: border-box;
+        }
+
+        .dropdown-content, .dropdown-content * {
+            font-weight: bold;
         }
 
         .support-button {
@@ -222,14 +225,18 @@
             }
         }
 
-        // Set the width of the dropdown content to match the button's width
-        const buttons = document.querySelectorAll('.custom-button');
-        buttons.forEach(button => {
+        // Function to set the width of the dropdown content to match the button's width
+        function setDropdownWidth() {
+            const button = document.getElementById('custom-bmc-button');
             const dropdownContent = button.nextElementSibling;
             if (dropdownContent) {
                 dropdownContent.style.width = `${button.offsetWidth}px`;
             }
-        });
+        }
+
+        // Call the function initially and on window resize
+        setDropdownWidth();
+        window.addEventListener('resize', setDropdownWidth);
     </script>
 
     <script src="index.js" type="module" defer></script>
