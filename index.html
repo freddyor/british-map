@@ -68,7 +68,7 @@
             position: absolute;
             background-color: #e9e8e0;
             border: 2px solid #f0f0f0;
-            min-width: 600px; /* Increased width */
+            width: 1000px; /* Set fixed width */
             box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
             z-index: 1002;
             border-radius: 8px;
@@ -152,7 +152,7 @@
             bottom: 60px;
             transform: translateX(-50%);
             width: 90%;
-            max-width: 900px; /* Increased max width */
+            max-width: 1000px; /* Set fixed max width */
             background-color: #e9e8e0;
             border: 2px solid #f0f0f0;
             border-radius: 8px;
@@ -228,21 +228,10 @@
             const button = document.getElementById('custom-bmc-button');
             const dropdownContent = button.nextElementSibling;
 
-            function setDropdownWidth() {
-                if (dropdownContent) {
-                    dropdownContent.style.width = `${button.offsetWidth}px`;
-                    dropdownContent.style.left = '50%';
-                    dropdownContent.style.transform = 'translateX(-50%)';
-                }
-            }
-
             button.addEventListener('click', function(e) {
                 e.preventDefault();
                 dropdownContent.style.display = dropdownContent.style.display === 'block' ? 'none' : 'block';
-                setDropdownWidth();
             });
-
-            window.addEventListener('resize', setDropdownWidth);
 
             // Close the dropdown if the user clicks outside of it
             window.onclick = function(event) {
@@ -258,9 +247,6 @@
                     }
                 }
             }
-
-            // Initial set of dropdown width
-            setDropdownWidth();
 
             document.getElementById('add-data-button').addEventListener('click', function(e) {
                 e.preventDefault();
