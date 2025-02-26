@@ -15,8 +15,10 @@
     <link href="https://api.mapbox.com/mapbox-gl-js/v3.10.0/mapbox-gl.css" rel="stylesheet">
     <script src="https://api.mapbox.com/mapbox-gl-js/v3.10.0/mapbox-gl.js"></script>
 
-    <!-- Firebase App (the core Firebase SDK) -->
+    <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+
+    <!-- Add Firebase products that you want to use -->
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
 
     <style>
@@ -199,6 +201,7 @@
     </style>
 </head>
 <body>
+
     <div id="map"></div>
 
     <div class="dropdown">
@@ -224,13 +227,44 @@
         </div>
     </div>
 
-    <form id="markerForm" class="marker-form">
+    <div id="markerForm" class="marker-form">
         <input type="text" id="markerTitle" placeholder="Marker Title" required>
         <input type="number" id="markerLat" placeholder="Latitude" step="any" required>
         <input type="number" id="markerLng" placeholder="Longitude" step="any" required>
         <button type="submit" id="addMarkerBtn">Add Marker</button>
-    </form>
+    </div>
+
+    <script>
+        const button = document.getElementById('custom-bmc-button');
+        const dropdownContent = button.nextElementSibling;
+
+        // Set the width of the dropdown content to match the button's width
+        function setDropdownWidth() {
+            dropdownContent.style.width = `${button.offsetWidth}px`;
+        }
+
+        // Initial width setting
+        setDropdownWidth();
+
+        // Add a resize event listener to adjust the width if the window size changes
+        window.addEventListener('resize', setDropdownWidth);
+
+        button.addEventListener('click', function(e) {
+            e.preventDefault();
+            dropdownContent.style.display = dropdownContent.style.display === 'block' ? 'none' : 'block';
+        });
+
+        // Close the dropdown if the user clicks outside of it
+        window.onclick = function(event) {
+            if (!event.target.matches('.custom-button')) {
+                if (dropdownContent.style.display === 'block') {
+                    dropdownContent.style.display = 'none';
+                }
+            }
+        }
+    </script>
 
     <script src="index.js" type="module" defer></script>
+
 </body>
 </html>
