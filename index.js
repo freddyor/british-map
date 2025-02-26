@@ -12,10 +12,22 @@ var map = new mapboxgl.Map({
     bearing: -17.6
 });
 
+// Function to load user markers from local storage
+function loadUserMarkers() {
+    const storedMarkers = localStorage.getItem('userMarkers');
+    if (storedMarkers) {
+        const markers = JSON.parse(storedMarkers);
+        markers.forEach(markerData => {
+            addUserMarker(markerData);
+        });
+    }
+}
+
 map.on('load', () => {
-  addBuildingMarkers();
-  addLocationsList(); // Add this line to create the list when the map loads
-  geolocate.trigger(); // Trigger geolocation on map load
+    addBuildingMarkers();
+    addLocationsList();
+    geolocate.trigger();
+    loadUserMarkers(); // Load markers from local storage on map load
 });
 
 // Container for both buttons
@@ -26,8 +38,8 @@ buttonGroup.style.left = '50%';
 buttonGroup.style.top = '50px';
 buttonGroup.style.transform = 'translateX(-50%)';
 buttonGroup.style.zIndex = '1000';
-buttonGroup.style.display = 'flex'; // Use flex to arrange buttons horizontally
-buttonGroup.style.gap = '10px'; // Space between the buttons
+buttonGroup.style.display = 'flex';
+buttonGroup.style.gap = '10px';
 document.body.appendChild(buttonGroup);
 
 // Find People button
@@ -35,14 +47,14 @@ const toggleContainerButton = document.createElement('button');
 toggleContainerButton.id = 'toggle-container-button';
 toggleContainerButton.textContent = 'Find people 🔍';
 toggleContainerButton.className = 'custom-button';
-buttonGroup.appendChild(toggleContainerButton); // Add to buttonGroup
+buttonGroup.appendChild(toggleContainerButton);
 
 // Add data button
 const addDataButton = document.createElement('button');
 addDataButton.id = 'add-data-button';
 addDataButton.textContent = 'Add data ➕';
 addDataButton.className = 'custom-button';
-buttonGroup.appendChild(addDataButton); // Add to buttonGroup
+buttonGroup.appendChild(addDataButton);
 
 const openableContainer = document.createElement('div');
 openableContainer.id = 'openable-container';
@@ -59,7 +71,6 @@ openableContainer.style.boxShadow = '0 6px 15px rgba(0, 0, 0, 0.3)';
 openableContainer.style.padding = '10px';
 openableContainer.style.width = '200px';
 openableContainer.style.textAlign = 'center';
-//openableContainer.textContent = 'This is an openable container!';  Remove this line
 document.body.appendChild(openableContainer);
 
 toggleContainerButton.addEventListener('click', () => {
@@ -72,8 +83,9 @@ toggleContainerButton.addEventListener('click', () => {
     }
 });
 
+// Modify the "Add Data" button's event listener:
 addDataButton.addEventListener('click', () => {
-    window.open('https://forms.gle/1gS4BZhRk3fRjhjMA', '_blank');
+    toggleForm(); // Call function to show/hide the form
 });
 
 // Function to add the list of locations to the openable container
@@ -99,11 +111,11 @@ function addLocationsList() {
                 center: location.coords,
                 zoom: 20
             });
-             openableContainer.style.display = 'none';
+            openableContainer.style.display = 'none';
         });
         list.appendChild(listItem);
     });
-    
+
     openableContainer.innerHTML = '';
     openableContainer.style.maxHeight = '150px';
     openableContainer.style.overflowY = 'scroll';
@@ -214,16 +226,16 @@ document.head.appendChild(stylePopup);
 
 // Geolocation control
 const geolocate = new mapboxgl.GeolocateControl({
-  positionOptions: {
-    enableHighAccuracy: true
-  },
-  trackUserLocation: true,
-  showUserHeading: true,
-  showAccuracyCircle: false,
-  fitBoundsOptions: {
-    maxZoom: 5
-  },
-  showUserLocation: false // Disable the default blue dot
+    positionOptions: {
+        enableHighAccuracy: true
+    },
+    trackUserLocation: true,
+    showUserHeading: true,
+    showAccuracyCircle: false,
+    fitBoundsOptions: {
+        maxZoom: 5
+    },
+    showUserLocation: false // Disable the default blue dot
 });
 
 map.addControl(geolocate);
@@ -245,67 +257,67 @@ textEl.textContent = 'me';
 
 userLocationEl.appendChild(textEl);
 
-const userLocationMarker = new mapboxgl.Marker({element: userLocationEl})
-  .setLngLat([0, 0]) // Set initial coordinates, will be updated later
-  .addTo(map);
+const userLocationMarker = new mapboxgl.Marker({ element: userLocationEl })
+    .setLngLat([0, 0]) // Set initial coordinates, will be updated later
+    .addTo(map);
 
 geolocate.on('error', (e) => {
-  if (e.code === 1) {
-    console.log('Location access denied by user');
-    // You can update UI or take other actions here
-  }// Prevent the default error pop-up
+    if (e.code === 1) {
+        console.log('Location access denied by user');
+        // You can update UI or take other actions here
+    }// Prevent the default error pop-up
 });
 
 geolocate.on('geolocate', (e) => {
-  const lon = e.coords.longitude;
-  const lat = e.coords.latitude;
-  const position = [lon, lat];
-  console.log(position);
+    const lon = e.coords.longitude;
+    const lat = e.coords.latitude;
+    const position = [lon, lat];
+    console.log(position);
 
-  // Update the user location marker position
-  userLocationMarker.setLngLat(position);
+    // Update the user location marker position
+    userLocationMarker.setLngLat(position);
 });
 
 function createCustomMarker(imageUrl, color = '#9b4dca', isLocation = false) {
-  const markerDiv = document.createElement('div');
-  markerDiv.className = 'custom-marker';
-  markerDiv.style.width = '3em';
-  markerDiv.style.height = '3em';
-  markerDiv.style.position = 'absolute';
-  markerDiv.style.borderRadius = '50%';
-  markerDiv.style.border = `0.25em solid ${color}`;
-  markerDiv.style.boxSizing = 'border-box';
-  markerDiv.style.overflow = 'hidden';
+    const markerDiv = document.createElement('div');
+    markerDiv.className = 'custom-marker';
+    markerDiv.style.width = '3em';
+    markerDiv.style.height = '3em';
+    markerDiv.style.position = 'absolute';
+    markerDiv.style.borderRadius = '50%';
+    markerDiv.style.border = `0.25em solid ${color}`;
+    markerDiv.style.boxSizing = 'border-box';
+    markerDiv.style.overflow = 'hidden';
 
-  const imageElement = document.createElement('img');
-  imageElement.src = imageUrl;
-  imageElement.style.width = '100%';
-  imageElement.style.height = '100%';
-  imageElement.style.objectFit = 'cover';
-  imageElement.style.borderRadius = '50%';
+    const imageElement = document.createElement('img');
+    imageElement.src = imageUrl;
+    imageElement.style.width = '100%';
+    imageElement.style.height = '100%';
+    imageElement.style.objectFit = 'cover';
+    imageElement.style.borderRadius = '50%';
 
-  markerDiv.appendChild(imageElement);
-  
-  return {
-    element: markerDiv,
-    id: `marker-${Date.now()}-${Math.random()}`
-  };
+    markerDiv.appendChild(imageElement);
+
+    return {
+        element: markerDiv,
+        id: `marker-${Date.now()}-${Math.random()}`
+    };
 }
 
 locations.forEach(location => {
-  const { element: markerElement, id } = createCustomMarker(location.image, '#9B4DCA', true);
-  markerElement.className += ' location-marker';
-  const marker = new mapboxgl.Marker({
-    element: markerElement
-  })
-    .setLngLat(location.coords)
-    .addTo(map);
+    const { element: markerElement, id } = createCustomMarker(location.image, '#9B4DCA', true);
+    markerElement.className += ' location-marker';
+    const marker = new mapboxgl.Marker({
+        element: markerElement
+    })
+        .setLngLat(location.coords)
+        .addTo(map);
 
     const popup = new mapboxgl.Popup({
-    closeButton: true,
-    closeOnClick: true,
-    className: 'custom-popup'
-  }).setHTML(`
+        closeButton: true,
+        closeOnClick: true,
+        className: 'custom-popup'
+    }).setHTML(`
     <p style="font-size: 6px; font-weight: bold; margin-bottom: 10px;">${location.description}</p>
     <div style="border-top: 1px solid #ccc; margin-bottom: 10px;"></div>
     <div style="display: flex; align-items: center; gap: 10px;">
@@ -327,29 +339,29 @@ locations.forEach(location => {
     ` : ''}
   `);
 
-  marker.setPopup(popup);
+    marker.setPopup(popup);
 
-  marker.getElement().addEventListener('click', () => {
-    map.getCanvas().style.cursor = 'pointer';
-    popup.addTo(map);
-  });
+    marker.getElement().addEventListener('click', () => {
+        map.getCanvas().style.cursor = 'pointer';
+        popup.addTo(map);
+    });
 });
 
 function addBuildingMarkers() {
-  buildings.forEach(building => {
-    const { element: markerElement, id } = createCustomMarker(building.image, '#E9E8E0', false);
-    markerElement.className += ' building-marker';
-    const marker = new mapboxgl.Marker({
-      element: markerElement
-    })
-      .setLngLat(building.coords)
-      .addTo(map);
+    buildings.forEach(building => {
+        const { element: markerElement, id } = createCustomMarker(building.image, '#E9E8E0', false);
+        markerElement.className += ' building-marker';
+        const marker = new mapboxgl.Marker({
+            element: markerElement
+        })
+            .setLngLat(building.coords)
+            .addTo(map);
 
-    const popup = new mapboxgl.Popup({
-      closeButton: true,
-      closeOnClick: true,
-      className: 'custom-popup'
-    }).setHTML(`
+        const popup = new mapboxgl.Popup({
+            closeButton: true,
+            closeOnClick: true,
+            className: 'custom-popup'
+        }).setHTML(`
       <p style="font-size: 6px; font-weight: bold; margin-bottom: 10px;">${building.description}</p>
       <div style="border-top: 1px solid #ccc; margin-bottom: 10px;"></div>
       <div style="display: flex; align-items: center; gap: 10px;">
@@ -365,17 +377,150 @@ function addBuildingMarkers() {
           ${building.events.map(event => `
             <div style="background: #f9f9f9; border: 1px solid #ddd; border-radius: 8px; padding: 10px; margin-bottom: 10px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
               <strong style="color: #9b4dca; font-size: 14px;">${event.date}</strong>: <span style="font-size: 12px;">${event.description}</span>
-            </div>
-          `).join('')}
+          </div>
+        `).join('')}
         </div>
       ` : ''}
+    `);
+
+        marker.setPopup(popup);
+
+        marker.getElement().addEventListener('click', () => {
+            map.getCanvas().style.cursor = 'pointer';
+            popup.addTo(map);
+        });
+    });
+}
+
+// --- ADD DATA FORM ---
+// Create the form container
+const formContainer = document.createElement('div');
+formContainer.id = 'add-marker-form';
+formContainer.style.display = 'none'; // Hidden by default
+formContainer.style.position = 'fixed';
+formContainer.style.top = '50%';
+formContainer.style.left = '50%';
+formContainer.style.transform = 'translate(-50%, -50%)';
+formContainer.style.backgroundColor = 'white';
+formContainer.style.padding = '20px';
+formContainer.style.border = '1px solid #ccc';
+formContainer.style.zIndex = '1001'; // Ensure it's above other elements
+document.body.appendChild(formContainer);
+
+// Create the form
+const addMarkerForm = document.createElement('form');
+addMarkerForm.innerHTML = `
+  <label for="latitude">Latitude:</label><br>
+  <input type="number" id="latitude" name="latitude" required><br><br>
+
+  <label for="longitude">Longitude:</label><br>
+  <input type="number" id="longitude" name="longitude" required><br><br>
+
+  <label for="name">Name:</label><br>
+  <input type="text" id="name" name="name" required><br><br>
+
+  <label for="description">Description:</label><br>
+  <textarea id="description" name="description" rows="4" cols="30"></textarea><br><br>
+
+  <label for="image">Image URL (Optional):</label><br>
+  <input type="url" id="image" name="image"><br><br>
+
+  <button type="submit">Add Marker</button>
+`;
+formContainer.appendChild(addMarkerForm);
+
+// Function to toggle the form's visibility
+function toggleForm() {
+    const form = document.getElementById('add-marker-form');
+    form.style.display = form.style.display === 'none' ? 'block' : 'none';
+}
+
+// Function to save user markers to local storage
+function saveUserMarkers(markers) {
+    localStorage.setItem('userMarkers', JSON.stringify(markers));
+}
+
+// Function to convert local storage data to JavaScript array string
+function convertLocalStorageToCode() {
+    const storedMarkers = localStorage.getItem('userMarkers');
+    if (storedMarkers) {
+        const markers = JSON.parse(storedMarkers);
+        const codeString = JSON.stringify(markers, null, 2); // Pretty print
+        console.log("Copy and paste this array into your locations.js or buildings.js file:\n\n" + codeString);
+        alert("Data converted to code and logged to console.  Check your browser's developer console (F12).");
+    } else {
+        alert("No data found in local storage.");
+    }
+}
+
+// Handle form submission
+addMarkerForm.addEventListener('submit', function (event) {
+    event.preventDefault(); // Prevent page reload
+
+    // Get form values
+    const latitude = parseFloat(document.getElementById('latitude').value);
+    const longitude = parseFloat(document.getElementById('longitude').value);
+    const name = document.getElementById('name').value;
+    const description = document.getElementById('description').value;
+    const image = document.getElementById('image').value;
+
+    // Validate data
+    if (isNaN(latitude) || isNaN(longitude)) {
+        alert('Invalid latitude or longitude.');
+        return;
+    }
+
+    // Create the marker
+    const newMarker = {
+        coords: [longitude, latitude],
+        name: name,
+        description: description,
+        image: image || 'URL_TO_DEFAULT_IMAGE', // Use a default image if none provided
+    };
+
+    // Add the marker to the map
+    addUserMarker(newMarker);
+
+    // Save the new marker to local storage
+    let existingMarkers = JSON.parse(localStorage.getItem('userMarkers')) || [];
+    existingMarkers.push(newMarker);
+    saveUserMarkers(existingMarkers);
+
+    // Convert local storage to code
+    convertLocalStorageToCode();
+
+    // Clear the form
+    addMarkerForm.reset();
+    toggleForm(); // Hide the form after submission
+});
+
+function addUserMarker(markerData) {
+    const { element: markerElement } = createCustomMarker(markerData.image, '#4CAF50', false); // Green color for user-added markers
+    const marker = new mapboxgl.Marker({
+        element: markerElement
+    })
+        .setLngLat(markerData.coords)
+        .addTo(map);
+
+    const popup = new mapboxgl.Popup({
+        closeButton: true,
+        closeOnClick: true,
+        className: 'custom-popup'
+    }).setHTML(`
+      <p style="font-size: 6px; font-weight: bold; margin-bottom: 10px;">${markerData.description}</p>
+      <div style="border-top: 1px solid #ccc; margin-bottom: 10px;"></div>
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <img src="${markerData.image}" alt="${markerData.name}" style="width: 40px; height: 40px; object-fit: cover; border-radius: 50%;" />
+        <div>
+          <div style="font-size: 16px; font-weight: bold;">${markerData.name}</div>
+        </div>
+      </div>
     `);
 
     marker.setPopup(popup);
 
     marker.getElement().addEventListener('click', () => {
-      map.getCanvas().style.cursor = 'pointer';
-      popup.addTo(map);
+        map.getCanvas().style.cursor = 'pointer';
+        popup.addTo(map);
     });
-  });
 }
