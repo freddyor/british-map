@@ -978,8 +978,18 @@ export const locations = [
   name: "The Beatles",
   occupation: "1960-1970",
   description: "",
-  image: "images/therialto.png", 
+  image: "images/thebeatles.png", 
   tldr: "This location was once home to The York Rialto. Before international stardom, the most iconic band of all time performed here 4 times in 1963 🎙️",
+  events: []
+},
+ },
+{
+  coords: [ -1.0846694303372306, 53.962442181187136],
+  name: "The Rolling Stones",
+  occupation: "1960s",
+  description: "",
+  image: "images/therollingstones.png", 
+  tldr: "On this location, in the 1960s, the Rolling Stones signed their names in lipstick on the top floor of the Eagle & Child pub 🎙️",
   events: []
 }
 
