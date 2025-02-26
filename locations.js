@@ -982,7 +982,6 @@ export const locations = [
   tldr: "This location was once home to The York Rialto. Before international stardom, the most iconic band of all time performed here 4 times in 1963 🎙️",
   events: []
 },
- },
 {
   coords: [ -1.0846694303372306, 53.962442181187136],
   name: "The Rolling Stones",
