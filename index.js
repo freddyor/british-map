@@ -57,7 +57,7 @@ openableContainer.style.border = '2px solid #f0f0f0';
 openableContainer.style.borderRadius = '8px';
 openableContainer.style.boxShadow = '0 6px 15px rgba(0, 0, 0, 0.3)';
 openableContainer.style.padding = '10px';
-openableContainer.style.width = '600px'; // Increased width
+openableContainer.style.width = '200px';
 openableContainer.style.textAlign = 'center';
 //openableContainer.textContent = 'This is an openable container!';  Remove this line
 document.body.appendChild(openableContainer);
