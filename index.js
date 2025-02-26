@@ -37,13 +37,6 @@ toggleContainerButton.textContent = 'Find people 🔍';
 toggleContainerButton.className = 'custom-button';
 buttonGroup.appendChild(toggleContainerButton); // Add to buttonGroup
 
-// Add data button
-const addDataButton = document.createElement('button');
-addDataButton.id = 'add-data-button';
-addDataButton.textContent = 'Add data ➕';
-addDataButton.className = 'custom-button';
-buttonGroup.appendChild(addDataButton); // Add to buttonGroup
-
 const openableContainer = document.createElement('div');
 openableContainer.id = 'openable-container';
 openableContainer.style.display = 'none';
@@ -70,10 +63,6 @@ toggleContainerButton.addEventListener('click', () => {
         openableContainer.style.display = 'none';
         toggleContainerButton.textContent = 'Find people 🔍';
     }
-});
-
-addDataButton.addEventListener('click', () => {
-    window.open('https://forms.gle/1gS4BZhRk3fRjhjMA', '_blank');
 });
 
 // Function to add the list of locations to the openable container
