@@ -64,6 +64,36 @@ toggleContainerButton.addEventListener('click', () => {
     }
 });
 
+// Google Form container
+const googleFormContainer = document.createElement('div');
+googleFormContainer.id = 'google-form-content';
+googleFormContainer.style.display = 'none';
+googleFormContainer.style.position = 'fixed';
+googleFormContainer.style.left = '50%';
+googleFormContainer.style.top = '150px';
+googleFormContainer.style.transform = 'translateX(-50%)';
+googleFormContainer.style.zIndex = '999';
+googleFormContainer.style.backgroundColor = '#fff';
+googleFormContainer.style.border = '2px solid #f0f0f0';
+googleFormContainer.style.borderRadius = '8px';
+googleFormContainer.style.boxShadow = '0 6px 15px rgba(0, 0, 0, 0.3)';
+googleFormContainer.style.padding = '10px';
+googleFormContainer.style.width = '640px';
+googleFormContainer.style.height = '800px';
+googleFormContainer.style.textAlign = 'center';
+googleFormContainer.innerHTML = '<iframe src="https://docs.google.com/forms/d/e/1FAIpQLScwFASCkKSV0OxJ-J4TdFPEpvn65wVPvViJf4sAbbaIb3SHuQ/viewform?embedded=true" width="100%" height="100%" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>';
+document.body.appendChild(googleFormContainer);
+
+document.getElementById('google-form-button').addEventListener('click', () => {
+    if (googleFormContainer.style.display === 'none' || googleFormContainer.style.display === '') {
+        googleFormContainer.style.display = 'block';
+        googleFormButton.textContent = 'Close Google Form';
+    } else {
+        googleFormContainer.style.display = 'none';
+        googleFormButton.textContent = 'Open Google Form';
+    }
+});
+
 // Function to add the list of locations to the openable container
 function addLocationsList() {
     const list = document.createElement('ul');
