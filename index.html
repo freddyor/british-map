@@ -231,6 +231,17 @@
             }
         });
     </script>
+    
+    <script>
+    // Set the width of the dropdown content to match the button's width
+    const buttons = document.querySelectorAll('.custom-button');
+    buttons.forEach(button => {
+        const dropdownContent = button.nextElementSibling;
+        if (dropdownContent) {
+            dropdownContent.style.width = `${button.offsetWidth}px`;
+        }
+    });
+</script>
 
     <script src="index.js" type="module" defer></script>
 
