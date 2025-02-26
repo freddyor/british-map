@@ -97,7 +97,7 @@ function addLocationsList() {
         listItem.addEventListener('click', () => {
             map.flyTo({
                 center: location.coords,
-                zoom: 5
+                zoom: 20
             });
              openableContainer.style.display = 'none';
         });
@@ -221,7 +221,7 @@ const geolocate = new mapboxgl.GeolocateControl({
   showUserHeading: true,
   showAccuracyCircle: false,
   fitBoundsOptions: {
-    maxZoom: 5
+    maxZoom: 15
   },
   showUserLocation: false // Disable the default blue dot
 });
