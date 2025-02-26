@@ -196,27 +196,11 @@
         </div>
     </div>
 
-    <div class="button-group">
-        <button id="google-form-button" class="custom-button">
-            Open Google Form
-        </button>
-    </div>
-
-    <div id="google-form-container" class="dropdown-content">
-        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScwFASCkKSV0OxJ-J4TdFPEpvn65wVPvViJf4sAbbaIb3SHuQ/viewform?embedded=true" width="640" height="800" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
-    </div>
-
     <script>
         document.getElementById('custom-bmc-button').addEventListener('click', function(e) {
             e.preventDefault();
             var dropdownContent = this.nextElementSibling;
             dropdownContent.style.display = dropdownContent.style.display === 'block' ? 'none' : 'block';
-        });
-
-        document.getElementById('google-form-button').addEventListener('click', function(e) {
-            e.preventDefault();
-            var googleFormContainer = document.getElementById('google-form-container');
-            googleFormContainer.style.display = googleFormContainer.style.display === 'block' ? 'none' : 'block';
         });
 
         // Close the dropdowns if the user clicks outside of them
