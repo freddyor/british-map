@@ -15,12 +15,6 @@
     <link href="https://api.mapbox.com/mapbox-gl-js/v3.10.0/mapbox-gl.css" rel="stylesheet">
     <script src="https://api.mapbox.com/mapbox-gl-js/v3.10.0/mapbox-gl.js"></script>
 
-    <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
-
-    <!-- Add Firebase products that you want to use -->
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
-
     <style>
         body, html {
             margin: 0;
@@ -74,6 +68,7 @@
             position: absolute;
             background-color: #e9e8e0;
             border: 2px solid #f0f0f0;
+            min-width: 160px;
             box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
             z-index: 1002;
             border-radius: 8px;
@@ -150,32 +145,6 @@
             line-height: 1.2;
         }
 
-        .marker-form {
-            position: fixed;
-            top: 10px;
-            right: 10px;
-            background-color: #e9e8e0;
-            padding: 10px;
-            border-radius: 8px;
-            z-index: 1001;
-        }
-
-        .marker-form input {
-            display: block;
-            margin-bottom: 5px;
-            padding: 5px;
-            width: 200px;
-        }
-
-        .marker-form button {
-            background-color: #9b4dca;
-            color: white;
-            border: none;
-            padding: 5px 10px;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-
         @media (max-width: 750px) {
             .custom-button {
                 font-size: 14px;
@@ -227,41 +196,40 @@
         </div>
     </div>
 
-    <div id="markerForm" class="marker-form">
-        <input type="text" id="markerTitle" placeholder="Marker Title" required>
-        <input type="number" id="markerLat" placeholder="Latitude" step="any" required>
-        <input type="number" id="markerLng" placeholder="Longitude" step="any" required>
-        <button type="submit" id="addMarkerBtn">Add Marker</button>
-    </div>
-
     <script>
-        const button = document.getElementById('custom-bmc-button');
-        const dropdownContent = button.nextElementSibling;
-
-        // Set the width of the dropdown content to match the button's width
-        function setDropdownWidth() {
-            dropdownContent.style.width = `${button.offsetWidth}px`;
-        }
-
-        // Initial width setting
-        setDropdownWidth();
-
-        // Add a resize event listener to adjust the width if the window size changes
-        window.addEventListener('resize', setDropdownWidth);
-
-        button.addEventListener('click', function(e) {
+        document.getElementById('custom-bmc-button').addEventListener('click', function(e) {
             e.preventDefault();
+            var dropdownContent = this.nextElementSibling;
             dropdownContent.style.display = dropdownContent.style.display === 'block' ? 'none' : 'block';
         });
 
-        // Close the dropdown if the user clicks outside of it
+        document.getElementById('add-data-button').addEventListener('click', function(e) {
+            e.preventDefault();
+            var dropdownContent = document.getElementById('add-data-dropdown').querySelector('.dropdown-content');
+            dropdownContent.style.display = dropdownContent.style.display === 'block' ? 'none' : 'block';
+        });
+
+        // Close the dropdowns if the user clicks outside of them
         window.onclick = function(event) {
             if (!event.target.matches('.custom-button')) {
-                if (dropdownContent.style.display === 'block') {
-                    dropdownContent.style.display = 'none';
+                var dropdowns = document.getElementsByClassName("dropdown-content");
+                for (var i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.style.display === 'block') {
+                        openDropdown.style.display = 'none';
+                    }
                 }
             }
         }
+
+        // Set the width of the dropdown content to match the button's width
+        const buttons = document.querySelectorAll('.custom-button');
+        buttons.forEach(button => {
+            const dropdownContent = button.nextElementSibling;
+            if (dropdownContent) {
+                dropdownContent.style.width = `${button.offsetWidth}px`;
+            }
+        });
     </script>
 
     <script src="index.js" type="module" defer></script>
