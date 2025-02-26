@@ -48,9 +48,9 @@ async function loadUserMarkers() {
 
 map.on('load', () => {
     addBuildingMarkers();
-    addLocationsList();
-    geolocate.trigger();
-    loadUserMarkers();
+    addLocationsList(); // Add this line to create the list when the map loads
+    geolocate.trigger(); // Trigger geolocation on map load
+    loadUserMarkers(); // Load markers from Firestore on map load
 });
 
 // Container for both buttons
@@ -61,8 +61,8 @@ buttonGroup.style.left = '50%';
 buttonGroup.style.top = '50px';
 buttonGroup.style.transform = 'translateX(-50%)';
 buttonGroup.style.zIndex = '1000';
-buttonGroup.style.display = 'flex';
-buttonGroup.style.gap = '10px';
+buttonGroup.style.display = 'flex'; // Use flex to arrange buttons horizontally
+buttonGroup.style.gap = '10px'; // Space between the buttons
 document.body.appendChild(buttonGroup);
 
 // Find People button
@@ -70,14 +70,14 @@ const toggleContainerButton = document.createElement('button');
 toggleContainerButton.id = 'toggle-container-button';
 toggleContainerButton.textContent = 'Find people 🔍';
 toggleContainerButton.className = 'custom-button';
-buttonGroup.appendChild(toggleContainerButton);
+buttonGroup.appendChild(toggleContainerButton); // Add to buttonGroup
 
 // Add data button
 const addDataButton = document.createElement('button');
 addDataButton.id = 'add-data-button';
 addDataButton.textContent = 'Add data ➕';
 addDataButton.className = 'custom-button';
-buttonGroup.appendChild(addDataButton);
+buttonGroup.appendChild(addDataButton); // Add to buttonGroup
 
 const openableContainer = document.createElement('div');
 openableContainer.id = 'openable-container';
@@ -132,7 +132,7 @@ function addLocationsList() {
         listItem.addEventListener('click', () => {
             map.flyTo({
                 center: location.coords,
-                zoom: 20
+                zoom: 5
             });
             openableContainer.style.display = 'none';
         });
@@ -453,4 +453,113 @@ addMarkerForm.innerHTML = `
   <small>Provide a brief description of this location.</small><br>
   <textarea id="description" name="description" rows="4" cols="30"></textarea><br><br>
 
-  <label for="funFact1">Fun Fact
+  <label for="funFact1">Fun Fact 1 (Optional):</label><br>
+  <small>Share an interesting fact about this location.</small><br>
+  <input type="text" id="funFact1" name="funFact1"><br><br>
+
+  <label for="funFact2">Fun Fact 2 (Optional):</label><br>
+  <small>Share another interesting fact about this location.</small><br>
+  <input type="text" id="funFact2" name="funFact2"><br><br>
+
+  <label for="funFact3">Fun Fact 3 (Optional):</label><br>
+  <small>Share one more interesting fact about this location.</small><br>
+  <input type="text" id="funFact3" name="funFact3"><br><br>
+
+  <label for="image">Image URL (Optional):</label><br>
+  <small>Provide a URL to an image representing this location.</small><br>
+  <input type="url" id="image" name="image"><br><br>
+
+  <button type="submit">Add Marker</button>
+`;
+formContainer.appendChild(addMarkerForm);
+
+// Function to toggle the form's visibility
+function toggleForm() {
+    const form = document.getElementById('add-marker-form');
+    form.style.display = form.style.display === 'none' ? 'block' : 'none';
+}
+
+// Handle form submission
+addMarkerForm.addEventListener('submit', async function (event) {
+    event.preventDefault();
+
+    const latitude = parseFloat(document.getElementById('latitude').value);
+    const longitude = parseFloat(document.getElementById('longitude').value);
+    const name = document.getElementById('name').value;
+    const whyHere = document.getElementById('whyHere').value;
+    const description = document.getElementById('description').value;
+    const funFact1 = document.getElementById('funFact1').value;
+    const funFact2 = document.getElementById('funFact2').value;
+    const funFact3 = document.getElementById('funFact3').value;
+    const image = document.getElementById('image').value;
+
+    if (isNaN(latitude) || isNaN(longitude)) {
+        alert('Invalid latitude or longitude.');
+        return;
+    }
+
+    const newMarker = {
+        coords: [longitude, latitude],
+        name: name,
+        whyHere: whyHere,
+        description: description,
+        funFact1: funFact1 || null,
+        funFact2: funFact2 || null,
+        funFact3: funFact3 || null,
+        image: image || 'URL_TO_DEFAULT_IMAGE',
+    };
+
+    try {
+        const docRef = await addDoc(collection(db, "userMarkers"), newMarker);
+        console.log("Document written with ID: ", docRef.id);
+        addUserMarker(newMarker);
+        addMarkerForm.reset();
+        toggleForm();
+    } catch (e) {
+        console.error("Error adding document: ", e);
+        alert('Error saving marker. Please try again.');
+    }
+});
+
+function addUserMarker(markerData) {
+    const { element: markerElement } = createCustomMarker(markerData.image, '#4CAF50', false);
+    const marker = new mapboxgl.Marker({
+        element: markerElement
+    })
+        .setLngLat(markerData.coords)
+        .addTo(map);
+
+    const funFactsHTML = [markerData.funFact1, markerData.funFact2, markerData.funFact3]
+        .filter(fact => fact)
+        .map(fact => `<li>${fact}</li>`)
+        .join('');
+
+    const popup = new mapboxgl.Popup({
+        closeButton: true,
+        closeOnClick: true,
+        className: 'custom-popup'
+    }).setHTML(`
+      <p style="font-size: 6px; font-weight: bold; margin-bottom: 10px;">${markerData.description}</p>
+      <div style="border-top: 1px solid #ccc; margin-bottom: 10px;"></div>
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <img src="${markerData.image}" alt="${markerData.name}" style="width: 40px; height: 40px; object-fit: cover; border-radius: 50%;" />
+        <div>
+          <div style="font-size: 16px; font-weight: bold;">${markerData.name}</div>
+        </div>
+      </div>
+      <p style="margin-top: 10px;">Why here? ${markerData.whyHere}</p>
+      ${funFactsHTML ? `
+        <div style="margin-top: 10px;">
+          <strong>Fun Facts:</strong>
+          <ul>${funFactsHTML}</ul>
+        </div>
+      ` : ''}
+    `);
+
+    marker.setPopup(popup);
+
+    marker.getElement().addEventListener('click', () => {
+        map.getCanvas().style.cursor = 'pointer';
+        popup.addTo(map);
+    });
+}
