@@ -84,6 +84,18 @@
             width: 100%;
             height: 400px;
         }
+
+        .form-link {
+            display: none;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .form-link a {
+            color: #9b4dca;
+            text-decoration: none;
+            font-weight: bold;
+        }
     </style>
 </head>
 <body>
@@ -93,7 +105,10 @@
         <div class="dropdown">
             <button class="custom-button" onclick="toggleDropdown()">Add data ➕</button>
             <div id="dropdown-content" class="dropdown-content">
-                <iframe class="google-form" src="https://docs.google.com/forms/d/e/1FAIpQLScwFASCkKSV0OxJ-J4TdFPEpvn65wVPvViJf4sAbbaIb3SHuQ/viewform?embedded=true" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+                <iframe class="google-form" src="https://docs.google.com/forms/d/e/1FAIpQLScwFASCkKSV0OxJ-J4TdFPEpvn65wVPvViJf4sAbbaIb3SHuQ/viewform?embedded=true" frameborder="0" marginheight="0" marginwidth="0" onload="showFallbackLink()">Loading…</iframe>
+                <div class="form-link">
+                    If the form does not load, click <a href="https://docs.google.com/forms/d/e/1FAIpQLScwFASCkKSV0OxJ-J4TdFPEpvn65wVPvViJf4sAbbaIb3SHuQ/viewform" target="_blank">here</a> to open it in a new tab.
+                </div>
             </div>
         </div>
     </div>
@@ -105,6 +120,17 @@
                 dropdownContent.style.display = "none";
             } else {
                 dropdownContent.style.display = "block";
+            }
+        }
+
+        function showFallbackLink() {
+            var iframe = document.querySelector(".google-form");
+            var formLink = document.querySelector(".form-link");
+
+            if (iframe.contentWindow.document.body.innerHTML.includes("Partitioned cookie or storage access")) {
+                formLink.style.display = "block";
+            } else {
+                formLink.style.display = "none";
             }
         }
     </script>
