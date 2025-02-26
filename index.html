@@ -222,14 +222,20 @@
             }
         }
 
-        // Set the width of the dropdown content to match the button's width
-        const buttons = document.querySelectorAll('.custom-button');
-        buttons.forEach(button => {
+        // Function to set the width of the dropdown content to match the button's width
+        function setDropdownWidth() {
+            const button = document.getElementById('custom-bmc-button');
             const dropdownContent = button.nextElementSibling;
             if (dropdownContent) {
                 dropdownContent.style.width = `${button.offsetWidth}px`;
             }
-        });
+        }
+
+        // Call the function when the page loads
+        window.addEventListener('load', setDropdownWidth);
+
+        // Call the function when the window is resized
+        window.addEventListener('resize', setDropdownWidth);
     </script>
 
     <script src="index.js" type="module" defer></script>
