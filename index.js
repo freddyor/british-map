@@ -12,11 +12,39 @@ var map = new mapboxgl.Map({
     bearing: -17.6
 });
 
+// Function to close all popups
+function closeAllPopups() {
+    // Close dropdown content
+    const dropdowns = document.getElementsByClassName("dropdown-content");
+    for (let i = 0; i < dropdowns.length; i++) {
+        dropdowns[i].style.display = 'none';
+    }
+
+    // Close marker popups
+    const popups = document.getElementsByClassName('mapboxgl-popup');
+    while (popups[0]) {
+        popups[0].remove();
+    }
+}
+
 map.on('load', () => {
-  addBuildingMarkers();
-  addLocationsList(); // Add this line to create the list when the map loads
-  geolocate.trigger(); // Trigger geolocation on map load
+    addBuildingMarkers();
+    addLocationsList(); // Add this line to create the list when the map loads
+    geolocate.trigger(); // Trigger geolocation on map load
+
+    // Set initial dropdown width and on resize
+    setDropdownWidth();
+    window.addEventListener('resize', setDropdownWidth);
 });
+
+// Function to set the dropdown width
+function setDropdownWidth() {
+    const button = document.getElementById('custom-bmc-button');
+    const dropdownContent = document.querySelector('.dropdown-content'); // Use querySelector to be more specific
+    if (button && dropdownContent) {
+        dropdownContent.style.width = `${button.offsetWidth}px`;
+    }
+}
 
 // Container for both buttons
 const buttonGroup = document.createElement('div');
@@ -64,6 +92,7 @@ document.body.appendChild(openableContainer);
 
 toggleContainerButton.addEventListener('click', () => {
     if (openableContainer.style.display === 'none' || openableContainer.style.display === '') {
+        closeAllPopups();  // Close any open popups
         openableContainer.style.display = 'block';
         toggleContainerButton.textContent = 'Find people 🔍';
     } else {
@@ -99,11 +128,11 @@ function addLocationsList() {
                 center: location.coords,
                 zoom: 5
             });
-             openableContainer.style.display = 'none';
+            openableContainer.style.display = 'none';
         });
         list.appendChild(listItem);
     });
-    
+
     openableContainer.innerHTML = '';
     openableContainer.style.maxHeight = '150px';
     openableContainer.style.overflowY = 'scroll';
@@ -214,16 +243,16 @@ document.head.appendChild(stylePopup);
 
 // Geolocation control
 const geolocate = new mapboxgl.GeolocateControl({
-  positionOptions: {
-    enableHighAccuracy: true
-  },
-  trackUserLocation: true,
-  showUserHeading: true,
-  showAccuracyCircle: false,
-  fitBoundsOptions: {
-    maxZoom: 5
-  },
-  showUserLocation: false // Disable the default blue dot
+    positionOptions: {
+        enableHighAccuracy: true
+    },
+    trackUserLocation: true,
+    showUserHeading: true,
+    showAccuracyCircle: false,
+    fitBoundsOptions: {
+        maxZoom: 5
+    },
+    showUserLocation: false // Disable the default blue dot
 });
 
 map.addControl(geolocate);
@@ -245,67 +274,68 @@ textEl.textContent = 'me';
 
 userLocationEl.appendChild(textEl);
 
-const userLocationMarker = new mapboxgl.Marker({element: userLocationEl})
-  .setLngLat([0, 0]) // Set initial coordinates, will be updated later
-  .addTo(map);
+const userLocationMarker = new mapboxgl.Marker({ element: userLocationEl })
+    .setLngLat([0, 0]) // Set initial coordinates, will be updated later
+    .addTo(map);
 
 geolocate.on('error', (e) => {
-  if (e.code === 1) {
-    console.log('Location access denied by user');
-    // You can update UI or take other actions here
-  }// Prevent the default error pop-up
+    if (e.code === 1) {
+        console.log('Location access denied by user');
+        // You can update UI or take other actions here
+    }
+    // Prevent the default error pop-up
 });
 
 geolocate.on('geolocate', (e) => {
-  const lon = e.coords.longitude;
-  const lat = e.coords.latitude;
-  const position = [lon, lat];
-  console.log(position);
+    const lon = e.coords.longitude;
+    const lat = e.coords.latitude;
+    const position = [lon, lat];
+    console.log(position);
 
-  // Update the user location marker position
-  userLocationMarker.setLngLat(position);
+    // Update the user location marker position
+    userLocationMarker.setLngLat(position);
 });
 
 function createCustomMarker(imageUrl, color = '#9b4dca', isLocation = false) {
-  const markerDiv = document.createElement('div');
-  markerDiv.className = 'custom-marker';
-  markerDiv.style.width = '3em';
-  markerDiv.style.height = '3em';
-  markerDiv.style.position = 'absolute';
-  markerDiv.style.borderRadius = '50%';
-  markerDiv.style.border = `0.25em solid ${color}`;
-  markerDiv.style.boxSizing = 'border-box';
-  markerDiv.style.overflow = 'hidden';
+    const markerDiv = document.createElement('div');
+    markerDiv.className = 'custom-marker';
+    markerDiv.style.width = '3em';
+    markerDiv.style.height = '3em';
+    markerDiv.style.position = 'absolute';
+    markerDiv.style.borderRadius = '50%';
+    markerDiv.style.border = `0.25em solid ${color}`;
+    markerDiv.style.boxSizing = 'border-box';
+    markerDiv.style.overflow = 'hidden';
 
-  const imageElement = document.createElement('img');
-  imageElement.src = imageUrl;
-  imageElement.style.width = '100%';
-  imageElement.style.height = '100%';
-  imageElement.style.objectFit = 'cover';
-  imageElement.style.borderRadius = '50%';
+    const imageElement = document.createElement('img');
+    imageElement.src = imageUrl;
+    imageElement.style.width = '100%';
+    imageElement.style.height = '100%';
+    imageElement.style.objectFit = 'cover';
+    imageElement.style.borderRadius = '50%';
 
-  markerDiv.appendChild(imageElement);
-  
-  return {
-    element: markerDiv,
-    id: `marker-${Date.now()}-${Math.random()}`
-  };
+    markerDiv.appendChild(imageElement);
+
+    return {
+        element: markerDiv,
+        id: `marker-${Date.now()}-${Math.random()}`
+    };
 }
 
 locations.forEach(location => {
-  const { element: markerElement, id } = createCustomMarker(location.image, '#9B4DCA', true);
-  markerElement.className += ' location-marker';
-  const marker = new mapboxgl.Marker({
-    element: markerElement
-  })
-    .setLngLat(location.coords)
-    .addTo(map);
+    const { element: markerElement, id } = createCustomMarker(location.image, '#9B4DCA', true);
+    markerElement.className += ' location-marker';
+    const marker = new mapboxgl.Marker({
+        element: markerElement
+    })
+        .setLngLat(location.coords)
+        .addTo(map);
 
     const popup = new mapboxgl.Popup({
-    closeButton: true,
-    closeOnClick: true,
-    className: 'custom-popup'
-  }).setHTML(`
+        closeButton: true,
+        closeOnClick: true,
+        className: 'custom-popup'
+    }).setHTML(`
     <p style="font-size: 6px; font-weight: bold; margin-bottom: 10px;">${location.description}</p>
     <div style="border-top: 1px solid #ccc; margin-bottom: 10px;"></div>
     <div style="display: flex; align-items: center; gap: 10px;">
@@ -327,29 +357,30 @@ locations.forEach(location => {
     ` : ''}
   `);
 
-  marker.setPopup(popup);
+    marker.setPopup(popup);
 
-  marker.getElement().addEventListener('click', () => {
-    map.getCanvas().style.cursor = 'pointer';
-    popup.addTo(map);
-  });
+    marker.getElement().addEventListener('click', () => {
+        closeAllPopups(); // Close other popups
+        map.getCanvas().style.cursor = 'pointer';
+        popup.addTo(map);
+    });
 });
 
 function addBuildingMarkers() {
-  buildings.forEach(building => {
-    const { element: markerElement, id } = createCustomMarker(building.image, '#E9E8E0', false);
-    markerElement.className += ' building-marker';
-    const marker = new mapboxgl.Marker({
-      element: markerElement
-    })
-      .setLngLat(building.coords)
-      .addTo(map);
+    buildings.forEach(building => {
+        const { element: markerElement, id } = createCustomMarker(building.image, '#E9E8E0', false);
+        markerElement.className += ' building-marker';
+        const marker = new mapboxgl.Marker({
+            element: markerElement
+        })
+            .setLngLat(building.coords)
+            .addTo(map);
 
-    const popup = new mapboxgl.Popup({
-      closeButton: true,
-      closeOnClick: true,
-      className: 'custom-popup'
-    }).setHTML(`
+        const popup = new mapboxgl.Popup({
+            closeButton: true,
+            closeOnClick: true,
+            className: 'custom-popup'
+        }).setHTML(`
       <p style="font-size: 6px; font-weight: bold; margin-bottom: 10px;">${building.description}</p>
       <div style="border-top: 1px solid #ccc; margin-bottom: 10px;"></div>
       <div style="display: flex; align-items: center; gap: 10px;">
@@ -371,11 +402,32 @@ function addBuildingMarkers() {
       ` : ''}
     `);
 
-    marker.setPopup(popup);
+        marker.setPopup(popup);
 
-    marker.getElement().addEventListener('click', () => {
-      map.getCanvas().style.cursor = 'pointer';
-      popup.addTo(map);
+        marker.getElement().addEventListener('click', () => {
+            closeAllPopups(); // Close other popups
+            map.getCanvas().style.cursor = 'pointer';
+            popup.addTo(map);
+        });
     });
-  });
 }
+
+// Attach event listener after the element is created
+document.addEventListener('DOMContentLoaded', function () {
+    const customBmcButton = document.getElementById('custom-bmc-button');
+
+    if (customBmcButton) {
+        customBmcButton.addEventListener('click', function (e) {
+            e.preventDefault();
+            const dropdownContent = document.querySelector('.dropdown-content'); // Use querySelector to be more specific
+            if (dropdownContent) {
+                if (dropdownContent.style.display === 'block') {
+                    dropdownContent.style.display = 'none';
+                } else {
+                    closeAllPopups(); // Close other popups
+                    dropdownContent.style.display = 'block';
+                }
+            }
+        });
+    }
+});
