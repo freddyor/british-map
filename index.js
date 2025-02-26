@@ -52,6 +52,7 @@ openableContainer.style.boxShadow = '0 6px 15px rgba(0, 0, 0, 0.3)';
 openableContainer.style.padding = '10px';
 openableContainer.style.width = '200px';
 openableContainer.style.textAlign = 'center';
+//openableContainer.textContent = 'This is an openable container!';  Remove this line
 document.body.appendChild(openableContainer);
 
 toggleContainerButton.addEventListener('click', () => {
@@ -61,36 +62,6 @@ toggleContainerButton.addEventListener('click', () => {
     } else {
         openableContainer.style.display = 'none';
         toggleContainerButton.textContent = 'Find people 🔍';
-    }
-});
-
-// Google Form container
-const googleFormContainer = document.createElement('div');
-googleFormContainer.id = 'google-form-container';
-googleFormContainer.style.display = 'none';
-googleFormContainer.style.position = 'fixed';
-googleFormContainer.style.left = '50%';
-googleFormContainer.style.top = '150px';
-googleFormContainer.style.transform = 'translateX(-50%)';
-googleFormContainer.style.zIndex = '999';
-googleFormContainer.style.backgroundColor = '#fff';
-googleFormContainer.style.border = '2px solid #f0f0f0';
-googleFormContainer.style.borderRadius = '8px';
-googleFormContainer.style.boxShadow = '0 6px 15px rgba(0, 0, 0, 0.3)';
-googleFormContainer.style.padding = '10px';
-googleFormContainer.style.width = '640px';
-googleFormContainer.style.height = '800px';
-googleFormContainer.style.textAlign = 'center';
-googleFormContainer.innerHTML = '<iframe src="https://docs.google.com/forms/d/e/1FAIpQLScwFASCkKSV0OxJ-J4TdFPEpvn65wVPvViJf4sAbbaIb3SHuQ/viewform?embedded=true" width="100%" height="100%" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>';
-document.body.appendChild(googleFormContainer);
-
-document.getElementById('google-form-button').addEventListener('click', () => {
-    if (googleFormContainer.style.display === 'none' || googleFormContainer.style.display === '') {
-        googleFormContainer.style.display = 'block';
-        document.getElementById('google-form-button').textContent = 'Close Google Form';
-    } else {
-        googleFormContainer.style.display = 'none';
-        document.getElementById('google-form-button').textContent = 'Open Google Form';
     }
 });
 
