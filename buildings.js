@@ -962,6 +962,158 @@ export const buildings = [
       { "date": "PURPOSE", "description": "Mary Wandesford left this building in her will to house ten non-married religious women. The house is still owned by Wandesfords Foundation 🏡" },
       { "date": "WILBERFORCE", "description": "The land was secured from William Wilberforce of Hull, grandfather of anti-slave trade campaigner William Wilberforce." }
     ]
+  },
+ {
+    "name": "The Blue Bell",
+    "coords": [-1.079080001403896, 53.95873610791321],
+    "image": "images/thebluebell.png",
+    "description": "",
+    "occupation": "17th CENTURY",
+    "tldr": "The Blue Bell is York's smallest pub.",
+    "events": [
+      {
+        "date": "YCFC",
+        "description": "In 1903, George Robinson became the landlord of the pub; he was later the founding director of York City Football Club, and the club initially held its meetings in the pub ⚽"
+      }
+    ]
+  },
+  {
+    "name": "Electric Cinema",
+    "coords": [-1.0785844693813007, 53.95843522950068],
+    "image": "images/electriccinema.png",
+    "description": "",
+    "occupation": "1911",
+    "tldr": "Now a restaurant, this building was the first purpose-built cinema in York. It closed in 1957 Ⅱ",
+    "events": []
+  },
+  {
+    "name": "Old White Swan",
+    "coords": [-1.0803558882668973, 53.960556085456],
+    "image": "images/oldwhiteswan.png",
+    "description": "",
+    "occupation": "1703",
+    "tldr": "This is the third-oldest pub in York.",
+    "events": [
+      {
+        "date": "1723",
+        "description": "The local constables decided to watch for possible Catholic activity in the pub, and spent £1 at the business while doing so - the equivalent to £185 now 💸"
+      }
+    ]
+  },
+  {
+    "name": "The Minster School",
+    "coords": [-1.0806394582981738, 53.961338997265],
+    "image": "images/theminsterschool.png",
+    "description": "",
+    "occupation": "627",
+    "tldr": "The Minster School was built to educate choristers at York Minster.",
+    "events": [
+      {
+        "date": "627",
+        "description": "The school traced its origins to a \"song school\" founded in 627 by Paulinus of York, the first Archbishop ⛪"
+      },
+      {
+        "date": "2018",
+        "description": "The headmaster was suspended when three unsecured air rifles were found on the premises. Parents protested the suspension 🌿"
+      }
+    ]
+  },
+  {
+    "name": "Roman Column",
+    "coords": [-1.08177873855273, 53.96162524798148],
+    "image": "images/romancolumn.png",
+    "description": "",
+    "occupation": "1st CENTURY",
+    "tldr": "It was part of a group of sixteen freestanding columns supporting the walls of a basilica on the site.",
+    "events": [
+      {
+        "date": "ROMAN",
+        "description": "It was built by soldiers of the Legia XI Hispana army, then reused by the 4th century by Legion VI 🛡️"
+      },
+      {
+        "date": "1969",
+        "description": "The column was discovered beneath the Minster during an excavation and was given to the City of York for its 1900th anniversary of the city's founding."
+      }
+    ]
+  },
+  {
+    "name": "1 Museum Street",
+    "coords": [-1.0851951221811063, 53.961238859977904],
+    "image": "images/1museumstreet.png",
+    "description": "",
+    "occupation": "1860",
+    "tldr": "Built to be the city's register office, it mostly served as York's Conservative Club, with committee rooms, a bar and a snooker room 🎱",
+    "events": []
+  },
+  {
+    "name": "River House",
+    "coords": [-1.0865184071254674, 53.96030191332813],
+    "image": "images/riverhouse.png",
+    "description": "",
+    "occupation": "1868",
+    "tldr": "Now a Pizza Express, this building was once built for a booming gentlemen's club.",
+    "events": [
+      {
+        "date": "1868",
+        "description": "The Yorkshire club, founded in 1839, outgrew its home round the corner on Regency Street. This building was built for the club who refused to be situated near any of the poor due to 'disease risk' 🧐"
+      }
+    ]
+  },
+  {
+    "name": "York College for Girls",
+    "coords": [-1.0812830509958493, 53.96098935759324],
+    "image": "images/yorkcollegeforgirls.png",
+    "description": "",
+    "occupation": "1725",
+    "tldr": "York College for Girls was a girls school in this building from 1908 until 1997 🏫",
+    "events": [
+      {
+        "date": "PUPILS",
+        "description": "Mary Isolen Fergusson, the first female fellow of the Institute of Civil Engineers, attended here. So did tragic missing person Claudia Lawrence."
+      }
+    ]
+  },
+  {
+    "name": "Ye Olde Starre Inne",
+    "coords": [-1.083552025608745, 53.961222701440775],
+    "image": "images/yeoldestarreinne.png",
+    "description": "",
+    "occupation": "1644",
+    "tldr": "This is the oldest licensed pub in the city.",
+    "events": [
+      {
+        "date": "1644",
+        "description": "The pub was used as a hospital for wounded soldiers after the Battle of Marston Moor, in which Lord Fairfax's York parliamentarians defeated the Royalists ⚔️"
+      }
+    ]
+  },
+  {
+    "name": "York County Hospital",
+    "coords": [-1.0757249562013782, 53.96300165346587],
+    "image": "images/yorkcountyhospital.png",
+    "description": "",
+    "occupation": "1740",
+    "tldr": "Until 1977, this spectacular building was York County Hospital 🏥",
+    "events": [
+      {
+        "date": "1942",
+        "description": "During the major Luftwaffe Baedeker raids on York, many of the casualties, who would later go on to die, were treated here."
+      }
+    ]
+  },
+  {
+    "name": "York Railway Station",
+    "coords": [-1.0927368374514534, 53.95807056397365],
+    "image": "images/yorkrailwaystation.png",
+    "description": "",
+    "occupation": "1877",
+    "tldr": "When it opened, its 13 platforms made it the largest railway station in the world 🚂",
+    "events": [
+      {
+        "date": "WW2",
+        "description": "The station was heavily bombed during the war. On one occasion, 800 passengers had to be evacuated from a King's Cross-Edinburgh train which arrived during a bombing raid 💣"
+      }
+    ]
   }
 
 
