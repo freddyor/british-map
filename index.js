@@ -1,5 +1,31 @@
+import { initializeApp } from "firebase/app";
+import { getFirestore, collection, addDoc, getDocs } from "firebase/firestore";
 import { buildings } from './buildings.js';
 import { locations } from './locations.js';
+
+// Your Firebase configuration
+const firebaseConfig = {
+
+  apiKey: "AIzaSyDjv5uUNOx86FvYsXdKSMkl8vui2Jynt7M",
+
+  authDomain: "britmap-64cb3.firebaseapp.com",
+
+  projectId: "britmap-64cb3",
+
+  storageBucket: "britmap-64cb3.firebasestorage.app",
+
+  messagingSenderId: "821384262397",
+
+  appId: "1:821384262397:web:ca81d64ab6a8dea562c494",
+
+  measurementId: "G-03E2BB7BQH"
+
+};
+
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
 
 mapboxgl.accessToken = 'pk.eyJ1IjoiZnJlZGRvbWF0ZSIsImEiOiJjbTc1bm5zYnQwaG1mMmtxeDdteXNmeXZ0In0.PuDNORq4qExIJ_fErdO_8g';
 
@@ -12,22 +38,19 @@ var map = new mapboxgl.Map({
     bearing: -17.6
 });
 
-// Function to load user markers from local storage
-function loadUserMarkers() {
-    const storedMarkers = localStorage.getItem('userMarkers');
-    if (storedMarkers) {
-        const markers = JSON.parse(storedMarkers);
-        markers.forEach(markerData => {
-            addUserMarker(markerData);
-        });
-    }
+async function loadUserMarkers() {
+    const querySnapshot = await getDocs(collection(db, "userMarkers"));
+    querySnapshot.forEach((doc) => {
+        const markerData = doc.data();
+        addUserMarker(markerData);
+    });
 }
 
 map.on('load', () => {
     addBuildingMarkers();
     addLocationsList();
     geolocate.trigger();
-    loadUserMarkers(); // Load markers from local storage on map load
+    loadUserMarkers();
 });
 
 // Container for both buttons
@@ -411,116 +434,23 @@ document.body.appendChild(formContainer);
 const addMarkerForm = document.createElement('form');
 addMarkerForm.innerHTML = `
   <label for="latitude">Latitude:</label><br>
-  <input type="number" id="latitude" name="latitude" required><br><br>
+  <small>Enter the latitude coordinate for the marker location.</small><br>
+  <input type="number" id="latitude" name="latitude" step="any" required><br><br>
 
   <label for="longitude">Longitude:</label><br>
-  <input type="number" id="longitude" name="longitude" required><br><br>
+  <small>Enter the longitude coordinate for the marker location.</small><br>
+  <input type="number" id="longitude" name="longitude" step="any" required><br><br>
 
   <label for="name">Name:</label><br>
+  <small>Enter a name or title for this location.</small><br>
   <input type="text" id="name" name="name" required><br><br>
 
+  <label for="whyHere">Why here?</label><br>
+  <small>Explain why this location is significant or why you chose it.</small><br>
+  <textarea id="whyHere" name="whyHere" rows="2" cols="30"></textarea><br><br>
+
   <label for="description">Description:</label><br>
+  <small>Provide a brief description of this location.</small><br>
   <textarea id="description" name="description" rows="4" cols="30"></textarea><br><br>
 
-  <label for="image">Image URL (Optional):</label><br>
-  <input type="url" id="image" name="image"><br><br>
-
-  <button type="submit">Add Marker</button>
-`;
-formContainer.appendChild(addMarkerForm);
-
-// Function to toggle the form's visibility
-function toggleForm() {
-    const form = document.getElementById('add-marker-form');
-    form.style.display = form.style.display === 'none' ? 'block' : 'none';
-}
-
-// Function to save user markers to local storage
-function saveUserMarkers(markers) {
-    localStorage.setItem('userMarkers', JSON.stringify(markers));
-}
-
-// Function to convert local storage data to JavaScript array string
-function convertLocalStorageToCode() {
-    const storedMarkers = localStorage.getItem('userMarkers');
-    if (storedMarkers) {
-        const markers = JSON.parse(storedMarkers);
-        const codeString = JSON.stringify(markers, null, 2); // Pretty print
-        console.log("Copy and paste this array into your locations.js or buildings.js file:\n\n" + codeString);
-        alert("Data converted to code and logged to console.  Check your browser's developer console (F12).");
-    } else {
-        alert("No data found in local storage.");
-    }
-}
-
-// Handle form submission
-addMarkerForm.addEventListener('submit', function (event) {
-    event.preventDefault(); // Prevent page reload
-
-    // Get form values
-    const latitude = parseFloat(document.getElementById('latitude').value);
-    const longitude = parseFloat(document.getElementById('longitude').value);
-    const name = document.getElementById('name').value;
-    const description = document.getElementById('description').value;
-    const image = document.getElementById('image').value;
-
-    // Validate data
-    if (isNaN(latitude) || isNaN(longitude)) {
-        alert('Invalid latitude or longitude.');
-        return;
-    }
-
-    // Create the marker
-    const newMarker = {
-        coords: [longitude, latitude],
-        name: name,
-        description: description,
-        image: image || 'URL_TO_DEFAULT_IMAGE', // Use a default image if none provided
-    };
-
-    // Add the marker to the map
-    addUserMarker(newMarker);
-
-    // Save the new marker to local storage
-    let existingMarkers = JSON.parse(localStorage.getItem('userMarkers')) || [];
-    existingMarkers.push(newMarker);
-    saveUserMarkers(existingMarkers);
-
-    // Convert local storage to code
-    convertLocalStorageToCode();
-
-    // Clear the form
-    addMarkerForm.reset();
-    toggleForm(); // Hide the form after submission
-});
-
-function addUserMarker(markerData) {
-    const { element: markerElement } = createCustomMarker(markerData.image, '#4CAF50', false); // Green color for user-added markers
-    const marker = new mapboxgl.Marker({
-        element: markerElement
-    })
-        .setLngLat(markerData.coords)
-        .addTo(map);
-
-    const popup = new mapboxgl.Popup({
-        closeButton: true,
-        closeOnClick: true,
-        className: 'custom-popup'
-    }).setHTML(`
-      <p style="font-size: 6px; font-weight: bold; margin-bottom: 10px;">${markerData.description}</p>
-      <div style="border-top: 1px solid #ccc; margin-bottom: 10px;"></div>
-      <div style="display: flex; align-items: center; gap: 10px;">
-        <img src="${markerData.image}" alt="${markerData.name}" style="width: 40px; height: 40px; object-fit: cover; border-radius: 50%;" />
-        <div>
-          <div style="font-size: 16px; font-weight: bold;">${markerData.name}</div>
-        </div>
-      </div>
-    `);
-
-    marker.setPopup(popup);
-
-    marker.getElement().addEventListener('click', () => {
-        map.getCanvas().style.cursor = 'pointer';
-        popup.addTo(map);
-    });
-}
+  <label for="funFact1">Fun Fact
