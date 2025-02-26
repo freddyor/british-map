@@ -66,7 +66,7 @@ toggleContainerButton.addEventListener('click', () => {
 
 // Google Form container
 const googleFormContainer = document.createElement('div');
-googleFormContainer.id = 'google-form-content';
+googleFormContainer.id = 'google-form-container';
 googleFormContainer.style.display = 'none';
 googleFormContainer.style.position = 'fixed';
 googleFormContainer.style.left = '50%';
@@ -87,10 +87,10 @@ document.body.appendChild(googleFormContainer);
 document.getElementById('google-form-button').addEventListener('click', () => {
     if (googleFormContainer.style.display === 'none' || googleFormContainer.style.display === '') {
         googleFormContainer.style.display = 'block';
-        googleFormButton.textContent = 'Close Google Form';
+        document.getElementById('google-form-button').textContent = 'Close Google Form';
     } else {
         googleFormContainer.style.display = 'none';
-        googleFormButton.textContent = 'Open Google Form';
+        document.getElementById('google-form-button').textContent = 'Open Google Form';
     }
 });
 
