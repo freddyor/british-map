@@ -1,6 +1,21 @@
 import { buildings } from './buildings.js';
 import { locations } from './locations.js';
 
+// Firebase configuration
+const firebaseConfig = {
+    apiKey: "AIzaSyDjv5uUNOx86FvYsXdKSMkl8vui2Jynt7M",
+    authDomain: "britmap-64cb3.firebaseapp.com",
+    projectId: "britmap-64cb3",
+    storageBucket: "britmap-64cb3.firebasestorage.app",
+    messagingSenderId: "821384262397",
+    appId: "1:821384262397:web:ca81d64ab6a8dea562c494",
+    measurementId: "G-03E2BB7BQH"
+};
+
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+const database = firebase.database();
+
 mapboxgl.accessToken = 'pk.eyJ1IjoiZnJlZGRvbWF0ZSIsImEiOiJjbTc1bm5zYnQwaG1mMmtxeDdteXNmeXZ0In0.PuDNORq4qExIJ_fErdO_8g';
 
 var map = new mapboxgl.Map({
@@ -13,10 +28,39 @@ var map = new mapboxgl.Map({
 });
 
 map.on('load', () => {
-  addBuildingMarkers();
-  addLocationsList(); // Add this line to create the list when the map loads
-  geolocate.trigger(); // Trigger geolocation on map load
+    addBuildingMarkers();
+    addLocationsList(); // Add this line to create the list when the map loads
+    loadMarkersFromFirebase(); // Load markers from Firebase on map load
+    geolocate.trigger(); // Trigger geolocation on map load
 });
+
+// Load markers from Firebase
+function loadMarkersFromFirebase() {
+    database.ref('markers').on('value', (snapshot) => {
+        const markers = snapshot.val();
+        if (markers) {
+            // Clear existing markers
+            Object.keys(markers).forEach(key => {
+                if (map.getLayer(key)) {
+                    map.removeLayer(key);
+                    map.removeSource(key);
+                }
+            });
+
+            Object.entries(markers).forEach(([key, markerData]) => {
+                addMarkerToMap(markerData.title, markerData.lat, markerData.lng, key);
+            });
+        }
+    });
+}
+
+// Function to add a marker to the map
+function addMarkerToMap(title, lat, lng, markerId) {
+    const marker = new mapboxgl.Marker()
+        .setLngLat([lng, lat])
+        .setPopup(new mapboxgl.Popup().setHTML(`<h3>${title}</h3>`))
+        .addTo(map);
+}
 
 // Container for both buttons
 const buttonGroup = document.createElement('div');
@@ -99,11 +143,11 @@ function addLocationsList() {
                 center: location.coords,
                 zoom: 20
             });
-             openableContainer.style.display = 'none';
+            openableContainer.style.display = 'none';
         });
         list.appendChild(listItem);
     });
-    
+
     openableContainer.innerHTML = '';
     openableContainer.style.maxHeight = '150px';
     openableContainer.style.overflowY = 'scroll';
@@ -214,16 +258,16 @@ document.head.appendChild(stylePopup);
 
 // Geolocation control
 const geolocate = new mapboxgl.GeolocateControl({
-  positionOptions: {
-    enableHighAccuracy: true
-  },
-  trackUserLocation: true,
-  showUserHeading: true,
-  showAccuracyCircle: false,
-  fitBoundsOptions: {
-    maxZoom: 5
-  },
-  showUserLocation: false // Disable the default blue dot
+    positionOptions: {
+        enableHighAccuracy: true
+    },
+    trackUserLocation: true,
+    showUserHeading: true,
+    showAccuracyCircle: false,
+    fitBoundsOptions: {
+        maxZoom: 5
+    },
+    showUserLocation: false // Disable the default blue dot
 });
 
 map.addControl(geolocate);
@@ -245,67 +289,67 @@ textEl.textContent = 'me';
 
 userLocationEl.appendChild(textEl);
 
-const userLocationMarker = new mapboxgl.Marker({element: userLocationEl})
-  .setLngLat([0, 0]) // Set initial coordinates, will be updated later
-  .addTo(map);
+const userLocationMarker = new mapboxgl.Marker({ element: userLocationEl })
+    .setLngLat([0, 0]) // Set initial coordinates, will be updated later
+    .addTo(map);
 
 geolocate.on('error', (e) => {
-  if (e.code === 1) {
-    console.log('Location access denied by user');
-    // You can update UI or take other actions here
-  }// Prevent the default error pop-up
+    if (e.code === 1) {
+        console.log('Location access denied by user');
+        // You can update UI or take other actions here
+    }// Prevent the default error pop-up
 });
 
 geolocate.on('geolocate', (e) => {
-  const lon = e.coords.longitude;
-  const lat = e.coords.latitude;
-  const position = [lon, lat];
-  console.log(position);
+    const lon = e.coords.longitude;
+    const lat = e.coords.latitude;
+    const position = [lon, lat];
+    console.log(position);
 
-  // Update the user location marker position
-  userLocationMarker.setLngLat(position);
+    // Update the user location marker position
+    userLocationMarker.setLngLat(position);
 });
 
 function createCustomMarker(imageUrl, color = '#9b4dca', isLocation = false) {
-  const markerDiv = document.createElement('div');
-  markerDiv.className = 'custom-marker';
-  markerDiv.style.width = '3em';
-  markerDiv.style.height = '3em';
-  markerDiv.style.position = 'absolute';
-  markerDiv.style.borderRadius = '50%';
-  markerDiv.style.border = `0.25em solid ${color}`;
-  markerDiv.style.boxSizing = 'border-box';
-  markerDiv.style.overflow = 'hidden';
+    const markerDiv = document.createElement('div');
+    markerDiv.className = 'custom-marker';
+    markerDiv.style.width = '3em';
+    markerDiv.style.height = '3em';
+    markerDiv.style.position = 'absolute';
+    markerDiv.style.borderRadius = '50%';
+    markerDiv.style.border = `0.25em solid ${color}`;
+    markerDiv.style.boxSizing = 'border-box';
+    markerDiv.style.overflow = 'hidden';
 
-  const imageElement = document.createElement('img');
-  imageElement.src = imageUrl;
-  imageElement.style.width = '100%';
-  imageElement.style.height = '100%';
-  imageElement.style.objectFit = 'cover';
-  imageElement.style.borderRadius = '50%';
+    const imageElement = document.createElement('img');
+    imageElement.src = imageUrl;
+    imageElement.style.width = '100%';
+    imageElement.style.height = '100%';
+    imageElement.style.objectFit = 'cover';
+    imageElement.style.borderRadius = '50%';
 
-  markerDiv.appendChild(imageElement);
-  
-  return {
-    element: markerDiv,
-    id: `marker-${Date.now()}-${Math.random()}`
-  };
+    markerDiv.appendChild(imageElement);
+
+    return {
+        element: markerDiv,
+        id: `marker-${Date.now()}-${Math.random()}`
+    };
 }
 
 locations.forEach(location => {
-  const { element: markerElement, id } = createCustomMarker(location.image, '#9B4DCA', true);
-  markerElement.className += ' location-marker';
-  const marker = new mapboxgl.Marker({
-    element: markerElement
-  })
-    .setLngLat(location.coords)
-    .addTo(map);
+    const { element: markerElement, id } = createCustomMarker(location.image, '#9B4DCA', true);
+    markerElement.className += ' location-marker';
+    const marker = new mapboxgl.Marker({
+        element: markerElement
+    })
+        .setLngLat(location.coords)
+        .addTo(map);
 
     const popup = new mapboxgl.Popup({
-    closeButton: true,
-    closeOnClick: true,
-    className: 'custom-popup'
-  }).setHTML(`
+        closeButton: true,
+        closeOnClick: true,
+        className: 'custom-popup'
+    }).setHTML(`
     <p style="font-size: 6px; font-weight: bold; margin-bottom: 10px;">${location.description}</p>
     <div style="border-top: 1px solid #ccc; margin-bottom: 10px;"></div>
     <div style="display: flex; align-items: center; gap: 10px;">
@@ -327,29 +371,29 @@ locations.forEach(location => {
     ` : ''}
   `);
 
-  marker.setPopup(popup);
+    marker.setPopup(popup);
 
-  marker.getElement().addEventListener('click', () => {
-    map.getCanvas().style.cursor = 'pointer';
-    popup.addTo(map);
-  });
+    marker.getElement().addEventListener('click', () => {
+        map.getCanvas().style.cursor = 'pointer';
+        popup.addTo(map);
+    });
 });
 
 function addBuildingMarkers() {
-  buildings.forEach(building => {
-    const { element: markerElement, id } = createCustomMarker(building.image, '#E9E8E0', false);
-    markerElement.className += ' building-marker';
-    const marker = new mapboxgl.Marker({
-      element: markerElement
-    })
-      .setLngLat(building.coords)
-      .addTo(map);
+    buildings.forEach(building => {
+        const { element: markerElement, id } = createCustomMarker(building.image, '#E9E8E0', false);
+        markerElement.className += ' building-marker';
+        const marker = new mapboxgl.Marker({
+            element: markerElement
+        })
+            .setLngLat(building.coords)
+            .addTo(map);
 
-    const popup = new mapboxgl.Popup({
-      closeButton: true,
-      closeOnClick: true,
-      className: 'custom-popup'
-    }).setHTML(`
+        const popup = new mapboxgl.Popup({
+            closeButton: true,
+            closeOnClick: true,
+            className: 'custom-popup'
+        }).setHTML(`
       <p style="font-size: 6px; font-weight: bold; margin-bottom: 10px;">${building.description}</p>
       <div style="border-top: 1px solid #ccc; margin-bottom: 10px;"></div>
       <div style="display: flex; align-items: center; gap: 10px;">
@@ -371,11 +415,33 @@ function addBuildingMarkers() {
       ` : ''}
     `);
 
-    marker.setPopup(popup);
+        marker.setPopup(popup);
 
-    marker.getElement().addEventListener('click', () => {
-      map.getCanvas().style.cursor = 'pointer';
-      popup.addTo(map);
+        marker.getElement().addEventListener('click', () => {
+            map.getCanvas().style.cursor = 'pointer';
+            popup.addTo(map);
+        });
     });
-  });
+}
+
+// Add marker function
+document.getElementById('addMarkerBtn').addEventListener('click', function (e) {
+    e.preventDefault();
+    const title = document.getElementById('markerTitle').value;
+    const lat = parseFloat(document.getElementById('markerLat').value);
+    const lng = parseFloat(document.getElementById('markerLng').value);
+
+    if (title && !isNaN(lat) && !isNaN(lng)) {
+        addMarkerToFirebase(title, lat, lng);
+        document.getElementById('markerForm').reset();
+    }
+});
+
+// Function to add a marker to Firebase
+function addMarkerToFirebase(title, lat, lng) {
+    database.ref('markers').push({
+        title: title,
+        lat: lat,
+        lng: lng
+    });
 }
