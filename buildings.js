@@ -1120,6 +1120,7 @@ export const buildings = [
     "coords": [-1.2485630227759836, 54.54574393320777],
     "image": "images/acklamhall.png",
     "occupation": "1683",
+    description: "",
     "tldr": "Acklam Hall was built by William Hustler, MP for Northallerton.",
     "events": [
       {
@@ -1137,6 +1138,7 @@ export const buildings = [
     "coords": [-1.3693298942337462, 54.017142722380214],
     "image": "images/allertoncastle.png",
     "occupation": "16th CENTURY",
+     description: "",
     "tldr": "Originally belonged to the Mauleverer family, given to them after the Norman conquest.",
     "events": [
       {
@@ -1158,6 +1160,7 @@ export const buildings = [
     "coords": [-0.8836443396917715, 54.01651020763805],
     "image": "images/aldbypark.png",
     "occupation": "1725",
+     description: "",
     "tldr": "The current house replaced an original Tudor one",
     "events": [
       {
@@ -1179,6 +1182,7 @@ export const buildings = [
     "coords": [-1.28442833729709, 54.061513329791616],
     "image": "images/aldwarkmanor.png",
     "occupation": "1865",
+     description: "",
     "tldr": "This was originally the site of a manner with a moat in medieval times",
     "events": [
       {
@@ -1196,6 +1200,7 @@ export const buildings = [
     "coords": [-1.2421039751583463, 54.080192698882435],
     "image": "images/alnehall.png",
     "occupation": "1301",
+     description: "",
     "tldr": "Owen Hall was originally the country residence of the treasurer of York Minster. This role ended during the English Civil War.",
     "events": [
       {
@@ -1213,6 +1218,7 @@ export const buildings = [
     "coords": [-1.3039345997092266, 54.39529099055778],
     "image": "images/arncliffehall.png",
     "occupation": "16th CENTURY",
+     description: "",
     "tldr": "The hall was built by John Carr for Thomas Mauleverer",
     "events": [
       {
@@ -1234,6 +1240,7 @@ export const buildings = [
     "coords": [-1.7274293630959603, 54.425758909895116],
     "image": "images/askehall.png",
     "occupation": "12th CENTURY",
+     description: "",
     "tldr": "Until 1727 this site just consisted of a square tower with boggy fields around it.",
     "events": [
       {
@@ -1255,6 +1262,7 @@ export const buildings = [
     "coords": [-1.38004, 54.0875],
     "image": "images/studforthhill.png",
     "occupation": "1158",
+     description: "",
     "tldr": "On this site was Aldborough Castle owned by the Crown built upon the former Roman amphitheater",
     "events": []
   },
@@ -1263,6 +1271,7 @@ export const buildings = [
     "coords": [-0.48577784737137364, 54.2516812566831],
     "image": "images/aytonmanorcastle.png",
     "occupation": "14th CENTURY",
+     description: "",
     "tldr": "A fortified castle existed on this site from the 12th century 🏰",
     "events": [
       {
@@ -1279,6 +1288,7 @@ export const buildings = [
     "name": "Ampleforth Abbey",
     "coords": [-1.084615923483243, 54.20179556796415],
      "image": "images/ampleforthabbey.png",
+     description: "",
     "occupation": "1802",
     "tldr": "Ampleforth Abbey is a monastery of Benedictine monks. It currently has 41 monks.",
     "events": [
