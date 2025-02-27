@@ -1115,7 +1115,6 @@ export const buildings = [
       }
     ]
   },
-[
   {
     "name": "Whitby Abbey",
     "coords": [-0.608044, 54.488338],
@@ -1700,5 +1699,4 @@ export const buildings = [
     { date: "Present Day", description: "Houses a vast collection of weapons, uniforms, and medals, telling the story of the regiment's service ⚔️🏅" }
   ]
 }
-  ]
 ];
