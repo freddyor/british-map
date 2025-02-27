@@ -1245,11 +1245,11 @@ export const buildings = [
     "events": [
       {
         "date": "ASKE",
-        "description": "The building was owned by the Aske family for awhile most notably profits ask who was executed by Henry the eighth due to the pilgrimage of Grace uprising ✝️"
+        "description": "The building was owned by the Aske family for a while. The most notable Aske being Robert, who was executed by Henry the eighth due to the Pilgrimage of Grace uprising ✝️"
       },
       {
         "date": "1617",
-        "description": "King James visited the hall 🍯"
+        "description": "King James visited the hall 👑"
       },
       {
         "date": "1763",
