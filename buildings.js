@@ -1209,9 +1209,9 @@ export const buildings = [
     ]
   },
   {
-    "name": "Arnclifee Hall",
+    "name": "Arncliffe Hall",
     "coords": [-1.3039345997092266, 54.39529099055778],
-    "image": "images/arnclifeehall.png",
+    "image": "images/arncliffehall.png",
     "occupation": "16th CENTURY",
     "tldr": "The hall was built by John Carr for Thomas Mauleverer",
     "events": [
