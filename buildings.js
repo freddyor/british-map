@@ -1115,5 +1115,183 @@ export const buildings = [
       }
     ]
   },
+ {
+    "name": "Acklam hall",
+    "coords": [-1.2485630227759836, 54.54574393320777],
+    "image": "images/acklamhall.png",
+    "occupation": "1683",
+    "tldr": "Acklam Hall was built by William Hustler, MP for Northallerton.",
+    "events": [
+      {
+        "date": "1684",
+        "description": "The hall was visited by a Royal progress by King Charles II 👑"
+      },
+      {
+        "date": "SCHOOL",
+        "description": "The hall has also been used as a grammar school, for Middlesbrough Council and for Middlesbrough College 🎓"
+      }
+    ]
+  },
+  {
+    "name": "Allerton Castle",
+    "coords": [-1.3693298942337462, 54.017142722380214],
+    "image": "images/allertoncastle.png",
+    "occupation": "16th CENTURY",
+    "tldr": "Originally belonged to the Mauleverer family, given to them after the Norman conquest.",
+    "events": [
+      {
+        "date": "1786",
+        "description": "Prince Frederick, Duke of York, second son of George III brother of George IV bought this house 👑"
+      },
+      {
+        "date": "RAF",
+        "description": "It was used by the Canadian Air Force in World War II and in 1965 🛩️"
+      },
+      {
+        "date": "1983",
+        "description": "The house was sold to Dr Gerald Rolf, an American businessman, who still maintains it today 🇺🇸"
+      }
+    ]
+  },
+  {
+    "name": "Aldby Park",
+    "coords": [-0.8836443396917715, 54.01651020763805],
+    "image": "images/aldbypark.png",
+    "occupation": "1725",
+    "tldr": "The current house replaced an original Tudor one",
+    "events": [
+      {
+        "date": "625",
+        "description": "This exact site is believed to be where Edwin of Northumbria was crowned king 👑"
+      },
+      {
+        "date": "POWER",
+        "description": "Henry Darley, who served as Justice of the Peace and High Sheriff of Yorkshire in 1827 lived here. 📜"
+      },
+      {
+        "date": "WW2",
+        "description": "The house was used by the army during WW2 and suffered severely 🪖"
+      }
+    ]
+  },
+  {
+    "name": "Aldwark Manor",
+    "coords": [-1.28442833729709, 54.061513329791616],
+    "image": "images/aldwarkmanor.png",
+    "occupation": "1865",
+    "tldr": "This was originally the site of a manner with a moat in medieval times",
+    "events": [
+      {
+        "date": "1865",
+        "description": "Lord Walsingham commissioned the building as a wedding present to his daughter 👑"
+      },
+      {
+        "date": "WW2",
+        "description": "It was used by the Canadian forces during World War II, the legendary 'Dam Busters' raid was planned here 💣"
+      }
+    ]
+  },
+  {
+    "name": "Alne Hall",
+    "coords": [-1.2421039751583463, 54.080192698882435],
+    "image": "images/alnehall.png",
+    "occupation": "1301",
+    "tldr": "Owen Hall was originally the country residence of the treasurer of York Minster. This role ended during the English Civil War.",
+    "events": [
+      {
+        "date": "CHURCH",
+        "description": "The building was licensed to hold non-conformist meetings at the house. These were protestant Christians who did not conform to the established church ✝️"
+      },
+      {
+        "date": "WW2",
+        "description": "The hall served as a base for the Women's Land Army 🪖"
+      }
+    ]
+  },
+  {
+    "name": "Arnclifee Hall",
+    "coords": [-1.3039345997092266, 54.39529099055778],
+    "image": "images/arnclifeehall.png",
+    "occupation": "16th CENTURY",
+    "tldr": "The hall was built by John Carr for Thomas Mauleverer",
+    "events": [
+      {
+        "date": "MAULEVERER",
+        "description": "Sir John Mauleverer had come to England with William the Conqueror and was in charge of The Forests and Parka north of the River Trent 🏞️"
+      },
+      {
+        "date": "1649",
+        "description": "Sir Thomas Mauleverer signed the death warrant of King Charles I as a commissioner of the High Court of Justice 📜"
+      },
+      {
+        "date": "BARON",
+        "description": "Sir Thomas' son, Richard, had fought for the royalists so was allowed to inherit the baronet title when the monarchy was restored."
+      }
+    ]
+  },
+  {
+    "name": "Aske Hall",
+    "coords": [-1.7274293630959603, 54.425758909895116],
+    "image": "images/askehall.png",
+    "occupation": "12th CENTURY",
+    "tldr": "Until 1727 this site just consisted of a square tower with boggy fields around it.",
+    "events": [
+      {
+        "date": "ASKE",
+        "description": "The building was owned by the Aske family for awhile most notably profits ask who was executed by Henry the eighth due to the pilgrimage of Grace uprising ✝️"
+      },
+      {
+        "date": "1617",
+        "description": "King James visited the hall 🍯"
+      },
+      {
+        "date": "1763",
+        "description": "The house was purchased by Sir Lawrence Douglas, first Earl of Zetland, with his architect John Carr. The house has been in this family ever since and is occupied now by the fourth Earl of Zetland."
+      }
+    ]
+  },
+  {
+    "name": "Studforth Hill",
+    "coords": [-1.38004, 54.0875],
+    "image": "images/studforthhill.png",
+    "occupation": "1158",
+    "tldr": "On this site was Aldborough Castle owned by the Crown built upon the former Roman amphitheater",
+    "events": []
+  },
+  {
+    "name": "Ayton Manor Castle",
+    "coords": [-0.48577784737137364, 54.2516812566831],
+    "image": "images/aytonmanorcastle.png",
+    "occupation": "14th CENTURY",
+    "tldr": "A fortified castle existed on this site from the 12th century 🏰",
+    "events": [
+      {
+        "date": "SCOTTS",
+        "description": "The castle was known as the 'Defender of the Dales' and came on a regular attack from Scottish raiders ⚔️"
+      },
+      {
+        "date": "BARON",
+        "description": "The land was owned by Catherine, daughter of William Aton second Baron Aton, a knight who participated in the war of King Edward the third in France ⚔️"
+      }
+    ]
+  },
+  {
+    "name": "Ampleforth Abbey",
+    "coords": [-1.084615923483243, 54.20179556796415],
+     "image": "images/ampleforthabbey.png",
+    "occupation": "1802",
+    "tldr": "Ampleforth Abbey is a monastery of Benedictine monks. It currently has 41 monks.",
+    "events": [
+      {
+        "date": "MONKS",
+        "description": "The monks descend from pre-reformation community at Westminster Abbey through the last surviving monk from Westminster ⛪"
+      },
+      {
+        "date": "1955",
+        "description": "The Abbey founded a daughter house the primary at St. Louis Missouri this became St. Louis Abbey in 1989 🇺🇸"
+      }
+    ]
+  }
+
 
 ];
