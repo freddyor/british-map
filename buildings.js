@@ -1699,8 +1699,5 @@ export const buildings = [
     { date: "1900", description: "Private James Firth won a Victoria Cross in South Africa using a cricket bat to defend himself during an ambush 🏏🎖️" },
     { date: "Present Day", description: "Houses a vast collection of weapons, uniforms, and medals, telling the story of the regiment's service ⚔️🏅" }
   ]
-},
-
-
-
+}
 ];
