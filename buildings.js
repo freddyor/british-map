@@ -1115,292 +1115,293 @@ export const buildings = [
       }
     ]
   },
-{
-  name: "Whitby Abbey",
-  coords: [54.488338, -0.608044],
-  image: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Whitby_Abbey.jpg/800px-Whitby_Abbey.jpg",
-  description: "A 7th-century Benedictine abbey in Whitby, North Yorkshire.",
-  occupation: "657",
-  tldr: "A historic abbey famous for its Gothic ruins and literary connections 🏰📚",
-  events: [
-    { date: "1890", description: "Bram Stoker visited Whitby and was inspired by the abbey's ruins to write 'Dracula' 🧛‍♂️" },
-    { date: "7th century", description: "The poet Cædmon lived and worked at Whitby Abbey, considered the earliest known English poet 📝" },
-    { date: "1914", description: "Whitby Abbey was shelled by German battlecruisers during World War I 🚢" }
-  ]
-},
-{
-  name: "Castle Howard",
-  coords: [54.12139, 0.90583],
-  image: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Castle_Howard.jpg/800px-Castle_Howard.jpg",
-  description: "A stately home in North Yorkshire, England.",
-  occupation: "1699",
-  tldr: "A grand estate known for its architectural beauty and literary connections 🏰📚",
-  events: [
-    { date: "1981", description: "Castle Howard was used as the filming location for the TV series 'Brideshead Revisited' 📺" },
-    { date: "1699", description: "Construction began on Castle Howard, taking over 100 years to complete 🏗️" },
-    { date: "1952", description: "Castle Howard was first opened to the public by George Howard 🌳" }
-  ]
-},
-{
-  name: "Fountains Abbey",
-  coords: [54.1097, -1.5755],
-  image: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Fountains_Abbey.jpg/800px-Fountains_Abbey.jpg",
-  description: "A ruined Cistercian monastery in North Yorkshire.",
-  occupation: "1132",
-  tldr: "One of the largest and most well-preserved monastic ruins in England 🏰🏞️",
-  events: [
-    { date: "13th century", description: "Fountains Abbey became one of the wealthiest monasteries in England, owning vast lands and over 15,000 sheep 🐑" },
-    { date: "1539", description: "The abbey was dissolved during Henry VIII's Dissolution of the Monasteries ⚔️" },
-    { date: "1986", description: "Fountains Abbey and Studley Royal Water Garden became a UNESCO World Heritage Site 🌟" }
-  ]
-},
-{
-  name: "Malham Cove",
-  coords: [54.070833, -2.158611],
-  image: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Malham_Cove.jpg/800px-Malham_Cove.jpg",
-  description: "A limestone cliff in the Yorkshire Dales.",
-  occupation: "Prehistoric",
-  tldr: "A natural wonder formed by glacial activity ❄️",
-  events: [
-    { date: "12,000 years ago", description: "Malham Cove was formed by a waterfall carrying meltwater from glaciers at the end of the last Ice Age 🌊" },
-    { date: "2010", description: "The limestone pavement at the top of Malham Cove featured in 'Harry Potter and the Deathly Hallows: Part 1' ⚡️" },
-    { date: "1779", description: "The priest Thomas West described Malham Cove as a 'prodigious castle' 🏰" }
-  ]
-},
-{
-  name: "Richmond Castle",
-  coords: [54.4033, -1.7367],
-  image: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/Richmond_Castle.jpg/800px-Richmond_Castle.jpg",
-  description: "A medieval fortress in Richmond, North Yorkshire.",
-  occupation: "1071",
-  tldr: "A historic castle with stunning views of the Swaledale valley 🏰🏞️",
-  events: [
-    { date: "1174", description: "King Henry II imprisoned Robert de Ros at Richmond Castle for rebelling against him 👑" },
-    { date: "1644", description: "During the English Civil War, Richmond Castle was garrisoned by Parliamentarian forces ⚔️" },
-    { date: "19th century", description: "The castle was used as a military barracks and later as a prison for conscientious objectors during World War I 🚫" }
-  ]
-},
-{
-  name: "Aysgarth Falls",
-  coords: [54.2942, -1.9873],
-  image: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Aysgarth_Falls.jpg/800px-Aysgarth_Falls.jpg",
-  description: "A series of waterfalls in the Yorkshire Dales.",
-  occupation: "Prehistoric",
-  tldr: "A breathtaking natural wonder and popular tourist destination 🌊🏞️",
-  events: [
-    { date: "19th century", description: "Aysgarth Falls became a popular spot for Victorian tourists, who would often picnic and sketch the scenery 🎨" },
-    { date: "2007", description: "The falls were featured in the film 'Robin Hood' starring Russell Crowe 🎥" },
-    { date: "2020", description: "Aysgarth Falls was named one of the top 10 most beautiful waterfalls in the UK by The Telegraph 🌟" }
-  ]
-},
-{
-  name: "Middleham Castle",
-  coords: [54.2775, -1.8083],
-  image: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Middleham_Castle.jpg/800px-Middleham_Castle.jpg",
-  description: "A medieval fortress in Middleham, North Yorkshire.",
-  occupation: "1190",
-  tldr: "A historic castle with strong connections to Richard III 🏰👑",
-  events: [
-    { date: "1470s", description: "Richard III, Duke of Gloucester, spent part of his childhood at Middleham Castle 👦" },
-    { date: "1485", description: "Richard III left Middleham Castle to march towards Bosworth Field, where he would meet his death ⚔️" },
-    { date: "19th century", description: "The castle was restored and became a popular tourist destination 🏞️" }
-  ]
-},
-{
-  name: "Tan Hill Inn",
-  coords: [54.3733, -2.3294],
-  image: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Tan_Hill_Inn.jpg/800px-Tan_Hill_Inn.jpg",
-  description: "A remote pub in the Yorkshire Dales.",
-  occupation: "17th century",
-  tldr: "The highest pub in the UK, known for its remote location and warm hospitality 🍺🏔️",
-  events: [
-    { date: "17th century", description: "The Tan Hill Inn was built as a stopping point for travelers crossing the Pennines 🚶‍♂️" },
-    { date: "2019", description: "The pub was featured on the BBC's 'Countryfile' program, highlighting its unique location 📺" },
-    { date: "2020", description: "Tan Hill Inn was named the 'most remote pub in the UK' by The Guardian 🌟" }
-  ]
-},
-{
-  name: "Scarborough Castle",
-  coords: [54.2869, -0.3887],
-  image: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Scarborough_Castle.jpg/800px-Scarborough_Castle.jpg",
-  description: "A former medieval royal fortress overlooking the North Sea.",
-  occupation: "1130s",
-  tldr: "A strategic stronghold with a history spanning over 2,500 years 🏰⚔️",
-  events: [
-    { date: "1265", description: "King Henry III granted the castle to his son, Prince Edward (later Edward I) 👑" },
-    { date: "1312", description: "King Edward II's favourite, Piers Gaveston, was besieged in the castle by the Earl of Pembroke 🛡️" },
-    { date: "1645", description: "The castle endured a five-month siege during the English Civil War, resulting in significant damage 💥" }
-  ]
-},
-{
-  name: "Rievaulx Abbey",
-  coords: [54.2575, -1.1175],
-  image: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Rievaulx_Abbey_-_geograph.org.uk_-_1461872.jpg/800px-Rievaulx_Abbey_-_geograph.org.uk_-_1461872.jpg",
-  description: "A former Cistercian abbey in Rievaulx, North Yorkshire.",
-  occupation: "1132",
-  tldr: "One of England's most powerful and wealthy monasteries in its heyday 🏛️💰",
-  events: [
-    { date: "1132", description: "Founded by twelve monks from Clairvaux Abbey 🙏" },
-    { date: "1538", description: "Dissolved by Henry VIII, with its valuables seized by the Crown 👑" },
-    { date: "1917", description: "Taken into state care and opened to the public 🏛️" }
-  ]
-},
-{
-  name: "Byland Abbey",
-  coords: [54.2033, -1.1611],
-  image: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Byland_Abbey_02.jpg/800px-Byland_Abbey_02.jpg",
-  description: "A ruined abbey and a small village in the Ryedale district.",
-  occupation: "1177",
-  tldr: "Once one of the greatest monasteries in England, known for its architecture 🏛️🎨",
-  events: [
-    { date: "1322", description: "King Edward II was nearly captured here by the Scots during the Battle of Byland ⚔️" },
-    { date: "1538", description: "Dissolved during the Dissolution of the Monasteries 📜" },
-    { date: "1921", description: "Byland Abbey was taken into state guardianship 🏛️" }
-  ]
-},
-{
-  name: "Helmsley Castle",
-  coords: [54.2464, -1.0617],
-  image: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Helmsley_Castle_-_geograph.org.uk_-_1804604.jpg/800px-Helmsley_Castle_-_geograph.org.uk_-_1804604.jpg",
-  description: "A medieval castle overlooking the market town of Helmsley.",
-  occupation: "1120s",
-  tldr: "A testament to medieval military architecture and Tudor transformation 🏰🛡️",
-  events: [
-    { date: "1644", description: "Held out for three months against a Parliamentarian siege during the English Civil War ⚔️" },
-    { date: "1695", description: "Transformed into a luxurious mansion by the Duke of Buckingham 🏠" },
-    { date: "1984", description: "Opened to the public by English Heritage 🏛️" }
-  ]
-},
-{
-  name: "Ripley Castle",
-  coords: [54.0103, -1.5725],
-  image: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Ripley_Castle_-_geograph.org.uk_-_1803415.jpg/800px-Ripley_Castle_-_geograph.org.uk_-_1803415.jpg",
-  description: "A Grade I listed 14th-century country house in Ripley.",
-  occupation: "1309",
-  tldr: "Home to the Ingilby family for over 700 years 🏰👑",
-  events: [
-    { date: "1603", description: "Sir William Ingilby reportedly threatened to shoot King James I with a pistol 🔫" },
-    { date: "1644", description: "Oliver Cromwell stayed at the castle during the English Civil War ⚔️" },
-    { date: "2000", description: "Featured in the film 'The Railway Children' 🎬" }
-  ]
-},
-{
-  name: "Knaresborough Castle",
-  coords: [53.9947, -1.4603],
-  image: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Knaresborough_Castle.jpg/800px-Knaresborough_Castle.jpg",
-  description: "A ruined medieval fortress in Knaresborough.",
-  occupation: "1130s",
-  tldr: "A strategic stronghold with connections to the English monarchy 🏰👑",
-  events: [
-    { date: "1130s", description: "Built by King Henry I to control the surrounding area 🏗️" },
-    { date: "1644", description: "Surrendered to Parliamentarian forces during the English Civil War ⚔️" },
-    { date: "1934", description: "The castle was opened to the public 🏛️" }
-  ]
-},
-{
-  name: "Bolton Castle",
-  coords: [54.3225, -1.9492],
-  image: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Bolton_Castle.jpg/800px-Bolton_Castle.jpg",
-  description: "A 14th-century castle in Wensleydale, North Yorkshire.",
-  occupation: "1379",
-  tldr: "A well-preserved medieval fortress with historical significance 🏰🔥",
-  events: [
-    { date: "1568", description: "Mary Queen of Scots was imprisoned here for six months 👑" },
-    { date: "1645", description: "The castle was besieged by Parliamentarian forces during the English Civil War ⚔️" },
-    { date: "2000", description: "Featured in the film 'Elizabeth' starring Cate Blanchett 🎬" }
-  ]
-},
-{
-  name: "Nunnington Hall",
-  coords: [54.1383, -0.9717],
-  image: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Nunnington_Hall.jpg/800px-Nunnington_Hall.jpg",
-  description: "A historic house in Nunnington, North Yorkshire.",
-  occupation: "1685",
-  tldr: "A charming country house with a collection of art and furniture 🏠🎨",
-  events: [
-    { date: "1685", description: "Built for the Fife family, who lived there until the 20th century 👪" },
-    { date: "1952", description: "Donated to the National Trust 🌳" },
-    { date: "2019", description: "Featured in the BBC's 'Countryfile' programme, highlighting its gardens 📺" }
-  ]
-},
-{
-  name: "Gisborough Priory",
-  coords: [54.5367, -0.8361],
-  image: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Gisborough_Priory.jpg/800px-Gisborough_Priory.jpg",
-  description: "A ruined Augustinian priory in Guisborough.",
-  occupation: "1119",
-  tldr: "Founded by Robert de Brus, ancestor of Robert the Bruce 👑",
-  events: [
-    { date: "1119", description: "Founded by Robert de Brus, ancestor of Robert the Bruce 👑" },
-    { date: "1539", description: "Dissolved during the Dissolution of the Monasteries 📜" },
-    { date: "2019", description: "Restoration work was completed to preserve the priory's ruins 🏗️" }
-  ]
-},
-{
-  name: "Fountains Hall",
-  coords: [54.1089, -1.5830],
-  image: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Fountains_Hall_2.jpg/800px-Fountains_Hall_2.jpg",
-  description: "A Jacobean country house near Fountains Abbey.",
-  occupation: "1611",
-  tldr: "A stunning example of Jacobean architecture built with stone from Fountains Abbey 🏰🏛️",
-  events: [
-    { date: "1611", description: "Built by Stephen Proctor using stone from the ruins of Fountains Abbey 🏗️" },
-    { date: "1923", description: "Purchased by the Vyner family who began restoration work 🔨" },
-    { date: "1966", description: "Acquired by the National Trust and opened to the public 🌳" }
-  ]
-},
-{
-  name: "Roseberry Topping",
-  coords: [54.5089, -1.1067],
-  image: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Roseberry_Topping.jpg/800px-Roseberry_Topping.jpg",
-  description: "A distinctive hill in North Yorkshire.",
-  occupation: "Prehistoric",
-  tldr: "An iconic landmark with a unique shape, often called 'Yorkshire's Matterhorn' ⛰️🏞️",
-  events: [
-    { date: "1912", description: "A geological collapse altered the hill's distinctive shape 🌋" },
-    { date: "1969", description: "Donated to the National Trust by the Creswick family 🎁" },
-    { date: "2020", description: "Named one of Britain's favourite hills in a Country Walking magazine poll 🥇" }
-  ]
-},
-{
-  name: "Sutton Bank",
-  coords: [54.2372, -1.2117],
-  image: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Sutton_Bank_-_geograph.org.uk_-_1459814.jpg/800px-Sutton_Bank_-_geograph.org.uk_-_1459814.jpg",
-  description: "A hill and national park centre in the North York Moors.",
-  occupation: "Prehistoric",
-  tldr: "Home to breathtaking views and the 'Finest View in England' according to James Herriot 🏞️👀",
-  events: [
-    { date: "1930s", description: "Became popular for gliding, with a gliding club established in 1934 ✈️" },
-    { date: "1952", description: "James Herriot declared the view from Sutton Bank as the 'Finest View in England' 📚" },
-    { date: "2014", description: "A £1.3 million visitor centre was opened to showcase the area's natural beauty 🏠" }
-  ]
-},
-{
-  name: "Ribblehead Viaduct",
-  coords: [54.2069, -2.3706],
-  image: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Ribblehead_Viaduct.jpg/800px-Ribblehead_Viaduct.jpg",
-  description: "A railway viaduct spanning Batty Moss in the Ribble Valley.",
-  occupation: "1875",
-  tldr: "An iconic Victorian engineering marvel and a symbol of industrial heritage 🚂🌉",
-  events: [
-    { date: "1875", description: "Completed after a challenging construction that cost many workers' lives 🏗️" },
-    { date: "1983", description: "Featured in the film 'The Slipper and the Rose' 🎬" },
-    { date: "2020", description: "Underwent a £2.1 million restoration project to secure its future 🔧" }
-  ]
-},
-{
-  name: "Studley Royal Water Garden",
-  coords: [54.1328, -1.5728],
-  image: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Studley_Royal_Water_Garden.jpg/800px-Studley_Royal_Water_Garden.jpg",
-  description: "A landscaped water garden near Ripon.",
-  occupation: "1718",
-  tldr: "A stunning example of Georgian landscape design and a UNESCO World Heritage Site 🌳🏛️",
-  events: [
-    { date: "1718", description: "Created by John Aislabie, incorporating the ruins of Fountains Abbey 🏞️" },
-    { date: "1983", description: "Acquired by the National Trust 🌳" },
-    { date: "1986", description: "Designated as a UNESCO World Heritage Site along with Fountains Abbey 🌟" }
-  ]
-},
+[
+  {
+    "name": "Whitby Abbey",
+    "coords": [-0.608044, 54.488338],
+    "image": "https://www.english-heritage.org.uk/siteassets/home/visit/places-to-visit/whitby-abbey/things-to-do/whitby-abbey-hero.jpg",
+    "description": "A 7th-century Benedictine abbey in Whitby, North Yorkshire.",
+    "occupation": "657",
+    "tldr": "A historic abbey famous for its Gothic ruins and literary connections 🏰📚",
+    "events": [
+      { "date": "1890", "description": "Bram Stoker visited Whitby and was inspired by the abbey's ruins to write 'Dracula' 🧛‍♂️" },
+      { "date": "7th century", "description": "The poet Cædmon lived and worked at Whitby Abbey, considered the earliest known English poet 📝" },
+      { "date": "1914", "description": "Whitby Abbey was shelled by German battlecruisers during World War I 🚢" }
+    ]
+  },
+  {
+    "name": "Castle Howard",
+    "coords": [0.90583, 54.12139],
+    "image": "https://www.castlehoward.co.uk/wp-content/uploads/2023/03/Castle-Howard-House-and-Gardens.jpg",
+    "description": "A stately home in North Yorkshire, England.",
+    "occupation": "1699",
+    "tldr": "A grand estate known for its architectural beauty and literary connections 🏰📚",
+    "events": [
+      { "date": "1981", "description": "Castle Howard was used as the filming location for the TV series 'Brideshead Revisited' 📺" },
+      { "date": "1699", "description": "Construction began on Castle Howard, taking over 100 years to complete 🏗️" },
+      { "date": "1952", "description": "Castle Howard was first opened to the public by George Howard 🌳" }
+    ]
+  },
+  {
+    "name": "Fountains Abbey",
+    "coords": [-1.5755, 54.1097],
+    "image": "https://nt.global.ssl.fastly.net/images/1431732359239-fountainsabbey-01.jpg?width=960&auto=webp&quality=75",
+    "description": "A ruined Cistercian monastery in North Yorkshire.",
+    "occupation": "1132",
+    "tldr": "One of the largest and most well-preserved monastic ruins in England 🏰🏞️",
+    "events": [
+      { "date": "13th century", "description": "Fountains Abbey became one of the wealthiest monasteries in England, owning vast lands and over 15,000 sheep 🐑" },
+      { "date": "1539", "description": "The abbey was dissolved during Henry VIII's Dissolution of the Monasteries ⚔️" },
+      { "date": "1986", "description": "Fountains Abbey and Studley Royal Water Garden became a UNESCO World Heritage Site 🌟" }
+    ]
+  },
+  {
+    "name": "Malham Cove",
+    "coords": [-2.158611, 54.070833],
+    "image": "https://www.yorkshiredales.org.uk/wp-content/uploads/sites/13/2019/07/Malham-Cove-from-above-c-Yorkshire-Dales-National-Park-Authority.jpg",
+    "description": "A limestone cliff in the Yorkshire Dales.",
+    "occupation": "Prehistoric",
+    "tldr": "A natural wonder formed by glacial activity ❄️",
+    "events": [
+      { "date": "12,000 years ago", "description": "Malham Cove was formed by a waterfall carrying meltwater from glaciers at the end of the last Ice Age 🌊" },
+      { "date": "2010", "description": "The limestone pavement at the top of Malham Cove featured in 'Harry Potter and the Deathly Hallows: Part 1' ⚡️" },
+      { "date": "1779", "description": "The priest Thomas West described Malham Cove as a 'prodigious castle' 🏰" }
+    ]
+  },
+  {
+    "name": "Richmond Castle",
+    "coords": [-1.7367, 54.4033],
+    "image": "https://www.english-heritage.org.uk/siteassets/home/visit/places-to-visit/richmond-castle/things-to-do/richmond-castle-hero.jpg",
+    "description": "A medieval fortress in Richmond, North Yorkshire.",
+    "occupation": "1071",
+    "tldr": "A historic castle with stunning views of the Swaledale valley 🏰🏞️",
+    "events": [
+      { "date": "1174", "description": "King Henry II imprisoned Robert de Ros at Richmond Castle for rebelling against him 👑" },
+      { "date": "1644", "description": "During the English Civil War, Richmond Castle was garrisoned by Parliamentarian forces ⚔️" },
+      { "date": "19th century", "description": "The castle was used as a military barracks and later as a prison for conscientious objectors during World War I 🚫" }
+    ]
+  },
+  {
+    "name": "Aysgarth Falls",
+    "coords": [-1.9873, 54.2942],
+    "image": "https://www.yorkshiredales.org.uk/wp-content/uploads/sites/13/2019/07/Aysgarth-Falls-c-Yorkshire-Dales-National-Park-Authority.jpg",
+    "description": "A series of waterfalls in the Yorkshire Dales.",
+    "occupation": "Prehistoric",
+    "tldr": "A breathtaking natural wonder and popular tourist destination 🌊🏞️",
+    "events": [
+      { "date": "19th century", "description": "Aysgarth Falls became a popular spot for Victorian tourists, who would often picnic and sketch the scenery 🎨" },
+      { "date": "2007", "description": "The falls were featured in the film 'Robin Hood' starring Russell Crowe 🎥" },
+      { "date": "2020", "description": "Aysgarth Falls was named one of the top 10 most beautiful waterfalls in the UK by The Telegraph 🌟" }
+    ]
+  },
+  {
+    "name": "Middleham Castle",
+    "coords": [-1.8083, 54.2775],
+    "image": "https://www.english-heritage.org.uk/siteassets/home/visit/places-to-visit/middleham-castle/things-to-do/middleham-castle-hero.jpg",
+    "description": "A medieval fortress in Middleham, North Yorkshire.",
+    "occupation": "1190",
+    "tldr": "A historic castle with strong connections to Richard III 🏰👑",
+    "events": [
+      { "date": "1470s", "description": "Richard III, Duke of Gloucester, spent part of his childhood at Middleham Castle 👦" },
+      { "date": "1485", "description": "Richard III left Middleham Castle to march towards Bosworth Field, where he would meet his death ⚔️" },
+      { "date": "19th century", "description": "The castle was restored and became a popular tourist destination 🏞️" }
+    ]
+  },
+  {
+    "name": "Tan Hill Inn",
+    "coords": [-2.3294, 54.3733],
+    "image": "https://www.tanhillinn.com/wp-content/uploads/2023/03/Tan-Hill-Inn-at-night-1024x683.jpg",
+    "description": "A remote pub in the Yorkshire Dales.",
+    "occupation": "17th century",
+    "tldr": "The highest pub in the UK, known for its remote location and warm hospitality 🍺🏔️",
+    "events": [
+      { "date": "17th century", "description": "The Tan Hill Inn was built as a stopping point for travelers crossing the Pennines 🚶‍♂️" },
+      { "date": "2019", "description": "The pub was featured on the BBC's 'Countryfile' program, highlighting its unique location 📺" },
+      { "date": "2020", "description": "Tan Hill Inn was named the 'most remote pub in the UK' by The Guardian 🌟" }
+    ]
+  },
+  {
+    "name": "Scarborough Castle",
+    "coords": [-0.3887, 54.2869],
+    "image": "https://www.english-heritage.org.uk/siteassets/home/visit/places-to-visit/scarborough-castle/things-to-do/scarborough-castle-hero-new.jpg",
+    "description": "A former medieval royal fortress overlooking the North Sea.",
+    "occupation": "1130s",
+    "tldr": "A strategic stronghold with a history spanning over 2,500 years 🏰⚔️",
+    "events": [
+      { "date": "1265", "description": "King Henry III granted the castle to his son, Prince Edward (later Edward I) 👑" },
+      { "date": "1312", "description": "King Edward II's favourite, Piers Gaveston, was besieged in the castle by the Earl of Pembroke 🛡️" },
+      { "date": "1645", "description": "The castle endured a five-month siege during the English Civil War, resulting in significant damage 💥" }
+    ]
+  },
+  {
+    "name": "Rievaulx Abbey",
+    "coords": [-1.1175, 54.2575],
+    "image": "https://www.english-heritage.org.uk/siteassets/home/visit/places-to-visit/rievaulx-abbey/things-to-do/rievaulx-abbey-hero.jpg",
+    "description": "A former Cistercian abbey in Rievaulx, North Yorkshire.",
+    "occupation": "1132",
+    "tldr": "One of England's most powerful and wealthy monasteries in its heyday 🏛️💰",
+    "events": [
+      { "date": "1132", "description": "Founded by twelve monks from Clairvaux Abbey 🙏" },
+      { "date": "1538", "description": "Dissolved by Henry VIII, with its valuables seized by the Crown 👑" },
+      { "date": "1917", "description": "Taken into state care and opened to the public 🏛️" }
+    ]
+  },
+  {
+    "name": "Byland Abbey",
+    "coords": [-1.1611, 54.2033],
+    "image": "https://www.english-heritage.org.uk/siteassets/home/visit/places-to-visit/byland-abbey/things-to-do/byland-abbey-hero-new.jpg",
+    "description": "A ruined abbey and a small village in the Ryedale district.",
+    "occupation": "1177",
+    "tldr": "Once one of the greatest monasteries in England, known for its architecture 🏛️🎨",
+    "events": [
+      { "date": "1322", "description": "King Edward II was nearly captured here by the Scots during the Battle of Byland ⚔️" },
+      { "date": "1538", "description": "Dissolved during the Dissolution of the Monasteries 📜" },
+      { "date": "1921", "description": "Byland Abbey was taken into state guardianship 🏛️" }
+    ]
+  },
+  {
+    "name": "Helmsley Castle",
+    "coords": [-1.0617, 54.2464],
+    "image": "https://www.english-heritage.org.uk/siteassets/home/visit/places-to-visit/helmsley-castle/things-to-do/helmsley-castle-hero.jpg",
+    "description": "A medieval castle overlooking the market town of Helmsley.",
+    "occupation": "1120s",
+    "tldr": "A testament to medieval military architecture and Tudor transformation 🏰🛡️",
+    "events": [
+      { "date": "1644", "description": "Held out for three months against a Parliamentarian siege during the English Civil War ⚔️" },
+      { "date": "1695", "description": "Transformed into a luxurious mansion by the Duke of Buckingham 🏠" },
+      { "date": "1984", "description": "Opened to the public by English Heritage 🏛️" }
+    ]
+  },
+  {
+    "name": "Ripley Castle",
+    "coords": [-1.5725, 54.0103],
+    "image": "https://www.ripleycastle.co.uk/wp-content/uploads/2021/07/Ripley-Castle-Credit-Charlotte-Graham-Photography-1-scaled.jpg",
+    "description": "A Grade I listed 14th-century country house in Ripley.",
+    "occupation": "1309",
+    "tldr": "Home to the Ingilby family for over 700 years 🏰👑",
+    "events": [
+      { "date": "1603", "description": "Sir William Ingilby reportedly threatened to shoot King James I with a pistol 🔫" },
+      { "date": "1644", "description": "Oliver Cromwell stayed at the castle during the English Civil War ⚔️" },
+      { "date": "2000", "description": "Featured in the film 'The Railway Children' 🎬" }
+    ]
+  },
+  {
+    "name": "Knaresborough Castle",
+    "coords": [-1.4603, 53.9947],
+    "image": "https://www.knaresborough.co.uk/wp-content/uploads/2023/01/Knaresborough-Castle-2-scaled.jpg",
+    "description": "A ruined medieval fortress in Knaresborough.",
+    "occupation": "1130s",
+    "tldr": "A strategic stronghold with connections to the English monarchy 🏰👑",
+    "events": [
+      { "date": "1130s", "description": "Built by King Henry I to control the surrounding area 🏗️" },
+      { "date": "1644", "description": "Surrendered to Parliamentarian forces during the English Civil War ⚔️" },
+      { "date": "1934", "description": "The castle was opened to the public 🏛️" }
+    ]
+  },
+  {
+    "name": "Bolton Castle",
+    "coords": [-1.9492, 54.3225],
+    "image": "https://www.boltoncastle.co.uk/wp-content/uploads/2024/03/Bolton-Castle-Homepage-image-scaled.jpg",
+    "description": "A 14th-century castle in Wensleydale, North Yorkshire.",
+    "occupation": "1379",
+    "tldr": "A well-preserved medieval fortress with historical significance 🏰🔥",
+    "events": [
+      { "date": "1568", "description": "Mary Queen of Scots was imprisoned here for six months 👑" },
+      { "date": "1645", "description": "The castle was besieged by Parliamentarian forces during the English Civil War ⚔️" },
+      { "date": "2000", "description": "Featured in the film 'Elizabeth' starring Cate Blanchett 🎬" }
+    ]
+  },
+  {
+    "name": "Nunnington Hall",
+    "coords": [-0.9717, 54.1383],
+    "image": "https://nt.global.ssl.fastly.net/images/1431732359085-nunningtonhall-01.jpg?width=960&auto=webp&quality=75",
+    "description": "A historic house in Nunnington, North Yorkshire.",
+    "occupation": "1685",
+    "tldr": "A charming country house with a collection of art and furniture 🏠🎨",
+    "events": [
+      { "date": "1685", "description": "Built for the Fife family, who lived there until the 20th century 👪" },
+      { "date": "1952", "description": "Donated to the National Trust 🌳" },
+      { "date": "2019", "description": "Featured in the BBC's 'Countryfile' programme, highlighting its gardens 📺" }
+    ]
+  },
+  {
+    "name": "Gisborough Priory",
+    "coords": [-0.8361, 54.5367],
+    "image": "https://www.english-heritage.org.uk/siteassets/home/visit/places-to-visit/gisborough-priory/things-to-do/gisborough-priory-hero.jpg",
+    "description": "A ruined Augustinian priory in Guisborough.",
+    "occupation": "1119",
+    "tldr": "Founded by Robert de Brus, ancestor of Robert the Bruce 👑",
+    "events": [
+      { "date": "1119", "description": "Founded by Robert de Brus, ancestor of Robert the Bruce 👑" },
+      { "date": "1539", "description": "Dissolved during the Dissolution of the Monasteries 📜" },
+      { "date": "2019", "description": "Restoration work was completed to preserve the priory's ruins 🏗️" }
+    ]
+  },
+  {
+    "name": "Fountains Hall",
+    "coords": [-1.5830, 54.1089],
+    "image": "https://nt.global.ssl.fastly.net/images/1431732359207-fountainshall-01.jpg?width=960&auto=webp&quality=75",
+    "description": "A Jacobean country house near Fountains Abbey.",
+    "occupation": "1611",
+    "tldr": "A stunning example of Jacobean architecture built with stone from Fountains Abbey 🏰🏛️",
+    "events": [
+      { "date": "1611", "description": "Built by Stephen Proctor using stone from the ruins of Fountains Abbey 🏗️" },
+      { "date": "1923", "description": "Purchased by the Vyner family who began restoration work 🔨" },
+      { "date": "1966", "description": "Acquired by the National Trust and opened to the public 🌳" }
+    ]
+  },
+  {
+    "name": "Roseberry Topping",
+    "coords": [-1.1067, 54.5089],
+    "image": "https://nt.global.ssl.fastly.net/images/1431732359671-roseberrytopping-01.jpg?width=960&auto=webp&quality=75",
+    "description": "A distinctive hill in North Yorkshire.",
+    "occupation": "Prehistoric",
+    "tldr": "An iconic landmark with a unique shape, often called 'Yorkshire's Matterhorn' ⛰️🏞️",
+    "events": [
+      { "date": "1912", "description": "A geological collapse altered the hill's distinctive shape 🌋" },
+      { "date": "1969", "description": "Donated to the National Trust by the Creswick family 🎁" },
+      { "date": "2020", "description": "Named one of Britain's favourite hills in a Country Walking magazine poll 🥇" }
+    ]
+  },
+  {
+    "name": "Sutton Bank",
+    "coords": [-1.2117, 54.2372],
+    "image": "https://www.northyorkmoors.org.uk/__data/assets/image/0019/1514986/Sutton-Bank-crop.jpg",
+    "description": "A hill and national park centre in the North York Moors.",
+    "occupation": "Prehistoric",
+    "tldr": "Home to breathtaking views and the 'Finest View in England' according to James Herriot 🏞️👀",
+    "events": [
+      { "date": "1930s", "description": "Became popular for gliding, with a gliding club established in 1934 ✈️" },
+      { "date": "1952", "description": "James Herriot declared the view from Sutton Bank as the 'Finest View in England' 📚" },
+      { "date": "2014", "description": "A £1.3 million visitor centre was opened to showcase the area's natural beauty 🏠" }
+    ]
+  },
+  {
+    "name": "Ribblehead Viaduct",
+    "coords": [-2.3706, 54.2069],
+    "image": "https://www.yorkshiredales.org.uk/wp-content/uploads/sites/13/2019/07/Ribblehead-Viaduct-c-Yorkshire-Dales-National-Park-Authority.jpg",
+    "description": "A railway viaduct spanning Batty Moss in the Ribble Valley.",
+    "occupation": "1875",
+    "tldr": "An iconic Victorian engineering marvel and a symbol of industrial heritage 🚂🌉",
+    "events": [
+      { "date": "1875", "description": "Completed after a challenging construction that cost many workers' lives 🏗️" },
+      { "date": "1983", "description": "Featured in the film 'The Slipper and the Rose' 🎬" },
+      { "date": "2020", "description": "Underwent a £2.1 million restoration project to secure its future 🔧" }
+    ]
+  },
+  {
+    "name": "Studley Royal Water Garden",
+    "coords": [-1.5728, 54.1328],
+    "image": "https://nt.global.ssl.fastly.net/images/1431732359260-studleyroyalwatergarden-01.jpg?width=960&auto=webp&quality=75",
+    "description": "A landscaped water garden near Ripon.",
+    "occupation": "1718",
+    "tldr": "A stunning example of Georgian landscape design and a UNESCO World Heritage Site 🌳🏛️",
+    "events": [
+      { "date": "1718", "description": "Created by John Aislabie, incorporating the ruins of Fountains Abbey 🏞️" },
+      { "date": "1983", "description": "Acquired by the National Trust 🌳" },
+      { "date": "1986", "description": "Designated as a UNESCO World Heritage Site along with Fountains Abbey 🌟" }
+    ]
+  },
 {
   name: "Malham Cove",
   coords: [54.0722, -2.1564],
