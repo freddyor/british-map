@@ -1700,4 +1700,5 @@ export const buildings = [
     { date: "Present Day", description: "Houses a vast collection of weapons, uniforms, and medals, telling the story of the regiment's service ⚔️🏅" }
   ]
 }
+  ]
 ];
