@@ -26,8 +26,8 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
-const app = firebase.initializeApp(firebaseConfig);
-const db = firebase.firestore();
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
 
 map.on('load', () => {
   addBuildingMarkers();
@@ -395,9 +395,6 @@ stylePopup.innerHTML = `
     font-size: 10px;
     padding: 1px 3px; 
   }
-
-
-
 `;
 
 // Append the style to the document
@@ -466,7 +463,7 @@ function createCustomMarker(imageUrl, color = '#9b4dca', isLocation = false) {
   markerDiv.style.boxSizing = 'border-box';
   markerDiv.style.overflow = 'hidden';
 
-    const imageElement = document.createElement('img');
+  const imageElement = document.createElement('img');
   imageElement.src = imageUrl;
   imageElement.style.width = '100%';
   imageElement.style.height = '100%';
@@ -474,7 +471,7 @@ function createCustomMarker(imageUrl, color = '#9b4dca', isLocation = false) {
   imageElement.style.borderRadius = '50%';
 
   markerDiv.appendChild(imageElement);
-  
+
   return {
     element: markerDiv,
     id: `marker-${Date.now()}-${Math.random()}`
@@ -490,7 +487,7 @@ locations.forEach(location => {
     .setLngLat(location.coords)
     .addTo(map);
 
-    const popup = new mapboxgl.Popup({
+  const popup = new mapboxgl.Popup({
     closeButton: true,
     closeOnClick: true,
     className: 'custom-popup'
@@ -539,7 +536,7 @@ function addBuildingMarkers() {
       closeOnClick: true,
       className: 'custom-popup'
     }).setHTML(`
-            <p style="font-size: 6px; font-weight: bold; margin-bottom: 10px;">${building.description}</p>
+      <p style="font-size: 6px; font-weight: bold; margin-bottom: 10px;">${building.description}</p>
       <div style="border-top: 1px solid #ccc; margin-bottom: 10px;"></div>
       <div style="display: flex; align-items: center; gap: 10px;">
         <img src="${building.image}" alt="${building.name}" style="width: 40px; height: 40px; object-fit: cover; border-radius: 50%;" />
@@ -706,7 +703,7 @@ document.getElementById('add-popup-marker').addEventListener('click', () => {
   }
 
   // Save marker data to Firestore
-  db.collection('markers').add({
+  addDoc(collection(db, 'markers'), {
     name,
     dates,
     tldr,
@@ -808,7 +805,7 @@ function resetForm() {
 
 // Load markers from Firebase
 function loadMarkersFromFirebase() {
-  db.collection('markers').get().then((querySnapshot) => {
+  getDocs(collection(db, 'markers')).then((querySnapshot) => {
     querySnapshot.forEach((doc) => {
       const data = doc.data();
       const { element: markerElement } = createCustomMarker(data.imageUrl, '#E9E8E0', false);
