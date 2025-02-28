@@ -375,7 +375,7 @@ stylePopup.innerHTML = `
     top: 5px;
     right: 5px;
     font-size: 10px;
-    padding: 2px 5px;
+    padding: 1px 1px;
   }
 
 
