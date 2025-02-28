@@ -494,9 +494,21 @@ stylePopup.innerHTML = `
 #add-people-marker-modal .popup-container {
   border-radius: 12px;
 }
+/* Match the styles of the name and dates section in the people marker popup to the building popup */
+#add-people-marker-modal .image-name-container div div:first-child {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+#add-people-marker-modal .image-name-container div div:last-child {
+  font-size: 14px;
+  color: #666;
+}
+
 /* Reduce line spacing on the people marker popup */
 #add-people-marker-modal .popup-container,
-#add-people-marker-modal .event-card {
+#add-people-marker-modal .event-card,
+#add-people-marker-modal .image-name-container {
   line-height: 1.05; /* Match the line spacing of the building popup */
 }
 `;
