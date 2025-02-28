@@ -263,11 +263,6 @@ stylePopup.innerHTML = `
     line-height: 1.05; /* ADDED: Match popup line height */
   }
 
-/* Reduce line spacing on people marker popup cards to match building popup */
-#add-people-marker-modal .event-card {
-  line-height: 1.05; /* Match the line spacing of the building popup */
-}
-
   #add-marker-modal button {
     background-color: #9b4dca;
     color: white;
@@ -378,16 +373,7 @@ stylePopup.innerHTML = `
   #image-upload-circle span {
     font-size: 24px;
     color: #666;
-  }
-  /* Match the styles of the name and dates section in the people marker popup to the building popup */
-#add-people-marker-modal .image-name-container div div:first-child {
-  font-size: 16px;
-  font-weight: bold;
-}
 
-#add-people-marker-modal .image-name-container div div:last-child {
-  font-size: 14px;
-  color: #666;
 }
 
   #add-marker-modal input[type="text"] {
@@ -493,6 +479,16 @@ stylePopup.innerHTML = `
 /* Round the people popup */
 #add-people-marker-modal .popup-container {
   border-radius: 12px;
+}
+/* Match the styles of the name and dates section in the people marker popup to the building popup */
+#add-people-marker-modal .image-name-container div div:first-child {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+#add-people-marker-modal .image-name-container div div:last-child {
+  font-size: 14px;
+  color: #666;
 }
 /* Match the styles of the name and dates section in the people marker popup to the building popup */
 #add-people-marker-modal .image-name-container div div:first-child {
