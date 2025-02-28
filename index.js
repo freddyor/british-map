@@ -279,6 +279,7 @@ stylePopup.innerHTML = `
   #add-marker-modal .coordinates-container .input-row {
     width: 48%;
   }
+
   /* Add styling for the rounded box */
   .rounded-box {
       background: #f9f9f9;
@@ -317,6 +318,27 @@ stylePopup.innerHTML = `
   .image-name-container div div:last-child {
       font-size: 14px;
       color: #666;
+  }
+
+  /* Style the editable text areas to blend in */
+  #add-marker-modal .rounded-box textarea,
+  #add-marker-modal .rounded-box input[type="text"] {
+    border: none;
+    background-color: transparent;
+    box-shadow: none;
+    padding: 0;
+    margin: 0;
+    font-size: inherit;
+    font-family: inherit;
+    color: inherit;
+    resize: none; /* Remove resize handle for textareas */
+  }
+
+  /* Style for the WEALTH and LEGACY labels */
+  #add-marker-modal .wealth-legacy-label {
+    color: #9b4dca;
+    font-size: 14px;
+    font-weight: bold;
   }
 `;
 
@@ -534,17 +556,16 @@ popupContainer.innerHTML = `
   </div>
 
   <div class="rounded-box">
-    <label for="popup-description">Description:</label>
     <textarea id="popup-description" placeholder="Description" style="width: 100%; box-sizing: border-box; font-size: 13px;">Elizabeth Montagu was raised here in Treasurer's House</textarea>
   </div>
 
   <div class="rounded-box">
-    <label style="color: #9b4dca;" for="popup-wealth">WEALTH:</label>
+    <label class="wealth-legacy-label" for="popup-wealth">WEALTH:</label>
     <textarea id="popup-wealth" placeholder="Wealth" style="width: 100%; box-sizing: border-box; font-size: 12px;">Elizabeth married into the extremely wealthy Montagu family. She inherited substantial amounts upon her husband's death</textarea>
   </div>
 
   <div class="rounded-box">
-    <label style="color: #9b4dca;" for="popup-legacy">LEGACY:</label>
+    <label class="wealth-legacy-label" for="popup-legacy">LEGACY:</label>
     <textarea id="popup-legacy" placeholder="Legacy" style="width: 100%; box-sizing: border-box; font-size: 12px;">Elizabeth and the Bluestockings were mentioned in the works of most future women's rights activists.</textarea>
   </div>
 
