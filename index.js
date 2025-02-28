@@ -798,11 +798,11 @@ function resetForm() {
   document.getElementById('image-upload-circle').style.display = "flex";
 }
 
-// Load markers from Firebase
 function loadMarkersFromFirebase() {
   getDocs(collection(db, 'markers')).then((querySnapshot) => {
     querySnapshot.forEach((doc) => {
       const data = doc.data();
+      console.log('Fetched marker data:', data); // Add this line
       const { element: markerElement } = createCustomMarker(data.imageUrl, '#E9E8E0', false);
       const marker = new mapboxgl.Marker({
         element: markerElement
