@@ -957,6 +957,27 @@ function loadMarkersFromFirebase() {
         map.getCanvas().style.cursor = 'pointer';
         popup.addTo(map);
       });
+
+        // Close the modal
+  personModal.style.display = 'none';
+
+  // Reset the form fields
+  resetPersonForm();
+});
+
+// Function to reset the person form
+function resetPersonForm() {
+  document.getElementById('person-popup-description').value = "";
+  document.getElementById('person-popup-name').value = "Person name here...";
+  document.getElementById('person-popup-dates').value = "Date of birth";
+  document.getElementById('person-popup-tldr').value = "One sentence summary of the person here.";
+  document.getElementById('popup-longitude').value = "";
+  document.getElementById('popup-latitude').value = "";
+  document.getElementById('person-popup-image').value = "";
+  document.getElementById('person-profile-image').src = "";
+  document.getElementById('person-profile-image').style.display = "none";
+  document.getElementById('person-image-upload-circle').style.display = "flex";
+}
     });
   }).catch(error => {
     console.error('Error loading markers: ', error);
