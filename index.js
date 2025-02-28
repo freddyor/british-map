@@ -127,7 +127,6 @@ link.href = "https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&displ
 link.rel = "stylesheet";
 document.head.appendChild(link);
 
-// Style for the popup and markers
 stylePopup.innerHTML = `
   .mapboxgl-popup-content {
     border-radius: 12px !important;
@@ -141,6 +140,8 @@ stylePopup.innerHTML = `
     padding-bottom: 0 !important;
     margin-left: 3px;
     margin-right: 5px;
+    max-width: 300px; // Added to limit the width
+    word-wrap: break-word; // Added to handle long words
   }
 
   .mapboxgl-popup-content img {
@@ -152,8 +153,12 @@ stylePopup.innerHTML = `
     font-weight: bold !important;
     text-align: center;
     letter-spacing: -0.5px;
-    font-size: 13px !important;
+    font-size: 12px !important; // Adjusted font size
     margin-bottom: 10px !important;
+  }
+
+  .mapboxgl-popup-content div {
+    font-size: 12px !important; // Ensure all text within divs is consistent
   }
 
   .mapboxgl-popup-close-button {
@@ -211,7 +216,7 @@ stylePopup.innerHTML = `
     z-index: 1000;
   }
 
-#add-marker-modal {
+  #add-marker-modal {
     display: none;
     position: fixed;
     top: 50%;
@@ -229,7 +234,7 @@ stylePopup.innerHTML = `
     padding: 10px;
     margin: 0;
     box-sizing: border-box;
-    line-height: 1.05; /* ADDED: Match popup line height */
+    line-height: 1.05; // ADDED: Match popup line height
     width: 300px;
   }
 
@@ -248,7 +253,7 @@ stylePopup.innerHTML = `
     border-radius: 4px;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
-    line-height: 1.05; /* ADDED: Match popup line height */
+    line-height: 1.05; // ADDED: Match popup line height
   }
 
   #add-marker-modal button {
@@ -284,7 +289,7 @@ stylePopup.innerHTML = `
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
-    line-height: 1.05; /* ADDED: Match popup line height */
+    line-height: 1.05; // ADDED: Match popup line height
   }
 
   #add-marker-modal .coordinates-container {
@@ -377,19 +382,22 @@ stylePopup.innerHTML = `
     outline: none;
   }
 
- .event-card {
-  position: relative;
-  margin-bottom: 5px; /* Reduced margin to half */
-  height: 30px; /* Updated height */
-}
+  .event-card {
+    position: relative;
+    margin-bottom: 5px; // Reduced margin to half
+    height: 30px; // Updated height
   }
+  
   .event-card input[type="text"] {
     font-size: 12px;
     margin-bottom: 2px;
   }
+  
   .event-card textarea {
     margin-top: 0;
+    font-size: 12px; // Adjusted font size
   }
+  
   .remove-event {
     position: absolute;
     top: 2px; 
@@ -398,8 +406,6 @@ stylePopup.innerHTML = `
     padding: 1px 3px; 
   }
 `;
-
-// Append the style to the document
 document.head.appendChild(stylePopup);
 
 // Geolocation control
