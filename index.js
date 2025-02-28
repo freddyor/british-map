@@ -605,17 +605,17 @@ popupContainer.innerHTML = `
   <div class="rounded-box">
     <textarea id="popup-tldr" placeholder="TLDR" style="width: 100%; box-sizing: border-box; font-size: 12px; font-weight: bold;">One sentence summary of the place here</textarea>
   </div>
-  <div class="rounded-box event-card" id="event1-card">
-    <textarea id="popup-event1" placeholder="Event 1" style="width: 100%; box-sizing: border-box; font-size: 12px; height: 60px;">Add up to three interesting facts. If there is nothing interesting, leave it blank.</textarea>
+  <div class="rounded-box event-card" id="event1-card" style="height: 15px;">
     <span class="remove-event" data-event="1" style="color: red; cursor: pointer; display: block; text-align: right; margin-top: 5px;">REMOVE</span>
+    <textarea id="popup-event1" placeholder="Event 1" style="width: 100%; box-sizing: border-box; font-size: 12px; height: 15px;">Add up to three interesting facts. If there is nothing interesting, leave it blank.</textarea>
   </div>
-  <div class="rounded-box event-card" id="event2-card">
-    <textarea id="popup-event2" placeholder="Event 2" style="width: 100%; box-sizing: border-box; font-size: 12px; height: 60px;">Edit the preview words (FACT1, FACT2, FACT3)</textarea>
+  <div class="rounded-box event-card" id="event2-card" style="height: 15px;">
     <span class="remove-event" data-event="2" style="color: red; cursor: pointer; display: block; text-align: right; margin-top: 5px;">REMOVE</span>
+    <textarea id="popup-event2" placeholder="Event 2" style="width: 100%; box-sizing: border-box; font-size: 12px; height: 15px;">Edit the preview words (FACT1, FACT2, FACT3)</textarea>
   </div>
-  <div class="rounded-box event-card" id="event3-card">
-    <textarea id="popup-event3" placeholder="Event 3" style="width: 100%; box-sizing: border-box; font-size: 12px; height: 60px;">Add an emoji after each sentence 😎</textarea>
+  <div class="rounded-box event-card" id="event3-card" style="height: 15px;">
     <span class="remove-event" data-event="3" style="color: red; cursor: pointer; display: block; text-align: right; margin-top: 5px;">REMOVE</span>
+    <textarea id="popup-event3" placeholder="Event 3" style="width: 100%; box-sizing: border-box; font-size: 12px; height: 15px;">Add an emoji after each sentence 😎</textarea>
   </div>
   <p style="font-size: 12px; color: #666; text-align: center; margin: 10px 0;">To get precise lng,lat coordinates, google "Getting Lat/Lng from a Click Event"</p>
   <div class="coordinates-container">
