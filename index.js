@@ -593,7 +593,7 @@ popupContainer.className = 'popup-container';
 popupContainer.innerHTML = `
   <div class="image-name-container">
     <div id="image-upload-circle" style="width: 40px; height: 40px; border-radius: 50%; background-color: #f0f0f0; display: flex; justify-content: center; align-items: center; cursor: pointer;">
-      <span style="font-size: 24px; color: #666;">+</span>
+      <span style="font-size: 12px; color: #9b4dca; font-weight: bold;">add img</span>
     </div>
     <img id="profile-image" src="" alt="Profile" style="width: 40px; height: 40px; object-fit: cover; border-radius: 50%; display: none;">
     <input type="file" id="popup-image" accept="image/*" style="display: none;">
@@ -820,6 +820,12 @@ function loadMarkersFromFirebase() {
             </div>
           </div>
           <div style="background: #f9f9f9; padding: 10px; margin-top: 10px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); font-size: 12px; font-weight: bold;">${data.tldr}</div>
+          ${data.events.map(event => `
+            <div style="background: #f9f9f9; padding: 10px; margin-top: 10px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); font-size: 12px;">
+              <strong style="color: #9b4dca; font-size: 12px; display: block; margin-bottom: 2px;">${event.label}</strong>
+              ${event.description}
+            </div>
+          `).join('')}
         </div>
       `;
       const popup = new mapboxgl.Popup({
