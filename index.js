@@ -48,6 +48,40 @@ buttonGroup.style.display = 'flex';
 buttonGroup.style.gap = '10px';
 document.body.appendChild(buttonGroup);
 
+// Find People button
+const toggleContainerButton = document.createElement('button');
+toggleContainerButton.id = 'toggle-container-button';
+toggleContainerButton.textContent = 'Find people 🔍';
+toggleContainerButton.className = 'custom-button';
+buttonGroup.appendChild(toggleContainerButton);
+
+const openableContainer = document.createElement('div');
+openableContainer.id = 'openable-container';
+openableContainer.style.display = 'none';
+openableContainer.style.position = 'fixed';
+openableContainer.style.left = '50%';
+openableContainer.style.top = '80px';
+openableContainer.style.transform = 'translateX(-50%)';
+openableContainer.style.zIndex = '999';
+openableContainer.style.backgroundColor = '#fff';
+openableContainer.style.border = '2px solid #f0f0f0';
+openableContainer.style.borderRadius = '8px';
+openableContainer.style.boxShadow = '0 6px 15px rgba(0, 0, 0, 0.3)';
+openableContainer.style.padding = '10px';
+openableContainer.style.width = '200px';
+openableContainer.style.textAlign = 'center';
+document.body.appendChild(openableContainer);
+
+toggleContainerButton.addEventListener('click', () => {
+    if (openableContainer.style.display === 'none' || openableContainer.style.display === '') {
+        openableContainer.style.display = 'block';
+        toggleContainerButton.textContent = 'Find people 🔍';
+    } else {
+        openableContainer.style.display = 'none';
+        toggleContainerButton.textContent = 'Find people 🔍';
+    }
+});
+
 function addLocationsList() {
     const list = document.createElement('ul');
     list.style.listStyleType = 'none';
@@ -770,239 +804,6 @@ function resetForm() {
   document.getElementById('profile-image').src = "";
   document.getElementById('profile-image').style.display = "none";
   document.getElementById('image-upload-circle').style.display = "flex";
-}
-
-// Add People Marker button
-const addPeopleMarkerButton = document.createElement('button');
-addPeopleMarkerButton.id = 'add-people-marker-button';
-addPeopleMarkerButton.textContent = '+ Add people marker';
-addPeopleMarkerButton.className = 'custom-button';
-buttonGroup.appendChild(addPeopleMarkerButton);
-
-// Modal container for people markers
-const peopleModal = document.createElement('div');
-peopleModal.id = 'add-people-marker-modal';
-peopleModal.style.display = 'none';
-peopleModal.style.position = 'fixed';
-peopleModal.style.top = '50%';
-peopleModal.style.left = '50%';
-peopleModal.style.transform = 'translate(-50%, -50%)';
-peopleModal.style.backgroundColor = 'transparent';
-peopleModal.style.border = 'none';
-peopleModal.style.boxShadow = 'none';
-peopleModal.style.zIndex = '1001';
-document.body.appendChild(peopleModal);
-
-// Editable Popup Structure for people markers
-const peoplePopupContainer = document.createElement('div');
-peoplePopupContainer.className = 'popup-container';
-peoplePopupContainer.innerHTML = `
-  <div class="image-name-container">
-    <div id="people-image-upload-circle" style="width: 40px; height: 40px; border-radius: 50%; background-color: #f0f0f0; display: flex; justify-content: center; align-items: center; cursor: pointer;">
-      <span style="font-size: 12px; color: #9b4dca; font-weight: bold;">add img</span>
-    </div>
-    <img id="people-profile-image" src="" alt="Profile" style="width: 40px; height: 40px; object-fit: cover; border-radius: 50%; display: none;">
-    <input type="file" id="people-popup-image" accept="image/*" style="display: none;">
-    <div>
-      <div><input type="text" id="people-popup-name" placeholder="Name" value="Person's name here..." style="font-size: 16px; font-weight: bold;"></div>
-      <div><input type="text" id="people-popup-dates" placeholder="Dates" value="Date of birth" style="font-size: 14px; color: #666;"></div>
-    </div>
-  </div>
-  <div class="rounded-box">
-    <textarea id="people-popup-tldr" placeholder="TLDR" style="width: 100%; box-sizing: border-box; font-size: 12px; font-weight: bold;">One sentence summary of the person here</textarea>
-  </div>
-  <div class="rounded-box event-card" id="people-event1-card">
-    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 5px;">
-      <input type="text" id="people-event1-label" value="FACT1 (EDIT THIS):" style="font-weight: bold; color: #9b4dca; width: auto; display: inline; font-size: 12px;">
-      <button class="remove-event" data-event="1">REMOVE</button>
-    </div>
-    <textarea id="people-popup-event1" placeholder="Event 1" style="width: 100%; box-sizing: border-box; font-size: 12px;">Optional interest fact here. If there's nothing interesting, REMOVE these cards!
-  </div>
-  <div class="rounded-box event-card" id="people-event2-card">
-    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 5px;">
-      <input type="text" id="people-event2-label" value="FACT2 (EDIT THIS):" style="font-weight: bold; color: #9b4dca; width: auto; display: inline; font-size: 12px;">
-      <button class="remove-event" data-event="2">REMOVE</button>
-    </div>
-    <textarea id="people-popup-event2" placeholder="Event 2" style="width: 100%; box-sizing: border-box; font-size: 12px;">Another optional fact here. Click on the preview word to edit them (the writing in purple just above this)
-  </div>
-  <div class="rounded-box event-card" id="people-event3-card">
-    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 5px;">
-      <input type="text" id="people-event3-label" value="FACT3 (EDIT THIS):" style="font-weight: bold; color: #9b4dca; width: auto; display: inline; font-size: 12px;">
-      <button class="remove-event" data-event="3">REMOVE</button>
-    </div>
-    <textarea id="people-popup-event3" placeholder="Event 3" style="width: 100%; box-sizing: border-box; font-size: 12px;">Another optional fact here. Remember to use an emoji after each sentence 😎
-  </div>
-  <div class="coordinates-container">
-    <div class="input-row">
-      <input type="number" id="people-popup-longitude" placeholder="Longitude" step="any">
-    </div>
-    <div class="input-row">
-      <input type="number" id="people-popup-latitude" placeholder="Latitude" step="any">
-    </div>
-  </div>
-<p style="font-size: 12px;">To find long, lat co-ordinates, google 'Getting Lat/Lng from a Click Event'. If you want to edit or delete a people marker, email freddy@britmap.com.</p>
-  <button id="add-people-popup-marker">Add Marker</button>
-  <button id="cancel-people-popup-marker">Cancel</button>
-`;
-
-peopleModal.appendChild(peoplePopupContainer);
-
-document.querySelectorAll('.remove-event').forEach(button => {
-  button.addEventListener('click', (e) => {
-    const eventNumber = e.target.getAttribute('data-event');
-    const eventCard = document.getElementById('people-event' + eventNumber + '-card');
-    eventCard.style.display = 'none';
-  });
-});
-
-// Add event listener to the "Add People Marker" button
-addPeopleMarkerButton.addEventListener('click', () => {
-  peopleModal.style.display = 'block';
-});
-
-// Handle image upload for people markers
-const peopleImageUploadCircle = document.getElementById('people-image-upload-circle');
-const peoplePopupImage = document.getElementById('people-popup-image');
-const peopleProfileImage = document.getElementById('people-profile-image');
-
-peopleImageUploadCircle.addEventListener('click', () => {
-  peoplePopupImage.click();
-});
-
-peoplePopupImage.addEventListener('change', (event) => {
-  const file = event.target.files[0];
-  if (file) {
-    const reader = new FileReader();
-    reader.onload = function(e) {
-      peopleProfileImage.src = e.target.result;
-      peopleProfileImage.style.display = 'block';
-      peopleImageUploadCircle.style.display = 'none';
-    }
-    reader.readAsDataURL(file);
-  }
-});
-
-// Event listener for the "Add People Marker" button in the modal
-document.getElementById('add-people-popup-marker').addEventListener('click', () => {
-  // Get the popup data
-  const name = document.getElementById('people-popup-name').value;
-  const dates = document.getElementById('people-popup-dates').value;
-  const tldr = document.getElementById('people-popup-tldr').value;
-  const event1Label = document.getElementById('people-event1-label').value;
-  const event1 = document.getElementById('people-popup-event1').value;
-  const event1Visible = document.getElementById('people-event1-card').style.display !== 'none';
-  const event2Label = document.getElementById('people-event2-label').value;
-  const event2 = document.getElementById('people-popup-event2').value;
-  const event2Visible = document.getElementById('people-event2-card').style.display !== 'none';
-  const event3Label = document.getElementById('people-event3-label').value;
-  const event3 = document.getElementById('people-popup-event3').value;
-  const event3Visible = document.getElementById('people-event3-card').style.display !== 'none';
-  const longitude = parseFloat(document.getElementById('people-popup-longitude').value);
-  const latitude = parseFloat(document.getElementById('people-popup-latitude').value);
-  const imageUrl = peopleProfileImage.src;
-
-  // Validate the inputs
-  if (!name || !dates || !tldr || isNaN(longitude) || isNaN(latitude) || !imageUrl) {
-    alert('Please fill in all required fields with valid data.');
-    return;
-  }
-
-  // Prepare events data
-  const events = [];
-  if (event1Visible) events.push({ label: event1Label, description: event1 });
-  if (event2Visible) events.push({ label: event2Label, description: event2 });
-  if (event3Visible) events.push({ label: event3Label, description: event3 });
-
-  // Save marker data to Firestore
-  addDoc(collection(db, 'people_markers'), {
-    name,
-    dates,
-    tldr,
-    longitude,
-    latitude,
-    imageUrl,
-    events // Include events in the document
-  }).then(() => {
-    // Add marker to the map
-    const { element: markerElement } = createCustomMarker(imageUrl, '#9B4DCA', false);
-    const marker = new mapboxgl.Marker({
-      element: markerElement
-    })
-      .setLngLat([longitude, latitude])
-      .addTo(map);
-
-    // Create the popup HTML content
-    const popupHTML = `
-      <div style="padding-top: 10px; padding-bottom: 10px;">
-        <div style="display: flex; align-items: center; gap: 10px;">
-          <img src="${imageUrl}" alt="${name}" style="width: 40px; height: 40px; object-fit: cover; border-radius: 50%;" />
-          <div>
-            <div style="font-size: 16px; font-weight: bold;">${name}</div>
-            <div style="font-size: 14px; color: #666;">${dates}</div>
-          </div>
-        </div>
-        <div style="background: #f9f9f9; padding: 10px; margin-top: 10px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); font-size: 12px; font-weight: bold;">
-          ${tldr}
-        </div>
-        ${events.map(event => `
-          <div style="background: #f9f9f9; padding: 10px; margin-top: 10px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); font-size: 12px;">
-            <strong style="color: #9b4dca; font-size: 12px; display: block; margin-bottom: 2px;">${event.label}</strong>
-            ${event.description}
-          </div>
-        `).join('')}
-      </div>
-    `;
-
-    // Create the popup
-    const popup = new mapboxgl.Popup({
-      closeButton: true,
-      closeOnClick: true,
-      className: 'custom-popup'
-    }).setHTML(popupHTML);
-
-    marker.setPopup(popup);
-
-    // Add click event listener to the marker
-    marker.getElement().addEventListener('click', () => {
-      map.getCanvas().style.cursor = 'pointer';
-      popup.addTo(map);
-    });
-
-    // Close the modal
-    peopleModal.style.display = 'none';
-
-    // Reset the form fields
-    resetPeopleForm();
-  }).catch(error => {
-    console.error('Error adding marker: ', error);
-  });
-});
-
-// Event listener for the "Cancel" button in the modal
-document.getElementById('cancel-people-popup-marker').addEventListener('click', () => {
-  peopleModal.style.display = 'none';
-  resetPeopleForm();
-});
-
-function resetPeopleForm() {
-  document.getElementById('people-popup-name').value = "Person's name here...";
-  document.getElementById('people-popup-dates').value = "Date of birth";
-  document.getElementById('people-popup-tldr').value = "One sentence summary of the person here.";
-  document.getElementById('people-event1-label').value = "FACT1 (EDIT THIS):";
-  document.getElementById('people-popup-event1').value = "Optional interest fact here. If there's nothing interesting, REMOVE these cards!";
-  document.getElementById('people-event1-card').style.display = 'block';
-  document.getElementById('people-event2-label').value = "FACT2 (EDIT THIS):";
-  document.getElementById('people-popup-event2').value = "Another optional fact here. Click on the preview word to edit them (the writing in purple just above this)";
-  document.getElementById('people-event2-card').style.display = 'block';
-  document.getElementById('people-event3-label').value = "FACT3 (EDIT THIS):";
-  document.getElementById('people-popup-event3').value = "Another optional fact here. Remember to use an emoji after each sentence 😎";
-  document.getElementById('people-event3-card').style.display = 'block';
-  document.getElementById('people-popup-longitude').value = "";
-  document.getElementById('people-popup-latitude').value = "";
-  document.getElementById('people-popup-image').value = "";
-  document.getElementById('people-profile-image').src = "";
-  document.getElementById('people-profile-image').style.display = "none";
-  document.getElementById('people-image-upload-circle').style.display = "flex";
 }
 
 function loadMarkersFromFirebase() {
