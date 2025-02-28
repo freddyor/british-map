@@ -378,6 +378,7 @@ stylePopup.innerHTML = `
     padding: 2px 5px;
   }
 
+
 `;
 
 // Append the style to the document
