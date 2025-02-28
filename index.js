@@ -598,32 +598,32 @@ popupContainer.innerHTML = `
     <img id="profile-image" src="" alt="Profile" style="width: 40px; height: 40px; object-fit: cover; border-radius: 50%; display: none;">
     <input type="file" id="popup-image" accept="image/*" style="display: none;">
     <div>
-      <div><input type="text" id="popup-name" placeholder="Name" value="Elizabeth Montagu" style="font-size: 16px; font-weight: bold;"></div>
-      <div><input type="text" id="popup-dates" placeholder="Dates" value="1718-1800" style="font-size: 14px; color: #666;"></div>
+      <div><input type="text" id="popup-name" placeholder="Name" value="Place name here..." style="font-size: 16px; font-weight: bold;"></div>
+      <div><input type="text" id="popup-dates" placeholder="Dates" value="Date it was built" style="font-size: 14px; color: #666;"></div>
     </div>
   </div>
   <div class="rounded-box">
-    <textarea id="popup-tldr" placeholder="TLDR" style="width: 100%; box-sizing: border-box; font-size: 12px; font-weight: bold;">Elizabeth Montagu was a philanthropist who used her privileged social position to advance the status of women.</textarea>
+    <textarea id="popup-tldr" placeholder="TLDR" style="width: 100%; box-sizing: border-box; font-size: 12px; font-weight: bold;">One sentence summary of the place here</textarea>
   </div>
   <div class="rounded-box event-card" id="event1-card">
     <div style="margin-bottom: 5px;">
-      <strong id="event1-label" style="color: #9b4dca; font-size: 12px;">WEALTH:</strong>
+      <strong id="event1-label" style="color: #9b4dca; font-size: 12px;">FACT:</strong>
     </div>
-    <textarea id="popup-event1" placeholder="Event 1" style="width: 100%; box-sizing: border-box; font-size: 12px; height: 60px;">Elizabeth married into the extremely wealthy Montagu family. She inherited substantial amounts upon her husband's death</textarea>
+    <textarea id="popup-event1" placeholder="Event 1" style="width: 100%; box-sizing: border-box; font-size: 12px; height: 60px;">Add up to three interesting facts. IF there is nothing interesting, don't add it! Click 'remove' in the top right corner</textarea>
     <span class="remove-event" data-event="1" style="color: red; cursor: pointer; display: block; text-align: right; margin-top: 5px;">REMOVE</span>
   </div>
   <div class="rounded-box event-card" id="event2-card">
     <div style="margin-bottom: 5px;">
-      <strong id="event2-label" style="color: #9b4dca; font-size: 12px;">LEGACY:</strong>
+      <strong id="event2-label" style="color: #9b4dca; font-size: 12px;">FACT2:</strong>
     </div>
-    <textarea id="popup-event2" placeholder="Event 2" style="width: 100%; box-sizing: border-box; font-size: 12px; height: 60px;">Elizabeth and the Bluestockings were mentioned in the works of most future women's rights activists.</textarea>
+    <textarea id="popup-event2" placeholder="Event 2" style="width: 100%; box-sizing: border-box; font-size: 12px; height: 60px;">Edit the preview words (FACT1, FACT2, FACT3)</textarea>
     <span class="remove-event" data-event="2" style="color: red; cursor: pointer; display: block; text-align: right; margin-top: 5px;">REMOVE</span>
   </div>
   <div class="rounded-box event-card" id="event3-card">
     <div style="margin-bottom: 5px;">
-      <strong id="event3-label" style="color: #9b4dca; font-size: 12px;">EVENT:</strong>
+      <strong id="event3-label" style="color: #9b4dca; font-size: 12px;">FACT3:</strong>
     </div>
-    <textarea id="popup-event3" placeholder="Event 3" style="width: 100%; box-sizing: border-box; font-size: 12px; height: 60px;">1782: Elizabeth established the Montagu House, a social center for London's literary elite.</textarea>
+    <textarea id="popup-event3" placeholder="Event 3" style="width: 100%; box-sizing: border-box; font-size: 12px; height: 60px;">Add an emoji after each sentence 😎</textarea>
     <span class="remove-event" data-event="3" style="color: red; cursor: pointer; display: block; text-align: right; margin-top: 5px;">REMOVE</span>
   </div>
   <p style="font-size: 12px; color: #666; text-align: center; margin: 10px 0;">To get precise lng,lat coordinates, google "Getting Lat/Lng from a Click Event"</p>
