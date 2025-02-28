@@ -400,6 +400,38 @@ stylePopup.innerHTML = `
     font-size: 8px;
     padding: 1px 1px; 
   }
+  /* Add these styles to the existing CSS */
+
+/* Text box styles for people marker popup */
+#add-people-marker-modal .rounded-box textarea,
+#add-people-marker-modal .rounded-box input[type="text"] {
+  border: none;
+  background-color: transparent;
+  box-shadow: none;
+  padding: 0;
+  margin: 0;
+  font-size: inherit;
+  font-family: inherit;
+  color: inherit;
+  resize: none;
+}
+
+/* Button styles for people marker popup */
+#add-people-marker-modal button {
+  background-color: #9b4dca;
+  color: white;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+  margin-top: 5px;
+  margin-right: 5px;
+}
+
+#add-people-marker-modal button:hover {
+  background-color: #7c3ba5;
+}
 `;
 
 // Append the style to the document
