@@ -587,7 +587,7 @@ modal.style.boxShadow = 'none';
 modal.style.zIndex = '1001';
 document.body.appendChild(modal);
 
-// Editable Popup Structure
+/ Editable Popup Structure
 const popupContainer = document.createElement('div');
 popupContainer.className = 'popup-container';
 popupContainer.innerHTML = `
@@ -606,23 +606,14 @@ popupContainer.innerHTML = `
     <textarea id="popup-tldr" placeholder="TLDR" style="width: 100%; box-sizing: border-box; font-size: 12px; font-weight: bold;">One sentence summary of the place here</textarea>
   </div>
   <div class="rounded-box event-card" id="event1-card">
-    <div style="margin-bottom: 5px;">
-      <strong id="event1-label" style="color: #9b4dca; font-size: 12px;">FACT:</strong>
-    </div>
-    <textarea id="popup-event1" placeholder="Event 1" style="width: 100%; box-sizing: border-box; font-size: 12px; height: 60px;">Add up to three interesting facts. IF there is nothing interesting, don't add it! Click 'remove' in the top right corner</textarea>
+    <textarea id="popup-event1" placeholder="Event 1" style="width: 100%; box-sizing: border-box; font-size: 12px; height: 60px;">Add up to three interesting facts. If there is nothing interesting, leave it blank.</textarea>
     <span class="remove-event" data-event="1" style="color: red; cursor: pointer; display: block; text-align: right; margin-top: 5px;">REMOVE</span>
   </div>
   <div class="rounded-box event-card" id="event2-card">
-    <div style="margin-bottom: 5px;">
-      <strong id="event2-label" style="color: #9b4dca; font-size: 12px;">FACT2:</strong>
-    </div>
     <textarea id="popup-event2" placeholder="Event 2" style="width: 100%; box-sizing: border-box; font-size: 12px; height: 60px;">Edit the preview words (FACT1, FACT2, FACT3)</textarea>
     <span class="remove-event" data-event="2" style="color: red; cursor: pointer; display: block; text-align: right; margin-top: 5px;">REMOVE</span>
   </div>
   <div class="rounded-box event-card" id="event3-card">
-    <div style="margin-bottom: 5px;">
-      <strong id="event3-label" style="color: #9b4dca; font-size: 12px;">FACT3:</strong>
-    </div>
     <textarea id="popup-event3" placeholder="Event 3" style="width: 100%; box-sizing: border-box; font-size: 12px; height: 60px;">Add an emoji after each sentence 😎</textarea>
     <span class="remove-event" data-event="3" style="color: red; cursor: pointer; display: block; text-align: right; margin-top: 5px;">REMOVE</span>
   </div>
