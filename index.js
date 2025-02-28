@@ -33,7 +33,7 @@ document.body.appendChild(buttonGroup);
 // Find People button
 const toggleContainerButton = document.createElement('button');
 toggleContainerButton.id = 'toggle-container-button';
-toggleContainerButton.textContent = 'Find people ';
+toggleContainerButton.textContent = 'Find people 🔍';
 toggleContainerButton.className = 'custom-button';
 buttonGroup.appendChild(toggleContainerButton);
 
@@ -57,10 +57,10 @@ document.body.appendChild(openableContainer);
 toggleContainerButton.addEventListener('click', () => {
     if (openableContainer.style.display === 'none' || openableContainer.style.display === '') {
         openableContainer.style.display = 'block';
-        toggleContainerButton.textContent = 'Find people ';
+        toggleContainerButton.textContent = 'Find people 🔍';
     } else {
         openableContainer.style.display = 'none';
-        toggleContainerButton.textContent = 'Find people ';
+        toggleContainerButton.textContent = 'Find people 🔍';
     }
 });
 
@@ -327,6 +327,12 @@ stylePopup.innerHTML = `
     resize: none;
   }
 
+    #add-marker-modal .wealth-legacy-label {
+    color: #9b4dca;
+    font-size: 14px;
+    font-weight: bold;
+  }
+
   #image-upload-circle {
     width: 40px;
     height: 40px;
@@ -553,10 +559,6 @@ document.body.appendChild(modal);
 const popupContainer = document.createElement('div');
 popupContainer.className = 'popup-container';
 popupContainer.innerHTML = `
-  <div class="rounded-box">
-    <textarea id="popup-description" placeholder="Description" style="width: 100%; box-sizing: border-box; font-size: 13px;">Elizabeth Montagu was raised here in Treasurer's House</textarea>
-  </div>
-  <div style="border-top: 1px solid #ccc; margin-bottom: 10px;"></div>
   <div class="image-name-container">
     <div id="image-upload-circle" style="width: 40px; height: 40px; border-radius: 50%; background-color: #f0f0f0; display: flex; justify-content: center; align-items: center; cursor: pointer;">
       <span style="font-size: 24px; color: #666;">+</span>
@@ -564,16 +566,19 @@ popupContainer.innerHTML = `
     <img id="profile-image" src="" alt="Profile" style="width: 40px; height: 40px; object-fit: cover; border-radius: 50%; display: none;">
     <input type="file" id="popup-image" accept="image/*" style="display: none;">
     <div>
-      <div><input type="text" id="popup-name" placeholder="Name" value="Elizabeth Montagu"></div>
-      <div><input type="text" id="popup-dates" placeholder="Dates" value="1718-1800"></div>
+      <div><input type="text" id="popup-name" placeholder="Name" value="Elizabeth Montagu" style="font-size: 16px; font-weight: bold;"></div>
+      <div><input type="text" id="popup-dates" placeholder="Dates" value="1718-1800" style="font-size: 14px; color: #666;"></div>
     </div>
   </div>
   <div class="rounded-box">
-    <input type="text" id="wealth-label" value="WEALTH:" style="font-weight: bold; color: #9b4dca; width: auto; display: inline;">
+    <textarea id="popup-description" placeholder="Description" style="width: 100%; box-sizing: border-box; font-size: 13px;">Elizabeth Montagu was raised here in Treasurer's House</textarea>
+  </div>
+  <div class="rounded-box">
+    <label class="wealth-legacy-label" for="popup-wealth">WEALTH:</label>
     <textarea id="popup-wealth" placeholder="Wealth" style="width: 100%; box-sizing: border-box; font-size: 12px;">Elizabeth married into the extremely wealthy Montagu family. She inherited substantial amounts upon her husband's death</textarea>
   </div>
   <div class="rounded-box">
-    <input type="text" id="legacy-label" value="LEGACY:" style="font-weight: bold; color: #9b4dca; width: auto; display: inline;">
+    <label class = "wealth-legacy-label" for="popup-legacy">LEGACY:</label>
     <textarea id="popup-legacy" placeholder="Legacy" style="width: 100%; box-sizing: border-box; font-size: 12px;">Elizabeth and the Bluestockings were mentioned in the works of most future women's rights activists.</textarea>
   </div>
   <div class="coordinates-container">
@@ -625,9 +630,7 @@ document.getElementById('add-popup-marker').addEventListener('click', () => {
   const name = document.getElementById('popup-name').value;
   const dates = document.getElementById('popup-dates').value;
   const description = document.getElementById('popup-description').value;
-  const wealthLabel = document.getElementById('wealth-label').value;
   const wealth = document.getElementById('popup-wealth').value;
-  const legacyLabel = document.getElementById('legacy-label').value;
   const legacy = document.getElementById('popup-legacy').value;
   const longitude = parseFloat(document.getElementById('popup-longitude').value);
   const latitude = parseFloat(document.getElementById('popup-latitude').value);
@@ -659,10 +662,10 @@ document.getElementById('add-popup-marker').addEventListener('click', () => {
       </div>
     </div>
     <div style="background: #f9f9f9; padding: 10px; margin-top: 10px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); font-size: 12px;">
-      <strong style="color: #9b4dca; font-size: 14px;">${wealthLabel}</strong> ${wealth}
+      <strong style="color: #9b4dca; font-size: 14px;">WEALTH:</strong> ${wealth}
     </div>
     <div style="background: #f9f9f9; padding: 10px; margin-top: 10px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); font-size: 12px;">
-      <strong style="color: #9b4dca; font-size: 14px;">${legacyLabel}</strong> ${legacy}
+      <strong style="color: #9b4dca; font-size: 14px;">LEGACY:</strong> ${legacy}
     </div>
   `;
 
@@ -692,9 +695,7 @@ function resetForm() {
   document.getElementById('popup-name').value = "Elizabeth Montagu";
   document.getElementById('popup-dates').value = "1718-1800";
   document.getElementById('popup-description').value = "Elizabeth Montagu was raised here in Treasurer's House";
-  document.getElementById('wealth-label').value = "WEALTH:";
   document.getElementById('popup-wealth').value = "Elizabeth married into the extremely wealthy Montagu family. She inherited substantial amounts upon her husband's death";
-  document.getElementById('legacy-label').value = "LEGACY:";
   document.getElementById('popup-legacy').value = "Elizabeth and the Bluestockings were mentioned in the works of most future women's rights activists.";
   document.getElementById('popup-longitude').value = "";
   document.getElementById('popup-latitude').value = "";
