@@ -1201,7 +1201,7 @@ export const buildings = [
     "image": "images/alnehall.png",
     "occupation": "1301",
      description: "",
-    "tldr": "Owen Hall was originally the country residence of the treasurer of York Minster. This role ended during the English Civil War.",
+    "tldr": "Alne Hall was originally the country residence of the treasurer of York Minster. This role ended during the English Civil War.",
     "events": [
       {
         "date": "CHURCH",
