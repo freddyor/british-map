@@ -588,6 +588,8 @@ modal.style.zIndex = '1001';
 document.body.appendChild(modal);
 
 // Editable Popup Structure
+// Existing code...
+
 const popupContainer = document.createElement('div');
 popupContainer.className = 'popup-container';
 popupContainer.innerHTML = `
@@ -610,34 +612,36 @@ popupContainer.innerHTML = `
       <input type="text" id="event1-label" value="WEALTH:" style="font-weight: bold; color: #9b4dca; width: auto; display: inline; font-size: 12px;">
       <button class="remove-event" data-event="1">REMOVE</button>
     </div>
-    <textarea id="popup-event1" placeholder="Event 1" style="width: 100%; box-sizing: border-box; font-size: 12px;">Optional interest fact here. If there's nothing interesting, REMOVE these cards</textarea>
+    <textarea id="popup-event1" placeholder="Event 1" style="width: 100%; box-sizing: border-box; font-size: 12px;">Optional interest fact here. If there's nothing interesting, REMOVE these cards[...]
   </div>
   <div class="rounded-box event-card" id="event2-card">
     <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 5px;">
       <input type="text" id="event2-label" value="LEGACY:" style="font-weight: bold; color: #9b4dca; width: auto; display: inline; font-size: 12px;">
       <button class="remove-event" data-event="2">REMOVE</button>
     </div>
-    <textarea id="popup-event2" placeholder="Event 2" style="width: 100%; box-sizing: border-box; font-size: 12px;">Another optional fact here. Click on the preview word to edit them (the writing above this in purple), look at my markers for inspo)</textarea>
+    <textarea id="popup-event2" placeholder="Event 2" style="width: 100%; box-sizing: border-box; font-size: 12px;">Another optional fact here. Click on the preview word to edit them (the writing[...]
   </div>
   <div class="rounded-box event-card" id="event3-card">
     <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 5px;">
       <input type="text" id="event3-label" value="EVENT:" style="font-weight: bold; color: #9b4dca; width: auto; display: inline; font-size: 12px;">
       <button class="remove-event" data-event="3">REMOVE</button>
     </div>
-    <textarea id="popup-event3" placeholder="Event 3" style="width: 100%; box-sizing: border-box; font-size: 12px;">Another optional fact here. Remember to use an emoji after each sentence 😎</textarea>
+    <textarea id="popup-event3" placeholder="Event 3" style="width: 100%; box-sizing: border-box; font-size: 12px;">Another optional fact here. Remember to use an emoji after each sentence 😎</[...]
   </div>
   <div class="coordinates-container">
     <div class="input-row">
-      <label for="popup-longitude">Longitude:</label>
       <input type="number" id="popup-longitude" placeholder="Longitude" step="any">
     </div>
     <div class="input-row">
-      <label for="popup-latitude">Latitude:</label>
       <input type="number" id="popup-latitude" placeholder="Latitude" step="any">
     </div>
   </div>
+  <p>To find long, lat co-ordinates, google 'Getting Lat/Lng from a Click Event'. If you want to edit or delete a building marker, email freddy@britmap.com.</p>
   <button id="add-popup-marker">Add Marker</button>
   <button id="cancel-popup-marker">Cancel</button>
+`;
+
+// Existing code...
 `;
 modal.appendChild(popupContainer);
 
