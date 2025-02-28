@@ -805,7 +805,6 @@ function resetForm() {
   document.getElementById('profile-image').style.display = "none";
   document.getElementById('image-upload-circle').style.display = "flex";
 }
-
 // Add the People Marker button
 const addPeopleMarkerButton = document.createElement('button');
 addPeopleMarkerButton.id = 'add-people-marker-button';
