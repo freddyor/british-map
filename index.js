@@ -645,11 +645,10 @@ popupContainer.innerHTML = `
 `;
 modal.appendChild(popupContainer);
 
-// Add event listeners for REMOVE buttons
 document.querySelectorAll('.remove-event').forEach(button => {
   button.addEventListener('click', (e) => {
     const eventNumber = e.target.getAttribute('data-event');
-    const eventCard = document.getElementById(`event${eventNumber}-card`);
+    const eventCard = document.getElementById('event${eventNumber}-card');
     eventCard.style.display = 'none';
   });
 });
