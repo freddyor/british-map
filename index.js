@@ -607,31 +607,44 @@ popupContainer.innerHTML = `
   <div class="rounded-box">
     <textarea id="popup-tldr" placeholder="TLDR" style="width: 100%; box-sizing: border-box; font-size: 12px; font-weight: bold;">One sentence summary of the place here</textarea>
   </div>
-<div class="rounded-box event-card" id="event1-card">
-  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 5px;">
-    <input type="text" id="event1-label" value="WEALTH:" style="font-weight: bold; color: #9b4dca; width: auto; display: inline; font-size: 12px;">
-    <span class="remove-event" data-event="1" style="color: red; cursor: pointer;">REMOVE</span>
+  <div class="rounded-box event-card" id="event1-card">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 5px;">
+      <input type="text" id="event1-label" value="FACT1 (EDIT THIS):" style="font-weight: bold; color: #9b4dca; width: auto; display: inline; font-size: 12px;">
+      <button class="remove-event" data-event="1">REMOVE</button>
+    </div>
+    <textarea id="popup-event1" placeholder="Event 1" style="width: 100%; box-sizing: border-box; font-size: 12px;">Optional interest fact here. If there's nothing interesting, REMOVE these cards!</textarea>
   </div>
-  <textarea id="popup-event1" placeholder="Event 1" style="width: 100%; box-sizing: border-box; font-size: 12px;">Optional interest fact here. If there's nothing interesting, REMOVE these cards!</textarea>
-</div>
-<div class="rounded-box event-card" id="event2-card">
-  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 5px;">
-    <input type="text" id="event2-label" value="LEGACY:" style="font-weight: bold; color: #9b4dca; width: auto; display: inline; font-size: 12px;">
-    <span class="remove-event" data-event="2" style="color: red; cursor: pointer;">REMOVE</span>
+  <div class="rounded-box event-card" id="event2-card">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 5px;">
+      <input type="text" id="event2-label" value="FACT2 (EDIT THIS):" style="font-weight: bold; color: #9b4dca; width: auto; display: inline; font-size: 12px;">
+      <button class="remove-event" data-event="2">REMOVE</button>
+    </div>
+    <textarea id="popup-event2" placeholder="Event 2" style="width: 100%; box-sizing: border-box; font-size: 12px;">Another optional fact here. Click on the preview word to edit them (the writing in purple just above this)</textarea>
   </div>
-  <textarea id="popup-event2" placeholder="Event 2" style="width: 100%; box-sizing: border-box; font-size: 12px;">Another optional fact here. Click on the preview word to edit them (the writing in purple just above this)</textarea>
-</div>
-<div class="rounded-box event-card" id="event3-card">
-  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 5px;">
-    <input type="text" id="event3-label" value="EVENT:" style="font-weight: bold; color: #9b4dca; width: auto; display: inline; font-size: 12px;">
-    <span class="remove-event" data-event="3" style="color: red; cursor: pointer;">REMOVE</span>
+  <div class="rounded-box event-card" id="event3-card">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 5px;">
+      <input type="text" id="event3-label" value="FACT3 (EDIT THIS):" style="font-weight: bold; color: #9b4dca; width: auto; display: inline; font-size: 12px;">
+      <button class="remove-event" data-event="3">REMOVE</button>
+    </div>
+    <textarea id="popup-event3" placeholder="Event 3" style="width: 100%; box-sizing: border-box; font-size: 12px;">Another optional fact here. Remember to use an emoji after each sentence 😎</textarea>
   </div>
-  <textarea id="popup-event3" placeholder="Event 3" style="width: 100%; box-sizing: border-box; font-size: 12px;">Another optional fact here. Remember to use an emoji after each sentence 😎</textarea>
-</div>
+  <div class="coordinates-container">
+    <div class="input-row">
+      <input type="number" id="popup-longitude" placeholder="Longitude" step="any">
+    </div>
+    <div class="input-row">
+      <input type="number" id="popup-latitude" placeholder="Latitude" step="any">
+    </div>
+  </div>
+<p style="font-size: 10px;">To find long, lat co-ordinates, google 'Getting Lat/Lng from a Click Event'. If you want to edit or delete a building marker, email freddy@britmap.com.</p>
+  <button id="add-popup-marker">Add Marker</button>
+  <button id="cancel-popup-marker">Cancel</button>
+`;
 
-// Add event listener for the "REMOVE" text
-document.querySelectorAll('.remove-event').forEach(element => {
-  element.addEventListener('click', (e) => {
+modal.appendChild(popupContainer);
+
+document.querySelectorAll('.remove-event').forEach(button => {
+  button.addEventListener('click', (e) => {
     const eventNumber = e.target.getAttribute('data-event');
     const eventCard = document.getElementById('event' + eventNumber + '-card');
     eventCard.style.display = 'none';
@@ -768,17 +781,17 @@ document.getElementById('cancel-popup-marker').addEventListener('click', () => {
 });
 
 function resetForm() {
-  document.getElementById('popup-name').value = "Elizabeth Montagu";
-  document.getElementById('popup-dates').value = "1718-1800";
-  document.getElementById('popup-tldr').value = "Elizabeth Montagu was a philanthropist who used her privileged social position to advance the status of women.";
-  document.getElementById('event1-label').value = "WEALTH:";
-  document.getElementById('popup-event1').value = "Elizabeth married into the extremely wealthy Montagu family. She inherited substantial amounts upon her husband's death";
+  document.getElementById('popup-name').value = "Place name here...";
+  document.getElementById('popup-dates').value = "Date it was built";
+  document.getElementById('popup-tldr').value = "One sentence summary of the place here.";
+  document.getElementById('event1-label').value = "FACT1 (EDIT THIS):";
+  document.getElementById('popup-event1').value = "Optional interest fact here. If there's nothing interesting, REMOVE these cards!";
   document.getElementById('event1-card').style.display = 'block';
-  document.getElementById('event2-label').value = "LEGACY:";
-  document.getElementById('popup-event2').value = "Elizabeth and the Bluestockings were mentioned in the works of most future women's rights activists.";
+  document.getElementById('event2-label').value = "FACT2 (EDIT THIS):";
+  document.getElementById('popup-event2').value = "Another optional fact here. Click on the preview word to edit them (the writing in purple just above this)";
   document.getElementById('event2-card').style.display = 'block';
-  document.getElementById('event3-label').value = "EVENT:";
-  document.getElementById('popup-event3').value = "1782: Elizabeth established the Montagu House, a social center for London's literary elite.";
+  document.getElementById('event3-label').value = "FACT3 (EDIT THIS):";
+  document.getElementById('popup-event3').value = "Another optional fact here. Remember to use an emoji after each sentence 😎";
   document.getElementById('event3-card').style.display = 'block';
   document.getElementById('popup-longitude').value = "";
   document.getElementById('popup-latitude').value = "";
