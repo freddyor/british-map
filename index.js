@@ -127,6 +127,7 @@ link.href = "https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&displ
 link.rel = "stylesheet";
 document.head.appendChild(link);
 
+// Style for the popup and markers
 stylePopup.innerHTML = `
   .mapboxgl-popup-content {
     border-radius: 12px !important;
@@ -140,8 +141,6 @@ stylePopup.innerHTML = `
     padding-bottom: 0 !important;
     margin-left: 3px;
     margin-right: 5px;
-    max-width: 300px; // Added to limit the width
-    word-wrap: break-word; // Added to handle long words
   }
 
   .mapboxgl-popup-content img {
@@ -153,12 +152,8 @@ stylePopup.innerHTML = `
     font-weight: bold !important;
     text-align: center;
     letter-spacing: -0.5px;
-    font-size: 12px !important; // Adjusted font size
+    font-size: 13px !important;
     margin-bottom: 10px !important;
-  }
-
-  .mapboxgl-popup-content div {
-    font-size: 12px !important; // Ensure all text within divs is consistent
   }
 
   .mapboxgl-popup-close-button {
@@ -216,7 +211,7 @@ stylePopup.innerHTML = `
     z-index: 1000;
   }
 
-  #add-marker-modal {
+#add-marker-modal {
     display: none;
     position: fixed;
     top: 50%;
@@ -234,7 +229,7 @@ stylePopup.innerHTML = `
     padding: 10px;
     margin: 0;
     box-sizing: border-box;
-    line-height: 1.05; // ADDED: Match popup line height
+    line-height: 1.05; /* ADDED: Match popup line height */
     width: 300px;
   }
 
@@ -253,7 +248,7 @@ stylePopup.innerHTML = `
     border-radius: 4px;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
-    line-height: 1.05; // ADDED: Match popup line height
+    line-height: 1.05; /* ADDED: Match popup line height */
   }
 
   #add-marker-modal button {
@@ -289,7 +284,7 @@ stylePopup.innerHTML = `
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
-    line-height: 1.05; // ADDED: Match popup line height
+    line-height: 1.05; /* ADDED: Match popup line height */
   }
 
   #add-marker-modal .coordinates-container {
@@ -382,22 +377,17 @@ stylePopup.innerHTML = `
     outline: none;
   }
 
-  .event-card {
+    .event-card {
     position: relative;
-    margin-bottom: 5px; // Reduced margin to half
-    height: 30px; // Updated height
+    margin-bottom: 5px; /* Reduced margin to half */
   }
-  
   .event-card input[type="text"] {
     font-size: 12px;
     margin-bottom: 2px;
   }
-  
   .event-card textarea {
     margin-top: 0;
-    font-size: 12px; // Adjusted font size
   }
-  
   .remove-event {
     position: absolute;
     top: 2px; 
@@ -406,6 +396,8 @@ stylePopup.innerHTML = `
     padding: 1px 3px; 
   }
 `;
+
+// Append the style to the document
 document.head.appendChild(stylePopup);
 
 // Geolocation control
@@ -577,7 +569,7 @@ function addBuildingMarkers() {
 // Add Marker button
 const addMarkerButton = document.createElement('button');
 addMarkerButton.id = 'add-marker-button';
-addMarkerButton.textContent = '+ Add a building';
+addMarkerButton.textContent = '+ Add marker';
 addMarkerButton.className = 'custom-button';
 buttonGroup.appendChild(addMarkerButton);
 
@@ -601,31 +593,39 @@ popupContainer.className = 'popup-container';
 popupContainer.innerHTML = `
   <div class="image-name-container">
     <div id="image-upload-circle" style="width: 40px; height: 40px; border-radius: 50%; background-color: #f0f0f0; display: flex; justify-content: center; align-items: center; cursor: pointer;">
-      <span style="font-size: 12px; color: #9b4dca; font-weight: bold;">add img</span>
+      <span style="font-size: 24px; color: #666;">+</span>
     </div>
     <img id="profile-image" src="" alt="Profile" style="width: 40px; height: 40px; object-fit: cover; border-radius: 50%; display: none;">
     <input type="file" id="popup-image" accept="image/*" style="display: none;">
     <div>
-      <div><input type="text" id="popup-name" placeholder="Name" value="Place name here..." style="font-size: 16px; font-weight: bold;"></div>
-      <div><input type="text" id="popup-dates" placeholder="Dates" value="Date it was built" style="font-size: 14px; color: #666;"></div>
+      <div><input type="text" id="popup-name" placeholder="Name" value="Elizabeth Montagu" style="font-size: 16px; font-weight: bold;"></div>
+      <div><input type="text" id="popup-dates" placeholder="Dates" value="1718-1800" style="font-size: 14px; color: #666;"></div>
     </div>
   </div>
   <div class="rounded-box">
-    <textarea id="popup-tldr" placeholder="TLDR" style="width: 100%; box-sizing: border-box; font-size: 12px; font-weight: bold;">One sentence summary of the place here</textarea>
+    <textarea id="popup-tldr" placeholder="TLDR" style="width: 100%; box-sizing: border-box; font-size: 12px; font-weight: bold;">Elizabeth Montagu was a philanthropist who used her privileged social position to advance the status of women.</textarea>
   </div>
-  <div class="rounded-box event-card" id="event1-card" style="height: 15px;">
-    <span class="remove-event" data-event="1" style="color: red; cursor: pointer; display: block; text-align: right; margin-top: 5px;">REMOVE</span>
-    <textarea id="popup-event1" placeholder="Event 1" style="width: 100%; box-sizing: border-box; font-size: 12px; height: 15px;">Add an interesting fact here. If there is nothing interesting, leave it blank!</textarea>
+  <div class="rounded-box event-card" id="event1-card">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 5px;">
+      <input type="text" id="event1-label" value="WEALTH:" style="font-weight: bold; color: #9b4dca; width: auto; display: inline; font-size: 12px;">
+      <button class="remove-event" data-event="1">REMOVE</button>
+    </div>
+    <textarea id="popup-event1" placeholder="Event 1" style="width: 100%; box-sizing: border-box; font-size: 12px;">Elizabeth married into the extremely wealthy Montagu family. She inherited substantial amounts upon her husband's death</textarea>
   </div>
-  <div class="rounded-box event-card" id="event2-card" style="height: 15px;">
-    <span class="remove-event" data-event="2" style="color: red; cursor: pointer; display: block; text-align: right; margin-top: 5px;">REMOVE</span>
-    <textarea id="popup-event2" placeholder="Event 2" style="width: 100%; box-sizing: border-box; font-size: 12px; height: 15px;">Another optional cool fact here. Remember to add an emoji after the sentence 😎</textarea>
+  <div class="rounded-box event-card" id="event2-card">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 5px;">
+      <input type="text" id="event2-label" value="LEGACY:" style="font-weight: bold; color: #9b4dca; width: auto; display: inline; font-size: 12px;">
+      <button class="remove-event" data-event="2">REMOVE</button>
+    </div>
+    <textarea id="popup-event2" placeholder="Event 2" style="width: 100%; box-sizing: border-box; font-size: 12px;">Elizabeth and the Bluestockings were mentioned in the works of most future women's rights activists.</textarea>
   </div>
-  <div class="rounded-box event-card" id="event3-card" style="height: 15px;">
-    <span class="remove-event" data-event="3" style="color: red; cursor: pointer; display: block; text-align: right; margin-top: 5px;">REMOVE</span>
-    <textarea id="popup-event3" placeholder="Event 3" style="width: 100%; box-sizing: border-box; font-size: 12px; height: 15px;">Another optional cool fact here. Remember to keep them short.</textarea>
+  <div class="rounded-box event-card" id="event3-card">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 5px;">
+      <input type="text" id="event3-label" value="EVENT:" style="font-weight: bold; color: #9b4dca; width: auto; display: inline; font-size: 12px;">
+      <button class="remove-event" data-event="3">REMOVE</button>
+    </div>
+    <textarea id="popup-event3" placeholder="Event 3" style="width: 100%; box-sizing: border-box; font-size: 12px;">1782: Elizabeth established the Montagu House, a social center for London's literary elite.</textarea>
   </div>
-  <p style="font-size: 12px; color: #666; text-align: center; margin: 10px 0;">To get precise lng,lat coordinates, google "Getting Lat/Lng from a Click Event"</p>
   <div class="coordinates-container">
     <div class="input-row">
       <label for="popup-longitude">Longitude:</label>
@@ -638,13 +638,12 @@ popupContainer.innerHTML = `
   </div>
   <button id="add-popup-marker">Add Marker</button>
   <button id="cancel-popup-marker">Cancel</button>
-  <p style="font-size: 12px; color: #666; text-align: center; margin-top: 10px;">To edit or delete markers: freddy@britmap.com</p>
 `;
 modal.appendChild(popupContainer);
 
 // Add event listeners for REMOVE buttons
-document.querySelectorAll('.remove-event').forEach(span => {
-  span.addEventListener('click', (e) => {
+document.querySelectorAll('.remove-event').forEach(button => {
+  button.addEventListener('click', (e) => {
     const eventNumber = e.target.getAttribute('data-event');
     const eventCard = document.getElementById(`event${eventNumber}-card`);
     eventCard.style.display = 'none';
@@ -684,10 +683,13 @@ document.getElementById('add-popup-marker').addEventListener('click', () => {
   const name = document.getElementById('popup-name').value;
   const dates = document.getElementById('popup-dates').value;
   const tldr = document.getElementById('popup-tldr').value;
+  const event1Label = document.getElementById('event1-label').value;
   const event1 = document.getElementById('popup-event1').value;
   const event1Visible = document.getElementById('event1-card').style.display !== 'none';
+  const event2Label = document.getElementById('event2-label').value;
   const event2 = document.getElementById('popup-event2').value;
   const event2Visible = document.getElementById('event2-card').style.display !== 'none';
+  const event3Label = document.getElementById('event3-label').value;
   const event3 = document.getElementById('popup-event3').value;
   const event3Visible = document.getElementById('event3-card').style.display !== 'none';
   const longitude = parseFloat(document.getElementById('popup-longitude').value);
@@ -701,10 +703,10 @@ document.getElementById('add-popup-marker').addEventListener('click', () => {
   }
 
   // Prepare events data
-const events = [];
-if (event1Visible) events.push({ description: event1 });
-if (event2Visible) events.push({ description: event2 });
-if (event3Visible) events.push({ description: event3 });
+  const events = [];
+  if (event1Visible) events.push({ label: event1Label, description: event1 });
+  if (event2Visible) events.push({ label: event2Label, description: event2 });
+  if (event3Visible) events.push({ label: event3Label, description: event3 });
 
   // Save marker data to Firestore
   addDoc(collection(db, 'markers'), {
@@ -735,11 +737,12 @@ if (event3Visible) events.push({ description: event3 });
           </div>
         </div>
         <div style="background: #f9f9f9; padding: 10px; margin-top: 10px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); font-size: 12px; font-weight: bold;">${tldr}</div>
- ${events.map(event => `
-  <div style="background: #f9f9f9; padding: 10px; margin-top: 10px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); font-size: 12px;">
-    ${event.description}
-  </div>
-`).join('')}
+        ${events.map(event => `
+          <div style="background: #f9f9f9; padding: 10px; margin-top: 10px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); font-size: 12px;">
+            <strong style="color: #9b4dca; font-size: 12px; display: block; margin-bottom: 2px;">${event.label}</strong>
+            ${event.description}
+          </div>
+        `).join('')}
       </div>
     `;
 
@@ -775,14 +778,17 @@ document.getElementById('cancel-popup-marker').addEventListener('click', () => {
 });
 
 function resetForm() {
-  document.getElementById('popup-name').value = "Place name here...";
-  document.getElementById('popup-dates').value = "Date it was built";
-  document.getElementById('popup-tldr').value = "One sentence summary of the place here";
-  document.getElementById('popup-event1').value = "Add an interesting fact here. If there is nothing interesting, leave it blank!";
+  document.getElementById('popup-name').value = "Elizabeth Montagu";
+  document.getElementById('popup-dates').value = "1718-1800";
+  document.getElementById('popup-tldr').value = "Elizabeth Montagu was a philanthropist who used her privileged social position to advance the status of women.";
+  document.getElementById('event1-label').value = "WEALTH:";
+  document.getElementById('popup-event1').value = "Elizabeth married into the extremely wealthy Montagu family. She inherited substantial amounts upon her husband's death";
   document.getElementById('event1-card').style.display = 'block';
-  document.getElementById('popup-event2').value = "Another optional cool fact here. Remember to add an emoji after the sentence 😎";
+  document.getElementById('event2-label').value = "LEGACY:";
+  document.getElementById('popup-event2').value = "Elizabeth and the Bluestockings were mentioned in the works of most future women's rights activists.";
   document.getElementById('event2-card').style.display = 'block';
-  document.getElementById('popup-event3').value = "Another optional cool fact here. Remember to keep them short.";
+  document.getElementById('event3-label').value = "EVENT:";
+  document.getElementById('popup-event3').value = "1782: Elizabeth established the Montagu House, a social center for London's literary elite.";
   document.getElementById('event3-card').style.display = 'block';
   document.getElementById('popup-longitude').value = "";
   document.getElementById('popup-latitude').value = "";
@@ -814,12 +820,6 @@ function loadMarkersFromFirebase() {
             </div>
           </div>
           <div style="background: #f9f9f9; padding: 10px; margin-top: 10px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); font-size: 12px; font-weight: bold;">${data.tldr}</div>
-          ${data.events.map(event => `
-            <div style="background: #f9f9f9; padding: 10px; margin-top: 10px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); font-size: 12px;">
-              <strong style="color: #9b4dca; font-size: 12px; display: block; margin-bottom: 2px;">${event.label}</strong>
-              ${event.description}
-            </div>
-          `).join('')}
         </div>
       `;
       const popup = new mapboxgl.Popup({
