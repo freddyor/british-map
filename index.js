@@ -730,24 +730,26 @@ document.getElementById('add-popup-marker').addEventListener('click', () => {
       .addTo(map);
 
     // Create the popup HTML content
-    const popupHTML = `
-      <div style="padding-top: 10px; padding-bottom: 10px;">
-        <div style="display: flex; align-items: center; gap: 10px;">
-          <img src="${imageUrl}" alt="${name}" style="width: 40px; height: 40px; object-fit: cover; border-radius: 50%;" />
-          <div>
-            <div style="font-size: 16px; font-weight: bold;">${name}</div>
-            <div style="font-size: 14px; color: #666;">${dates}</div>
-          </div>
-        </div>
-        <div style="background: #f9f9f9; padding: 10px; margin-top: 10px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); font-size: 12px; font-weight: bold;">${tldr}</div>
-        ${events.map(event => `
-          <div style="background: #f9f9f9; padding: 10px; margin-top: 10px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); font-size: 12px;">
-            <strong style="color: #9b4dca; font-size: 12px; display: block; margin-bottom: 2px;">${event.label}</strong>
-            ${event.description}
-          </div>
-        `).join('')}
+const popupHTML = `
+  <div style="padding-top: 10px; padding-bottom: 10px;">
+    <div style="display: flex; align-items: center; gap: 10px;">
+      <img src="${imageUrl}" alt="${name}" style="width: 40px; height: 40px; object-fit: cover; border-radius: 50%;" />
+      <div>
+        <div style="font-size: 16px; font-weight: bold;">${name}</div>
+        <div style="font-size: 14px; color: #666;">${dates}</div>
       </div>
-    `;
+    </div>
+    <div style="background: #f9f9f9; padding: 10px; margin-top: 10px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); font-size: 12px; font-weight: bold;">
+      ${tldr}
+    </div>
+    ${events.map(event => `
+      <div style="background: #f9f9f9; padding: 10px; margin-top: 10px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); font-size: 12px;">
+        <strong style="color: #9b4dca; font-size: 12px; display: block; margin-bottom: 2px;">${event.label}</strong>
+        ${event.description}
+      </div>
+    `).join('')}
+  </div>
+`;
 
     // Create the popup
     const popup = new mapboxgl.Popup({
