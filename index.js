@@ -612,21 +612,21 @@ popupContainer.innerHTML = `
       <input type="text" id="event1-label" value="WEALTH:" style="font-weight: bold; color: #9b4dca; width: auto; display: inline; font-size: 12px;">
       <button class="remove-event" data-event="1">REMOVE</button>
     </div>
-    <textarea id="popup-event1" placeholder="Event 1" style="width: 100%; box-sizing: border-box; font-size: 12px;">Optional interest fact here. If there's nothing interesting, REMOVE these cards[...]
+    <textarea id="popup-event1" placeholder="Event 1" style="width: 100%; box-sizing: border-box; font-size: 12px;">Optional interest fact here. If there's nothing interesting, REMOVE these cards!</textarea>
   </div>
   <div class="rounded-box event-card" id="event2-card">
     <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 5px;">
       <input type="text" id="event2-label" value="LEGACY:" style="font-weight: bold; color: #9b4dca; width: auto; display: inline; font-size: 12px;">
       <button class="remove-event" data-event="2">REMOVE</button>
     </div>
-    <textarea id="popup-event2" placeholder="Event 2" style="width: 100%; box-sizing: border-box; font-size: 12px;">Another optional fact here. Click on the preview word to edit them (the writing[...]
+    <textarea id="popup-event2" placeholder="Event 2" style="width: 100%; box-sizing: border-box; font-size: 12px;">Another optional fact here. Click on the preview word to edit them (the writing in purple just above this)</textarea>
   </div>
   <div class="rounded-box event-card" id="event3-card">
     <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 5px;">
       <input type="text" id="event3-label" value="EVENT:" style="font-weight: bold; color: #9b4dca; width: auto; display: inline; font-size: 12px;">
       <button class="remove-event" data-event="3">REMOVE</button>
     </div>
-    <textarea id="popup-event3" placeholder="Event 3" style="width: 100%; box-sizing: border-box; font-size: 12px;">Another optional fact here. Remember to use an emoji after each sentence 😎</[...]
+    <textarea id="popup-event3" placeholder="Event 3" style="width: 100%; box-sizing: border-box; font-size: 12px;">Another optional fact here. Remember to use an emoji after each sentence 😎</textarea>
   </div>
   <div class="coordinates-container">
     <div class="input-row">
@@ -641,8 +641,6 @@ popupContainer.innerHTML = `
   <button id="cancel-popup-marker">Cancel</button>
 `;
 
-// Existing code...
-`;
 modal.appendChild(popupContainer);
 
 document.querySelectorAll('.remove-event').forEach(button => {
