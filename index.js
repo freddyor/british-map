@@ -357,18 +357,22 @@ stylePopup.innerHTML = `
     outline: none;
   }
 
-  .remove-event {
-    background-color: #ff4d4d;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    padding: 2px 5px;
-    font-size: 10px;
-    cursor: pointer;
+  .event-card {
+    position: relative;
   }
-
-  .remove-event:hover {
-    background-color: #ff3333;
+  .event-card input[type="text"] {
+    font-size: 12px;
+    margin-bottom: 2px;
+  }
+  .event-card textarea {
+    margin-top: 0;
+  }
+  .remove-event {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    font-size: 10px;
+    padding: 2px 5px;
   }
 `;
 
@@ -438,9 +442,9 @@ function createCustomMarker(imageUrl, color = '#9b4dca', isLocation = false) {
   markerDiv.style.boxSizing = 'border-box';
   markerDiv.style.overflow = 'hidden';
 
-  const imageElement = document.createElement('img');
+    const imageElement = document.createElement('img');
   imageElement.src = imageUrl;
-    imageElement.style.width = '100%';
+  imageElement.style.width = '100%';
   imageElement.style.height = '100%';
   imageElement.style.objectFit = 'cover';
   imageElement.style.borderRadius = '50%';
@@ -581,22 +585,22 @@ popupContainer.innerHTML = `
     <textarea id="popup-tldr" placeholder="TLDR" style="width: 100%; box-sizing: border-box; font-size: 12px; font-weight: bold;">Elizabeth Montagu was a philanthropist who used her privileged social position to advance the status of women.</textarea>
   </div>
   <div class="rounded-box event-card" id="event1-card">
-    <div style="display: flex; justify-content: space-between; align-items: center;">
-      <input type="text" id="event1-label" value="WEALTH:" style="font-weight: bold; color: #9b4dca; width: auto; display: inline;">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 5px;">
+      <input type="text" id="event1-label" value="WEALTH:" style="font-weight: bold; color: #9b4dca; width: auto; display: inline; font-size: 12px;">
       <button class="remove-event" data-event="1">REMOVE</button>
     </div>
     <textarea id="popup-event1" placeholder="Event 1" style="width: 100%; box-sizing: border-box; font-size: 12px;">Elizabeth married into the extremely wealthy Montagu family. She inherited substantial amounts upon her husband's death</textarea>
   </div>
   <div class="rounded-box event-card" id="event2-card">
-    <div style="display: flex; justify-content: space-between; align-items: center;">
-      <input type="text" id="event2-label" value="LEGACY:" style="font-weight: bold; color: #9b4dca; width: auto; display: inline;">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 5px;">
+      <input type="text" id="event2-label" value="LEGACY:" style="font-weight: bold; color: #9b4dca; width: auto; display: inline; font-size: 12px;">
       <button class="remove-event" data-event="2">REMOVE</button>
     </div>
     <textarea id="popup-event2" placeholder="Event 2" style="width: 100%; box-sizing: border-box; font-size: 12px;">Elizabeth and the Bluestockings were mentioned in the works of most future women's rights activists.</textarea>
   </div>
   <div class="rounded-box event-card" id="event3-card">
-    <div style="display: flex; justify-content: space-between; align-items: center;">
-      <input type="text" id="event3-label" value="EVENT:" style="font-weight: bold; color: #9b4dca; width: auto; display: inline;">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 5px;">
+      <input type="text" id="event3-label" value="EVENT:" style="font-weight: bold; color: #9b4dca; width: auto; display: inline; font-size: 12px;">
       <button class="remove-event" data-event="3">REMOVE</button>
     </div>
     <textarea id="popup-event3" placeholder="Event 3" style="width: 100%; box-sizing: border-box; font-size: 12px;">1782: Elizabeth established the Montagu House, a social center for London's literary elite.</textarea>
@@ -697,19 +701,22 @@ document.getElementById('add-popup-marker').addEventListener('click', () => {
         </div>
       </div>
       <div style="background: #f9f9f9; padding: 10px; margin-top: 10px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); font-size: 12px; font-weight: bold;">${tldr}</div>
-      ${event1Visible ? `
+            ${event1Visible ? `
         <div style="background: #f9f9f9; padding: 10px; margin-top: 10px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); font-size: 12px;">
-          <strong style="color: #9b4dca; font-size: 14px;">${event1Label}</strong> ${event1}
+          <strong style="color: #9b4dca; font-size: 12px; display: block; margin-bottom: 2px;">${event1Label}</strong>
+          ${event1}
         </div>
       ` : ''}
-          ${event2Visible ? `
+      ${event2Visible ? `
         <div style="background: #f9f9f9; padding: 10px; margin-top: 10px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); font-size: 12px;">
-          <strong style="color: #9b4dca; font-size: 14px;">${event2Label}</strong> ${event2}
+          <strong style="color: #9b4dca; font-size: 12px; display: block; margin-bottom: 2px;">${event2Label}</strong>
+          ${event2}
         </div>
       ` : ''}
       ${event3Visible ? `
         <div style="background: #f9f9f9; padding: 10px; margin-top: 10px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); font-size: 12px;">
-          <strong style="color: #9b4dca; font-size: 14px;">${event3Label}</strong> ${event3}
+          <strong style="color: #9b4dca; font-size: 12px; display: block; margin-bottom: 2px;">${event3Label}</strong>
+          ${event3}
         </div>
       ` : ''}
     </div>
