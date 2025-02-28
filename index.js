@@ -587,7 +587,7 @@ modal.style.boxShadow = 'none';
 modal.style.zIndex = '1001';
 document.body.appendChild(modal);
 
-/ Editable Popup Structure
+// Editable Popup Structure
 const popupContainer = document.createElement('div');
 popupContainer.className = 'popup-container';
 popupContainer.innerHTML = `
