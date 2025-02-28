@@ -379,6 +379,16 @@ stylePopup.innerHTML = `
     font-size: 24px;
     color: #666;
   }
+  /* Match the styles of the name and dates section in the people marker popup to the building popup */
+#add-people-marker-modal .image-name-container div div:first-child {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+#add-people-marker-modal .image-name-container div div:last-child {
+  font-size: 14px;
+  color: #666;
+}
 
   #add-marker-modal input[type="text"] {
     border: none;
