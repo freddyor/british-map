@@ -377,10 +377,10 @@ stylePopup.innerHTML = `
     outline: none;
   }
 
- .event-card {
+.event-card {
   position: relative;
   margin-bottom: 5px; /* Reduced margin to half */
-  height: 50px; /* Updated height */
+  /* Removed fixed height */
 }
   }
   .event-card input[type="text"] {
