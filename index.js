@@ -648,6 +648,13 @@ document.querySelectorAll('.remove-event').forEach(span => {
   });
 });
 
+document.querySelectorAll('.event-card textarea').forEach(textarea => {
+  textarea.addEventListener('input', (e) => {
+    e.target.style.height = 'auto';
+    e.target.style.height = `${e.target.scrollHeight}px`;
+  });
+});
+
 // Add event listener to the "Add Marker" button
 addMarkerButton.addEventListener('click', () => {
   modal.style.display = 'block';
