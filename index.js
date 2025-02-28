@@ -494,6 +494,11 @@ stylePopup.innerHTML = `
 #add-people-marker-modal .popup-container {
   border-radius: 12px;
 }
+/* Reduce line spacing on the people marker popup */
+#add-people-marker-modal .popup-container,
+#add-people-marker-modal .event-card {
+  line-height: 1.05; /* Match the line spacing of the building popup */
+}
 `;
 
 // Append the style to the document
