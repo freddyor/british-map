@@ -1,25 +1,6 @@
 import { buildings } from './buildings.js';
 import { locations } from './locations.js';
 
-// Import the functions you need from the SDKs you need
-import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js";
-import { getDatabase, ref, push, set, onValue } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-database.js";
-
-// Firebase configuration
-const firebaseConfig = {
-  apiKey: "AIzaSyDjv5uUNOx86FvYsXdKSMkl8vui2Jynt7M",
-  authDomain: "britmap-64cb3.firebaseapp.com",
-  projectId: "britmap-64cb3",
-  storageBucket: "britmap-64cb3.firebasestorage.app",
-  messagingSenderId: "821384262397",
-  appId: "1:821384262397:web:ca81d64ab6a8dea562c494",
-  measurementId: "G-03E2BB7BQH"
-};
-
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const database = getDatabase(app);
-
 mapboxgl.accessToken = 'pk.eyJ1IjoiZnJlZGRvbWF0ZSIsImEiOiJjbTc1bm5zYnQwaG1mMmtxeDdteXNmeXZ0In0.PuDNORq4qExIJ_fErdO_8g';
 
 var map = new mapboxgl.Map({
@@ -35,7 +16,6 @@ map.on('load', () => {
   addBuildingMarkers();
   addLocationsList();
   geolocate.trigger();
-  loadMarkersFromFirebase();
 });
 
 // Container for both buttons
@@ -392,14 +372,14 @@ stylePopup.innerHTML = `
   }
   .remove-event {
     position: absolute;
-    top: 2px;
-    right: 2px;
+    top: 2px; 
+    right: 2px; 
     font-size: 10px;
-    padding: 1px 3px;
-    color: #007bff; /* Default link color */
-    text-decoration: underline; /* Optional: Underline for clarity */
-    cursor: pointer; /* Show pointer cursor on hover */
+    padding: 1px 3px; 
   }
+
+
+
 `;
 
 // Append the style to the document
@@ -586,211 +566,213 @@ modal.style.position = 'fixed';
 modal.style.top = '50%';
 modal.style.left = '50%';
 modal.style.transform = 'translate(-50%, -50%)';
+modal.style.backgroundColor = 'transparent';
+modal.style.border = 'none';
+modal.style.boxShadow = 'none';
 modal.style.zIndex = '1001';
 document.body.appendChild(modal);
 
-// Modal content container
+// Editable Popup Structure
 const popupContainer = document.createElement('div');
 popupContainer.className = 'popup-container';
+popupContainer.innerHTML = `
+  <div class="image-name-container">
+    <div id="image-upload-circle" style="width: 40px; height: 40px; border-radius: 50%; background-color: #f0f0f0; display: flex; justify-content: center; align-items: center; cursor: pointer;">
+      <span style="font-size: 24px; color: #666;">+</span>
+    </div>
+    <img id="profile-image" src="" alt="Profile" style="width: 40px; height: 40px; object-fit: cover; border-radius: 50%; display: none;">
+    <input type="file" id="popup-image" accept="image/*" style="display: none;">
+    <div>
+      <div><input type="text" id="popup-name" placeholder="Name" value="Elizabeth Montagu" style="font-size: 16px; font-weight: bold;"></div>
+      <div><input type="text" id="popup-dates" placeholder="Dates" value="1718-1800" style="font-size: 14px; color: #666;"></div>
+    </div>
+  </div>
+  <div class="rounded-box">
+    <textarea id="popup-tldr" placeholder="TLDR" style="width: 100%; box-sizing: border-box; font-size: 12px; font-weight: bold;">Elizabeth Montagu was a philanthropist who used her privileged social position to advance the status of women.</textarea>
+  </div>
+  <div class="rounded-box event-card" id="event1-card">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 5px;">
+      <input type="text" id="event1-label" value="WEALTH:" style="font-weight: bold; color: #9b4dca; width: auto; display: inline; font-size: 12px;">
+      <button class="remove-event" data-event="1">REMOVE</button>
+    </div>
+    <textarea id="popup-event1" placeholder="Event 1" style="width: 100%; box-sizing: border-box; font-size: 12px;">Elizabeth married into the extremely wealthy Montagu family. She inherited substantial amounts upon her husband's death</textarea>
+  </div>
+  <div class="rounded-box event-card" id="event2-card">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 5px;">
+      <input type="text" id="event2-label" value="LEGACY:" style="font-weight: bold; color: #9b4dca; width: auto; display: inline; font-size: 12px;">
+      <button class="remove-event" data-event="2">REMOVE</button>
+    </div>
+    <textarea id="popup-event2" placeholder="Event 2" style="width: 100%; box-sizing: border-box; font-size: 12px;">Elizabeth and the Bluestockings were mentioned in the works of most future women's rights activists.</textarea>
+  </div>
+  <div class="rounded-box event-card" id="event3-card">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 5px;">
+      <input type="text" id="event3-label" value="EVENT:" style="font-weight: bold; color: #9b4dca; width: auto; display: inline; font-size: 12px;">
+      <button class="remove-event" data-event="3">REMOVE</button>
+    </div>
+    <textarea id="popup-event3" placeholder="Event 3" style="width: 100%; box-sizing: border-box; font-size: 12px;">1782: Elizabeth established the Montagu House, a social center for London's literary elite.</textarea>
+  </div>
+  <div class="coordinates-container">
+    <div class="input-row">
+      <label for="popup-longitude">Longitude:</label>
+      <input type="number" id="popup-longitude" placeholder="Longitude" step="any">
+    </div>
+    <div class="input-row">
+      <label for="popup-latitude">Latitude:</label>
+      <input type="number" id="popup-latitude" placeholder="Latitude" step="any">
+    </div>
+  </div>
+  <button id="add-popup-marker">Add Marker</button>
+  <button id="cancel-popup-marker">Cancel</button>
+`;
+
 modal.appendChild(popupContainer);
 
-// Close button
-const closeModalButton = document.createElement('button');
-closeModalButton.id = 'close-modal';
-closeModalButton.textContent = 'Close';
-popupContainer.appendChild(closeModalButton);
-
-// Title input
-const titleLabel = document.createElement('label');
-titleLabel.textContent = 'Title:';
-popupContainer.appendChild(titleLabel);
-const titleInput = document.createElement('input');
-titleInput.type = 'text';
-titleInput.id = 'title';
-popupContainer.appendChild(titleInput);
-
-// Description input
-const descriptionLabel = document.createElement('label');
-descriptionLabel.textContent = 'Description:';
-popupContainer.appendChild(descriptionLabel);
-const descriptionInput = document.createElement('textarea');
-descriptionInput.id = 'description';
-popupContainer.appendChild(descriptionInput);
-
-// Coordinates container
-const coordinatesContainer = document.createElement('div');
-coordinatesContainer.className = 'coordinates-container';
-popupContainer.appendChild(coordinatesContainer);
-
-// Latitude input
-const latitudeRow = document.createElement('div');
-latitudeRow.className = 'input-row';
-coordinatesContainer.appendChild(latitudeRow);
-const latitudeLabel = document.createElement('label');
-latitudeLabel.textContent = 'Latitude:';
-latitudeRow.appendChild(latitudeLabel);
-const latitudeInput = document.createElement('input');
-latitudeInput.type = 'text';
-latitudeInput.id = 'latitude';
-latitudeRow.appendChild(latitudeInput);
-
-// Longitude input
-const longitudeRow = document.createElement('div');
-longitudeRow.className = 'input-row';
-coordinatesContainer.appendChild(longitudeRow);
-const longitudeLabel = document.createElement('label');
-longitudeLabel.textContent = 'Longitude:';
-longitudeRow.appendChild(longitudeLabel);
-const longitudeInput = document.createElement('input');
-longitudeInput.type = 'text';
-longitudeInput.id = 'longitude';
-longitudeRow.appendChild(longitudeInput);
-
-// Events container
-const eventsLabel = document.createElement('label');
-eventsLabel.textContent = 'Events:';
-popupContainer.appendChild(eventsLabel);
-
-const eventsContainer = document.createElement('div');
-eventsContainer.id = 'events-container';
-popupContainer.appendChild(eventsContainer);
-
-// Add event button
-const addEventButton = document.createElement('button');
-addEventButton.id = 'add-event';
-addEventButton.textContent = 'Add Event';
-popupContainer.appendChild(addEventButton);
-
-// Submit button
-const submitMarkerButton = document.createElement('button');
-submitMarkerButton.id = 'submit-marker';
-submitMarkerButton.textContent = 'Submit';
-popupContainer.appendChild(submitMarkerButton);
-
-let markers = [];
-let currentPopup = null;
-let eventCounter = 0;
-
-function addEventCard() {
-  eventCounter++;
-  const eventCard = document.createElement('div');
-  eventCard.className = 'event-card';
-  eventCard.id = `event${eventCounter}-card`;
-  eventCard.innerHTML = `
-    <input type="text" id="event${eventCounter}-title" placeholder="Event Title">
-    <textarea id="event${eventCounter}-description" placeholder="Event Description"></textarea>
-    <a href="#" class="remove-event" data-event="${eventCounter}">Remove</a>
-  `;
-  eventsContainer.appendChild(eventCard);
-
-  // Add event listener to the new remove button
-  const removeButton = eventCard.querySelector('.remove-event');
-  removeButton.addEventListener('click', (e) => {
-    e.preventDefault(); // Prevent default link behavior
+// Add event listeners for REMOVE buttons
+document.querySelectorAll('.remove-event').forEach(button => {
+  button.addEventListener('click', (e) => {
     const eventNumber = e.target.getAttribute('data-event');
     const eventCard = document.getElementById(`event${eventNumber}-card`);
     eventCard.style.display = 'none';
   });
-}
+});
 
-addEventButton.addEventListener('click', addEventCard);
-
+// Add event listener to the "Add Marker" button
 addMarkerButton.addEventListener('click', () => {
-  // Set default coordinates based on map center
-  const center = map.getCenter();
-  latitudeInput.value = center.lat.toFixed(6);
-  longitudeInput.value = center.lng.toFixed(6);
   modal.style.display = 'block';
 });
 
-closeModalButton.addEventListener('click', () => {
-  modal.style.display = 'none';
+// Handle image upload
+const imageUploadCircle = document.getElementById('image-upload-circle');
+const popupImage = document.getElementById('popup-image');
+const profileImage = document.getElementById('profile-image');
+
+imageUploadCircle.addEventListener('click', () => {
+  popupImage.click();
 });
 
-// Function to add a marker to Firebase
-function addMarkerToFirebase(lat, lng, title, description, events) {
-    const markersRef = ref(database, 'markers');
-    const newMarkerRef = push(markersRef);
-    set(newMarkerRef, {
-        lat: lat,
-        lng: lng,
-        title: title,
-        description: description,
-        events: events
-    });
-}
-
-submitMarkerButton.addEventListener('click', () => {
-    const lat = parseFloat(latitudeInput.value);
-    const lng = parseFloat(longitudeInput.value);
-    const title = titleInput.value;
-    const description = descriptionInput.value;
-
-    if (isNaN(lat) || isNaN(lng) || !title || !description) {
-        alert('Please fill in all fields with valid data.');
-        return;
+popupImage.addEventListener('change', (event) => {
+  const file = event.target.files[0];
+  if (file) {
+    const reader = new FileReader();
+    reader.onload = function(e) {
+      profileImage.src = e.target.result;
+      profileImage.style.display = 'block';
+      imageUploadCircle.style.display = 'none';
     }
-
-    // Collect event data
-    const events = [];
-    for (let i = 1; i <= eventCounter; i++) {
-        const eventTitleInput = document.getElementById(`event${i}-title`);
-        const eventDescriptionInput = document.getElementById(`event${i}-description`);
-        if (eventTitleInput && eventDescriptionInput) {
-            const eventTitle = eventTitleInput.value;
-            const eventDescription = eventDescriptionInput.value;
-            if (eventTitle && eventDescription) {
-                events.push({ title: eventTitle, description: eventDescription });
-            }
-        }
-    }
-
-    // Add marker to Firebase
-    addMarkerToFirebase(lat, lng, title, description, events);
-
-    // Clear form and hide modal
-    titleInput.value = '';
-    descriptionInput.value = '';
-    eventsContainer.innerHTML = '';
-    eventCounter = 0;
-    modal.style.display = 'none';
+    reader.readAsDataURL(file);
+  }
 });
 
-map.on('click', (e) => {
-  latitudeInput.value = e.lngLat.lat.toFixed(6);
-  longitudeInput.value = e.lngLat.lng.toFixed(6);
-  modal.style.display = 'block';
-});
+// Event listener for the "Add Marker" button in the modal
+document.getElementById('add-popup-marker').addEventListener('click', () => {
+  // Get the popup data
+  const name = document.getElementById('popup-name').value;
+  const dates = document.getElementById('popup-dates').value;
+  const tldr = document.getElementById('popup-tldr').value;
+  const event1Label = document.getElementById('event1-label').value;
+  const event1 = document.getElementById('popup-event1').value;
+  const event1Visible = document.getElementById('event1-card').style.display !== 'none';
+  const event2Label = document.getElementById('event2-label').value;
+  const event2 = document.getElementById('popup-event2').value;
+  const event2Visible = document.getElementById('event2-card').style.display !== 'none';
+  const event3Label = document.getElementById('event3-label').value;
+  const event3 = document.getElementById('popup-event3').value;
+  const event3Visible = document.getElementById('event3-card').style.display !== 'none';
+  const longitude = parseFloat(document.getElementById('popup-longitude').value);
+  const latitude = parseFloat(document.getElementById('popup-latitude').value);
+  const imageUrl = profileImage.src;
 
-document.querySelectorAll('.remove-event').forEach(link => {
-  link.addEventListener('click', (e) => {
-    e.preventDefault(); // Prevent default link behavior
-    const eventNumber = e.target.getAttribute('data-event');
-    const eventCard = document.getElementById(`event${eventNumber}-card`);
-    eventCard.style.display = 'none';
+  // Validate the inputs
+  if (!name || !dates || !tldr || isNaN(longitude) || isNaN(latitude) || !imageUrl) {
+    alert('Please fill in all required fields with valid data.');
+    return;
+  }
+
+  // Create the marker
+  const { element: markerElement } = createCustomMarker(imageUrl, '#E9E8E0', false);
+  const marker = new mapboxgl.Marker({
+    element: markerElement
+  })
+    .setLngLat([longitude, latitude])
+    .addTo(map);
+
+  // Create the popup HTML content
+  const popupHTML = `
+    <div style="padding-top: 10px; padding-bottom: 10px;">
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <img src="${imageUrl}" alt="${name}" style="width: 40px; height: 40px; object-fit: cover; border-radius: 50%;" />
+        <div>
+          <div style="font-size: 16px; font-weight: bold;">${name}</div>
+          <div style="font-size: 14px; color: #666;">${dates}</div>
+        </div>
+      </div>
+      <div style="background: #f9f9f9; padding: 10px; margin-top: 10px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); font-size: 12px; font-weight: bold;">${tldr}</div>
+            ${event1Visible ? `
+        <div style="background: #f9f9f9; padding: 10px; margin-top: 10px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); font-size: 12px;">
+          <strong style="color: #9b4dca; font-size: 12px; display: block; margin-bottom: 2px;">${event1Label}</strong>
+          ${event1}
+        </div>
+      ` : ''}
+      ${event2Visible ? `
+        <div style="background: #f9f9f9; padding: 10px; margin-top: 10px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); font-size: 12px;">
+          <strong style="color: #9b4dca; font-size: 12px; display: block; margin-bottom: 2px;">${event2Label}</strong>
+          ${event2}
+        </div>
+      ` : ''}
+      ${event3Visible ? `
+        <div style="background: #f9f9f9; padding: 10px; margin-top: 10px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); font-size: 12px;">
+          <strong style="color: #9b4dca; font-size: 12px; display: block; margin-bottom: 2px;">${event3Label}</strong>
+          ${event3}
+        </div>
+      ` : ''}
+    </div>
+  `;
+
+  // Create the popup
+  const popup = new mapboxgl.Popup({
+    closeButton: true,
+    closeOnClick: true,
+    className: 'custom-popup'
+  }).setHTML(popupHTML);
+
+  marker.setPopup(popup);
+
+  // Add click event listener to the marker
+  marker.getElement().addEventListener('click', () => {
+    map.getCanvas().style.cursor = 'pointer';
+    popup.addTo(map);
   });
+
+  // Close the modal
+  modal.style.display = 'none';
+
+  // Reset the form fields
+  resetForm();
 });
 
-// Function to load markers from Firebase
-function loadMarkersFromFirebase() {
-    const markersRef = ref(database, 'markers');
+// Event listener for the "Cancel" button in the modal
+document.getElementById('cancel-popup-marker').addEventListener('click', () => {
+  modal.style.display = 'none';
+  resetForm();
+});
 
-    onValue(markersRef, (snapshot) => {
-        // Clear existing markers
-        markers.forEach(marker => marker.remove());
-        markers = [];
-
-        snapshot.forEach((childSnapshot) => {
-            const markerData = childSnapshot.val();
-            const marker = new mapboxgl.Marker()
-                .setLngLat([markerData.lng, markerData.lat])
-                .setPopup(new mapboxgl.Popup().setHTML(`
-                    <h3>${markerData.title}</h3>
-                    <p>${markerData.description}</p>
-                    ${markerData.events.map(event => `<p><strong>${event.title}:</strong> ${event.description}</p>`).join('')}
-                `))
-                .addTo(map);
-            markers.push(marker);
-        });
-    });
+function resetForm() {
+  document.getElementById('popup-name').value = "Elizabeth Montagu";
+  document.getElementById('popup-dates').value = "1718-1800";
+  document.getElementById('popup-tldr').value = "Elizabeth Montagu was a philanthropist who used her privileged social position to advance the status of women.";
+  document.getElementById('event1-label').value = "WEALTH:";
+  document.getElementById('popup-event1').value = "Elizabeth married into the extremely wealthy Montagu family. She inherited substantial amounts upon her husband's death";
+  document.getElementById('event1-card').style.display = 'block';
+  document.getElementById('event2-label').value = "LEGACY:";
+  document.getElementById('popup-event2').value = "Elizabeth and the Bluestockings were mentioned in the works of most future women's rights activists.";
+  document.getElementById('event2-card').style.display = 'block';
+  document.getElementById('event3-label').value = "EVENT:";
+  document.getElementById('popup-event3').value = "1782: Elizabeth established the Montagu House, a social center for London's literary elite.";
+  document.getElementById('event3-card').style.display = 'block';
+  document.getElementById('popup-longitude').value = "";
+  document.getElementById('popup-latitude').value = "";
+  document.getElementById('popup-image').value = "";
+  document.getElementById('profile-image').src = "";
+  document.getElementById('profile-image').style.display = "none";
+  document.getElementById('image-upload-circle').style.display = "flex";
 }
