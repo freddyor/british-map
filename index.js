@@ -193,7 +193,7 @@ stylePopup.innerHTML = `
     z-index: 1000;
   }
 
-  #add-marker-modal {
+#add-marker-modal {
     display: none;
     position: fixed;
     top: 50%;
@@ -211,7 +211,7 @@ stylePopup.innerHTML = `
     padding: 10px;
     margin: 0;
     box-sizing: border-box;
-    line-height: 1.05;
+    line-height: 1.05; /* ADDED: Match popup line height */
     width: 300px;
   }
 
@@ -230,6 +230,7 @@ stylePopup.innerHTML = `
     border-radius: 4px;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
+    line-height: 1.05; /* ADDED: Match popup line height */
   }
 
   #add-marker-modal button {
@@ -265,6 +266,7 @@ stylePopup.innerHTML = `
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
+    line-height: 1.05; /* ADDED: Match popup line height */
   }
 
   #add-marker-modal .coordinates-container {
@@ -357,8 +359,9 @@ stylePopup.innerHTML = `
     outline: none;
   }
 
-  .event-card {
+    .event-card {
     position: relative;
+    margin-bottom: 5px; /* Reduced margin to half */
   }
   .event-card input[type="text"] {
     font-size: 12px;
@@ -374,6 +377,7 @@ stylePopup.innerHTML = `
     font-size: 10px;
     padding: 2px 5px;
   }
+
 `;
 
 // Append the style to the document
