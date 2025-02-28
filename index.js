@@ -571,7 +571,7 @@ function addBuildingMarkers() {
 // Add Marker button
 const addMarkerButton = document.createElement('button');
 addMarkerButton.id = 'add-marker-button';
-addMarkerButton.textContent = '+ Add marker';
+addMarkerButton.textContent = '+ Add a building';
 addMarkerButton.className = 'custom-button';
 buttonGroup.appendChild(addMarkerButton);
 
