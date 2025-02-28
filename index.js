@@ -769,24 +769,32 @@ document.getElementById('cancel-popup-marker').addEventListener('click', () => {
 });
 
 function resetForm() {
-  document.getElementById('popup-name').value = "Elizabeth Montagu";
-  document.getElementById('popup-dates').value = "1718-1800";
-  document.getElementById('popup-tldr').value = "Elizabeth Montagu was a philanthropist who used her privileged social position to advance the status of women.";
-  document.getElementById('event1-label').value = "WEALTH:";
-  document.getElementById('popup-event1').value = "Elizabeth married into the extremely wealthy Montagu family. She inherited substantial amounts upon her husband's death";
-  document.getElementById('event1-card').style.display = 'block';
-  document.getElementById('event2-label').value = "LEGACY:";
-  document.getElementById('popup-event2').value = "Elizabeth and the Bluestockings were mentioned in the works of most future women's rights activists.";
-  document.getElementById('event2-card').style.display = 'block';
-  document.getElementById('event3-label').value = "EVENT:";
-  document.getElementById('popup-event3').value = "1782: Elizabeth established the Montagu House, a social center for London's literary elite.";
-  document.getElementById('event3-card').style.display = 'block';
-  document.getElementById('popup-longitude').value = "";
-  document.getElementById('popup-latitude').value = "";
-  document.getElementById('popup-image').value = "";
-  document.getElementById('profile-image').src = "";
-  document.getElementById('profile-image').style.display = "none";
-  document.getElementById('image-upload-circle').style.display = "flex";
+  const nameField = document.getElementById('popup-name');
+  const datesField = document.getElementById('popup-dates');
+  const tldrField = document.getElementById('popup-tldr');
+  const event1Field = document.getElementById('popup-event1');
+  const event2Field = document.getElementById('popup-event2');
+  const event3Field = document.getElementById('popup-event3');
+  const longitudeField = document.getElementById('popup-longitude');
+  const latitudeField = document.getElementById('popup-latitude');
+  const imageField = document.getElementById('popup-image');
+  const profileImageField = document.getElementById('profile-image');
+  const imageUploadCircle = document.getElementById('image-upload-circle');
+
+  if (nameField) nameField.value = "Place name here...u";
+  if (datesField) datesField.value = "Date it was built";
+  if (tldrField) tldrField.value = "One sentence summary of the place here";
+  if (event1Field) event1Field.value = "Add an interesting fact here. If there is nothing interesting, leave it blank! ";
+  if (event2Field) event2Field.value = "Another optional cool fact here. Remember to add an emoji after the sentence 😎";
+  if (event3Field) event3Field.value = "Another optional cool fact here. Remember to keep them short.";
+  if (longitudeField) longitudeField.value = "";
+  if (latitudeField) latitudeField.value = "";
+  if (imageField) imageField.value = "";
+  if (profileImageField) {
+    profileImageField.src = "";
+    profileImageField.style.display = "none";
+  }
+  if (imageUploadCircle) imageUploadCircle.style.display = "flex";
 }
 
 // Load markers from Firebase
