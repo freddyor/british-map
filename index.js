@@ -327,12 +327,6 @@ stylePopup.innerHTML = `
     resize: none;
   }
 
-    #add-marker-modal .wealth-legacy-label {
-    color: #9b4dca;
-    font-size: 14px;
-    font-weight: bold;
-  }
-
   #image-upload-circle {
     width: 40px;
     height: 40px;
@@ -548,11 +542,10 @@ modal.style.position = 'fixed';
 modal.style.top = '50%';
 modal.style.left = '50%';
 modal.style.transform = 'translate(-50%, -50%)';
-modal.style.backgroundColor = 'white';
-modal.style.padding = '20px';
-modal.style.border = '1px solid #ccc';
-modal.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.1)';
-modal.style.zIndex = '1001'; // Ensure it's on top
+modal.style.backgroundColor = 'transparent';
+modal.style.border = 'none';
+modal.style.boxShadow = 'none';
+modal.style.zIndex = '1001';
 document.body.appendChild(modal);
 
 // Editable Popup Structure
@@ -578,7 +571,7 @@ popupContainer.innerHTML = `
     <textarea id="popup-wealth" placeholder="Wealth" style="width: 100%; box-sizing: border-box; font-size: 12px;">Elizabeth married into the extremely wealthy Montagu family. She inherited substantial amounts upon her husband's death</textarea>
   </div>
   <div class="rounded-box">
-    <label class = "wealth-legacy-label" for="popup-legacy">LEGACY:</label>
+    <label class="wealth-legacy-label" for="popup-legacy">LEGACY:</label>
     <textarea id="popup-legacy" placeholder="Legacy" style="width: 100%; box-sizing: border-box; font-size: 12px;">Elizabeth and the Bluestockings were mentioned in the works of most future women's rights activists.</textarea>
   </div>
   <div class="coordinates-container">
@@ -637,13 +630,13 @@ document.getElementById('add-popup-marker').addEventListener('click', () => {
   const imageUrl = profileImage.src;
 
   // Validate the inputs
-  if (!name || !dates || !description || !wealth || !legacy || !longitude || !latitude || !imageUrl) {
+  if (!name || !dates || !description || !wealth || !legacy || isNaN(longitude) || isNaN(latitude) || !imageUrl) {
     alert('Please fill in all fields with valid data.');
     return;
   }
 
   // Create the marker
-  const { element: markerElement } = createCustomMarker(imageUrl, '#9b4dca', false);
+  const { element: markerElement } = createCustomMarker(imageUrl, '#E9E8E0', false);
   const marker = new mapboxgl.Marker({
     element: markerElement
   })
@@ -652,7 +645,7 @@ document.getElementById('add-popup-marker').addEventListener('click', () => {
 
   // Create the popup HTML content
   const popupHTML = `
-    <div style="font-size: 6px; font-weight: bold; margin-bottom: 10px;">${description}</div>
+    <p style="font-size: 6px; font-weight: bold; margin-bottom: 10px;">${description}</p>
     <div style="border-top: 1px solid #ccc; margin-bottom: 10px;"></div>
     <div style="display: flex; align-items: center; gap: 10px;">
       <img src="${imageUrl}" alt="${name}" style="width: 40px; height: 40px; object-fit: cover; border-radius: 50%;" />
@@ -677,6 +670,12 @@ document.getElementById('add-popup-marker').addEventListener('click', () => {
   }).setHTML(popupHTML);
 
   marker.setPopup(popup);
+
+  // Add click event listener to the marker
+  marker.getElement().addEventListener('click', () => {
+    map.getCanvas().style.cursor = 'pointer';
+    popup.addTo(map);
+  });
 
   // Close the modal
   modal.style.display = 'none';
@@ -704,3 +703,4 @@ function resetForm() {
   document.getElementById('profile-image').style.display = "none";
   document.getElementById('image-upload-circle').style.display = "flex";
 }
+
