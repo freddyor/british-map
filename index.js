@@ -196,6 +196,53 @@ stylePopup.innerHTML = `
     gap: 10px;
     z-index: 1000;
   }
+
+  #add-marker-modal form {
+    background-color: #E9E8E0;
+    border: 2px solid #f0f0f0;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+    font-family: 'Poppins', sans-serif;
+    padding: 10px;
+    margin: 0;
+    box-sizing: border-box;
+    line-height: 1.05;
+  }
+
+  #add-marker-modal label {
+      font-weight: bold;
+      display: block;
+      margin-bottom: 5px;
+  }
+
+  #add-marker-modal input[type=text],
+  #add-marker-modal input[type=number],
+  #add-marker-modal textarea {
+      width: calc(100% - 12px); /* Adjusted width to account for padding */
+      padding: 6px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box; /* Ensures padding is included in the width */
+      font-family: 'Poppins', sans-serif;
+  }
+
+  #add-marker-modal button {
+      background-color: #9b4dca;
+      color: white;
+      padding: 8px 12px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-family: 'Poppins', sans-serif;
+      margin-top: 5px;
+      margin-right: 5px;
+  }
+
+  #add-marker-modal button:hover {
+      background-color: #7c3ba5;
+  }
+
 `;
 
 // Append the style to the document
@@ -368,3 +415,112 @@ function addBuildingMarkers() {
     });
   });
 }
+
+// Add Marker button
+const addMarkerButton = document.createElement('button');
+addMarkerButton.id = 'add-marker-button';
+addMarkerButton.textContent = '+ Add marker';
+addMarkerButton.className = 'custom-button';
+buttonGroup.appendChild(addMarkerButton);
+
+// Modal container
+const modal = document.createElement('div');
+modal.id = 'add-marker-modal';
+modal.style.display = 'none';
+modal.style.position = 'fixed';
+modal.style.top = '50%';
+modal.style.left = '50%';
+modal.style.transform = 'translate(-50%, -50%)';
+modal.style.backgroundColor = 'white';
+modal.style.padding = '20px';
+modal.style.border = '1px solid #ccc';
+modal.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.1)';
+modal.style.zIndex = '1001'; // Ensure it's on top
+document.body.appendChild(modal);
+
+// Form within the modal
+const markerForm = document.createElement('form');
+
+// Use template literals to construct the form HTML
+markerForm.innerHTML = `
+  <label for="marker-name">Name:</label>
+  <input type="text" id="marker-name" name="marker-name"><br><br>
+
+  <label for="marker-description">Description:</label>
+  <textarea id="marker-description" name="marker-description"></textarea><br><br>
+
+  <label for="marker-image">Image URL:</label>
+  <input type="text" id="marker-image" name="marker-image"><br><br>
+
+  <label for="marker-longitude">Longitude:</label>
+  <input type="number" id="marker-longitude" name="marker-longitude" step="any"><br><br>
+
+  <label for="marker-latitude">Latitude:</label>
+  <input type="number" id="marker-latitude" name="marker-latitude" step="any"><br><br>
+
+  <button type="submit">Add Marker</button>
+  <button type="button" id="modal-cancel">Cancel</button>
+`;
+
+modal.appendChild(markerForm);
+
+// Add event listener to the "Add Marker" button
+addMarkerButton.addEventListener('click', () => {
+  modal.style.display = 'block';
+});
+
+// Event listener for form submission
+markerForm.addEventListener('submit', function(event) {
+  event.preventDefault(); // Prevent the default form submission
+
+  // Get the values from the form
+  const name = document.getElementById('marker-name').value;
+  const description = document.getElementById('marker-description').value;
+  const imageUrl = document.getElementById('marker-image').value;
+  const longitude = parseFloat(document.getElementById('marker-longitude').value);
+  const latitude = parseFloat(document.getElementById('marker-latitude').value);
+
+  // Validate the inputs
+  if (!name || !description || !imageUrl || isNaN(longitude) || isNaN(latitude)) {
+    alert('Please fill in all fields with valid data.');
+    return;
+  }
+
+  // Create the marker
+  const { element: markerElement } = createCustomMarker(imageUrl, '#9b4dca', false);
+  const marker = new mapboxgl.Marker({
+    element: markerElement
+  })
+    .setLngLat([longitude, latitude])
+    .addTo(map);
+
+   // Create the popup
+  const popup = new mapboxgl.Popup({
+    closeButton: true,
+    closeOnClick: true,
+    className: 'custom-popup'
+  }).setHTML(`
+    <p style="font-size: 6px; font-weight: bold; margin-bottom: 10px;">${description}</p>
+    <div style="border-top: 1px solid #ccc; margin-bottom: 10px;"></div>
+    <div style="display: flex; align-items: center; gap: 10px;">
+      <img src="${imageUrl}" alt="${name}" style="width: 40px; height: 40px; object-fit: cover; border-radius: 50%;" />
+      <div>
+        <div style="font-size: 16px; font-weight: bold;">${name}</div>
+      </div>
+    </div>
+  `);
+
+  marker.setPopup(popup);
+
+  // Close the modal
+  modal.style.display = 'none';
+
+  // Clear the form
+  markerForm.reset();
+});
+
+// Event listener for the "Cancel" button in the modal
+document.getElementById('modal-cancel').addEventListener('click', function() {
+    modal.style.display = 'none';
+    markerForm.reset(); // Clear the form
+});
