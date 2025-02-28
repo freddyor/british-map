@@ -821,9 +821,9 @@ peopleModal.style.position = 'fixed';
 peopleModal.style.top = '50%';
 peopleModal.style.left = '50%';
 peopleModal.style.transform = 'translate(-50%, -50%)';
-peopleModal.style.backgroundColor = 'transparent';
-peopleModal.style.border = 'none';
-peopleModal.style.boxShadow = 'none';
+peopleModal.style.backgroundColor = '#fff';  // Set background color to white
+peopleModal.style.border = '2px solid #f0f0f0';  // Set border
+peopleModal.style.boxShadow = '0 6px 15px rgba(0, 0, 0, 0.3)';  // Add shadow to make it stand out
 peopleModal.style.zIndex = '1001';
 document.body.appendChild(peopleModal);
 
@@ -885,6 +885,11 @@ peopleModal.appendChild(peoplePopupContainer);
 addPeopleMarkerButton.addEventListener('click', () => {
   peopleModal.style.display = 'block';
 });
+
+// Ensure the popup container has the correct styles applied
+document.querySelector('.popup-container').style.backgroundColor = '#fff';
+document.querySelector('.popup-container').style.border = '2px solid #f0f0f0';
+document.querySelector('.popup-container').style.boxShadow = '0 6px 15px rgba(0, 0, 0, 0.3)';
 
 // Handle image upload for People Marker
 const peopleImageUploadCircle = document.getElementById('people-image-upload-circle');
