@@ -636,7 +636,7 @@ popupContainer.innerHTML = `
       <input type="number" id="popup-latitude" placeholder="Latitude" step="any">
     </div>
   </div>
-<p style="font-size: 15px;">To find long, lat co-ordinates, google 'Getting Lat/Lng from a Click Event'. If you want to edit or delete a building marker, email freddy@britmap.com.</p>
+<p style="font-size: 12px;">To find long, lat co-ordinates, google 'Getting Lat/Lng from a Click Event'. If you want to edit or delete a building marker, email freddy@britmap.com.</p>
   <button id="add-popup-marker">Add Marker</button>
   <button id="cancel-popup-marker">Cancel</button>
 `;
