@@ -593,7 +593,7 @@ popupContainer.className = 'popup-container';
 popupContainer.innerHTML = `
   <div class="image-name-container">
     <div id="image-upload-circle" style="width: 40px; height: 40px; border-radius: 50%; background-color: #f0f0f0; display: flex; justify-content: center; align-items: center; cursor: pointer;">
-      <span style="font-size: 24px; color: #666;">+</span>
+      <span style="font-size: 12px; color: #9b4dca; font-weight: bold;">add img</span>
     </div>
     <img id="profile-image" src="" alt="Profile" style="width: 40px; height: 40px; object-fit: cover; border-radius: 50%; display: none;">
     <input type="file" id="popup-image" accept="image/*" style="display: none;">
