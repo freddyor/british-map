@@ -359,6 +359,7 @@ stylePopup.innerHTML = `
 
   .event-card {
     position: relative;
+    padding-top: 15px;
   }
   .event-card input[type="text"] {
     font-size: 12px;
@@ -369,10 +370,18 @@ stylePopup.innerHTML = `
   }
   .remove-event {
     position: absolute;
-    top: 5px;
-    right: 5px;
-    font-size: 10px;
-    padding: 2px 5px;
+    top: 2px;
+    right: 2px;
+    font-size: 8px;
+    padding: 1px 3px;
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  .remove-event:hover {
+    background-color: #ff3333;
   }
 `;
 
@@ -442,7 +451,7 @@ function createCustomMarker(imageUrl, color = '#9b4dca', isLocation = false) {
   markerDiv.style.boxSizing = 'border-box';
   markerDiv.style.overflow = 'hidden';
 
-    const imageElement = document.createElement('img');
+  const imageElement = document.createElement('img');
   imageElement.src = imageUrl;
   imageElement.style.width = '100%';
   imageElement.style.height = '100%';
@@ -585,24 +594,18 @@ popupContainer.innerHTML = `
     <textarea id="popup-tldr" placeholder="TLDR" style="width: 100%; box-sizing: border-box; font-size: 12px; font-weight: bold;">Elizabeth Montagu was a philanthropist who used her privileged social position to advance the status of women.</textarea>
   </div>
   <div class="rounded-box event-card" id="event1-card">
-    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 5px;">
-      <input type="text" id="event1-label" value="WEALTH:" style="font-weight: bold; color: #9b4dca; width: auto; display: inline; font-size: 12px;">
-      <button class="remove-event" data-event="1">REMOVE</button>
-    </div>
+    <button class="remove-event" data-event="1">REMOVE</button>
+    <input type="text" id="event1-label" value="WEALTH:" style="font-weight: bold; color: #9b4dca; width: auto; display: inline; font-size: 12px;">
     <textarea id="popup-event1" placeholder="Event 1" style="width: 100%; box-sizing: border-box; font-size: 12px;">Elizabeth married into the extremely wealthy Montagu family. She inherited substantial amounts upon her husband's death</textarea>
   </div>
   <div class="rounded-box event-card" id="event2-card">
-    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 5px;">
-      <input type="text" id="event2-label" value="LEGACY:" style="font-weight: bold; color: #9b4dca; width: auto; display: inline; font-size: 12px;">
-      <button class="remove-event" data-event="2">REMOVE</button>
-    </div>
+    <button class="remove-event" data-event="2">REMOVE</button>
+    <input type="text" id="event2-label" value="LEGACY:" style="font-weight: bold; color: #9b4dca; width: auto; display: inline; font-size: 12px;">
     <textarea id="popup-event2" placeholder="Event 2" style="width: 100%; box-sizing: border-box; font-size: 12px;">Elizabeth and the Bluestockings were mentioned in the works of most future women's rights activists.</textarea>
   </div>
   <div class="rounded-box event-card" id="event3-card">
-    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 5px;">
-      <input type="text" id="event3-label" value="EVENT:" style="font-weight: bold; color: #9b4dca; width: auto; display: inline; font-size: 12px;">
-      <button class="remove-event" data-event="3">REMOVE</button>
-    </div>
+    <button class="remove-event" data-event="3">REMOVE</button>
+    <input type="text" id="event3-label" value="EVENT:" style="font-weight: bold; color: #9b4dca; width: auto; display: inline; font-size: 12px;">
     <textarea id="popup-event3" placeholder="Event 3" style="width: 100%; box-sizing: border-box; font-size: 12px;">1782: Elizabeth established the Montagu House, a social center for London's literary elite.</textarea>
   </div>
   <div class="coordinates-container">
@@ -701,7 +704,7 @@ document.getElementById('add-popup-marker').addEventListener('click', () => {
         </div>
       </div>
       <div style="background: #f9f9f9; padding: 10px; margin-top: 10px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); font-size: 12px; font-weight: bold;">${tldr}</div>
-            ${event1Visible ? `
+           ${event1Visible ? `
         <div style="background: #f9f9f9; padding: 10px; margin-top: 10px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); font-size: 12px;">
           <strong style="color: #9b4dca; font-size: 12px; display: block; margin-bottom: 2px;">${event1Label}</strong>
           ${event1}
@@ -771,4 +774,124 @@ function resetForm() {
   document.getElementById('image-upload-circle').style.display = "flex";
 }
 
+// Function to get the user's current location
+function getUserLocation() {
+  if ('geolocation' in navigator) {
+    navigator.geolocation.getCurrentPosition((position) => {
+      const lon = position.coords.longitude;
+      const lat = position.coords.latitude;
+      document.getElementById('popup-longitude').value = lon.toFixed(6);
+      document.getElementById('popup-latitude').value = lat.toFixed(6);
+    }, (error) => {
+      console.error("Error getting user location:", error);
+      alert("Unable to get your current location. Please enter coordinates manually.");
+    });
+  } else {
+    console.error("Geolocation is not supported by this browser.");
+    alert("Geolocation is not supported by your browser. Please enter coordinates manually.");
+  }
+}
+
+// Add event listener to a "Use Current Location" button
+const useLocationButton = document.createElement('button');
+useLocationButton.textContent = 'Use Current Location';
+useLocationButton.className = 'custom-button';
+useLocationButton.addEventListener('click', getUserLocation);
+document.querySelector('.coordinates-container').appendChild(useLocationButton);
+
+// Function to validate coordinates
+function validateCoordinates(lon, lat) {
+  return lon >= -180 && lon <= 180 && lat >= -90 && lat <= 90;
+}
+
+// Add event listeners for coordinate inputs
+document.getElementById('popup-longitude').addEventListener('change', function() {
+  const lon = parseFloat(this.value);
+  if (!validateCoordinates(lon, parseFloat(document.getElementById('popup-latitude').value))) {
+    alert('Invalid longitude. Please enter a value between -180 and 180.');
+    this.value = '';
+  }
+});
+
+document.getElementById('popup-latitude').addEventListener('change', function() {
+  const lat = parseFloat(this.value);
+  if (!validateCoordinates(parseFloat(document.getElementById('popup-longitude').value), lat)) {
+    alert('Invalid latitude. Please enter a value between -90 and 90.');
+    this.value = '';
+  }
+});
+
+// Function to export all markers as JSON
+function exportMarkers() {
+  const markers = map.getStyle().layers
+    .filter(layer => layer.type === 'symbol' && layer.layout['icon-image'])
+    .map(layer => {
+      const feature = map.querySourceFeatures(layer.id)[0];
+      return {
+        name: feature.properties.name,
+        coordinates: feature.geometry.coordinates,
+        description: feature.properties.description
+      };
+    });
+
+  const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(markers));
+  const downloadAnchorNode = document.createElement('a');
+  downloadAnchorNode.setAttribute("href", dataStr);
+  downloadAnchorNode.setAttribute("download", "map_markers.json");
+  document.body.appendChild(downloadAnchorNode);
+  downloadAnchorNode.click();
+  downloadAnchorNode.remove();
+}
+
+// Add export button
+const exportButton = document.createElement('button');
+exportButton.textContent = 'Export Markers';
+exportButton.className = 'custom-button';
+exportButton.addEventListener('click', exportMarkers);
+buttonGroup.appendChild(exportButton);
+
+// Function to import markers from JSON
+function importMarkers(event) {
+  const file = event.target.files[0];
+  const reader = new FileReader();
+  reader.onload = function(e) {
+    const markers = JSON.parse(e.target.result);
+    markers.forEach(markerData => {
+      const { element: markerElement } = createCustomMarker(markerData.image || 'default-image-url.jpg', '#E9E8E0', false);
+      const marker = new mapboxgl.Marker({
+        element: markerElement
+      })
+        .setLngLat(markerData.coordinates)
+        .setPopup(new mapboxgl.Popup().setHTML(markerData.description))
+        .addTo(map);
+    });
+  };
+  reader.readAsText(file);
+}
+
+// Add import button and file input
+const importButton = document.createElement('button');
+importButton.textContent = 'Import Markers';
+importButton.className = 'custom-button';
+const importInput = document.createElement('input');
+importInput.type = 'file';
+importInput.style.display = 'none';
+importInput.addEventListener('change', importMarkers);
+importButton.addEventListener('click', () => importInput.click());
+buttonGroup.appendChild(importButton);
+buttonGroup.appendChild(importInput);
+
+// Add event listener for map click to get coordinates
+map.on('click', (e) => {
+  const lon = e.lngLat.lng.toFixed(6);
+  const lat = e.lngLat.lat.toFixed(6);
+  document.getElementById('popup-longitude').value = lon;
+  document.getElementById('popup-latitude').value = lat;
+});
+
+// Initialize the map and add initial markers
+map.on('load', () => {
+  addBuildingMarkers();
+  addLocationsList();
+});
 
