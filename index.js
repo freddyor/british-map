@@ -2,8 +2,8 @@ import { buildings } from './buildings.js';
 import { locations } from './locations.js';
 
 // Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app";
-import { getDatabase, ref, push, set, onValue } from "firebase/database";
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js";
+import { getDatabase, ref, push, set, onValue } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-database.js";
 
 // Firebase configuration
 const firebaseConfig = {
