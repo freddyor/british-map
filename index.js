@@ -48,40 +48,6 @@ buttonGroup.style.display = 'flex';
 buttonGroup.style.gap = '10px';
 document.body.appendChild(buttonGroup);
 
-// Find People button
-const toggleContainerButton = document.createElement('button');
-toggleContainerButton.id = 'toggle-container-button';
-toggleContainerButton.textContent = 'Find people 🔍';
-toggleContainerButton.className = 'custom-button';
-buttonGroup.appendChild(toggleContainerButton);
-
-const openableContainer = document.createElement('div');
-openableContainer.id = 'openable-container';
-openableContainer.style.display = 'none';
-openableContainer.style.position = 'fixed';
-openableContainer.style.left = '50%';
-openableContainer.style.top = '80px';
-openableContainer.style.transform = 'translateX(-50%)';
-openableContainer.style.zIndex = '999';
-openableContainer.style.backgroundColor = '#fff';
-openableContainer.style.border = '2px solid #f0f0f0';
-openableContainer.style.borderRadius = '8px';
-openableContainer.style.boxShadow = '0 6px 15px rgba(0, 0, 0, 0.3)';
-openableContainer.style.padding = '10px';
-openableContainer.style.width = '200px';
-openableContainer.style.textAlign = 'center';
-document.body.appendChild(openableContainer);
-
-toggleContainerButton.addEventListener('click', () => {
-    if (openableContainer.style.display === 'none' || openableContainer.style.display === '') {
-        openableContainer.style.display = 'block';
-        toggleContainerButton.textContent = 'Find people 🔍';
-    } else {
-        openableContainer.style.display = 'none';
-        toggleContainerButton.textContent = 'Find people 🔍';
-    }
-});
-
 function addLocationsList() {
     const list = document.createElement('ul');
     list.style.listStyleType = 'none';
