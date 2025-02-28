@@ -563,7 +563,7 @@ popupContainer.innerHTML = `
     </div>
   </div>
   <div class="rounded-box">
-    <textarea id="popup-tldr" placeholder="TLDR" style="width: 100%; box-sizing: border-box; font-size: 12px;">Elizabeth Montagu was a philanthropist who used her privileged social position to advance the status of women.</textarea>
+    <textarea id="popup-tldr" placeholder="TLDR" style="width: 100%; box-sizing: border-box; font-size: 12px; font-weight: bold;">Elizabeth Montagu was a philanthropist who used her privileged social position to advance the status of women.</textarea>
   </div>
   <div class="rounded-box">
     <input type="text" id="wealth-label" value="WEALTH:" style="font-weight: bold; color: #9b4dca; width: auto; display: inline;">
@@ -645,7 +645,8 @@ document.getElementById('add-popup-marker').addEventListener('click', () => {
     .addTo(map);
 
   // Create the popup HTML content
-  const popupHTML = `
+const popupHTML = `
+  <div style="padding-top: 10px; padding-bottom: 10px;">
     <div style="display: flex; align-items: center; gap: 10px;">
       <img src="${imageUrl}" alt="${name}" style="width: 40px; height: 40px; object-fit: cover; border-radius: 50%;" />
       <div>
@@ -653,15 +654,15 @@ document.getElementById('add-popup-marker').addEventListener('click', () => {
         <div style="font-size: 14px; color: #666;">${dates}</div>
       </div>
     </div>
-    <div style="background: #f9f9f9; padding: 10px; margin-top: 10px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); font-size: 12px;">${tldr}</div>
+    <div style="background: #f9f9f9; padding: 10px; margin-top: 10px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); font-size: 12px; font-weight: bold;">${tldr}</div>
     <div style="background: #f9f9f9; padding: 10px; margin-top: 10px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); font-size: 12px;">
       <strong style="color: #9b4dca; font-size: 14px;">${wealthLabel}</strong> ${wealth}
     </div>
     <div style="background: #f9f9f9; padding: 10px; margin-top: 10px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); font-size: 12px;">
       <strong style="color: #9b4dca; font-size: 14px;">${legacyLabel}</strong> ${legacy}
     </div>
-  `;
-
+  </div>
+`;
   // Create the popup
   const popup = new mapboxgl.Popup({
     closeButton: true,
