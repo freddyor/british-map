@@ -12,9 +12,25 @@ var map = new mapboxgl.Map({
     bearing: -17.6
 });
 
+// Firebase configuration
+const firebaseConfig = {
+  apiKey: "AIzaSyDjv5uUNOx86FvYsXdKSMkl8vui2Jynt7M",
+  authDomain: "britmap-64cb3.firebaseapp.com",
+  projectId: "britmap-64cb3",
+  storageBucket: "britmap-64cb3.firebasestorage.app",
+  messagingSenderId: "821384262397",
+  appId: "1:821384262397:web:ca81d64ab6a8dea562c494",
+  measurementId: "G-03E2BB7BQH"
+};
+
+// Initialize Firebase
+const app = firebase.initializeApp(firebaseConfig);
+const db = firebase.firestore();
+
 map.on('load', () => {
   addBuildingMarkers();
   addLocationsList();
+  loadMarkersFromFirebase();
   geolocate.trigger();
 });
 
@@ -521,7 +537,7 @@ function addBuildingMarkers() {
       closeOnClick: true,
       className: 'custom-popup'
     }).setHTML(`
-      <p style="font-size: 6px; font-weight: bold; margin-bottom: 10px;">${building.description}</p>
+            <p style="font-size: 6px; font-weight: bold; margin-bottom: 10px;">${building.description}</p>
       <div style="border-top: 1px solid #ccc; margin-bottom: 10px;"></div>
       <div style="display: flex; align-items: center; gap: 10px;">
         <img src="${building.image}" alt="${building.name}" style="width: 40px; height: 40px; object-fit: cover; border-radius: 50%;" />
@@ -624,7 +640,6 @@ popupContainer.innerHTML = `
   <button id="add-popup-marker">Add Marker</button>
   <button id="cancel-popup-marker">Cancel</button>
 `;
-
 modal.appendChild(popupContainer);
 
 // Add event listeners for REMOVE buttons
@@ -688,66 +703,78 @@ document.getElementById('add-popup-marker').addEventListener('click', () => {
     return;
   }
 
-  // Create the marker
-  const { element: markerElement } = createCustomMarker(imageUrl, '#E9E8E0', false);
-  const marker = new mapboxgl.Marker({
-    element: markerElement
-  })
-    .setLngLat([longitude, latitude])
-    .addTo(map);
+  // Save marker data to Firestore
+  db.collection('markers').add({
+    name,
+    dates,
+    tldr,
+    longitude,
+    latitude,
+    imageUrl
+  }).then(() => {
+    // Add marker to the map
+    const { element: markerElement } = createCustomMarker(imageUrl, '#E9E8E0', false);
+    const marker = new mapboxgl.Marker({
+      element: markerElement
+    })
+      .setLngLat([longitude, latitude])
+      .addTo(map);
 
-  // Create the popup HTML content
-  const popupHTML = `
-    <div style="padding-top: 10px; padding-bottom: 10px;">
-      <div style="display: flex; align-items: center; gap: 10px;">
-        <img src="${imageUrl}" alt="${name}" style="width: 40px; height: 40px; object-fit: cover; border-radius: 50%;" />
-        <div>
-          <div style="font-size: 16px; font-weight: bold;">${name}</div>
-          <div style="font-size: 14px; color: #666;">${dates}</div>
+    // Create the popup HTML content
+    const popupHTML = `
+      <div style="padding-top: 10px; padding-bottom: 10px;">
+        <div style="display: flex; align-items: center; gap: 10px;">
+          <img src="${imageUrl}" alt="${name}" style="width: 40px; height: 40px; object-fit: cover; border-radius: 50%;" />
+          <div>
+            <div style="font-size: 16px; font-weight: bold;">${name}</div>
+            <div style="font-size: 14px; color: #666;">${dates}</div>
+          </div>
         </div>
+        <div style="background: #f9f9f9; padding: 10px; margin-top: 10px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); font-size: 12px; font-weight: bold;">${tldr}</div>
+        ${event1Visible ? `
+          <div style="background: #f9f9f9; padding: 10px; margin-top: 10px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); font-size: 12px;">
+            <strong style="color: #9b4dca; font-size: 12px; display: block; margin-bottom: 2px;">${event1Label}</strong>
+            ${event1}
+          </div>
+        ` : ''}
+        ${event2Visible ? `
+          <div style="background: #f9f9f9; padding: 10px; margin-top: 10px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); font-size: 12px;">
+            <strong style="color: #9b4dca; font-size: 12px; display: block; margin-bottom: 2px;">${event2Label}</strong>
+            ${event2}
+          </div>
+        ` : ''}
+        ${event3Visible ? `
+          <div style="background: #f9f9f9; padding: 10px; margin-top: 10px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); font-size: 12px;">
+            <strong style="color: #9b4dca; font-size: 12px; display: block; margin-bottom: 2px;">${event3Label}</strong>
+            ${event3}
+          </div>
+        ` : ''}
       </div>
-      <div style="background: #f9f9f9; padding: 10px; margin-top: 10px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); font-size: 12px; font-weight: bold;">${tldr}</div>
-            ${event1Visible ? `
-        <div style="background: #f9f9f9; padding: 10px; margin-top: 10px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); font-size: 12px;">
-          <strong style="color: #9b4dca; font-size: 12px; display: block; margin-bottom: 2px;">${event1Label}</strong>
-          ${event1}
-        </div>
-      ` : ''}
-      ${event2Visible ? `
-        <div style="background: #f9f9f9; padding: 10px; margin-top: 10px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); font-size: 12px;">
-          <strong style="color: #9b4dca; font-size: 12px; display: block; margin-bottom: 2px;">${event2Label}</strong>
-          ${event2}
-        </div>
-      ` : ''}
-      ${event3Visible ? `
-        <div style="background: #f9f9f9; padding: 10px; margin-top: 10px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); font-size: 12px;">
-          <strong style="color: #9b4dca; font-size: 12px; display: block; margin-bottom: 2px;">${event3Label}</strong>
-          ${event3}
-        </div>
-      ` : ''}
-    </div>
-  `;
+    `;
 
-  // Create the popup
-  const popup = new mapboxgl.Popup({
-    closeButton: true,
-    closeOnClick: true,
-    className: 'custom-popup'
-  }).setHTML(popupHTML);
+    // Create the popup
+    const popup = new mapboxgl.Popup({
+      closeButton: true,
+      closeOnClick: true,
+      className: 'custom-popup'
+    }).setHTML(popupHTML);
 
-  marker.setPopup(popup);
+    marker.setPopup(popup);
 
-  // Add click event listener to the marker
-  marker.getElement().addEventListener('click', () => {
-    map.getCanvas().style.cursor = 'pointer';
-    popup.addTo(map);
+    // Add click event listener to the marker
+    marker.getElement().addEventListener('click', () => {
+      map.getCanvas().style.cursor = 'pointer';
+      popup.addTo(map);
+    });
+
+    // Close the modal
+    modal.style.display = 'none';
+
+    // Reset the form fields
+    resetForm();
+  }).catch(error => {
+    console.error('Error adding marker: ', error);
   });
-
-  // Close the modal
-  modal.style.display = 'none';
-
-  // Reset the form fields
-  resetForm();
 });
 
 // Event listener for the "Cancel" button in the modal
@@ -775,4 +802,46 @@ function resetForm() {
   document.getElementById('profile-image').src = "";
   document.getElementById('profile-image').style.display = "none";
   document.getElementById('image-upload-circle').style.display = "flex";
+}
+
+// Load markers from Firebase
+function loadMarkersFromFirebase() {
+  db.collection('markers').get().then((querySnapshot) => {
+    querySnapshot.forEach((doc) => {
+      const data = doc.data();
+      const { element: markerElement } = createCustomMarker(data.imageUrl, '#E9E8E0', false);
+      const marker = new mapboxgl.Marker({
+        element: markerElement
+      })
+        .setLngLat([data.longitude, data.latitude])
+        .addTo(map);
+
+      const popupHTML = `
+        <div style="padding-top: 10px; padding-bottom: 10px;">
+          <div style="display: flex; align-items: center; gap: 10px;">
+            <img src="${data.imageUrl}" alt="${data.name}" style="width: 40px; height: 40px; object-fit: cover; border-radius: 50%;" />
+            <div>
+              <div style="font-size: 16px; font-weight: bold;">${data.name}</div>
+              <div style="font-size: 14px; color: #666;">${data.dates}</div>
+            </div>
+          </div>
+          <div style="background: #f9f9f9; padding: 10px; margin-top: 10px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); font-size: 12px; font-weight: bold;">${data.tldr}</div>
+        </div>
+      `;
+      const popup = new mapboxgl.Popup({
+        closeButton: true,
+        closeOnClick: true,
+        className: 'custom-popup'
+      }).setHTML(popupHTML);
+
+      marker.setPopup(popup);
+
+      marker.getElement().addEventListener('click', () => {
+        map.getCanvas().style.cursor = 'pointer';
+        popup.addTo(map);
+      });
+    });
+  }).catch(error => {
+    console.error('Error loading markers: ', error);
+  });
 }
