@@ -232,6 +232,18 @@ stylePopup.innerHTML = `
     line-height: 1.05; /* ADDED: Match popup line height */
     width: 300px;
   }
+   #add-people-marker-modal .popup-container {
+    font-family: 'Poppins', sans-serif;
+    background: #E9E8E0;
+    border: 2px solid #f0f0f0;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+    padding: 10px;
+    margin: 0;
+    box-sizing: border-box;
+    line-height: 1.05; /* ADDED: Match popup line height */
+    width: 300px;
+  }
 
   #add-marker-modal label {
     font-weight: bold;
@@ -250,6 +262,11 @@ stylePopup.innerHTML = `
     font-family: 'Poppins', sans-serif;
     line-height: 1.05; /* ADDED: Match popup line height */
   }
+
+/* Reduce line spacing on people marker popup cards to match building popup */
+#add-people-marker-modal .event-card {
+  line-height: 1.05; /* Match the line spacing of the building popup */
+}
 
   #add-marker-modal button {
     background-color: #9b4dca;
