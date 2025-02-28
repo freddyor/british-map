@@ -821,15 +821,25 @@ peopleModal.style.position = 'fixed';
 peopleModal.style.top = '50%';
 peopleModal.style.left = '50%';
 peopleModal.style.transform = 'translate(-50%, -50%)';
-peopleModal.style.backgroundColor = '#fff';  // Set background color to white
-peopleModal.style.border = '2px solid #f0f0f0';  // Set border
-peopleModal.style.boxShadow = '0 6px 15px rgba(0, 0, 0, 0.3)';  // Add shadow to make it stand out
+peopleModal.style.backgroundColor = '#E9E8E0';
+peopleModal.style.border = '2px solid #f0f0f0';
+peopleModal.style.boxShadow = '0 6px 15px rgba(0, 0, 0, 0.3)';
 peopleModal.style.zIndex = '1001';
 document.body.appendChild(peopleModal);
 
 // Editable Popup Structure for People Marker
 const peoplePopupContainer = document.createElement('div');
 peoplePopupContainer.className = 'popup-container';
+peoplePopupContainer.style.fontFamily = 'Poppins, sans-serif';
+peoplePopupContainer.style.background = '#E9E8E0';
+peoplePopupContainer.style.border = '2px solid #f0f0f0';
+peoplePopupContainer.style.borderRadius = '12px';
+peoplePopupContainer.style.boxShadow = '0 6px 15px rgba(0, 0, 0, 0.3)';
+peoplePopupContainer.style.padding = '10px';
+peoplePopupContainer.style.margin = '0';
+peoplePopupContainer.style.boxSizing = 'border-box';
+peoplePopupContainer.style.lineHeight = '1.05';
+peoplePopupContainer.style.width = '300px';
 peoplePopupContainer.innerHTML = `
   <div class="image-name-container">
     <div id="people-image-upload-circle" style="width: 40px; height: 40px; border-radius: 50%; background-color: #f0f0f0; display: flex; justify-content: center; align-items: center; cursor: pointer;">
@@ -885,11 +895,6 @@ peopleModal.appendChild(peoplePopupContainer);
 addPeopleMarkerButton.addEventListener('click', () => {
   peopleModal.style.display = 'block';
 });
-
-// Ensure the popup container has the correct styles applied
-document.querySelector('.popup-container').style.backgroundColor = '#fff';
-document.querySelector('.popup-container').style.border = '2px solid #f0f0f0';
-document.querySelector('.popup-container').style.boxShadow = '0 6px 15px rgba(0, 0, 0, 0.3)';
 
 // Handle image upload for People Marker
 const peopleImageUploadCircle = document.getElementById('people-image-upload-circle');
@@ -1035,7 +1040,6 @@ function resetPeopleForm() {
   document.getElementById('people-profile-image').style.display = "none";
   document.getElementById('people-image-upload-circle').style.display = "flex";
 }
-
 function loadMarkersFromFirebase() {
   getDocs(collection(db, 'markers')).then((querySnapshot) => {
     querySnapshot.forEach((doc) => {
