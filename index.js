@@ -578,182 +578,6 @@ addMarkerButton.textContent = '+ Add building marker';
 addMarkerButton.className = 'custom-button';
 buttonGroup.appendChild(addMarkerButton);
 
-// Modal container for person marker
-const personModal = document.createElement('div');
-personModal.id = 'add-person-marker-modal';
-personModal.style.display = 'none';
-personModal.style.position = 'fixed';
-personModal.style.top = '50%';
-personModal.style.left = '50%';
-personModal.style.transform = 'translate(-50%, -50%)';
-personModal.style.backgroundColor = 'transparent';
-personModal.style.border = 'none';
-personModal.style.boxShadow = 'none';
-personModal.style.zIndex = '1001';
-document.body.appendChild(personModal);
-
-// Editable Popup Structure for person marker
-const personPopupContainer = document.createElement('div');
-personPopupContainer.className = 'popup-container';
-personPopupContainer.innerHTML = `
-  <div class="image-name-container">
-    <div id="person-image-upload-circle" style="width: 40px; height: 40px; border-radius: 50%; background-color: #f0f0f0; display: flex; justify-content: center; align-items: center; cursor: pointer;">
-      <span style="font-size: 12px; color: #9b4dca; font-weight: bold;">add img</span>
-    </div>
-    <img id="person-profile-image" src="" alt="Profile" style="width: 40px; height: 40px; object-fit: cover; border-radius: 50%; display: none;">
-    <input type="file" id="person-popup-image" accept="image/*" style="display: none;">
-    <div>
-      <div><input type="text" id="person-popup-description" placeholder="Description" style="font-size: 14px; color: #666; margin-bottom: 5px;"></div>
-      <div><input type="text" id="person-popup-name" placeholder="Name" style="font-size: 16px; font-weight: bold;"></div>
-      <div><input type="text" id="person-popup-dates" placeholder="Dates" style="font-size: 14px; color: #666;"></div>
-    </div>
-  </div>
-  <div class="rounded-box">
-    <textarea id="person-popup-tldr" placeholder="TLDR" style="width: 100%; box-sizing: border-box; font-size: 12px; font-weight: bold;">One sentence summary of the person here</textarea>
-  </div>
-  <button id="add-person-popup-marker">Add Person Marker</button>
-  <button id="cancel-person-popup-marker">Cancel</button>
-`;
-personModal.appendChild(personPopupContainer);
-
-// Logic for showing the modal on button click
-addPersonMarkerButton.addEventListener('click', () => {
-  personModal.style.display = 'block';
-});
-
-// Logic for hiding the modal on cancel button click
-document.getElementById('cancel-person-popup-marker').addEventListener('click', () => {
-  personModal.style.display = 'none';
-});
-
-// Handle image upload for person marker
-const personImageUploadCircle = document.getElementById('person-image-upload-circle');
-const personPopupImage = document.getElementById('person-popup-image');
-const personProfileImage = document.getElementById('person-profile-image');
-
-personImageUploadCircle.addEventListener('click', () => {
-  personPopupImage.click();
-});
-
-personPopupImage.addEventListener('change', (event) => {
-  const file = event.target.files[0];
-  if (file) {
-    const reader = new FileReader();
-    reader.onload = function(e) {
-      personProfileImage.src = e.target.result;
-      personProfileImage.style.display = 'block';
-      personImageUploadCircle.style.display = 'none';
-    }
-    reader.readAsDataURL(file);
-  }
-});
-
-// Event listener for the "Add Person Marker" button in the modal
-document.getElementById('add-person-popup-marker').addEventListener('click', () => {
-  // Get the popup data
-  const description = document.getElementById('person-popup-description').value;
-  const name = document.getElementById('person-popup-name').value;
-  const dates = document.getElementById('person-popup-dates').value;
-  const tldr = document.getElementById('person-popup-tldr').value;
-  const longitude = parseFloat(document.getElementById('popup-longitude').value);
-  const latitude = parseFloat(document.getElementById('popup-latitude').value);
-  const imageUrl = personProfileImage.src;
-
-  // Validate the inputs
-  if (!description || !name || !dates || !tldr || isNaN(longitude) || isNaN(latitude) || !imageUrl) {
-    alert('Please fill in all required fields with valid data.');
-    return;
-  }
-
-  // Add marker to the map
-  const { element: markerElement } = createCustomMarker(imageUrl, '#9b4dca', false);
-  const marker = new mapboxgl.Marker({
-    element: markerElement
-  })
-    .setLngLat([longitude, latitude])
-    .addTo(map);
-
-  // Create the popup HTML content
-  const popupHTML = `
-    <div style="padding-top: 10px; padding-bottom: 10px;">
-      <div style="font-size: 14px; color: #666; margin-bottom: 5px;">${description}</div>
-      <div style="display: flex; align-items: center; gap: 10px;">
-        <img src="${imageUrl}" alt="${name}" style="width: 40px; height: 40px; object-fit: cover; border-radius: 50%;" />
-        <div>
-          <div style="font-size: 16px; font-weight: bold;">${name}</div>
-          <div style="font-size: 14px; color: #666;">${dates}</div ▋
-
-function loadMarkersFromFirebase() {
-  getDocs(collection(db, 'markers')).then((querySnapshot) => {
-    querySnapshot.forEach((doc) => {
-      const data = doc.data();
-      console.log('Fetched marker data:', data); // Add this line
-      const { element: markerElement } = createCustomMarker(data.imageUrl, '#E9E8E0', false);
-      const marker = new mapboxgl.Marker({
-        element: markerElement
-      })
-        .setLngLat([data.longitude, data.latitude])
-        .addTo(map);
-
-      const popupHTML = `
-        <div style="padding-top: 10px; padding-bottom: 10px;">
-          <div style="display: flex; align-items: center; gap: 10px;">
-            <img src="${data.imageUrl}" alt="${data.name}" style="width: 40px; height: 40px; object-fit: cover; border-radius: 50%;" />
-            <div>
-              <div style="font-size: 16px; font-weight: bold;">${data.name}</div>
-              <div style="font-size: 14px; color: #666;">${data.dates}</div>
-            </div>
-          </div>
-          <div style="background: #f9f9f9; padding: 10px; margin-top: 10px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); font-size: 12px; font-weight: bold;">${data.tldr}</div>
-          ${data.events.map(event => `
-            <div style="background: #f9f9f9; padding: 10px; margin-top: 10px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); font-size: 12px;">
-              <strong style="color: #9b4dca; font-size: 12px; display: block; margin-bottom: 2px;">${event.label}</strong>
-              ${event.description}
-            </div>
-          `).join('')}
-        </div>
-      `;
-      const popup = new mapboxgl.Popup({
-        closeButton: true,
-        closeOnClick: true,
-        className: 'custom-popup'
-      }).setHTML(popupHTML);
-
-      marker.setPopup(popup);
-
-      marker.getElement().addEventListener('click', () => {
-        map.getCanvas().style.cursor = 'pointer';
-        popup.addTo(map);
-      });
-
-        // Close the modal
-  personModal.style.display = 'none';
-
-  // Reset the form fields
-  resetPersonForm();
-});
-
-// Function to reset the person form
-function resetPersonForm() {
-  document.getElementById('person-popup-description').value = "";
-  document.getElementById('person-popup-name').value = "Person name here...";
-  document.getElementById('person-popup-dates').value = "Date of birth";
-  document.getElementById('person-popup-tldr').value = "One sentence summary of the person here.";
-  document.getElementById('popup-longitude').value = "";
-  document.getElementById('popup-latitude').value = "";
-  document.getElementById('person-popup-image').value = "";
-  document.getElementById('person-profile-image').src = "";
-  document.getElementById('person-profile-image').style.display = "none";
-  document.getElementById('person-image-upload-circle').style.display = "flex";
-}
-
-// Add Person Marker button
-const addPersonMarkerButton = document.createElement('button');
-addPersonMarkerButton.id = 'add-person-marker-button';
-addPersonMarkerButton.textContent = '+ Add person marker';
-addPersonMarkerButton.className = 'custom-button';
-buttonGroup.appendChild(addPersonMarkerButton);
-
 // Modal container
 const modal = document.createElement('div');
 modal.id = 'add-marker-modal';
@@ -767,6 +591,9 @@ modal.style.border = 'none';
 modal.style.boxShadow = 'none';
 modal.style.zIndex = '1001';
 document.body.appendChild(modal);
+
+// Editable Popup Structure
+// Existing code...
 
 const popupContainer = document.createElement('div');
 popupContainer.className = 'popup-container';
@@ -978,6 +805,49 @@ function resetForm() {
   document.getElementById('profile-image').style.display = "none";
   document.getElementById('image-upload-circle').style.display = "flex";
 }
+
+function loadMarkersFromFirebase() {
+  getDocs(collection(db, 'markers')).then((querySnapshot) => {
+    querySnapshot.forEach((doc) => {
+      const data = doc.data();
+      console.log('Fetched marker data:', data); // Add this line
+      const { element: markerElement } = createCustomMarker(data.imageUrl, '#E9E8E0', false);
+      const marker = new mapboxgl.Marker({
+        element: markerElement
+      })
+        .setLngLat([data.longitude, data.latitude])
+        .addTo(map);
+
+      const popupHTML = `
+        <div style="padding-top: 10px; padding-bottom: 10px;">
+          <div style="display: flex; align-items: center; gap: 10px;">
+            <img src="${data.imageUrl}" alt="${data.name}" style="width: 40px; height: 40px; object-fit: cover; border-radius: 50%;" />
+            <div>
+              <div style="font-size: 16px; font-weight: bold;">${data.name}</div>
+              <div style="font-size: 14px; color: #666;">${data.dates}</div>
+            </div>
+          </div>
+          <div style="background: #f9f9f9; padding: 10px; margin-top: 10px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); font-size: 12px; font-weight: bold;">${data.tldr}</div>
+          ${data.events.map(event => `
+            <div style="background: #f9f9f9; padding: 10px; margin-top: 10px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); font-size: 12px;">
+              <strong style="color: #9b4dca; font-size: 12px; display: block; margin-bottom: 2px;">${event.label}</strong>
+              ${event.description}
+            </div>
+          `).join('')}
+        </div>
+      `;
+      const popup = new mapboxgl.Popup({
+        closeButton: true,
+        closeOnClick: true,
+        className: 'custom-popup'
+      }).setHTML(popupHTML);
+
+      marker.setPopup(popup);
+
+      marker.getElement().addEventListener('click', () => {
+        map.getCanvas().style.cursor = 'pointer';
+        popup.addTo(map);
+      });
     });
   }).catch(error => {
     console.error('Error loading markers: ', error);
