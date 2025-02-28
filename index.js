@@ -390,10 +390,10 @@ stylePopup.innerHTML = `
   }
   .remove-event {
     position: absolute;
-    top: 2px; 
-    right: 2px; 
-    font-size: 10px;
-    padding: 1px 3px; 
+    top: 0px; 
+    right: 0px; 
+    font-size: 8px;
+    padding: 1px 1px; 
   }
 `;
 
