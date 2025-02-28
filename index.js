@@ -573,6 +573,21 @@ popupContainer.innerHTML = `
     <input type="text" id="legacy-label" value="LEGACY:" style="font-weight: bold; color: #9b4dca; width: auto; display: inline;">
     <textarea id="popup-legacy" placeholder="Legacy" style="width: 100%; box-sizing: border-box; font-size: 12px;">Elizabeth and the Bluestockings were mentioned in the works of most future women's rights activists.</textarea>
   </div>
+  <div class="rounded-box">
+    <input type="text" id="event1-label" value="EVENT 1:" style="font-weight: bold; color: #9b4dca; width: auto; display: inline;">
+    <textarea id="popup-event1" placeholder="Event 1" style="width: 100%; box-sizing: border-box; font-size: 12px;">1750: Elizabeth hosted her first literary salon, which would become a regular event for intellectuals.</textarea>
+    <div><input type="checkbox" id="event1-visible" checked> <label for="event1-visible">Show this event</label></div>
+  </div>
+  <div class="rounded-box">
+    <input type="text" id="event2-label" value="EVENT 2:" style="font-weight: bold; color: #9b4dca; width: auto; display: inline;">
+    <textarea id="popup-event2" placeholder="Event 2" style="width: 100%; box-sizing: border-box; font-size: 12px;">1769: Elizabeth published her "Essay on the Writings and Genius of Shakespeare," which was well-received.</textarea>
+    <div><input type="checkbox" id="event2-visible" checked> <label for="event2-visible">Show this event</label></div>
+  </div>
+  <div class="rounded-box">
+    <input type="text" id="event3-label" value="EVENT 3:" style="font-weight: bold; color: #9b4dca; width: auto; display: inline;">
+    <textarea id="popup-event3" placeholder="Event 3" style="width: 100%; box-sizing: border-box; font-size: 12px;">1782: Elizabeth established the Montagu House, a social center for London's literary elite.</textarea>
+    <div><input type="checkbox" id="event3-visible" checked> <label for="event3-visible">Show this event</label></div>
+  </div>
   <div class="coordinates-container">
     <div class="input-row">
       <label for="popup-longitude">Longitude:</label>
@@ -626,13 +641,22 @@ document.getElementById('add-popup-marker').addEventListener('click', () => {
   const wealth = document.getElementById('popup-wealth').value;
   const legacyLabel = document.getElementById('legacy-label').value;
   const legacy = document.getElementById('popup-legacy').value;
+  const event1Label = document.getElementById('event1-label').value;
+  const event1 = document.getElementById('popup-event1').value;
+  const event1Visible = document.getElementById('event1-visible').checked;
+  const event2Label = document.getElementById('event2-label').value;
+  const event2 = document.getElementById('popup-event2').value;
+  const event2Visible = document.getElementById('event2-visible').checked;
+  const event3Label = document.getElementById('event3-label').value;
+  const event3 = document.getElementById('popup-event3').value;
+  const event3Visible = document.getElementById('event3-visible').checked;
   const longitude = parseFloat(document.getElementById('popup-longitude').value);
   const latitude = parseFloat(document.getElementById('popup-latitude').value);
   const imageUrl = profileImage.src;
 
   // Validate the inputs
   if (!name || !dates || !tldr || !wealth || !legacy || isNaN(longitude) || isNaN(latitude) || !imageUrl) {
-    alert('Please fill in all fields with valid data.');
+    alert('Please fill in all required fields with valid data.');
     return;
   }
 
@@ -645,24 +669,40 @@ document.getElementById('add-popup-marker').addEventListener('click', () => {
     .addTo(map);
 
   // Create the popup HTML content
-const popupHTML = `
-  <div style="padding-top: 10px; padding-bottom: 10px;">
-    <div style="display: flex; align-items: center; gap: 10px;">
-      <img src="${imageUrl}" alt="${name}" style="width: 40px; height: 40px; object-fit: cover; border-radius: 50%;" />
-      <div>
-        <div style="font-size: 16px; font-weight: bold;">${name}</div>
-        <div style="font-size: 14px; color: #666;">${dates}</div>
+  const popupHTML = `
+    <div style="padding-top: 10px; padding-bottom: 10px;">
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <img src="${imageUrl}" alt="${name}" style="width: 40px; height: 40px; object-fit: cover; border-radius: 50%;" />
+        <div>
+          <div style="font-size: 16px; font-weight: bold;">${name}</div>
+          <div style="font-size: 14px; color: #666;">${dates}</div>
+        </div>
       </div>
+      <div style="background: #f9f9f9; padding: 10px; margin-top: 10px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); font-size: 12px; font-weight: bold;">${tldr}</div>
+      <div style="background: #f9f9f9; padding: 10px; margin-top: 10px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); font-size: 12px;">
+        <strong style="color: #9b4dca; font-size: 14px;">${wealthLabel}</strong> ${wealth}
+      </div>
+            <div style="background: #f9f9f9; padding: 10px; margin-top: 10px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); font-size: 12px;">
+        <strong style="color: #9b4dca; font-size: 14px;">${legacyLabel}</strong> ${legacy}
+      </div>
+      ${event1Visible ? `
+        <div style="background: #f9f9f9; padding: 10px; margin-top: 10px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); font-size: 12px;">
+          <strong style="color: #9b4dca; font-size: 14px;">${event1Label}</strong> ${event1}
+        </div>
+      ` : ''}
+      ${event2Visible ? `
+        <div style="background: #f9f9f9; padding: 10px; margin-top: 10px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); font-size: 12px;">
+          <strong style="color: #9b4dca; font-size: 14px;">${event2Label}</strong> ${event2}
+        </div>
+      ` : ''}
+      ${event3Visible ? `
+        <div style="background: #f9f9f9; padding: 10px; margin-top: 10px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); font-size: 12px;">
+          <strong style="color: #9b4dca; font-size: 14px;">${event3Label}</strong> ${event3}
+        </div>
+      ` : ''}
     </div>
-    <div style="background: #f9f9f9; padding: 10px; margin-top: 10px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); font-size: 12px; font-weight: bold;">${tldr}</div>
-    <div style="background: #f9f9f9; padding: 10px; margin-top: 10px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); font-size: 12px;">
-      <strong style="color: #9b4dca; font-size: 14px;">${wealthLabel}</strong> ${wealth}
-    </div>
-    <div style="background: #f9f9f9; padding: 10px; margin-top: 10px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); font-size: 12px;">
-      <strong style="color: #9b4dca; font-size: 14px;">${legacyLabel}</strong> ${legacy}
-    </div>
-  </div>
-`;
+  `;
+
   // Create the popup
   const popup = new mapboxgl.Popup({
     closeButton: true,
@@ -699,6 +739,15 @@ function resetForm() {
   document.getElementById('popup-wealth').value = "Elizabeth married into the extremely wealthy Montagu family. She inherited substantial amounts upon her husband's death";
   document.getElementById('legacy-label').value = "LEGACY:";
   document.getElementById('popup-legacy').value = "Elizabeth and the Bluestockings were mentioned in the works of most future women's rights activists.";
+  document.getElementById('event1-label').value = "EVENT 1:";
+  document.getElementById('popup-event1').value = "1750: Elizabeth hosted her first literary salon, which would become a regular event for intellectuals.";
+  document.getElementById('event1-visible').checked = true;
+  document.getElementById('event2-label').value = "EVENT 2:";
+  document.getElementById('popup-event2').value = "1769: Elizabeth published her \"Essay on the Writings and Genius of Shakespeare,\" which was well-received.";
+  document.getElementById('event2-visible').checked = true;
+  document.getElementById('event3-label').value = "EVENT 3:";
+  document.getElementById('popup-event3').value = "1782: Elizabeth established the Montagu House, a social center for London's literary elite.";
+  document.getElementById('event3-visible').checked = true;
   document.getElementById('popup-longitude').value = "";
   document.getElementById('popup-latitude').value = "";
   document.getElementById('popup-image').value = "";
@@ -706,3 +755,5 @@ function resetForm() {
   document.getElementById('profile-image').style.display = "none";
   document.getElementById('image-upload-circle').style.display = "flex";
 }
+
+
