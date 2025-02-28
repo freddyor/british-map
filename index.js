@@ -702,6 +702,12 @@ document.getElementById('add-popup-marker').addEventListener('click', () => {
     return;
   }
 
+  // Prepare events data
+  const events = [];
+  if (event1Visible) events.push({ label: event1Label, description: event1 });
+  if (event2Visible) events.push({ label: event2Label, description: event2 });
+  if (event3Visible) events.push({ label: event3Label, description: event3 });
+
   // Save marker data to Firestore
   addDoc(collection(db, 'markers'), {
     name,
@@ -709,7 +715,8 @@ document.getElementById('add-popup-marker').addEventListener('click', () => {
     tldr,
     longitude,
     latitude,
-    imageUrl
+    imageUrl,
+    events // Include events in the document
   }).then(() => {
     // Add marker to the map
     const { element: markerElement } = createCustomMarker(imageUrl, '#E9E8E0', false);
@@ -730,24 +737,12 @@ document.getElementById('add-popup-marker').addEventListener('click', () => {
           </div>
         </div>
         <div style="background: #f9f9f9; padding: 10px; margin-top: 10px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); font-size: 12px; font-weight: bold;">${tldr}</div>
-        ${event1Visible ? `
+        ${events.map(event => `
           <div style="background: #f9f9f9; padding: 10px; margin-top: 10px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); font-size: 12px;">
-            <strong style="color: #9b4dca; font-size: 12px; display: block; margin-bottom: 2px;">${event1Label}</strong>
-            ${event1}
+            <strong style="color: #9b4dca; font-size: 12px; display: block; margin-bottom: 2px;">${event.label}</strong>
+            ${event.description}
           </div>
-        ` : ''}
-        ${event2Visible ? `
-          <div style="background: #f9f9f9; padding: 10px; margin-top: 10px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); font-size: 12px;">
-            <strong style="color: #9b4dca; font-size: 12px; display: block; margin-bottom: 2px;">${event2Label}</strong>
-            ${event2}
-          </div>
-        ` : ''}
-        ${event3Visible ? `
-          <div style="background: #f9f9f9; padding: 10px; margin-top: 10px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); font-size: 12px;">
-            <strong style="color: #9b4dca; font-size: 12px; display: block; margin-bottom: 2px;">${event3Label}</strong>
-            ${event3}
-          </div>
-        ` : ''}
+        `).join('')}
       </div>
     `;
 
