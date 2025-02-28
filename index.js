@@ -279,6 +279,45 @@ stylePopup.innerHTML = `
   #add-marker-modal .coordinates-container .input-row {
     width: 48%;
   }
+  /* Add styling for the rounded box */
+  .rounded-box {
+      background: #f9f9f9;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 10px;
+      margin-bottom: 10px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Style for the image and name/date */
+  .image-name-container {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 10px;
+  }
+
+  .image-name-container img {
+      width: 40px;
+      height: 40px;
+      object-fit: cover;
+      border-radius: 50%;
+  }
+
+  .image-name-container div {
+      display: flex;
+      flex-direction: column;
+  }
+
+  .image-name-container div div:first-child {
+      font-size: 16px;
+      font-weight: bold;
+  }
+
+  .image-name-container div div:last-child {
+      font-size: 14px;
+      color: #666;
+  }
 `;
 
 // Append the style to the document
@@ -478,40 +517,35 @@ document.body.appendChild(modal);
 const popupContainer = document.createElement('div');
 popupContainer.className = 'popup-container';
 popupContainer.innerHTML = `
-  <div class="input-row">
+  <div class="rounded-box">
     <label for="popup-image">Image:</label>
     <input type="file" id="popup-image" accept="image/*">
-    <img id="image-preview" src="#" alt="Image preview" style="max-width: 100%; display: none; border-radius: 8px; margin-top: 5px;">
+    <img id="image-preview" src="" alt="Image preview" style="max-width: 100%; display: none; border-radius: 8px; margin-top: 5px;">
   </div>
 
-  <div class="input-row">
-    <label for="popup-name">Name:</label>
-    <input type="text" id="popup-name" placeholder="Name" value="Elizabeth Montagu">
+  <div class="rounded-box">
+    <div class="image-name-container">
+      <img src="" alt="Profile" id="profile-image">
+      <div>
+        <div><input type="text" id="popup-name" placeholder="Name" value="Elizabeth Montagu"></div>
+        <div><input type="text" id="popup-dates" placeholder="Dates" value="1718-1800"></div>
+      </div>
+    </div>
   </div>
 
-  <div class="input-row">
-    <label for="popup-dates">Dates:</label>
-    <input type="text" id="popup-dates" placeholder="Dates" value="1718-1800">
-  </div>
-
-  <div class="input-row">
+  <div class="rounded-box">
     <label for="popup-description">Description:</label>
-    <textarea id="popup-description" placeholder="Description">Elizabeth Montagu was raised here in Treasurer's House</textarea>
+    <textarea id="popup-description" placeholder="Description" style="width: 100%; box-sizing: border-box; font-size: 13px;">Elizabeth Montagu was raised here in Treasurer's House</textarea>
   </div>
 
-  <div class="input-row">
-    <label for="popup-tldr">TLDR:</label>
-    <textarea id="popup-tldr" placeholder="TLDR">Elizabeth Montagu was a philanthropist who used her privileged social position to advance the status of women.</textarea>
+  <div class="rounded-box">
+    <label style="color: #9b4dca;" for="popup-wealth">WEALTH:</label>
+    <textarea id="popup-wealth" placeholder="Wealth" style="width: 100%; box-sizing: border-box; font-size: 12px;">Elizabeth married into the extremely wealthy Montagu family. She inherited substantial amounts upon her husband's death</textarea>
   </div>
 
-  <div class="input-row">
-    <label for="popup-wealth">Wealth:</label>
-    <textarea id="popup-wealth" placeholder="Wealth">WEALTH: Elizabeth married into the extremely wealthy Montagu family. She inherited substantial amounts upon her husband's death</textarea>
-  </div>
-
-  <div class="input-row">
-    <label for="popup-legacy">Legacy:</label>
-    <textarea id="popup-legacy" placeholder="Legacy">LEGACY: Elizabeth and the Bluestockings were mentioned in the works of most future women's rights activists.</textarea>
+  <div class="rounded-box">
+    <label style="color: #9b4dca;" for="popup-legacy">LEGACY:</label>
+    <textarea id="popup-legacy" placeholder="Legacy" style="width: 100%; box-sizing: border-box; font-size: 12px;">Elizabeth and the Bluestockings were mentioned in the works of most future women's rights activists.</textarea>
   </div>
 
   <div class="coordinates-container">
@@ -537,7 +571,7 @@ addMarkerButton.addEventListener('click', () => {
   modal.style.display = 'block';
 });
 
-// Handle image upload preview
+// Handle image upload preview for main image
 const popupImage = document.getElementById('popup-image');
 const imagePreview = document.getElementById('image-preview');
 
@@ -549,6 +583,8 @@ popupImage.addEventListener('change', (event) => {
         reader.onload = function(e) {
             imagePreview.src = e.target.result;
             imagePreview.style.display = 'block';
+            // Also update the profile image
+            document.getElementById('profile-image').src = e.target.result;
         }
 
         reader.readAsDataURL(file);
@@ -557,95 +593,94 @@ popupImage.addEventListener('change', (event) => {
 
 // Event listener for the "Add Marker" button in the modal
 document.getElementById('add-popup-marker').addEventListener('click', () => {
-    // Get the popup data
-    const name = document.getElementById('popup-name').value;
-    const dates = document.getElementById('popup-dates').value;
-    const description = document.getElementById('popup-description').value;
-    const tldr = document.getElementById('popup-tldr').value;
-    const wealth = document.getElementById('popup-wealth').value;
-    const legacy = document.getElementById('popup-legacy').value;
-    const longitude = parseFloat(document.getElementById('popup-longitude').value);
-    const latitude = parseFloat(document.getElementById('popup-latitude').value);
-    const imageFile = document.getElementById('popup-image').files[0];
+  // Get the popup data
+  const name = document.getElementById('popup-name').value;
+  const dates = document.getElementById('popup-dates').value;
+  const description = document.getElementById('popup-description').value;
+  const wealth = document.getElementById('popup-wealth').value;
+  const legacy = document.getElementById('popup-legacy').value;
+  const longitude = parseFloat(document.getElementById('popup-longitude').value);
+  const latitude = parseFloat(document.getElementById('popup-latitude').value);
+  const imageFile = document.getElementById('popup-image').files[0];
 
-    if (!name || !dates || !description || !tldr || !wealth || !legacy || !longitude || !latitude || !imageFile) {
-      alert('Please fill in all fields with valid data.');
-      return;
-    }
+  // Validate the inputs
+  if (!name || !dates || !description || !wealth || !legacy || !longitude || !latitude || !imageFile) {
+    alert('Please fill in all fields with valid data.');
+    return;
+  }
 
-    const reader = new FileReader();
-    reader.onloadend = function() {
-      const imageUrl = reader.result;
+  // Read the image file as a data URL
+  const reader = new FileReader();
+  reader.onloadend = function () {
+    const imageUrl = reader.result;
 
-      // Create the marker
-      const { element: markerElement } = createCustomMarker(imageUrl, '#9b4dca', false);
-      const marker = new mapboxgl.Marker({
-        element: markerElement
-      })
-        .setLngLat([longitude, latitude])
-        .addTo(map);
+    // Create the marker
+    const { element: markerElement } = createCustomMarker(imageUrl, '#9b4dca', false);
+    const marker = new mapboxgl.Marker({
+      element: markerElement
+    })
+      .setLngLat([longitude, latitude])
+      .addTo(map);
 
-      // Create the popup HTML content
-      const popupHTML = `
-        <p style="font-size: 6px; font-weight: bold; margin-bottom: 10px;">${description}</p>
-        <div style="border-top: 1px solid #ccc; margin-bottom: 10px;"></div>
-        <div style="display: flex; align-items: center; gap: 10px;">
-          <img src="${imageUrl}" alt="${name}" style="width: 40px; height: 40px; object-fit: cover; border-radius: 50%;" />
-          <div>
-            <div style="font-size: 16px; font-weight: bold;">${name}</div>
-            <div style="font-size: 14px; color: #666;">${dates}</div>
-          </div>
+    // Create the popup HTML content
+    const popupHTML = `
+      <div style="font-size: 6px; font-weight: bold; margin-bottom: 10px;">${description}</div>
+      <div style="border-top: 1px solid #ccc; margin-bottom: 10px;"></div>
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <img src="${imageUrl}" alt="${name}" style="width: 40px; height: 40px; object-fit: cover; border-radius: 50%;" />
+        <div>
+          <div style="font-size: 16px; font-weight: bold;">${name}</div>
+          <div style="font-size: 14px; color: #666;">${dates}</div>
         </div>
-        <p style="background: #f9f9f9; padding: 10px; margin-top: 10px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); font-size: 12px;">${tldr}</p>
-        <div style="margin-top: 10px; background: #f9f9f9; border: 1px solid #ddd; border-radius: 8px; padding: 10px; margin-bottom: 10px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
-          <strong style="color: #9b4dca; font-size: 14px;">Wealth</strong>: <span style="font-size: 12px;">${wealth}</span>
-        </div>
-        <div style="margin-top: 10px; background: #f9f9f9; border: 1px solid #ddd; border-radius: 8px; padding: 10px; margin-bottom: 10px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
-          <strong style="color: #9b4dca; font-size: 14px;">Legacy</strong>: <span style="font-size: 12px;">${legacy}</span>
-        </div>
-      `;
+      </div>
+      <div style="background: #f9f9f9; padding: 10px; margin-top: 10px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); font-size: 12px;">
+        <strong style="color: #9b4dca; font-size: 14px;">WEALTH:</strong> ${wealth}
+      </div>
+      <div style="background: #f9f9f9; padding: 10px; margin-top: 10px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); font-size: 12px;">
+        <strong style="color: #9b4dca; font-size: 14px;">LEGACY:</strong> ${legacy}
+      </div>
+    `;
 
-      // Create the popup
-      const popup = new mapboxgl.Popup({
-        closeButton: true,
-        closeOnClick: true,
-        className: 'custom-popup'
-      }).setHTML(popupHTML);
+    // Create the popup
+    const popup = new mapboxgl.Popup({
+      closeButton: true,
+      closeOnClick: true,
+      className: 'custom-popup'
+    }).setHTML(popupHTML);
 
-      marker.setPopup(popup);
+    marker.setPopup(popup);
 
-      // Close the modal
-      modal.style.display = 'none';
-
-      // Reset the form fields
-      document.getElementById('popup-name').value = "Elizabeth Montagu";
-      document.getElementById('popup-dates').value = "1718-1800";
-      document.getElementById('popup-description').value = "Elizabeth Montagu was raised here in Treasurer's House";
-      document.getElementById('popup-tldr').value = "Elizabeth Montagu was a philanthropist who used her privileged social position to advance the status of women.";
-      document.getElementById('popup-wealth').value = "WEALTH: Elizabeth married into the extremely wealthy Montagu family. She inherited substantial amounts upon her husband's death";
-      document.getElementById('popup-legacy').value = "LEGACY: Elizabeth and the Bluestockings were mentioned in the works of most future women's rights activists.";
-      document.getElementById('popup-longitude').value = "";
-      document.getElementById('popup-latitude').value = "";
-      document.getElementById('popup-image').value = "";
-      document.getElementById('image-preview').src = "#";
-      document.getElementById('image-preview').style.display = "none";
-    }
-    reader.readAsDataURL(imageFile);
-});
-
-// Event listener for the "Cancel" button in the modal
-document.getElementById('cancel-popup-marker').addEventListener('click', () => {
+    // Close the modal
     modal.style.display = 'none';
 
     // Reset the form fields
     document.getElementById('popup-name').value = "Elizabeth Montagu";
     document.getElementById('popup-dates').value = "1718-1800";
     document.getElementById('popup-description').value = "Elizabeth Montagu was raised here in Treasurer's House";
-    document.getElementById('popup-tldr').value = "Elizabeth Montagu was a philanthropist who used her privileged social position to advance the status of women.";
-    document.getElementById('popup-wealth').value = "WEALTH: Elizabeth married into the extremely wealthy Montagu family. She inherited substantial amounts upon her husband's death";
-    document.getElementById('popup-legacy').value = "LEGACY: Elizabeth and the Bluestockings were mentioned in the works of most future women's rights activists.";
+    document.getElementById('popup-wealth').value = "Elizabeth married into the extremely wealthy Montagu family. She inherited substantial amounts upon her husband's death";
+    document.getElementById('popup-legacy').value = "Elizabeth and the Bluestockings were mentioned in the works of most future women's rights activists.";
     document.getElementById('popup-longitude').value = "";
     document.getElementById('popup-latitude').value = "";
     document.getElementById('popup-image').value = "";
+    document.getElementById('image-preview').src = "";
     document.getElementById('image-preview').style.display = "none";
+  }
+  reader.readAsDataURL(imageFile);
+});
+
+// Event listener for the "Cancel" button in the modal
+document.getElementById('cancel-popup-marker').addEventListener('click', () => {
+  modal.style.display = 'none';
+
+  // Reset the form fields
+  document.getElementById('popup-name').value = "Elizabeth Montagu";
+  document.getElementById('popup-dates').value = "1718-1800";
+  document.getElementById('popup-description').value = "Elizabeth Montagu was raised here in Treasurer's House";
+  document.getElementById('popup-wealth').value = "Elizabeth married into the extremely wealthy Montagu family. She inherited substantial amounts upon her husband's death";
+  document.getElementById('popup-legacy').value = "Elizabeth and the Bluestockings were mentioned in the works of most future women's rights activists.";
+  document.getElementById('popup-longitude').value = "";
+  document.getElementById('popup-latitude').value = "";
+  document.getElementById('popup-image').value = "";
+  document.getElementById('image-preview').src = "";
+  document.getElementById('image-preview').style.display = "none";
 });
