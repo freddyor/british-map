@@ -35,7 +35,7 @@ map.on('load', () => {
   addBuildingMarkers();
   addLocationsList();
   geolocate.trigger();
-  loadMarkersFromFirebase(); // Load markers from Firebase
+  loadMarkersFromFirebase();
 });
 
 // Container for both buttons
@@ -392,10 +392,10 @@ stylePopup.innerHTML = `
   }
   .remove-event {
     position: absolute;
-    top: 2px; 
-    right: 2px; 
+    top: 2px;
+    right: 2px;
     font-size: 10px;
-    padding: 1px 3px; 
+    padding: 1px 3px;
     color: #007bff; /* Default link color */
     text-decoration: underline; /* Optional: Underline for clarity */
     cursor: pointer; /* Show pointer cursor on hover */
