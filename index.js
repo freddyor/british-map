@@ -377,9 +377,11 @@ stylePopup.innerHTML = `
     outline: none;
   }
 
-    .event-card {
-    position: relative;
-    margin-bottom: 5px; /* Reduced margin to half */
+ .event-card {
+  position: relative;
+  margin-bottom: 5px; /* Reduced margin to half */
+  height: 30px; /* Updated height */
+}
   }
   .event-card input[type="text"] {
     font-size: 12px;
