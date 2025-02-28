@@ -819,12 +819,11 @@ function loadMarkersFromFirebase() {
             </div>
           </div>
           <div style="background: #f9f9f9; padding: 10px; margin-top: 10px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); font-size: 12px; font-weight: bold;">${data.tldr}</div>
-          ${data.events.map(event => `
-            <div style="background: #f9f9f9; padding: 10px; margin-top: 10px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); font-size: 12px;">
-              <strong style="color: #9b4dca; font-size: 12px; display: block; margin-bottom: 2px;">${event.label}</strong>
-              ${event.description}
-            </div>
-          `).join('')}
+ ${data.events.map(event => `
+  <div style="background: #f9f9f9; padding: 10px; margin-top: 10px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); font-size: 12px;">
+    ${event.description}
+  </div>
+`).join('')}
         </div>
       `;
       const popup = new mapboxgl.Popup({
