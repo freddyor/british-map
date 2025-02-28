@@ -648,7 +648,7 @@ modal.appendChild(popupContainer);
 document.querySelectorAll('.remove-event').forEach(button => {
   button.addEventListener('click', (e) => {
     const eventNumber = e.target.getAttribute('data-event');
-    const eventCard = document.getElementById('event${eventNumber}-card');
+    const eventCard = document.getElementById('event' + eventNumber + '-card');
     eventCard.style.display = 'none';
   });
 });
