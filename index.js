@@ -377,6 +377,11 @@ stylePopup.innerHTML = `
     outline: none;
   }
 
+.custom-popup {
+    white-space: normal !important;
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
+}
     .event-card {
     position: relative;
     margin-bottom: 5px; /* Reduced margin to half */
