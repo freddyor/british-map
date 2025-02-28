@@ -372,11 +372,12 @@ stylePopup.innerHTML = `
   }
   .remove-event {
     position: absolute;
-    top: 5px;
-    right: 5px;
+    top: 2px; 
+    right: 2px; 
     font-size: 10px;
-    padding: 1px 1px;
+    padding: 1px 3px; 
   }
+
 
 
 `;
