@@ -14,8 +14,8 @@ var map = new mapboxgl.Map({
 
 map.on('load', () => {
   addBuildingMarkers();
-  addLocationsList(); // Add this line to create the list when the map loads
-  geolocate.trigger(); // Trigger geolocation on map load
+  addLocationsList();
+  geolocate.trigger();
 });
 
 // Container for both buttons
@@ -26,16 +26,16 @@ buttonGroup.style.left = '50%';
 buttonGroup.style.top = '50px';
 buttonGroup.style.transform = 'translateX(-50%)';
 buttonGroup.style.zIndex = '1000';
-buttonGroup.style.display = 'flex'; // Use flex to arrange buttons horizontally
-buttonGroup.style.gap = '10px'; // Space between the buttons
+buttonGroup.style.display = 'flex';
+buttonGroup.style.gap = '10px';
 document.body.appendChild(buttonGroup);
 
 // Find People button
 const toggleContainerButton = document.createElement('button');
 toggleContainerButton.id = 'toggle-container-button';
-toggleContainerButton.textContent = 'Find people 🔍';
+toggleContainerButton.textContent = 'Find people ';
 toggleContainerButton.className = 'custom-button';
-buttonGroup.appendChild(toggleContainerButton); // Add to buttonGroup
+buttonGroup.appendChild(toggleContainerButton);
 
 const openableContainer = document.createElement('div');
 openableContainer.id = 'openable-container';
@@ -52,20 +52,18 @@ openableContainer.style.boxShadow = '0 6px 15px rgba(0, 0, 0, 0.3)';
 openableContainer.style.padding = '10px';
 openableContainer.style.width = '200px';
 openableContainer.style.textAlign = 'center';
-//openableContainer.textContent = 'This is an openable container!';  Remove this line
 document.body.appendChild(openableContainer);
 
 toggleContainerButton.addEventListener('click', () => {
     if (openableContainer.style.display === 'none' || openableContainer.style.display === '') {
         openableContainer.style.display = 'block';
-        toggleContainerButton.textContent = 'Find people 🔍';
+        toggleContainerButton.textContent = 'Find people ';
     } else {
         openableContainer.style.display = 'none';
-        toggleContainerButton.textContent = 'Find people 🔍';
+        toggleContainerButton.textContent = 'Find people ';
     }
 });
 
-// Function to add the list of locations to the openable container
 function addLocationsList() {
     const list = document.createElement('ul');
     list.style.listStyleType = 'none';
@@ -74,7 +72,6 @@ function addLocationsList() {
     list.style.fontSize = '12px';
     list.style.lineHeight = '0.25';
 
-    // Sort locations alphabetically by name
     const sortedLocations = [...locations].sort((a, b) => a.name.localeCompare(b.name));
 
     sortedLocations.forEach(location => {
@@ -96,11 +93,10 @@ function addLocationsList() {
     openableContainer.innerHTML = '';
     openableContainer.style.maxHeight = '150px';
     openableContainer.style.overflowY = 'scroll';
-    openableContainer.style.scrollbarWidth = 'none'; // Hide scrollbar for Firefox
-    openableContainer.style.msOverflowStyle = 'none';  // Hide scrollbar for IE and Edge
+    openableContainer.style.scrollbarWidth = 'none';
+    openableContainer.style.msOverflowStyle = 'none';
     openableContainer.appendChild(list);
 
-    // Hide scrollbar for Chrome, Safari and Opera
     openableContainer.classList.add('hide-scrollbar');
 }
 
@@ -280,7 +276,6 @@ stylePopup.innerHTML = `
     width: 48%;
   }
 
-  /* Add styling for the rounded box */
   .rounded-box {
       background: #f9f9f9;
       border: 1px solid #ddd;
@@ -290,7 +285,6 @@ stylePopup.innerHTML = `
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
 
-  /* Style for the image and name/date */
   .image-name-container {
       display: flex;
       align-items: center;
@@ -320,7 +314,6 @@ stylePopup.innerHTML = `
       color: #666;
   }
 
-  /* Style the editable text areas to blend in */
   #add-marker-modal .rounded-box textarea,
   #add-marker-modal .rounded-box input[type="text"] {
     border: none;
@@ -331,14 +324,37 @@ stylePopup.innerHTML = `
     font-size: inherit;
     font-family: inherit;
     color: inherit;
-    resize: none; /* Remove resize handle for textareas */
+    resize: none;
   }
 
-  /* Style for the WEALTH and LEGACY labels */
-  #add-marker-modal .wealth-legacy-label {
-    color: #9b4dca;
-    font-size: 14px;
-    font-weight: bold;
+  #image-upload-circle {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  #image-upload-circle span {
+    font-size: 24px;
+    color: #666;
+  }
+
+  #add-marker-modal input[type="text"] {
+    border: none;
+    background-color: transparent;
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+    padding: 0;
+    margin: 0;
+  }
+
+  #add-marker-modal input[type="text"]:focus {
+    outline: none;
   }
 `;
 
@@ -356,7 +372,7 @@ const geolocate = new mapboxgl.GeolocateControl({
   fitBoundsOptions: {
     maxZoom: 15
   },
-  showUserLocation: false // Disable the default blue dot
+  showUserLocation: false
 });
 
 map.addControl(geolocate);
@@ -379,14 +395,13 @@ textEl.textContent = 'me';
 userLocationEl.appendChild(textEl);
 
 const userLocationMarker = new mapboxgl.Marker({element: userLocationEl})
-  .setLngLat([0, 0]) // Set initial coordinates, will be updated later
+  .setLngLat([0, 0])
   .addTo(map);
 
 geolocate.on('error', (e) => {
   if (e.code === 1) {
     console.log('Location access denied by user');
-    // You can update UI or take other actions here
-  }// Prevent the default error pop-up
+  }
 });
 
 geolocate.on('geolocate', (e) => {
@@ -395,7 +410,6 @@ geolocate.on('geolocate', (e) => {
   const position = [lon, lat];
   console.log(position);
 
-  // Update the user location marker position
   userLocationMarker.setLngLat(position);
 });
 
@@ -426,7 +440,7 @@ function createCustomMarker(imageUrl, color = '#9b4dca', isLocation = false) {
 }
 
 locations.forEach(location => {
-  const { element: markerElement, id } = createCustomMarker(location.image, '#9B4DCA', true);
+  const { element: markerElement } = createCustomMarker(location.image, '#9B4DCA', true);
   markerElement.className += ' location-marker';
   const marker = new mapboxgl.Marker({
     element: markerElement
@@ -470,7 +484,7 @@ locations.forEach(location => {
 
 function addBuildingMarkers() {
   buildings.forEach(building => {
-    const { element: markerElement, id } = createCustomMarker(building.image, '#E9E8E0', false);
+    const { element: markerElement } = createCustomMarker(building.image, '#E9E8E0', false);
     markerElement.className += ' building-marker';
     const marker = new mapboxgl.Marker({
       element: markerElement
@@ -540,47 +554,38 @@ const popupContainer = document.createElement('div');
 popupContainer.className = 'popup-container';
 popupContainer.innerHTML = `
   <div class="rounded-box">
-    <label for="popup-image">Image:</label>
-    <input type="file" id="popup-image" accept="image/*">
-    <img id="image-preview" src="" alt="Image preview" style="max-width: 100%; display: none; border-radius: 8px; margin-top: 5px;">
-  </div>
-
-  <div class="rounded-box">
-    <div class="image-name-container">
-      <img src="" alt="Profile" id="profile-image">
-      <div>
-        <div><input type="text" id="popup-name" placeholder="Name" value="Elizabeth Montagu"></div>
-        <div><input type="text" id="popup-dates" placeholder="Dates" value="1718-1800"></div>
-      </div>
-    </div>
-  </div>
-
-  <div class="rounded-box">
     <textarea id="popup-description" placeholder="Description" style="width: 100%; box-sizing: border-box; font-size: 13px;">Elizabeth Montagu was raised here in Treasurer's House</textarea>
   </div>
-
+  <div style="border-top: 1px solid #ccc; margin-bottom: 10px;"></div>
+  <div class="image-name-container">
+    <div id="image-upload-circle" style="width: 40px; height: 40px; border-radius: 50%; background-color: #f0f0f0; display: flex; justify-content: center; align-items: center; cursor: pointer;">
+      <span style="font-size: 24px; color: #666;">+</span>
+    </div>
+    <img id="profile-image" src="" alt="Profile" style="width: 40px; height: 40px; object-fit: cover; border-radius: 50%; display: none;">
+    <input type="file" id="popup-image" accept="image/*" style="display: none;">
+    <div>
+      <div><input type="text" id="popup-name" placeholder="Name" value="Elizabeth Montagu"></div>
+      <div><input type="text" id="popup-dates" placeholder="Dates" value="1718-1800"></div>
+    </div>
+  </div>
   <div class="rounded-box">
-    <label class="wealth-legacy-label" for="popup-wealth">WEALTH:</label>
+    <input type="text" id="wealth-label" value="WEALTH:" style="font-weight: bold; color: #9b4dca; width: auto; display: inline;">
     <textarea id="popup-wealth" placeholder="Wealth" style="width: 100%; box-sizing: border-box; font-size: 12px;">Elizabeth married into the extremely wealthy Montagu family. She inherited substantial amounts upon her husband's death</textarea>
   </div>
-
   <div class="rounded-box">
-    <label class="wealth-legacy-label" for="popup-legacy">LEGACY:</label>
+    <input type="text" id="legacy-label" value="LEGACY:" style="font-weight: bold; color: #9b4dca; width: auto; display: inline;">
     <textarea id="popup-legacy" placeholder="Legacy" style="width: 100%; box-sizing: border-box; font-size: 12px;">Elizabeth and the Bluestockings were mentioned in the works of most future women's rights activists.</textarea>
   </div>
-
   <div class="coordinates-container">
     <div class="input-row">
       <label for="popup-longitude">Longitude:</label>
       <input type="number" id="popup-longitude" placeholder="Longitude" step="any">
     </div>
-
     <div class="input-row">
       <label for="popup-latitude">Latitude:</label>
       <input type="number" id="popup-latitude" placeholder="Latitude" step="any">
     </div>
   </div>
-
   <button id="add-popup-marker">Add Marker</button>
   <button id="cancel-popup-marker">Cancel</button>
 `;
@@ -592,24 +597,26 @@ addMarkerButton.addEventListener('click', () => {
   modal.style.display = 'block';
 });
 
-// Handle image upload preview for main image
+// Handle image upload
+const imageUploadCircle = document.getElementById('image-upload-circle');
 const popupImage = document.getElementById('popup-image');
-const imagePreview = document.getElementById('image-preview');
+const profileImage = document.getElementById('profile-image');
+
+imageUploadCircle.addEventListener('click', () => {
+  popupImage.click();
+});
 
 popupImage.addEventListener('change', (event) => {
-    const file = event.target.files[0];
-    if (file) {
-        const reader = new FileReader();
-
-        reader.onload = function(e) {
-            imagePreview.src = e.target.result;
-            imagePreview.style.display = 'block';
-            // Also update the profile image
-            document.getElementById('profile-image').src = e.target.result;
-        }
-
-        reader.readAsDataURL(file);
+  const file = event.target.files[0];
+  if (file) {
+    const reader = new FileReader();
+    reader.onload = function(e) {
+      profileImage.src = e.target.result;
+      profileImage.style.display = 'block';
+      imageUploadCircle.style.display = 'none';
     }
+    reader.readAsDataURL(file);
+  }
 });
 
 // Event listener for the "Add Marker" button in the modal
@@ -618,90 +625,81 @@ document.getElementById('add-popup-marker').addEventListener('click', () => {
   const name = document.getElementById('popup-name').value;
   const dates = document.getElementById('popup-dates').value;
   const description = document.getElementById('popup-description').value;
+  const wealthLabel = document.getElementById('wealth-label').value;
   const wealth = document.getElementById('popup-wealth').value;
+  const legacyLabel = document.getElementById('legacy-label').value;
   const legacy = document.getElementById('popup-legacy').value;
   const longitude = parseFloat(document.getElementById('popup-longitude').value);
   const latitude = parseFloat(document.getElementById('popup-latitude').value);
-  const imageFile = document.getElementById('popup-image').files[0];
+  const imageUrl = profileImage.src;
 
   // Validate the inputs
-  if (!name || !dates || !description || !wealth || !legacy || !longitude || !latitude || !imageFile) {
+  if (!name || !dates || !description || !wealth || !legacy || !longitude || !latitude || !imageUrl) {
     alert('Please fill in all fields with valid data.');
     return;
   }
 
-  // Read the image file as a data URL
-  const reader = new FileReader();
-  reader.onloadend = function () {
-    const imageUrl = reader.result;
+  // Create the marker
+  const { element: markerElement } = createCustomMarker(imageUrl, '#9b4dca', false);
+  const marker = new mapboxgl.Marker({
+    element: markerElement
+  })
+    .setLngLat([longitude, latitude])
+    .addTo(map);
 
-    // Create the marker
-    const { element: markerElement } = createCustomMarker(imageUrl, '#9b4dca', false);
-    const marker = new mapboxgl.Marker({
-      element: markerElement
-    })
-      .setLngLat([longitude, latitude])
-      .addTo(map);
-
-    // Create the popup HTML content
-    const popupHTML = `
-      <div style="font-size: 6px; font-weight: bold; margin-bottom: 10px;">${description}</div>
-      <div style="border-top: 1px solid #ccc; margin-bottom: 10px;"></div>
-      <div style="display: flex; align-items: center; gap: 10px;">
-        <img src="${imageUrl}" alt="${name}" style="width: 40px; height: 40px; object-fit: cover; border-radius: 50%;" />
-        <div>
-          <div style="font-size: 16px; font-weight: bold;">${name}</div>
-          <div style="font-size: 14px; color: #666;">${dates}</div>
-        </div>
+  // Create the popup HTML content
+  const popupHTML = `
+    <div style="font-size: 6px; font-weight: bold; margin-bottom: 10px;">${description}</div>
+    <div style="border-top: 1px solid #ccc; margin-bottom: 10px;"></div>
+    <div style="display: flex; align-items: center; gap: 10px;">
+      <img src="${imageUrl}" alt="${name}" style="width: 40px; height: 40px; object-fit: cover; border-radius: 50%;" />
+      <div>
+        <div style="font-size: 16px; font-weight: bold;">${name}</div>
+        <div style="font-size: 14px; color: #666;">${dates}</div>
       </div>
-      <div style="background: #f9f9f9; padding: 10px; margin-top: 10px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); font-size: 12px;">
-        <strong style="color: #9b4dca; font-size: 14px;">WEALTH:</strong> ${wealth}
-      </div>
-      <div style="background: #f9f9f9; padding: 10px; margin-top: 10px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); font-size: 12px;">
-        <strong style="color: #9b4dca; font-size: 14px;">LEGACY:</strong> ${legacy}
-      </div>
-    `;
+    </div>
+    <div style="background: #f9f9f9; padding: 10px; margin-top: 10px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); font-size: 12px;">
+      <strong style="color: #9b4dca; font-size: 14px;">${wealthLabel}</strong> ${wealth}
+    </div>
+    <div style="background: #f9f9f9; padding: 10px; margin-top: 10px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); font-size: 12px;">
+      <strong style="color: #9b4dca; font-size: 14px;">${legacyLabel}</strong> ${legacy}
+    </div>
+  `;
 
-    // Create the popup
-    const popup = new mapboxgl.Popup({
-      closeButton: true,
-      closeOnClick: true,
-      className: 'custom-popup'
-    }).setHTML(popupHTML);
+  // Create the popup
+  const popup = new mapboxgl.Popup({
+    closeButton: true,
+    closeOnClick: true,
+    className: 'custom-popup'
+  }).setHTML(popupHTML);
 
-    marker.setPopup(popup);
+  marker.setPopup(popup);
 
-    // Close the modal
-    modal.style.display = 'none';
+  // Close the modal
+  modal.style.display = 'none';
 
-    // Reset the form fields
-    document.getElementById('popup-name').value = "Elizabeth Montagu";
-    document.getElementById('popup-dates').value = "1718-1800";
-    document.getElementById('popup-description').value = "Elizabeth Montagu was raised here in Treasurer's House";
-    document.getElementById('popup-wealth').value = "Elizabeth married into the extremely wealthy Montagu family. She inherited substantial amounts upon her husband's death";
-    document.getElementById('popup-legacy').value = "Elizabeth and the Bluestockings were mentioned in the works of most future women's rights activists.";
-    document.getElementById('popup-longitude').value = "";
-    document.getElementById('popup-latitude').value = "";
-    document.getElementById('popup-image').value = "";
-    document.getElementById('image-preview').src = "";
-    document.getElementById('image-preview').style.display = "none";
-  }
-  reader.readAsDataURL(imageFile);
+  // Reset the form fields
+  resetForm();
 });
 
 // Event listener for the "Cancel" button in the modal
 document.getElementById('cancel-popup-marker').addEventListener('click', () => {
   modal.style.display = 'none';
+  resetForm();
+});
 
-  // Reset the form fields
+function resetForm() {
   document.getElementById('popup-name').value = "Elizabeth Montagu";
   document.getElementById('popup-dates').value = "1718-1800";
   document.getElementById('popup-description').value = "Elizabeth Montagu was raised here in Treasurer's House";
+  document.getElementById('wealth-label').value = "WEALTH:";
   document.getElementById('popup-wealth').value = "Elizabeth married into the extremely wealthy Montagu family. She inherited substantial amounts upon her husband's death";
+  document.getElementById('legacy-label').value = "LEGACY:";
   document.getElementById('popup-legacy').value = "Elizabeth and the Bluestockings were mentioned in the works of most future women's rights activists.";
   document.getElementById('popup-longitude').value = "";
   document.getElementById('popup-latitude').value = "";
   document.getElementById('popup-image').value = "";
-  document.getElementById('image-preview').src = "";
-  document.getElementById('image-preview').style.display = "none";
-});
+  document.getElementById('profile-image').src = "";
+  document.getElementById('profile-image').style.display = "none";
+  document.getElementById('image-upload-circle').style.display = "flex";
+}
