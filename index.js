@@ -598,33 +598,33 @@ popupContainer.innerHTML = `
     <img id="profile-image" src="" alt="Profile" style="width: 40px; height: 40px; object-fit: cover; border-radius: 50%; display: none;">
     <input type="file" id="popup-image" accept="image/*" style="display: none;">
     <div>
-      <div><input type="text" id="popup-name" placeholder="Name" value="Elizabeth Montagu" style="font-size: 16px; font-weight: bold;"></div>
-      <div><input type="text" id="popup-dates" placeholder="Dates" value="1718-1800" style="font-size: 14px; color: #666;"></div>
+      <div><input type="text" id="popup-name" placeholder="Name" value="Place name here..." style="font-size: 16px; font-weight: bold;"></div>
+      <div><input type="text" id="popup-dates" placeholder="Dates" value="Date it was built" style="font-size: 14px; color: #666;"></div>
     </div>
   </div>
   <div class="rounded-box">
-    <textarea id="popup-tldr" placeholder="TLDR" style="width: 100%; box-sizing: border-box; font-size: 12px; font-weight: bold;">Elizabeth Montagu was a philanthropist who used her privileged social position to advance the status of women.</textarea>
+    <textarea id="popup-tldr" placeholder="TLDR" style="width: 100%; box-sizing: border-box; font-size: 12px; font-weight: bold;">One sentence summary of the place here</textarea>
   </div>
   <div class="rounded-box event-card" id="event1-card">
     <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 5px;">
       <input type="text" id="event1-label" value="WEALTH:" style="font-weight: bold; color: #9b4dca; width: auto; display: inline; font-size: 12px;">
       <button class="remove-event" data-event="1">REMOVE</button>
     </div>
-    <textarea id="popup-event1" placeholder="Event 1" style="width: 100%; box-sizing: border-box; font-size: 12px;">Elizabeth married into the extremely wealthy Montagu family. She inherited substantial amounts upon her husband's death</textarea>
+    <textarea id="popup-event1" placeholder="Event 1" style="width: 100%; box-sizing: border-box; font-size: 12px;">Optional interest fact here. If there's nothing interesting, REMOVE these cards</textarea>
   </div>
   <div class="rounded-box event-card" id="event2-card">
     <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 5px;">
       <input type="text" id="event2-label" value="LEGACY:" style="font-weight: bold; color: #9b4dca; width: auto; display: inline; font-size: 12px;">
       <button class="remove-event" data-event="2">REMOVE</button>
     </div>
-    <textarea id="popup-event2" placeholder="Event 2" style="width: 100%; box-sizing: border-box; font-size: 12px;">Elizabeth and the Bluestockings were mentioned in the works of most future women's rights activists.</textarea>
+    <textarea id="popup-event2" placeholder="Event 2" style="width: 100%; box-sizing: border-box; font-size: 12px;">Another optional fact here. Click on the preview word to edit them (the writing above this in purple), look at my markers for inspo)</textarea>
   </div>
   <div class="rounded-box event-card" id="event3-card">
     <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 5px;">
       <input type="text" id="event3-label" value="EVENT:" style="font-weight: bold; color: #9b4dca; width: auto; display: inline; font-size: 12px;">
       <button class="remove-event" data-event="3">REMOVE</button>
     </div>
-    <textarea id="popup-event3" placeholder="Event 3" style="width: 100%; box-sizing: border-box; font-size: 12px;">1782: Elizabeth established the Montagu House, a social center for London's literary elite.</textarea>
+    <textarea id="popup-event3" placeholder="Event 3" style="width: 100%; box-sizing: border-box; font-size: 12px;">Another optional fact here. Remember to use an emoji after each sentence 😎</textarea>
   </div>
   <div class="coordinates-container">
     <div class="input-row">
