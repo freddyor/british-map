@@ -141,6 +141,9 @@ stylePopup.innerHTML = `
     padding-bottom: 0 !important;
     margin-left: 3px;
     margin-right: 5px;
+      word-wrap: break-word; 
+  white-space: pre-wrap; 
+}
   }
 
   .mapboxgl-popup-content img {
