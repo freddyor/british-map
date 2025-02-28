@@ -769,17 +769,14 @@ document.getElementById('cancel-popup-marker').addEventListener('click', () => {
 });
 
 function resetForm() {
-  document.getElementById('popup-name').value = "Elizabeth Montagu";
-  document.getElementById('popup-dates').value = "1718-1800";
-  document.getElementById('popup-tldr').value = "Elizabeth Montagu was a philanthropist who used her privileged social position to advance the status of women.";
-  document.getElementById('event1-label').value = "WEALTH:";
-  document.getElementById('popup-event1').value = "Elizabeth married into the extremely wealthy Montagu family. She inherited substantial amounts upon her husband's death";
+  document.getElementById('popup-name').value = "Place name here...";
+  document.getElementById('popup-dates').value = "Date it was built";
+  document.getElementById('popup-tldr').value = "One sentence summary of the place here";
+  document.getElementById('popup-event1').value = "Add an interesting fact here. If there is nothing interesting, leave it blank!";
   document.getElementById('event1-card').style.display = 'block';
-  document.getElementById('event2-label').value = "LEGACY:";
-  document.getElementById('popup-event2').value = "Elizabeth and the Bluestockings were mentioned in the works of most future women's rights activists.";
+  document.getElementById('popup-event2').value = "Another optional cool fact here. Remember to add an emoji after the sentence 😎";
   document.getElementById('event2-card').style.display = 'block';
-  document.getElementById('event3-label').value = "EVENT:";
-  document.getElementById('popup-event3').value = "1782: Elizabeth established the Montagu House, a social center for London's literary elite.";
+  document.getElementById('popup-event3').value = "Another optional cool fact here. Remember to keep them short.";
   document.getElementById('event3-card').style.display = 'block';
   document.getElementById('popup-longitude').value = "";
   document.getElementById('popup-latitude').value = "";
