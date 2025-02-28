@@ -380,7 +380,7 @@ stylePopup.innerHTML = `
 .event-card {
   position: relative;
   margin-bottom: 5px; /* Reduced margin to half */
-  /* Removed fixed height */
+  height: auto; /* Allow the height to extend over the whole text box */
 }
   }
   .event-card input[type="text"] {
