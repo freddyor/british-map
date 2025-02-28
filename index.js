@@ -607,15 +607,15 @@ popupContainer.innerHTML = `
   </div>
   <div class="rounded-box event-card" id="event1-card" style="height: 15px;">
     <span class="remove-event" data-event="1" style="color: red; cursor: pointer; display: block; text-align: right; margin-top: 5px;">REMOVE</span>
-    <textarea id="popup-event1" placeholder="Event 1" style="width: 100%; box-sizing: border-box; font-size: 12px; height: 15px;">Add up to three interesting facts. If there is nothing interesting, leave it blank.</textarea>
+    <textarea id="popup-event1" placeholder="Event 1" style="width: 100%; box-sizing: border-box; font-size: 12px; height: 15px;">Add an interesting fact here. If there is nothing interesting, leave it blank!</textarea>
   </div>
   <div class="rounded-box event-card" id="event2-card" style="height: 15px;">
     <span class="remove-event" data-event="2" style="color: red; cursor: pointer; display: block; text-align: right; margin-top: 5px;">REMOVE</span>
-    <textarea id="popup-event2" placeholder="Event 2" style="width: 100%; box-sizing: border-box; font-size: 12px; height: 15px;">Edit the preview words (FACT1, FACT2, FACT3)</textarea>
+    <textarea id="popup-event2" placeholder="Event 2" style="width: 100%; box-sizing: border-box; font-size: 12px; height: 15px;">Another optional cool fact here. Remember to add an emoji after the sentence 😎</textarea>
   </div>
   <div class="rounded-box event-card" id="event3-card" style="height: 15px;">
     <span class="remove-event" data-event="3" style="color: red; cursor: pointer; display: block; text-align: right; margin-top: 5px;">REMOVE</span>
-    <textarea id="popup-event3" placeholder="Event 3" style="width: 100%; box-sizing: border-box; font-size: 12px; height: 15px;">Add an emoji after each sentence 😎</textarea>
+    <textarea id="popup-event3" placeholder="Event 3" style="width: 100%; box-sizing: border-box; font-size: 12px; height: 15px;">Another optional cool fact here. Remember to keep them short.</textarea>
   </div>
   <p style="font-size: 12px; color: #666; text-align: center; margin: 10px 0;">To get precise lng,lat coordinates, google "Getting Lat/Lng from a Click Event"</p>
   <div class="coordinates-container">
@@ -676,13 +676,10 @@ document.getElementById('add-popup-marker').addEventListener('click', () => {
   const name = document.getElementById('popup-name').value;
   const dates = document.getElementById('popup-dates').value;
   const tldr = document.getElementById('popup-tldr').value;
-  const event1Label = document.getElementById('event1-label').value;
   const event1 = document.getElementById('popup-event1').value;
   const event1Visible = document.getElementById('event1-card').style.display !== 'none';
-  const event2Label = document.getElementById('event2-label').value;
   const event2 = document.getElementById('popup-event2').value;
   const event2Visible = document.getElementById('event2-card').style.display !== 'none';
-  const event3Label = document.getElementById('event3-label').value;
   const event3 = document.getElementById('popup-event3').value;
   const event3Visible = document.getElementById('event3-card').style.display !== 'none';
   const longitude = parseFloat(document.getElementById('popup-longitude').value);
@@ -696,10 +693,10 @@ document.getElementById('add-popup-marker').addEventListener('click', () => {
   }
 
   // Prepare events data
-  const events = [];
-  if (event1Visible) events.push({ label: event1Label, description: event1 });
-  if (event2Visible) events.push({ label: event2Label, description: event2 });
-  if (event3Visible) events.push({ label: event3Label, description: event3 });
+const events = [];
+if (event1Visible) events.push({ description: event1 });
+if (event2Visible) events.push({ description: event2 });
+if (event3Visible) events.push({ description: event3 });
 
   // Save marker data to Firestore
   addDoc(collection(db, 'markers'), {
@@ -730,12 +727,11 @@ document.getElementById('add-popup-marker').addEventListener('click', () => {
           </div>
         </div>
         <div style="background: #f9f9f9; padding: 10px; margin-top: 10px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); font-size: 12px; font-weight: bold;">${tldr}</div>
-        ${events.map(event => `
-          <div style="background: #f9f9f9; padding: 10px; margin-top: 10px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); font-size: 12px;">
-            <strong style="color: #9b4dca; font-size: 12px; display: block; margin-bottom: 2px;">${event.label}</strong>
-            ${event.description}
-          </div>
-        `).join('')}
+ ${events.map(event => `
+  <div style="background: #f9f9f9; padding: 10px; margin-top: 10px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); font-size: 12px;">
+    ${event.description}
+  </div>
+`).join('')}
       </div>
     `;
 
