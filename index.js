@@ -609,15 +609,15 @@ popupContainer.innerHTML = `
   </div>
   <div class="rounded-box event-card" id="event1-card" style="height: 15px;">
     <span class="remove-event" data-event="1" style="color: red; cursor: pointer; display: block; text-align: right; margin-top: 5px;">REMOVE</span>
-    <textarea id="popup-event1" placeholder="Event 1" style="width: 100%; box-sizing: border-box; font-size: 12px; height: 15px;">Add an interesting fact here. If there is nothing interesting, leave it blank!</textarea>
+    <textarea id="popup-event1" placeholder="Event 1" style="width: 100%; box-sizing: border-box; font-size: 12px; height: 30px;">Add an interesting fact here. If there is nothing interesting, leave it blank!</textarea>
   </div>
   <div class="rounded-box event-card" id="event2-card" style="height: 15px;">
     <span class="remove-event" data-event="2" style="color: red; cursor: pointer; display: block; text-align: right; margin-top: 5px;">REMOVE</span>
-    <textarea id="popup-event2" placeholder="Event 2" style="width: 100%; box-sizing: border-box; font-size: 12px; height: 15px;">Another optional cool fact here. Remember to add an emoji after the sentence 😎</textarea>
+    <textarea id="popup-event2" placeholder="Event 2" style="width: 100%; box-sizing: border-box; font-size: 12px; height: 30px;">Another optional cool fact here. Remember to add an emoji after the sentence 😎</textarea>
   </div>
   <div class="rounded-box event-card" id="event3-card" style="height: 15px;">
     <span class="remove-event" data-event="3" style="color: red; cursor: pointer; display: block; text-align: right; margin-top: 5px;">REMOVE</span>
-    <textarea id="popup-event3" placeholder="Event 3" style="width: 100%; box-sizing: border-box; font-size: 12px; height: 15px;">Another optional cool fact here. Remember to keep them short.</textarea>
+    <textarea id="popup-event3" placeholder="Event 3" style="width: 100%; box-sizing: border-box; font-size: 12px; height: 30px;">Another optional cool fact here. Remember to keep them short.</textarea>
   </div>
   <p style="font-size: 12px; color: #666; text-align: center; margin: 10px 0;">To get precise lng,lat coordinates, google "Getting Lat/Lng from a Click Event"</p>
   <div class="coordinates-container">
