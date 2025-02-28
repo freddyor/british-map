@@ -588,6 +588,7 @@ modal.style.zIndex = '1001';
 document.body.appendChild(modal);
 
 // Editable Popup Structure
+// Editable Popup Structure
 const popupContainer = document.createElement('div');
 popupContainer.className = 'popup-container';
 popupContainer.innerHTML = `
@@ -626,6 +627,7 @@ popupContainer.innerHTML = `
     </div>
     <textarea id="popup-event3" placeholder="Event 3" style="width: 100%; box-sizing: border-box; font-size: 12px;">1782: Elizabeth established the Montagu House, a social center for London's literary elite.</textarea>
   </div>
+  <p style="font-size: 12px; color: #666; text-align: center; margin: 10px 0;">To get precise lng,lat coordinates, google "Getting Lat/Lng from a Click Event"</p>
   <div class="coordinates-container">
     <div class="input-row">
       <label for="popup-longitude">Longitude:</label>
