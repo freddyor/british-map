@@ -197,52 +197,88 @@ stylePopup.innerHTML = `
     z-index: 1000;
   }
 
-  #add-marker-modal form {
-    background-color: #E9E8E0;
+  #add-marker-modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1001;
+  }
+
+  #add-marker-modal .popup-container {
+    font-family: 'Poppins', sans-serif;
+    background: #E9E8E0;
     border: 2px solid #f0f0f0;
     border-radius: 12px;
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
-    font-family: 'Poppins', sans-serif;
     padding: 10px;
     margin: 0;
     box-sizing: border-box;
     line-height: 1.05;
+    width: 300px;
   }
 
   #add-marker-modal label {
-      font-weight: bold;
-      display: block;
-      margin-bottom: 5px;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
   }
 
   #add-marker-modal input[type=text],
-  #add-marker-modal input[type=number],
   #add-marker-modal textarea {
-      width: calc(100% - 12px); /* Adjusted width to account for padding */
-      padding: 6px;
-      margin-bottom: 10px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      box-sizing: border-box; /* Ensures padding is included in the width */
-      font-family: 'Poppins', sans-serif;
+    width: 100%;
+    padding: 6px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
   }
 
   #add-marker-modal button {
-      background-color: #9b4dca;
-      color: white;
-      padding: 8px 12px;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-      font-family: 'Poppins', sans-serif;
-      margin-top: 5px;
-      margin-right: 5px;
+    background-color: #9b4dca;
+    color: white;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+    margin-top: 5px;
+    margin-right: 5px;
   }
 
   #add-marker-modal button:hover {
-      background-color: #7c3ba5;
+    background-color: #7c3ba5;
   }
 
+  #add-marker-modal .input-row {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+  }
+
+  #add-marker-modal .input-row label {
+    margin-bottom: 5px;
+  }
+
+  #add-marker-modal .input-row input,
+  #add-marker-modal .input-row textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+
+  #add-marker-modal .coordinates-container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  #add-marker-modal .coordinates-container .input-row {
+    width: 48%;
+  }
 `;
 
 // Append the style to the document
@@ -438,77 +474,74 @@ modal.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.1)';
 modal.style.zIndex = '1001'; // Ensure it's on top
 document.body.appendChild(modal);
 
-// Example popup content (editable)
-const examplePopup = document.createElement('div');
-examplePopup.style.fontFamily = 'Poppins, sans-serif';
-examplePopup.style.background = '#E9E8E0';
-examplePopup.style.border = '2px solid #f0f0f0';
-examplePopup.style.borderRadius = '12px';
-examplePopup.style.boxShadow = '0 6px 15px rgba(0, 0, 0, 0.3)';
-examplePopup.style.padding = '10px';
+// Editable Popup Structure
+const popupContainer = document.createElement('div');
+popupContainer.className = 'popup-container';
+popupContainer.innerHTML = `
+  <div class="input-row">
+    <label for="popup-image">Image:</label>
+    <input type="file" id="popup-image" accept="image/*">
+    <img id="image-preview" src="#" alt="Image preview" style="max-width: 100%; display: none; border-radius: 8px; margin-top: 5px;">
+  </div>
 
-examplePopup.innerHTML = `
-    <label for="marker-name">Name:</label>
-    <input type="text" id="marker-name" value="My Marker Name" style="width: 100%; padding: 5px; margin-bottom: 5px; box-sizing: border-box;">
+  <div class="input-row">
+    <label for="popup-name">Name:</label>
+    <input type="text" id="popup-name" placeholder="Name" value="Elizabeth Montagu">
+  </div>
 
-    <label for="marker-description">Description:</label>
-    <textarea id="marker-description" style="width: 100%; padding: 5px; margin-bottom: 5px; box-sizing: border-box;">A brief description</textarea>
+  <div class="input-row">
+    <label for="popup-dates">Dates:</label>
+    <input type="text" id="popup-dates" placeholder="Dates" value="1718-1800">
+  </div>
 
-    <label for="marker-image">Image:</label>
-    <input type="file" id="marker-image" accept="image/*">
-    <img id="image-preview" src="#" alt="Image preview" style="max-width: 100%; display: none;">
+  <div class="input-row">
+    <label for="popup-description">Description:</label>
+    <textarea id="popup-description" placeholder="Description">Elizabeth Montagu was raised here in Treasurer's House</textarea>
+  </div>
+
+  <div class="input-row">
+    <label for="popup-tldr">TLDR:</label>
+    <textarea id="popup-tldr" placeholder="TLDR">Elizabeth Montagu was a philanthropist who used her privileged social position to advance the status of women.</textarea>
+  </div>
+
+  <div class="input-row">
+    <label for="popup-wealth">Wealth:</label>
+    <textarea id="popup-wealth" placeholder="Wealth">WEALTH: Elizabeth married into the extremely wealthy Montagu family. She inherited substantial amounts upon her husband's death</textarea>
+  </div>
+
+  <div class="input-row">
+    <label for="popup-legacy">Legacy:</label>
+    <textarea id="popup-legacy" placeholder="Legacy">LEGACY: Elizabeth and the Bluestockings were mentioned in the works of most future women's rights activists.</textarea>
+  </div>
+
+  <div class="coordinates-container">
+    <div class="input-row">
+      <label for="popup-longitude">Longitude:</label>
+      <input type="number" id="popup-longitude" placeholder="Longitude" step="any">
+    </div>
+
+    <div class="input-row">
+      <label for="popup-latitude">Latitude:</label>
+      <input type="number" id="popup-latitude" placeholder="Latitude" step="any">
+    </div>
+  </div>
+
+  <button id="add-popup-marker">Add Marker</button>
+  <button id="cancel-popup-marker">Cancel</button>
 `;
 
-// Container for coordinates
-const coordinateContainer = document.createElement('div');
-coordinateContainer.innerHTML = `
-    <label for="marker-longitude">Longitude:</label>
-    <input type="number" id="marker-longitude" name="marker-longitude" step="any"><br><br>
-
-    <label for="marker-latitude">Latitude:</label>
-    <input type="number" id="marker-latitude" name="marker-latitude" step="any"><br><br>
-`;
-
-const addMarkerButtonModal = document.createElement('button');
-addMarkerButtonModal.textContent = 'Add Marker';
-addMarkerButtonModal.style.background = '#9b4dca';
-addMarkerButtonModal.style.color = 'white';
-addMarkerButtonModal.style.padding = '8px 12px';
-addMarkerButtonModal.style.border = 'none';
-addMarkerButtonModal.style.borderRadius = '4px';
-addMarkerButtonModal.style.cursor = 'pointer';
-addMarkerButtonModal.style.fontFamily = 'Poppins, sans-serif';
-addMarkerButtonModal.style.marginTop = '5px';
-addMarkerButtonModal.style.marginRight = '5px';
-
-const cancelButtonModal = document.createElement('button');
-cancelButtonModal.textContent = 'Cancel';
-cancelButtonModal.id = 'modal-cancel';
-cancelButtonModal.style.background = '#9b4dca';
-cancelButtonModal.style.color = 'white';
-cancelButtonModal.style.padding = '8px 12px';
-cancelButtonModal.style.border = 'none';
-cancelButtonModal.style.borderRadius = '4px';
-cancelButtonModal.style.cursor = 'pointer';
-cancelButtonModal.style.fontFamily = 'Poppins, sans-serif';
-cancelButtonModal.style.marginTop = '5px';
-cancelButtonModal.style.marginRight = '5px';
-
-modal.appendChild(examplePopup);
-modal.appendChild(coordinateContainer);
-modal.appendChild(addMarkerButtonModal);
-modal.appendChild(cancelButtonModal);
+modal.appendChild(popupContainer);
 
 // Add event listener to the "Add Marker" button
 addMarkerButton.addEventListener('click', () => {
-    modal.style.display = 'block';
+  modal.style.display = 'block';
 });
 
 // Handle image upload preview
-const imageUpload = document.getElementById('marker-image');
+const popupImage = document.getElementById('popup-image');
 const imagePreview = document.getElementById('image-preview');
 
-imageUpload.addEventListener('change', (event) => {
+popupImage.addEventListener('change', (event) => {
     const file = event.target.files[0];
     if (file) {
         const reader = new FileReader();
@@ -522,80 +555,97 @@ imageUpload.addEventListener('change', (event) => {
     }
 });
 
-// Event listener for form submission
-addMarkerButtonModal.addEventListener('click', function(event) {
-    event.preventDefault(); // Prevent the default form submission
+// Event listener for the "Add Marker" button in the modal
+document.getElementById('add-popup-marker').addEventListener('click', () => {
+    // Get the popup data
+    const name = document.getElementById('popup-name').value;
+    const dates = document.getElementById('popup-dates').value;
+    const description = document.getElementById('popup-description').value;
+    const tldr = document.getElementById('popup-tldr').value;
+    const wealth = document.getElementById('popup-wealth').value;
+    const legacy = document.getElementById('popup-legacy').value;
+    const longitude = parseFloat(document.getElementById('popup-longitude').value);
+    const latitude = parseFloat(document.getElementById('popup-latitude').value);
+    const imageFile = document.getElementById('popup-image').files[0];
 
-    // Get the values from the form
-    const name = document.getElementById('marker-name').value;
-    const description = document.getElementById('marker-description').value;
-    const imageFile = document.getElementById('marker-image').files[0];
-    const longitude = parseFloat(document.getElementById('marker-longitude').value);
-    const latitude = parseFloat(document.getElementById('marker-latitude').value);
-
-    // Validate the inputs
-    if (!name || !description || !imageFile || isNaN(longitude) || isNaN(latitude)) {
-        alert('Please fill in all fields with valid data.');
-        return;
+    if (!name || !dates || !description || !tldr || !wealth || !legacy || !longitude || !latitude || !imageFile) {
+      alert('Please fill in all fields with valid data.');
+      return;
     }
 
-    // Read image file as data URL
     const reader = new FileReader();
     reader.onloadend = function() {
-        const imageUrl = reader.result;
+      const imageUrl = reader.result;
 
-        // Create the marker
-        const { element: markerElement } = createCustomMarker(imageUrl, '#9b4dca', false);
-        const marker = new mapboxgl.Marker({
-            element: markerElement
-        })
-            .setLngLat([longitude, latitude])
-            .addTo(map);
+      // Create the marker
+      const { element: markerElement } = createCustomMarker(imageUrl, '#9b4dca', false);
+      const marker = new mapboxgl.Marker({
+        element: markerElement
+      })
+        .setLngLat([longitude, latitude])
+        .addTo(map);
 
-        // Create the popup
-        const popup = new mapboxgl.Popup({
-            closeButton: true,
-            closeOnClick: true,
-            className: 'custom-popup'
-        }).setHTML(`
+      // Create the popup HTML content
+      const popupHTML = `
         <p style="font-size: 6px; font-weight: bold; margin-bottom: 10px;">${description}</p>
         <div style="border-top: 1px solid #ccc; margin-bottom: 10px;"></div>
         <div style="display: flex; align-items: center; gap: 10px;">
           <img src="${imageUrl}" alt="${name}" style="width: 40px; height: 40px; object-fit: cover; border-radius: 50%;" />
           <div>
             <div style="font-size: 16px; font-weight: bold;">${name}</div>
+            <div style="font-size: 14px; color: #666;">${dates}</div>
           </div>
         </div>
-      `);
+        <p style="background: #f9f9f9; padding: 10px; margin-top: 10px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); font-size: 12px;">${tldr}</p>
+        <div style="margin-top: 10px; background: #f9f9f9; border: 1px solid #ddd; border-radius: 8px; padding: 10px; margin-bottom: 10px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
+          <strong style="color: #9b4dca; font-size: 14px;">Wealth</strong>: <span style="font-size: 12px;">${wealth}</span>
+        </div>
+        <div style="margin-top: 10px; background: #f9f9f9; border: 1px solid #ddd; border-radius: 8px; padding: 10px; margin-bottom: 10px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
+          <strong style="color: #9b4dca; font-size: 14px;">Legacy</strong>: <span style="font-size: 12px;">${legacy}</span>
+        </div>
+      `;
 
-        marker.setPopup(popup);
+      // Create the popup
+      const popup = new mapboxgl.Popup({
+        closeButton: true,
+        closeOnClick: true,
+        className: 'custom-popup'
+      }).setHTML(popupHTML);
 
-        // Close the modal
-        modal.style.display = 'none';
+      marker.setPopup(popup);
 
-        // Clear the form
-        document.getElementById('marker-name').value = 'My Marker Name';
-        document.getElementById('marker-description').value = 'A brief description';
-        document.getElementById('marker-image').value = '';
-        document.getElementById('marker-longitude').value = '';
-        document.getElementById('marker-latitude').value = '';
-        imagePreview.src = '#';
-        imagePreview.style.display = 'none';
+      // Close the modal
+      modal.style.display = 'none';
+
+      // Reset the form fields
+      document.getElementById('popup-name').value = "Elizabeth Montagu";
+      document.getElementById('popup-dates').value = "1718-1800";
+      document.getElementById('popup-description').value = "Elizabeth Montagu was raised here in Treasurer's House";
+      document.getElementById('popup-tldr').value = "Elizabeth Montagu was a philanthropist who used her privileged social position to advance the status of women.";
+      document.getElementById('popup-wealth').value = "WEALTH: Elizabeth married into the extremely wealthy Montagu family. She inherited substantial amounts upon her husband's death";
+      document.getElementById('popup-legacy').value = "LEGACY: Elizabeth and the Bluestockings were mentioned in the works of most future women's rights activists.";
+      document.getElementById('popup-longitude').value = "";
+      document.getElementById('popup-latitude').value = "";
+      document.getElementById('popup-image').value = "";
+      document.getElementById('image-preview').src = "#";
+      document.getElementById('image-preview').style.display = "none";
     }
-
     reader.readAsDataURL(imageFile);
 });
 
 // Event listener for the "Cancel" button in the modal
-cancelButtonModal.addEventListener('click', function() {
+document.getElementById('cancel-popup-marker').addEventListener('click', () => {
     modal.style.display = 'none';
 
-    // Clear the form
-    document.getElementById('marker-name').value = 'My Marker Name';
-    document.getElementById('marker-description').value = 'A brief description';
-    document.getElementById('marker-image').value = '';
-    document.getElementById('marker-longitude').value = '';
-    document.getElementById('marker-latitude').value = '';
-    imagePreview.src = '#';
-    imagePreview.style.display = 'none';
+    // Reset the form fields
+    document.getElementById('popup-name').value = "Elizabeth Montagu";
+    document.getElementById('popup-dates').value = "1718-1800";
+    document.getElementById('popup-description').value = "Elizabeth Montagu was raised here in Treasurer's House";
+    document.getElementById('popup-tldr').value = "Elizabeth Montagu was a philanthropist who used her privileged social position to advance the status of women.";
+    document.getElementById('popup-wealth').value = "WEALTH: Elizabeth married into the extremely wealthy Montagu family. She inherited substantial amounts upon her husband's death";
+    document.getElementById('popup-legacy').value = "LEGACY: Elizabeth and the Bluestockings were mentioned in the works of most future women's rights activists.";
+    document.getElementById('popup-longitude').value = "";
+    document.getElementById('popup-latitude').value = "";
+    document.getElementById('popup-image').value = "";
+    document.getElementById('image-preview').style.display = "none";
 });
