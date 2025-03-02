@@ -1358,8 +1358,8 @@ export const buildings = [
   },
   {
     "name": "Hovingham Hall Cricket Pitch",
-    "coords": [-0.981120820239228, 54.172251008503914],
-    "image": "images/hovinghamhallcricketpitch.png",
+    "coords": [-0.9814809853881501, 54.172291649750264],
+    "image": "images/hoveringhamhallcricketpitch.png",
     "description": "",
     "occupation": "1774",
     "tldr": "Still used today, this is the country's oldest privately owned cricket pitch.",
