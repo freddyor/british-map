@@ -1055,7 +1055,7 @@ export const locations = [
   },
   {
     "name": "Katharine, Duchess of Kent",
-    "coords": [-0.98006966705691036, 54.1724142932517],
+    "coords": [-0.9802598142110508, 54.17235149023915],
     "image": "images/katharine.png",
     "description": "Katharine, Duchess of Kent was born and raised here",
     "occupation": "1933-",
