@@ -1304,7 +1304,7 @@ export const buildings = [
   },
   {
     "name": "Sutton Park",
-    "coords": [-1.1409289912654938, 54.073940260293606],
+    "coords": [-1.1103220022676874, 54.073725439141676],
     "image": "images/suttonpark.png",
     "description": "",
     "occupation": "1730",
