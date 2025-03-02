@@ -1412,7 +1412,7 @@ export const buildings = [
   },
   {
     "name": "Howsham Hall",
-    "coords": [-0.8825321203550818, 54.053524080758244],
+    "coords": [-0.8798580425944791, 54.05887195721181],
     "image": "images/howshamhall.png",
     "description": "",
     "occupation": "1610",
