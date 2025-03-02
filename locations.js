@@ -990,6 +990,86 @@ export const locations = [
   image: "images/therollingstones.png", 
   tldr: "On this location, in the 1960s, the Rolling Stones signed their names in lipstick on the top floor of the Eagle & Child pub 🎙️",
   events: []
-}
+},
+  {
+    "name": "Sir William Worsley 4th",
+    "coords": [-0.98113203270417271, 54.172213165687155],
+    "image": "images/williamworsley4.png",
+    "description": "Sir William Worsley 4th was born here and raised on this cricket pitch",
+    "occupation": "1890-1973",
+    "tldr": "William was a cricketer and army captain.",
+    "events": [
+      {
+        "date": "WW1",
+        "description": "He was wounded and taken prisoner, whilst serving as Captain with the Yorkshire Regiment 🎖️"
+      },
+      {
+        "date": "CRICKET",
+        "description": "He captained Yorkshire County Cricket Club in 1926 and 1929. They only lost two games whilst he was captain. He served as President of YCCC from 1963 until his death 🏏"
+      }
+    ]
+  },
+  {
+    "name": "Sir Marcus Worsley",
+    "coords": [-0.98040609798871677, 54.1725211052953604],
+    "image": "images/marcusworlsey.png",
+    "description": "Sir Marcus Worsley was born here",
+    "occupation": "1925-2012",
+    "tldr": "Sir Marcus Worsley was a British Conservative politician",
+    "events": [
+      {
+        "date": "SERVICE",
+        "description": "He served in the Yorkshire Regiment, which included a secondment to the Royal West African Frontier Force 🌍"
+      },
+      {
+        "date": "CAREER",
+        "description": "He was sitting a MP for 4 parliaments, mostly for Chelsea. He served as Lord Lieutenant of North Yorkshire 1987-1999 and High Sheriff of North Yorkshire 1982-83 🏛️"
+      },
+      {
+        "date": "NATIONAL TRUST",
+        "description": "He was extremely active in the National Trust and served as Deputy Chairman 1986-1992, overseeing the acquisition of many significant properties 🏛️"
+      }
+    ]
+  },
+   {
+    "name": "Sir William Worsley 6th",
+    "coords": [-0.98027598074651402, 54.172194437110609],
+    "image": "images/williamworsley6.png",
+    "description": "Sir William Worsley 6th lived here.",
+    "occupation": "1956-",
+    "tldr": "Sir William Worsley 6th is the Chair of the Forestry Commission",
+    "events": [
+      {
+        "date": "BUSINESS",
+        "description": "He served as Director to the Scarborough Building Society 1996-2009 and Director to Skipton Building Society 2009-2011 🏢"
+      },
+      {
+        "date": "FORESTS",
+        "description": "He was Secretary of the North York Moors National Park Authority 1994-1998. Chair of the National Forest Company 2016-2020. President of Yorkshire Agricultural Society 2020-2021. Currently Chair of the Forestry Commission 🌳"
+      },
+      {
+        "date": "1975",
+        "description": "He served as Lieutenant in the Queen's Own Yeomanry 🐎"
+      }
+    ]
+  },
+  {
+    "name": "Katharine, Duchess of Kent",
+    "coords": [-0.98006966705691036, 54.1724142932517],
+    "image": "images/katharine.png",
+    "description": "Katharine, Duchess of Kent was born and raised here",
+    "occupation": "1933-",
+    "tldr": "Katharine, Duchess of Kent is the oldest living member of the British royal family.",
+    "events": [
+      {
+        "date": "MUSIC",
+        "description": "She has performed as a member of several choirs and by the age of 10 could play piano, organ and violin 🎵"
+      },
+      {
+        "date": "1994",
+        "description": "She became the first royal to convert to Catholicism since the Act of Settlement 1701 ✝️"
+      }
+    ]
+  }
 
 ];
