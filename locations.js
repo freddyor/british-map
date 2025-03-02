@@ -1012,7 +1012,7 @@ export const locations = [
   {
     "name": "Sir Marcus Worsley",
     "coords": [-0.98040609798871677, 54.1725211052953604],
-    "image": "images/marcusworlsey.png",
+    "image": "images/marcusworsley.png",
     "description": "Sir Marcus Worsley was born here",
     "occupation": "1925-2012",
     "tldr": "Sir Marcus Worsley was a British Conservative politician",
