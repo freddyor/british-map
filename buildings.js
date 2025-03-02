@@ -1369,8 +1369,28 @@ export const buildings = [
         "description": "A Hovingham team took on an All England team on this pitch and lost 🏏"
       }
     ]
-  }
-
-
+  },
+  {
+    "name": "Arden Hall",
+    "coords": [-1.1782147263850962, 54.30257806330922],
+    "image": "images/ardenhall.png",
+    "description": "",
+    "occupation": "1680",
+    "tldr": "Arden Hall was built on the site of St Andrews Priory.",
+    "events": [
+      {
+        "date": "1587",
+        "description": "Mary Queen of Scotts stayed here en route to her execution 🏴󠁧󠁢󠁳󠁣󠁴󠁿"
+      },
+      {
+        "date": "NORMAN",
+        "description": "The hall was the seat of the Tancred family for 300 years. They descended from Richard Tankard, who gained lands in Boroughbridge after the Norman Conquest 1066. He was also a key figure in the First Crusade ⚔️"
+      },
+      {
+        "date": "1897",
+        "description": "The estate was acquired by the Savile family (Earls of Mexborough, a title in the peerage of Ireland) 🇮🇪"
+      }
+   ]
+  },
 
 ];
