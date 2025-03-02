@@ -1301,7 +1301,76 @@ export const buildings = [
         "description": "The Abbey founded a daughter house the primary at St. Louis Missouri this became St. Louis Abbey in 1989 🇺🇸"
       }
     ]
+  },
+  {
+    "name": "Sutton Park",
+    "coords": [-1.1409289912654938, 54.073940260293606],
+    "image": "images/suttonpark.png",
+    "description": "",
+    "occupation": "1730",
+    "tldr": "Sutton Hall is the residence of the Sheffield family seat.",
+    "events": [
+      {
+        "date": "PRIME MINISTER",
+        "description": "Sir Reginald Sheffield, 8th Baronet, currently lives here. He is the father of Samantha Cameron, wife of former Prime Minister David Cameron 🇬🇧"
+      },
+      {
+        "date": "1762",
+        "description": "Edmund Sheffield sold Buckingham Palace, which the Sheffield family owned, to King George III 👑"
+      },
+      {
+        "date": "TV",
+        "description": "It was used as a filming location in the BBC series Gentleman Jack. 🎬"
+      }
+    ]
+  },
+  {
+    "name": "Hovingham Hall",
+    "coords": [-0.980396470650594, 54.172298074735416],
+    "image": "images/hovinghamhall.png",
+    "description": "",
+    "occupation": "1774",
+    "tldr": "This is the seat of the Worsley family. They descend from Elias de Workesley, a Norman Knight who was a youth during the Norman conquest; he later accompanied Duke Robert II (son of William the Conqueror) on the First Crusade and was buried at Rhodes.",
+    "events": [
+      {
+        "date": "FESTIVALS",
+        "description": "The Hovingham Festival took place here from 1887 until 1938, bringing in some of the country's finest composers 🎼"
+      },
+      {
+        "date": "WORSLEY",
+        "description": "The house is currently lived in by Sir William Worsley, 6th Baronet. He is the great, great, great grandson of Thomas Worsley, the man who built Hovingham Hall. 🏡"
+      }
+    ]
+  },
+  {
+    "name": "Hovingham Hall Riding School",
+    "coords": [-0.9800452740899394, 54.172398074089806],
+    "image": "images/hovinghamhallridingschool.png",
+    "description": "",
+    "occupation": "1774",
+    "tldr": "Now the main entrance to Hovingham Hall, this was once a stable block that housed a Riding School.",
+    "events": [
+      {
+        "date": "KING",
+        "description": "Thomas Worsley VI taught George III to ride in this stable 🐴"
+      }
+    ]
+  },
+  {
+    "name": "Hovingham Hall Cricket Pitch",
+    "coords": [-0.981120820239228, 54.172251008503914],
+    "image": "images/hovinghamhallcricketpitch.png",
+    "description": "",
+    "occupation": "1774",
+    "tldr": "Still used today, this is the country's oldest privately owned cricket pitch.",
+    "events": [
+      {
+        "date": "1858",
+        "description": "A Hovingham team took on an All England team on this pitch and lost 🏏"
+      }
+    ]
   }
+
 
 
 ];
