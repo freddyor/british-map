@@ -1392,5 +1392,247 @@ export const buildings = [
       }
    ]
   },
+  {
+    "name": "Hartforth Hall",
+    "coords": [-1.739075560443244, 54.45315395176022],
+    "image": "images/hartforthhall.png",
+    "description": "",
+    "occupation": "1744",
+    "tldr": "A manor at Hartforth was recorded in the Domesday Book of 1086 📜",
+    "events": [
+      {
+        "date": "CRADOCK",
+        "description": "Sheldon Cradock, who joined the North York Militia in 1800 and was Colonel from 1820 to 1846, owned this house through his family. He was also an MP Camelford and grandfather to Admiral Christopher Cradock."
+      },
+      {
+        "date": "2017",
+        "description": "After operating as a hotel from 1986 to 2017, the hotel is now permanently closed ❌"
+      }
+    ]
+  },
+  {
+    "name": "Howsham Hall",
+    "coords": [-0.8825321203550818, 54.053524080758244],
+    "image": "images/howshamhall.png",
+    "description": "",
+    "occupation": "1610",
+    "tldr": "The hall was built by Sir William Bamburgh using stone from Kirkham Priory.",
+    "events": [
+      {
+        "date": "DISSOLUTION",
+        "description": "The estate was owned by Kirkham Prioriy until the Dissolution, Henry VIII gave it to Thomas Manners, 1st Earl of Rutland. Manners' grandson sold it to William Bamburgh 📜"
+      },
+      {
+        "date": "1607",
+        "description": "Sir William Bamburgh was High Sheriff of Yorkshire in 1607-08 📜"
+      },
+      {
+        "date": "USE",
+        "description": "It is now a wedding venue, but 1956-2007 it was Howsham Hall school. Allegations of abuse and harsh punishments were frequent."
+      }
+    ]
+  },
+  {
+    "name": "Halton Place",
+    "coords": [-2.227865893539951, 53.98934861437952],
+    "image": "images/haltonplace.png",
+    "description": "",
+    "occupation": "1770",
+    "tldr": "The house remains in the Yorke family to this day, after Thomas Yorke built the house in 1770.",
+    "events": [
+      {
+        "date": "GOVERNMENT",
+        "description": "Thomas Yorke's father, also Thomas Yorke, sat in the House of Commons as MP for Richmond. Thomas Yorke's (Jr) grandfather and uncle were both PMs for Richmond too 📜"
+      }
+    ]
+  },
+  {
+    "name": "Nun Appleton Hall",
+    "coords": [-1.1558103868102698, 53.852502253141346],
+    "image": "images/nunappletonhall.png",
+    "description": "",
+    "occupation": "1660",
+    "tldr": "On this estate as a nunnery, founded in 1150 and dissolved in 1539.",
+    "events": [
+      {
+        "date": "FAIRFAX",
+        "description": "Following the dissolution, the 1st Lord Fairfax acquired the estate. It descended to the 3rd Lord Fairfax, famous Civil War Commander, who built the hall of today 🏯"
+      },
+      {
+        "date": "WW2",
+        "description": "the hall was taken over by the London Maternity Hospital 🏥"
+      },
+      {
+        "date": "1980s",
+        "description": "It was bought for £1.2million by Humphrey Smith of the Samuel Smith brewing family 💰"
+      }
+    ]
+  },
+  {
+    "name": "Ormesby Hall",
+    "coords": [-1.1830848455429077, 54.54328735188689],
+    "image": "images/ormesbyhall.png",
+    "description": "",
+    "occupation": "1754",
+    "tldr": "The Pennyman family bought the manor in about 1600, going on to build the hall.",
+    "events": [
+      {
+        "date": "PENNYMAN",
+        "description": "The Pennyman family acquired a Baronetcy from King Charles II for fighting with the royalist during the Civil War. They lived in the house until 1983 when the National Trust took over."
+      },
+      {
+        "date": "POLICE",
+        "description": "The stable block housed the Cleveland Police Mounted Section until they disbanded in 2013 🚨"
+      }
+    ]
+  },
+  {
+    "name": "Oxton Hall",
+    "coords": [-1.24558208249139, 53.88493350442584],
+    "image": "images/oxtonhall.png",
+    "description": "",
+    "occupation": "",
+    "tldr": "The hall was home to members of the Sherbrooke family until 1957.",
+    "events": [
+      {
+        "date": "SHERBROOKES",
+        "description": "The hall was home to Henry Porter Sherbrooke, brother of Robert Lowe. Robert Lowe served as Chancellor of the Exchequer, Home Secretary and was a prominent lawyer in Britain and Australia 🇦🇺"
+      },
+      {
+        "date": "SMITH",
+        "description": "It is home to Humphrey Smith, owner of Samuel Smith brewing company 🍺"
+      }
+    ]
+  },
+  {
+    "name": "Ribston Hall",
+    "coords": [-1.404117628860937, 53.978603294614956],
+    "image": "images/ribstonhall.png",
+    "description": "",
+    "occupation": "1674",
+    "tldr": "The estate originally belonged to the Knights Templar, given to them by Robert de Ros, one of King John's 25 barons.",
+    "events": [
+      {
+        "date": "GOODRICKES",
+        "description": "The home was in the Goodricke family from 1542 to 1833. John gained a Baronetcy in 1641- he escaped to France after being imprisoned in the Tower of London during the Civil War. After the Restoration he became MP for Yorkshire from 1661 to 1670."
+      },
+      {
+        "date": "APPLE",
+        "description": "The estate is believed to have given its name to the Ribston Pippin Apple 🍎"
+      }
+    ]
+  },
+  {
+    "name": "Pepper Arden Hall",
+    "coords": [-1.5443057536587546, 54.41138150626364],
+    "image": "images/pepperardenhall.png",
+    "description": "",
+    "occupation": "1850",
+    "tldr": "The estate was once a Knights Templar Manor House, part of the estate is still called Temple House.",
+    "events": [
+      {
+        "date": "WW2",
+        "description": "300 British troops were stationed in Pepper Arden Hall 🪖"
+      }
+    ]
+  },
+  {
+    "name": "Ingelby Manor",
+    "coords": [-1.0973559758879192, 54.444111338204785],
+    "image": "images/ingelbymanor.png",
+    "description": "",
+    "occupation": "1542",
+    "tldr": "The estate was owned by the crown following the Dissolution, before this it was owned by Whitby Abbey.",
+    "events": [
+      {
+        "date": "ROYAL",
+        "description": "William II granted the estate to Guy de Baliol, Lord of Baliol in France. Ada de Baliol was given Ingleby Manor as a wedding present, she married into the Eure family. It remained in the family for three centuries 🕍"
+      },
+      {
+        "date": "1540",
+        "description": "The Eure family became enormously rich due to service to Henry VIII. Sir William Eure, soldier and courtier to Henry VIII built the present Manor House 🏰"
+      },
+      {
+        "date": "1608",
+        "description": "The manor was bought by Sir David Foulis, an important courtier who came south with James Vi of Scotland when he became James I of England 🏴󠁧󠁢󠁥󠁮󠁧󠁿"
+      }
+    ]
+  },
+  {
+    "name": "Rudby Hall",
+    "coords": [-1.2551862630421384, 54.45685987453508],
+    "image": "images/rudbyhall.png",
+    "description": "",
+    "occupation": "1838",
+    "tldr": "The present house was built for the 10th Viscount Falkland.",
+    "events": [
+      {
+        "date": "FALKLAND",
+        "description": "At the same time he inherited the estate, he married Lady Amelia Fitzclarence, the illegitimate daughter of William IV. Amelia received a large beneficiary upon her fathers death 💰"
+      },
+      {
+        "date": "USE",
+        "description": "It has since been used as a soldiers headquarters during WW2 and a headquarters of a chemical company."
+      },
+      {
+        "date": "21st CENTURY",
+        "description": "Now an events venue, Liam Gallagher was the first guest of Rudby Hall, describing it as a \"top gaff\" 🎤"
+      }
+    ]
+  },
+  {
+    "name": "Skelton Hall",
+    "coords": [-1.1335981155725383, 54.00212510406625],
+    "image": "images/skeltonhall.png",
+    "description": "",
+    "occupation": "1814",
+    "tldr": "The Hall was built for Mary Thompson, widow of Baron Henry Thompson, private secretary to PM William Ewart Gladstone.",
+    "events": [
+      {
+        "date": "CHURCH",
+        "description": "Mrs Thompson had a keen interest in the church opposite and was fundamental in its restoration. She originally moved into a house opposite the church, from which she supervised the construction of Skelton Lodge ⛪"
+      }
+    ]
+  },
+  {
+    "name": "Stanwick Park",
+    "coords": [-1.7146188688317188, 54.49792130750083],
+    "image": "images/stanwickpark.png",
+    "description": "",
+    "occupation": "1740-1923",
+    "tldr": "Stanwick Hall was built as a second residence to Hugh Percy, 1st Duke of Northumberland.",
+    "events": [
+      {
+        "date": "1911",
+        "description": "Eleanor Percy, Duchess of Northumberland lived here for 40 years until her death. She became so attached to the place that she chose to be buried in the local village church, instead of in the Northumberland vault in Westminster Abbey 🕍"
+      },
+      {
+        "date": "WW1",
+        "description": "The hall became a military hospital. Following the war, it became empty 💨"
+      },
+      {
+        "date": "1918",
+        "description": "Upon the death of the 7th Duke of Northumberland, his heirs became liable for large inheritance taxes, so they sold Stanwick Hall 🏢"
+      }
+    ]
+  },
+  {
+    "name": "Thirsk Hall",
+    "coords": [-1.345946237745257, 54.234216499905806],
+    "image": "images/thirskhall.png",
+    "description": "",
+    "occupation": "1723",
+    "tldr": "Ralph Bell, MP for Thirsk, purchased the home from the 10th Earl of Derby in 1722. The house is still owned by the Bell family to this day.",
+    "events": [
+      {
+        "date": "DAISY",
+        "description": "Daisy Bell inherited the property aged 11 after winning a card game, after her father failed to lay out inheritance plans 🃏"
+      },
+      {
+        "date": "2021",
+        "description": "Thirsk Hall Sculpture Park, set in the grounds, opened to the public. It received 3000 visitors in its first year."
+      }
+    ]
+  }
 
 ];
