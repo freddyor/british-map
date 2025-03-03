@@ -1633,6 +1633,263 @@ export const buildings = [
         "description": "Thirsk Hall Sculpture Park, set in the grounds, opened to the public. It received 3000 visitors in its first year."
       }
     ]
+  },
+  {
+    "name": "Middlethorpe Hall",
+    "coords": [-1.089759727504127, 53.93062494072139],
+    "image": "middlethorpehall.png",
+    "description": "",
+    "occupation": "1701",
+    "tldr": "Influenced by Hampden Court Palace, it was built for cutlery master Thomas Barlow.",
+    "events": [
+      {
+        "date": "1734",
+        "description": "Thomas Barlow’s son, Francis, became High Sheriff of Yorkshire 1734-36 👮‍♂️"
+      },
+      {
+        "date": "IMPACT",
+        "description": "Barlow descendant Fanny Wilkinson, who was the first professional female landscape designer in Britain, grew up here and was inspired by the gardens. She was responsible for the layout of over 75 public gardens in London in the late 19th century ⛲️"
+      },
+      {
+        "date": "USE",
+        "description": "It was occupied by a girls’ boarding school for 30 years from 1851. In 1971 it became ‘Brummels’ nightclub for a while. It now belongs to the National Trust 🎓🪩"
+      }
+    ]
+  },
+  {
+    "name": "Markenfield Hall",
+    "coords": [-1.5511065195379192, 54.10142431468413],
+    "image": "markenfieldhall.png",
+    "description": "",
+    "occupation": "1310",
+    "tldr": "The present hall was built for John de Markenfield, Chancellor of the Exchequer and servant to Edward II.",
+    "events": [
+      {
+        "date": "ROYALTY",
+        "description": "Sir Thomas Markenfield, High Sheriff of Yorkshire, fought on the side of Richard III at the Battle of Bosworth, the last significant battle of The War of the Roses ⚔️"
+      },
+      {
+        "date": "1569",
+        "description": "Markenfield was confiscated as Thomas de Markenfield was involved in the Rising of the North, the plot to depose Queen Elizabeth. He fled to continental Europe 🌍"
+      },
+      {
+        "date": "1761",
+        "description": "Fletcher Norton, 1st Baron Grantley bought the house. 7th Baron Grantley began a restoration project in 1980 that finished in 2008. His widowed wife re-married at the hall in 2001, making it the first marriage in the location since 1487 💍"
+      }
+    ]
+  },
+  {
+    "name": "Kepwick Hall",
+    "coords": [-1.267503885734984, 54.31116785286448],
+    "image": "kepwickhall.png",
+    "description": "",
+    "occupation": "1837",
+    "tldr": "The building lies on the site of a manor House, first recorded in 1379.",
+    "events": [
+      {
+        "date": "2002",
+        "description": "It was owned by Peter Stephenson, chair of Able UK, who was shot in the head after confronting three people in the grounds. He miraculously survived and still works to this day."
+      }
+    ]
+  },
+  {
+    "name": "Otterington Hall",
+    "coords": [-1.4277736107496364, 54.29075978035332],
+    "image": "otteringtonhall.png",
+    "description": "",
+    "occupation": "1800s",
+    "tldr": "The hall has ‘one of the best topiary gardens in England and certainly the best in Yorkshire’ 🪴",
+    "events": [
+      {
+        "date": "MAYOR",
+        "description": "It is the home of Andy Preston, Middlesbrough Mayor from 2019 until 2013."
+      },
+      {
+        "date": "LEGACY",
+        "description": "Notable figures Alec Wainman and John George Boss also lived here."
+      }
+    ]
+  },
+  {
+    "name": "Shandy Hall",
+    "coords": [-1.187538965204289, 54.18867450227636],
+    "image": "shandyhall.png",
+    "description": "",
+    "occupation": "1430",
+    "tldr": "Now a writer’s house museum, this building is known as the home of Laurence Stern.",
+    "events": [
+      {
+        "date": "1430",
+        "description": "It was originally a medieval long hall made for the local priest 🛐"
+      },
+      {
+        "date": "1760",
+        "description": "Laurence Sterne lived here from 1760 to 1768. His famous book Tristram Shandy still sells all over the world today. The house was used in a 2006 film about the life of Sterne, played by Rob Brydon 🎥"
+      }
+    ]
+  },
+  {
+    "name": "Scampston Hall",
+    "coords": [-0.6770539893563243, 54.16835041543727],
+    "image": "scampstonhall.png",
+    "description": "",
+    "occupation": "1600s",
+    "tldr": "The hall was built for William Hustler, MP for Northallerton and Ripon in the 1600s. The current owner served as High Sheriff of North Yorkshire in 2018/19.",
+    "events": [
+      {
+        "date": "1690s",
+        "description": "The estate was bought by Sir William St Quintin, Receiver General for Ireland and MP for Hull. It stayed in the St Quintin name until 1933 🕰️"
+      },
+      {
+        "date": "1795",
+        "description": "The son of Vice Admiral George Darby succeeded ownership of the house. Darby served as First Naval Lord, commanding in Gibraltar, the Seven Years War and the American Revolutionary War ⚓️"
+      },
+      {
+        "date": "2015",
+        "description": "A BBC adaption of Inspector calls by JB Priestley was filmed here 🎥"
+      }
+    ]
+  },
+  {
+    "name": "Rudding Park",
+    "coords": [-1.4921486942483764, 53.9734972364896],
+    "image": "ruddingpark.png",
+    "description": "",
+    "occupation": "1805",
+    "tldr": "Originally part of the Forest of Knaresborough, the estate was demolished to be re-built in 1805.",
+    "events": [
+      {
+        "date": "1788",
+        "description": "Alex Wedderburn, future Lord Chancellor of the United Kingdom, acquired the estate and remodelled the gardens 🪴"
+      },
+      {
+        "date": "1972",
+        "description": "John Howard Mackaness bought the estate. Rudding Holiday Park opened in 1973, with a famous spa and 18-hole golf course. It even hosted the RAC racing rally a few times in the 1980s 🏎️"
+      }
+    ]
+  },
+  {
+    "name": "Thornton Watlass Hall",
+    "coords": [-1.6063758020739893, 54.2779016160835],
+    "image": "thorntonwatlasshall.png",
+    "description": "",
+    "occupation": "1500s",
+    "tldr": "The house descended in the Thoresby family until Agnes Thoresby married Thomas Dodsworth in 1415.",
+    "events": [
+      {
+        "date": "DODSWORTH",
+        "description": "Over 600 years later, the house is still in the family. Now occupied by Sir David John Smith-Dodsworth, 9th Baronet 🕰️"
+      },
+      {
+        "date": "1940",
+        "description": "On the Daily Mail front page: ‘Here is Britain’s youngest baronet, five-year-old Sir John Smith-Dodsworth. Yesterday, Sir John faced his first press interview - sitting on the grass at his North Yorkshire home. He does not yet know that his father just died.’ He died in 2012 after living in New Zealand for most of his life 🇳🇿"
+      }
+    ]
+  },
+  {
+    "name": "Weston Hall",
+    "coords": [-1.7304685368567352, 53.91627489526355],
+    "image": "westonhall.png",
+    "description": "",
+    "occupation": "1550",
+    "tldr": "Weston Hall has been in the Vavasour family since the 14th century.",
+    "events": [
+      {
+        "date": "FAMILY",
+        "description": "The family descends from William le Vavasour. They featured on the Battle Abbey Roll, a list of the companions of William the Conqueror, erected on the spot of King Harold’s death at the Battle of Hastings 🗡️"
+      },
+      {
+        "date": "LEGACY",
+        "description": "Their impact is everywhere. Sir Mauger le Vavasour was the door-keeper for William the Conqueror in the 11th century. Maud le Vavasour played a role in the tale of Robin Hood in the 13th century. Thomas Vavasour was knight Marshal to King James I in the 16th century. The family owned Hazelwood castle from 1086 until 1908 🕰️"
+      },
+      {
+        "date": "1986",
+        "description": "The Vavasour family are still active, establishing a vineyard in Marlborough, New Zealand 🍾"
+      }
+    ]
+  },
+  {
+    "name": "Brough Hall",
+    "coords": [-1.669227740342727, 54.37556230915807],
+    "image": "broughhall.png",
+    "description": "",
+    "occupation": "15th CENTURY",
+    "tldr": "Originally built as a tower house, the building came into the Lawson family in 1575.",
+    "events": [
+      {
+        "date": "1665",
+        "description": "The Lawson Baronetcy, of Brough Hall, was created for John Lawson, who was Captain of Horse for King Charles I 👑"
+      },
+      {
+        "date": "1975",
+        "description": "The Department of the Environment had given permission for much of the hall to be demolished. The Developer, Yuill (York) Limited, saved the Hall from partial destruction by converting it into ten self-contained houses and apartments in the 1980s 🏘️"
+      }
+    ]
+  },
+  {
+    "name": "Bolton Hall",
+    "coords": [-1.8855886118778575, 54.303443189549746],
+    "image": "boltonhall.png",
+    "description": "",
+    "occupation": "1678",
+    "tldr": "Bolton Hall is currently the seat of the Bolton Baronetcy.",
+    "events": [
+      {
+        "date": "SCOPE",
+        "description": "The estate belonged to the Scrope family since medieval times. Emmanuel Scrope, Lord President of the King‘s Council of the North, was the last Scrope here 🏰"
+      },
+      {
+        "date": "1689",
+        "description": "A grateful King William III created the Duke of Bolton for his support in the Glorious Revolution. Bolton Hall was built for him, it is still in the same family now. The family has produced famous Admirals, politicians and a Chief Secretary for Ireland 🛡️"
+      }
+    ]
+  },
+  {
+    "name": "Cowling Hall",
+    "coords": [-1.6366047807254258, 54.284312764142086],
+    "image": "cowlinghall.png",
+    "description": "",
+    "occupation": "1450",
+    "tldr": "Extended to form a Manor House, the building was originally used as a small border tower 🏴󠁧󠁢󠁥󠁮󠁧󠁿 🏴󠁧󠁢󠁳󠁣󠁴󠁿",
+    "events": [
+      {
+        "date": "WW2",
+        "description": "The property was used to house Canadian Air Force personnel stationed at RAF Leeming 🛫"
+      }
+    ]
+  },
+  {
+    "name": "Crathorne Hall",
+    "coords": [-1.3136894879237238, 54.469616138122994],
+    "image": "crathornehall.png",
+    "description": "",
+    "occupation": "1904",
+    "tldr": "The Dugdale family built this hall after the Crathorne family manor was turned into cottages.",
+    "events": [
+      {
+        "date": "GUESTS",
+        "description": "The Dugdales have hosted Elizabeth, The Queen Mother here. They have also hosted former PM Harold Macmillan and actor John Cleese 🍽️"
+      },
+      {
+        "date": "2014",
+        "description": "The property suffered a fire, which cost £4million in repairs 🔥"
+      }
+    ]
+  },
+  {
+    "name": "Escrick Park",
+    "coords": [-1.0394782086657783, 53.873121142252785],
+    "image": "escrickpark.png",
+    "description": "",
+    "occupation": "1323",
+    "tldr": "Now a girl’s school, the estate was formed by Picot de Lascelles in the 12th century.",
+    "events": [
+      {
+        "date": "1949",
+        "description": "Queen Margaret’s school for girls moved to Escrick Park. Former students include Katharine, Duchess of Kent, and current Assistant Chief of Air Staff, Suraya Marshall. Amanda Staveley, recently director of Newcastle United during the Saudi takeover, also went to school here 🎓"
+      }
+    ]
   }
+
 
 ];
