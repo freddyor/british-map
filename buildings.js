@@ -2307,7 +2307,7 @@ export const buildings = [
   },
   {
     "name": "Normanby Hall",
-    "coords": [-1.1829481508414896, 54.54328858436091],
+    "coords": [-1.1630636782658454, 54.55228494132578],
     "image": "images/normanbyhall.png",
     "description": "",
     "occupation": null,
