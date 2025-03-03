@@ -2085,7 +2085,485 @@ export const buildings = [
         "description": "The Wilson family sold the home - it became a nursing home 🩺"
       }
     ]
+  },
+  {
+    "name": "Goldsborough Hall",
+    "coords": [-1.4162153090916996, 53.99906712533599],
+    "image": "images/goldsboroughhall.png",
+    "description": "",
+    "occupation": "1625",
+    "tldr": "The house was built for Sir Richard Hutton, High Sheriff of Yorkshire",
+    "events": [
+      {
+        "date": "1644",
+        "description": "The house was forcefully occupied by Thomas Cromwell’s army when they besieged Knaresborough Castle. Sir Richard’ son, also Sir Richard, fought in the Battle of Marsten Moor, dying in the Civil War a year later 🪦"
+      },
+      {
+        "date": "1706",
+        "description": "The Beyerley Turk, which is the eldest founding father of all thoroughbred horses, was buried here 🐎"
+      },
+      {
+        "date": "1760",
+        "description": "Daniel Lascelles, wealthy sugar plantation owner, bought the property. The Lascelles family lived here for the next 200 years, even when Princess Mary married into the family. King George V and Queen Mary visited here many times in the 1920s 👑"
+      }
+    ]
+  },
+  {
+    "name": "Halnaby Hall",
+    "coords": [-1.5956555111218806, 54.459136948956115],
+    "image": "images/halnabyhall.png",
+    "description": "",
+    "occupation": "1661-1952",
+    "tldr": "The hall was home to the Milbanke Baronetcy for nearly 300 years. The building’s remains are now submerged in the lake.",
+    "events": [
+      {
+        "date": "1815",
+        "description": "Lord Byron, one of Britain’s great poets, spent his infamous honeymoon with Annabel Milbanke here. Despite their horror marriage, they produced one of the most important figures in modern history: Ada Lovelace, the worlds first computer scientist 💾"
+      },
+      {
+        "date": "1952",
+        "description": "The Milbanke baronetcy existed from 1661 to 1949. Most of the 12 Milbanke Baronets were MPs or High Sheriffs. Halnaby Hall was demolished after the death of the 12th baronet in 1952 🗑️"
+      }
+    ]
+  },
+  {
+    "name": "Grimston Park",
+    "coords": [-1.2424085933934825, 53.86505384555325],
+    "image": "images/grimstonpark.png",
+    "description": "",
+    "occupation": "1700s",
+    "tldr": "Now 13 luxury homes, the estate has been occupied since Roman and Celt times.",
+    "events": [
+      {
+        "date": "1603",
+        "description": "King James I and Anne of Denmark stayed at Grimston Place on the way south to accept the throne 👑"
+      },
+      {
+        "date": "1872",
+        "description": "John Fielden bought the house for £265k (£25.4m today) and has been in the family since 💰"
+      },
+      {
+        "date": "HISTORY",
+        "description": "The site has been occupied since Celtic and Roman times. There are two unexcavated Roman villas on the estate 🏛️"
+      }
+    ]
+  },
+  {
+    "name": "Gateforth Hall",
+    "coords": [-1.1581518106375333, 53.75958815241901],
+    "image": "images/gateforthhall.png",
+    "description": "",
+    "occupation": "1814",
+    "tldr": "The hall was built as a hunting lodge for Sir Humphrey Osbalderson, who was once High Sheriff of York.",
+    "events": [
+      {
+        "date": "USE",
+        "description": "In 1897 it became a hospital for people with tuberculosis. In 1977 it became a nightclub for a short while 🕺"
+      }
+    ]
+  },
+  {
+    "name": "Farnley Hall",
+    "coords": [-1.6725448956583167, 53.92159948694297],
+    "image": "images/farnleyhall.png",
+    "description": "",
+    "occupation": "1600s",
+    "tldr": "Farnley Hall has been occupied by the Fawkes family since the 1780s.",
+    "events": [
+      {
+        "date": "FAWKES",
+        "description": "The Fawkes of Farnley, many of whom became MPs and High Sheriffs, were related to Guy Fawkes from the Gunpowder Plot 🧨"
+      },
+      {
+        "date": "1808",
+        "description": "J.M.W Turner, one of the greatest watercolour painters ever, lived here for 16 years, leaving behind over 250 paintings for the Fawkes. Some of these were sold at auction in 1890 for £25k (£2.7m now) 🎨"
+      },
+      {
+        "date": "WW2",
+        "description": "The house was used as a maternity hospital during the war 🫄"
+      }
+    ]
+  },
+  {
+    "name": "Kirby Sigston Manor",
+    "coords": [-1.3630405844906046, 54.346985372169215],
+    "image": "images/kirbysigstonmanor.png",
+    "description": "",
+    "occupation": "1826",
+    "tldr": "The manor is owned by former PM, Rishi Sunak.",
+    "events": [
+      {
+        "date": "2015",
+        "description": "Sunak bought the property for £1.5million before he was elected MP for Richmond, the constituency in which the house is located 🇬🇧"
+      }
+    ]
+  },
+  {
+    "name": "Marske Hall (Richmond)",
+    "coords": [-1.8417005071491377, 54.39822315749684],
+    "image": "images/marskehall.png",
+    "description": "",
+    "occupation": "Matthew Hutton, Archbishop of York, bought the mansion in 1596.",
+    "tldr": "1750",
+    "events": [
+      {
+        "date": "1750",
+        "description": "A stable block was added by John Hutton II. His dad was known for owning Marske, the father of the undefeated greatest racehorse of the 18th century, Eclipse 🐴"
+      },
+      {
+        "date": "WW2",
+        "description": "The mansion was used to house pupils from Scarborough College 🎓"
+      }
+    ]
+  },
+  {
+    "name": "Marske Hall",
+    "coords": [-1.021925996995816, 54.592620904737295],
+    "image": "images/marskehall.png",
+    "description": "",
+    "occupation": "1625",
+    "tldr": "Now a care home, the building was bought by the Pennyman family in 1616.",
+    "events": [
+      {
+        "date": "1642",
+        "description": "During the Civil War, Sir James Pennyman fought a battle against Oliver Cromwell at Marske beach, near the village. Sir James was successful 🗡️"
+      },
+      {
+        "date": "WAR",
+        "description": "The building houses the Royal Flying Corps during WW1 and the Army during WW2 🪖"
+      },
+      {
+        "date": "1957",
+        "description": "A private school had opened nine years earlier, but it was abandoned after students played with gunpowder and damaged the building 🧨"
+      }
+    ]
+  },
+  {
+    "name": "Mount Grace House",
+    "coords": [-1.3101777507690926, 54.3799523658967],
+    "image": "images/mountgracehouse.png",
+    "description": "",
+    "occupation": "1398",
+    "tldr": "The building was originally a gatehouse to Mount Grace Priory. In 1635, Thomas Lascelles, local MP and Parliamentarian soldier, turned the building into the great Manor House 🏡",
+    "events": []
+  },
+  {
+    "name": "Mount St John",
+    "coords": [-1.2732474036717556, 54.25732800446187],
+    "image": "images/mountstjohn.png",
+    "description": "",
+    "occupation": "1720",
+    "tldr": "The current manor was built by Rev. William Elsley, as the estate was owned by the Archbishop of York from 1530 until 1870.",
+    "events": [
+      {
+        "date": "1530",
+        "description": "The estate was owned by the Knights Hospitallers of St John of Jerusalem for 500 years until Henry VIII’s Dissolution 🛡️"
+      },
+      {
+        "date": "WALKERS",
+        "description": "The house was bought by John Walker. The Walker family were iron founders from Mexborough, who made the canons used in HMS Victory at the Battle of Trafalgar. They also made a high proportion of the guns used by Wellington’s army at the Battle of Waterloo ⚓️"
+      }
+    ]
+  },
+  {
+    "name": "Nappa Hall",
+    "coords": [-2.054398494870888, 54.31282517768894],
+    "image": "images/nappahall.png",
+    "description": "",
+    "occupation": "1459",
+    "tldr": "Nappa Hall was the seat of the Metcalfe family for many centuries.",
+    "events": [
+      {
+        "date": "1472",
+        "description": "James Metcalfe acquired the estate from Richard Scrope, courtier of Richard II and soldier for his son Edward The Black Prince 🛡️"
+      },
+      {
+        "date": "2008",
+        "description": "William Metcalfe sold the estate, 532 years after his ancestor acquired it. The title \"Lord of the Manor of Nappa in the County of Yorkshire\" remains in the Metcalfe family. The present holder is Shaun Metcalfe, who lives in New Zealand 🇳🇿"
+      },
+      {
+        "date": "PM",
+        "description": "Thomas de Grey, brother of Frederick John Robinson, owned the house in the 1800s. Frederick, Earl of Ripon, served as Prime Minister 1827-28 🇬🇧"
+      }
+    ]
+  },
+  {
+    "name": "Nidd House",
+    "coords": [-1.540351592723812, 54.0425548107486],
+    "image": "images/niddhouse.png",
+    "description": "",
+    "occupation": "1830",
+    "tldr": "This Elizabethan Manor House was the seat of the Trappes family for centuries. The manor was demolished in 1824 for the current house.",
+    "events": [
+      {
+        "date": "1598",
+        "description": "Catholic priest, Peter Snow, was arrested here before he martyred in York ✝️"
+      },
+      {
+        "date": "1960s",
+        "description": "The house descended to Richard Butler, 17th Viscount Mountbarret, member of the House of Lords 1996-99. He is known for campaigning to bring back the death penalty, castration and birching. He also shot at a hot-air balloon that flew too close to his house 🔫"
+      }
+    ]
+  },
+  {
+    "name": "Normanby Hall",
+    "coords": [-1.1829481508414896, 54.54328858436091],
+    "image": "images/normanbyhall.png",
+    "description": "",
+    "occupation": null,
+    "tldr": "The Hall now sits in a state of despair, most recently being a retirement home.",
+    "events": [
+      {
+        "date": "DE BRUS",
+        "description": "The manor was originally held by the De Brus family. Try descent from Robert de Brus, companion of King David, and were a royal house who produced two Scottish Kings (Robert the Bruce and David II) 👑"
+      },
+      {
+        "date": "1314",
+        "description": "The house came into possession of Marmaduke Thweng, a soldier of King Edward I. Coincidentally, he surrenders personally to Robert the Bruce after English defeat at the Battle of Bannockburn in 1314 ⚔️"
+      },
+      {
+        "date": "20th CENTURY",
+        "description": "The buildings came into the hands of Charles Amer, jazz and leader and Chairman of Middlesbrough FC ⚽️"
+      }
+    ]
+  },
+  {
+    "name": "Norton Conyers Manor",
+    "coords": [-1.5130423846918362, 54.181718445932965],
+    "image": "images/nortonconyersmanor.png",
+    "description": "",
+    "occupation": null,
+    "tldr": "The building is said to be the inspiration for Charlotte Brontë’s Jane Eyre.",
+    "events": [
+      {
+        "date": "1569",
+        "description": "The manor originally belonged to Richard Norton who, along with with his sons, was executed for rebellion 🗡️"
+      },
+      {
+        "date": "1624",
+        "description": "Sir Richard Graham acquired the estate, it has remained in the family ever since 🕰️"
+      },
+      {
+        "date": "GRAHAMS",
+        "description": "Sir Richard Graham was a Royalist from Cumberland who was wounded in the 1644 Battle of Marston Moor. His son, also Richard, was made a Baron by Charles II for his role in the Restoration of the Monarchy 👑"
+      }
+    ]
+  },
+  {
+    "name": "Rounton Grange",
+    "coords": [-1.3427394274729498, 54.42031409783625],
+    "image": "images/rountongrange.png",
+    "description": "",
+    "occupation": "1872-1954",
+    "tldr": "The house was built by Isaac Lowthian Bell.",
+    "events": [
+      {
+        "date": "BELL",
+        "description": "Isaac Lowthian Bell was ‘as famous in his day as Isambard Kingdom Brunel’, he was an MP and director of North Eastern Railway. He was also director of the Forth Bridge Company near Edinburgh, then the largest bridge project in the world 🛤️"
+      },
+      {
+        "date": "WW2",
+        "description": "The house was used to hold Italian prisoners of war. It also housed evacuees."
+      }
+    ]
+  },
+  {
+    "name": "Whitwell Hall",
+    "coords": [-0.9013770093562412, 54.0838579613409],
+    "image": "images/whitwellhall.png",
+    "description": "",
+    "occupation": null,
+    "tldr": "The manor was originally part of the estate of William the Conqueror and his brother Robert.",
+    "events": [
+      {
+        "date": "ESPEC",
+        "description": "The building was transferred to Walter Espec, the founder of Kirkham Priory and Rivaulx Abbey. His father had come on the Norman Conquest with William the Conqueror 🏴󠁧󠁢󠁥󠁮󠁧󠁿"
+      },
+      {
+        "date": "17th CENTURY",
+        "description": "The manor was in the hands of John Belayse, prominent Royalist noblemen during the Civil War who spent a while imprisoned during the Popish Plot 🛡️"
+      }
+    ]
+  },
+  {
+    "name": "Wykeham Abbey",
+    "coords": [-0.5261345188292044, 54.22394296682601],
+    "image": "images/wykehamabbey.png",
+    "description": "",
+    "occupation": "1700s",
+    "tldr": "The Abbey was built on the site of Wykeham Prioriy, a nunnery established in 1140.",
+    "events": [
+      {
+        "date": "NUNNERY",
+        "description": "The Nunnery was destroyed by fire during the reign of Edward III and rebuilt, before being dissolved in 1539 🔥"
+      },
+      {
+        "date": "1700s",
+        "description": "The estate was built for Richard Hutchinson, the Abbey has remained in the family since. His ancestors became Viscount Downes and is still the current seat now."
+      },
+      {
+        "date": "WW2",
+        "description": "From 1914 to 1919, more than 1,520 non-commissioned officers and soldiers from across the British Isles passed through the doors as it served as a British Red Cross hospital 🏥"
+      }
+    ]
+  },
+  {
+    "name": "St Trinain Hall",
+    "coords": [-1.7056294736097555, 54.39998768763618],
+    "image": "images/sttrinainhall.png",
+    "description": "",
+    "occupation": null,
+    "tldr": "The name derives from Ninian, an 8th century Christian Saint.",
+    "events": [
+      {
+        "date": "ABBEY",
+        "description": "In the medieval period there was a monastic out-house of Easby Abbey on the site. This was hit by the Dissolution, it was actually during the Dissolution that it got its name St Trinians 🛐"
+      },
+      {
+        "date": "CRICKET",
+        "description": "During WW1, Everard Radcliffe bought the house. Radcliffe, who was raised at Rudding Park House, played 64 first-class matches for Yorkshire County Cricket Club. It is said he planted a copse of willows on the property, for the purpose of making cricket bats for YCCC 🏏"
+      },
+      {
+        "date": "2022",
+        "description": "The property was put up for sale for £2.5 million 💰"
+      }
+    ]
+  },
+  {
+    "name": "Beningborough Hall",
+    "coords": [-1.2133506193504862, 54.020501043754486],
+    "image": "images/beningboroughhall.png",
+    "description": "",
+    "occupation": "1716",
+    "tldr": "Ralph Bourchier inherited the estate in 1556 and built the first house 300 metres from the current building.",
+    "events": [
+      {
+        "date": "1649",
+        "description": "Ralph’s son, Sir John Bourchier, signed the death warrant of King Charles I 👑"
+      },
+      {
+        "date": "1704",
+        "description": "John Bourchier went on a grand tour of Europe, heavily influenced by his time in Italy he built the current house 🇮🇹"
+      },
+      {
+        "date": "1916",
+        "description": "Lord and Lady Chesterfield bought the estate, he bred Labradors and she bred horses on the estate 🐴"
+      }
+    ]
+  },
+  {
+    "name": "Bilton Hall",
+    "coords": [-1.4910076685148188, 54.01142118817255],
+    "image": "images/biltonhall.png",
+    "description": "",
+    "occupation": null,
+    "tldr": "The original structure was built as a hunting lodge for the Slingsby baronetcy in the 14th century.",
+    "events": [
+      {
+        "date": "1596",
+        "description": "Sir William Slingsby, a soldier who fought at Cadiz, discovered the first of the famous spa water wells in Harrogate 💦"
+      },
+      {
+        "date": "1631",
+        "description": "the home came into ownership of the Stockdale family, who had been large Yorkshire landowners since Henry VIII. It became the home of the family, of which three became MPs for Knaresborough 🗣️"
+      }
+    ]
+  },
+  {
+    "name": "Birdsall House",
+    "coords": [-0.7559074962262757, 54.0729338884785],
+    "image": "images/birdsallhouse.png",
+    "description": "",
+    "occupation": null,
+    "tldr": "The estate has been home to the Willoughby family since 1729",
+    "events": [
+      {
+        "date": "DISSOLUTION",
+        "description": "The estate is constructed on a monastic site that was dissolved in 1540. The Sotherby acquired the land from the church ⛪"
+      },
+      {
+        "date": "1719",
+        "description": "Thomas Willoughby lost his way during a heavy snowstorm, so he followed a light in the distance that led to Birdsall House. The Sothebys gave him shelter, where he met Elizabeth, their only daughter. The two fell in love, married the same year, inherited the estate in 1729 and have been there since 💒"
+      }
+    ]
+  },
+  {
+    "name": "Hutton Hall",
+    "coords": [-1.0752307651592297, 54.52232083198973],
+    "image": "images/huttonhall.png",
+    "description": "",
+    "occupation": "1866",
+    "tldr": "The house was built for Quaker industrialist and MP, Joseph Peace.",
+    "events": [
+      {
+        "date": "1867",
+        "description": "Hutton Gate Railway Station was opened just to serve Hutton Hall 🚂"
+      },
+      {
+        "date": "1937",
+        "description": "The hall was used to house Spanish nuns and Basque refugees during the Spanish Civil War 🇪🇸"
+      }
+    ]
+  },
+  {
+    "name": "Gilling Castle",
+    "coords": [-1.065631799347182, 54.183525746224376],
+    "image": "images/gillingcastle.png",
+    "description": "",
+    "occupation": "1571",
+    "tldr": "The building was originally a 14th century fortified manor, built by the Etton family.",
+    "events": [
+      {
+        "date": "1489",
+        "description": "The legendary Yorkshire family, the Fairfaxs, owned the property for 396 years until 1885 🕰️"
+      },
+      {
+        "date": "1929",
+        "description": "Ampleforth Abbey bought the property. Until 2018 it was home to St Martin’s Ampleforth, the prep school for Ampleforth College 🎓"
+      },
+      {
+        "date": "NOW",
+        "description": "As of March 2025, plans are underway to turn the building into luxury retirement flats 🏛️"
+      }
+    ]
+  },
+  {
+    "name": "Ebbertson Hall",
+    "coords": [-0.617400651446165, 54.292477471154164],
+    "image": "images/ebbertsonhall.png",
+    "description": "",
+    "occupation": null,
+    "tldr": "Known as ‘the smallest stately home in England’.",
+    "events": [
+      {
+        "date": "1800s",
+        "description": "It was built for William Thompson, then inherited by Beaumont Hotham, who fought at the Battle of Waterloo, Battle of Vitoria and Battle of Salamanca 🗡️"
+      },
+      {
+        "date": "OWNER",
+        "description": "George Osbaldeston, known as ‘the squire of all of England’, later acquired the house. He was also a first class-cricketer 🏏"
+      }
+    ]
+  },
+  {
+    "name": "Newton Kyme Hall",
+    "coords": [-1.2931759641957918, 53.898334126364716],
+    "image": "images/newtonkymehall.png",
+    "description": "",
+    "occupation": "1720",
+    "tldr": "Medieval Kyme Castle was located on the site.",
+    "events": [
+      {
+        "date": "1720",
+        "description": "The house was built for Admiral Robert Fairfax, grandson of the Civil War hero Sir William Fairfax. Born in Newton Kyme village, Robert captained against the French in America, fought in The Nine Years War, was part of the Capture of Gibraltar and the Siege of Barcelona ⚓️"
+      },
+      {
+        "date": "WW2",
+        "description": "It served as the official Air Defence Headquarters 🏢"
+      }
+    ]
   }
+
 
 
 
