@@ -1889,7 +1889,204 @@ export const buildings = [
         "description": "Queen Margaret’s school for girls moved to Escrick Park. Former students include Katharine, Duchess of Kent, and current Assistant Chief of Air Staff, Suraya Marshall. Amanda Staveley, recently director of Newcastle United during the Saudi takeover, also went to school here 🎓"
       }
     ]
+  },
+  {
+    "name": "Swarcliffe Hall",
+    "coords": [-1.6418638, 54.029924],
+    "image": "images/swarcliffehall.png",
+    "description": "",
+    "occupation": "1800",
+    "tldr": "Now home to Belmont Grosvenor School, the current hall was finished in 1850.",
+    "events": [
+      {
+        "date": "1839",
+        "description": "Charlotte Brontë worked as a governess here, her time here inspired her to write Jane Eyre ✍🏻"
+      },
+      {
+        "date": "1888",
+        "description": "Prince Albert Victor, son of Edward VII stayed here. He did so again the following year 👑"
+      }
+    ]
+  },
+  {
+    "name": "Cholmley House",
+    "coords": [-0.608541078303928, 54.4876966946779],
+    "image": "images/cholmleyhouse.png",
+    "description": "",
+    "occupation": "1672",
+    "tldr": "It was built by Sir Hugh Cholmeley, whose family has acquired Whitby Abbey ruins after the Dissolution.",
+    "events": [
+      {
+        "date": "ROMAN",
+        "description": "The front features a replica of the Borghese Gladiator 🏛️"
+      },
+      {
+        "date": "2002",
+        "description": "David Hope, Archbishop of York, opened the house as a museum and shop for Whitby Abbey 🛍️"
+      }
+    ]
+  },
+  {
+    "name": "Broughton Hall",
+    "coords": [-2.089575691206942, 53.952676349751755],
+    "image": "images/broughtonhall.png",
+    "description": "",
+    "occupation": "1597",
+    "tldr": "Broughton Hall has been the seat of the Tempest baronetcy since 1097.",
+    "events": [
+      {
+        "date": "TEMPEST",
+        "description": "Roger Tempest, the current occupant, is the 32nd Tempest in a line dating back to William the Conqueror’s invasion of England 🕰️"
+      },
+      {
+        "date": "BUSINESS",
+        "description": "The hall currently houses a business park with more than 50 companies employing over 700 people 📈"
+      }
+    ]
+  },
+  {
+    "name": "Bossall Hall",
+    "coords": [-0.9063897574955582, 54.03746866676478],
+    "image": "images/bossallhall.png",
+    "description": "",
+    "occupation": "1644",
+    "tldr": "Once a Saxon palace, then a medieval castle, now a beautiful Hall.",
+    "events": [
+      {
+        "date": "14th CENTURY",
+        "description": "Paulinus de Bossall built a quadrangular castle here. His ancestors were granted the manor of Bossall by William the Conqueror 🗡️"
+      },
+      {
+        "date": "1349",
+        "description": "The original village of Bossall was wiped out by the plague, but de Bossalls descendants continued to live there 😷"
+      },
+      {
+        "date": "1623",
+        "description": "The castle was acquired by William Belt, whose brother Sir Robert Belt, twice Mayor of York, built the present Bossall Hall 🏰"
+      }
+    ]
+  },
+  {
+    "name": "Camp Hill House",
+    "coords": [-1.5232626115473735, 54.237218015663856],
+    "image": "images/camphillhouse.png",
+    "description": "",
+    "occupation": "1741",
+    "tldr": "Camp Hill House grounds are now used for glamping.",
+    "events": [
+      {
+        "date": "1741",
+        "description": "The first recorded owner of the house was James Hoyland, who was head gardener at Castle Howard ⛲️"
+      },
+      {
+        "date": "1945",
+        "description": "The Ropner family, an baronetcy of German descent, have owned the estate since 1945."
+      }
+    ]
+  },
+  {
+    "name": "Clifton Castle",
+    "coords": [-1.6666604920549322, 54.253609159545434],
+    "image": "images/cliftoncastle.png",
+    "description": "",
+    "occupation": "1802",
+    "tldr": "Clifton Castle is the seat of the Marquess of Downshire.",
+    "events": [
+      {
+        "date": "CASTLE",
+        "description": "The original Clifton Castle was built in the 14th century by the Norman-English Scope family."
+      },
+      {
+        "date": "QUEEN",
+        "description": "Sir John Clayton Cowell, Master of the Queen’s Household, lived here to the end of his life. He was also the lieutenant-governor of Windsor Castle 🏰"
+      },
+      {
+        "date": "1970",
+        "description": "It was purchased by the 8th Marquees of Downshire, an Irish peerage. His son and his family now live there 🧑‍🧑‍🧒‍🧒"
+      }
+    ]
+  },
+  {
+    "name": "Constable Burton Hall",
+    "coords": [-1.7502437457552933, 54.31605519610046],
+    "image": "images/constableburtonhall.png",
+    "description": "",
+    "occupation": "15th CENTURY",
+    "tldr": "This building has been the home of the Wyvill family for nearly 500 years.",
+    "events": [
+      {
+        "date": "1611",
+        "description": "Marmaduke Wyvill was created a baronet. The 7th Baronet was High Sheriff of Yorkshire in 1773 and died unmarried in 1774. None of the American heirs claimed the title so the baronetcy became dormant 🇺🇸"
+      },
+      {
+        "date": "1866",
+        "description": "Marmaduke Wyvill (another one) lived here. He was MP for Richmond and one of the greatest chess players of the 1840s and 50s. There is even a move in chess called the the ‘Wyvill formation’ ♟️"
+      },
+      {
+        "date": "NOW",
+        "description": "Marmaduke’s grandson, Charles Wyvill, is the current occupant of Constable Burton Hall."
+      }
+    ]
+  },
+  {
+    "name": "Countersett Hall",
+    "coords": [-2.1258835688930433, 54.286831298319306],
+    "image": "images/countersetthall.png",
+    "description": "",
+    "occupation": "12th CENTURY",
+    "tldr": "Richard Robinson purchased the freehold and extended the building in 1650.",
+    "events": [
+      {
+        "date": "QUAKER",
+        "description": "Robinson became the first Quaker in Wensleydale and held illegal meetings in the house. George Fox, founder of the Quaker movement, stayed here in 1652 and 1677 🛐"
+      },
+      {
+        "date": "1568",
+        "description": "There is a local legend that Mary Queen of Scott’s stayed here on night in her way to Bolton Castle 🏰"
+      }
+    ]
+  },
+  {
+    "name": "Denton Hall",
+    "coords": [-1.7781754610678524, 53.93522672610616],
+    "image": "images/dentonhall.png",
+    "description": "",
+    "occupation": "1776",
+    "tldr": "The estate was owned by the Archbishop of York in 1253.",
+    "events": [
+      {
+        "date": "OWNERS",
+        "description": "The estate has been owned by nearly all major families in North Yorkshire: the Vavasours, Fairfaxs, Illingworths and Wyvills."
+      },
+      {
+        "date": "FAIRFAX",
+        "description": "Thomas Fairfax, 3rd Lord Fairfax, was born here. He is famous for leading the Parliamentarian army against King Charles I during the Civil War 🛡️"
+      }
+    ]
+  },
+  {
+    "name": "Eshton Hall",
+    "coords": [-2.0965180155983187, 54.00029657026862],
+    "image": "images/eshtonhall.png",
+    "description": "",
+    "occupation": "182",
+    "tldr": "The house was built for Sir Mathew Wilson, MP between 1842 and 1886.",
+    "events": [
+      {
+        "date": "LIBRARY",
+        "description": "Frances Mary Richardson Currer inherited the home. She was described as “head of all female book collectors in Europe” with a library on this estate containing 20,000 books 📚"
+      },
+      {
+        "date": "WW2",
+        "description": "Bramcote School in Scarborough moved in for the duration of the war 🏫"
+      },
+      {
+        "date": "1960",
+        "description": "The Wilson family sold the home - it became a nursing home 🩺"
+      }
+    ]
   }
+
 
 
 ];
