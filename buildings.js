@@ -1637,7 +1637,7 @@ export const buildings = [
   {
     "name": "Middlethorpe Hall",
     "coords": [-1.089759727504127, 53.93062494072139],
-    "image": "middlethorpehall.png",
+    "image": "images/middlethorpehall.png",
     "description": "",
     "occupation": "1701",
     "tldr": "Influenced by Hampden Court Palace, it was built for cutlery master Thomas Barlow.",
@@ -1659,7 +1659,7 @@ export const buildings = [
   {
     "name": "Markenfield Hall",
     "coords": [-1.5511065195379192, 54.10142431468413],
-    "image": "markenfieldhall.png",
+    "image": "images/markenfieldhall.png",
     "description": "",
     "occupation": "1310",
     "tldr": "The present hall was built for John de Markenfield, Chancellor of the Exchequer and servant to Edward II.",
@@ -1681,7 +1681,7 @@ export const buildings = [
   {
     "name": "Kepwick Hall",
     "coords": [-1.267503885734984, 54.31116785286448],
-    "image": "kepwickhall.png",
+    "image": "images/kepwickhall.png",
     "description": "",
     "occupation": "1837",
     "tldr": "The building lies on the site of a manor House, first recorded in 1379.",
@@ -1695,7 +1695,7 @@ export const buildings = [
   {
     "name": "Otterington Hall",
     "coords": [-1.4277736107496364, 54.29075978035332],
-    "image": "otteringtonhall.png",
+    "image": "images/otteringtonhall.png",
     "description": "",
     "occupation": "1800s",
     "tldr": "The hall has ‘one of the best topiary gardens in England and certainly the best in Yorkshire’ 🪴",
@@ -1713,7 +1713,7 @@ export const buildings = [
   {
     "name": "Shandy Hall",
     "coords": [-1.187538965204289, 54.18867450227636],
-    "image": "shandyhall.png",
+    "image": "images/shandyhall.png",
     "description": "",
     "occupation": "1430",
     "tldr": "Now a writer’s house museum, this building is known as the home of Laurence Stern.",
@@ -1731,7 +1731,7 @@ export const buildings = [
   {
     "name": "Scampston Hall",
     "coords": [-0.6770539893563243, 54.16835041543727],
-    "image": "scampstonhall.png",
+    "image": "images/scampstonhall.png",
     "description": "",
     "occupation": "1600s",
     "tldr": "The hall was built for William Hustler, MP for Northallerton and Ripon in the 1600s. The current owner served as High Sheriff of North Yorkshire in 2018/19.",
@@ -1753,7 +1753,7 @@ export const buildings = [
   {
     "name": "Rudding Park",
     "coords": [-1.4921486942483764, 53.9734972364896],
-    "image": "ruddingpark.png",
+    "image": "images/ruddingpark.png",
     "description": "",
     "occupation": "1805",
     "tldr": "Originally part of the Forest of Knaresborough, the estate was demolished to be re-built in 1805.",
@@ -1771,7 +1771,7 @@ export const buildings = [
   {
     "name": "Thornton Watlass Hall",
     "coords": [-1.6063758020739893, 54.2779016160835],
-    "image": "thorntonwatlasshall.png",
+    "image": "images/thorntonwatlasshall.png",
     "description": "",
     "occupation": "1500s",
     "tldr": "The house descended in the Thoresby family until Agnes Thoresby married Thomas Dodsworth in 1415.",
@@ -1789,7 +1789,7 @@ export const buildings = [
   {
     "name": "Weston Hall",
     "coords": [-1.7304685368567352, 53.91627489526355],
-    "image": "westonhall.png",
+    "image": "images/westonhall.png",
     "description": "",
     "occupation": "1550",
     "tldr": "Weston Hall has been in the Vavasour family since the 14th century.",
@@ -1811,7 +1811,7 @@ export const buildings = [
   {
     "name": "Brough Hall",
     "coords": [-1.669227740342727, 54.37556230915807],
-    "image": "broughhall.png",
+    "image": "images/broughhall.png",
     "description": "",
     "occupation": "15th CENTURY",
     "tldr": "Originally built as a tower house, the building came into the Lawson family in 1575.",
@@ -1829,7 +1829,7 @@ export const buildings = [
   {
     "name": "Bolton Hall",
     "coords": [-1.8855886118778575, 54.303443189549746],
-    "image": "boltonhall.png",
+    "image": "images/boltonhall.png",
     "description": "",
     "occupation": "1678",
     "tldr": "Bolton Hall is currently the seat of the Bolton Baronetcy.",
@@ -1847,7 +1847,7 @@ export const buildings = [
   {
     "name": "Cowling Hall",
     "coords": [-1.6366047807254258, 54.284312764142086],
-    "image": "cowlinghall.png",
+    "image": "images/cowlinghall.png",
     "description": "",
     "occupation": "1450",
     "tldr": "Extended to form a Manor House, the building was originally used as a small border tower 🏴󠁧󠁢󠁥󠁮󠁧󠁿 🏴󠁧󠁢󠁳󠁣󠁴󠁿",
@@ -1861,7 +1861,7 @@ export const buildings = [
   {
     "name": "Crathorne Hall",
     "coords": [-1.3136894879237238, 54.469616138122994],
-    "image": "crathornehall.png",
+    "image": "images/crathornehall.png",
     "description": "",
     "occupation": "1904",
     "tldr": "The Dugdale family built this hall after the Crathorne family manor was turned into cottages.",
@@ -1879,7 +1879,7 @@ export const buildings = [
   {
     "name": "Escrick Park",
     "coords": [-1.0394782086657783, 53.873121142252785],
-    "image": "escrickpark.png",
+    "image": "images/escrickpark.png",
     "description": "",
     "occupation": "1323",
     "tldr": "Now a girl’s school, the estate was formed by Picot de Lascelles in the 12th century.",
