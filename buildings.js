@@ -2562,7 +2562,540 @@ export const buildings = [
         "description": "It served as the official Air Defence Headquarters 🏢"
       }
     ]
-  }
+  },
+  {
+    "name": "Bewerley Hall",
+    "coords": [54.0833, -1.7500],
+    "image": "images/bewerleyhall.png",
+    "description": "",
+    "occupation": "16th century",
+    "tldr": "A historic hall with connections to the Yorke family and Fountains Abbey.",
+    "events": [
+      {
+        "date": "1066",
+        "description": "Bewerley was recorded in the Domesday Book as BEVRELEI, owned by Gospatic, valued at 50 shillings 📜"
+      },
+      {
+        "date": "1175",
+        "description": "Roger de Mowbray gifted Bewerley to Fountains Abbey, which retained it until the Dissolution 🛐"
+      },
+      {
+        "date": "1774",
+        "description": "The Yorke family acquired Bewerley Hall, building a new hall in 1815. The old hall remains as Bewerley Old Hall 🏠"
+      }
+    ]
+  },
+  {
+    "name": "Bedale Hall",
+    "coords": [54.2889, -1.5931],
+    "image": "images/bedalehall.png",
+    "description": "",
+    "occupation": "1730",
+    "tldr": "A Georgian mansion turned community center, hosting various events.",
+    "events": [
+      {
+        "date": "1730",
+        "description": "The hall was built for Henry Peirse, replacing an earlier medieval manor house on the site 🏛️"
+      },
+      {
+        "date": "1985",
+        "description": "Bedale Hall was purchased by Hambleton District Council and converted into a community center, preserving its historical features 🏙️"
+      },
+      {
+        "date": "2010",
+        "description": "The hall underwent a £2.7 million restoration, ensuring its continued use for future generations 🔨"
+      }
+    ]
+  },
+  {
+    "name": "Carlton Towers",
+    "coords": [53.7167, -1.0500],
+    "image": "images/carltontowers.png",
+    "description": "",
+    "occupation": "17th century",
+    "tldr": "A Victorian Gothic country house, home to the Fitzalan-Howard family.",
+    "events": [
+      {
+        "date": "1394",
+        "description": "Carlton Towers passed to Brian Stapleton, marking the beginning of the Stapleton family's ownership 🕰️"
+      },
+      {
+        "date": "1873-1875",
+        "description": "The house underwent extensive renovations by Edward Welby Pugin, transforming it into the Gothic masterpiece seen today 🎨"
+      },
+      {
+        "date": "1991",
+        "description": "Carlton Towers opened to the public for tours and events, hosting over 10,000 visitors annually 🎟️"
+      }
+    ]
+  },
+{
+    "name": "Duncombe Park",
+    "coords": [54.2369, -1.0614],
+    "image": "images/duncombepark.png",
+    "description": "",
+    "occupation": "1713",
+    "tldr": "One of Yorkshire's finest historic houses and estates, with a colorful history of ownership.",
+    "events": [
+      {
+        "date": "1711",
+        "description": "Sir Charles Duncombe purchased the Helmsley estate for £90,000 (equivalent to £13 million today), despite never having visited it 💰"
+      },
+      {
+        "date": "1895",
+        "description": "The 1st Earl of Feversham entertained the future King George V and Queen Mary here, solidifying the estate's royal connections 👑"
+      },
+      {
+        "date": "1943-1984",
+        "description": "The house was occupied by a girls' school, with up to 200 students residing there. The family lived in the stable block during this time 🏫"
+      }
+    ]
+  },
+  {
+    "name": "Easby Abbey, Richmond",
+    "coords": [54.3997, -1.7208],
+    "image": "images/easbyabbey.png",
+    "description": "",
+    "occupation": "1152",
+    "tldr": "A picturesque ruined abbey with a rich history of religious and artistic significance.",
+    "events": [
+      {
+        "date": "1152",
+        "description": "Founded by Roald, Constable of Richmond Castle, Easby Abbey became one of the wealthiest Premonstratensian houses in England 🏛️"
+      },
+      {
+        "date": "1536",
+        "description": "The abbey was dissolved by Henry VIII, with its annual income recorded at £111 6s. 8d. (equivalent to £70,000 today) 💸"
+      },
+      {
+        "date": "1937",
+        "description": "The site was used as a filming location for the movie 'A Month in the Country', starring Colin Firth and Kenneth Branagh 🎬"
+      }
+    ]
+  },
+  {
+    "name": "Forcett Hall",
+    "coords": [54.4833, -1.7500],
+    "image": "images/forcetthall.png",
+    "description": "",
+    "occupation": "1710",
+    "tldr": "An early 18th-century country house with connections to the Shuttleworth family.",
+    "events": [
+      {
+        "date": "1710",
+        "description": "The hall was built for Charles Shuttleworth, incorporating parts of an earlier 16th-century house 🏠"
+      },
+      {
+        "date": "1785",
+        "description": "Famous landscape designer Capability Brown was commissioned to redesign the park, though his plans were never fully implemented 🌳"
+      },
+      {
+        "date": "1938",
+        "description": "The hall was requisitioned by the Army during World War II, housing up to 100 soldiers at its peak 🪖"
+      }
+    ]
+  },
+  {
+    "name": "Fountains Hall",
+    "coords": [54.1089, -1.5828],
+    "image": "images/fountainshall.png",
+    "description": "",
+    "occupation": "1611",
+    "tldr": "A Jacobean mansion built partially with stone from the nearby Fountains Abbey.",
+    "events": [
+      {
+        "date": "1611",
+        "description": "Sir Stephen Proctor built Fountains Hall using stone from the recently dissolved Fountains Abbey, spending over £18,000 (equivalent to £3 million today) 💰"
+      },
+      {
+        "date": "1923",
+        "description": "The Vyner family gifted Fountains Hall to the National Trust, along with 674 acres of surrounding land 🎁"
+      },
+      {
+        "date": "2000",
+        "description": "The hall underwent a £2.5 million restoration, revealing 17th-century wall paintings hidden for over 350 years 🖼️"
+      }
+    ]
+  },
+  {
+    "name": "Ganton Hall",
+    "coords": [54.1667, -0.5167],
+    "image": "images/gantonhall.png",
+    "description": "",
+    "occupation": "1860",
+    "tldr": "A Victorian country house with strong connections to golf and aristocracy.",
+    "events": [
+      {
+        "date": "1891",
+        "description": "The Ganton Golf Club was established in the grounds, later becoming one of the top 100 golf courses in the world 🏌️‍♂️"
+      },
+      {
+        "date": "1949",
+        "description": "Sir Harry Oakes, the murdered gold mining millionaire, once owned Ganton Hall. His widow sold it this year for £37,500 (equivalent to £1.3 million today) 💰"
+      },
+      {
+        "date": "2003",
+        "description": "Ganton Golf Club hosted the Walker Cup, only the third English club outside of London to do so 🏆"
+      }
+    ]
+  },
+  {
+    "name": "Grantley Hall",
+    "coords": [54.1167, -1.6667],
+    "image": "images/grantleyhall.png",
+    "description": "",
+    "occupation": "1680",
+    "tldr": "A 17th-century hall turned luxury hotel with a rich history of notable guests.",
+    "events": [
+      {
+        "date": "1900s",
+        "description": "Queen Mary, wife of King George V, was a frequent visitor to Grantley Hall during her stays in Yorkshire 👑"
+      },
+      {
+        "date": "1940s",
+        "description": "During WWII, the hall served as a convalescent home for injured soldiers, housing up to 100 patients at a time 🏥"
+      },
+      {
+        "date": "2019",
+        "description": "After a £70 million renovation, Grantley Hall reopened as a 5-star luxury hotel and wellness retreat, featuring a Michelin-starred restaurant 🌟"
+      }
+    ]
+  },
+  {
+    "name": "Healaugh Old Hall",
+    "coords": [53.9500, -1.2667],
+    "image": "images/healaugholdhall.png",
+    "description": "",
+    "occupation": "16th century",
+    "tldr": "A Tudor manor house with connections to the Knights Templar and Catholic recusancy.",
+    "events": [
+      {
+        "date": "1540",
+        "description": "The Healaugh estate was granted to James Gage by Henry VIII after the Dissolution of the Monasteries 📜"
+      },
+      {
+        "date": "1650s",
+        "description": "The hall became known for harboring Catholic priests, with several priest holes discovered during later renovations 🕯️"
+      },
+      {
+        "date": "1970",
+        "description": "A secret underground passage was discovered, believed to have been used by the Knights Templar centuries earlier 🗝️"
+      }
+    ]
+  },
+  {
+    "name": "Healaugh Park Priory",
+    "coords": [53.9500, -1.2833],
+    "image": "images/healaughparkpriory.png",
+    "description": "",
+    "occupation": "1218",
+    "tldr": "A former Augustinian priory with a history spanning over 800 years.",
+    "events": [
+      {
+        "date": "1218",
+        "description": "Founded by Geoffrey Haget, the priory was built on the site of a former hermitage established in 1160 🏛️"
+      },
+      {
+        "date": "1535",
+        "description": "At the time of the Dissolution, the priory's annual income was valued at £86 5s. 9d. (equivalent to £55,000 today) 💰"
+      },
+      {
+        "date": "1812",
+        "description": "The ruins of the priory were incorporated into a new farmhouse, preserving elements of the medieval structure 🏚️"
+      }
+    ]
+  },
+  {
+    "name": "Jervaulx Hall",
+    "coords": [54.2833, -1.7833],
+    "image": "images/jervaulxhall.png",
+    "description": "",
+    "occupation": "1156",
+    "tldr": "A Cistercian abbey turned country house with a rich history of monastic life and later aristocratic ownership.",
+    "events": [
+      {
+        "date": "1156",
+        "description": "Jervaulx Abbey was founded by Cistercian monks, becoming one of the great Cistercian houses of Yorkshire 🏛️"
+      },
+      {
+        "date": "1537",
+        "description": "The abbey was dissolved by Henry VIII, with its last abbot, Adam Sedbar, executed for his role in the Pilgrimage of Grace rebellion 👑"
+      },
+      {
+        "date": "1971",
+        "description": "The Burdon family acquired Jervaulx Abbey, investing over £500,000 in its restoration and opening it to the public, attracting 70,000 visitors annually 🏰"
+      }
+    ]
+  },
+  {
+    "name": "Kiplin Hall",
+    "coords": [54.3833, -1.5667],
+    "image": "images/kiplinhall.png",
+    "description": "",
+    "occupation": "1622",
+    "tldr": "A Jacobean house with links to the founding of Maryland and a rich military history.",
+    "events": [
+      {
+        "date": "1622",
+        "description": "Built for George Calvert, 1st Baron Baltimore, who later founded the colony of Maryland in America 🇺🇸"
+      },
+      {
+        "date": "1868",
+        "description": "Admiral Walter Carpenter inherited the hall, beginning a long association with the Royal Navy. The hall houses a collection of over 200 naval paintings 🎨"
+      },
+      {
+        "date": "1940",
+        "description": "During WWII, the hall was requisitioned by the RAF and used to house over 200 ground crew personnel ✈️"
+      }
+    ]
+  },
+  {
+    "name": "Newburgh Priory",
+    "coords": [54.1333, -1.1833],
+    "image": "images/newburghpriory.png",
+    "description": "",
+    "occupation": "1145",
+    "tldr": "An Augustinian priory turned family home with a unique claim to fame.",
+    "events": [
+      {
+        "date": "1145",
+        "description": "Founded by Roger de Mowbray as an Augustinian priory, it flourished for nearly 400 years 🏛️"
+      },
+      {
+        "date": "1539",
+        "description": "The priory was dissolved and granted to Anthony Belasyse. Legend claims Oliver Cromwell's headless body is buried in the house 💀"
+      },
+      {
+        "date": "1997",
+        "description": "A secret room was discovered during renovations, containing 17th-century Catholic artifacts and a priest hole 🕯️"
+      }
+    ]
+  },
+  {
+    "name": "Newby Hall",
+    "coords": [54.0833, -1.4167],
+    "image": "images/newbyhall.png",
+    "description": "",
+    "occupation": "1690s",
+    "tldr": "An elegant 17th-century house with renowned gardens and a rich history of aristocratic ownership.",
+    "events": [
+      {
+        "date": "1697",
+        "description": "Sir Christopher Wren was involved in the design of Newby Hall, creating one of the finest examples of English Baroque architecture 🏛️"
+      },
+      {
+        "date": "1748",
+        "description": "William Weddell acquired the hall and filled it with ancient Roman sculptures and Gobelins tapestries, spending over £200,000 (equivalent to £30 million today) 🗿"
+      },
+      {
+        "date": "2019",
+        "description": "Newby Hall's gardens were voted 'Garden of the Year' by Historic Houses, attracting over 140,000 visitors annually 🌺"
+      }
+    ]
+  },
+  {
+    "name": "Nun Monkton Priory",
+    "coords": [54.0167, -1.3000],
+    "image": "images/nunmonktonpriory.png",
+    "description": "",
+    "occupation": "1150",
+    "tldr": "A former Benedictine priory with a fascinating history of nuns, ghosts, and village life.",
+    "events": [
+      {
+        "date": "1150",
+        "description": "Founded by William de Arches and his wife Ivetta as a small community of Benedictine nuns, housing up to 13 nuns at its peak 🙏"
+      },
+      {
+        "date": "1536",
+        "description": "The priory was dissolved by Henry VIII, with its annual income recorded as £75 12s. 4d. (equivalent to £50,000 today) 💰"
+      },
+      {
+        "date": "1905",
+        "description": "The village's 600-year-old maypole, standing at 88 feet, was restored and remains one of the tallest in England 🎋"
+      }
+    ]
+  },
+  {
+    "name": "Nunnington Hall",
+    "coords": [54.2050, -0.9783],
+    "image": "images/nunningtonhall.png",
+    "description": "",
+    "occupation": "1680s",
+    "tldr": "A picturesque manor house with connections to royalty and a reputation for paranormal activity.",
+    "events": [
+      {
+        "date": "1685",
+        "description": "Viscount Preston, a Jacobite sympathizer, remodeled the hall. He was later imprisoned in the Tower of London for treason 🏰"
+      },
+      {
+        "date": "1920s",
+        "description": "The hall became known for its ghost sightings, including the 'Nunnington Cannibal', attracting paranormal investigators 👻"
+      },
+      {
+        "date": "2022",
+        "description": "A rare 17th-century doll's house, valued at over £150,000, was discovered in the attic during renovations 🏠"
+      }
+    ]
+  },
+  {
+    "name": "Over Silton Manor",
+    "coords": [54.3167, -1.3000],
+    "image": "images/oversiltonmanor.png",
+    "description": "",
+    "occupation": "1866",
+    "tldr": "A Victorian manor with a rich history of hunting and aristocratic ownership.",
+    "events": [
+      {
+        "date": "1866",
+        "description": "Built by William Bradley Wainman as a hunting lodge, costing over £20,000 (equivalent to £2.5 million today) 🏹"
+      },
+      {
+        "date": "1890s",
+        "description": "The manor hosted the Prince of Wales (later King Edward VII) for grouse shooting, cementing its status as a premier hunting estate 👑"
+      },
+      {
+        "date": "1950",
+        "description": "The estate's prized Laverack Setter hunting dog was buried near the entrance gates, with a gravestone costing £500 (£17,000 today) 🐕"
+      }
+    ]
+  },
+  {
+    "name": "Pond House, Aislaby",
+    "coords": [54.4667, -0.6667],
+    "image": "images/pondhouse.png",
+    "description": "",
+    "occupation": "1782",
+    "tldr": "An exquisite Georgian house with connections to maritime history and modern renovations.",
+    "events": [
+      {
+        "date": "1782",
+        "description": "Built by Francis Breckon using stone from Aislaby Quarry, which also supplied materials for Whitby's famous piers 🏗️"
+      },
+      {
+        "date": "1800s",
+        "description": "Home to Captain John Brodrick, who sailed with Captain Cook on his third voyage to the Pacific 🚢"
+      },
+      {
+        "date": "2020",
+        "description": "Underwent a £1.2 million renovation, blending Georgian architecture with modern luxury, increasing its value to over £2 million 💰"
+      }
+    ]
+  },
+  {
+    "name": "Ripley Castle",
+    "coords": [54.0333, -1.5667],
+    "image": "images/ripleycastle.png",
+    "description": "",
+    "occupation": "1555",
+    "tldr": "A historic castle with over 700 years of continuous ownership by the Ingilby family.",
+    "events": [
+      {
+        "date": "1603",
+        "description": "Sir William Ingilby reportedly held King James I at gunpoint when he refused to pay for his drinks at the castle 👑"
+      },
+      {
+        "date": "1644",
+        "description": "Oliver Cromwell stayed at the castle during the English Civil War, leaving behind a pair of boots still on display today 👢"
+      },
+      {
+        "date": "2000",
+        "description": "The castle's gardens underwent a £1 million restoration, including the planting of over 5,000 new trees and shrubs 🌳"
+      }
+    ]
+  },
+  {
+    "name": "Skelton Castle",
+    "coords": [54.5611, -0.9772],
+    "image": "images/skeltoncastle.png",
+    "description": "",
+    "occupation": "1140",
+    "tldr": "A medieval castle with connections to royalty and literary fame.",
+    "events": [
+      {
+        "date": "1140",
+        "description": "Built by Robert de Brus, ancestor of Robert the Bruce, King of Scotland 🏴󠁧󠁢󠁳󠁣󠁴󠁿"
+      },
+      {
+        "date": "1788",
+        "description": "John Hall-Stevenson, owner of the castle, was immortalized as 'Eugenius' in Laurence Sterne's novel 'Tristram Shandy' 📚"
+      },
+      {
+        "date": "1958",
+        "description": "The castle was partly demolished, with 20,000 tons of stone sold for £5,000 (equivalent to £120,000 today) 🏗️"
+      }
+    ]
+  },
+  {
+    "name": "Studley Royal Park",
+    "coords": [54.1333, -1.5667],
+    "image": "images/studleyroyal.png",
+    "description": "",
+    "occupation": "1718",
+    "tldr": "A UNESCO World Heritage Site featuring an 18th-century water garden and the ruins of Fountains Abbey.",
+    "events": [
+      {
+        "date": "1132",
+        "description": "Fountains Abbey was founded by 13 Benedictine monks, becoming one of the wealthiest monasteries in England 🏛️"
+      },
+      {
+        "date": "1767",
+        "description": "William Aislabie completed the water garden, spending over £30,000 (equivalent to £5 million today) 💦"
+      },
+      {
+        "date": "2019",
+        "description": "The park attracted over 600,000 visitors, generating an estimated £33 million for the local economy 💰"
+      }
+    ]
+  },
+  {
+    "name": "Swinton Estate",
+    "coords": [54.2167, -1.6333],
+    "image": "images/swintonestate.png",
+    "description": "",
+    "occupation": "1695",
+    "tldr": "A grand country estate with a rich history of aristocratic ownership and modern luxury hospitality.",
+    "events": [
+      {
+        "date": "1695",
+        "description": "The Danby family acquired the estate, beginning three centuries of family ownership 🏰"
+      },
+      {
+        "date": "1882",
+        "description": "Samuel Cunliffe-Lister, the inventor of the wool-combing machine, purchased the estate for £560,000 (equivalent to £70 million today) 💰"
+      },
+      {
+        "date": "2001",
+        "description": "Swinton Park opened as a luxury hotel, investing over £12 million in renovations and attracting 30,000 guests annually 🏨"
+      }
+    ]
+  },
+  {
+    "name": "Thirkleby Hall",
+    "coords": [54.2000, -1.3000],
+    "image": "images/thirklebyhall.png",
+    "description": "",
+    "occupation": "1780",
+    "tldr": "A grand Georgian mansion with a tragic history of demolition and lost heritage.",
+    "events": [
+      {
+        "date": "1780",
+        "description": "Built for Sir Thomas Frankland, incorporating elements of an earlier 17th-century house 🏛️"
+      },
+      {
+        "date": "1927",
+        "description": "The hall hosted King George V and Queen Mary during their tour of Yorkshire, cementing its status as a premier country house 👑"
+      },
+      {
+        "date": "1962",
+        "description": "Despite public outcry, Thirkleby Hall was demolished, with over 200 tons of architectural elements sold at auction for £25,000 (£550,000 today) 🏚️"
+      }
+    ]
+  },
+
+
+
+
+
 
 
 
