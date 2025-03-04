@@ -2564,30 +2564,8 @@ export const buildings = [
     ]
   },
   {
-    "name": "Bewerley Hall",
-    "coords": [54.0833, -1.7500],
-    "image": "images/bewerleyhall.png",
-    "description": "",
-    "occupation": "16th century",
-    "tldr": "A historic hall with connections to the Yorke family and Fountains Abbey.",
-    "events": [
-      {
-        "date": "1066",
-        "description": "Bewerley was recorded in the Domesday Book as BEVRELEI, owned by Gospatic, valued at 50 shillings 📜"
-      },
-      {
-        "date": "1175",
-        "description": "Roger de Mowbray gifted Bewerley to Fountains Abbey, which retained it until the Dissolution 🛐"
-      },
-      {
-        "date": "1774",
-        "description": "The Yorke family acquired Bewerley Hall, building a new hall in 1815. The old hall remains as Bewerley Old Hall 🏠"
-      }
-    ]
-  },
-  {
     "name": "Bedale Hall",
-    "coords": [54.2889, -1.5931],
+    "coords": [-1.5941471380639638, 54.29031499838431],
     "image": "images/bedalehall.png",
     "description": "",
     "occupation": "1730",
@@ -2609,7 +2587,7 @@ export const buildings = [
   },
   {
     "name": "Carlton Towers",
-    "coords": [53.7167, -1.0500],
+    "coords": [-1.0175469829618722, 53.70653952502289],
     "image": "images/carltontowers.png",
     "description": "",
     "occupation": "17th century",
@@ -2631,7 +2609,7 @@ export const buildings = [
   },
 {
     "name": "Duncombe Park",
-    "coords": [54.2369, -1.0614],
+    "coords": [-1.0746527568910413, 54.238982780795546],
     "image": "images/duncombepark.png",
     "description": "",
     "occupation": "1713",
@@ -2653,7 +2631,7 @@ export const buildings = [
   },
   {
     "name": "Easby Abbey, Richmond",
-    "coords": [54.3997, -1.7208],
+    "coords": [-1.716605245691516, 54.39752454185147],
     "image": "images/easbyabbey.png",
     "description": "",
     "occupation": "1152",
@@ -2675,7 +2653,7 @@ export const buildings = [
   },
   {
     "name": "Forcett Hall",
-    "coords": [54.4833, -1.7500],
+    "coords": [-1.7347246139762906, 54.506278249132066],
     "image": "images/forcetthall.png",
     "description": "",
     "occupation": "1710",
@@ -2697,7 +2675,7 @@ export const buildings = [
   },
   {
     "name": "Fountains Hall",
-    "coords": [54.1089, -1.5828],
+    "coords": [-1.5864835392954224, 54.109730854372906],
     "image": "images/fountainshall.png",
     "description": "",
     "occupation": "1611",
@@ -2719,7 +2697,7 @@ export const buildings = [
   },
   {
     "name": "Ganton Hall",
-    "coords": [54.1667, -0.5167],
+    "coords": [-0.48161547661788484, 54.179818762547534],
     "image": "images/gantonhall.png",
     "description": "",
     "occupation": "1860",
@@ -2741,7 +2719,7 @@ export const buildings = [
   },
   {
     "name": "Grantley Hall",
-    "coords": [54.1167, -1.6667],
+    "coords": [-1.620756983757019 , 54.11891246047191],
     "image": "images/grantleyhall.png",
     "description": "",
     "occupation": "1680",
@@ -2763,7 +2741,7 @@ export const buildings = [
   },
   {
     "name": "Healaugh Old Hall",
-    "coords": [53.9500, -1.2667],
+    "coords": [-1.2629094185408074, 53.911245365299955],
     "image": "images/healaugholdhall.png",
     "description": "",
     "occupation": "16th century",
@@ -2785,7 +2763,7 @@ export const buildings = [
   },
   {
     "name": "Healaugh Park Priory",
-    "coords": [53.9500, -1.2833],
+    "coords": [ -1.2615522207792718, 53.91094833883293],
     "image": "images/healaughparkpriory.png",
     "description": "",
     "occupation": "1218",
@@ -2807,7 +2785,7 @@ export const buildings = [
   },
   {
     "name": "Jervaulx Hall",
-    "coords": [54.2833, -1.7833],
+    "coords": [-1.7407821545786528, 54.266352879489176],
     "image": "images/jervaulxhall.png",
     "description": "",
     "occupation": "1156",
@@ -2829,7 +2807,7 @@ export const buildings = [
   },
   {
     "name": "Kiplin Hall",
-    "coords": [54.3833, -1.5667],
+    "coords": [-1.5790865456086722, 54.371987352894116],
     "image": "images/kiplinhall.png",
     "description": "",
     "occupation": "1622",
@@ -2851,7 +2829,7 @@ export const buildings = [
   },
   {
     "name": "Newburgh Priory",
-    "coords": [54.1333, -1.1833],
+    "coords": [-1.1695324968926046, 54.18121833045655],
     "image": "images/newburghpriory.png",
     "description": "",
     "occupation": "1145",
@@ -2873,7 +2851,7 @@ export const buildings = [
   },
   {
     "name": "Newby Hall",
-    "coords": [54.0833, -1.4167],
+    "coords": [-1.4694297681554747, 54.101605681592005],
     "image": "images/newbyhall.png",
     "description": "",
     "occupation": "1690s",
@@ -2895,7 +2873,7 @@ export const buildings = [
   },
   {
     "name": "Nun Monkton Priory",
-    "coords": [54.0167, -1.3000],
+    "coords": [-1.2205740275932575, 54.0145938724923],
     "image": "images/nunmonktonpriory.png",
     "description": "",
     "occupation": "1150",
@@ -2917,7 +2895,7 @@ export const buildings = [
   },
   {
     "name": "Nunnington Hall",
-    "coords": [54.2050, -0.9783],
+    "coords": [-0.9737477141524331, 54.206719835750604],
     "image": "images/nunningtonhall.png",
     "description": "",
     "occupation": "1680s",
@@ -2938,52 +2916,8 @@ export const buildings = [
     ]
   },
   {
-    "name": "Over Silton Manor",
-    "coords": [54.3167, -1.3000],
-    "image": "images/oversiltonmanor.png",
-    "description": "",
-    "occupation": "1866",
-    "tldr": "A Victorian manor with a rich history of hunting and aristocratic ownership.",
-    "events": [
-      {
-        "date": "1866",
-        "description": "Built by William Bradley Wainman as a hunting lodge, costing over £20,000 (equivalent to £2.5 million today) 🏹"
-      },
-      {
-        "date": "1890s",
-        "description": "The manor hosted the Prince of Wales (later King Edward VII) for grouse shooting, cementing its status as a premier hunting estate 👑"
-      },
-      {
-        "date": "1950",
-        "description": "The estate's prized Laverack Setter hunting dog was buried near the entrance gates, with a gravestone costing £500 (£17,000 today) 🐕"
-      }
-    ]
-  },
-  {
-    "name": "Pond House, Aislaby",
-    "coords": [54.4667, -0.6667],
-    "image": "images/pondhouse.png",
-    "description": "",
-    "occupation": "1782",
-    "tldr": "An exquisite Georgian house with connections to maritime history and modern renovations.",
-    "events": [
-      {
-        "date": "1782",
-        "description": "Built by Francis Breckon using stone from Aislaby Quarry, which also supplied materials for Whitby's famous piers 🏗️"
-      },
-      {
-        "date": "1800s",
-        "description": "Home to Captain John Brodrick, who sailed with Captain Cook on his third voyage to the Pacific 🚢"
-      },
-      {
-        "date": "2020",
-        "description": "Underwent a £1.2 million renovation, blending Georgian architecture with modern luxury, increasing its value to over £2 million 💰"
-      }
-    ]
-  },
-  {
     "name": "Ripley Castle",
-    "coords": [54.0333, -1.5667],
+    "coords": [-1.569416922296334, 54.04031757192946],
     "image": "images/ripleycastle.png",
     "description": "",
     "occupation": "1555",
@@ -3005,7 +2939,7 @@ export const buildings = [
   },
   {
     "name": "Skelton Castle",
-    "coords": [54.5611, -0.9772],
+    "coords": [-0.9936492790618456, 54.56476451786277],
     "image": "images/skeltoncastle.png",
     "description": "",
     "occupation": "1140",
@@ -3027,7 +2961,7 @@ export const buildings = [
   },
   {
     "name": "Studley Royal Park",
-    "coords": [54.1333, -1.5667],
+    "coords": [-1.5724994818568616, 54.115808283436],
     "image": "images/studleyroyal.png",
     "description": "",
     "occupation": "1718",
@@ -3049,7 +2983,7 @@ export const buildings = [
   },
   {
     "name": "Swinton Estate",
-    "coords": [54.2167, -1.6333],
+    "coords": [-1.6762920658837466, 54.21273136693904],
     "image": "images/swintonestate.png",
     "description": "",
     "occupation": "1695",
@@ -3071,7 +3005,7 @@ export const buildings = [
   },
   {
     "name": "Thirkleby Hall",
-    "coords": [54.2000, -1.3000],
+    "coords": [-1.2802845921421246, 54.2065790245024],
     "image": "images/thirklebyhall.png",
     "description": "",
     "occupation": "1780",
@@ -3091,13 +3025,5 @@ export const buildings = [
       }
     ]
   },
-
-
-
-
-
-
-
-
 
 ];
