@@ -364,7 +364,7 @@ dropdownContent.className = 'dropdown-content';
 
 // Add a paragraph to the dropdown
 const paragraph = document.createElement('p');
-paragraph.textContent = 'Some cards have the words ‘AI-generated’ written at the top of them. If the card doesn’t not say that, it means I wrote it. I am insistent that I will manually write all 500+ cards, to a high standard which AI cannot do. However, each card takes roughly 20 minutes, so it is an extremely long process. I appreciate your patience with me! I have received no volunteers as of yet, but if you are willing to help out, send me an email at freddy@britmap.com. ';
+paragraph.textContent = 'Some cards have the words ‘AI-generated’ written at the top of them. If the card doesn’t say that, it means I wrote it. I am insistent that I will manually write all 500+ cards, to a high standard which AI cannot do. However, each card takes roughly 20 minutes, so it is an extremely long process. I appreciate your patience with me! I have received no volunteers as of yet, but if you are willing to help out, send me an email at freddy@britmap.com. ';
 dropdownContent.appendChild(paragraph);
 
 addMarkerDropdown.appendChild(addMarkerButton);
