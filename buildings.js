@@ -3025,5 +3025,50 @@ export const buildings = [
       }
     ]
   },
+    {
+    "name": "Thirkleby Hall",
+    "coords": [-1.2802845921421246, 54.2065790245024],
+    "image": "images/thirklebyhall.png",
+    "description": "AI-generated",
+    "occupation": "1780",
+    "tldr": "A grand Georgian mansion with a tragic history of demolition and lost heritage.",
+    "events": [
+      {
+        "date": "1780",
+        "description": "Built for Sir Thomas Frankland, incorporating elements of an earlier 17th-century house 🏛️"
+      },
+      {
+        "date": "1927",
+        "description": "The hall hosted King George V and Queen Mary during their tour of Yorkshire, cementing its status as a premier country house 👑"
+      },
+      {
+        "date": "1962",
+        "description": "Despite public outcry, Thirkleby Hall was demolished, with over 200 tons of architectural elements sold at auction for £25,000 (£550,000 today) 🏚️"
+      }
+    ]
+  },
+  {
+    "name": "Bolton Castle",
+    "coords": [-1.9833, 54.3167],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/1/16/Castle_Bolton_and_its_maze_-_geograph.org.uk_-_7335033.jpg",
+    "description": "AI-generated",
+    "occupation": "1379",
+    "tldr": "Bolton Castle is a medieval fortress situated near Leyburn in North Yorkshire, England.",
+    "events": [
+      {
+        "date": "1379",
+        "description": "Construction began on the castle for Richard, 1st Baron Scrope of Bolton 🏰"
+      },
+      {
+        "date": "1568",
+        "description": "Mary, Queen of Scots, was imprisoned here for six months ⚔️"
+      },
+      {
+        "date": "1645",
+        "description": "The castle was besieged by Parliamentarian forces during the English Civil War 🏛️"
+      }
+    ]
+  }
+
 
 ];
