@@ -3047,28 +3047,6 @@ export const buildings = [
       }
     ]
   },
-  {
-    "name": "Bolton Castle",
-    "coords": [-1.9833, 54.3167],
-    "image": "https://upload.wikimedia.org/wikipedia/commons/1/16/Castle_Bolton_and_its_maze_-_geograph.org.uk_-_7335033.jpg",
-    "description": "AI-generated",
-    "occupation": "1379",
-    "tldr": "Bolton Castle is a medieval fortress situated near Leyburn in North Yorkshire, England.",
-    "events": [
-      {
-        "date": "1379",
-        "description": "Construction began on the castle for Richard, 1st Baron Scrope of Bolton 🏰"
-      },
-      {
-        "date": "1568",
-        "description": "Mary, Queen of Scots, was imprisoned here for six months ⚔️"
-      },
-      {
-        "date": "1645",
-        "description": "The castle was besieged by Parliamentarian forces during the English Civil War 🏛️"
-      }
-    ]
-  }
 
 
 ];
