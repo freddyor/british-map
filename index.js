@@ -536,14 +536,38 @@ function addBuildingMarkers() {
     });
   });
 }
+const addMarkerDropdown = document.createElement('div');
+addMarkerDropdown.className = 'dropdown';
 
-// Add Marker button
 const addMarkerButton = document.createElement('button');
 addMarkerButton.id = 'add-marker-button';
-addMarkerButton.textContent = '+ Add building marker';
 addMarkerButton.className = 'custom-button';
-buttonGroup.appendChild(addMarkerButton);
+addMarkerButton.textContent = 'Explanation of AI tags';
 
+const dropdownContent = document.createElement('div');
+dropdownContent.className = 'dropdown-content';
+
+// Add a paragraph to the dropdown
+const paragraph = document.createElement('p');
+paragraph.textContent = 'This is a paragraph inside the dropdown for adding building markers.';
+dropdownContent.appendChild(paragraph);
+
+addMarkerDropdown.appendChild(addMarkerButton);
+addMarkerDropdown.appendChild(dropdownContent);
+buttonGroup.appendChild(addMarkerDropdown);
+
+// Add event listener for dropdown
+addMarkerButton.addEventListener('click', function(e) {
+    e.preventDefault();
+    dropdownContent.style.display = dropdownContent.style.display === 'block' ? 'none' : 'block';
+});
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+    if (!event.target.matches('#add-marker-button')) {
+        dropdownContent.style.display = 'none';
+    }
+};
 // Modal container
 const modal = document.createElement('div');
 modal.id = 'add-marker-modal';
