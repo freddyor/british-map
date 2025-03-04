@@ -2567,7 +2567,7 @@ export const buildings = [
     "name": "Bedale Hall",
     "coords": [-1.5941471380639638, 54.29031499838431],
     "image": "images/bedalehall.png",
-    "description": "The contents of this card are AI-generated. I am working on manually writing all 500+ cards but it takes a very long time!",
+    "description": "AI-generated",
     "occupation": "1730",
     "tldr": "A Georgian mansion turned community center, hosting various events.",
     "events": [
@@ -2589,7 +2589,7 @@ export const buildings = [
     "name": "Carlton Towers",
     "coords": [-1.0175469829618722, 53.70653952502289],
     "image": "images/carltontowers.png",
-    "description": "The contents of this card are AI-generated. I am working on manually writing all 500+ cards but it takes a very long time!",
+    "description": "AI-generated",
     "occupation": "17th century",
     "tldr": "A Victorian Gothic country house, home to the Fitzalan-Howard family.",
     "events": [
@@ -2611,7 +2611,7 @@ export const buildings = [
     "name": "Duncombe Park",
     "coords": [-1.0746527568910413, 54.238982780795546],
     "image": "images/duncombepark.png",
-    "description": "The contents of this card are AI-generated. I am working on manually writing all 500+ cards but it takes a very long time!",
+    "description": "AI-generated",
     "occupation": "1713",
     "tldr": "One of Yorkshire's finest historic houses and estates, with a colorful history of ownership.",
     "events": [
@@ -2633,7 +2633,7 @@ export const buildings = [
     "name": "Easby Abbey, Richmond",
     "coords": [-1.716605245691516, 54.39752454185147],
     "image": "images/easbyabbey.png",
-    "description": "The contents of this card are AI-generated. I am working on manually writing all 500+ cards but it takes a very long time!",
+    "description": "AI-generated",
     "occupation": "1152",
     "tldr": "A picturesque ruined abbey with a rich history of religious and artistic significance.",
     "events": [
@@ -2655,7 +2655,7 @@ export const buildings = [
     "name": "Forcett Hall",
     "coords": [-1.7347246139762906, 54.506278249132066],
     "image": "images/forcetthall.png",
-    "description": "The contents of this card are AI-generated. I am working on manually writing all 500+ cards but it takes a very long time!",
+    "description": "AI-generated",
     "occupation": "1710",
     "tldr": "An early 18th-century country house with connections to the Shuttleworth family.",
     "events": [
@@ -2677,7 +2677,7 @@ export const buildings = [
     "name": "Fountains Hall",
     "coords": [-1.5864835392954224, 54.109730854372906],
     "image": "images/fountainshall.png",
-    "description": "The contents of this card are AI-generated. I am working on manually writing all 500+ cards but it takes a very long time!",
+    "description": "AI-generated",
     "occupation": "1611",
     "tldr": "A Jacobean mansion built partially with stone from the nearby Fountains Abbey.",
     "events": [
@@ -2699,7 +2699,7 @@ export const buildings = [
     "name": "Ganton Hall",
     "coords": [-0.48161547661788484, 54.179818762547534],
     "image": "images/gantonhall.png",
-    "description": "The contents of this card are AI-generated. I am working on manually writing all 500+ cards but it takes a very long time!",
+    "description": "AI-generated",
     "occupation": "1860",
     "tldr": "A Victorian country house with strong connections to golf and aristocracy.",
     "events": [
@@ -2721,7 +2721,7 @@ export const buildings = [
     "name": "Grantley Hall",
     "coords": [-1.620756983757019 , 54.11891246047191],
     "image": "images/grantleyhall.png",
-    "description": "The contents of this card are AI-generated. I am working on manually writing all 500+ cards but it takes a very long time!",
+    "description": "AI-generated",
     "occupation": "1680",
     "tldr": "A 17th-century hall turned luxury hotel with a rich history of notable guests.",
     "events": [
@@ -2743,7 +2743,7 @@ export const buildings = [
     "name": "Healaugh Old Hall",
     "coords": [-1.2629094185408074, 53.911245365299955],
     "image": "images/healaugholdhall.png",
-    "description": "The contents of this card are AI-generated. I am working on manually writing all 500+ cards but it takes a very long time!",
+    "description": "AI-generated",
     "occupation": "16th century",
     "tldr": "A Tudor manor house with connections to the Knights Templar and Catholic recusancy.",
     "events": [
@@ -2765,7 +2765,7 @@ export const buildings = [
     "name": "Healaugh Park Priory",
     "coords": [ -1.2615522207792718, 53.91094833883293],
     "image": "images/healaughparkpriory.png",
-    "description": "The contents of this card are AI-generated. I am working on manually writing all 500+ cards but it takes a very long time!",
+    "description": "AI-generated",
     "occupation": "1218",
     "tldr": "A former Augustinian priory with a history spanning over 800 years.",
     "events": [
@@ -2787,7 +2787,7 @@ export const buildings = [
     "name": "Jervaulx Hall",
     "coords": [-1.7407821545786528, 54.266352879489176],
     "image": "images/jervaulxhall.png",
-    "description": "The contents of this card are AI-generated. I am working on manually writing all 500+ cards but it takes a very long time!",
+    "description": "AI-generated",
     "occupation": "1156",
     "tldr": "A Cistercian abbey turned country house with a rich history of monastic life and later aristocratic ownership.",
     "events": [
@@ -2809,7 +2809,7 @@ export const buildings = [
     "name": "Kiplin Hall",
     "coords": [-1.5790865456086722, 54.371987352894116],
     "image": "images/kiplinhall.png",
-    "description": "The contents of this card are AI-generated. I am working on manually writing all 500+ cards but it takes a very long time!",
+    "description": "AI-generated",
     "occupation": "1622",
     "tldr": "A Jacobean house with links to the founding of Maryland and a rich military history.",
     "events": [
@@ -2831,7 +2831,7 @@ export const buildings = [
     "name": "Newburgh Priory",
     "coords": [-1.1695324968926046, 54.18121833045655],
     "image": "images/newburghpriory.png",
-    "description": "The contents of this card are AI-generated. I am working on manually writing all 500+ cards but it takes a very long time!",
+    "description": "AI-generated",
     "occupation": "1145",
     "tldr": "An Augustinian priory turned family home with a unique claim to fame.",
     "events": [
@@ -2853,7 +2853,7 @@ export const buildings = [
     "name": "Newby Hall",
     "coords": [-1.4694297681554747, 54.101605681592005],
     "image": "images/newbyhall.png",
-    "description": "The contents of this card are AI-generated. I am working on manually writing all 500+ cards but it takes a very long time!",
+    "description": "AI-generated",
     "occupation": "1690s",
     "tldr": "An elegant 17th-century house with renowned gardens and a rich history of aristocratic ownership.",
     "events": [
@@ -2875,7 +2875,7 @@ export const buildings = [
     "name": "Nun Monkton Priory",
     "coords": [-1.2205740275932575, 54.0145938724923],
     "image": "images/nunmonktonpriory.png",
-    "description": "The contents of this card are AI-generated. I am working on manually writing all 500+ cards but it takes a very long time!",
+    "description": "AI-generated",
     "occupation": "1150",
     "tldr": "A former Benedictine priory with a fascinating history of nuns, ghosts, and village life.",
     "events": [
@@ -2897,7 +2897,7 @@ export const buildings = [
     "name": "Nunnington Hall",
     "coords": [-0.9737477141524331, 54.206719835750604],
     "image": "images/nunningtonhall.png",
-    "description": "The contents of this card are AI-generated. I am working on manually writing all 500+ cards but it takes a very long time!",
+    "description": "AI-generated",
     "occupation": "1680s",
     "tldr": "A picturesque manor house with connections to royalty and a reputation for paranormal activity.",
     "events": [
@@ -2919,7 +2919,7 @@ export const buildings = [
     "name": "Ripley Castle",
     "coords": [-1.569416922296334, 54.04031757192946],
     "image": "images/ripleycastle.png",
-    "description": "The contents of this card are AI-generated. I am working on manually writing all 500+ cards but it takes a very long time!",
+    "description": "AI-generated",
     "occupation": "1555",
     "tldr": "A historic castle with over 700 years of continuous ownership by the Ingilby family.",
     "events": [
@@ -2941,7 +2941,7 @@ export const buildings = [
     "name": "Skelton Castle",
     "coords": [-0.9936492790618456, 54.56476451786277],
     "image": "images/skeltoncastle.png",
-    "description": "The contents of this card are AI-generated. I am working on manually writing all 500+ cards but it takes a very long time!",
+    "description": "AI-generated",
     "occupation": "1140",
     "tldr": "A medieval castle with connections to royalty and literary fame.",
     "events": [
@@ -2963,7 +2963,7 @@ export const buildings = [
     "name": "Studley Royal Park",
     "coords": [-1.5724994818568616, 54.115808283436],
     "image": "images/studleyroyal.png",
-    "description": "The contents of this card are AI-generated. I am working on manually writing all 500+ cards but it takes a very long time!",
+    "description": "AI-generated",
     "occupation": "1718",
     "tldr": "A UNESCO World Heritage Site featuring an 18th-century water garden and the ruins of Fountains Abbey.",
     "events": [
@@ -2985,7 +2985,7 @@ export const buildings = [
     "name": "Swinton Estate",
     "coords": [-1.6762920658837466, 54.21273136693904],
     "image": "images/swintonestate.png",
-    "description": "The contents of this card are AI-generated. I am working on manually writing all 500+ cards but it takes a very long time!",
+    "description": "AI-generated",
     "occupation": "1695",
     "tldr": "A grand country estate with a rich history of aristocratic ownership and modern luxury hospitality.",
     "events": [
@@ -3007,7 +3007,7 @@ export const buildings = [
     "name": "Thirkleby Hall",
     "coords": [-1.2802845921421246, 54.2065790245024],
     "image": "images/thirklebyhall.png",
-    "description": "The contents of this card are AI-generated. I am working on manually writing all 500+ cards but it takes a very long time!",
+    "description": "AI-generated",
     "occupation": "1780",
     "tldr": "A grand Georgian mansion with a tragic history of demolition and lost heritage.",
     "events": [
