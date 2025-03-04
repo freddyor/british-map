@@ -2408,11 +2408,11 @@ export const buildings = [
     ]
   },
   {
-    "name": "St Trinain Hall",
+    "name": "St Trinian Hall",
     "coords": [-1.7056294736097555, 54.39998768763618],
-    "image": "images/sttrinainhall.png",
+    "image": "images/sttrinianhall.png",
     "description": "",
-    "occupation": null,
+    "occupation": "",
     "tldr": "The name derives from Ninian, an 8th century Christian Saint.",
     "events": [
       {
