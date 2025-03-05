@@ -373,17 +373,22 @@ addMarkerDropdown.appendChild(dropdownContent);
 buttonGroup.appendChild(addMarkerDropdown);
 
 // Add event listener for dropdown
-addMarkerButton.addEventListener('click', function(e) {
-    e.preventDefault();
-    dropdownContent.style.display = dropdownContent.style.display === 'block' ? 'none' : 'block';
+addMarkerButton.addEventListener('click', function (e) {
+  e.preventDefault();
+  const dropdownContent = document.querySelector('.dropdown-content');
+  dropdownContent.style.display = dropdownContent.style.display === 'block' ? 'none' : 'block';
 });
 
 // Close the dropdown if the user clicks outside of it
-window.onclick = function(event) {
-    if (!event.target.matches('#add-marker-button')) {
-        dropdownContent.style.display = 'none';
+window.onclick = function (event) {
+  if (!event.target.matches('#add-marker-button')) {
+    const dropdownContent = document.querySelector('.dropdown-content');
+    if (dropdownContent) {
+      dropdownContent.style.display = 'none';
     }
+  }
 };
+
 // New code for the "Image Attributions" button
 const imageAttributionsButton = document.createElement('button');
 imageAttributionsButton.id = 'image-attributions-button';
@@ -399,12 +404,10 @@ imageAttributionsButton.style.transform = 'translateX(-50%)';
 // Add the new button to the document body
 document.body.appendChild(imageAttributionsButton);
 
-document.getElementById('image-attributions-button').addEventListener('click', displayImageAttributions);
-
 // Function to display or hide image attributions
 function toggleImageAttributions() {
   let attributionsContainer = document.getElementById('attributions-container');
-  
+
   if (attributionsContainer) {
     // If the container exists, toggle its visibility
     if (attributionsContainer.style.display === 'none' || attributionsContainer.style.display === '') {
