@@ -3,16 +3,22 @@
 // Array to store image attributions
 const imageAttributions = [
   {
-    name: "Image Title 1",
-    author: "Author Name 1",
-    license: "License Type 1",
-    link: "https://example.com/image1"
+    name: "<a href='https://commons.wikimedia.org/wiki/File:Castle_Bolton_and_its_maze_-_geograph.org.uk_-_7335033.jpg'>Bolton Castle</a>",
+    author: "Chris Heaton",
+    license: "CC BY-SA 2.0",
   },
-{
-    "name": "<a href='https://commons.wikimedia.org/wiki/File:P.3._Swansea_City_Centre_2012.jpg'>Swansea City Centre</a>",
-    "author": "Numero007",
-    "license": "CC BY-SA 4.0"
-}
+  {
+    name: "<a href='https://commons.wikimedia.org/wiki/File:Cawood_Castle.jpg'>Cawood Castle</a>",
+    author: "Mtaylor848",
+    license: "CC BY-SA 3.0",
+  },
+  {
+    name: "<a href='https://commons.wikimedia.org/wiki/File:Burton_in_Lonsdale_-_geograph.org.uk_-_127350.jpg'>Burton in Lonsdale Castle</a>",
+    author: "Gordon Hatton",
+    license: "CC BY-SA 2.0",
+  }
+
+
 
 
   // Add more attributions as needed
