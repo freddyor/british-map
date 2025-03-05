@@ -1,4 +1,227 @@
 export const buildings = [
+        {
+      "name": "Whitby Abbey",
+      "coords": [
+        54.48836708473829,
+        -0.6080535277845063
+      ],
+      "image": "https://upload.wikimedia.org/wikipedia/commons/b/bc/Whitby_Abbey_%28geograph_7249897%29.jpg",
+      "description": "AI-generated",
+      "occupation": "7th Century",
+      "tldr": "Iconic ruins perched on a cliff overlooking the North Sea, steeped in history and legend.",
+      "events": [
+        {
+          "date": "657",
+          "description": "Founded as a monastery by St. Hilda, playing a vital role in early Christianity. ✝️"
+        },
+        {
+          "date": "1539",
+          "description": "Dissolved by Henry VIII during the Dissolution of the Monasteries, leading to its decay. 💥"
+        },
+        {
+          "date": "Present",
+          "description": "Remains a striking landmark, inspiring artists and writers, including Bram Stoker. 🧛"
+        }
+      ]
+    },
+    {
+      "name": "Gisborough Priory",
+      "coords": [
+        54.53628444986801,
+        -1.047228284437669
+      ],
+      "image": "https://upload.wikimedia.org/wikipedia/commons/a/a0/Gisborough_priory_snow_portrait.jpg",
+      "description": "AI-generated",
+      "occupation": "12th Century",
+      "tldr": "Majestic ruins of an Augustinian priory, showcasing Gothic architecture and a peaceful atmosphere.",
+      "events": [
+        {
+          "date": "1119",
+          "description": "Established by Robert de Brus, Lord of Annandale, as a place of worship and learning. 🕊️"
+        },
+        {
+          "date": "1540",
+          "description": "Surrendered to Henry VIII during the Dissolution, resulting in its partial destruction. 🔥"
+        },
+        {
+          "date": "Present",
+          "description": "Continues to inspire visitors with its grandeur and historical significance. ✨"
+        }
+      ]
+    },
+    {
+      "name": "St Michael's Church, Barton-le-Street",
+      "coords": [
+        54.15882921368322,
+        -0.8969419364899545
+      ],
+      "image": "https://upload.wikimedia.org/wikipedia/commons/5/5b/Barton-le-Street_Church_%2897%29.JPG",
+      "description": "AI-generated",
+      "occupation": "11th Century",
+      "tldr": "Quaint village church with Norman origins, featuring notable architectural details and a serene setting.",
+      "events": [
+        {
+          "date": "1086",
+          "description": "Mentioned in the Domesday Book, suggesting its existence during the Norman era. 🏰"
+        },
+        {
+          "date": "1400s",
+          "description": "Features a beautifully carved Norman doorway and other original features. 🚪"
+        },
+        {
+          "date": "Present",
+          "description": "Serves as a cherished landmark and a testament to the village's enduring heritage. 🏘️"
+        }
+      ]
+    },
+    {
+      "name": "St Helen's Church, Bilton-in-Ainsty",
+      "coords": [
+        53.947381771658804,
+        -1.2761887126083449
+      ],
+      "image": "https://upload.wikimedia.org/wikipedia/commons/1/19/Bilton-in-Ainsty_St_Helen_from_S_GeoUK_7362785.jpg",
+      "description": "AI-generated",
+      "occupation": "12th Century",
+      "tldr": "Charming village church showcasing a blend of architectural styles and a peaceful ambiance.",
+      "events": [
+        {
+          "date": "1100s",
+          "description": "Features a Norman font and other architectural elements from its early years. 💧"
+        },
+        {
+          "date": "1870",
+          "description": "Underwent significant restoration, adding new elements while preserving its character. 🔨"
+        },
+        {
+          "date": "Present",
+          "description": "Continues to be a cherished landmark and an active place of worship. 🕊️"
+        }
+      ]
+    },
+    {
+      "name": "Ferry Bridge, Brotherton",
+      "coords": [
+        53.715855388966894,
+        -1.2693951826827865
+      ],
+      "image": "https://upload.wikimedia.org/wikipedia/commons/1/1e/Old_Great_North_Road_Bridge_at_Ferrybridge_-_geograph.org.uk_-_2767847.jpg",
+      "description": "AI-generated",
+      "occupation": "15th Century",
+      "tldr": "Historic bridge spanning the River Aire, offering a glimpse into the region's transportation history.",
+      "events": [
+        {
+          "date": "1400s",
+          "description": "Originally built to facilitate trade and travel across the River Aire. 🌉"
+        },
+        {
+          "date": "1800s",
+          "description": "Served as a vital link on the Great North Road, witnessing the passage of stagecoaches and travelers. 🚚"
+        },
+        {
+          "date": "Present",
+          "description": "Remains a significant landmark and a testament to the region's rich heritage. 🏞️"
+        }
+      ]
+    },
+    {
+      "name": "Croft Bridge",
+      "coords": [
+        54.48308058812638,
+        -1.554198026402393
+      ],
+      "image": "https://upload.wikimedia.org/wikipedia/commons/c/c7/Croft_North_Yorks_A167_The_Tees.jpg",
+      "description": "AI-generated",
+      "occupation": "17th Century",
+      "tldr": "Elegant stone bridge crossing the River Tees, offering scenic views and a glimpse into local history.",
+      "events": [
+        {
+          "date": "1600s",
+          "description": "Constructed to replace an earlier ford, improving transportation across the river. 🌉"
+        },
+        {
+          "date": "Various",
+          "description": "Features distinctive architectural elements and a picturesque setting, attracting visitors and artists. 🎨"
+        },
+        {
+          "date": "Present",
+          "description": "Continues to be a vital link and a charming landmark in the region. ✨"
+        }
+      ]
+    },
+    {
+      "name": "Castle Howard railway station",
+      "coords": [
+        54.09096769571802,
+        -0.8750271531262108
+      ],
+      "image": "https://upload.wikimedia.org/wikipedia/commons/3/3a/Castle_Howard_Station_Lineside_Elevation.jpg",
+      "description": "AI-generated",
+      "occupation": "19th Century",
+      "tldr": "Historic railway station serving the grand Castle Howard estate, showcasing Victorian architecture.",
+      "events": [
+        {
+          "date": "1845",
+          "description": "Opened as part of the York to Scarborough line, facilitating travel to and from the estate. 🚂"
+        },
+        {
+          "date": "Various",
+          "description": "Features elegant design elements and historical connections to the Howard family. 👨‍👩‍👧‍👦"
+        },
+        {
+          "date": "Present",
+          "description": "Preserved as a notable example of railway heritage and a gateway to Castle Howard. 🏰"
+        }
+      ]
+    },
+    {
+      "name": "Church of St Andrew, Kildwick",
+      "coords": [
+        53.90919763341379,
+        -1.9840890939691025
+      ],
+      "image": "https://upload.wikimedia.org/wikipedia/commons/2/2f/St_Andrew%27s_Church_-_geograph.org.uk_-_1322426.jpg",
+      "description": "AI-generated",
+      "occupation": "11th Century",
+      "tldr": "Village church with a rich history, boasting Norman architecture and a tranquil setting.",
+      "events": [
+        {
+          "date": "1086",
+          "description": "Mentioned in the Domesday Book, indicating its existence during Norman times. 🏰"
+        },
+        {
+          "date": "Various",
+          "description": "Features notable architectural details, including a Norman doorway and a 15th-century tower. 🧱"
+        },
+        {
+          "date": "Present",
+          "description": "Continues to be a cherished landmark and active place of worship. 🕊️"
+        }
+      ]
+    },
+    {
+      "name": "Stanwick Iron Age Fortifications",
+      "coords": [
+        54.50317103724487,
+        -1.7236362235950748
+      ],
+      "image": "https://upload.wikimedia.org/wikipedia/commons/7/74/Stanwick_Camp_NW_entrance.jpg",
+      "description": "AI-generated",
+      "occupation": "Iron Age",
+      "tldr": "Extensive Iron Age earthworks offering insights into ancient British settlements and defensive strategies.",
+      "events": [
+        {
+          "date": "2nd Century AD",
+          "description": "Served as a significant tribal center during the Iron Age, inhabited by the Brigantes. 🛡️"
+        },
+        {
+          "date": "74 AD",
+          "description": "Conquered by the Roman army, marking the end of its use as a major stronghold. ⚔️"
+        },
+        {
+          "date": "Present",
+          "description": "Remains a historical site, attracting archaeologists and visitors interested in ancient Britain. 🗿"
+        },
     {
       "name": "St Wilfrid's Church, Harrogate",
       "coords": [
