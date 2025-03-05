@@ -41,7 +41,7 @@ const imageAttributions = [
       "name": "<a href='https://commons.wikimedia.org/wiki/File:Scarborough_Castle_3.jpg'>Scarborough Castle</a>",
       "author": "Humphrey Bolton",
       "license": "CC BY-SA 2.0"
-    }
+    },
   {
     "name": "<a href='https://commons.wikimedia.org/wiki/File:Crayke_Castle,_Hambledon,_North_Yorkshire.jpg'>Crayke Castle</a>",
     "author": "Paul Buckingham",
