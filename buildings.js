@@ -1,4 +1,352 @@
 export const buildings = [
+    {
+      "name": "St Wilfrid's Church, Harrogate",
+      "coords": [
+        53.99524163747134,
+        -1.552950501405887
+      ],
+      "image": "https://upload.wikimedia.org/wikipedia/commons/5/5a/St_Wilfrid's_church%2C_Harrogate_-_geograph.org.uk_-_3221047.jpg",
+      "description": "AI-generated",
+      "occupation": "Early 20th Century",
+      "tldr": "Magnificent Gothic Revival church known for its towering spire and intricate details.",
+      "events": [
+        {
+          "date": "1914",
+          "description": "Construction was completed, showcasing exceptional craftsmanship and design 💡"
+        },
+        {
+          "date": "Various",
+          "description": "Features stunning stained glass windows and elaborate carvings 💠"
+        },
+        {
+          "date": "Present",
+          "description": "Remains a prominent landmark and an active place of worship in Harrogate 🕊️"
+        }
+      ]
+    },
+    {
+      "name": "Church of St Edmund King and Martyr, Kellington",
+      "coords": [
+        53.71462234540969,
+        -1.171252825600152
+      ],
+      "image": "https://upload.wikimedia.org/wikipedia/commons/8/8d/St.Edmund's_church_-_geograph.org.uk_-_1612360.jpg",
+      "description": "AI-generated",
+      "occupation": "12th Century",
+      "tldr": "Historic church showcasing a mix of architectural styles and connections to local history.",
+      "events": [
+        {
+          "date": "1100s",
+          "description": "Features a Norman doorway and other elements reflecting its early origins 🚪"
+        },
+        {
+          "date": "Various",
+          "description": "Associated with significant local families and historical events 👨‍👩‍👧‍👦"
+        },
+        {
+          "date": "Present",
+          "description": "Maintained as a cherished landmark and active place of worship 🕊️"
+        }
+      ]
+    },
+    {
+      "name": "St Mary's, Studley Royal",
+      "coords": [
+        54.11877218286602,
+        -1.580123595720593
+      ],
+      "image": "https://upload.wikimedia.org/wikipedia/commons/0/0a/St_Mary's_Church%2C_Studley_Royal_-_geograph.org.uk_-_1633547.jpg",
+      "description": "AI-generated",
+      "occupation": "19th Century",
+      "tldr": "Picturesque church located within the Studley Royal Park, showcasing Gothic Revival architecture.",
+      "events": [
+        {
+          "date": "1878",
+          "description": "Completed by architect William Burges, known for his distinctive style 💡"
+        },
+        {
+          "date": "Various",
+          "description": "Features elaborate decorations, including stained glass and intricate carvings ⚙️"
+        },
+        {
+          "date": "Present",
+          "description": "Forms a significant part of the Studley Royal World Heritage Site 🏞️"
+        }
+      ]
+    },
+    {
+      "name": "Church of Christ the Consoler",
+      "coords": [
+        54.10615620317868,
+        -1.4509917039393354
+      ],
+      "image": "https://upload.wikimedia.org/wikipedia/commons/c/c7/Church_of_Christ_the_Consoler%2C_Skelton-on-Ure%2C_North_Yorkshire%2C_UK.jpg",
+      "description": "AI-generated",
+      "occupation": "19th Century",
+      "tldr": "Elegant Victorian church built as a memorial, known for its stunning interior and serene atmosphere.",
+      "events": [
+        {
+          "date": "1876",
+          "description": "Built by the Countess de Grey in memory of her son 🕊️"
+        },
+        {
+          "date": "Various",
+          "description": "Features exquisite stained glass windows and detailed mosaics 💠"
+        },
+        {
+          "date": "Present",
+          "description": "Maintained as a cherished historical site and place of worship ✨"
+        }
+      ]
+    },
+    {
+      "name": "Green Howards Regimental Museum",
+      "coords": [
+        54.403127904878524,
+        -1.7375206607036846
+      ],
+      "image": "https://upload.wikimedia.org/wikipedia/commons/d/d8/150629_Wayne_exterior_web.jpg",
+      "description": "AI-generated",
+      "occupation": "20th Century",
+      "tldr": "Museum dedicated to preserving the history and heritage of the Green Howards, a distinguished British Army regiment.",
+      "events": [
+        {
+          "date": "Various",
+          "description": "Showcases artifacts, uniforms, medals, and stories from the regiment's history 🎖️"
+        },
+        {
+          "date": "Various",
+          "description": "Highlights key battles and campaigns in which the Green Howards participated ⚔️"
+        },
+        {
+          "date": "Present",
+          "description": "Serves as a tribute to the Green Howards and their contributions to the nation 💂"
+        }
+      ]
+    },
+    {
+      "name": "Georgian Theatre Royal",
+      "coords": [
+        54.404118196343454,
+        -1.7380073770473505
+      ],
+      "image": "https://upload.wikimedia.org/wikipedia/commons/0/09/Georgian_Theatre_Royal%2C_Richmond_6.jpg",
+      "description": "AI-generated",
+      "occupation": "18th Century",
+      "tldr": "One of the oldest working theatres in Britain, offering a glimpse into Georgian theatrical traditions.",
+      "events": [
+        {
+          "date": "1788",
+          "description": "Originally opened, showcasing Georgian architecture and design 🎭"
+        },
+        {
+          "date": "Various",
+          "description": "Has hosted numerous plays, performances, and notable actors over the centuries 💃"
+        },
+        {
+          "date": "Present",
+          "description": "Continues to stage productions, providing entertainment and cultural experiences 🎶"
+        }
+      ]
+    },
+    {
+      "name": "Chapel of St Mary Magdalen, Ripon",
+      "coords": [
+        54.1408952437146,
+        -1.5158694633997163
+      ],
+      "image": "https://upload.wikimedia.org/wikipedia/commons/0/04/St._Mary_Magdalen_Leper_Chapel_(geograph_3185658).jpg",
+      "description": "AI-generated",
+      "occupation": "12th Century",
+      "tldr": "Historic chapel with connections to a medieval leper hospital, showcasing early architecture and religious significance.",
+      "events": [
+        {
+          "date": "1100s",
+          "description": "Served as a chapel for a leper hospital, providing care for those afflicted with leprosy 🤕"
+        },
+        {
+          "date": "Various",
+          "description": "Features Norman architectural elements and historical artifacts 🗝️"
+        },
+        {
+          "date": "Present",
+          "description": "Preserved as a historical site and a testament to medieval healthcare practices ✨"
+        }
+      ]
+    },
+    {
+      "name": "Ripon Cathedral",
+      "coords": [
+        54.13500750491689,
+        -1.5203331086837992
+      ],
+      "image": "https://upload.wikimedia.org/wikipedia/commons/c/c6/Ripon_Cathedral_Exterior%2C_Nth_Yorkshire%2C_UK_-_Diliff.jpg",
+      "description": "AI-generated",
+      "occupation": "7th Century",
+      "tldr": "Impressive cathedral showcasing a blend of architectural styles and a rich religious heritage.",
+      "events": [
+        {
+          "date": "672",
+          "description": "Founded by St Wilfrid, playing a key role in the spread of Christianity ✝️"
+        },
+        {
+          "date": "Various",
+          "description": "Features notable architectural elements from different periods, including Gothic and Romanesque styles 🧱"
+        },
+        {
+          "date": "Present",
+          "description": "Continues to be a cherished landmark and an active place of worship 🕊️"
+        }
+      ]
+    },
+    {
+      "name": "St Martin-on-the-Hill, Scarborough",
+      "coords": [
+        54.27498325401988,
+        -0.4013658890383846
+      ],
+      "image": "https://upload.wikimedia.org/wikipedia/commons/2/29/St_Martins_-_geograph.org.uk_-_1836338.jpg",
+      "description": "AI-generated",
+      "occupation": "19th Century",
+      "tldr": "Distinctive church known for its elevated position and Arts and Crafts interior.",
+      "events": [
+        {
+          "date": "1862",
+          "description": "Completed by architect George Frederick Bodley 💡"
+        },
+        {
+          "date": "Various",
+          "description": "Features intricate stained glass windows and decorative elements ⚙️"
+        },
+        {
+          "date": "Present",
+          "description": "Maintained as a significant architectural landmark and place of worship ✨"
+        }
+      ]
+    },
+    {
+      "name": "St Mary's Church, Scarborough",
+      "coords": [
+        54.28656096650026,
+        -0.3937594329330289
+      ],
+      "image": "https://upload.wikimedia.org/wikipedia/commons/f/fe/St_Marys_-_geograph.org.uk_-_1328284.jpg",
+      "description": "AI-generated",
+      "occupation": "12th Century",
+      "tldr": "Seaside church with a rich history, panoramic views, and connections to Anne Brontë.",
+      "events": [
+        {
+          "date": "1100s",
+          "description": "Features a mix of architectural styles reflecting its long history 🧱"
+        },
+        {
+          "date": "1800s",
+          "description": "Anne Brontë is buried in the churchyard, attracting literary enthusiasts ✍️"
+        },
+        {
+          "date": "Present",
+          "description": "Remains a prominent landmark and active place of worship 🕊️"
+        }
+      ]
+    },
+    {
+      "name": "Stockeld Park",
+      "coords": [
+        53.94002443602041,
+        -1.4285637272874314
+      ],
+      "image": "https://upload.wikimedia.org/wikipedia/commons/e/e3/Stockeld_Park_House.jpg",
+      "description": "AI-generated",
+      "occupation": "18th Century",
+      "tldr": "Estate featuring historic buildings, gardens, and a popular adventure park.",
+      "events": [
+        {
+          "date": "18th Century",
+          "description": "Developed as a country estate with landscaped gardens 🌳"
+        },
+        {
+          "date": "Various",
+          "description": "Features notable architecture and historical connections to local families 👨‍👩‍👧‍👦"
+        },
+        {
+          "date": "Present",
+          "description": "Offers family-friendly activities, events, and attractions 🎡"
+        }
+      ]
+    },
+    {
+      "name": "Captain Cook Memorial Museum",
+      "coords": [
+        54.48663069648278,
+        -0.6118345438920766
+      ],
+      "image": "https://upload.wikimedia.org/wikipedia/commons/e/e4/Captain_Cooks_House_2013-09-05_10-02-00.jpg",
+      "description": "AI-generated",
+      "occupation": "17th Century",
+      "tldr": "Museum dedicated to the life and voyages of Captain James Cook, the famous explorer.",
+      "events": [
+        {
+          "date": "1600s",
+          "description": "Birthplace of Captain James Cook, showcasing period architecture 🏠"
+        },
+        {
+          "date": "Various",
+          "description": "Features artifacts, documents, and exhibits related to Cook's explorations 🗺️"
+        },
+        {
+          "date": "Present",
+          "description": "Serves as a tribute to Captain Cook's achievements and contributions ✨"
+        }
+      ]
+    },
+    {
+      "name": "St Mary's Church, Whitby",
+      "coords": [
+        54.488935485165,
+        -0.6099830455502046
+      ],
+      "image": "https://upload.wikimedia.org/wikipedia/commons/4/4b/St._Mary's_church%2C_Whitby_-_geograph.org.uk_-_1093039.jpg",
+      "description": "AI-generated",
+      "occupation": "12th Century",
+      "tldr": "Historic church known for its hilltop location, unique architecture, and connections to Whitby Abbey.",
+      "events": [
+        {
+          "date": "1100s",
+          "description": "Features notable architectural elements, including box pews and a three-decker pulpit ⛪"
+        },
+        {
+          "date": "Various",
+          "description": "Serves as a prominent landmark and an inspiration for literary works, including Bram Stoker's Dracula 🧛"
+        },
+        {
+          "date": "Present",
+          "description": "Remains a cherished historical site and active place of worship in Whitby 🕊️"
+        }
+      ]
+    },
+    {
+      "name": "Whitby 199 Steps",
+      "coords": [
+        54.48899563035499,
+        -0.6115394615945733
+      ],
+      "image": "https://upload.wikimedia.org/wikipedia/commons/6/69/Whitby_199_Steps.jpg",
+      "description": "AI-generated",
+      "occupation": "14th Century",
+      "tldr": "Historic steps leading from Whitby town to St Mary's Church and Whitby Abbey.",
+      "events": [
+        {
+          "date": "Various",
+          "description": "Offer a scenic route for visitors and pilgrims, connecting the town and the abbey 🚶"
+        },
+        {
+          "date": "Various",
+          "description": "Associated with local legends, folklore, and historical events ✨"
+        },
+        {
+          "date": "Present",
+          "description": "Serve as a popular attraction and a symbol of Whitby's unique character 💯"
+        },
   {
       "name": "St Andrew's Church, Aldborough",
       "coords": [
