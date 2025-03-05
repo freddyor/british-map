@@ -2,6 +2,7 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.1/firebase
 import { getFirestore, collection, addDoc, getDocs } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js";
 import { buildings } from './buildings.js';
 import { locations } from './locations.js';
+import { imageAttributions } from './imageAttributions.js';
 
 mapboxgl.accessToken = 'pk.eyJ1IjoiZnJlZGRvbWF0ZSIsImEiOiJjbTc1bm5zYnQwaG1mMmtxeDdteXNmeXZ0In0.PuDNORq4qExIJ_fErdO_8g';
 
@@ -383,6 +384,45 @@ window.onclick = function(event) {
         dropdownContent.style.display = 'none';
     }
 };
+// New code for the "Image Attributions" button
+const imageAttributionsButton = document.createElement('button');
+imageAttributionsButton.id = 'image-attributions-button';
+imageAttributionsButton.className = 'custom-button';
+imageAttributionsButton.textContent = 'Image Attributions';
+
+// Position the new button at the bottom of the page
+imageAttributionsButton.style.position = 'fixed';
+imageAttributionsButton.style.bottom = '20px'; // Adjust the bottom position as needed
+imageAttributionsButton.style.left = '50%';
+imageAttributionsButton.style.transform = 'translateX(-50%)';
+
+// Add the new button to the document body
+document.body.appendChild(imageAttributionsButton);
+
+// Function to display image attributions
+function displayImageAttributions() {
+  const attributionsContainer = document.createElement('div');
+  attributionsContainer.style.position = 'fixed';
+  attributionsContainer.style.bottom = '70px'; // Adjust the bottom position as needed
+  attributionsContainer.style.left = '50%';
+  attributionsContainer.style.transform = 'translateX(-50%)';
+  attributionsContainer.style.backgroundColor = 'white';
+  attributionsContainer.style.padding = '10px';
+  attributionsContainer.style.border = '1px solid #ccc';
+  attributionsContainer.style.borderRadius = '8px';
+  attributionsContainer.style.boxShadow = '0 6px 15px rgba(0, 0, 0, 0.3)';
+
+  imageAttributions.forEach(image => {
+    const imageElement = document.createElement('p');
+    imageElement.innerHTML = `<strong>${image.name}</strong> by ${image.author} - ${image.license} - <a href="${image.link}" target="_blank">Source</a>`;
+    attributionsContainer.appendChild(imageElement);
+  });
+
+  document.body.appendChild(attributionsContainer);
+}
+
+// Event listener for the new button
+imageAttributionsButton.addEventListener('click', displayImageAttributions);
 
 function loadMarkersFromFirebase() {
   getDocs(collection(db, 'markers')).then((querySnapshot) => {
