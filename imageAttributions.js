@@ -3,6 +3,46 @@
 // Array to store image attributions
 const imageAttributions = [
   {
+      "name": "<a href='https://www.geograph.org.uk/photo/1801357'>Mulgrave Castle</a>",
+      "author": "Peter Church",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "name": "Gatherley Castle",
+      "author": "The Northern Echo",
+      "license": "Copyrighted"
+    },
+    {
+      "name": "<a href='https://www.geograph.org.uk/photo/1948449'>Northallerton Castle</a>",
+      "author": "Bob Embleton",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "name": "<a href='https://commons.wikimedia.org/wiki/File:Kilton_Castle.jpg'>Kilton Castle</a>",
+      "author": "Mick Garratt",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "name": "<a href='https://www.flickr.com/photos/22767350@N08/5591956631'>Hornby Castle</a>",
+      "author": "Stephen George-Powell",
+      "license": "CC BY 2.0"
+    },
+    {
+      "name": "<a href='https://www.geograph.org.uk/photo/1318287'>Richmond Castle</a>",
+      "author": "Dylan Moore",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "name": "<a href='https://www.geograph.org.uk/photo/2697723'>Thirsk Castle</a>",
+      "author": "Bill Boaden",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "name": "<a href='https://commons.wikimedia.org/wiki/File:Scarborough_Castle_3.jpg'>Scarborough Castle</a>",
+      "author": "Humphrey Bolton",
+      "license": "CC BY-SA 2.0"
+    }
+  {
     "name": "<a href='https://commons.wikimedia.org/wiki/File:Crayke_Castle,_Hambledon,_North_Yorkshire.jpg'>Crayke Castle</a>",
     "author": "Paul Buckingham",
     "license": "Creative Commons Attribution Share-alike license 2.0"
