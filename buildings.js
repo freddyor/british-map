@@ -1,7 +1,7 @@
 export const buildings = [
   {
     "name": "Bolton Castle",
-    "coords": [-2.0936, 54.3222],
+    "coords": [-1.949768, 54.322063],
     "image": "https://upload.wikimedia.org/wikipedia/commons/1/16/Castle_Bolton_and_its_maze_-_geograph.org.uk_-_7335033.jpg",
     "description": "AI-generated",
     "occupation": "1399",
