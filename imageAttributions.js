@@ -2,6 +2,51 @@
 
 // Array to store image attributions
 const imageAttributions = [
+     {
+      "name": "<a href='https://www.geograph.org.uk/photo/7249897'>Whitby Abbey</a>",
+      "author": "Jeff Buck",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "name": "<a href='https://commons.wikimedia.org/wiki/File:Gisborough_priory_snow_portrait.jpg'>Gisborough Priory</a>",
+      "author": "Prioryman",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "name": "<a href='https://commons.wikimedia.org/wiki/File:Barton-le-Street_Church_(97).JPG'>St Michael's Church, Barton-le-Street</a>",
+      "author": "Storye book",
+      "license": "CC BY 4.0"
+    },
+    {
+      "name": "<a href='https://www.geograph.org.uk/photo/7362785'>St Helen's Church, Bilton-in-Ainsty</a>",
+      "author": "Alan Murray-Rust",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "name": "<a href='https://www.geograph.org.uk/photo/2767847'>Ferry Bridge, Brotherton</a>",
+      "author": "derek dye",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "name": "<a href='https://commons.wikimedia.org/wiki/File:Croft_North_Yorks_A167_The_Tees.jpg'>Croft Bridge</a>",
+      "author": "Dr Ivan Hall",
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "name": "<a href='https://commons.wikimedia.org/wiki/File:Castle_Howard_Station_Lineside_Elevation.jpg'>Castle Howard railway station</a>",
+      "author": "Steve Serowka",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "name": "<a href='https://www.geograph.org.uk/photo/1322426'>Church of St Andrew, Kildwick</a>",
+      "author": "Gordon Hatton",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "name": "<a href='https://commons.wikimedia.org/wiki/File:Stanwick_Camp_NW_entrance.jpg'>Stanwick Iron Age Fortifications</a>",
+      "author": "Lizzyp",
+      "license": "Public domain"
+    },
     {
       "name": "<a href='https://commons.wikimedia.org/wiki/File:St_Wilfrid%27s_church%2C_Harrogate_-_geograph.org.uk_-_3221047.jpg'>St Wilfrid's Church, Harrogate</a>",
       "author": "Dave Kelly",
