@@ -2,6 +2,71 @@
 
 // Array to store image attributions
 const imageAttributions = [
+   {
+      "name": "<a href='https://www.geograph.org.uk/photo/2391507'>St Andrew's Church, Aldborough</a>",
+      "author": "Paul Buckingham",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "name": "<a href='https://www.geograph.org.uk/photo/7529932'>Priest's House, Barden</a>",
+      "author": "Kevin Waterhouse",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "name": "<a href='https://www.geograph.org.uk/photo/13487'>Beamsley Hospital</a>",
+      "author": "John Tomlinson",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "name": "<a href='https://commons.wikimedia.org/wiki/File:Church_of_St_Gregory,_Bedale.jpg'>Church of St Gregory, Bedale</a>",
+      "author": "The joy of all things",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "name": "<a href='https://www.geograph.org.uk/photo/390100'>Monument to the 7th Earl of Carlisle</a>",
+      "author": "Stephen Horncastle",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "name": "<a href='https://www.geograph.org.uk/photo/23564'>Church of St Anne, Catterick</a>",
+      "author": "Alison Stamp",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "name": "<a href='https://commons.wikimedia.org/wiki/File:Church_of_St_Lambert_Burneston_from_the_south_west.jpg'>Church of St Lambert, Burneston</a>",
+      "author": "The joy of all things",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "name": "<a href='https://www.geograph.org.uk/photo/126751'>Coverham Abbey</a>",
+      "author": "Chris Heaton",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "name": "<a href='https://www.geograph.org.uk/photo/231035'>Church of St Peter, Croft-on-Tees</a>",
+      "author": "Bill Henderson",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "name": "<a href='https://commons.wikimedia.org/wiki/File:EasbyAbbey_Refectory.jpg'>Easby Abbey</a>",
+      "author": "JohnArmagh",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "name": "<a href='https://commons.wikimedia.org/wiki/File:VA23Oct10_101-crop-horz.jpg'>Easby Cross</a>",
+      "author": "Johnbod",
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "name": "<a href='https://commons.wikimedia.org/wiki/File:Filey,_St_Oswald%27s_church_(33968797576).jpg'>Church of St Oswald, Filey</a>",
+      "author": "Jules & Jenny from Lincoln, UK",
+      "license": "CC BY 2.0"
+    },
+    {
+      "name": "<a href='https://www.geograph.org.uk/photo/1370218'>Church of St Alkelda, Giggleswick</a>",
+      "author": "Andy Jamieson",
+      "license": "CC BY-SA 2.0"
+    },
   {
       "name": "<a href='https://www.geograph.org.uk/photo/1801357'>Mulgrave Castle</a>",
       "author": "Peter Church",
