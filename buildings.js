@@ -1,4 +1,327 @@
 export const buildings = [
+  {
+      "name": "St Andrew's Church, Aldborough",
+      "coords": [
+        -1.3807159916845204,
+        54.09216214298435
+      ],
+      "image": "https://upload.wikimedia.org/wikipedia/commons/1/1e/St_Andrews_Church%2C_Aldborough_-_geograph.org.uk_-_2391507.jpg",
+      "description": "AI-generated",
+      "occupation": "11th Century",
+      "tldr": "Historic church with Norman architecture and a peaceful atmosphere.",
+      "events": [
+        {
+          "date": "1086",
+          "description": "Mentioned in the Domesday Book, indicating its existence during Norman times 🏰"
+        },
+        {
+          "date": "1400s",
+          "description": "Features impressive medieval stained glass and intricate carvings 🙏"
+        },
+        {
+          "date": "Present",
+          "description": "Continues to be an active place of worship and a historical landmark 🕊️"
+        }
+      ]
+    },
+    {
+      "name": "Priest's House, Barden",
+      "coords": [
+        -1.9234715211239135,
+        54.01053984604537
+      ],
+      "image": "https://upload.wikimedia.org/wikipedia/commons/9/92/Priest%27s_House%2C_Barden_Tower.jpg",
+      "description": "AI-generated",
+      "occupation": "15th century",
+      "tldr": "Well-preserved medieval house with connections to Barden Tower and local history.",
+      "events": [
+        {
+          "date": "1400s",
+          "description": "Served as accommodation for priests serving at Barden Tower chapel ⛪"
+        },
+        {
+          "date": "1600s",
+          "description": "Associated with the Clifford family, prominent landowners in the area 👨‍👩‍👧‍👦"
+        },
+        {
+          "date": "Present",
+          "description": "Maintained as a historical site offering insights into medieval life 🗝️"
+        }
+      ]
+    },
+    {
+      "name": "Beamsley Hospital",
+      "coords": [
+        -1.8759039801040593,
+        53.97328025117076
+      ],
+      "image": "https://upload.wikimedia.org/wikipedia/commons/9/9f/Beamsley_Hospital_-_geograph.org.uk_-_13487.jpg",
+      "description": "AI-generated",
+      "occupation": "1593",
+      "tldr": "Historic almshouse founded by Margaret, Countess of Cumberland, to care for impoverished women.",
+      "events": [
+        {
+          "date": "1593",
+          "description": "Established by Margaret Russell, Countess of Cumberland, as a charitable institution 🕊️"
+        },
+        {
+          "date": "1700s",
+          "description": "Provided accommodation and support for elderly and needy women in the community 👵"
+        },
+        {
+          "date": "Present",
+          "description": "Remains a notable example of Elizabethan philanthropy and architecture 🏛️"
+        }
+      ]
+    },
+    {
+      "name": "Church of St Gregory, Bedale",
+      "coords": [
+        -1.593627104714211,
+        54.29100827942839
+      ],
+      "image": "https://upload.wikimedia.org/wikipedia/commons/a/a3/Church_of_St_Gregory%2C_Bedale.jpg",
+      "description": "AI-generated",
+      "occupation": "12th century",
+      "tldr": "Magnificent church boasting a mix of architectural styles and a rich historical legacy.",
+      "events": [
+        {
+          "date": "1100s",
+          "description": "Originally built, showcasing Norman architectural elements ⛪"
+        },
+        {
+          "date": "1300s",
+          "description": "Expanded and enhanced with Gothic features, reflecting changing styles ⚙️"
+        },
+        {
+          "date": "Present",
+          "description": "Continues to be a cherished landmark with impressive monuments and stained glass ✨"
+        }
+      ]
+    },
+    {
+      "name": "Monument to the 7th Earl of Carlisle",
+      "coords": [
+        -0.9087499291176366,
+        54.09470236301275
+      ],
+      "image": "https://upload.wikimedia.org/wikipedia/commons/a/af/Monument_-Earl_Of_Carlisle_-_geograph.org.uk_-_390100.jpg",
+      "description": "AI-generated",
+      "occupation": "1912",
+      "tldr": "Impressive monument dedicated to a prominent figure, showcasing artistic craftsmanship and historical significance.",
+      "events": [
+        {
+          "date": "1912",
+          "description": "Unveiled to honor the life and contributions of the 7th Earl of Carlisle 🎖️"
+        },
+        {
+          "date": "Various",
+          "description": "Features intricate sculptures and inscriptions reflecting his achievements and legacy ✍️"
+        },
+        {
+          "date": "Present",
+          "description": "Serves as a notable landmark and a testament to the Earl's impact on the region 🏆"
+        }
+      ]
+    },
+    {
+      "name": "Church of St Anne, Catterick",
+      "coords": [
+        -1.6319401977415076,
+        54.37673690985794
+      ],
+      "image": "https://upload.wikimedia.org/wikipedia/commons/8/81/Catterick_-geograph.org.uk_-_23564.jpg",
+      "description": "AI-generated",
+      "occupation": "15th century",
+      "tldr": "Historic church with Perpendicular Gothic architecture and notable connections to local families.",
+      "events": [
+        {
+          "date": "1400s",
+          "description": "Rebuilt in the Perpendicular style, showcasing elegant design 💡"
+        },
+        {
+          "date": "Various",
+          "description": "Features significant monuments and memorials to influential families in the area 👨‍👩‍👧‍👦"
+        },
+        {
+          "date": "Present",
+          "description": "Maintained as a cherished historical site and active place of worship 🕊️"
+        }
+      ]
+    },
+    {
+      "name": "Church of St Lambert, Burneston",
+      "coords": [
+        -1.5277065163755554,
+        54.25924276371394
+      ],
+      "image": "https://upload.wikimedia.org/wikipedia/commons/9/9a/Church_of_St_Lambert_Burneston_from_the_south_west.jpg",
+      "description": "AI-generated",
+      "occupation": "14th century",
+      "tldr": "Picturesque church displaying a blend of architectural styles and a long history in the village of Burneston.",
+      "events": [
+        {
+          "date": "1300s",
+          "description": "Features notable examples of medieval architecture and craftsmanship 🔨"
+        },
+        {
+          "date": "Various",
+          "description": "Contains historical artifacts and monuments providing insights into local heritage 📜"
+        },
+        {
+          "date": "Present",
+          "description": "Continues to be a beloved community landmark and place of worship 🏘️"
+        }
+      ]
+    },
+    {
+      "name": "Coverham Abbey",
+      "coords": [
+        -1.8406308807208738,
+        54.272371468617656
+      ],
+      "image": "https://upload.wikimedia.org/wikipedia/commons/3/3a/Coverham_Abbey.jpg",
+      "description": "AI-generated",
+      "occupation": "12th century",
+      "tldr": "Remains of a former Premonstratensian abbey, showcasing historical ruins and tranquil surroundings.",
+      "events": [
+        {
+          "date": "1100s",
+          "description": "Founded as a Premonstratensian abbey, playing a role in local religious life 🕊️"
+        },
+        {
+          "date": "1500s",
+          "description": "Dissolved during the Dissolution of the Monasteries, leading to its ruin 💥"
+        },
+        {
+          "date": "Present",
+          "description": "Remains a scenic and historical site attracting visitors and historians 🏞️"
+        }
+      ]
+    },
+    {
+      "name": "Church of St Peter, Croft-on-Tees",
+      "coords": [
+        -1.5557596756442273,
+        54.48314942878913
+      ],
+      "image": "https://upload.wikimedia.org/wikipedia/commons/8/89/Croft_on_Tees%2C_St_Peter%27s_Church_-_geograph.org.uk_-_231035.jpg",
+      "description": "AI-generated",
+      "occupation": "11th century",
+      "tldr": "Historic church renowned for its Norman architecture, Leaning Tower, and connections to Lewis Carroll.",
+      "events": [
+        {
+          "date": "1000s",
+          "description": "Features notable Norman architectural elements, including a leaning tower 🗼"
+        },
+        {
+          "date": "1800s",
+          "description": "Associated with Lewis Carroll, who spent part of his childhood in the village 👨‍🏫"
+        },
+        {
+          "date": "Present",
+          "description": "Continues to be a cherished historical site and active place of worship ✨"
+        }
+      ]
+    },
+    {
+      "name": "Easby Abbey",
+      "coords": [
+        -1.7168924651080304,
+        54.397627260423135
+      ],
+      "image": "https://upload.wikimedia.org/wikipedia/commons/7/73/EasbyAbbey_Refectory.jpg",
+      "description": "AI-generated",
+      "occupation": "12th century",
+      "tldr": "Picturesque ruins of a Premonstratensian abbey set in a tranquil location near the River Swale.",
+      "events": [
+        {
+          "date": "1100s",
+          "description": "Founded as a Premonstratensian abbey, known for its religious significance 🙏"
+        },
+        {
+          "date": "1500s",
+          "description": "Dissolved during the Dissolution of the Monasteries under Henry VIII 💥"
+        },
+        {
+          "date": "Present",
+          "description": "Remains a preserved historical site and popular tourist attraction 🗺️"
+        }
+      ]
+    },
+    {
+      "name": "Easby Cross",
+      "coords": [
+        -1.7157454023624121,
+        54.397634558651724
+      ],
+      "image": "https://upload.wikimedia.org/wikipedia/commons/e/e4/VA23Oct10_101-crop-horz.jpg",
+      "description": "AI-generated",
+      "occupation": "9th century",
+      "tldr": "Remarkable Anglo-Saxon cross showcasing intricate carvings and historical importance.",
+      "events": [
+        {
+          "date": "800s",
+          "description": "Carved during the Anglo-Saxon period, reflecting Christian artistry ✝️"
+        },
+        {
+          "date": "Various",
+          "description": "Features detailed scenes from the Bible and notable cultural symbols 🛡️"
+        },
+        {
+          "date": "Present",
+          "description": "Preserved as a significant artifact, offering insights into early Christian heritage 💡"
+        }
+      ]
+    },
+    {
+      "name": "Church of St Oswald, Filey",
+      "coords": [
+        -0.2875763293836368,
+        54.21319972747185
+      ],
+      "image": "https://upload.wikimedia.org/wikipedia/commons/d/d5/Filey%2C_St_Oswald%27s_church_(33968797576).jpg",
+      "description": "AI-generated",
+      "occupation": "12th century",
+      "tldr": "Seaside church with Norman origins and a prominent position overlooking Filey Bay.",
+      "events": [
+        {
+          "date": "1100s",
+          "description": "Originally built during the Norman period, featuring unique architecture 🧱"
+        },
+        {
+          "date": "Various",
+          "description": "Serves as a notable landmark for sailors and visitors, offering stunning views 💯"
+        },
+        {
+          "date": "Present",
+          "description": "Remains a cherished historical site and active place of worship in Filey 🕊️"
+        }
+      ]
+    },
+    {
+      "name": "Church of St Alkelda, Giggleswick",
+      "coords": [
+        -2.2895835144155927,
+        54.072339270176556
+      ],
+      "image": "https://upload.wikimedia.org/wikipedia/commons/6/6a/Church_in_Giggleswick_-_geograph.org.uk_-_1370218.jpg",
+      "description": "AI-generated",
+      "occupation": "15th century",
+      "tldr": "Picturesque church known for its connections to Giggleswick School and attractive surroundings.",
+      "events": [
+        {
+          "date": "1400s",
+          "description": "Features notable architectural elements and historical connections 📐"
+        },
+        {
+          "date": "Various",
+          "description": "Serves as a prominent landmark for the village and nearby Giggleswick School 🏫"
+        },
+        {
+          "date": "Present",
+          "description": "Continues to be a cherished community landmark and place of worship 🕊️"
+        },
  {
       "name": "Mulgrave Castle",
       "coords": [-0.705605134373655, 54.49347867054149],
