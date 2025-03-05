@@ -399,6 +399,8 @@ imageAttributionsButton.style.transform = 'translateX(-50%)';
 // Add the new button to the document body
 document.body.appendChild(imageAttributionsButton);
 
+document.getElementById('image-attributions-button').addEventListener('click', displayImageAttributions);
+
 // Function to display image attributions
 function displayImageAttributions() {
   const attributionsContainer = document.createElement('div');
