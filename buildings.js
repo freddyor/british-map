@@ -1,5 +1,71 @@
 export const buildings = [
   {
+    "name": "Bolton Castle",
+    "coords": [-2.0936, 54.3222],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/1/16/Castle_Bolton_and_its_maze_-_geograph.org.uk_-_7335033.jpg",
+    "description": "AI-generated",
+    "occupation": "1399",
+    "tldr": "Medieval castle in Wensleydale, Yorkshire Dales",
+    "events": [
+      {
+        "date": "1568",
+        "description": "Mary, Queen of Scots was held prisoner here for six months 👑"
+      },
+      {
+        "date": "Civil War",
+        "description": "Withstood a Parliamentarian siege for three years ⚔️"
+      },
+      {
+        "date": "Present",
+        "description": "Features a beautiful maze and gardens open to visitors 🌿"
+      }
+    ]
+  },
+  {
+    "name": "Cawood Castle",
+    "coords": [-1.1308, 53.8308],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/1/19/Cawood_Castle.jpg",
+    "description": "AI-generated",
+    "occupation": "1374",
+    "tldr": "Medieval fortified palace of the Archbishops of York",
+    "events": [
+      {
+        "date": "1466",
+        "description": "King Edward IV was entertained here by Archbishop George Neville 👑"
+      },
+      {
+        "date": "1530",
+        "description": "Cardinal Wolsey was arrested here for treason against Henry VIII ⚖️"
+      },
+      {
+        "date": "1646",
+        "description": "Largely demolished during the English Civil War, leaving only the gatehouse 🏰"
+      }
+    ]
+  },
+  {
+    "name": "Burton in Lonsdale Castle",
+    "coords": [-2.5076, 54.1268],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/3/3f/Burton_in_Lonsdale_-_geograph.org.uk_-_127350.jpg",
+    "description": "AI-generated",
+    "occupation": "12th century",
+    "tldr": "Motte-and-bailey castle in North Yorkshire",
+    "events": [
+      {
+        "date": "1130s",
+        "description": "Built to guard the western approach to Craven 🛡️"
+      },
+      {
+        "date": "14th century",
+        "description": "Fell into disuse and was abandoned 🏚️"
+      },
+      {
+        "date": "Present",
+        "description": "Only earthworks and foundations remain, offering a glimpse into medieval fortifications 🏔️"
+      }
+    ]
+  },
+  {
     name: "York Minster",
     coords: [-1.0831787084457822, 53.96223749484881],
     image: "images/yorkminster.png",
