@@ -569,7 +569,9 @@ export const buildings = [
         {
           "date": "Present",
           "description": "Serve as a popular attraction and a symbol of Whitby's unique character 💯"
-        },
+        }
+              ]
+    },
   {
       "name": "St Andrew's Church, Aldborough",
       "coords": [
