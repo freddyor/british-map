@@ -23,7 +23,7 @@ export const buildings = [
   },
   {
     "name": "Cawood Castle",
-    "coords": [-1.1308, 53.8308],
+    "coords": [-1.129403, 53.832338],
     "image": "https://upload.wikimedia.org/wikipedia/commons/1/19/Cawood_Castle.jpg",
     "description": "AI-generated",
     "occupation": "1374",
@@ -45,7 +45,7 @@ export const buildings = [
   },
   {
     "name": "Burton in Lonsdale Castle",
-    "coords": [-2.5076, 54.1268],
+    "coords": [-2.537022, 54.143761],
     "image": "https://upload.wikimedia.org/wikipedia/commons/3/3f/Burton_in_Lonsdale_-_geograph.org.uk_-_127350.jpg",
     "description": "AI-generated",
     "occupation": "12th century",
