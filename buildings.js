@@ -4580,7 +4580,5 @@ export const buildings = [
         "description": "Despite public outcry, Thirkleby Hall was demolished, with over 200 tons of architectural elements sold at auction for £25,000 (£550,000 today) 🏚️"
       }
     ]
-  },
-
-
+  }
 ];
