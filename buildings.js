@@ -892,7 +892,9 @@ export const buildings = [
         {
           "date": "Present",
           "description": "Continues to be a cherished community landmark and place of worship 🕊️"
-        },
+        }
+              ]
+              },
  {
       "name": "Mulgrave Castle",
       "coords": [-0.705605134373655, 54.49347867054149],
