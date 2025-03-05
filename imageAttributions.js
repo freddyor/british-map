@@ -2,6 +2,76 @@
 
 // Array to store image attributions
 const imageAttributions = [
+    {
+      "name": "<a href='https://commons.wikimedia.org/wiki/File:St_Wilfrid%27s_church%2C_Harrogate_-_geograph.org.uk_-_3221047.jpg'>St Wilfrid's Church, Harrogate</a>",
+      "author": "Dave Kelly",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "name": "<a href='https://www.geograph.org.uk/photo/1612360'>Church of St Edmund King and Martyr, Kellington</a>",
+      "author": "Richard Croft",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "name": "<a href='https://www.geograph.org.uk/photo/1633547'>St Mary's, Studley Royal</a>",
+      "author": "Mark Anderson",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "name": "<a href='https://commons.wikimedia.org/wiki/File:Church_of_Christ_the_Consoler%2C_Skelton-on-Ure%2C_North_Yorkshire%2C_UK.jpg'>Church of Christ the Consoler</a>",
+      "author": "KJP1",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "name": "<a href='https://commons.wikimedia.org/wiki/File:150629_Wayne_exterior_web.jpg'>Green Howards Regimental Museum</a>",
+      "author": "GHMuseum",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "name": "<a href='https://commons.wikimedia.org/wiki/File:Georgian_Theatre_Royal%2C_Richmond_6.jpg'>Georgian Theatre Royal</a>",
+      "author": "Nick Moyes",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "name": "<a href='https://www.geograph.org.uk/photo/3185658'>Chapel of St Mary Magdalen, Ripon</a>",
+      "author": "Peter Goodman",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "name": "<a href='https://commons.wikimedia.org/wiki/File:Ripon_Cathedral_Exterior%2C_Nth_Yorkshire%2C_UK_-_Diliff.jpg'>Ripon Cathedral</a>",
+      "author": "Diliff",
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "name": "<a href='https://www.geograph.org.uk/photo/1836338'>St Martin-on-the-Hill, Scarborough</a>",
+      "author": "Graham Burnett",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "name": "<a href='https://www.geograph.org.uk/photo/1328284'>St Mary's Church, Scarborough</a>",
+      "author": "Keith Evans",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "name": "<a href='https://commons.wikimedia.org/wiki/File:Stockeld_Park_House.jpg'>Stockeld Park</a>",
+      "author": "GPBG1204",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "name": "<a href='https://commons.wikimedia.org/wiki/File:Captain_Cooks_House_2013-09-05_10-02-00.jpg'>Captain Cook Memorial Museum</a>",
+      "author": "aude",
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "name": "<a href='https://www.geograph.org.uk/photo/1093039'>St Mary's Church, Whitby</a>",
+      "author": "Tom Richardson",
+      "license": "CC BY-SA 2.0"
+    },
+     {
+      "name": "<a href='https://commons.wikimedia.org/wiki/File:Whitby_199_Steps.jpg'>Whitby 199 steps</a>",
+      "author": "RevDave",
+      "license": "CC BY-SA 3.0"
+    },
    {
       "name": "<a href='https://www.geograph.org.uk/photo/2391507'>St Andrew's Church, Aldborough</a>",
       "author": "Paul Buckingham",
