@@ -415,6 +415,10 @@ function displayImageAttributions() {
   attributionsContainer.style.boxShadow = '0 6px 15px rgba(0, 0, 0, 0.3)';
   attributionsContainer.style.fontSize = '12px';
   attributionsContainer.style.lineHeight = '1.05';
+  attributionsContainer.style.zIndex = '10000'; // Ensure it goes above everything else
+
+  attributionsContainer.style.maxHeight = '200px'; // Set a max height
+  attributionsContainer.style.overflowY = 'scroll'; // Make it scrollable
 
   imageAttributions.forEach(image => {
     const imageElement = document.createElement('p');
@@ -426,7 +430,7 @@ function displayImageAttributions() {
 }
 
 // Event listener for the new button
-imageAttributionsButton.addEventListener('click', displayImageAttributions);
+document.getElementById('image-attributions-button').addEventListener('click', displayImageAttributions);
 
 function loadMarkersFromFirebase() {
   getDocs(collection(db, 'markers')).then((querySnapshot) => {
