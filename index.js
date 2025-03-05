@@ -418,7 +418,7 @@ function displayImageAttributions() {
 
   imageAttributions.forEach(image => {
     const imageElement = document.createElement('p');
-    imageElement.innerHTML = `<strong>${image.name}</strong> by ${image.author} - ${image.license} - <a href="${image.link}" target="_blank">Source</a>`;
+    imageElement.innerHTML = `<strong>${image.name}</strong> by ${image.author} - ${image.license}`;
     attributionsContainer.appendChild(imageElement);
   });
 
