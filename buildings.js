@@ -174,7 +174,7 @@ export const buildings = [
           "description": "Scarborough was shelled by German warships, causing significant damage. 💥"
         }
       ]
-    }
+    },
 {
 "name": "Crayke Castle",
 "coords": [-1.146082, 54.128961],
