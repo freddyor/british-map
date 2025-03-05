@@ -8,12 +8,13 @@ const imageAttributions = [
     license: "License Type 1",
     link: "https://example.com/image1"
   },
-  {
-    name: "Image Title 2",
-    author: "Author Name 2",
-    license: "License Type 2",
-    link: "https://example.com/image2"
-  },
+{
+    "name": "<a href='https://www.geograph.org.uk/photo/7335033'>Bolton Castle</a>",
+    "author": "Marathon",
+    "license": "CC BY-SA 2.0",
+    "link": ""
+},
+
   // Add more attributions as needed
 ];
 
