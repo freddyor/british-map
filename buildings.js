@@ -1,4 +1,180 @@
 export const buildings = [
+ {
+      "name": "Mulgrave Castle",
+      "coords": [-0.705605134373655, 54.49347867054149],
+      "image": "https://upload.wikimedia.org/wikipedia/commons/c/c5/Mulgrave_Castle_-_geograph.org.uk_-_1801357.jpg",
+      "description": "AI-generated",
+      "occupation": "11th century",
+      "tldr": "Coastal ruins steeped in myth, legend, and tales of hidden treasures. 🏴‍☠️",
+      "events": [
+        {
+          "date": "1100s",
+          "description": "The original Norman fortress was built by Nigel Fossard. 🏰"
+        },
+        {
+          "date": "1600s",
+          "description": "Once owned by the notorious Captain William Postgate, a legendary smuggler. 💰"
+        },
+        {
+          "date": "Various",
+          "description": "Local lore speaks of a hidden hoard of Viking gold buried within its walls. 🪙"
+        }
+      ]
+    },
+    {
+      "name": "Gatherley Castle",
+      "coords": [-1.6611070861238988, 54.410699629209155],
+      "image": "https://www.thenorthernecho.co.uk/resources/images/1373164/?type=responsive-gallery-fullscreen",
+      "description": "AI-generated",
+      "occupation": "14th century",
+      "tldr": "A medieval ruin with ties to powerful families and forgotten stories. 📜",
+      "events": [
+        {
+          "date": "1300s",
+          "description": "The castle was held by the powerful Neville family, who played a key role in northern England. 🛡️"
+        },
+        {
+          "date": "1400s",
+          "description": "Local legends whisper of a hidden tunnel leading from the castle to nearby Easby Abbey. 🤫"
+        },
+        {
+          "date": "Various",
+          "description": "It is said a treasure hoard lies buried within the castle grounds. 💰"
+        }
+      ]
+    },
+    {
+      "name": "Northallerton Castle",
+      "coords": [-1.4392447285401357, 54.3401525049527],
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Castle_Hills_-_geograph.org.uk_-_1948449.jpg/512px-Castle_Hills_-_geograph.org.uk_-_1948449.jpg",
+      "description": "AI-generated",
+      "occupation": "11th century",
+      "tldr": "The site of a former Norman stronghold, now a grassy knoll with a violent past. ⚔️",
+      "events": [
+        {
+          "date": "1100s",
+          "description": "The fortress was so formidable that it was only taken by King David of Scotland after a long siege. 🏴󠁧󠁢󠁳󠁣󠁴󠁿"
+        },
+        {
+          "date": "1177",
+          "description": "King Henry II ordered the castle to be destroyed. 💥"
+        },
+        {
+          "date": "Various",
+          "description": "Local tales claim the ghosts of Scottish warriors still haunt the Castle Hills. 👻"
+        }
+      ]
+    },
+    {
+      "name": "Kilton Castle",
+      "coords": [-0.9148991267318884, 54.548632146500296],
+      "image": "https://upload.wikimedia.org/wikipedia/commons/8/8b/Kilton_Castle.jpg",
+      "description": "AI-generated",
+      "occupation": "12th century",
+      "tldr": "A weathered ruin with a tragic love story and rumored haunting. 💔",
+      "events": [
+        {
+          "date": "1200s",
+          "description": "It was built by the de Kilton family. 🛡️"
+        },
+        {
+          "date": "1300s",
+          "description": "Legend tells of a de Thweng who leaped to his death from the tower. 👻"
+        },
+        {
+          "date": "Various",
+          "description": "Locals say the Grey Lady haunts the ruins, forever searching for her lost love. 👻"
+        }
+      ]
+    },
+    {
+      "name": "Hornby Castle",
+      "coords": [-1.6546681672988293, 54.33865840145426],
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Hornby_castle_2932_large.jpg/Hornby_castle_2932_large.jpg",
+      "description": "AI-generated",
+      "occupation": "14th century",
+      "tldr": "A scenic castle with ties to royalty, rebellions, and hidden chambers. 👑",
+      "events": [
+        {
+          "date": "1400s",
+          "description": "Richard III used the castle as a strategic base during his reign. 👑"
+        },
+        {
+          "date": "1500s",
+          "description": "The castle played a role in the Pilgrimage of Grace. 🙏"
+        },
+        {
+          "date": "Various",
+          "description": "Rumors persist of secret passages and hidden chambers. 🗝️"
+        }
+      ]
+    },
+    {
+      "name": "Richmond Castle",
+      "coords": [-1.7374366930073237, 54.402114090006144],
+      "image": "https://upload.wikimedia.org/wikipedia/commons/3/39/Bailey_and_keep%2C_Richmond_Castle_-_geograph.org.uk_-_1318287.jpg",
+      "description": "AI-generated",
+      "occupation": "11th century",
+      "tldr": "A formidable Norman fortress with tales of dungeons, a ghostly drummer boy, and royal prisoners. 🏰",
+      "events": [
+        {
+          "date": "1100s",
+          "description": "Alan Rufus, a companion of William the Conqueror, began construction. 🛡️"
+        },
+        {
+          "date": "Various",
+          "description": "Legend tells of a drummer boy who vanished while exploring a tunnel beneath the castle. 🥁"
+        },
+        {
+          "date": "WW1",
+          "description": "It was used as a prison for conscientious objectors. 🕊️"
+        }
+      ]
+    },
+    {
+      "name": "Thirsk Castle",
+      "coords": [-1.3456772826525614, 54.23205992632353],
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/Castle_Croft%2C_Thirsk_-_geograph.org.uk_-_2697723.jpg/512px-Castle_Croft%2C_Thirsk_-_geograph.org.uk_-_2697723.jpg",
+      "description": "AI-generated",
+      "occupation": "12th century",
+      "tldr": "A lost castle, now a peaceful park with whispers of battles and forgotten lords. 🌳",
+      "events": [
+        {
+          "date": "1100s",
+          "description": "Built by the Mowbray family. 🛡️"
+        },
+        {
+          "date": "1175",
+          "description": "Destroyed following a rebellion against King Henry II. 🔥"
+        },
+        {
+          "date": "Present",
+          "description": "Now known as Castle Croft, a quiet area with little to suggest its violent past. 🏞️"
+        }
+      ]
+    },
+    {
+      "name": "Scarborough Castle",
+      "coords": [-0.389475750790599, 54.287602513699674],
+      "image": "https://upload.wikimedia.org/wikipedia/commons/c/c8/Scarborough_Castle_3.jpg",
+      "description": "AI-generated",
+      "occupation": "12th century",
+      "tldr": "A coastal fortress with a history of Viking invasions, royal intrigue, and wartime sieges. 🏰",
+      "events": [
+        {
+          "date": "966",
+          "description": "A Viking army led by Harald Hardrada landed. ⚔️"
+        },
+        {
+          "date": "1645",
+          "description": "The castle was bombarded during the English Civil War. 💣"
+        },
+        {
+          "date": "WW1",
+          "description": "Scarborough was shelled by German warships, causing significant damage. 💥"
+        }
+      ]
+    }
 {
 "name": "Crayke Castle",
 "coords": [-1.146082, 54.128961],
