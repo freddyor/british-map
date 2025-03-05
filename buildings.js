@@ -221,7 +221,9 @@ export const buildings = [
         {
           "date": "Present",
           "description": "Remains a historical site, attracting archaeologists and visitors interested in ancient Britain. 🗿"
-        },
+        }
+                   ]
+    },
     {
       "name": "St Wilfrid's Church, Harrogate",
       "coords": [
