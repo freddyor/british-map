@@ -9,11 +9,28 @@ const imageAttributions = [
     link: "https://example.com/image1"
   },
 {
-    "name": "<a href='https://www.geograph.org.uk/photo/7335033'>Bolton Castle</a>",
-    "author": "Marathon",
-    "license": "CC BY-SA 2.0",
-    "link": ""
-},
+    "name": "Swansea City Centre",
+    "coords": [-3.9436, 51.6210],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/2/27/P.3._Swansea_City_Centre_2012.jpg",
+    "description": "AI-generated",
+    "occupation": "busy",
+    "tldr": "Bustling city center in Swansea, Wales, known for its shops, attractions, and waterfront.",
+    "events": [
+      {
+        "date": "Various",
+        "description": "A hub of activity, hosting events, markets, and cultural activities 🎭"
+      },
+      {
+        "date": "Modern",
+        "description": "Features modern architecture and a mix of historic and contemporary landmarks 🧱"
+      },
+      {
+        "date": "Present",
+        "description": "Remains a vibrant center for commerce, culture, and community in Swansea 📜"
+      }
+    ]
+}
+
 
   // Add more attributions as needed
 ];
