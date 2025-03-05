@@ -405,7 +405,7 @@ document.getElementById('image-attributions-button').addEventListener('click', d
 function displayImageAttributions() {
   const attributionsContainer = document.createElement('div');
   attributionsContainer.style.position = 'fixed';
-  attributionsContainer.style.bottom = '70px'; // Adjust the bottom position as needed
+  attributionsContainer.style.bottom = '70px';
   attributionsContainer.style.left = '50%';
   attributionsContainer.style.transform = 'translateX(-50%)';
   attributionsContainer.style.backgroundColor = 'white';
@@ -413,6 +413,8 @@ function displayImageAttributions() {
   attributionsContainer.style.border = '1px solid #ccc';
   attributionsContainer.style.borderRadius = '8px';
   attributionsContainer.style.boxShadow = '0 6px 15px rgba(0, 0, 0, 0.3)';
+  attributionsContainer.style.fontSize = '12px';
+  attributionsContainer.style.lineHeight = '1.05';
 
   imageAttributions.forEach(image => {
     const imageElement = document.createElement('p');
