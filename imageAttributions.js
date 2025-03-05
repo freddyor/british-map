@@ -13,3 +13,5 @@ const imageAttributions = [
   },
   // Add more attributions as needed
 ];
+
+export { imageAttributions, displayImageAttributions };
