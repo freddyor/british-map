@@ -401,36 +401,48 @@ document.body.appendChild(imageAttributionsButton);
 
 document.getElementById('image-attributions-button').addEventListener('click', displayImageAttributions);
 
-// Function to display image attributions
-function displayImageAttributions() {
-  const attributionsContainer = document.createElement('div');
-  attributionsContainer.style.position = 'fixed';
-  attributionsContainer.style.bottom = '70px';
-  attributionsContainer.style.left = '50%';
-  attributionsContainer.style.transform = 'translateX(-50%)';
-  attributionsContainer.style.backgroundColor = 'white';
-  attributionsContainer.style.padding = '10px';
-  attributionsContainer.style.border = '1px solid #ccc';
-  attributionsContainer.style.borderRadius = '8px';
-  attributionsContainer.style.boxShadow = '0 6px 15px rgba(0, 0, 0, 0.3)';
-  attributionsContainer.style.fontSize = '12px';
-  attributionsContainer.style.lineHeight = '1.05';
-  attributionsContainer.style.zIndex = '10000'; // Ensure it goes above everything else
+// Function to display or hide image attributions
+function toggleImageAttributions() {
+  let attributionsContainer = document.getElementById('attributions-container');
+  
+  if (attributionsContainer) {
+    // If the container exists, toggle its visibility
+    if (attributionsContainer.style.display === 'none' || attributionsContainer.style.display === '') {
+      attributionsContainer.style.display = 'block';
+    } else {
+      attributionsContainer.style.display = 'none';
+    }
+  } else {
+    // If the container does not exist, create it
+    attributionsContainer = document.createElement('div');
+    attributionsContainer.id = 'attributions-container';
+    attributionsContainer.style.position = 'fixed';
+    attributionsContainer.style.bottom = '70px';
+    attributionsContainer.style.left = '50%';
+    attributionsContainer.style.transform = 'translateX(-50%)';
+    attributionsContainer.style.backgroundColor = 'white';
+    attributionsContainer.style.padding = '10px';
+    attributionsContainer.style.border = '1px solid #ccc';
+    attributionsContainer.style.borderRadius = '8px';
+    attributionsContainer.style.boxShadow = '0 6px 15px rgba(0, 0, 0, 0.3)';
+    attributionsContainer.style.fontSize = '12px';
+    attributionsContainer.style.lineHeight = '1.05';
+    attributionsContainer.style.zIndex = '10000'; // Ensure it goes above everything else
+    attributionsContainer.style.maxHeight = '200px'; // Set a max height
+    attributionsContainer.style.overflowY = 'scroll'; // Make it scrollable
 
-  attributionsContainer.style.maxHeight = '200px'; // Set a max height
-  attributionsContainer.style.overflowY = 'scroll'; // Make it scrollable
+    imageAttributions.forEach(image => {
+      const imageElement = document.createElement('p');
+      imageElement.innerHTML = `<strong>${image.name}</strong> by ${image.author} - ${image.license}`;
+      attributionsContainer.appendChild(imageElement);
+    });
 
-  imageAttributions.forEach(image => {
-    const imageElement = document.createElement('p');
-    imageElement.innerHTML = `<strong>${image.name}</strong> by ${image.author} - ${image.license}`;
-    attributionsContainer.appendChild(imageElement);
-  });
-
-  document.body.appendChild(attributionsContainer);
+    document.body.appendChild(attributionsContainer);
+  }
 }
 
 // Event listener for the new button
-document.getElementById('image-attributions-button').addEventListener('click', displayImageAttributions);
+document.getElementById('image-attributions-button').addEventListener('click', toggleImageAttributions);
 
 function loadMarkersFromFirebase() {
   getDocs(collection(db, 'markers')).then((querySnapshot) => {
