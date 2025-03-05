@@ -1,4 +1,400 @@
 export const buildings = [
+{
+"name": "Crayke Castle",
+"coords": [-1.146082, 54.128961],
+"image": "https://upload.wikimedia.org/wikipedia/commons/7/7a/Crayke_Castle%2C_Hambledon%2C_North_Yorkshire.jpg",
+"description": "AI-generated",
+"occupation": "Likely late 15th century",
+"tldr": "A historic castle in Crayke, North Yorkshire, featuring a 15th-century tower.",
+"events": [
+{
+"date": "Medieval Times",
+"description": "Crayke Castle was originally a residence for the Bishops of Durham. 🏰"
+},
+{
+"date": "1400s",
+"description": "The existing tower likely dates to the late 15th century. 🛡️"
+},
+{
+"date": "Present Day",
+"description": "The castle is now a private residence, a testament to its enduring history. 🏘️"
+}
+]
+},
+{
+"name": "Danby Castle",
+"coords": [-0.8954381195740476, 54.45559489965804],
+"image": "https://upload.wikimedia.org/wikipedia/commons/4/41/Danby_Castle_ruins_from_the_north_-_geograph.org.uk_-_2606955.jpg",
+"description": "AI-generated",
+"occupation": "Early 14th century",
+"tldr": "Ruined castle in Danby, North Yorkshire, once home to the Latimer family.",
+"events": [
+{
+"date": "1318",
+"description": "Construction began around 1318 by the Latimer family. ⚔️"
+},
+{
+"date": "Royal Visit",
+"description": "King James I stayed at Danby Castle in 1617. 👑"
+},
+{
+"date": "Present Day",
+"description": "The castle is now a romantic ruin with stunning views of the surrounding moors. 🏞️"
+}
+]
+},
+{
+"name": "Helmsley Castle",
+"coords": [-1.063908, 54.245034],
+"image": "https://upload.wikimedia.org/wikipedia/commons/5/54/Helmsley_Castle_English_Heritage.jpg",
+"description": "AI-generated",
+"occupation": "12th century",
+"tldr": "Historic castle with a rich past, from medieval stronghold to elegant mansion.",
+"events": [
+{
+"date": "Medieval Times",
+"description": "Originally built in the 12th century, it saw action in the English Civil War. 🛡️"
+},
+{
+"date": "Civil War",
+"description": "The castle was besieged during the Civil War and eventually slighted. ⚔️"
+},
+{
+"date": "Later Years",
+"description": "Transformed into a Tudor mansion before falling into ruin. 🏘️"
+}
+]
+},
+{
+"name": "Barden Tower",
+"coords": [-1.923925, 54.010763],
+"image": "https://upload.wikimedia.org/wikipedia/commons/0/03/Barden_Tower_-_8279342970.jpg",
+"description": "AI-generated",
+"occupation": "15th century",
+"tldr": "A historic hunting lodge, later a residence, with ties to the Clifford family.",
+"events": [
+{
+"date": "Early History",
+"description": "Originally a hunting lodge for the Clifford family. 🌲"
+},
+{
+"date": "Later Years",
+"description": "Became a residence and was later restored. 🏘️"
+},
+{
+"date": "Modern Times",
+"description": "Now a popular spot for visitors exploring the Yorkshire Dales. 🚶‍♀️"
+}
+]
+},
+{
+"name": "John O'Gaunt's Castle",
+"coords": [-1.666624, 54.986466],
+"image": "https://upload.wikimedia.org/wikipedia/commons/2/23/John_O'_Gaunt's_Castle_-_geograph.org.uk_-_16486.jpg",
+"description": "AI-generated",
+"occupation": "14th century",
+"tldr": "Ruined medieval tower house associated with John of Gaunt.",
+"events": [
+{
+"date": "14th Century",
+"description": "Built in the 14th century, named after John of Gaunt. 👑"
+},
+{
+"date": "Decline",
+"description": "Fell into ruin over the centuries. 🏚️"
+},
+{
+"date": "Present Day",
+"description": "A Scheduled Ancient Monument attracting history enthusiasts. 📜"
+}
+]
+},
+{
+"name": "Kirby Knowle Castle",
+"coords": [-1.296530, 54.280976],
+"image": "https://upload.wikimedia.org/wikipedia/commons/0/0f/Newbygill_-_geograph.org.uk_-_5669905.jpg",
+"description": "AI-generated",
+"occupation": "15th century",
+"tldr": "Castle with a mix of architectural styles, with a history going back to the 15th century.",
+"events": [
+{
+"date": "15th Century",
+"description": "Parts of the castle date back to the 15th century. 🛡️"
+},
+{
+"date": "Later Years",
+"description": "Features a blend of architectural styles due to various renovations. 🏘️"
+},
+{
+"date": "Modern Era",
+"description": "Remains a significant landmark in the area. 🏞️"
+}
+]
+},
+{
+"name": "Knaresborough Castle",
+"coords": [-1.469407, 54.007217],
+"image": "https://upload.wikimedia.org/wikipedia/commons/0/03/Knaresborough_Castle_ruins.jpg",
+"description": "AI-generated",
+"occupation": "12th century",
+"tldr": "Royal castle with a bloody history, featuring a King's Tower and dungeons.",
+"events": [
+{
+"date": "Medieval Times",
+"description": "Built by the Normans and later strengthened by King John. 🛡️"
+},
+{
+"date": "Murder Most Foul",
+"description": "Site of a royal murder in 1331 - Edward II was imprisoned here. 💀"
+},
+{
+"date": "Civil War",
+"description": "Slighted after the Civil War, leaving dramatic ruins. ⚔️"
+}
+]
+},
+{
+"name": "Malton Castle",
+"coords": [-0.791939, 54.134689],
+"image": "https://upload.wikimedia.org/wikipedia/commons/d/d8/The_Old_Lodge%2C_Malton_(geograph_3239729).jpg",
+"description": "AI-generated",
+"occupation": "11th century",
+"tldr": "Originally a Norman castle, it has a rich and varied history.",
+"events": [
+{
+"date": "Norman Times",
+"description": "Founded in 1069 by Robert de Brus as a wooden motte-and-bailey. 🪵"
+},
+{
+"date": "Civil War",
+"description": "Besieged by Parliamentarians in 1644. ⚔️"
+},
+{
+"date": "Demolished",
+"description": "Mostly demolished in 1674, now with only fragments remaining. 🧱"
+}
+]
+},
+{
+"name": "Middleham Castle",
+"coords": [-1.806893, 54.284103],
+"image": "https://upload.wikimedia.org/wikipedia/commons/1/16/MiddlehamCJW.jpg",
+"description": "AI-generated",
+"occupation": "12th century",
+"tldr": "Powerful fortress with connections to Richard III and the Neville family.",
+"events": [
+{
+"date": "Royal Connections",
+"description": "Richard III spent much of his childhood at Middleham Castle. 👑"
+},
+{
+"date": "Key Events",
+"description": "Played a pivotal role during the Wars of the Roses. 🌹"
+},
+{
+"date": "Decline",
+"description": "Declined after Richard III's death at Bosworth Field. ⚔️"
+}
+]
+},
+{
+"name": "Pickering Castle",
+"coords": [-0.7758014077692693, 54.250109234521766],
+"image": "https://upload.wikimedia.org/wikipedia/commons/0/00/PickeringCastle.jpg",
+"description": "AI-generated",
+"occupation": "11th Century",
+"tldr": "A well-preserved motte-and-bailey castle with royal connections.",
+"events": [
+{
+"date": "Early History",
+"description": "Built by William the Conqueror in 1069. 🛡️"
+},
+{
+"date": "Royal Ownership",
+"description": "Regularly visited by English monarchs over the centuries. 👑"
+},
+{
+"date": "Modern Days",
+"description": "Managed by English Heritage and open to the public. 🏞️"
+}
+]
+},
+{
+"name": "Ravensworth Castle",
+"coords": [-1.7821029931473407, 54.464484777947966],
+"image": "https://upload.wikimedia.org/wikipedia/commons/f/fb/Ravensworth_Castle_-_geograph.org.uk_-_2380905.jpg",
+"description": "AI-generated",
+"occupation": "14th Century",
+"tldr": "A moated castle with connections to the FitzHugh family.",
+"events": [
+{
+"date": "14th Century",
+"description": "The original gatehouse tower was built around 1391. 🛡️"
+},
+{
+"date": "FitzHugh Family",
+"description": "Has historical ties to the FitzHugh family. 👨‍👩‍👧‍👦"
+},
+{
+"date": "Current Status",
+"description": "Mainly ruins are left, though with a picturesque view. 🏘️"
+}
+]
+},
+{
+"name": "Sheriff Hutton Castle",
+"coords": [-1.0051793012057677, 54.08789230400581],
+"image": "https://upload.wikimedia.org/wikipedia/commons/c/cd/Sheriff_hutton_castle.jpg",
+"description": "AI-generated",
+"occupation": "Late 14th Century",
+"tldr": "A royal castle that once housed noble prisoners.",
+"events": [
+{
+"date": "Royal Residence",
+"description": "Built in the late 14th century for John, Lord Neville. 👑"
+},
+{
+"date": "Prison of State",
+"description": "Held high-profile prisoners, including Scottish royals. ⚔️"
+},
+{
+"date": "Ruin",
+"description": "In ruins since the 17th century after being slighted by Parliament. 🏚️"
+}
+]
+},
+{
+"name": "Skipton Castle",
+"coords": [-2.015477730644644, 53.96346514173935],
+"image": "https://upload.wikimedia.org/wikipedia/commons/4/42/Skipton_Castle_main_gate%2C_2007.jpg",
+"description": "AI-generated",
+"occupation": "11th Century",
+"tldr": "A well-preserved medieval castle with a rich history, including Civil War sieges.",
+"events": [
+{
+"date": "Norman Times",
+"description": "Originally built as a wooden motte-and-bailey castle after the Norman Conquest. 🛡️"
+},
+{
+"date": "Civil War",
+"description": "The only Royalist stronghold in the North to withstand a three-year siege. ⚔️"
+},
+{
+"date": "Present Day",
+"description": "One of the most complete and well-preserved medieval castles in England. 🏞️"
+}
+]
+},
+{
+"name": "Spofforth Castle",
+"coords": [-1.452659, 53.954731],
+"image": "https://upload.wikimedia.org/wikipedia/commons/b/b4/Spofforth_Castle_Undercroft.jpg",
+"description": "AI-generated",
+"occupation": "13th Century",
+"tldr": "Home to the Percy family, with an unusual history of rock-cut chambers.",
+"events": [
+{
+"date": "Medieval Times",
+"description": "Home to the Percy family, powerful Earls of Northumberland. 👨‍👩‍👧‍👦"
+},
+{
+"date": "Rock Cut",
+"description": "Features unusual chambers cut into the rock. ⛏️"
+},
+{
+"date": "Decline",
+"description": "Mostly ruined after the English Civil War. 🏚️"
+}
+]
+},
+{
+"name": "Topcliffe Castle",
+"coords": [-1.373071, 54.169583],
+"image": "https://upload.wikimedia.org/wikipedia/commons/b/be/Topcliffe_Motte%2C_Maiden_Bower._-_geograph.org.uk_-_316741.jpg",
+"description": "AI-generated",
+"occupation": "11th century",
+"tldr": "A Norman motte-and-bailey castle with a long and varied history.",
+"events": [
+{
+"date": "Norman Times",
+"description": "Built by William de Percy in the 11th century. 🛡️"
+},
+{
+"date": "Historical Significance",
+"description": "Site of a major baronial revolt against William the Conqueror. ⚔️"
+},
+{
+"date": "Present Day",
+"description": "Earthworks are all that remain of this once-important castle. 🏞️"
+}
+]
+},
+{
+"name": "Upsall Castle",
+"coords": [-1.304957, 54.276646],
+"image": "https://upload.wikimedia.org/wikipedia/commons/c/cb/Upsall_Castle.jpg",
+"description": "AI-generated",
+"occupation": "14th century",
+"tldr": "A fortified manor house with a long and interesting history.",
+"events": [
+{
+"date": "Medieval Times",
+"description": "Fortified manor house dating back to the 14th century. 🛡️"
+},
+{
+"date": "Later Years",
+"description": "Passed through various families, including the Scropes and Lascelles. 👨‍👩‍👧‍👦"
+},
+{
+"date": "Current Status",
+"description": "Remains a private residence. 🏘️"
+}
+]
+},
+{
+"name": "Whorlton Castle",
+"coords": [-1.260071, 54.415449],
+"image": "https://upload.wikimedia.org/wikipedia/commons/4/46/Whorlton_Castle_gatehouse_exterior.jpg",
+"description": "AI-generated",
+"occupation": "12th century",
+"tldr": "Ruined castle with a striking gatehouse and connections to the Meynell family.",
+"events": [
+{
+"date": "Medieval Times",
+"description": "Founded in the 12th century by the Meynell family. 🛡️"
+},
+{
+"date": "Gatehouse",
+"description": "Known for its ornate gatehouse, a later addition. 🧱"
+},
+{
+"date": "Present Day",
+"description": "The ruins stand as a testament to its rich history. 🏞️"
+}
+]
+},
+{
+"name": "Wilton Castle",
+"coords": [-1.102693, 54.568836],
+"image": "https://upload.wikimedia.org/wikipedia/commons/0/0e/Wilton_Castle%2C_Teesside_(geograph_2264814).jpg",
+"description": "AI-generated",
+"occupation": "12th century",
+"tldr": "A restored medieval castle with a turbulent past.",
+"events": [
+{
+"date": "Early History",
+"description": "Originally built in the 12th century. 🛡️"
+},
+{
+"date": "English Civil War",
+"description": "Destroyed during the English Civil War. ⚔️"
+},
+{
+"date": "Restored",
+"description": "Restored in the 19th century as a private residence. 🏘️"
+}
+]
+},
   {
     "name": "Bolton Castle",
     "coords": [-1.949768, 54.322063],
