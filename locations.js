@@ -1,4 +1,329 @@
 export const locations = [
+  {
+    coords: [-1.2604372816631368, 51.753086643212356],
+    name: "Noel Godfrey Chavasse",
+    occupation: "1884-1917",
+    description: "Born and raised here, Chavasse was a British athlete, doctor, and decorated WWI hero.",
+    image: "https://upload.wikimedia.org/wikipedia/commons/3/32/N.G._Chavasse%2C_VC.jpg",
+    tldr: "One of only three people to win the Victoria Cross twice, a medical officer who repeatedly saved lives under fire.",
+    events: [
+      { date: "🥇1908", description: "Represented Great Britain in the 400m at the 1908 Olympics." },
+      { date: "⚔️1916-1917", description: "Won both VCs during the Somme and Passchendaele, rescuing wounded soldiers from no man's land." },
+      { date: "❤️ Posthumous", description: "Remembered for exceptional bravery and selflessness; streets and memorials bear his name." }
+    ]
+  },
+  {
+    coords: [-1.2443551690070092, 51.749594769550995],
+    name: "Noel Godfrey Chavasse",
+    occupation: "1884-1917",
+    description: "Educated here, excelling in both academics and athletics before his military service.",
+    image: "https://upload.wikimedia.org/wikipedia/commons/3/32/N.G._Chavasse%2C_VC.jpg",
+    tldr: "A selfless doctor and decorated war hero, known for his unparalleled bravery in rescuing wounded soldiers.",
+    events: [
+      { date: "📚 Early Life", description: "Excelled in sports and academics from a young age" },
+      { date: "🏅 1916", description: "First Victoria Cross awarded after rescuing several men over the course of the battle, under heavy fire." },
+      { date: "✝️ 1917", description: "Fatally wounded during the Third Battle of Ypres, continuing to treat others despite his injuries." }
+    ]
+  },
+  {
+    coords: [-2.9631344426975295, 53.40297295657727],
+    name: "Noel Godfrey Chavasse",
+    occupation: "1884-1917",
+    description: "Lived here, developing his medical skills before his deployment to the front lines of WWI.",
+    image: "https://upload.wikimedia.org/wikipedia/commons/3/32/N.G._Chavasse%2C_VC.jpg",
+    tldr: "Double Victoria Cross recipient, renowned for his extraordinary courage and devotion to his fellow soldiers.",
+    events: [
+      { date: "⚕️ Pre-War", description: "Practiced medicine, setting the stage for his life-saving actions during the war." },
+      { date: "🎖️ 1917", description: "Awarded a bar to his Victoria Cross for further acts of bravery at Passchendaele." },
+      { date: "🌍 Legacy", description: "A symbol of courage, his actions continue to inspire medical professionals and soldiers alike." }
+    ]
+  },
+  {
+    coords: [-2.980795962421403, 53.391250207529254],
+    name: "Noel Godfrey Chavasse",
+    occupation: "1884-1917",
+    description: "Worked at the old hospital before the war, gaining experience that would save countless lives.",
+    image: "https://upload.wikimedia.org/wikipedia/commons/3/32/N.G._Chavasse%2C_VC.jpg",
+    tldr: "A doctor who risked his life repeatedly to rescue wounded soldiers, earning him two Victoria Crosses.",
+    events: [
+      { date: "🏥 Early Career", description: "Honed his medical skills, preparing him for the horrors of war." },
+      { date: "⚔️ The Somme", description: "First VC: braved intense fire to rescue wounded men, some only yards from enemy lines." },
+      { date: "🎗️ Remembrance", description: "His name is synonymous with valor; remembered annually on Remembrance Day." }
+    ]
+  },
+  {
+    coords: [-0.4697354588638576, 51.75159687223975],
+    name: "Arthur Martin-Leake",
+    occupation: "1874-1953",
+    description: "Worked here before the war, setting the foundation for his distinguished medical career.",
+    image: "https://upload.wikimedia.org/wikipedia/commons/c/c0/Arthur_Martin-Leake.jpg",
+    tldr: "A British Army surgeon and twice recipient of the Victoria Cross for actions in the Second Boer War and World War I.",
+    events: [
+      { date: "🇿🇦 1902", description: "First VC awarded during the Second Boer War for tending to the wounded under heavy fire." },
+      { date: "🇫🇷 1914", description: "Second VC earned in World War I for rescuing wounded near Zonnebeke." },
+      { date: "🎖️ Legacy", description: "One of only three men to receive the Victoria Cross twice." }
+    ]
+  },
+  {
+    coords: [-0.02119268059353761, 51.85018640727069],
+    name: "Arthur Martin-Leake",
+    occupation: "1874-1953",
+    description: "Buried here, a testament to his extraordinary service and bravery.",
+    image: "https://upload.wikimedia.org/wikipedia/commons/c/c0/Arthur_Martin-Leake.jpg",
+    tldr: "Twice a Victoria Cross recipient, his grave is a place of pilgrimage for those honoring military surgeons.",
+    events: [
+      { date: "🏥 Early Career", description: "Studied medicine and surgery, preparing him for his future roles." },
+      { date: "⚔️ Boer War", description: "Showed extraordinary courage by rescuing wounded soldiers while under fire." },
+      { date: "🌍 Global Impact", description: "Served in multiple conflicts, leaving a lasting impact on military medicine." }
+    ]
+  },
+  {
+    coords: [-1.058147960209859, 51.532118051050375],
+    name: "Adrian de Wiart",
+    occupation: "1880-1963",
+    description: "Received part of his education here, shaping the indomitable spirit he'd become known for.",
+    image: "https://upload.wikimedia.org/wikipedia/commons/f/f4/Lieutenant_Colonel_Adrian_Carton_de_Wiart.jpg",
+    tldr: "A legendary British officer who fought in multiple wars, losing an eye and a hand, yet never lost his courage.",
+    events: [
+      { date: "🤕 Early Injuries", description: "Lost an eye and hand in early WWI battles, yet continued to serve." },
+      { date: "🌍 Multi-War Service", description: "Fought in the Boer War, WWI, and WWII; a true soldier." },
+      { date: "🔥 Unyielding Spirit", description: "Known for his resilience, once throwing his amputated fingers at an enemy." }
+    ]
+  },
+  {
+    coords: [-1.2583762250198256, 51.754848315125386],
+    name: "Adrian de Wiart",
+    occupation: "1880-1963",
+    description: "Educated here, developing the strategic mind of a future military leader.",
+    image: "https://upload.wikimedia.org/wikipedia/commons/f/f4/Lieutenant_Colonel_Adrian_Carton_de_Wiart.jpg",
+    tldr: "An officer of almost mythical status, known for his disregard for personal safety and unwavering dedication.",
+    events: [
+      { date: "🎖️ Distinguished Service", description: "Served in the Boer War, WWI, and WWII, earning numerous honors." },
+      { date: "💥 Early WWI", description: "Lost his left hand and eye but insisted on remaining in active service." },
+      { date: "⚔️ 'Unkillable Soldier'", description: "His bravery became legendary, earning him the nickname 'the unkillable soldier'." }
+    ]
+  },
+  {
+    coords: [-2.457465908401554, 51.69024496747106],
+    name: "Edward Jenner",
+    occupation: "1749-1823",
+    description: "Born here, the birthplace of the man who would eradicate smallpox.",
+    image: "https://upload.wikimedia.org/wikipedia/commons/b/be/Edward_Jenner.jpg",
+    tldr: "The 'father of immunology' whose work led to the eradication of smallpox, saving millions of lives.",
+    events: [
+      { date: "🐄 1796", description: "Inoculated James Phipps with cowpox, proving immunity to smallpox." },
+      { date: "💉 Vaccination", description: "His work led to the development of vaccination, a cornerstone of modern medicine." },
+      { date: "🌍 Eradication", description: "Smallpox was declared eradicated in 1980, a direct result of Jenner's pioneering work." }
+    ]
+  },
+  {
+    coords: [-2.4575038095918185, 51.689147891770816],
+    name: "Edward Jenner",
+    occupation: "1749-1823",
+    description: "Buried here, the final resting place of a medical revolutionary.",
+    image: "https://upload.wikimedia.org/wikipedia/commons/b/be/Edward_Jenner.jpg",
+    tldr: "Pioneer of vaccination; his discovery led to the global eradication of smallpox, saving countless lives.",
+    events: [
+      { date: "🔬 Early Studies", description: "Observed that milkmaids who contracted cowpox were immune to smallpox." },
+      { date: "🥇 Recognition", description: "Received numerous awards and honors for his groundbreaking work." },
+      { date: "⚕️ Legacy", description: "His methods revolutionized medicine and public health worldwide." }
+    ]
+  },
+  {
+    coords: [-2.3642787057515218, 51.63144845459492],
+    name: "Edward Jenner",
+    occupation: "1749-1823",
+    description: "Educated here, receiving the foundational knowledge that fueled his medical breakthroughs.",
+    image: "https://upload.wikimedia.org/wikipedia/commons/b/be/Edward_Jenner.jpg",
+    tldr: "The father of immunology whose work on vaccination led to the eradication of smallpox.",
+    events: [
+      { date: "📚 Medical Studies", description: "Studied medicine and surgery, laying the groundwork for his future discoveries." },
+      { date: "🌍 Global Impact", description: "His vaccination methods were adopted worldwide, saving millions from smallpox." },
+      { date: "🌟 Pioneer", description: "Revolutionized preventive medicine, paving the way for future vaccines." }
+    ]
+  },
+  {
+    coords: [-0.17541439436131354, 51.426647413250876],
+    name: "Edward Jenner",
+    occupation: "1749-1823",
+    description: "Gained valuable experience here, shaping his future as a medical innovator.",
+    image: "https://upload.wikimedia.org/wikipedia/commons/b/be/Edward_Jenner.jpg",
+    tldr: "Famous for developing the smallpox vaccine, his work revolutionized medicine and saved countless lives.",
+    events: [
+      { date: "🧪 Early Experiments", description: "Experimented with cowpox inoculation to prevent smallpox." },
+      { date: "🌍 Global Eradication", description: "His work was crucial in the eventual eradication of smallpox worldwide." },
+      { date: "❤️ Humanitarian", description: "Dedicated his life to fighting disease and improving public health." }
+    ]
+  },
+  {
+    coords: [-2.4578073881204885, 51.6911582340952],
+    name: "Edward Jenner",
+    occupation: "1749-1823",
+    description: "Served as a Grand Master at this masonic lodge, blending science with community leadership.",
+    image: "https://upload.wikimedia.org/wikipedia/commons/b/be/Edward_Jenner.jpg",
+    tldr: "The physician and scientist who invented vaccination, a Grand Master of the Royal Berkeley Lodge.",
+    events: [
+      { date: "🤝 Community Leader", description: "Active in local community affairs, including his role in the Royal Berkeley Lodge." },
+      { date: "🥇 Medical Breakthrough", description: "His pioneering work in immunology transformed public health." },
+      { date: "🌟 Legacy", description: "Honored worldwide for his contribution to eradicating smallpox." }
+    ]
+  },
+  {
+    coords: [-2.7638120814940077, 52.712795417640486],
+    name: "Charles Darwin",
+    occupation: "1809-1882",
+    description: "Born here, the birthplace of one of history's most influential scientists.",
+    image: "https://upload.wikimedia.org/wikipedia/commons/2/2e/Charles_Darwin_seated_crop.jpg",
+    tldr: "Developed the theory of evolution by natural selection, revolutionizing biology.",
+    events: [
+      { date: "🚢 1831-1836", description: "Sailed on the HMS Beagle, collecting crucial data for his theory." },
+      { date: "🐒 1859", description: "Published 'On the Origin of Species,' introducing his theory of evolution." },
+      { date: "🌍 Global Impact", description: "His theories transformed our understanding of life on Earth." }
+    ]
+  },
+  {
+    coords: [-2.75894055918624, 52.70726970814989],
+    name: "Charles Darwin",
+    occupation: "1809-1882",
+    description: "Baptized here, marking the beginning of a life that would change the world.",
+    image: "https://upload.wikimedia.org/wikipedia/commons/2/2e/Charles_Darwin_seated_crop.jpg",
+    tldr: "Naturalist and geologist known for his theory of evolution by natural selection.",
+    events: [
+      { date: "👶 Early Life", description: "Baptized at St Chad's Church in Shrewsbury." },
+      { date: "📖 Published Work", description: "'On the Origin of Species' is one of the most influential books ever written." },
+      { date: "🌟 Influence", description: "Revolutionized the fields of biology and paleontology." }
+    ]
+  },
+  {
+    coords: [-2.764669222959498, 52.70220294318279],
+    name: "Charles Darwin",
+    occupation: "1809-1882",
+    description: "Boarded at this school, receiving his early education.",
+    image: "https://upload.wikimedia.org/wikipedia/commons/2/2e/Charles_Darwin_seated_crop.jpg",
+    tldr: "Theorist of evolution, his boarding school years shaped his intellectual curiosity.",
+    events: [
+      { date: "🏫 School Days", description: "Received early education at Shrewsbury School." },
+      { date: "🌍 HMS Beagle", description: "Voyage provided critical evidence for his theory of evolution." },
+      { date: "📚 Legacy", description: "His work continues to influence science and culture." }
+    ]
+  },
+  {
+    coords: [-3.19018243316771, 55.94540312079876],
+    name: "Charles Darwin",
+    occupation: "1809-1882",
+    description: "Studied at the Medical School here, gaining a foundation in science.",
+    image: "https://upload.wikimedia.org/wikipedia/commons/2/2e/Charles_Darwin_seated_crop.jpg",
+    tldr: "A key figure in the history of science; his time here influenced his later work on evolution.",
+    events: [
+      { date: "🩺 Medical Studies", description: "Studied medicine at the University of Edinburgh." },
+      { date: "🔬 Scientific Discovery", description: "Developed the theory of natural selection." },
+      { date: "🌟 Influence", description: "His ideas revolutionized biology and our understanding of the natural world." }
+    ]
+  },
+  {
+    coords: [0.12206626303718016, 52.20525925313825],
+    name: "Charles Darwin",
+    occupation: "1809-1882",
+    description: "Educated here at Christ’s College, laying the intellectual groundwork for his theories.",
+    image: "https://upload.wikimedia.org/wikipedia/commons/2/2e/Charles_Darwin_seated_crop.jpg",
+    tldr: "Developed the theory of evolution by natural selection, while studying at Christ's College.",
+    events: [
+      { date: "🎓 University Life", description: "Attended Christ's College, Cambridge, shifting from medicine to natural history." },
+      { date: "🚢 HMS Beagle Voyage", description: "Voyage around the world provided key observations for his theory." },
+      { date: "📖 Published Works", description: "'On the Origin of Species' fundamentally changed biology." }
+    ]
+  },
+  {
+    coords: [-0.6305691278393909, 52.80924529421453],
+    name: "Isaac Newton",
+    occupation: "1643-1727",
+    description: "Born here; legend says he discovered gravity under a tree outside the house.",
+    image: "https://upload.wikimedia.org/wikipedia/commons/f/f7/Portrait_of_Sir_Isaac_Newton%2C_1689_(brightened).jpg",
+    tldr: "Discovered laws of motion and universal gravitation; a key figure in the scientific revolution.",
+    events: [
+      { date: "🍎 1666", description: "Developed his theory of gravity after observing an apple fall from a tree." },
+      { date: "📜 Principia", description: "Published 'Principia Mathematica,' laying the foundations for classical mechanics." },
+      { date: "💡 Influence", description: "His laws of motion and gravity shaped physics and astronomy." }
+    ]
+  },
+  {
+    coords: [-0.6418007469622374, 52.91595104331355],
+    name: "Isaac Newton",
+    occupation: "1643-1727",
+    description: "Received education here, laying foundation for scientific achievements.",
+    image: "https://upload.wikimedia.org/wikipedia/commons/f/f7/Portrait_of_Sir_Isaac_Newton%2C_1689_(brightened).jpg",
+    tldr: "Developed laws of motion, universal gravitation, and calculus; a revolutionary scientist.",
+    events: [
+      { date: "🧪 Scientific Revolution", description: "Played a crucial role in the scientific revolution." },
+      { date: "🍎 Gravity", description: "Famous for his apple-inspired theory of gravity." },
+      { date: "📚 Principia", description: "Authored 'Principia Mathematica,' a landmark work in physics." }
+    ]
+  },
+  {
+    coords: [0.1176223480463924, 52.207307928908016],
+    name: "Isaac Newton",
+    occupation: "1643-1727",
+    description: "Educated here, where he developed groundbreaking theories.",
+    image: "https://upload.wikimedia.org/wikipedia/commons/f/f7/Portrait_of_Sir_Isaac_Newton%2C_1689_(brightened).jpg",
+    tldr: "Invented calculus, formulated laws of motion, and explained gravity at Trinity College.",
+    events: [
+      { date: "🔬 Scientific Revolution", description: "Transformed physics and mathematics." },
+      { date: "🍎 Apple Incident", description: "Inspired by an apple falling to develop the law of gravity." },
+      { date: "📚 Principia", description: "Established classical mechanics and calculus in his book." }
+    ]
+  },
+  {
+    coords: [-3.9827065457349864, 56.16600294717159],
+    name: "David Stirling",
+    occupation: "1915-1990",
+    description: "Born here, the birthplace of the founder of the SAS.",
+    image: "https://upload.wikimedia.org/wikipedia/commons/e/ea/The_Special_Air_Service_(sas)_in_North_Africa_during_the_Second_World_War_E21340.jpg",
+    tldr: "Founded the Special Air Service (SAS) during WWII, revolutionizing special operations.",
+    events: [
+      { date: "⚔️ 1941", description: "Founded the SAS to conduct raids behind enemy lines in North Africa." },
+      { date: "🎖️ Military Innovations", description: "Pioneered the use of small, highly trained units for unconventional warfare." },
+      { date: "🌟 Legacy", description: "His methods continue to influence special forces around the world." }
+    ]
+  },
+  {
+    coords: [-1.0823142651610513, 54.202163489517126],
+    name: "David Stirling",
+    occupation: "1915-1990",
+    description: "Educated here, shaping his leadership skills.",
+    image: "https://upload.wikimedia.org/wikipedia/commons/e/ea/The_Special_Air_Service_(sas)_in_North_Africa_during_the_Second_World_War_E21340.jpg",
+    tldr: "The founder of the Special Air Service (SAS), known for his daring wartime exploits.",
+    events: [
+      { date: "🌍 WWII", description: "Fought in WWII and founded the SAS." },
+      { date: "💥 Special Forces Tactics", description: "Developed innovative special forces tactics." },
+      { date: "🎖️ Legacy", description: "Considered a military genius for his founding of the SAS." }
+    ]
+  },
+  {
+    coords: [0.11688970203002945, 52.206671572245504],
+    name: "David Stirling",
+    occupation: "1915-1990",
+    description: "Student here, but expelled for 28 offenses; a sign of his rebellious spirit.",
+    image: "https://upload.wikimedia.org/wikipedia/commons/e/ea/The_Special_Air_Service_(sas)_in_North_Africa_during_the_Second_World_War_E21340.jpg",
+    tldr: "Founded the SAS, known for unorthodox methods, and was famously expelled.",
+    events: [
+      { date: "💥 Formative Years", description: "Expelled from Cambridge for numerous offenses." },
+      { date: "⚔️ SAS Founder", description: "Founded the SAS during WWII." },
+      { date: "🎖️ Recognized Tactician", description: "Revolutionized military special operations." }
+    ]
+  },
+  {
+    coords: [-1.2431729667169584, 51.74519713069207],
+    name: "Jock Lewes",
+    occupation: "1913-1941",
+    description: "President of the Oxford Boat Club, captaining their first win over Cambridge in 15 years in 1937.",
+    image: "https://upload.wikimedia.org/wikipedia/commons/c/ce/Rex_Whistler_-_Lieutenant_Jock_Lewes%2C_co-founder_of_the_SAS_1940.jpg",
+    tldr: "Co-founded the SAS, excelling in both athletics and military innovation.",
+    events: [
+      { date: "🚣 1937", description: "Captained Oxford to a historic Boat Race victory." },
+      { date: "⚔️ 1941", description: "Died in action, but his contributions helped shape SAS tactics." },
+      { date: "🌟 Legacy", description: "A key figure in the early development of special forces." }
+    ]
+  },
   { 
     coords: [ -1.0760704677429955, 53.9638539316183 ], 
     name: "George Hudson", 
