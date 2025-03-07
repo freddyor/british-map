@@ -227,7 +227,7 @@ export const locations = [
     description: "Educated here at Christ’s College, laying the intellectual groundwork for his theories.",
     image: "https://upload.wikimedia.org/wikipedia/commons/2/2e/Charles_Darwin_seated_crop.jpg",
     tldr: "Developed the theory of evolution by natural selection, while studying at Christ's College.",
-    events: 
+    events: [
       { date: "1831-1836", description: "Sailed on the HMS Beagle, collecting crucial data for his theory of evolution, encountering giant tortoises and finches🚢" },
       { date: "1859", description: "Published 'On the Origin of Species,' introducing his groundbreaking theory to the world, sparking both acclaim and controversy🐒" },
       { date: "Legacy", description: "His theories transformed our understanding of life on Earth, influencing fields from biology to philosophy🌍" }
