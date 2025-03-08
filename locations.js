@@ -1,5 +1,798 @@
 export const locations = [
   {
+    coords: [-1.7079626577201492, 52.1938675865334],
+    name: "William Shakespeare",
+    occupation: "1564-1616",
+    description: "William Shakespeare was born here",
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Cobbe_portrait_of_Shakespeare.jpg/640px-Cobbe_portrait_of_Shakespeare.jpg",
+    tldr: "English playwright, poet, and actor, whose plays are still performed worldwide.",
+    events: [
+      { date: "1599", description: "Opened the Globe Theatre, hosting groundbreaking performances that shaped modern drama🎭" },
+      { date: "1606", description: "Penned 'Macbeth' and 'King Lear', exploring the depths of human ambition and madness amidst plague outbreaks💀" },
+      { date: "Legacy", description: "Coined over 1700 words and phrases, forever enriching the English language and influencing countless artists✍️" }
+    ]
+  },
+  {
+    coords: [-0.08011957355997806, 51.524630047324706],
+    name: "William Shakespeare",
+    occupation: "1564-1616",
+    description: "William Shakespeare performed his plays here from 1594",
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Cobbe_portrait_of_Shakespeare.jpg/640px-Cobbe_portrait_of_Shakespeare.jpg",
+    tldr: "His plays at The Theatre captivated audiences and set new standards for theatrical performance.",
+    events: [
+      { date: "1599", description: "Opened the Globe Theatre, hosting groundbreaking performances that shaped modern drama🎭" },
+      { date: "1606", description: "Penned 'Macbeth' and 'King Lear', exploring the depths of human ambition and madness amidst plague outbreaks💀" },
+      { date: "Legacy", description: "Coined over 1700 words and phrases, forever enriching the English language and influencing countless artists✍️" }
+    ]
+  },
+  {
+    coords: [-0.09477374246328865, 51.50685774868651],
+    name: "William Shakespeare",
+    occupation: "1564-1616",
+    description: "William Shakespeare set up the Globe Theatre on this spot",
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Cobbe_portrait_of_Shakespeare.jpg/640px-Cobbe_portrait_of_Shakespeare.jpg",
+    tldr: "Established the Globe Theatre, a symbol of Elizabethan England and the heart of Shakespearean drama.",
+    events: [
+      { date: "1599", description: "Opened the Globe Theatre, hosting groundbreaking performances that shaped modern drama🎭" },
+      { date: "1606", description: "Penned 'Macbeth' and 'King Lear', exploring the depths of human ambition and madness amidst plague outbreaks💀" },
+      { date: "Legacy", description: "Coined over 1700 words and phrases, forever enriching the English language and influencing countless artists✍️" }
+    ]
+  },
+  {
+    coords: [-1.7075788, 52.1907389],
+    name: "William Shakespeare",
+    occupation: "1564-1616",
+    description: "William Shakespeare moved his family home here, he ended up dying here",
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Cobbe_portrait_of_Shakespeare.jpg/640px-Cobbe_portrait_of_Shakespeare.jpg",
+    tldr: "His final years were spent in his family home, where he solidified his place in literary history.",
+    events: [
+      { date: "1599", description: "Opened the Globe Theatre, hosting groundbreaking performances that shaped modern drama🎭" },
+      { date: "1606", description: "Penned 'Macbeth' and 'King Lear', exploring the depths of human ambition and madness amidst plague outbreaks💀" },
+      { date: "Legacy", description: "Coined over 1700 words and phrases, forever enriching the English language and influencing countless artists✍️" }
+    ]
+  },
+  {
+    coords: [-1.7077026469861176, 52.18661345590084],
+    name: "William Shakespeare",
+    occupation: "1564-1616",
+    description: "William Shakespeare is buried here",
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Cobbe_portrait_of_Shakespeare.jpg/640px-Cobbe_portrait_of_Shakespeare.jpg",
+    tldr: "His burial site is a pilgrimage for those honoring the greatest writer in the English language.",
+    events: [
+      { date: "1599", description: "Opened the Globe Theatre, hosting groundbreaking performances that shaped modern drama🎭" },
+      { date: "1606", description: "Penned 'Macbeth' and 'King Lear', exploring the depths of human ambition and madness amidst plague outbreaks💀" },
+      { date: "Legacy", description: "Coined over 1700 words and phrases, forever enriching the English language and influencing countless artists✍️" }
+    ]
+  },
+  {
+    coords: [-1.0873256, 50.8070613],
+    name: "Charles Dickens",
+    occupation: "1812-1870",
+    description: "Charles Dickens was born here",
+    image: "https://upload.wikimedia.org/wikipedia/commons/a/aa/Dickens_Gurney_head.jpg",
+    tldr: "Born in Portsmouth, began a literary journey that would critique and capture Victorian England.",
+    events: [
+      { date: "1843", description: "Wrote 'A Christmas Carol', which reshaped Christmas traditions and popularized the spirit of giving🎁" },
+      { date: "1859", description: "Published 'A Tale of Two Cities', a historical epic set during the French Revolution, solidifying his place in literary history🇫🇷" },
+      { date: "Legacy", description: "Championed social reform through novels like 'Oliver Twist' and 'Nicholas Nickleby', leaving a lasting impact on social consciousness and literature🌍" }
+    ]
+  },
+  {
+    coords: [0.5075921038043946, 51.38523152391008],
+    name: "Charles Dickens",
+    occupation: "1812-1870",
+    description: "Charles Dickens watched Macbeth here as a young boy",
+    image: "https://upload.wikimedia.org/wikipedia/commons/a/aa/Dickens_Gurney_head.jpg",
+    tldr: "Witnessing Macbeth at a young age ignited his passion for storytelling and the dramatic arts.",
+    events: [
+      { date: "1843", description: "Wrote 'A Christmas Carol', which reshaped Christmas traditions and popularized the spirit of giving🎁" },
+      { date: "1859", description: "Published 'A Tale of Two Cities', a historical epic set during the French Revolution, solidifying his place in literary history🇫🇷" },
+      { date: "Legacy", description: "Championed social reform through novels like 'Oliver Twist' and 'Nicholas Nickleby', leaving a lasting impact on social consciousness and literature🌍" }
+    ]
+  },
+  {
+    coords: [-0.1363853, 51.5385133],
+    name: "Charles Dickens",
+    occupation: "1812-1870",
+    description: "Charles Dickens stayed here for a while whilst his dad was in prison",
+    image: "https://upload.wikimedia.org/wikipedia/commons/a/aa/Dickens_Gurney_head.jpg",
+    tldr: "His experience with poverty and his father's imprisonment deeply influenced his social awareness and writing.",
+    events: [
+      { date: "1843", description: "Wrote 'A Christmas Carol', which reshaped Christmas traditions and popularized the spirit of giving🎁" },
+      { date: "1859", description: "Published 'A Tale of Two Cities', a historical epic set during the French Revolution, solidifying his place in literary history🇫🇷" },
+      { date: "Legacy", description: "Championed social reform through novels like 'Oliver Twist' and 'Nicholas Nickleby', leaving a lasting impact on social consciousness and literature🌍" }
+    ]
+  },
+  {
+    coords: [-0.09198323485767743, 51.501766570752665],
+    name: "Charles Dickens",
+    occupation: "1812-1870",
+    description: "Charles Dickens stayed in this prison whilst his father was incarcerated",
+    image: "https://upload.wikimedia.org/wikipedia/commons/a/aa/Dickens_Gurney_head.jpg",
+    tldr: "The Marshalsea Prison, where his father was held, became a recurring theme in his novels, highlighting social injustice.",
+    events: [
+      { date: "1843", description: "Wrote 'A Christmas Carol', which reshaped Christmas traditions and popularized the spirit of giving🎁" },
+      { date: "1859", description: "Published 'A Tale of Two Cities', a historical epic set during the French Revolution, solidifying his place in literary history🇫🇷" },
+      { date: "Legacy", description: "Championed social reform through novels like 'Oliver Twist' and 'Nicholas Nickleby', leaving a lasting impact on social consciousness and literature🌍" }
+    ]
+  },
+  {
+    coords: [-0.13960615015960123, 51.53240169634637],
+    name: "Charles Dickens",
+    occupation: "1812-1870",
+    description: "Charles Dickens schooled here for two years",
+    image: "https://upload.wikimedia.org/wikipedia/commons/a/aa/Dickens_Gurney_head.jpg",
+    tldr: "His education, though brief, laid the foundation for his literary career and keen observations of society.",
+    events: [
+      { date: "1843", description: "Wrote 'A Christmas Carol', which reshaped Christmas traditions and popularized the spirit of giving🎁" },
+      { date: "1859", description: "Published 'A Tale of Two Cities', a historical epic set during the French Revolution, solidifying his place in literary history🇫🇷" },
+      { date: "Legacy", description: "Championed social reform through novels like 'Oliver Twist' and 'Nicholas Nickleby', leaving a lasting impact on social consciousness and literature🌍" }
+    ]
+  },
+  {
+    coords: [0.5802688500601018, 51.169248038732285],
+    name: "Charles Dickens",
+    occupation: "1812-1870",
+    description: "Charles Dickens was involved in the Staplehurst Rail Crash here, where he survived and treated the wounded",
+    image: "https://upload.wikimedia.org/wikipedia/commons/a/aa/Dickens_Gurney_head.jpg",
+    tldr: "Survived the Staplehurst Rail Crash, an event that deeply affected him and influenced his later works.",
+    events: [
+      { date: "1843", description: "Wrote 'A Christmas Carol', which reshaped Christmas traditions and popularized the spirit of giving🎁" },
+      { date: "1859", description: "Published 'A Tale of Two Cities', a historical epic set during the French Revolution, solidifying his place in literary history🇫🇷" },
+      { date: "Legacy", description: "Championed social reform through novels like 'Oliver Twist' and 'Nicholas Nickleby', leaving a lasting impact on social consciousness and literature🌍" }
+    ]
+  },
+  {
+    coords: [-0.1274036093021908, 51.49935487258799],
+    name: "Charles Dickens",
+    occupation: "1812-1870",
+    description: "Charles Dickens is buried here",
+    image: "https://upload.wikimedia.org/wikipedia/commons/a/aa/Dickens_Gurney_head.jpg",
+    tldr: "Buried in Poet's Corner at Westminster Abbey, honored as one of England's greatest writers.",
+    events: [
+      { date: "1843", description: "Wrote 'A Christmas Carol', which reshaped Christmas traditions and popularized the spirit of giving🎁" },
+      { date: "1859", description: "Published 'A Tale of Two Cities', a historical epic set during the French Revolution, solidifying his place in literary history🇫🇷" },
+      { date: "Legacy", description: "Championed social reform through novels like 'Oliver Twist' and 'Nicholas Nickleby', leaving a lasting impact on social consciousness and literature🌍" }
+    ]
+  },
+    {
+    coords: [0.4577404228932355, 51.411124724870646],
+    name: "Charles Dickens",
+    occupation: "1812-1870",
+    description: "Charles Dickens passed away here",
+    image: "https://upload.wikimedia.org/wikipedia/commons/a/aa/Dickens_Gurney_head.jpg",
+    tldr: "Died at Gad's Hill Place, leaving behind a vast literary legacy and a profound impact on Victorian society.",
+    events: [
+      { date: "1843", description: "Wrote 'A Christmas Carol', which reshaped Christmas traditions and popularized the spirit of giving🎁" },
+      { date: "1859", description: "Published 'A Tale of Two Cities', a historical epic set during the French Revolution, solidifying his place in literary history🇫🇷" },
+      { date: "Legacy", description: "Championed social reform through novels like 'Oliver Twist' and 'Nicholas Nickleby', leaving a lasting impact on social consciousness and literature🌍" }
+    ]
+  },
+  {
+    coords: [-0.27558496303417823, 51.46088257597019],
+    name: "Tim Berners-Lee",
+    occupation: "1955-present",
+    description: "Tim Berners Lee attended primary school here",
+    image: "https://upload.wikimedia.org/wikipedia/commons/8/8d/LS3_4919_(cropped).jpg",
+    tldr: "Early education in London sparked his interest in electronics and mathematics.",
+    events: [
+      { date: "1989", description: "Invented the World Wide Web, changing information access and communication forever🌐" },
+      { date: "1990", description: "Created the first web browser and server, democratizing access to online information💻" },
+      { date: "2004", description: "Knighted by Queen Elizabeth II, honoring his profound contributions to humanity👑" }
+    ]
+  },
+  {
+    coords: [-0.17319874545929723, 51.45685793689377],
+    name: "Tim Berners-Lee",
+    occupation: "1955-present",
+    description: "Tim Berners Lee attended Emanuel School here from 1969 to 1973",
+    image: "https://upload.wikimedia.org/wikipedia/commons/8/8d/LS3_4919_(cropped).jpg",
+    tldr: "Secondary education at Emanuel School strengthened his mathematical and programming skills.",
+    events: [
+      { date: "1989", description: "Invented the World Wide Web, changing information access and communication forever🌐" },
+      { date: "1990", description: "Created the first web browser and server, democratizing access to online information💻" },
+      { date: "2004", description: "Knighted by Queen Elizabeth II, honoring his profound contributions to humanity👑" }
+    ]
+  },
+  {
+    coords: [-1.2506937430277754, 51.75295005354199],
+    name: "Tim Berners-Lee",
+    occupation: "1955-present",
+    description: "Tim Berners Lee was educated here 1973-76, during which he built a computer from a television",
+    image: "https://upload.wikimedia.org/wikipedia/commons/8/8d/LS3_4919_(cropped).jpg",
+    tldr: "Built his first computer from a television while studying at Queen's College, showcasing his early ingenuity.",
+    events: [
+      { date: "1989", description: "Invented the World Wide Web, changing information access and communication forever🌐" },
+      { date: "1990", description: "Created the first web browser and server, democratizing access to online information💻" },
+      { date: "2004", description: "Knighted by Queen Elizabeth II, honoring his profound contributions to humanity👑" }
+    ]
+  },
+    {
+    coords: [-4.1106771788598975, 50.44335755914544],
+    name: "Tim Berners-Lee",
+    occupation: "1955-present",
+    description: "Tim Berners Lee worked here before creating the World Wide Web",
+    image: "https://upload.wikimedia.org/wikipedia/commons/8/8d/LS3_4919_(cropped).jpg",
+    tldr: "Gained early programming experience in Cornwall before conceptualizing the World Wide Web.",
+    events: [
+      { date: "1989", description: "Invented the World Wide Web, changing information access and communication forever🌐" },
+      { date: "1990", description: "Created the first web browser and server, democratizing access to online information💻" },
+      { date: "2004", description: "Knighted by Queen Elizabeth II, honoring his profound contributions to humanity👑" }
+    ]
+  },
+  {
+    coords: [-1.3976769364777364, 50.93718177108384],
+    name: "Tim Berners-Lee",
+    occupation: "1955-present",
+    description: "Tim Berners Lee is a chair of Computer Science here at the University of Southampton",
+    image: "https://upload.wikimedia.org/wikipedia/commons/8/8d/LS3_4919_(cropped).jpg",
+    tldr: "Continues to influence the future of the web through research and teaching.",
+    events: [
+      { date: "1989", description: "Invented the World Wide Web, changing information access and communication forever🌐" },
+      { date: "1990", description: "Created the first web browser and server, democratizing access to online information💻" },
+      { date: "2004", description: "Knighted by Queen Elizabeth II, honoring his profound contributions to humanity👑" }
+    ]
+  },
+  {
+    coords: [-1.2556329343045118, 51.77106899689959],
+    name: "Tim Berners-Lee",
+    occupation: "1955-present",
+    description: "Tim Berners Lee is a Professional Research Fellow at the Department of Computer Science here at Oxford University",
+    image: "https://upload.wikimedia.org/wikipedia/commons/8/8d/LS3_4919_(cropped).jpg",
+    tldr: "Continues to research and guide the evolution of the web as a fellow at Oxford.",
+    events: [
+      { date: "1989", description: "Invented the World Wide Web, changing information access and communication forever🌐" },
+      { date: "1990", description: "Created the first web browser and server, democratizing access to online information💻" },
+      { date: "2004", description: "Knighted by Queen Elizabeth II, honoring his profound contributions to humanity👑" }
+    ]
+  },
+  {
+    coords: [-0.1881876531838281, 51.415354100544135],
+    name: "Horatio Nelson",
+    occupation: "1758-1805",
+    description: "Horatio Nelson lived here for most of his life",
+    image: "https://upload.wikimedia.org/wikipedia/commons/7/72/HoratioNelson1.jpg",
+    tldr: "Spent much of his life in Merton, shaping his naval strategies and personal life.",
+    events: [
+      { date: "1798", description: "Commanded the British fleet to victory at the Battle of the Nile, disrupting Napoleon's Egyptian campaign⚓" },
+      { date: "1805", description: "Defeated the combined French and Spanish fleets at the Battle of Trafalgar, securing British naval supremacy but losing his life⚔️" },
+      { date: "Legacy", description: "Became a national hero, inspiring generations with his courage and strategic brilliance🇬🇧" }
+    ]
+  },
+  {
+    coords: [1.386092882927466, 52.82044168179149],
+    name: "Horatio Nelson",
+    occupation: "1758-1805",
+    description: "Horatio Nelson was educated here until he was 12",
+    image: "https://upload.wikimedia.org/wikipedia/commons/7/72/HoratioNelson1.jpg",
+    tldr: "Received his early education in Norfolk, laying the groundwork for his future naval career.",
+    events: [
+      { date: "1798", description: "Commanded the British fleet to victory at the Battle of the Nile, disrupting Napoleon's Egyptian campaign⚓" },
+      { date: "1805", description: "Defeated the combined French and Spanish fleets at the Battle of Trafalgar, securing British naval supremacy but losing his life⚔️" },
+      { date: "Legacy", description: "Became a national hero, inspiring generations with his courage and strategic brilliance🇬🇧" }
+    ]
+  },
+  {
+    coords: [1.3003495074195055, 52.6310892477935],
+    name: "Horatio Nelson",
+    occupation: "1758-1805",
+    description: "Horatio Nelson was educated here",
+    image: "https://upload.wikimedia.org/wikipedia/commons/7/72/HoratioNelson1.jpg",
+    tldr: "Continued his education in Norwich, further preparing for his naval adventures.",
+    events: [
+      { date: "1798", description: "Commanded the British fleet to victory at the Battle of the Nile, disrupting Napoleon's Egyptian campaign⚓" },
+      { date: "1805", description: "Defeated the combined French and Spanish fleets at the Battle of Trafalgar, securing British naval supremacy but losing his life⚔️" },
+      { date: "Legacy", description: "Became a national hero, inspiring generations with his courage and strategic brilliance🇬🇧" }
+    ]
+  },
+  {
+    coords: [-0.09885306764245388, 51.51380800073934],
+    name: "Horatio Nelson",
+    occupation: "1758-1805",
+    description: "Horatio Nelson is buried here at St Paul’s Cathedral",
+    image: "https://upload.wikimedia.org/wikipedia/commons/7/72/HoratioNelson1.jpg",
+    tldr: "His final resting place, a national shrine honoring his service and sacrifice.",
+    events: [
+      { date: "1798", description: "Commanded the British fleet to victory at the Battle of the Nile, disrupting Napoleon's Egyptian campaign⚓" },
+      { date: "1805", description: "Defeated the combined French and Spanish fleets at the Battle of Trafalgar, securing British naval supremacy but losing his life⚔️" },
+      { date: "Legacy", description: "Became a national hero, inspiring generations with his courage and strategic brilliance🇬🇧" }
+    ]
+  },
+  {
+    coords: [0.7565344729982133, 52.93927992055966],
+    name: "Horatio Nelson",
+    occupation: "1758-1805",
+    description: "Horatio Nelson was born on this site",
+    image: "https://upload.wikimedia.org/wikipedia/commons/7/72/HoratioNelson1.jpg",
+    tldr: "Born in Burnham Thorpe, marking the beginning of a legendary naval career.",
+    events: [
+      { date: "1798", description: "Commanded the British fleet to victory at the Battle of the Nile, disrupting Napoleon's Egyptian campaign⚓" },
+      { date: "1805", description: "Defeated the combined French and Spanish fleets at the Battle of Trafalgar, securing British naval supremacy but losing his life⚔️" },
+      { date: "Legacy", description: "Became a national hero, inspiring generations with his courage and strategic brilliance🇬🇧" }
+    ]
+  },
+  {
+    coords: [-0.18460836222169494, 51.52430033092484],
+    name: "Alan Turing",
+    occupation: "1912-1954",
+    description: "Alan Turing lived here for a while",
+    image: "https://upload.wikimedia.org/wikipedia/commons/f/f8/Alan_Turing_(1951).jpg",
+    tldr: "Lived in London, influencing his early intellectual development and career.",
+    events: [
+      { date: "1936", description: "Conceived the Turing Machine, a theoretical device that laid the foundation for modern computing 💡" },
+      { date: "1942", description: "Played a crucial role in breaking the Enigma code at Bletchley Park, shortening World War II and saving countless lives 🎖️" },
+      { date: "Legacy", description: "Pioneered artificial intelligence and computer science, leaving a lasting impact on technology and society 🤖" }
+    ]
+  },
+  {
+    coords: [0.11726727830923832, 52.204745808422466],
+    name: "Alan Turing",
+    occupation: "1912-1954",
+    description: "Alan Turing studied here at King’s College",
+    image: "https://upload.wikimedia.org/wikipedia/commons/f/f8/Alan_Turing_(1951).jpg",
+    tldr: "His time at Cambridge shaped his mathematical genius and set the stage for his groundbreaking work.",
+    events: [
+      { date: "1936", description: "Conceived the Turing Machine, a theoretical device that laid the foundation for modern computing 💡" },
+      { date: "1942", description: "Played a crucial role in breaking the Enigma code at Bletchley Park, shortening World War II and saving countless lives 🎖️" },
+      { date: "Legacy", description: "Pioneered artificial intelligence and computer science, leaving a lasting impact on technology and society 🤖" }
+    ]
+  },
+  {
+    coords: [-0.7429692, 51.9963378],
+    name: "Alan Turing",
+    occupation: "1912-1954",
+    description: "Alan Turing worked for the British Code-breaking Center right here",
+    image: "https://upload.wikimedia.org/wikipedia/commons/f/f8/Alan_Turing_(1951).jpg",
+    tldr: "His code-breaking efforts at Bletchley Park were instrumental in the Allied victory during World War II.",
+    events: [
+      { date: "1936", description: "Conceived the Turing Machine, a theoretical device that laid the foundation for modern computing 💡" },
+      { date: "1942", description: "Played a crucial role in breaking the Enigma code at Bletchley Park, shortening World War II and saving countless lives 🎖️" },
+      { date: "Legacy", description: "Pioneered artificial intelligence and computer science, leaving a lasting impact on technology and society 🤖" }
+    ]
+  },
+ {
+    coords: [-0.3442300, 51.4269285],
+    name: "Alan Turing",
+    occupation: "1912-1954",
+    description: "Alan Turing worked here after the war, where he designed the Automatic Computing Engine",
+    image: "https://upload.wikimedia.org/wikipedia/commons/f/f8/Alan_Turing_(1951).jpg",
+    tldr: "Pioneered early computer design at the National Physical Laboratory, shaping the future of computing.",
+    events: [
+      { date: "1936", description: "Conceived the Turing Machine, a theoretical device that laid the foundation for modern computing 💡" },
+      { date: "1942", description: "Played a crucial role in breaking the Enigma code at Bletchley Park, shortening World War II and saving countless lives 🎖️" },
+      { date: "Legacy", description: "Pioneered artificial intelligence and computer science, leaving a lasting impact on technology and society 🤖" }
+    ]
+  },
+  {
+    coords: [-2.233971301698254, 53.467396245685116],
+    name: "Alan Turing",
+    occupation: "1912-1954",
+    description: "Alan Turing worked here, where he contributed to the early Manchester Computers",
+    image: "https://upload.wikimedia.org/wikipedia/commons/f/f8/Alan_Turing_(1951).jpg",
+    tldr: "Advanced computer science at the University of Manchester, contributing to early computing technology.",
+    events: [
+      { date: "1936", description: "Conceived the Turing Machine, a theoretical device that laid the foundation for modern computing 💡" },
+      { date: "1942", description: "Played a crucial role in breaking the Enigma code at Bletchley Park, shortening World War II and saving countless lives 🎖️" },
+      { date: "Legacy", description: "Pioneered artificial intelligence and computer science, leaving a lasting impact on technology and society 🤖"
+    ]
+  },
+  {
+    coords: [-2.2073467, 53.3284332],
+    name: "Alan Turing",
+    occupation: "1912-1954",
+    description: "Alan Turing tragically died in his home here",
+    image: "https://upload.wikimedia.org/wikipedia/commons/f/f8/Alan_Turing_(1951).jpg",
+    tldr: "Passed away in Wilmslow, leaving a lasting legacy despite facing persecution for his homosexuality.",
+    events: [
+      { date: "1936", description: "Conceived the Turing Machine, a theoretical device that laid the foundation for modern computing 💡" },
+      { date: "1942", description: "Played a crucial role in breaking the Enigma code at Bletchley Park, shortening World War II and saving countless lives 🎖️" },
+      { date: "Legacy", description: "Pioneered artificial intelligence and computer science, leaving a lasting impact on technology and society 🤖" }
+    ]
+  },
+{
+    coords: [-0.3300320086411674, 53.744270187596044],
+    name: "William Wilberforce",
+    occupation: "1759-1833",
+    description: "William Wilberforce was born here",
+    image: "https://upload.wikimedia.org/wikipedia/commons/e/eb/William_wilberforce.jpg",
+    tldr: "Born in Hull, dedicated his life to abolishing the slave trade in the British Empire.",
+    events: [
+      { date: "1787", description: "Committed to abolishing the slave trade, embarking on a decades-long struggle for justice🕊️" },
+      { date: "1807", description: "Celebrated the passage of the Slave Trade Act, banning the trade in the British Empire🎉" },
+      { date: "Legacy", description: "Inspired generations to fight for human rights, leaving a legacy of social justice and moral courage🌍" }
+    ]
+  },
+  {
+    coords: [0.11776914270472535, 52.20770479453242],
+    name: "William Wilberforce",
+    occupation: "1759-1833",
+    description: "William Wilberforce was educated here",
+    image: "https://upload.wikimedia.org/wikipedia/commons/e/eb/William_wilberforce.jpg",
+    tldr: "Received education at St John's College, shaping his intellectual and moral convictions.",
+    events: [
+      { date: "1787", description: "Committed to abolishing the slave trade, embarking on a decades-long struggle for justice🕊️" },
+      { date: "1807", description: "Celebrated the passage of the Slave Trade Act, banning the trade in the British Empire🎉" },
+      { date: "Legacy", description: "Inspired generations to fight for human rights, leaving a legacy of social justice and moral courage🌍" }
+    ]
+  },
+  {
+    coords: [-0.7824369, 53.9288673],
+    name: "William Wilberforce",
+    occupation: "1759-1833",
+    description: "William Wilberforce was educated here from 1771 to 1776",
+    image: "https://upload.wikimedia.org/wikipedia/commons/e/eb/William_wilberforce.jpg",
+    tldr: "Early education at Pocklington School influenced his moral compass and sense of social responsibility.",
+    events: [
+      { date: "1787", description: "Committed to abolishing the slave trade, embarking on a decades-long struggle for justice🕊️" },
+      { date: "1807", description: "Celebrated the passage of the Slave Trade Act, banning the trade in the British Empire🎉" },
+      { date: "Legacy", description: "Inspired generations to fight for human rights, leaving a legacy of social justice and moral courage🌍" }
+    ]
+  },
+  {
+    coords: [-0.17979761058704974, 51.50131751347635],
+    name: "William Wilberforce",
+    occupation: "1759-1833",
+    description: "William Wilberforce lived here at Kensington Gore",
+    image: "https://upload.wikimedia.org/wikipedia/commons/e/eb/William_wilberforce.jpg",
+    tldr: "His London residence at Kensington Gore was a center for abolitionist meetings and social reform.",
+    events: [
+      { date: "1787", description: "Committed to abolishing the slave trade, embarking on a decades-long struggle for justice🕊️" },
+      { date: "1807", description: "Celebrated the passage of the Slave Trade Act, banning the trade in the British Empire🎉" },
+      { date: "Legacy", description: "Inspired generations to fight for human rights, leaving a legacy of social justice and moral courage🌍" }
+    ]
+  },
+  {
+    coords: [-0.15747207939673846, 51.49685650780893],
+    name: "William Wilberforce",
+    occupation: "1759-1833",
+    description: "William Wilberforce died here in 1833",
+    image: "https://upload.wikimedia.org/wikipedia/commons/e/eb/William_wilberforce.jpg",
+    tldr: "Died shortly after the Slavery Abolition Act passed, fulfilling his life's mission.",
+    events: [
+      { date: "1787", description: "Committed to abolishing the slave trade, embarking on a decades-long struggle for justice🕊️" },
+      { date: "1807", description: "Celebrated the passage of the Slave Trade Act, banning the trade in the British Empire🎉" },
+      { date: "Legacy", description: "Inspired generations to fight for human rights, leaving a legacy of social justice and moral courage🌍" }
+    ]
+  },
+  {
+    coords: [-0.16014223559440052, 51.45436671493766],
+    name: "William Wilberforce",
+    occupation: "1759-1833",
+    description: "William Wilberforce lived here from 1797 to 1808",
+    image: "https://upload.wikimedia.org/wikipedia/commons/e/eb/William_wilberforce.jpg",
+    tldr: "His residence was a hub for abolitionist meetings and strategic planning against the slave trade.",
+    events: [
+      { date: "1787", description: "Committed to abolishing the slave trade, embarking on a decades-long struggle for justice🕊️" },
+      { date: "1807", description: "Celebrated the passage of the Slave Trade Act, banning the trade in the British Empire🎉" },
+      { date: "Legacy", description: "Inspired generations to fight for human rights, leaving a legacy of social justice and moral courage🌍" }
+    ]
+  },
+    {
+    coords: [-2.3524333595689737, 51.38537399994797],
+    name: "William Wilberforce",
+    occupation: "1759-1833",
+    description: "William Wilberforce stayed here in 1802 and 1805",
+    image: "https://upload.wikimedia.org/wikipedia/commons/e/eb/William_wilberforce.jpg",
+    tldr: "Frequent stays allowed him to connect with supporters and strategize against the slave trade.",
+    events: [
+      { date: "1787", description: "Committed to abolishing the slave trade, embarking on a decades-long struggle for justice🕊️" },
+      { date: "1807", description: "Celebrated the passage of the Slave Trade Act, banning the trade in the British Empire🎉" },
+      { date: "Legacy", description: "Inspired generations to fight for human rights, leaving a legacy of social justice and moral courage🌍" }
+    ]
+  },
+    {
+    coords: [-0.05198504957363934, 51.27651566010894],
+    name: "William Wilberforce",
+    occupation: "1759-1833",
+    description: "William Wilberforce lived here from 1821 to 1823",
+    image: "https://upload.wikimedia.org/wikipedia/commons/e/eb/William_wilberforce.jpg",
+    tldr: "Continued his abolitionist efforts, rallying support and shaping public opinion.",
+   events: [
+      { date: "1787", description: "Committed to abolishing the slave trade, embarking on a decades-long struggle for justice🕊️" },
+      { date: "1807", description: "Celebrated the passage of the Slave Trade Act, banning the trade in the British Empire🎉" },
+      { date: "Legacy", description: "Inspired generations to fight for human rights, leaving a legacy of social justice and moral courage🌍" }
+    ]
+  },
+   {
+    coords: [-3.206475222477754, 55.951095570894715],
+    name: "Alexander Graham Bell",
+    occupation: "1847-1922",
+    description: "Alexander Graham Bell was born here",
+    image: "https://upload.wikimedia.org/wikipedia/commons/a/ac/Alexander_Graham_Bell_%28cropped%29.jpg",
+    tldr: "Born in Edinburgh, Scotland, began his journey to revolutionize communication.",
+    events: [
+      { date: "1876", description: "Invented the telephone, revolutionizing global communication and connecting the world like never before 📞" },
+      { date: "1880", description: "Received the Volta Prize from the French government, recognizing his groundbreaking invention💡" },
+      { date: "Legacy", description: "Transformed communication and created countless opportunities for human connection 🌍" }
+    ]
+  },
+  {
+    coords: [-3.2843316061033323, 55.96430344396597],
+    name: "Alexander Graham Bell",
+    occupation: "1847-1922",
+    description: "Alexander Graham Bell was educated here for four years",
+    image: "https://upload.wikimedia.org/wikipedia/commons/a/ac/Alexander_Graham_Bell_%28cropped%29.jpg",
+    tldr: "Early education laid the foundation for his scientific and inventive pursuits.",
+    events: [
+      { date: "1876", description: "Invented the telephone, revolutionizing global communication and connecting the world like never before 📞" },
+      { date: "1880", description: "Received the Volta Prize from the French government, recognizing his groundbreaking invention💡" },
+      { date: "Legacy", description: "Transformed communication and created countless opportunities for human connection 🌍" }
+    ]
+  },
+    {
+    coords: [-3.328652939887868, 57.65350912527564],
+    name: "Alexander Graham Bell",
+    occupation: "1847-1922",
+    description: "Alexander Graham Bell worked here as a pupil-teacher at the age of 16",
+    image: "https://upload.wikimedia.org/wikipedia/commons/a/ac/Alexander_Graham_Bell_%28cropped%29.jpg",
+    tldr: "First work experience shaped his understanding of communication and education.",
+     events: [
+      { date: "1876", description: "Invented the telephone, revolutionizing global communication and connecting the world like never before 📞" },
+      { date: "1880", description: "Received the Volta Prize from the French government, recognizing his groundbreaking invention💡" },
+      { date: "Legacy", description: "Transformed communication and created countless opportunities for human connection 🌍" }
+    ]
+  },
+  {
+    coords: [-3.1893073967818752, 55.942747440178366],
+    name: "Alexander Graham Bell",
+    occupation: "1847-1922",
+    description: "Alexander Graham Bell lectured here from 1843 to 1865",
+    image: "https://upload.wikimedia.org/wikipedia/commons/a/ac/Alexander_Graham_Bell_%28cropped%29.jpg",
+    tldr: "Lectured in Edinburgh, enhancing his understanding of acoustics and communication.",
+    events: [
+      { date: "1876", description: "Invented the telephone, revolutionizing global communication and connecting the world like never before 📞" },
+      { date: "1880", description: "Received the Volta Prize from the French government, recognizing his groundbreaking invention💡" },
+      { date: "Legacy", description: "Transformed communication and created countless opportunities for human connection 🌍" }
+    ]
+  },
+  {
+    coords: [-0.1336608295510973, 51.52463387396999],
+    name: "Alexander Graham Bell",
+    occupation: "1847-1922",
+    description: "Alexander Graham Bell lectured here from 1865 to 1870",
+    image: "https://upload.wikimedia.org/wikipedia/commons/a/ac/Alexander_Graham_Bell_%28cropped%29.jpg",
+    tldr: "Continued lecturing in London, developing his theories on speech and sound.",
+   events: [
+      { date: "1876", description: "Invented the telephone, revolutionizing global communication and connecting the world like never before 📞" },
+      { date: "1880", description: "Received the Volta Prize from the French government, recognizing his groundbreaking invention💡" },
+      { date: "Legacy", description: "Transformed communication and created countless opportunities for human connection 🌍" }
+    ]
+  },
+  {
+    coords: [-2.3620055582725463, 51.38668638143689],
+    name: "Alexander Graham Bell",
+    occupation: "1847-1922",
+    description: "Alexander Graham Bell installed a telegraph wire from his room to a friend’s room whilst living here",
+    image: "https://upload.wikimedia.org/wikipedia/commons/a/ac/Alexander_Graham_Bell_%28cropped%29.jpg",
+    tldr: "His early experiments demonstrated his passion for electrical communication.",
+    events: [
+      { date: "1876", description: "Invented the telephone, revolutionizing global communication and connecting the world like never before 📞" },
+      { date: "1880", description: "Received the Volta Prize from the French government, recognizing his groundbreaking invention💡" },
+      { date: "Legacy", description: "Transformed communication and created countless opportunities for human connection 🌍" }
+    ]
+  },
+   {
+    coords: [-1.8582305135213373, 52.43499359475234],
+    name: "J.R.R Tolkien",
+    occupation: "1892-1973",
+    description: "This was J.R.R Tolkien’s childhood home",
+    image: "https://upload.wikimedia.org/wikipedia/commons/d/d4/J._R._R._Tolkien%2C_ca._1925.jpg",
+    tldr: "Early life in Birmingham sparked his imagination and love for storytelling.",
+   events: [
+      { date: "1937", description: "Published 'The Hobbit', creating a magical world that captivated readers of all ages ✨" },
+      { date: "1954-1955", description: "Released 'The Lord of the Rings', constructing an epic mythology that redefined fantasy literature 📖" },
+      { date: "Legacy", description: "Invented entire languages and created Middle-earth, inspiring countless authors, artists, and filmmakers🌎" }
+    ]
+  },
+  {
+    coords: [-1.2520700741439483, 51.751311493930686],
+    name: "J.R.R Tolkien",
+    occupation: "1892-1973",
+    description: "J.R.R Tolkien worked as Professor of English Language and Literature here",
+    image: "https://upload.wikimedia.org/wikipedia/commons/d/d4/J._R._R._Tolkien%2C_ca._1925.jpg",
+    tldr: "His academic career at Oxford shaped his writing and provided a foundation for his literary works.",
+     events: [
+      { date: "1937", description: "Published 'The Hobbit', creating a magical world that captivated readers of all ages ✨" },
+      { date: "1954-1955", description: "Released 'The Lord of the Rings', constructing an epic mythology that redefined fantasy literature 📖" },
+      { date: "Legacy", description: "Invented entire languages and created Middle-earth, inspiring countless authors, artists, and filmmakers🌎" }
+    ]
+  },
+ {
+    coords: [-1.8582305135213373, 52.43499359475234],
+    name: "J.R.R Tolkien",
+    occupation: "1892-1973",
+    description: "This was J.R.R Tolkien’s childhood home",
+    image: "https://upload.wikimedia.org/wikipedia/commons/d/d4/J._R._R._Tolkien%2C_ca._1925.jpg",
+    tldr: "Early life in Birmingham sparked his imagination and love for storytelling.",
+   events: [
+      { date: "1937", description: "Published 'The Hobbit', creating a magical world that captivated readers of all ages ✨" },
+      { date: "1954-1955", description: "Released 'The Lord of the Rings', constructing an epic mythology that redefined fantasy literature 📖" },
+      { date: "Legacy", description: "Invented entire languages and created Middle-earth, inspiring countless authors, artists, and filmmakers🌎" }
+    ]
+  },
+  {
+    coords: [-1.2520700741439483, 51.751311493930686],
+    name: "J.R.R Tolkien",
+    occupation: "1892-1973",
+    description: "J.R.R Tolkien worked as Professor of English Language and Literature here",
+    image: "https://upload.wikimedia.org/wikipedia/commons/d/d4/J._R._R._Tolkien%2C_ca._1925.jpg",
+    tldr: "His academic career at Oxford shaped his writing and provided a foundation for his literary works.",
+     events: [
+      { date: "1937", description: "Published 'The Hobbit', creating a magical world that captivated readers of all ages ✨" },
+      { date: "1954-1955", description: "Released 'The Lord of the Rings', constructing an epic mythology that redefined fantasy literature 📖" },
+      { date: "Legacy", description: "Invented entire languages and created Middle-earth, inspiring countless authors, artists, and filmmakers🌎" }
+    ]
+  },
+ {
+    coords: [-1.8559898276905367, 52.43428179515081],
+    name: "J.R.R Tolkien",
+    occupation: "1892-1973",
+    description: "J.R.R Tolkien explored here as a child",
+    image: "https://upload.wikimedia.org/wikipedia/commons/d/d4/J._R._R._Tolkien%2C_ca._1925.jpg",
+    tldr: "Early explorations ignited his imagination and inspired the landscapes of Middle-earth.",
+     events: [
+      { date: "1937", description: "Published 'The Hobbit', creating a magical world that captivated readers of all ages ✨" },
+      { date: "1954-1955", description: "Released 'The Lord of the Rings', constructing an epic mythology that redefined fantasy literature 📖" },
+      { date: "Legacy", description: "Invented entire languages and created Middle-earth, inspiring countless authors, artists, and filmmakers🌎" }
+    ]
+  },
+  {
+    coords: [-1.8994024005486683, 52.4361187711347],
+    name: "J.R.R Tolkien",
+    occupation: "1892-1973",
+    description: "J.R.R Tolkien lived here with his mother and sister",
+    image: "https://upload.wikimedia.org/wikipedia/commons/d/d4/J._R._R._Tolkien%2C_ca._1925.jpg",
+    tldr: "Family life shaped his early values and love for language and mythology.",
+     events: [
+      { date: "1937", description: "Published 'The Hobbit', creating a magical world that captivated readers of all ages ✨" },
+      { date: "1954-1955", description: "Released 'The Lord of the Rings', constructing an epic mythology that redefined fantasy literature 📖" },
+      { date: "Legacy", description: "Invented entire languages and created Middle-earth, inspiring countless authors, artists, and filmmakers🌎" }
+    ]
+  },
+   {
+    coords: [-1.9351127909280958, 52.472293261859974],
+    name: "J.R.R Tolkien",
+    occupation: "1892-1973",
+    description: "J.R.R Tolkien lived here with his aunt after his mother’s death",
+    image: "https://upload.wikimedia.org/wikipedia/commons/d/d4/J._R._R._Tolkien%2C_ca._1925.jpg",
+    tldr: "His aunt's household provided stability and support during a difficult period in his life.",
+     events: [
+      { date: "1937", description: "Published 'The Hobbit', creating a magical world that captivated readers of all ages ✨" },
+      { date: "1954-1955", description: "Released 'The Lord of the Rings', constructing an epic mythology that redefined fantasy literature 📖" },
+      { date: "Legacy", description: "Invented entire languages and created Middle-earth, inspiring countless authors, artists, and filmmakers🌎" }
+    ]
+  },
+  {
+    coords: [-1.9215148, 52.4494776],
+    name: "J.R.R Tolkien",
+    occupation: "1892-1973",
+    description: "J.R.R Tolkien was educated here",
+    image: "https://upload.wikimedia.org/wikipedia/commons/d/d4/J._R._R._Tolkien%2C_ca._1925.jpg",
+    tldr: "Early education fostered his love for languages and literature.",
+     events: [
+      { date: "1937", description: "Published 'The Hobbit', creating a magical world that captivated readers of all ages ✨" },
+      { date: "1954-1955", description: "Released 'The Lord of the Rings', constructing an epic mythology that redefined fantasy literature 📖" },
+      { date: "Legacy", description: "Invented entire languages and created Middle-earth, inspiring countless authors, artists, and filmmakers🌎" }
+    ]
+  },
+  {
+    coords: [-1.9291104316966905, 52.47205681985054],
+    name: "J.R.R Tolkien",
+    occupation: "1892-1973",
+    description: "J.R.R Tolkien was educated here",
+    image: "https://upload.wikimedia.org/wikipedia/commons/d/d4/J._R._R._Tolkien%2C_ca._1925.jpg",
+    tldr: "Continued his education, further developing his skills in language and literature.",
+     events: [
+      { date: "1937", description: "Published 'The Hobbit', creating a magical world that captivated readers of all ages ✨" },
+      { date: "1954-1955", description: "Released 'The Lord of the Rings', constructing an epic mythology that redefined fantasy literature 📖" },
+      { date: "Legacy", description: "Invented entire languages and created Middle-earth, inspiring countless authors, artists, and filmmakers🌎" }
+    ]
+  },
+  {
+    coords: [-1.256273107896863, 51.75383012342289],
+    name: "J.R.R Tolkien",
+    occupation: "1892-1973",
+    description: "J.R.R Tolkien was educated here at Exeter College",
+    image: "https://upload.wikimedia.org/wikipedia/commons/d/d4/J._R._R._Tolkien%2C_ca._1925.jpg",
+    tldr: "His time at Exeter College shaped his academic career and fueled his passion for language and mythology.",
+    events: [
+      { date: "1937", description: "Published 'The Hobbit', creating a magical world that captivated readers of all ages ✨" },
+      { date: "1954-1955", description: "Released 'The Lord of the Rings', constructing an epic mythology that redefined fantasy literature 📖" },
+      { date: "Legacy", description: "Invented entire languages and created Middle-earth, inspiring countless authors, artists, and filmmakers🌎" }
+    ]
+  },
+   {
+    coords: [-1.9812677576583768, 52.73920713853674],
+    name: "J.R.R Tolkien",
+    occupation: "1892-1973",
+    description: "J.R.R Tolkien was stationed here for eleven months during the First World War",
+    image: "https://upload.wikimedia/commons/d/d4/J._R._R._Tolkien%2C_ca._1925.jpg",
+    tldr: "His experiences during WWI deeply influenced his writings and themes of heroism and sacrifice.",
+    events: [
+      { date: "1937", description: "Published 'The Hobbit', creating a magical world that captivated readers of all ages ✨" },
+      { date: "1954-1955", description: "Released 'The Lord of the Rings', constructing an epic mythology that redefined fantasy literature 📖" },
+      { date: "Legacy", description: "Invented entire languages and created Middle-earth, inspiring countless authors, artists, and filmmakers🌎" }
+    ]
+  },
+   {
+    coords: [-1.927520415150799, 52.47213767904236],
+    name: "J.R.R Tolkien",
+    occupation: "1892-1973",
+    description: "J.R.R Tolkien spent his final night here before being stationed to France during the war",
+    image: "https://upload.wikimedia.org/wikipedia/commons/d/d4/J._R._R._Tolkien%2C_ca._1925.jpg",
+    tldr: "The eve of deployment marked a significant moment, fueling his creative imagination.",
+    events: [
+      { date: "1937", description: "Published 'The Hobbit', creating a magical world that captivated readers of all ages ✨" },
+      { date: "1954-1955", description: "Released 'The Lord of the Rings', constructing an epic mythology that redefined fantasy literature 📖" },
+      { date: "Legacy", description: "Invented entire languages and created Middle-earth, inspiring countless authors, artists, and filmmakers🌎" }
+    ]
+  },
+  {
+    coords: [-1.5942236, 53.8332220],
+    name: "J.R.R Tolkien",
+    occupation: "1892-1973",
+    description: "J.R.R Tolkien lived here",
+    image: "https://upload.wikimedia/commons/d/d4/J._R._R._Tolkien%2C_ca._1925.jpg",
+    tldr: "His time in Leeds influenced his writing and understanding of language and mythology.",
+   events: [
+      { date: "1937", description: "Published 'The Hobbit', creating a magical world that captivated readers of all ages ✨" },
+      { date: "1954-1955", description: "Released 'The Lord of the Rings', constructing an epic mythology that redefined fantasy literature 📖" },
+      { date: "Legacy", description: "Invented entire languages and created Middle-earth, inspiring countless authors, artists, and filmmakers🌎" }
+    ]
+  },
+  {
+    coords: [-1.2601464, 51.7709836],
+    name: "J.R.R Tolkien",
+    occupation: "1892-1973",
+    description: "J.R.R Tolkien wrote Lord of the Rings whilst living here",
+    image: "https://upload.wikimedia/commons/d/d4/J._R._R._Tolkien%2C_ca._1925.jpg",
+    tldr: "His Oxford residence became the birthplace of Middle-earth and its epic sagas.",
+    events: [
+      { date: "1937", description: "Published 'The Hobbit', creating a magical world that captivated readers of all ages ✨" },
+      { date: "1954-1955", description: "Released 'The Lord of the Rings', constructing an epic mythology that redefined fantasy literature 📖" },
+      { date: "Legacy", description: "Invented entire languages and created Middle-earth, inspiring countless authors, artists, and filmmakers🌎" }
+    ]
+  },
+  {
+    coords: [-1.2578031, 51.7499893],
+    name: "J.R.R Tolkien",
+    occupation: "1892-1973",
+    description: "J.R.R Tolkien wrote The Hobbit whilst living here",
+    image: "https://upload.wikimedia/commons/d/d4/J._R._R._Tolkien%2C_ca._1925.jpg",
+    tldr: "Began his journey into Middle-earth with 'The Hobbit', inspiring generations of readers.",
+   events: [
+      { date: "1937", description: "Published 'The Hobbit', creating a magical world that captivated readers of all ages ✨" },
+      { date: "1954-1955", description: "Released 'The Lord of the Rings', constructing an epic mythology that redefined fantasy literature 📖" },
+      { date: "Legacy", description: "Invented entire languages and created Middle-earth, inspiring countless authors, artists, and filmmakers🌎" }
+    ]
+  },
+   {
+    coords: [-1.5548540732911251, 53.806635418838965],
+    name: "J.R.R Tolkien",
+    occupation: "1892-1973",
+    description: "In 1920, J.R.R Tolkien was the youngest member of the academic staff there",
+    image: "https://upload.wikimedia.org/wikipedia/commons/d/d4/J._R._R._Tolkien%2C_ca._1925.jpg",
+    tldr: "Youngest member of the academic staff, showcasing his early intellectual achievements",
+    events: [
+      { date: "1937", description: "Published 'The Hobbit', creating a magical world that captivated readers of all ages ✨" },
+      { date: "1954-1955", description: "Released 'The Lord of the Rings', constructing an epic mythology that redefined fantasy literature 📖" },
+      { date: "Legacy", description: "Invented entire languages and created Middle-earth, inspiring countless authors, artists, and filmmakers🌎" }
+    ]
+  },
+  {
+    coords: [-1.2738132, 51.7919084],
+    name: "J.R.R Tolkien",
+    occupation: "1892-1973",
+    description: "J.R.R Tolkien is buried here next to his wife",
+    image: "https://upload.wikimedia/commons/d/d4/J._R._R._Tolkien%2C_ca._1925.jpg",
+    tldr: "His final resting place is a testament to his enduring love and legacy.",
+     events: [
+      { date: "1937", description: "Published 'The Hobbit', creating a magical world that captivated readers of all ages ✨" },
+      { date: "1954-1955", description: "Released 'The Lord of the Rings', constructing an epic mythology that redefined fantasy literature 📖" },
+      { date: "Legacy", description: "Invented entire languages and created Middle-earth, inspiring countless authors, artists, and filmmakers🌎" }
+    ]
+  },
+  {
     coords: [-1.2604372816631368, 51.753086643212356],
     name: "Noel Godfrey Chavasse",
     occupation: "1884-1917",
