@@ -3,6 +3,11 @@
 // Array to store image attributions
 const imageAttributions = [
      {
+      "name": "<a href='https://www.flickr.com/photos/websummit/54135747450/'>Tim Berners Lee</a>",
+      "author": "Web Summit",
+      "license": "CC BY-SA 2.0"
+    },
+ {
       "name": "<a href='https://www.geograph.org.uk/photo/7249897'>Whitby Abbey</a>",
       "author": "Jeff Buck",
       "license": "CC BY-SA 2.0"
