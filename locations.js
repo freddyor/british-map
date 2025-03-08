@@ -373,7 +373,7 @@ export const locations = [
     events: [
       { date: "1936", description: "Conceived the Turing Machine, a theoretical device that laid the foundation for modern computing 💡" },
       { date: "1942", description: "Played a crucial role in breaking the Enigma code at Bletchley Park, shortening World War II and saving countless lives 🎖️" },
-      { date: "Legacy", description: "Pioneered artificial intelligence and computer science, leaving a lasting impact on technology and society 🤖"
+      { date: "Legacy", description: "Pioneered artificial intelligence and computer science, leaving a lasting impact on technology and society 🤖" }
     ]
   },
   {
