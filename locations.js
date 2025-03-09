@@ -706,7 +706,7 @@ export const locations = [
     name: "J.R.R Tolkien",
     occupation: "1892-1973",
     description: "J.R.R Tolkien was stationed here for eleven months during the First World War",
-    image: "https://upload.wikimedia/commons/d/d4/J._R._R._Tolkien%2C_ca._1925.jpg",
+    image: "https://upload.wikimedia.org/wikipedia/commons/d/d4/J._R._R._Tolkien%2C_ca._1925.jpg",
     tldr: "His experiences during WWI deeply influenced his writings and themes of heroism and sacrifice.",
     events: [
       { date: "1937", description: "Published 'The Hobbit', creating a magical world that captivated readers of all ages ✨" },
@@ -732,7 +732,7 @@ export const locations = [
     name: "J.R.R Tolkien",
     occupation: "1892-1973",
     description: "J.R.R Tolkien lived here",
-    image: "https://upload.wikimedia/commons/d/d4/J._R._R._Tolkien%2C_ca._1925.jpg",
+    image: "https://upload.wikimedia.org/wikipedia/commons/d/d4/J._R._R._Tolkien%2C_ca._1925.jpg",
     tldr: "His time in Leeds influenced his writing and understanding of language and mythology.",
    events: [
       { date: "1937", description: "Published 'The Hobbit', creating a magical world that captivated readers of all ages ✨" },
@@ -745,7 +745,7 @@ export const locations = [
     name: "J.R.R Tolkien",
     occupation: "1892-1973",
     description: "J.R.R Tolkien wrote Lord of the Rings whilst living here",
-    image: "https://upload.wikimedia/commons/d/d4/J._R._R._Tolkien%2C_ca._1925.jpg",
+    image: "https://upload.wikimedia.org/wikipedia/commons/d/d4/J._R._R._Tolkien%2C_ca._1925.jpgg",
     tldr: "His Oxford residence became the birthplace of Middle-earth and its epic sagas.",
     events: [
       { date: "1937", description: "Published 'The Hobbit', creating a magical world that captivated readers of all ages ✨" },
@@ -758,7 +758,7 @@ export const locations = [
     name: "J.R.R Tolkien",
     occupation: "1892-1973",
     description: "J.R.R Tolkien wrote The Hobbit whilst living here",
-    image: "https://upload.wikimedia/commons/d/d4/J._R._R._Tolkien%2C_ca._1925.jpg",
+    image: "https://upload.wikimedia.org/wikipedia/commons/d/d4/J._R._R._Tolkien%2C_ca._1925.jpg",
     tldr: "Began his journey into Middle-earth with 'The Hobbit', inspiring generations of readers.",
    events: [
       { date: "1937", description: "Published 'The Hobbit', creating a magical world that captivated readers of all ages ✨" },
@@ -784,7 +784,7 @@ export const locations = [
     name: "J.R.R Tolkien",
     occupation: "1892-1973",
     description: "J.R.R Tolkien is buried here next to his wife",
-    image: "https://upload.wikimedia/commons/d/d4/J._R._R._Tolkien%2C_ca._1925.jpg",
+    image: "https://upload.wikimedia.org/wikipedia/commons/d/d4/J._R._R._Tolkien%2C_ca._1925.jpg",
     tldr: "His final resting place is a testament to his enduring love and legacy.",
      events: [
       { date: "1937", description: "Published 'The Hobbit', creating a magical world that captivated readers of all ages ✨" },
