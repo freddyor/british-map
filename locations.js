@@ -1,5 +1,239 @@
 export const locations = [
   {
+    coords: [-1.2025688490491881, 54.53833739729014],
+    name: "James Cook",
+    occupation: "1728-1779",
+    description: "James Cook was born on this site",
+    image: "https://upload.wikimedia.org/wikipedia/commons/7/76/Captainjamescookportrait.jpg",
+    tldr: "Renowned British explorer, navigator, and cartographer who mapped much of the world, transforming global understanding and maritime exploration.",
+    events: [
+      { date: "1768-1771", description: "Commanded the HMS Endeavour on his first voyage, charting New Zealand and the eastern coast of Australia🗺️" },
+      { date: "1776-1779", description: "Searched for the Northwest Passage on his third voyage, charting the Pacific Northwest coast of North America but tragically lost his life in Hawaii 🧭" },
+      { date: "Legacy", description: "Revolutionized navigation and mapping, leaving an enduring impact on global exploration and scientific knowledge 🌍" }
+    ]
+  },
+  {
+    coords: [-1.1077045669945285, 54.49631813504728],
+    name: "James Cook",
+    occupation: "1728-1779",
+    description: "James Cook lived here before his travels",
+    image: "https://upload.wikimedia.org/wikipedia/commons/7/76/Captainjamescookportrait.jpg",
+    tldr: "Renowned British explorer, navigator, and cartographer who mapped much of the world, transforming global understanding and maritime exploration.",
+    events: [
+      { date: "1768-1771", description: "Commanded the HMS Endeavour on his first voyage, charting New Zealand and the eastern coast of Australia🗺️" },
+      { date: "1776-1779", description: "Searched for the Northwest Passage on his third voyage, charting the Pacific Northwest coast of North America but tragically lost his life in Hawaii 🧭" },
+      { date: "Legacy", description: "Revolutionized navigation and mapping, leaving an enduring impact on global exploration and scientific knowledge 🌍" }
+    ]
+  },
+  {
+    coords: [-1.0908110683701884, 54.482989599334516],
+    name: "James Cook",
+    occupation: "1728-1779",
+    description: "James Cook is memorialized here",
+    image: "https://upload.wikimedia.org/wikipedia/commons/7/76/Captainjamescookportrait.jpg",
+    tldr: "Renowned British explorer, navigator, and cartographer who mapped much of the world, transforming global understanding and maritime exploration.",
+    events: [
+      { date: "1768-1771", description: "Commanded the HMS Endeavour on his first voyage, charting New Zealand and the eastern coast of Australia🗺️" },
+      { date: "1776-1779", description: "Searched for the Northwest Passage on his third voyage, charting the Pacific Northwest coast of North America but tragically lost his life in Hawaii 🧭" },
+      { date: "Legacy", description: "Revolutionized navigation and mapping, leaving an enduring impact on global exploration and scientific knowledge 🌍" }
+    ]
+  },
+  {
+    coords: [-1.1344932248756359, 54.4886326977119],
+    name: "James Cook",
+    occupation: "1728-1779",
+    description: "James Cook went to school here",
+    image: "https://upload.wikimedia.org/wikipedia/commons/7/76/Captainjamescookportrait.jpg",
+    tldr: "Renowned British explorer, navigator, and cartographer who mapped much of the world, transforming global understanding and maritime exploration.",
+    events: [
+      { date: "1768-1771", description: "Commanded the HMS Endeavour on his first voyage, charting New Zealand and the eastern coast of Australia🗺️" },
+      { date: "1776-1779", description: "Searched for the Northwest Passage on his third voyage, charting the Pacific Northwest coast of North America but tragically lost his life in Hawaii 🧭" },
+      { date: "Legacy", description: "Revolutionized navigation and mapping, leaving an enduring impact on global exploration and scientific knowledge 🌍" }
+    ]
+  },
+  {
+    coords: [-0.05263410894925387, 51.509411003322015],
+    name: "James Cook",
+    occupation: "1728-1779",
+    description: "James Cook attended church here",
+    image: "https://upload.wikimedia.org/wikipedia/commons/7/76/Captainjamescookportrait.jpg",
+    tldr: "Renowned British explorer, navigator, and cartographer who mapped much of the world, transforming global understanding and maritime exploration.",
+    events: [
+      { date: "1768-1771", description: "Commanded the HMS Endeavour on his first voyage, charting New Zealand and the eastern coast of Australia🗺️" },
+      { date: "1776-1779", description: "Searched for the Northwest Passage on his third voyage, charting the Pacific Northwest coast of North America but tragically lost his life in Hawaii 🧭" },
+      { date: "Legacy", description: "Revolutionized navigation and mapping, leaving an enduring impact on global exploration and scientific knowledge 🌍" }
+    ]
+  },
+  {
+    coords: [-0.04691740416166979, 51.5097268867682],
+    name: "James Cook",
+    occupation: "1728-1779",
+    description: "James Cook lived in this area",
+    image: "https://upload.wikimedia.org/wikipedia/commons/7/76/Captainjamescookportrait.jpg",
+    tldr: "Renowned British explorer, navigator, and cartographer who mapped much of the world, transforming global understanding and maritime exploration.",
+    events: [
+      { date: "1768-1771", description: "Commanded the HMS Endeavour on his first voyage, charting New Zealand and the eastern coast of Australia🗺️" },
+      { date: "1776-1779", description: "Searched for the Northwest Passage on his third voyage, charting the Pacific Northwest coast of North America but tragically lost his life in Hawaii 🧭" },
+      { date: "Legacy", description: "Revolutionized navigation and mapping, leaving an enduring impact on global exploration and scientific knowledge 🌍" }
+    ]
+  },
+  {
+    coords: [-0.6118220403939676, 54.486648277239155],
+    name: "James Cook",
+    occupation: "1728-1779",
+    description: "James Cook lodged here as an apprentice",
+    image: "https://upload.wikimedia.org/wikipedia/commons/7/76/Captainjamescookportrait.jpg",
+    tldr: "Renowned British explorer, navigator, and cartographer who mapped much of the world, transforming global understanding and maritime exploration.",
+    events: [
+      { date: "1768-1771", description: "Commanded the HMS Endeavour on his first voyage, charting New Zealand and the eastern coast of Australia🗺️" },
+      { date: "1776-1779", description: "Searched for the Northwest Passage on his third voyage, charting the Pacific Northwest coast of North America but tragically lost his life in Hawaii 🧭" },
+      { date: "Legacy", description: "Revolutionized navigation and mapping, leaving an enduring impact on global exploration and scientific knowledge 🌍" }
+    ]
+  },
+  {
+    coords: [-3.5187641526977997, 50.465133002131154],
+    name: "Isambard Kingdom Brunel",
+    occupation: "1806-1859",
+    description: "Isambard Kingdom Brunel lived here with his wife in 1848",
+    image: "https://upload.wikimedia.org/wikipedia/commons/6/67/Robert_Howlett_%28Isambard_Kingdom_Brunel_Standing_Before_the_Launching_Chains_of_the_Great_Eastern%29%2C_The_Metropolitan_Museum_of_Art_-_restoration1.jpg",
+    tldr: "Visionary engineer who transformed British infrastructure with his innovative designs for railways, bridges, and ships, leaving a lasting legacy in engineering.",
+    events: [
+      { date: "1833", description: "Designed the Great Western Railway, revolutionizing transportation and connecting London to the West Country 🚂" },
+      { date: "1859", description: "Launched the SS Great Eastern, the largest ship of its time, pushing the boundaries of naval engineering 🚢" },
+      { date: "Legacy", description: "Transformed British infrastructure with his innovative designs and ambitious projects 🌉" }
+    ]
+  },
+  {
+    coords: [-1.1027034494617585, 50.796579075051454],
+    name: "Isambard Kingdom Brunel",
+    occupation: "1806-1859",
+    description: "Isambard Kingdom Brunel was born here",
+    image: "https://upload.wikimedia.org/wikipedia/commons/6/67/Robert_Howlett_%28Isambard_Kingdom_Brunel_Standing_Before_the_Launching_Chains_of_the_Great_Eastern%29%2C_The_Metropolitan_Museum_of_Art_-_restoration1.jpg",
+    tldr: "Visionary engineer who transformed British infrastructure with his innovative designs for railways, bridges, and ships, leaving a lasting legacy in engineering.",
+    events: [
+      { date: "1833", description: "Designed the Great Western Railway, revolutionizing transportation and connecting London to the West Country 🚂" },
+      { date: "1859", description: "Launched the SS Great Eastern, the largest ship of its time, pushing the boundaries of naval engineering 🚢" },
+      { date: "Legacy", description: "Transformed British infrastructure with his innovative designs and ambitious projects 🌉" }
+    ]
+  },
+  {
+    coords: [-0.1765943907825993, 50.82676689948048],
+    name: "Isambard Kingdom Brunel",
+    occupation: "1806-1859",
+    description: "Isambard Kingdom Brunel was educated here in 1820",
+    image: "https://upload.wikimedia.org/wikipedia/commons/6/67/Robert_Howlett_%28Isambard_Kingdom_Brunel_Standing_Before_the_Launching_Chains_of_the_Great_Eastern%29%2C_The_Metropolitan_Museum_of_Art_-_restoration1.jpg",
+    tldr: "Visionary engineer who transformed British infrastructure with his innovative designs for railways, bridges, and ships, leaving a lasting legacy in engineering.",
+    events: [
+      { date: "1833", description: "Designed the Great Western Railway, revolutionizing transportation and connecting London to the West Country 🚂" },
+      { date: "1859", description: "Launched the SS Great Eastern, the largest ship of its time, pushing the boundaries of naval engineering 🚢" },
+      { date: "Legacy", description: "Transformed British infrastructure with his innovative designs and ambitious projects 🌉" }
+    ]
+  },
+  {
+    coords: [-0.12919321293168373, 51.50192421657911],
+    name: "Isambard Kingdom Brunel",
+    occupation: "1806-1859",
+    description: "Isambard Kingdom Brunel lived here with his wife",
+    image: "https://upload.wikimedia.org/wikipedia/commons/6/67/Robert_Howlett_%28Isambard_Kingdom_Brunel_Standing_Before_the_Launching_Chains_of_the_Great_Eastern%29%2C_The_Metropolitan_Museum_of_Art_-_restoration1.jpg",
+    tldr: "Visionary engineer who transformed British infrastructure with his innovative designs for railways, bridges, and ships, leaving a lasting legacy in engineering.",
+    events: [
+      { date: "1833", description: "Designed the Great Western Railway, revolutionizing transportation and connecting London to the West Country 🚂" },
+      { date: "1859", description: "Launched the SS Great Eastern, the largest ship of its time, pushing the boundaries of naval engineering 🚢" },
+      { date: "Legacy", description: "Transformed British infrastructure with his innovative designs and ambitious projects 🌉" }
+    ]
+  },
+  {
+    coords: [-3.5258447658157652, 50.50120421462843],
+    name: "Isambard Kingdom Brunel",
+    occupation: "1806-1859",
+    description: "Isambard Kingdom Brunel built this manor to be his country home",
+    image: "https://upload.wikimedia.org/wikipedia/commons/6/67/Robert_Howlett_%28Isambard_Kingdom_Brunel_Standing_Before_the_Launching_Chains_of_the_Great_Eastern%29%2C_The_Metropolitan_Museum_of_Art_-_restoration1.jpg",
+    tldr: "Visionary engineer who transformed British infrastructure with his innovative designs for railways, bridges, and ships, leaving a lasting legacy in engineering.",
+    events: [
+      { date: "1833", description: "Designed the Great Western Railway, revolutionizing transportation and connecting London to the West Country 🚂" },
+      { date: "1859", description: "Launched the SS Great Eastern, the largest ship of its time, pushing the boundaries of naval engineering 🚢" },
+      { date: "Legacy", description: "Transformed British infrastructure with his innovative designs and ambitious projects 🌉" }
+    ]
+  },
+  {
+    coords: [-0.22091734842900027, 51.528242466384725],
+    name: "Isambard Kingdom Brunel",
+    occupation: "1806-1859",
+    description: "Isambard Kingdom Brunel is buried here in the family grave",
+    image: "https://upload.wikimedia.org/wikipedia/commons/6/67/Robert_Howlett_%28Isambard_Kingdom_Brunel_Standing_Before_the_Launching_Chains_of_the_Great_Eastern%29%2C_The_Metropolitan_Museum_of_Art_-_restoration1.jpg",
+    tldr: "Visionary engineer who transformed British infrastructure with his innovative designs for railways, bridges, and ships, leaving a lasting legacy in engineering.",
+    events: [
+      { date: "1833", description: "Designed the Great Western Railway, revolutionizing transportation and connecting London to the West Country 🚂" },
+      { date: "1859", description: "Launched the SS Great Eastern, the largest ship of its time, pushing the boundaries of naval engineering 🚢" },
+      { date: "Legacy", description: "Transformed British infrastructure with his innovative designs and ambitious projects 🌉" }
+    ]
+  },
+  {
+    coords: [-2.5837536929399083, 51.44896587758222],
+    name: "Isambard Kingdom Brunel",
+    occupation: "1806-1859",
+    description: "Isambard Kingdom Brunel built his first railway station here at Temple Meads",
+    image: "https://upload.wikimedia.org/wikipedia/commons/6/67/Robert_Howlett_%28Isambard_Kingdom_Brunel_Standing_Before_the_Launching_Chains_of_the_Great_Eastern%29%2C_The_Metropolitan_Museum_of_Art_-_restoration1.jpg",
+    tldr: "Visionary engineer who transformed British infrastructure with his innovative designs for railways, bridges, and ships, leaving a lasting legacy in engineering.",
+    events: [
+      { date: "1833", description: "Designed the Great Western Railway, revolutionizing transportation and connecting London to the West Country 🚂" },
+      { date: "1859", description: "Launched the SS Great Eastern, the largest ship of its time, pushing the boundaries of naval engineering 🚢" },
+      { date: "Legacy", description: "Transformed British infrastructure with his innovative designs and ambitious projects 🌉" }
+    ]
+  },
+  {
+    coords: [-2.6281342528871194, 51.45495567002387],
+    name: "Isambard Kingdom Brunel",
+    occupation: "1806-1859",
+    description: "Isambard Kingdom Brunel built Clifton Suspension Bridge here",
+    image: "https://upload.wikimedia.org/wikipedia/commons/6/67/Robert_Howlett_%28Isambard_Kingdom_Brunel_Standing_Before_the_Launching_Chains_of_the_Great_Eastern%29%2C_The_Metropolitan_Museum_of_Art_-_restoration1.jpg",
+    tldr: "Visionary engineer who transformed British infrastructure with his innovative designs for railways, bridges, and ships, leaving a lasting legacy in engineering.",
+    events: [
+      { date: "1833", description: "Designed the Great Western Railway, revolutionizing transportation and connecting London to the West Country 🚂" },
+      { date: "1859", description: "Launched the SS Great Eastern, the largest ship of its time, pushing the boundaries of naval engineering 🚢" },
+      { date: "Legacy", description: "Transformed British infrastructure with his innovative designs and ambitious projects 🌉" }
+    ]
+  },
+  {
+    coords: [-4.20316696674581, 50.407653052621924],
+    name: "Isambard Kingdom Brunel",
+    occupation: "1806-1859",
+    description: "Isambard Kingdom Brunel built The Royal Albert Bridge here",
+    image: "https://upload.wikimedia.org/wikipedia/commons/6/67/Robert_Howlett_%28Isambard_Kingdom_Brunel_Standing_Before_the_Launching_Chains_of_the_Great_Eastern%29%2C_The_Metropolitan_Museum_of_Art_-_restoration1.jpg",
+    tldr: "Visionary engineer who transformed British infrastructure with his innovative designs for railways, bridges, and ships, leaving a lasting legacy in engineering.",
+    events: [
+      { date: "1833", description: "Designed the Great Western Railway, revolutionizing transportation and connecting London to the West Country 🚂" },
+      { date: "1859", description: "Launched the SS Great Eastern, the largest ship of its time, pushing the boundaries of naval engineering 🚢" },
+      { date: "Legacy", description: "Transformed British infrastructure with his innovative designs and ambitious projects 🌉" }
+    ]
+  },
+  {
+    coords: [-0.7021285674321741, 51.52396262998147],
+    name: "Isambard Kingdom Brunel",
+    occupation: "1806-1859",
+    description: "Isambard Kingdom Brunel built Maidenhead Bridge here",
+    image: "https://upload.wikimedia.org/wikipedia/commons/6/67/Robert_Howlett_%28Isambard_Kingdom_Brunel_Standing_Before_the_Launching_Chains_of_the_Great_Eastern%29%2C_The_Metropolitan_Museum_of_Art_-_restoration1.jpg",
+    tldr: "Visionary engineer who transformed British infrastructure with his innovative designs for railways, bridges, and ships, leaving a lasting legacy in engineering.",
+    events: [
+      { date: "1833", description: "Designed the Great Western Railway, revolutionizing transportation and connecting London to the West Country 🚂" },
+      { date: "1859", description: "Launched the SS Great Eastern, the largest ship of its time, pushing the boundaries of naval engineering 🚢" },
+      { date: "Legacy", description: "Transformed British infrastructure with his innovative designs and ambitious projects 🌉" }
+    ]
+  },
+  {
+    coords: [-0.05280324536835574, 51.502015607558214],
+    name: "Isambard Kingdom Brunel",
+    occupation: "1806-1859",
+    description: "Isambard Kingdom Brunel built the Thames Tunnel here",
+    image: "https://upload.wikimedia.org/wikipedia/commons/6/67/Robert_Howlett_%28Isambard_Kingdom_Brunel_Standing_Before_the_Launching_Chains_of_the_Great_Eastern%29%2C_The_Metropolitan_Museum_of_Art_-_restoration1.jpg",
+    tldr: "Visionary engineer who transformed British infrastructure with his innovative designs for railways, bridges, and ships, leaving a lasting legacy in engineering.",
+    events: [
+      { date: "1833", description: "Designed the Great Western Railway, revolutionizing transportation and connecting London to the West Country 🚂" },
+      { date: "1859", description: "Launched the SS Great Eastern, the largest ship of its time, pushing the boundaries of naval engineering 🚢" },
+      { date: "Legacy", description: "Transformed British infrastructure with his innovative designs and ambitious projects 🌉" }
+    ]
+  },
+  {
     coords: [-1.7079626577201492, 52.1938675865334],
     name: "William Shakespeare",
     occupation: "1564-1616",
