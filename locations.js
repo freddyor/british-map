@@ -1,4 +1,357 @@
 export const locations = [
+
+  {
+    coords: [-1.3084437344766975, 52.97731515854053],
+    name: "Harry Coulby",
+    occupation: "1865 - 1929",
+    description: "Harry Coulby worked here at the old Ilkeston Station",
+    image: "https://upload.wikimedia.org/wikipedia/commons/b/b0/Harry_Coulby_1917.jpg",
+    tldr: "British-American businessman and philanthropist, known as 'The Commodore of the Great Lakes,' who significantly contributed to the Great Lakes shipping industry and various charitable causes.",
+    events: [
+      { date: "1920s", description: "Oversaw construction of 26 600-foot and 4 500-foot freighters, massively expanding Pittsburgh Steamship Company's fleet capacity🚢" },
+      { date: "1913", description: "Orchestrated merger creating Interlake Steamship Company, with 37 freighters and 2 barges, becoming 2nd largest Great Lakes fleet🏗️" },
+      { date: "Legacy", description: "Left over $3.2 million in bequests (>$50 million today), including $3 million to Cleveland Foundation, saving it during Great Depression💰" }
+    ]
+  },
+  {
+    coords: [-2.057001644716675, 53.400857504806204],
+    name: "Harry Coulby",
+    occupation: "1865 - 1929",
+    description: "Harry Coulby worked here at Marple Station",
+    image: "https://upload.wikimedia.org/wikipedia/commons/b/b0/Harry_Coulby_1917.jpg",
+    tldr: "British-American businessman and philanthropist, known as 'The Commodore of the Great Lakes,' who significantly contributed to the Great Lakes shipping industry and various charitable causes.",
+    events: [
+      { date: "1920s", description: "Oversaw construction of 26 600-foot and 4 500-foot freighters, massively expanding Pittsburgh Steamship Company's fleet capacity🚢" },
+      { date: "1913", description: "Orchestrated merger creating Interlake Steamship Company, with 37 freighters and 2 barges, becoming 2nd largest Great Lakes fleet🏗️" },
+      { date: "Legacy", description: "Left over $3.2 million in bequests (>$50 million today), including $3 million to Cleveland Foundation, saving it during Great Depression💰" }
+    ]
+  },
+  {
+    coords: [-0.7348461460004938, 53.03149469990354],
+    name: "Harry Coulby",
+    occupation: "1865 - 1929",
+    description: "This hall was donated by Harry Coulby in 1923",
+    image: "https://upload.wikimedia.org/wikipedia/commons/b/b0/Harry_Coulby_1917.jpg",
+    tldr: "British-American businessman and philanthropist, known as 'The Commodore of the Great Lakes,' who significantly contributed to the Great Lakes shipping industry and various charitable causes.",
+    events: [
+      { date: "1920s", description: "Oversaw construction of 26 600-foot and 4 500-foot freighters, massively expanding Pittsburgh Steamship Company's fleet capacity🚢" },
+      { date: "1913", description: "Orchestrated merger creating Interlake Steamship Company, with 37 freighters and 2 barges, becoming 2nd largest Great Lakes fleet🏗️" },
+      { date: "Legacy", description: "Left over $3.2 million in bequests (>$50 million today), including $3 million to Cleveland Foundation, saving it during Great Depression💰" }
+    ]
+  },
+  {
+    coords: [-0.7318066667657613, 53.033170192866514],
+    name: "Harry Coulby",
+    occupation: "1865 - 1929",
+    description: "Harry Coulby attended school here, where he first read about The Great Lakes, and later made significant donations",
+    image: "https://upload.wikimedia.org/wikipedia/commons/b/b0/Harry_Coulby_1917.jpg",
+    tldr: "British-American businessman and philanthropist, known as 'The Commodore of the Great Lakes,' who significantly contributed to the Great Lakes shipping industry and various charitable causes.",
+    events: [
+      { date: "1920s", description: "Oversaw construction of 26 600-foot and 4 500-foot freighters, massively expanding Pittsburgh Steamship Company's fleet capacity🚢" },
+      { date: "1913", description: "Orchestrated merger creating Interlake Steamship Company, with 37 freighters and 2 barges, becoming 2nd largest Great Lakes fleet🏗️" },
+      { date: "Legacy", description: "Left over $3.2 million in bequests (>$50 million today), including $3 million to Cleveland Foundation, saving it during Great Depression💰" }
+    ]
+  },
+  {
+    coords: [-2.894747408532626, 53.19917464933829],
+    name: "Daniel Craig",
+    occupation: "Born 1968",
+    description: "Daniel Craig’s childhood home",
+    image: "https://upload.wikimedia.org/wikipedia/commons/6/67/Daniel_Craig-62900.jpg",
+    tldr: "English actor best known for portraying James Bond in the film series, achieving international fame and critical acclaim.",
+    events: [
+      { date: "2006", description: "Debuted as James Bond in 'Casino Royale,' which grossed over $600 million worldwide, revitalizing the franchise🎬" },
+      { date: "2012", description: "Starred in 'Skyfall,' which became the highest-grossing James Bond film of all time, earning over $1.1 billion worldwide💰" },
+      { date: "Legacy", description: "Played James Bond in five films, generating over $3.9 billion in global box office revenue and redefining the character🕵️‍♂️" }
+    ]
+  },
+  {
+    coords: [-2.892986046583389, 53.19271110158778],
+    name: "Daniel Craig",
+    occupation: "Born 1968",
+    description: "As a child, Daniel Craig frequented the Old Gateway Theatre here",
+    image: "https://upload.wikimedia.org/wikipedia/commons/6/67/Daniel_Craig-62900.jpg",
+    tldr: "English actor best known for portraying James Bond in the film series, achieving international fame and critical acclaim.",
+    events: [
+      { date: "2006", description: "Debuted as James Bond in 'Casino Royale,' which grossed over $600 million worldwide, revitalizing the franchise🎬" },
+      { date: "2012", description: "Starred in 'Skyfall,' which became the highest-grossing James Bond film of all time, earning over $1.1 billion worldwide💰" },
+      { date: "Legacy", description: "Played James Bond in five films, generating over $3.9 billion in global box office revenue and redefining the character🕵️‍♂️" }
+    ]
+  },
+  {
+    coords: [-3.161022585635591, 53.37568405206545],
+    name: "Daniel Craig",
+    occupation: "Born 1968",
+    description: "Daniel Craig attended school here",
+    image: "https://upload.wikimedia.org/wikipedia/commons/6/67/Daniel_Craig-62900.jpg",
+    tldr: "English actor best known for portraying James Bond in the film series, achieving international fame and critical acclaim.",
+    events: [
+      { date: "2006", description: "Debuted as James Bond in 'Casino Royale,' which grossed over $600 million worldwide, revitalizing the franchise🎬" },
+      { date: "2012", description: "Starred in 'Skyfall,' which became the highest-grossing James Bond film of all time, earning over $1.1 billion worldwide💰" },
+      { date: "Legacy", description: "Played James Bond in five films, generating over $3.9 billion in global box office revenue and redefining the character🕵️‍♂️" }
+    ]
+  },
+  {
+    coords: [-3.1623734847104292, 53.36773735467553],
+    name: "Daniel Craig",
+    occupation: "Born 1968",
+    description: "attended school here for a short period before moving to London at 16",
+    image: "https://upload.wikimedia.org/wikipedia/commons/6/67/Daniel_Craig-62900.jpg",
+    tldr: "English actor best known for portraying James Bond in the film series, achieving international fame and critical acclaim.",
+    events: [
+      { date: "2006", description: "Debuted as James Bond in 'Casino Royale,' which grossed over $600 million worldwide, revitalizing the franchise🎬" },
+      { date: "2012", description: "Starred in 'Skyfall,' which became the highest-grossing James Bond film of all time, earning over $1.1 billion worldwide💰" },
+      { date: "Legacy", description: "Played James Bond in five films, generating over $3.9 billion in global box office revenue and redefining the character🕵️‍♂️" }
+    ]
+  },
+  {
+    coords: [-3.6093523916041717, 50.73236287534727],
+    name: "Chris Martin",
+    occupation: "Born 1977",
+    description: "Chris Martin’s childhood home",
+    image: "https://upload.wikimedia.org/wikipedia/commons/5/57/Chris_Martin_in_2018.jpg",
+    tldr: "English singer, songwriter, and musician, best known as the lead vocalist and co-founder of the band Coldplay.",
+    events: [
+      { date: "2000", description: "Coldplay released their debut album 'Parachutes,' which reached number one in several countries and won a Grammy Award🎶" },
+      { date: "2005", description: "Coldplay released their album 'X&Y,' which became the best-selling album worldwide that year📈" },
+      { date: "Legacy", description: "Coldplay has sold over 100 million albums worldwide, making them one of the best-selling music acts of all time🎵" }
+    ]
+  },
+  {
+    coords: [-3.5303145345462443, 50.721696252638345],
+    name: "Chris Martin",
+    occupation: "Born 1977",
+    description: "Chris Martin attended Exeter Cathedral here, where he found his passion for music",
+    image: "https://upload.wikimedia.org/wikipedia/commons/5/57/Chris_Martin_in_2018.jpg",
+    tldr: "English singer, songwriter, and musician, best known as the lead vocalist and co-founder of the band Coldplay.",
+    events: [
+      { date: "2000", description: "Coldplay released their debut album 'Parachutes,' which reached number one in several countries and won a Grammy Award🎶" },
+      { date: "2005", description: "Coldplay released their album 'X&Y,' which became the best-selling album worldwide that year📈" },
+      { date: "Legacy", description: "Coldplay has sold over 100 million albums worldwide, making them one of the best-selling music acts of all time🎵" }
+    ]
+  },
+  {
+    coords: [-2.5172917487115436, 50.94729648501156],
+    name: "Chris Martin",
+    occupation: "Born 1977",
+    description: "Chris Martin attended school here and met Coldplay manager Phil Harvey",
+    image: "https://upload.wikimedia.org/wikipedia/commons/5/57/Chris_Martin_in_2018.jpg",
+    tldr: "English singer, songwriter, and musician, best known as the lead vocalist and co-founder of the band Coldplay.",
+    events: [
+      { date: "2000", description: "Coldplay released their debut album 'Parachutes,' which reached number one in several countries and won a Grammy Award🎶" },
+      { date: "2005", description: "Coldplay released their album 'X&Y,' which became the best-selling album worldwide that year📈" },
+      { date: "Legacy", description: "Coldplay has sold over 100 million albums worldwide, making them one of the best-selling music acts of all time🎵" }
+    ]
+  },
+  {
+    coords: [-0.13426212707160817, 51.52432615273101],
+    name: "Chris Martin",
+    occupation: "Born 1977",
+    description: "Chris Martin was educated at UCL here, where he met the rest of the Coldplay group",
+    image: "https://upload.wikimedia.org/wikipedia/commons/5/57/Chris_Martin_in_2018.jpg",
+    tldr: "English singer, songwriter, and musician, best known as the lead vocalist and co-founder of the band Coldplay.",
+    events: [
+      { date: "2000", description: "Coldplay released their debut album 'Parachutes,' which reached number one in several countries and won a Grammy Award🎶" },
+      { date: "2005", description: "Coldplay released their album 'X&Y,' which became the best-selling album worldwide that year📈" },
+      { date: "Legacy", description: "Coldplay has sold over 100 million albums worldwide, making them one of the best-selling music acts of all time🎵" }
+    ]
+  },
+  {
+    coords: [-0.31457657929465344, 52.54073088318617],
+    name: "Chris Martin",
+    occupation: "Born 1977",
+    description: "Chris Martin is an advocate for hearing loss awareness and is partnered here with the Royal National Institute for Hearing Loss",
+    image: "https://upload.wikimedia.org/wikipedia/commons/5/57/Chris_Martin_in_2018.jpg",
+    tldr: "English singer, songwriter, and musician, best known as the lead vocalist and co-founder of the band Coldplay.",
+    events: [
+      { date: "2000", description: "Coldplay released their debut album 'Parachutes,' which reached number one in several countries and won a Grammy Award🎶" },
+      { date: "2005", description: "Coldplay released their album 'X&Y,' which became the best-selling album worldwide that year📈" },
+      { date: "Legacy", description: "Coldplay has sold over 100 million albums worldwide, making them one of the best-selling music acts of all time🎵" }
+    ]
+  },
+  {
+    coords: [-3.2179112268912884, 55.93046242731976],
+    name: "Chris Hoy",
+    occupation: "Born 1976",
+    description: "Chris Hoy was educated here and played Rugby",
+    image: "https://upload.wikimedia.org/wikipedia/commons/6/6c/Hoy_cropped_(2).jpg",
+    tldr: "Scottish racing cyclist, six-time Olympic champion, and one of Britain's most successful Olympians.",
+    events: [
+      { date: "2008", description: "Won three gold medals at the Beijing Olympics, becoming the first British athlete since 1908 to achieve this feat🥇🥇🥇" },
+      { date: "2012", description: "Won two gold medals at the London Olympics, becoming Britain's most successful Olympian with six gold medals🏅🏅" },
+      { date: "Legacy", description: "Inspired a new generation of cyclists, with cycling participation increasing by over 30% in the UK after the 2012 Olympics🚴" }
+    ]
+  },
+  {
+    coords: [-2.8075873377859457, 56.33986838258751],
+    name: "Chris Hoy",
+    occupation: "Born 1976",
+    description: "Chris Hoy studied math and physics here until 1996",
+    image: "https://upload.wikimedia.org/wikipedia/commons/6/6c/Hoy_cropped_(2).jpg",
+    tldr: "Scottish racing cyclist, six-time Olympic champion, and one of Britain's most successful Olympians.",
+    events: [
+      { date: "2008", description: "Won three gold medals at the Beijing Olympics, becoming the first British athlete since 1908 to achieve this feat🥇🥇🥇" },
+      { date: "2012", description: "Won two gold medals at the London Olympics, becoming Britain's most successful Olympian with six gold medals🏅🏅" },
+      { date: "Legacy", description: "Inspired a new generation of cyclists, with cycling participation increasing by over 30% in the UK after the 2012 Olympics🚴" }
+    ]
+  },
+  {
+    coords: [-2.416121623700324, 53.33048189384742],
+    name: "Chris Hoy",
+    occupation: "Born 1976",
+    description: "Chris Hoy lived and trained here until 2013",
+    image: "https://upload.wikimedia.org/wikipedia/commons/6/6c/Hoy_cropped_(2).jpg",
+    tldr: "Scottish racing cyclist, six-time Olympic champion, and one of Britain's most successful Olympians.",
+    events: [
+      { date: "2008", description: "Won three gold medals at the Beijing Olympics, becoming the first British athlete since 1908 to achieve this feat🥇🥇🥇" },
+      { date: "2012", description: "Won two gold medals at the London Olympics, becoming Britain's most successful Olympian with six gold medals🏅🏅" },
+      { date: "Legacy", description: "Inspired a new generation of cyclists, with cycling participation increasing by over 30% in the UK after the 2012 Olympics🚴" }
+    ]
+  },
+  {
+    coords: [-4.020065736245737, 55.78695727360698],
+    name: "Chris Hoy",
+    occupation: "Born 1976",
+    description: "Chris Hoy represented the Scottish Junior Rowing Team here, coming second in the 1993 National Rowing Championships",
+    image: "https://upload.wikimedia.org/wikipedia/commons/6/6c/Hoy_cropped_(2).jpg",
+    tldr: "Scottish racing cyclist, six-time Olympic champion, and one of Britain's most successful Olympians.",
+    events: [
+      { date: "2008", description: "Won three gold medals at the Beijing Olympics, becoming the first British athlete since 1908 to achieve this feat🥇🥇🥇" },
+      { date: "2012", description: "Won two gold medals at the London Olympics, becoming Britain's most successful Olympian with six gold medals🏅🏅" },
+      { date: "Legacy", description: "Inspired a new generation of cyclists, with cycling participation increasing by over 30% in the UK after the 2012 Olympics🚴" }
+    ]
+  },
+  {
+    coords: [-3.1716105424080294, 55.97041167821278],
+    name: "Chris Hoy",
+    occupation: "Born 1976",
+    description: "Chris Hoy slept out at Social Bite’s ‘Sleep in The Park’ events to raise money for charity",
+    image: "https://upload.wikimedia.org/wikipedia/commons/6/6c/Hoy_cropped_(2).jpg",
+    tldr: "Scottish racing cyclist, six-time Olympic champion, and one of Britain's most successful Olympians.",
+    events: [
+      { date: "2008", description: "Won three gold medals at the Beijing Olympics, becoming the first British athlete since 1908 to achieve this feat🥇🥇🥇" },
+      { date: "2012", description: "Won two gold medals at the London Olympics, becoming Britain's most successful Olympian with six gold medals🏅🏅" },
+      { date: "Legacy", description: "Inspired a new generation of cyclists, with cycling participation increasing by over 30% in the UK after the 2012 Olympics🚴"
+     }
+    ]
+  },
+  {
+    coords: [-0.20792572603121381, 51.921543419996055],
+    name: "Lewis Hamilton",
+    occupation: "Born 1985",
+    description: "Lewis Hamilton grew up here between 1997 and 2001",
+    image: "https://upload.wikimedia.org/wikipedia/commons/a/ac/Lewis_Hamilton_2022_São_Paulo_Grand_Prix_(52498120773)_(cropped).jpg",
+    tldr: "British racing driver, seven-time Formula One World Champion, and advocate for social justice and environmental sustainability.",
+    events: [
+      { date: "2008", description: "Won his first Formula One World Championship, becoming the youngest champion at the time at age 23🏆" },
+      { date: "2020", description: "Equaled Michael Schumacher's record of seven Formula One World Championships, solidifying his place in history🏅" },
+      { date: "Legacy", description: "Holds the record for the most wins (103), pole positions (104), and podium finishes (197) in Formula One history🏎️" }
+    ]
+  },
+  {
+    coords: [-0.5477965613688549, 51.34615463908707],
+    name: "Lewis Hamilton",
+    occupation: "Born 1985",
+    description: "Lewis Hamilton joined the McLaren young driver programme here in 1998",
+    image: "https://upload.wikimedia.org/wikipedia/commons/a/ac/Lewis_Hamilton_2022_São_Paulo_Grand_Prix_(52498120773)_(cropped).jpg",
+    tldr: "British racing driver, seven-time Formula One World Champion, and advocate for social justice and environmental sustainability.",
+    events: [
+      { date: "2008", description: "Won his first Formula One World Championship, becoming the youngest champion at the time at age 23🏆" },
+      { date: "2020", description: "Equaled Michael Schumacher's record of seven Formula One World Championships, solidifying his place in history🏅" },
+      { date: "Legacy", description: "Holds the record for the most wins (103), pole positions (104), and podium finishes (197) in Formula One history🏎️" }
+    ]
+  },
+  {
+    coords: [-0.21448768636649213, 51.920790062587514],
+    name: "Lewis Hamilton",
+    occupation: "Born 1985",
+    description: "Lewis Hamilton attended school here, where he played on the footy team with future England footballer Ashley Young",
+    image: "https://upload.wikimedia.org/wikipedia/commons/a/ac/Lewis_Hamilton_2022_São_Paulo_Grand_Prix_(52498120773)_(cropped).jpg",
+    tldr: "British racing driver, seven-time Formula One World Champion, and advocate for social justice and environmental sustainability.",
+    events: [
+      { date: "2008", description: "Won his first Formula One World Championship, becoming the youngest champion at the time at age 23🏆" },
+      { date: "2020", description: "Equaled Michael Schumacher's record of seven Formula One World Championships, solidifying his place in history🏅" },
+      { date: "Legacy", description: "Holds the record for the most wins (103), pole positions (104), and podium finishes (197) in Formula One history🏎️" }
+    ]
+  },
+  {
+    coords: [0.14394613099347806, 52.18877028931952],
+    name: "Lewis Hamilton",
+    occupation: "Born 1985",
+    description: "Lewis Hamilton attended here in 2001",
+    image: "https://upload.wikimedia.org/wikipedia/commons/a/ac/Lewis_Hamilton_2022_São_Paulo_Grand_Prix_(52498120773)_(cropped).jpg",
+    tldr: "British racing driver, seven-time Formula One World Champion, and advocate for social justice and environmental sustainability.",
+    events: [
+      { date: "2008", description: "Won his first Formula One World Championship, becoming the youngest champion at the time at age 23🏆" },
+      { date: "2020", description: "Equaled Michael Schumacher's record of seven Formula One World Championships, solidifying his place in history🏅" },
+      { date: "Legacy", description: "Holds the record for the most wins (103), pole positions (104), and podium finishes (197) in Formula One history🏎️" }
+    ]
+  },
+  {
+    coords: [-1.021628631479288, 52.07408307975447],
+    name: "Lewis Hamilton",
+    occupation: "Born 1985",
+    description: "Lewis Hamilton had his first F1 test here with McLaren in 2004",
+    image: "https://upload.wikimedia.org/wikipedia/commons/a/ac/Lewis_Hamilton_2022_São_Paulo_Grand_Prix_(52498120773)_(cropped).jpg",
+    tldr: "British racing driver, seven-time Formula One World Champion, and advocate for social justice and environmental sustainability.",
+    events: [
+      { date: "2008", description: "Won his first Formula One World Championship, becoming the youngest champion at the time at age 23🏆" },
+      { date: "2020", description: "Equaled Michael Schumacher's record of seven Formula One World Championships, solidifying his place in history🏅" },
+      { date: "Legacy", description: "Holds the record for the most wins (103), pole positions (104), and podium finishes (197) in Formula One history🏎️" }
+    ]
+  },
+  {
+    coords: [-0.3497293823600831, 51.339840507466796],
+    name: "Andy Murray",
+    occupation: "Born 1987",
+    description: "Recent former home of Andy Murray",
+    image: "https://upload.wikimedia.org/wikipedia/commons/b/bf/2015_Australian_Open_-_Andy_Murray_12_(cropped).jpg",
+    tldr: "Scottish professional tennis player, three-time Grand Slam champion, and two-time Olympic gold medalist.",
+    events: [
+      { date: "2012", description: "Won the Olympic gold medal at the London Olympics, defeating Roger Federer in the final🥇" },
+      { date: "2013", description: "Became the first British man to win Wimbledon since Fred Perry in 1936, ending a 77-year drought🏆" },
+      { date: "Legacy", description: "Won 46 singles titles, including 3 Grand Slams, and earned over $64 million in prize money throughout his career💸" }
+    ]
+  },
+  {
+    coords: [-3.9665751401270573, 56.23142619579663],
+    name: "Andy Murray",
+    occupation: "Born 1987",
+    description: "Andy Murray bought this mansion and turned it into a hotel",
+    image: "https://upload.wikimedia.org/wikipedia/commons/b/bf/2015_Australian_Open_-_Andy_Murray_12_(cropped).jpg",
+    tldr: "Scottish professional tennis player, three-time Grand Slam champion, and two-time Olympic gold medalist.",
+    events: [
+      { date: "2012", description: "Won the Olympic gold medal at the London Olympics, defeating Roger Federer in the final🥇" },
+      { date: "2013", description: "Became the first British man to win Wimbledon since Fred Perry in 1936, ending a 77-year drought🏆" },
+      { date: "Legacy", description: "Won 46 singles titles, including 3 Grand Slams, and earned over $64 million in prize money throughout his career💸" }
+    ]
+  },
+  {
+    coords: [-3.9734977797604056, 56.18879734955422],
+    name: "Andy Murray",
+    occupation: "Born 1987",
+    description: "Andy Murray went to school here and was tragically present during the Dunblane massacre, worst school shooting in British history",
+    image: "https://upload.wikimedia.org/wikipedia/commons/b/bf/2015_Australian_Open_-_Andy_Murray_12_(cropped).jpg",
+    tldr: "Scottish professional tennis player, three-time Grand Slam champion, and two-time Olympic gold medalist.",
+    events: [
+      { date: "2012", description: "Won the Olympic gold medal at the London Olympics, defeating Roger Federer in the final🥇" },
+      { date: "2013", description: "Became the first British man to win Wimbledon since Fred Perry in 1936, ending a 77-year drought🏆" },
+      { date: "Legacy", description: "Won 46 singles titles, including 3 Grand Slams, and earned over $64 million in prize money throughout his career💸" }
+    ]
+  },
+  {
+    coords: [-3.9198249458071337, 56.14610072677483],
+    name: "Andy Murray",
+    occupation: "Born 1987",
+    description: "Andy Murray received his honorary doctorate here",
+    image: "https://upload.wikimedia.org/wikipedia/commons/b/bf/2015_Australian_Open_-_Andy_Murray_12_(cropped).jpg",
+    tldr: "Scottish professional tennis player, three-time Grand Slam champion, and two-time Olympic gold medalist.",
+    events: [
+      { date: "2012", description: "Won the Olympic gold medal at the London Olympics, defeating Roger Federer in the final🥇" },
+      { date: "2013", description: "Became the first British man to win Wimbledon since Fred Perry in 1936, ending a 77-year drought🏆" },
+      { date: "Legacy", description: "Won 46 singles titles, including 3 Grand Slams, and earned over $64 million in prize money throughout his career💸" }
+    ]
+  },
   {
     coords: [-2.5299004521922943, 51.91352359408033],
     name: "Richard Hammond",
