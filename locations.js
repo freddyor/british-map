@@ -1,5 +1,160 @@
 export const locations = [
-
+  {
+    coords: [-1.4318228100842598, 52.82291622272307],
+    name: "Thomas Cook",
+    occupation: "1808 - 1892",
+    description: "Thomas Cook was born here into poverty, with his father dying at 4 years old",
+    image: "https://cdn.britannica.com/61/43861-004-BCA72E69/Thomas-Cook.jpg?w=385",
+    tldr: "British businessman and pioneer of the travel agency, founder of Thomas Cook & Son, now known as Thomas Cook Group.",
+    events: [
+      { date: "1841", description: "Organized his first excursion, transporting 485 temperance supporters from Leicester to Loughborough for one shilling each🚂" },
+      { date: "1872-73", description: "Led the world's first round-the-world tour, covering over 29,000 miles in 222 days🌍" },
+      { date: "Legacy", description: "Sold over 3.25 million tickets annually by 1890, revolutionizing tourism and making travel accessible to the masses✈️" }
+    ]
+  },
+  {
+    coords: [-1.1286295221943652, 52.62073343941302],
+    name: "Thomas Cook",
+    occupation: "1808 - 1892",
+    description: "Thomas Cook is buried here",
+    image: "https://cdn.britannica.com/61/43861-004-BCA72E69/Thomas-Cook.jpg?w=385",
+    tldr: "British businessman and pioneer of the travel agency, founder of Thomas Cook & Son, now known as Thomas Cook Group.",
+    events: [
+      { date: "1841", description: "Organized his first excursion, transporting 485 temperance supporters from Leicester to Loughborough for one shilling each🚂" },
+      { date: "1872-73", description: "Led the world's first round-the-world tour, covering over 29,000 miles in 222 days🌍" },
+      { date: "Legacy", description: "Sold over 3.25 million tickets annually by 1890, revolutionizing tourism and making travel accessible to the masses✈️" }
+    ]
+  },
+  {
+    coords: [-1.4231828732729745, 52.82092129717665],
+    name: "Thomas Cook",
+    occupation: "1808 - 1892",
+    description: "At age of 10, Thomas Cook worked on Lord Melbourne’s estate here",
+    image: "https://cdn.britannica.com/61/43861-004-BCA72E69/Thomas-Cook.jpg?w=385",
+    tldr: "British businessman and pioneer of the travel agency, founder of Thomas Cook & Son, now known as Thomas Cook Group.",
+    events: [
+      { date: "1841", description: "Organized his first excursion, transporting 485 temperance supporters from Leicester to Loughborough for one shilling each🚂" },
+      { date: "1872-73", description: "Led the world's first round-the-world tour, covering over 29,000 miles in 222 days🌍" },
+      { date: "Legacy", description: "Sold over 3.25 million tickets annually by 1890, revolutionizing tourism and making travel accessible to the masses✈️" }
+    ]
+  },
+  {
+    coords: [-1.1247909775919105, 52.63173921626394],
+    name: "Thomas Cook",
+    occupation: "1808 - 1892",
+    description: "Thomas Cook made his first trip here - he took 485 members of the temperance movement to Loughborough for one shilling each",
+    image: "https://cdn.britannica.com/61/43861-004-BCA72E69/Thomas-Cook.jpg?w=385",
+    tldr: "British businessman and pioneer of the travel agency, founder of Thomas Cook & Son, now known as Thomas Cook Group.",
+    events: [
+      { date: "1841", description: "Organized his first excursion, transporting 485 temperance supporters from Leicester to Loughborough for one shilling each🚂" },
+      { date: "1872-73", description: "Led the world's first round-the-world tour, covering over 29,000 miles in 222 days🌍" },
+      { date: "Legacy", description: "Sold over 3.25 million tickets annually by 1890, revolutionizing tourism and making travel accessible to the masses✈️" }
+    ]
+  },
+  {
+    coords: [-1.1124434578125622, 52.62214224418225],
+    name: "Thomas Cook",
+    occupation: "1808 - 1892",
+    description: "Thomas Cook built this house, retired here and died here in 1892",
+    image: "https://cdn.britannica.com/61/43861-004-BCA72E69/Thomas-Cook.jpg?w=385",
+    tldr: "British businessman and pioneer of the travel agency, founder of Thomas Cook & Son, now known as Thomas Cook Group.",
+    events: [
+      { date: "1841", description: "Organized his first excursion, transporting 485 temperance supporters from Leicester to Loughborough for one shilling each🚂" },
+      { date: "1872-73", description: "Led the world's first round-the-world tour, covering over 29,000 miles in 222 days🌍" },
+      { date: "Legacy", description: "Sold over 3.25 million tickets annually by 1890, revolutionizing tourism and making travel accessible to the masses✈️" }
+    ]
+  },
+  {
+    coords: [-2.1588011201025394, 53.50664571732304],
+    name: "Jim Ratcliffe",
+    occupation: "Born 1952",
+    description: "Jim Ratcliffe born and raised in a council house here",
+    image: "https://upload.wikimedia.org/wikipedia/commons/1/15/Jim_Ratcliffe_PET_2013_03_25_DSC_0554_crop.jpg",
+    tldr: "British billionaire chemical engineer, businessman, and founder, chairman, and majority owner of INEOS, known as one of the wealthiest individuals in the UK. He also owns a significant stake in Manchester United.",
+    events: [
+      { date: "1998", description: "Founded INEOS with a strategic acquisition of BP's Antwerp facility for £84 million, marking the beginning of INEOS's rapid expansion🚀" },
+      { date: "2018", description: "Knighted for his services to business and investment, recognizing his contributions to the UK economy🏆" },
+      { date: "Legacy", description: "Net worth estimated at over $19 billion, making him one of the wealthiest people in the world🌎" }
+    ]
+  },
+  {
+    coords: [-0.43992223682306913, 53.833444330851975],
+    name: "Jim Ratcliffe",
+    occupation: "Born 1952",
+    description: "Jim Ratcliffe was educated here",
+    image: "https://upload.wikimedia.org/wikipedia/commons/1/15/Jim_Ratcliffe_PET_2013_03_25_DSC_0554_crop.jpg",
+    tldr: "Ratcliffe rose from council estate to the richest man in the Uk through his chemcials company INEOS. He also owns a significant stake in Manchester United.",
+    events: [
+      { date: "1998", description: "Founded INEOS with a strategic acquisition of BP's Antwerp facility for £84 million, marking the beginning of INEOS's rapid expansion🚀" },
+      { date: "2018", description: "Knighted for his services to business and investment, recognizing his contributions to the UK economy🏆" },
+      { date: "Legacy", description: "Net worth estimated at over $19 billion, making him one of the wealthiest people in the world🌎" }
+    ]
+  },
+  {
+    coords: [-1.9355802886264566, 52.449019779220535],
+    name: "Jim Ratcliffe",
+    occupation: "Born 1952",
+    description: "Jim Ratcliffe graduated here in 1974 in chemical engineering",
+    image: "https://upload.wikimedia.org/wikipedia/commons/1/15/Jim_Ratcliffe_PET_2013_03_25_DSC_0554_crop.jpg",
+    tldr: "Ratcliffe rose from council estate to the richest man in the Uk through his chemcials company INEOS. He also owns a significant stake in Manchester United.",
+    events: [
+      { date: "1998", description: "Founded INEOS with a strategic acquisition of BP's Antwerp facility for £84 million, marking the beginning of INEOS's rapid expansion🚀" },
+      { date: "2018", description: "Knighted for his services to business and investment, recognizing his contributions to the UK economy🏆" },
+      { date: "Legacy", description: "Net worth estimated at over $19 billion, making him one of the wealthiest people in the world🌎" }
+    ]
+  },
+  {
+    coords: [-0.16187411088316897, 51.52662867129052],
+    name: "Jim Ratcliffe",
+    occupation: "Born 1952",
+    description: "Esso funded Jim Ratcliffe’s degree here at London Business School 1978 to 1980, he has since donated £25 million",
+    image: "https://upload.wikimedia.org/wikipedia/commons/1/15/Jim_Ratcliffe_PET_2013_03_25_DSC_0554_crop.jpg",
+    tldr: "Ratcliffe rose from council estate to the richest man in the Uk through his chemcials company INEOS. He also owns a significant stake in Manchester United.",
+    events: [
+      { date: "1998", description: "Founded INEOS with a strategic acquisition of BP's Antwerp facility for £84 million, marking the beginning of INEOS's rapid expansion🚀" },
+      { date: "2018", description: "Knighted for his services to business and investment, recognizing his contributions to the UK economy🏆" },
+      { date: "Legacy", description: "Net worth estimated at over $19 billion, making him one of the wealthiest people in the world🌎" }
+    ]
+  },
+  {
+    coords: [-1.5549783516277205, 50.862455953205504],
+    name: "Jim Ratcliffe",
+    occupation: "Born 1952",
+    description: "Jim Ratcliffe owns this hotel",
+    image: "https://upload.wikimedia.org/wikipedia/commons/1/15/Jim_Ratcliffe_PET_2013_03_25_DSC_0554_crop.jpg",
+    tldr: "Ratcliffe rose from council estate to the richest man in the Uk through his chemcials company INEOS. He also owns a significant stake in Manchester United.",
+    events: [
+      { date: "1998", description: "Founded INEOS with a strategic acquisition of BP's Antwerp facility for £84 million, marking the beginning of INEOS's rapid expansion🚀" },
+      { date: "2018", description: "Knighted for his services to business and investment, recognizing his contributions to the UK economy🏆" },
+      { date: "Legacy", description: "Net worth estimated at over $19 billion, making him one of the wealthiest people in the world🌎" }
+    ]
+  },
+  {
+    coords: [-2.1915319703289486, 53.4853298265288],
+    name: "Jim Ratcliffe",
+    occupation: "Born 1952",
+    description: "Jim Ratcliffe owns INEOS Grenadiers cycling team here",
+    image: "https://upload.wikimedia.org/wikipedia/commons/1/15/Jim_Ratcliffe_PET_2013_03_25_DSC_0554_crop.jpg",
+    tldr: "Ratcliffe rose from council estate to the richest man in the Uk through his chemcials company INEOS. He also owns a significant stake in Manchester United.",
+    events: [
+      { date: "1998", description: "Founded INEOS with a strategic acquisition of BP's Antwerp facility for £84 million, marking the beginning of INEOS's rapid expansion🚀" },
+      { date: "2018", description: "Knighted for his services to business and investment, recognizing his contributions to the UK economy🏆" },
+      { date: "Legacy", description: "Net worth estimated at over $19 billion, making him one of the wealthiest people in the world🌎" }
+    ]
+  },
+  {
+    coords: [-1.5832502744451369, 50.86974751755322],
+    name: "Jim Ratcliffe",
+    occupation: "Born 1952",
+    description: "Jim Ratcliffe created his business headquarters here",
+    image: "https://upload.wikimedia.org/wikipedia/commons/1/15/Jim_Ratcliffe_PET_2013_03_25_DSC_0554_crop.jpg",
+    tldr: "Ratcliffe rose from council estate to the richest man in the Uk through his chemcials company INEOS. He also owns a significant stake in Manchester United.",
+    events: [
+      { date: "1998", description: "Founded INEOS with a strategic acquisition of BP's Antwerp facility for £84 million, marking the beginning of INEOS's rapid expansion🚀" },
+      { date: "2018", description: "Knighted for his services to business and investment, recognizing his contributions to the UK economy🏆" },
+      { date: "Legacy", description: "Net worth estimated at over $19 billion, making him one of the wealthiest people in the world🌎" }
+    ]
+  },
   {
     coords: [-1.3084437344766975, 52.97731515854053],
     name: "Harry Coulby",
