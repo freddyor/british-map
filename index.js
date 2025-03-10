@@ -351,42 +351,6 @@ function addBuildingMarkers() {
     });
   });
 }
-const addMarkerDropdown = document.createElement('div');
-addMarkerDropdown.className = 'dropdown';
-
-const addMarkerButton = document.createElement('button');
-addMarkerButton.id = 'add-marker-button';
-addMarkerButton.className = 'custom-button';
-addMarkerButton.textContent = 'Explanation of AI tags';
-
-const dropdownContent = document.createElement('div');
-dropdownContent.className = 'dropdown-content';
-
-// Add a paragraph to the dropdown
-const paragraph = document.createElement('p');
-paragraph.textContent = 'Some cards have the words ‘AI-generated’ written at the top of them. If the card doesn’t say that, it means I wrote it. I am insistent that I will manually write all 500+ cards, to a high standard which AI cannot do. However, each card takes roughly 20 minutes, so it is an extremely long process. I appreciate your patience with me! I have received no volunteers as of yet, but if you are willing to help out, send me an email at freddy@britmap.com. ';
-dropdownContent.appendChild(paragraph);
-
-addMarkerDropdown.appendChild(addMarkerButton);
-addMarkerDropdown.appendChild(dropdownContent);
-buttonGroup.appendChild(addMarkerDropdown);
-
-// Add event listener for dropdown
-addMarkerButton.addEventListener('click', function (e) {
-  e.preventDefault();
-  const dropdownContent = document.querySelector('.dropdown-content');
-  dropdownContent.style.display = dropdownContent.style.display === 'block' ? 'none' : 'block';
-});
-
-// Close the dropdown if the user clicks outside of it
-window.onclick = function (event) {
-  if (!event.target.matches('#add-marker-button')) {
-    const dropdownContent = document.querySelector('.dropdown-content');
-    if (dropdownContent) {
-      dropdownContent.style.display = 'none';
-    }
-  }
-};
 
 // New code for the "Image Attributions" button
 const imageAttributionsButton = document.createElement('button');
