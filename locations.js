@@ -1,5 +1,161 @@
 export const locations = [
   {
+    coords: [-2.5299004521922943, 51.91352359408033],
+    name: "Richard Hammond",
+    occupation: "Born 1969",
+    description: "Richard Hammond lives here",
+    image: "https://upload.wikimedia.org/wikipedia/commons/1/1b/Richard_Hammond.jpg",
+    tldr: "English broadcaster, journalist, and writer known for co-hosting 'Top Gear' and 'The Grand Tour' and his enthusiasm for cars and adventure.",
+    events: [
+      { date: "2006", description: "Survived a 288 mph crash while filming 'Top Gear,' resulting in a two-week coma and significant brain injuries🚗" },
+      { date: "2002-2015", description: "Co-hosted 'Top Gear,' which became the most widely viewed factual TV program in the world, with over 350 million viewers globally🌍" },
+      { date: "Legacy", description: "Estimated net worth of $45 million as of 2023, making him one of the wealthiest TV presenters in the UK💰" }
+    ]
+  },
+  {
+    coords: [-1.864349525385075, 52.45948650117063],
+    name: "Richard Hammond",
+    occupation: "Born 1969",
+    description: "Richard Hammond visited his grandparents a lot here when he was a boy",
+    image: "https://upload.wikimedia.org/wikipedia/commons/1/1b/Richard_Hammond.jpg",
+    tldr: "English broadcaster, journalist, and writer known for co-hosting 'Top Gear' and 'The Grand Tour' and his enthusiasm for cars and adventure.",
+    events: [
+      { date: "2016", description: "Launched 'The Grand Tour' on Amazon Prime with Jeremy Clarkson and James May, signing a £160 million deal📺" },
+      { date: "2017", description: "Crashed a Rimac Concept One electric supercar while filming 'The Grand Tour,' tumbling 110 meters down a hill⚡" },
+      { date: "Legacy", description: "Overcame multiple life-threatening crashes, inspiring resilience and earning admiration from fans worldwide🏆" }
+    ]
+  },
+  {
+    coords: [-1.8166023550363641, 52.41093983052374],
+    name: "Richard Hammond",
+    occupation: "Born 1969",
+    description: "Richard Hammond attended school here from years 3 to 7",
+    image: "https://upload.wikimedia.org/wikipedia/commons/1/1b/Richard_Hammond.jpg",
+    tldr: "English broadcaster, journalist, and writer known for co-hosting 'Top Gear' and 'The Grand Tour' and his enthusiasm for cars and adventure.",
+    events: [
+      { date: "2009", description: "Won a BAFTA Children's Award for Best Presenter for his show 'Richard Hammond's Blast Lab'🎥" },
+      { date: "2015", description: "Left 'Top Gear' alongside Jeremy Clarkson and James May after Clarkson's controversial departure🚗" },
+      { date: "Legacy", description: "'The Hamster,' as he's affectionately known by fans, is celebrated for his humor and passion for motoring🐹" }
+    ]
+  },
+  {
+    coords: [-1.7701613139194579, 52.41480192014167],
+    name: "Richard Hammond",
+    occupation: "Born 1969",
+    description: "Richard Hammond was educated here",
+    image: "https://upload.wikimedia.org/wikipedia/commons/1/1b/Richard_Hammond.jpg",
+    tldr: "English broadcaster, journalist, and writer known for co-hosting 'Top Gear' and 'The Grand Tour' and his enthusiasm for cars and adventure.",
+    events: [
+      { date: "1986-1988", description: "Attended Harrogate College to study media production before beginning his career in radio🎓" },
+      { date: "1990s", description: "Worked at several BBC radio stations before transitioning to television presenting📻" },
+      { date: "Legacy", description: "Known for making science accessible to young audiences through shows like 'Brainiac'🧠" }
+    ]
+  },
+  {
+    coords: [-1.5393079174387063, 54.13910854305872],
+    name: "Richard Hammond",
+    occupation: "Born 1969",
+    description: "Richard Hammond was educated here",
+    image: "https://upload.wikimedia.org/wikipedia/commons/1/1b/Richard_Hammond.jpg",
+    tldr: "English broadcaster, journalist, and writer known for co-hosting 'Top Gear' and 'The Grand Tour' and his enthusiasm for cars and adventure.",
+    events: [
+      { date: "2002", description: "'Top Gear' reboot premiered with Hammond as one of the hosts; he became an instant fan favorite🌟" },
+      { date: "2008", description: "'Top Gear Polar Special' aired, where Hammond became one of the first people to drive to the North Magnetic Pole❄️" },
+      { date: "Legacy", description: "'Top Gear Live' tours attracted millions of attendees worldwide, showcasing his global appeal🌍" }
+    ]
+  },
+  {
+    coords: [-1.5237062208199168, 53.98014865453322],
+    name: "Richard Hammond",
+    occupation: "Born 1969",
+    description: "Richard Hammond attended Harrogate College here from 1986 to 1988",
+    image: "https://upload.wikimedia.org/wikipedia/commons/1/1b/Richard_Hammond.jpg",
+    tldr: "English broadcaster, journalist, and writer known for co-hosting 'Top Gear' and 'The Grand Tour' and his enthusiasm for cars and adventure.",
+    events: [
+      { date: "1986-1988", description: "Studied media production at Harrogate College, laying the foundation for his career in broadcasting🎓" },
+      { date: "1998", description: "Began presenting motoring programs on Men & Motors, gaining experience that led to his role on 'Top Gear'🚗" },
+      { date: "Legacy", description: "Harrogate College recognized Hammond as one of its most notable alumni, celebrating his global success🌟" }
+    ]
+  },
+  {
+    coords: [-2.9413849060310935, 54.89572238729973],
+    name: "Richard Hammond",
+    occupation: "Born 1969",
+    description: "Richard Hammond worked here at Radio Cumbria",
+    image: "https://upload.wikimedia.org/wikipedia/commons/1/1b/Richard_Hammond.jpg",
+    tldr: "English broadcaster, journalist, and writer known for co-hosting 'Top Gear' and 'The Grand Tour' and his enthusiasm for cars and adventure.",
+    events: [
+      { date: "1990s", description: "Worked as a radio presenter at BBC Radio Cumbria, honing his skills in broadcasting🎙️" },
+      { date: "2002", description: "Joined 'Top Gear,' where he became known for his humor and chemistry with co-hosts Jeremy Clarkson and James May📺" },
+      { date: "Legacy", description: "Transitioned from radio to television to become one of the most recognizable faces in motoring entertainment🚘" }
+    ]
+  },
+  {
+    coords: [-1.193402075274885, 53.6006613905877],
+    name: "Jeremy Clarkson",
+    occupation: "Born 1960",
+    description: "Jeremy Clarkson lived here from the age of 2",
+    image: "https://upload.wikimedia.org/wikipedia/commons/f/fd/Jeremy_Clarkson%2C_Top_Gear_Live_2012_(cropped).jpg",
+    tldr: "Controversial yet popular English broadcaster, journalist, and writer, known for his role on 'Top Gear' and 'The Grand Tour.'",
+    events: [
+      { date: "2002", description: "Revamped 'Top Gear,' turning it into a global phenomenon watched by over 350 million people worldwide" },
+      { date: "2007", description: "Drove a pickup truck to the North Magnetic Pole on 'Top Gear,' achieving a Guinness World Record" },
+      { date: "Legacy", description: "Became one of Britain's highest-paid TV personalities, earning upwards of £1 million per year" }
+    ]
+  },
+  {
+    coords: [-1.5416192570751028, 51.916248179874664],
+    name: "Jeremy Clarkson",
+    occupation: "Born 1960",
+    description: "Jeremy Clarkson set up the famous Diddly Squat Farm Shop here",
+    image: "https://upload.wikimedia.org/wikipedia/commons/f/fd/Jeremy_Clarkson%2C_Top_Gear_Live_2012_(cropped).jpg",
+    tldr: "Controversial yet popular English broadcaster, journalist, and writer, known for his role on 'Top Gear' and 'The Grand Tour.'",
+    events: [
+      { date: "2021", description: "Starred in 'Clarkson's Farm,' documenting his attempts to run Diddly Squat Farm, drawing millions of viewers on Amazon Prime" },
+      { date: "2024", description: "Faced local council disputes over Diddly Squat Farm, gaining national attention and sparking debates about farming regulations" },
+      { date: "Legacy", description: "Transformed Diddly Squat Farm into a major tourist attraction, boosting the local economy and drawing crowds from around the world" }
+    ]
+  },
+  {
+    coords: [-1.0144731818259343, 53.48631668527724],
+    name: "Jeremy Clarkson",
+    occupation: "Born 1960",
+    description: "Jeremy Clarkson attended school here and got bullied",
+    image: "https://upload.wikimedia.org/wikipedia/commons/f/fd/Jeremy_Clarkson%2C_Top_Gear_Live_2012_(cropped).jpg",
+    tldr: "Controversial yet popular English broadcaster, journalist, and writer, known for his role on 'Top Gear' and 'The Grand Tour.'",
+    events: [
+      { date: "1984", description: "Started his career as a motoring journalist, writing for 'Performance Car' magazine and gaining a following for his irreverent style" },
+      { date: "1988", description: "Became a presenter on the original 'Top Gear,' marking the beginning of his television career" },
+      { date: "Legacy", description: "Known for his controversial opinions, which have led to both widespread praise and criticism throughout his career" }
+    ]
+  },
+  {
+    coords: [-1.5530747889170453, 52.839936751912134],
+    name: "Jeremy Clarkson",
+    occupation: "Born 1960",
+    description: "Jeremy Clarkson attended school here and got bullied",
+    image: "https://upload.wikimedia.org/wikipedia/commons/f/fd/Jeremy_Clarkson%2C_Top_Gear_Live_2012_(cropped).jpg",
+    tldr: "Controversial yet popular English broadcaster, journalist, and writer, known for his role on 'Top Gear' and 'The Grand Tour.'",
+    events: [
+      { date: "2015", description: "Left 'Top Gear' after a controversial incident, leading to the departure of co-hosts Richard Hammond and James May" },
+      { date: "2016", description: "Launched 'The Grand Tour' on Amazon Prime with Hammond and May, signing a reported £160 million deal" },
+      { date: "Legacy", description: "His 'Top Gear' antics and stunts generated millions in revenue, but also led to numerous controversies and complaints" }
+    ]
+  },
+  {
+    coords: [-1.5839659010368776, 51.78962476210049],
+    name: "Jeremy Clarkson",
+    occupation: "Born 1960",
+    description: "This pub was opened by Clarkson in August 2024",
+    image: "https://upload.wikimedia.org/wikipedia/commons/f/fd/Jeremy_Clarkson%2C_Top_Gear_Live_2012_(cropped).jpg",
+    tldr: "Controversial yet popular English broadcaster, journalist, and writer, known for his role on 'Top Gear' and 'The Grand Tour.'",
+    events: [
+      { date: "2024", description: "Opened his pub in August, sparking both excitement and controversy in the local community" },
+      { date: "2024", description: "His pub opening was a major news event, drawing thousands of visitors and generating significant media coverage" },
+      { date: "Legacy", description: "His ventures continue to shape the economy of Chadlington, driving tourism and debates about rural development" }
+    ]
+  },
+  {
     coords: [-3.344855460533607, 50.65868066570967],
     name: "Walter Raleigh",
     occupation: "c. 1554 - 1618",
