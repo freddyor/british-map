@@ -1,5 +1,1227 @@
 export const locations = [
   {
+    coords: [-3.344855460533607, 50.65868066570967],
+    name: "Walter Raleigh",
+    occupation: "c. 1554 - 1618",
+    description: "Walter Raleigh grew up here",
+    image: "https://upload.wikimedia.org/wikipedia/commons/f/f2/Sir_Walter_Ralegh_by_'H'_monogrammist.jpg",
+    tldr: "English explorer, courtier, and writer who played a pivotal role in early American colonization and popularized tobacco in England.",
+    events: [
+      { date: "1595", description: "Led an expedition to Guiana, exploring 400 miles (640 km) of the Orinoco River in search of El Dorado🏞️" },
+      { date: "1580s", description: "Invested £30,000 (equivalent to millions today) in three voyages to establish the Roanoke Colony, which mysteriously vanished🏴‍☠️" },
+      { date: "Legacy", description: "Introduced tobacco to England, revolutionizing commerce and social habits, with 7 million tobacco users in England by 1614🚬" }
+    ]
+  },
+  {
+    coords: [-2.5007069268102007, 50.94589677579402],
+    name: "Walter Raleigh",
+    occupation: "c. 1554 - 1618",
+    description: "This property was given to Walter Raleigh by the Queen",
+    image: "https://upload.wikimedia.org/wikipedia/commons/f/f2/Sir_Walter_Ralegh_by_'H'_monogrammist.jpg",
+    tldr: "English explorer, courtier, and writer who played a pivotal role in early American colonization and popularized tobacco in England.",
+    events: [
+      { date: "1592", description: "Led the capture of Portuguese ship Madre de Deus, seizing goods worth over £500,000 (equivalent to £150 million today)💰" },
+      { date: "1584", description: "Received a royal charter to colonize North America, leading to the first English settlement attempts in the New World🌎" },
+      { date: "Legacy", description: "His explorations paved the way for English colonization, influencing the founding of Jamestown in 1607🏛️" }
+    ]
+  },
+  {
+    coords: [-0.12287651742659059, 51.5100815785036],
+    name: "Walter Raleigh",
+    occupation: "c. 1554 - 1618",
+    description: "This property was given to Walter Raleigh by the Queen",
+    image: "https://upload.wikimedia.org/wikipedia/commons/f/f2/Sir_Walter_Ralegh_by_'H'_monogrammist.jpg",
+    tldr: "English explorer, courtier, and writer who played a pivotal role in early American colonization and popularized tobacco in England.",
+    events: [
+      { date: "1603", description: "Accused of treason and imprisoned in the Tower of London, where he spent 13 years writing and studying⏳" },
+      { date: "1616", description: "Released to lead another Guiana expedition, which failed and led to diplomatic tensions with Spain🌊" },
+      { date: "Legacy", description: "His life inspired numerous works of literature and art, including 5 feature films and over 10 notable biographies📚" }
+    ]
+  },
+  {
+    coords: [-3.757422973300321, 50.5148322913703],
+    name: "Walter Raleigh",
+    occupation: "c. 1554 - 1618",
+    description: "Walter Raleigh was arrested here in 1603 before execution",
+    image: "https://upload.wikimedia.org/wikipedia/commons/f/f2/Sir_Walter_Ralegh_by_'H'_monogrammist.jpg",
+    tldr: "English explorer, courtier, and writer who played a pivotal role in early American colonization and popularized tobacco in England.",
+    events: [
+      { date: "1603", description: "Arrested on charges of treason, facing a potential death sentence that was later commuted to imprisonment⚖️" },
+      { date: "1618", description: "Executed at Whitehall, famously requesting to see the axe and remarking, 'This is a sharp medicine, but it is a physician for all diseases'💀" },
+      { date: "Legacy", description: "His dramatic life and death made him an enduring symbol of the Elizabethan era, featured in countless historical accounts🏴󠁧󠁢󠁥󠁮󠁧󠁿" }
+    ]
+  },
+  {
+    coords: [-0.07606663499288295, 51.507986164089],
+    name: "Walter Raleigh",
+    occupation: "c. 1554 - 1618",
+    description: "Walter Raleigh wrote The History of The World whilst imprisoned here",
+    image: "https://upload.wikimedia.org/wikipedia/commons/f/f2/Sir_Walter_Ralegh_by_'H'_monogrammist.jpg",
+    tldr: "English explorer, courtier, and writer who played a pivotal role in early American colonization and popularized tobacco in England.",
+    events: [
+      { date: "1614", description: "Completed 'The History of the World' during imprisonment, a monumental work of over 1 million words📜" },
+      { date: "1616", description: "His release was celebrated by many, with his 'History' having sold thousands of copies despite initial censorship📖" },
+      { date: "Legacy", description: "The capital of North Carolina, Raleigh, was named after him in 1792, now home to over 450,000 people🏙️" }
+    ]
+  },
+  {
+    coords: [-2.705478156303741, 51.63296293202229],
+    name: "J.K. Rowling",
+    occupation: "Born 1965",
+    description: "J.K. Rowling lived here from 9 to 18 years old; she lived near a Potter family",
+    image: "https://upload.wikimedia.org/wikipedia/commons/5/5d/J._K._Rowling_2010.jpg",
+    tldr: "Global bestselling author and philanthropist, renowned for creating the enchanting world of Harry Potter.",
+    events: [
+      { date: "1997", description: "Published 'Harry Potter and the Philosopher's Stone,' which quickly sold over 120 million copies, sparking a worldwide sensation" },
+      { date: "2007", description: "Released 'Harry Potter and the Deathly Hallows,' breaking records with 11 million copies sold in the first 24 hours in the U.S." },
+      { date: "Legacy", description: "Became the first billionaire author, but lost her billionaire status due to charitable donations" }
+    ]
+  },
+  {
+    coords: [-3.853932175011221, 56.63055762079881],
+    name: "J.K. Rowling",
+    occupation: "Born 1965",
+    description: "This is one of J.K. Rowling’s houses",
+    image: "https://upload.wikimedia.org/wikipedia/commons/5/5d/J._K._Rowling_2010.jpg",
+    tldr: "Global bestselling author and philanthropist, renowned for creating the enchanting world of Harry Potter.",
+    events: [
+      { date: "2016", description: "Wrote 'Fantastic Beasts and Where to Find Them,' expanding the Wizarding World universe and grossing over $800 million worldwide" },
+      { date: "2020", description: "Released 'Troubled Blood' under the pen name Robert Galbraith, topping bestseller lists and showcasing her versatile writing" },
+      { date: "Legacy", description: "Donated over $160 million to charities through Lumos and Volant Charitable Trust, supporting children and multiple sclerosis research" }
+    ]
+  },
+  {
+    coords: [-2.502517720717392, 51.523146625197356],
+    name: "J.K. Rowling",
+    occupation: "Born 1965",
+    description: "J.K. Rowling attended here from the age of 5; the headteacher was inspiration for Professor Dumbledore",
+    image: "https://upload.wikimedia.org/wikipedia/commons/5/5d/J._K._Rowling_2010.jpg",
+    tldr: "Global bestselling author and philanthropist, renowned for creating the enchanting world of Harry Potter.",
+    events: [
+      { date: "2001", description: "Founded Lumos, an international non-profit organization, working to end the institutionalization of children globally" },
+      { date: "2012", description: "Launched Pottermore, an interactive website where millions of fans explore new content and engage with the Harry Potter universe" },
+      { date: "Legacy", description: "Inspired the creation of The Wizarding World of Harry Potter theme parks, attracting millions of visitors and enhancing the books' cultural impact" }
+    ]
+  },
+  {
+    coords: [-2.6600119761585796, 51.641433374777016],
+    name: "J.K. Rowling",
+    occupation: "Born 1965",
+    description: "J.K. Rowling attended here from age 11; she was bullied here",
+    image: "https://upload.wikimedia.org/wikipedia/commons/5/5d/J._K._Rowling_2010.jpg",
+    tldr: "Global bestselling author and philanthropist, renowned for creating the enchanting world of Harry Potter.",
+    events: [
+      { date: "2000", description: "Sold film rights for the Harry Potter series to Warner Bros. for a reported $1 million, leading to a successful film franchise" },
+      { date: "2003", description: "Published 'Harry Potter and the Order of the Phoenix,' which became the fastest-selling book ever at the time" },
+      { date: "Legacy", description: "Received the Hans Christian Andersen Literature Award in 2010, recognizing her significant contributions to children's literature" }
+    ]
+  },
+  {
+    coords: [-3.5343462659777454, 50.7354334301799],
+    name: "J.K. Rowling",
+    occupation: "Born 1965",
+    description: "J.K. Rowling graduated here in 1987; she studied french and the classics",
+    image: "https://upload.wikimedia.org/wikipedia/commons/5/5d/J._K._Rowling_2010.jpg",
+    tldr: "Global bestselling author and philanthropist, renowned for creating the enchanting world of Harry Potter.",
+    events: [
+      { date: "1990", description: "Conceived the idea for Harry Potter during a delayed train journey from Manchester to London" },
+      { date: "2005", description: "Named one of Time magazine’s '100 Most Influential People,' underscoring her impact on global culture and literature" },
+      { date: "Legacy", description: "Created a global community of Harry Potter fans, with conventions, fan fiction, and dedicated websites celebrating her creation" }
+    ]
+  },
+  {
+    coords: [-2.2488122580255854, 53.47919778292309],
+    name: "J.K. Rowling",
+    occupation: "Born 1965",
+    description: "J.K. Rowling worked here whilst writing Harry Potter",
+    image: "https://upload.wikimedia.org/wikipedia/commons/5/5d/J._K._Rowling_2010.jpg",
+    tldr: "Global bestselling author and philanthropist, renowned for creating the enchanting world of Harry Potter.",
+    events: [
+      { date: "1997", description: "Published 'Harry Potter and the Philosopher's Stone,' which quickly sold over 120 million copies, sparking a worldwide sensation" },
+      { date: "2007", description: "Released 'Harry Potter and the Deathly Hallows,' breaking records with 11 million copies sold in the first 24 hours in the U.S." },
+      { date: "Legacy", description: "Became the first billionaire author, but lost her billionaire status due to charitable donations" }
+    ]
+  },
+  {
+    coords: [-3.1795148091900907, 55.949955836690386],
+    name: "J.K. Rowling",
+    occupation: "Born 1965",
+    description: "J.K. Rowling trained as a teacher here in 1995",
+    image: "https://upload.wikimedia.org/wikipedia/commons/5/5d/J._K._Rowling_2010.jpg",
+    tldr: "Global bestselling author and philanthropist, renowned for creating the enchanting world of Harry Potter.",
+    events: [
+      { date: "2016", description: "Wrote 'Fantastic Beasts and Where to Find Them,' expanding the Wizarding World universe and grossing over $800 million worldwide" },
+      { date: "2020", description: "Released 'Troubled Blood' under the pen name Robert Galbraith, topping bestseller lists and showcasing her versatile writing" },
+      { date: "Legacy", description: "Donated over $160 million to charities through Lumos and Volant Charitable Trust, supporting children and multiple sclerosis research" }
+    ]
+  },
+  {
+    coords: [-3.1665508526168353, 55.967155830806355],
+    name: "J.K. Rowling",
+    occupation: "Born 1965",
+    description: "J.K. Rowling began teaching here 1996",
+    image: "https://upload.wikimedia.org/wikipedia/commons/5/5d/J._K._Rowling_2010.jpg",
+    tldr: "Global bestselling author and philanthropist, renowned for creating the enchanting world of Harry Potter.",
+    events: [
+      { date: "2001", description: "Founded Lumos, an international non-profit organization, working to end the institutionalization of children globally" },
+      { date: "2012", description: "Launched Pottermore, an interactive website where millions of fans explore new content and engage with the Harry Potter universe" },
+      { date: "Legacy", description: "Inspired the creation of The Wizarding World of Harry Potter theme parks, attracting millions of visitors and enhancing the books' cultural impact" }
+    ]
+  },
+  {
+    coords: [0.0786259646680137, 51.543421315030145],
+    name: "J.K. Rowling",
+    occupation: "Born 1965",
+    description: "J.K. Rowling has been president of Gingerbread charity since 2004 - a charity for single mothers",
+    image: "https://upload.wikimedia.org/wikipedia/commons/5/5d/J._K._Rowling_2010.jpg",
+    tldr: "Global bestselling author and philanthropist, renowned for creating the enchanting world of Harry Potter.",
+    events: [
+      { date: "2004", description: "Became President of Gingerbread, supporting single-parent families and advocating for their rights" },
+      { date: "2012", description: "Co-wrote a play, 'Harry Potter and the Cursed Child', which became a global stage hit, winning multiple awards" },
+      { date: "Legacy", description: "Her books are used in schools to teach literacy, sparking imagination and a love of reading among children" }
+    ]
+  },
+  {
+    coords: [-2.705478156303741, 51.63296293202229],
+    name: "J.K. Rowling",
+    occupation: "Born 1965",
+    description: "J.K. Rowling lived here from 9 to 18 years old; she lived near a Potter family",
+    image: "https://upload.wikimedia.org/wikipedia/commons/5/5d/J._K._Rowling_2010.jpg",
+    tldr: "Global bestselling author and philanthropist, renowned for creating the enchanting world of Harry Potter.",
+    events: [
+      { date: "1997", description: "Published 'Harry Potter and the Philosopher's Stone,' which quickly sold over 120 million copies, sparking a worldwide sensation" },
+      { date: "2007", description: "Released 'Harry Potter and the Deathly Hallows,' breaking records with 11 million copies sold in the first 24 hours in the U.S." },
+      { date: "Legacy", description: "Became the first billionaire author, but lost her billionaire status due to charitable donations" }
+    ]
+  },
+  {
+    coords: [-3.853932175011221, 56.63055762079881],
+    name: "J.K. Rowling",
+    occupation: "Born 1965",
+    description: "This is one of J.K. Rowling’s houses",
+    image: "https://upload.wikimedia.org/wikipedia/commons/5/5d/J._K._Rowling_2010.jpg",
+    tldr: "Global bestselling author and philanthropist, renowned for creating the enchanting world of Harry Potter.",
+    events: [
+      { date: "2016", description: "Wrote 'Fantastic Beasts and Where to Find Them,' expanding the Wizarding World universe and grossing over $800 million worldwide" },
+      { date: "2020", description: "Released 'Troubled Blood' under the pen name Robert Galbraith, topping bestseller lists and showcasing her versatile writing" },
+      { date: "Legacy", description: "Donated over $160 million to charities through Lumos and Volant Charitable Trust, supporting children and multiple sclerosis research" }
+    ]
+  },
+  {
+    coords: [-2.502517720717392, 51.523146625197356],
+    name: "J.K. Rowling",
+    occupation: "Born 1965",
+    description: "J.K. Rowling attended here from the age of 5; the headteacher was inspiration for Professor Dumbledore",
+    image: "https://upload.wikimedia.org/wikipedia/commons/5/5d/J._K._Rowling_2010.jpg",
+    tldr: "Global bestselling author and philanthropist, renowned for creating the enchanting world of Harry Potter.",
+    events: [
+      { date: "2001", description: "Founded Lumos, an international non-profit organization, working to end the institutionalization of children globally" },
+      { date: "2012", description: "Launched Pottermore, an interactive website where millions of fans explore new content and engage with the Harry Potter universe" },
+      { date: "Legacy", description: "Inspired the creation of The Wizarding World of Harry Potter theme parks, attracting millions of visitors and enhancing the books' cultural impact" }
+    ]
+  },
+  {
+    coords: [-2.6600119761585796, 51.641433374777016],
+    name: "J.K. Rowling",
+    occupation: "Born 1965",
+    description: "J.K. Rowling attended here from age 11; she was bullied here",
+    image: "https://upload.wikimedia.org/wikipedia/commons/5/5d/J._K._Rowling_2010.jpg",
+    tldr: "Global bestselling author and philanthropist, renowned for creating the enchanting world of Harry Potter.",
+    events: [
+      { date: "2000", description: "Sold film rights for the Harry Potter series to Warner Bros. for a reported $1 million, leading to a successful film franchise" },
+      { date: "2003", description: "Published 'Harry Potter and the Order of the Phoenix,' which became the fastest-selling book ever at the time" },
+      { date: "Legacy", description: "Received the Hans Christian Andersen Literature Award in 2010, recognizing her significant contributions to children's literature" }
+    ]
+  },
+  {
+    coords: [-3.5343462659777454, 50.7354334301799],
+    name: "J.K. Rowling",
+    occupation: "Born 1965",
+    description: "J.K. Rowling graduated here in 1987; she studied french and the classics",
+    image: "https://upload.wikimedia.org/wikipedia/commons/5/5d/J._K._Rowling_2010.jpg",
+    tldr: "Global bestselling author and philanthropist, renowned for creating the enchanting world of Harry Potter.",
+    events: [
+      { date: "1990", description: "Conceived the idea for Harry Potter during a delayed train journey from Manchester to London" },
+      { date: "2005", description: "Named one of Time magazine’s '100 Most Influential People,' underscoring her impact on global culture and literature" },
+      { date: "Legacy", description: "Created a global community of Harry Potter fans, with conventions, fan fiction, and dedicated websites celebrating her creation" }
+    ]
+  },
+  {
+    coords: [-1.1237145667739974, 52.62080156907255],
+    name: "David Attenborough",
+    occupation: "Born 1926",
+    description: "David Attenborough grew up here, where his father was principal",
+    image: "https://upload.wikimedia.org/wikipedia/commons/8/81/Weston_Library_Opening_by_John_Cairns_20.3.15-139_David_Attenborough.jpg",
+    tldr: "Legendary broadcaster and naturalist, inspiring generations with his groundbreaking nature documentaries and environmental advocacy.",
+    events: [
+      { date: "1954", description: "Began presenting 'Zoo Quest,' pioneering wildlife filmmaking and capturing exotic animals in their natural habitats🐒" },
+      { date: "1979", description: "Narrated 'Life on Earth,' a landmark series that reached over 500 million viewers worldwide and revolutionized nature television🌍" },
+      { date: "Legacy", description: "Created over 100 nature documentaries, inspiring millions to care about the planet and receiving numerous awards and honors🏆" }
+    ]
+  },
+  {
+    coords: [-1.1220437804304149, 52.62505545980017],
+    name: "David Attenborough",
+    occupation: "Born 1926",
+    description: "David Attenborough attended a lecture here in 1936 regarding conservation, he was inspired",
+    image: "https://upload.wikimedia.org/wikipedia/commons/8/81/Weston_Library_Opening_by_John_Cairns_20.3.15-139_David_Attenborough.jpg",
+    tldr: "Legendary broadcaster and naturalist, inspiring generations with his groundbreaking nature documentaries and environmental advocacy.",
+    events: [
+      { date: "2019", description: "Addressed the UN Climate Change Conference, urging world leaders to take immediate action to reduce carbon emissions🗣️" },
+      { date: "2020", description: "Narrated 'A Life on Our Planet,' a powerful film viewed by over 200 million people, sharing his personal witness to environmental change 🌎" },
+      { date: "Legacy", description: "Knighted and awarded numerous honorary degrees, becoming a global icon for environmental conservation and education🌟" }
+    ]
+  },
+  {
+    coords: [-1.1233202446973414, 52.61938728126526],
+    name: "David Attenborough",
+    occupation: "Born 1926",
+    description: "David Attenborough was educated here",
+    image: "https://upload.wikimedia.org/wikipedia/commons/8/81/Weston_Library_Opening_by_John_Cairns_20.3.15-139_David_Attenborough.jpg",
+    tldr: "Legendary broadcaster and naturalist, inspiring generations with his groundbreaking nature documentaries and environmental advocacy.",
+    events: [
+      { date: "1957-1964", description: "Head of the BBC's Travel and Exploration Unit, transforming nature documentaries through innovative filming techniques🎥" },
+      { date: "2002", description: "Named the 'Nation's Favourite Natural History Presenter' in a UK poll, reflecting his enduring popularity and impact📺" },
+      { date: "Legacy", description: "Authored numerous books on wildlife and conservation, receiving widespread acclaim and inspiring future generations of naturalists✍️" }
+    ]
+  },
+  {
+    coords: [0.11532749791580568, 52.20502592544842],
+    name: "David Attenborough",
+    occupation: "Born 1926",
+    description: "David Attenborough obtained a degree in natural science here in 1945 - he studied geology and zoology",
+    image: "https://upload.wikimedia.org/wikipedia/commons/8/81/Weston_Library_Opening_by_John_Cairns_20.3.15-139_David_Attenborough.jpg",
+    tldr: "Legendary broadcaster and naturalist, inspiring generations with his groundbreaking nature documentaries and environmental advocacy.",
+    events: [
+      { date: "1993", description: "Presented 'Life in the Freezer,' documenting Antarctica's wildlife, and pioneering extreme environment filmmaking🐧" },
+      { date: "2018", description: "Received the Chatham House Prize for his contributions to public understanding of international issues 🏅" },
+      { date: "Legacy", description: "Honoured with the Companion of Honour for services to broadcasting and conservation, recognizing his profound impact and dedication👑" }
+    ]
+  },
+  {
+    coords: [-0.2733926008309605, 51.441066779119865],
+    name: "David Attenborough",
+    occupation: "Born 1926",
+    description: "Richmond Park is David Attenborough’s favourite place in the UK",
+    image: "https://upload.wikimedia.org/wikipedia/commons/8/81/Weston_Library_Opening_by_John_Cairns_20.3.15-139_David_Attenborough.jpg",
+    tldr: "Legendary broadcaster and naturalist, inspiring generations with his groundbreaking nature documentaries and environmental advocacy.",
+    events: [
+      { date: "2017", description: "Received the Lifetime Achievement Award at the BAFTA TV Awards, celebrating his outstanding contributions to television📺" },
+      { date: "2019", description: "Launched 'Our Planet' on Netflix, reaching a global audience with its message of environmental conservation and breathtaking visuals🌿" },
+      { date: "Legacy", description: "Advocated for environmental protection, using his documentaries to raise awareness and inspire global action for a sustainable future🌳" }
+    ]
+  },
+  {
+    coords: [1.2309856704407867, 52.811087482263325],
+    name: "David Attenborough",
+    occupation: "Born 1926",
+    description: "Blickling Estate is David Attenborough’s national trust property to visit",
+    image: "https://upload.wikimedia.org/wikipedia/commons/8/81/Weston_Library_Opening_by_John_Cairns_20.3.15-139_David_Attenborough.jpg",
+    tldr: "Legendary broadcaster and naturalist, inspiring generations with his groundbreaking nature documentaries and environmental advocacy.",
+    events: [
+      { date: "2011", description: "Presented 'Frozen Planet,' showcasing the beauty and fragility of Earth's polar regions to over 11 million viewers in the UK❄️" },
+      { date: "2021", description: "Became a 'Champion of the Earth,' the UN's highest environmental honour, recognizing his impact and dedication in the field🏆" },
+      { date: "Legacy", description: "Inspired countless individuals to pursue careers in wildlife conservation, creating a lasting legacy of environmental stewardship🐾" }
+    ]
+  },
+  {
+    coords: [-0.7652517076614577, 51.58002504312185],
+    name: "Michael Crawford",
+    occupation: "Born 1942",
+    description: "Michael Crawford was educated here",
+    image: "https://upload.wikimedia.org/wikipedia/commons/f/f7/Michael_Crawford_(6983823195).jpg",
+    tldr: "Award-winning English actor and singer, best known for his iconic roles in 'The Phantom of the Opera' and 'Some Mothers Do 'Ave 'Em.'",
+    events: [
+      { date: "1986", description: "Originated the role of 'The Phantom' in 'The Phantom of the Opera,' earning an Olivier Award and global acclaim🎭" },
+      { date: "1988", description: "Won a Tony Award for Best Actor in a Musical for his performance in 'The Phantom of the Opera' on Broadway🏆" },
+      { date: "Legacy", description: "Sold over 12 million copies of 'The Phantom of the Opera' cast album, making it one of the best-selling cast recordings ever🌟" }
+    ]
+  },
+  {
+    coords: [-0.8999513218181766, 51.537392817319905],
+    name: "Michael Crawford",
+    occupation: "Born 1942",
+    description: "Michael Crawford competed here at Henley Royal Regatta for two decades",
+    image: "https://upload.wikimedia.org/wikipedia/commons/f/f7/Michael_Crawford_(6983823195).jpg",
+    tldr: "Award-winning English actor and singer, best known for his iconic roles in 'The Phantom of the Opera' and 'Some Mothers Do 'Ave 'Em.'",
+    events: [
+      { date: "1973-1978", description: "Starred as Frank Spencer in the BBC sitcom 'Some Mothers Do 'Ave 'Em,' becoming a household name📺" },
+      { date: "1998", description: "Nominated for an Emmy Award for his special, 'Michael Crawford in Concert,' showcasing his musical talent🎶" },
+      { date: "Legacy", description: "Appointed Commander of the Order of the British Empire (CBE) in 2014 for his contributions to entertainment and charity🇬🇧" }
+    ]
+  },
+   {
+    coords: [0.5232188903170766, 52.33589287674546],
+    name: "Alexander Fleming",
+    occupation: "1881-1955",
+    description: "Alexander Fleming lived in a country home here, that is now demolished, from 1921 until his death",
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Synthetic_Production_of_Penicillin_TR1468.jpg/633px-Synthetic_Production_of_Penicillin_TR1468.jpg",
+    tldr: "Scottish bacteriologist, globally renowned for discovering penicillin and revolutionizing modern medicine.",
+    events: [
+      { date: "1928", description: "Discovered penicillin, the world's first broadly effective antibiotic, marking a turning point in medical history🧪" },
+      { date: "1945", description: "Awarded the Nobel Prize in Physiology or Medicine for his groundbreaking discovery, shared with Howard Florey and Ernst Chain🏆" },
+      { date: "Legacy", description: "Named one of Time magazine's 100 Most Important People of the 20th century and voted third 'greatest Scot' in 2009🌍" }
+    ]
+  },
+  {
+    coords: [-0.16807165836001228, 51.51930059794243],
+    name: "Alexander Fleming",
+    occupation: "1881-1955",
+    description: "Alexander Fleming lived here with a colleague in 1911",
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Synthetic_Production_of_Penicillin_TR1468.jpg/633px-Synthetic_Production_of_Penicillin_TR1468.jpg",
+    tldr: "Scottish bacteriologist, globally renowned for discovering penicillin and revolutionizing modern medicine.",
+    events: [
+      { date: "1928", description: "Discovered penicillin, the world's first broadly effective antibiotic, marking a turning point in medical history🧪" },
+      { date: "1945", description: "Awarded the Nobel Prize in Physiology or Medicine for his groundbreaking discovery, shared with Howard Florey and Ernst Chain🏆" },
+      { date: "Legacy", description: "Named one of Time magazine's 100 Most Important People of the 20th century and voted third 'greatest Scot' in 2009🌍" }
+    ]
+  },
+  {
+    coords: [-0.09804901607177985, 51.51345850271871],
+    name: "Alexander Fleming",
+    occupation: "1881-1955",
+    description: "Alexander Fleming is buried here",
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Synthetic_Production_of_Penicillin_TR1468.jpg/633px-Synthetic_Production_of_Penicillin_TR1468.jpg",
+    tldr: "Scottish bacteriologist, globally renowned for discovering penicillin and revolutionizing modern medicine.",
+    events: [
+      { date: "1928", description: "Discovered penicillin, the world's first broadly effective antibiotic, marking a turning point in medical history🧪" },
+      { date: "1945", description: "Awarded the Nobel Prize in Physiology or Medicine for his groundbreaking discovery, shared with Howard Florey and Ernst Chain🏆" },
+      { date: "Legacy", description: "Named one of Time magazine's 100 Most Important People of the 20th century and voted third 'greatest Scot' in 2009🌍" }
+    ]
+  },
+  {
+    coords: [-0.17316004958998635, 51.517147506216624],
+    name: "Alexander Fleming",
+    occupation: "1881-1955",
+    description: "Alexander Fleming discovered penicillin on this very spot",
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Synthetic_Production_of_Penicillin_TR1468.jpg/633px-Synthetic_Production_of_Penicillin_TR1468.jpg",
+    tldr: "Scottish bacteriologist, globally renowned for discovering penicillin and revolutionizing modern medicine.",
+    events: [
+      { date: "1928", description: "Discovered penicillin, the world's first broadly effective antibiotic, marking a turning point in medical history🧪" },
+      { date: "1945", description: "Awarded the Nobel Prize in Physiology or Medicine for his groundbreaking discovery, shared with Howard Florey and Ernst Chain🏆" },
+      { date: "Legacy", description: "Named one of Time magazine's 100 Most Important People of the 20th century and voted third 'greatest Scot' in 2009🌍" }
+    ]
+  },
+  {
+    coords: [-4.253851056115066, 55.64721781733239],
+    name: "Alexander Fleming",
+    occupation: "1881-1955",
+    description: "Alexander Fleming was born here",
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Synthetic_Production_of_Penicillin_TR1468.jpg/633px-Synthetic_Production_of_Penicillin_TR1468.jpg",
+    tldr: "Scottish bacteriologist, globally renowned for discovering penicillin and revolutionizing modern medicine.",
+    events: [
+      { date: "1928", description: "Discovered penicillin, the world's first broadly effective antibiotic, marking a turning point in medical history🧪" },
+      { date: "1945", description: "Awarded the Nobel Prize in Physiology or Medicine for his groundbreaking discovery, shared with Howard Florey and Ernst Chain🏆" },
+      { date: "Legacy", description: "Named one of Time magazine's 100 Most Important People of the 20th century and voted third 'greatest Scot' in 2009🌍" }
+    ]
+  },
+  {
+    coords: [-4.380863806995228, 55.60727645403191],
+    name: "Alexander Fleming",
+    occupation: "1881-1955",
+    description: "Alexander Fleming attended school here",
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Synthetic_Production_of_Penicillin_TR1468.jpg/633px-Synthetic_Production_of_Penicillin_TR1468.jpg",
+    tldr: "Scottish bacteriologist, globally renowned for discovering penicillin and revolutionizing modern medicine.",
+    events: [
+      { date: "1928", description: "Discovered penicillin, the world's first broadly effective antibiotic, marking a turning point in medical history🧪" },
+      { date: "1945", description: "Awarded the Nobel Prize in Physiology or Medicine for his groundbreaking discovery, shared with Howard Florey and Ernst Chain🏆" },
+      { date: "Legacy", description: "Named one of Time magazine's 100 Most Important People of the 20th century and voted third 'greatest Scot' in 2009🌍" }
+    ]
+  },
+  {
+    coords: [-4.281218781809108, 55.61305706331253],
+    name: "Alexander Fleming",
+    occupation: "1881-1955",
+    description: "Alexander Fleming attended school here",
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Synthetic_Production_of_Penicillin_TR1468.jpg/633px-Synthetic_Production_of_Penicillin_TR1468.jpg",
+    tldr: "Scottish bacteriologist, globally renowned for discovering penicillin and revolutionizing modern medicine.",
+    events: [
+      { date: "1928", description: "Discovered penicillin, the world's first broadly effective antibiotic, marking a turning point in medical history🧪" },
+      { date: "1945", description: "Awarded the Nobel Prize in Physiology or Medicine for his groundbreaking discovery, shared with Howard Florey and Ernst Chain🏆" },
+      { date: "Legacy", description: "Named one of Time magazine's 100 Most Important People of the 20th century and voted third 'greatest Scot' in 2009🌍" }
+    ]
+  },
+  {
+    coords: [-4.47327149680323, 55.61533091396802],
+    name: "Alexander Fleming",
+    occupation: "1881-1955",
+    description: "Alexander Fleming attended school here",
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Synthetic_Production_of_Penicillin_TR1468.jpg/633px-Synthetic_Production_of_Penicillin_TR1468.jpg",
+    tldr: "Scottish bacteriologist, globally renowned for discovering penicillin and revolutionizing modern medicine.",
+    events: [
+      { date: "1928", description: "Discovered penicillin, the world's first broadly effective antibiotic, marking a turning point in medical history🧪" },
+      { date: "1945", description: "Awarded the Nobel Prize in Physiology or Medicine for his groundbreaking discovery, shared with Howard Florey and Ernst Chain🏆" },
+      { date: "Legacy", description: "Named one of Time magazine's 100 Most Important People of the 20th century and voted third 'greatest Scot' in 2009🌍" }
+    ]
+  },
+  {
+    coords: [-0.13643862543279076, 51.49819666183175],
+    name: "Alexander Fleming",
+    occupation: "1881-1955",
+    description: "Alexander Fleming served 14 years as a private in the London Scottish Regiment",
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Synthetic_Production_of_Penicillin_TR1468.jpg/633px-Synthetic_Production_of_Penicillin_TR1468.jpg",
+    tldr: "Scottish bacteriologist, globally renowned for discovering penicillin and revolutionizing modern medicine.",
+    events: [
+      { date: "1928", description: "Discovered penicillin, the world's first broadly effective antibiotic, marking a turning point in medical history🧪" },
+      { date: "1945", description: "Awarded the Nobel Prize in Physiology or Medicine for his groundbreaking discovery, shared with Howard Florey and Ernst Chain🏆" },
+      { date: "Legacy", description: "Named one of Time magazine's 100 Most Important People of the 20th century and voted third 'greatest Scot' in 2009🌍" }
+    ]
+  },
+  {
+    coords: [-0.9914546046862809, 51.99580005106165],
+    name: "Margaret Thatcher",
+    occupation: "1925-2013",
+    description: "Margaret Thatcher opened the University of Buckingham here in 1976 and served as chair from 1992 to 1998",
+    image: "https://upload.wikimedia.org/wikipedia/commons/6/68/Margaret_Thatcher_in_Israel.jpg",
+    tldr: "Britain's first female Prime Minister, known for her transformative leadership, economic reforms, and divisive legacy.",
+    events: [
+      { date: "1979", description: "Became the UK's first female Prime Minister and served for 11 years, the longest tenure of the 20th century👩‍💼" },
+      { date: "1980s", description: "Privatized major state-owned companies like British Telecom and British Airways, reshaping the UK economy💰" },
+      { date: "Legacy", description: "Shifted the UK towards free-market policies, reduced inflation from 25% to 2.5%, and played a key role in ending the Cold War🌍" }
+    ]
+  },
+  {
+    coords: [-0.16003716105199478, 51.50210889219947],
+    name: "Margaret Thatcher",
+    occupation: "1925-2013",
+    description: "Margaret Thatcher celebrated her 80th birthday here - the Queen, Duke of Edinburgh, Tony Blair and many more attended",
+    image: "https://upload.wikimedia.org/wikipedia/commons/6/68/Margaret_Thatcher_in_Israel.jpg",
+    tldr: "Britain's first female Prime Minister, known for her transformative leadership, economic reforms, and divisive legacy.",
+    events: [
+      { date: "1979", description: "Became the UK's first female Prime Minister and served for 11 years, the longest tenure of the 20th century👩‍💼" },
+      { date: "1980s", description: "Privatized major state-owned companies like British Telecom and British Airways, reshaping the UK economy💰" },
+      { date: "Legacy", description: "Shifted the UK towards free-market policies, reduced inflation from 25% to 2.5%, and played a key role in ending the Cold War🌍" }
+    ]
+  },
+  {
+    coords: [-0.1417156789279515, 51.50713952130059],
+    name: "Margaret Thatcher",
+    occupation: "1925-2013",
+    description: "Margaret Thatcher died here in 2013",
+    image: "https://upload.wikimedia.org/wikipedia/commons/6/68/Margaret_Thatcher_in_Israel.jpg",
+    tldr: "Britain's first female Prime Minister, known for her transformative leadership, economic reforms, and divisive legacy.",
+    events: [
+      { date: "1979", description: "Became the UK's first female Prime Minister and served for 11 years, the longest tenure of the 20th century👩‍💼" },
+      { date: "1980s", description: "Privatized major state-owned companies like British Telecom and British Airways, reshaping the UK economy💰" },
+      { date: "Legacy", description: "Shifted the UK towards free-market policies, reduced inflation from 25% to 2.5%, and played a key role in ending the Cold War🌍" }
+    ]
+  },
+    {
+    coords: [-1.2631010667659182, 51.75423675206953],
+    name: "Margaret Thatcher",
+    occupation: "1925-2013",
+    description: "Margaret Thatcher was president of the Oxford University Conservative Association here in 1946",
+    image: "https://upload.wikimedia.org/wikipedia/commons/6/68/Margaret_Thatcher_in_Israel.jpg",
+    tldr: "Britain's first female Prime Minister, known for her transformative leadership, economic reforms, and divisive legacy.",
+    events: [
+      { date: "1979", description: "Became the UK's first female Prime Minister and served for 11 years, the longest tenure of the 20th century👩‍💼" },
+      { date: "1980s", description: "Privatized major state-owned companies like British Telecom and British Airways, reshaping the UK economy💰" },
+      { date: "Legacy", description: "Shifted the UK towards free-market policies, reduced inflation from 25% to 2.5%, and played a key role in ending the Cold War🌍" }
+    ]
+  },
+  {
+    coords: [1.0444620506494322, 51.93965945024917],
+    name: "Margaret Thatcher",
+    occupation: "1925-2013",
+    description: "Margaret Thatcher worked here after university, as a research chemist",
+    image: "https://upload.wikimedia.org/wikipedia/commons/6/68/Margaret_Thatcher_in_Israel.jpg",
+    tldr: "Britain's first female Prime Minister, known for her transformative leadership, economic reforms, and divisive legacy.",
+    events: [
+      { date: "1979", description: "Became the UK's first female Prime Minister and served for 11 years, the longest tenure of the 20th century👩‍💼" },
+      { date: "1980s", description: "Privatized major state-owned companies like British Telecom and British Airways, reshaping the UK economy💰" },
+      { date: "Legacy", description: "Shifted the UK towards free-market policies, reduced inflation from 25% to 2.5%, and played a key role in ending the Cold War🌍" }
+    ]
+  },
+  {
+    coords: [0.2145028008169105, 51.44478992389229],
+    name: "Margaret Thatcher",
+    occupation: "1925-2013",
+    description: "Margaret Thatcher became Conservative candidate for Dartford here in 1949",
+    image: "https://upload.wikimedia.org/wikipedia/commons/6/68/Margaret_Thatcher_in_Israel.jpg",
+    tldr: "Britain's first female Prime Minister, known for her transformative leadership, economic reforms, and divisive legacy.",
+    events: [
+      { date: "1979", description: "Became the UK's first female Prime Minister and served for 11 years, the longest tenure of the 20th century👩‍💼" },
+      { date: "1980s", description: "Privatized major state-owned companies like British Telecom and British Airways, reshaping the UK economy💰" },
+      { date: "Legacy", description: "Shifted the UK towards free-market policies, reduced inflation from 25% to 2.5%, and played a key role in ending the Cold War🌍" }
+    ]
+  },
+  {
+    coords: [-0.21255161735908368, 51.49496454086995],
+    name: "Margaret Thatcher",
+    occupation: "1925-2013",
+    description: "Margaret Thatcher worked here for J.Lyons and Co, developing emulsifiers for ice cream, in 1951",
+    image: "https://upload.wikimedia.org/wikipedia/commons/6/68/Margaret_Thatcher_in_Israel.jpg",
+    tldr: "Britain's first female Prime Minister, known for her transformative leadership, economic reforms, and divisive legacy.",
+    events: [
+      { date: "1979", description: "Became the UK's first female Prime Minister and served for 11 years, the longest tenure of the 20th century👩‍💼" },
+      { date: "1980s", description: "Privatized major state-owned companies like British Telecom and British Airways, reshaping the UK economy💰" },
+      { date: "Legacy", description: "Shifted the UK towards free-market policies, reduced inflation from 25% to 2.5%, and played a key role in ending the Cold War🌍" }
+    ]
+  },
+  {
+    coords: [-0.6451265185097337, 52.915908810484105],
+    name: "Margaret Thatcher",
+    occupation: "1925-2013",
+    description: "Margaret Thatcher was born here above her father’s grocery shop",
+    image: "https://upload.wikimedia.org/wikipedia/commons/6/68/Margaret_Thatcher_in_Israel.jpg",
+    tldr: "Britain's first female Prime Minister, known for her transformative leadership, economic reforms, and divisive legacy.",
+    events: [
+      { date: "1979", description: "Became the UK's first female Prime Minister and served for 11 years, the longest tenure of the 20th century👩‍💼" },
+      { date: "1980s", description: "Privatized major state-owned companies like British Telecom and British Airways, reshaping the UK economy💰" },
+      { date: "Legacy", description: "Shifted the UK towards free-market policies, reduced inflation from 25% to 2.5%, and played a key role in ending the Cold War🌍" }
+    ]
+  },
+  {
+    coords: [-0.6410091505988454, 52.912660302612885],
+    name: "Margaret Thatcher",
+    occupation: "1925-2013",
+    description: "Margaret Thatcher attended church here as a kid - she was skeptical",
+    image: "https://upload.wikimedia.org/wikipedia/commons/6/68/Margaret_Thatcher_in_Israel.jpg",
+    tldr: "Britain's first female Prime Minister, known for her transformative leadership, economic reforms, and divisive legacy.",
+    events: [
+      { date: "1979", description: "Became the UK's first female Prime Minister and served for 11 years, the longest tenure of the 20th century👩‍💼" },
+      { date: "1980s", description: "Privatized major state-owned companies like British Telecom and British Airways, reshaping the UK economy💰" },
+      { date: "Legacy", description: "Shifted the UK towards free-market policies, reduced inflation from 25% to 2.5%, and played a key role in ending the Cold War🌍" }
+    ]
+  },
+  {
+    coords: [-0.6463400644724512, 52.90622965012537],
+    name: "Margaret Thatcher",
+    occupation: "1925-2013",
+    description: "Margaret Thatcher attended school here",
+    image: "https://upload.wikimedia.org/wikipedia/commons/6/68/Margaret_Thatcher_in_Israel.jpg",
+    tldr: "Britain's first female Prime Minister, known for her transformative leadership, economic reforms, and divisive legacy.",
+    events: [
+      { date: "1979", description: "Became the UK's first female Prime Minister and served for 11 years, the longest tenure of the 20th century👩‍💼" },
+      { date: "1980s", description: "Privatized major state-owned companies like British Telecom and British Airways, reshaping the UK economy💰" },
+      { date: "Legacy", description: "Shifted the UK towards free-market policies, reduced inflation from 25% to 2.5%, and played a key role in ending the Cold War🌍" }
+    ]
+  },
+  {
+    coords: [-0.633532249923731, 52.91411812353006],
+    name: "Margaret Thatcher",
+    occupation: "1925-2013",
+    description: "Margaret Thatcher was head girl here in 1942-43",
+    image: "https://upload.wikimedia.org/wikipedia/commons/6/68/Margaret_Thatcher_in_Israel.jpg",
+    tldr: "Britain's first female Prime Minister, known for her transformative leadership, economic reforms, and divisive legacy.",
+    events: [
+      { date: "1979", description: "Became the UK's first female Prime Minister and served for 11 years, the longest tenure of the 20th century👩‍💼" },
+      { date: "1980s", description: "Privatized major state-owned companies like British Telecom and British Airways, reshaping the UK economy💰" },
+      { date: "Legacy", description: "Shifted the UK towards free-market policies, reduced inflation from 25% to 2.5%, and played a key role in ending the Cold War🌍" }
+    ]
+  },
+  {
+    coords: [-1.2614093970439446, 51.75973481617306],
+    name: "Margaret Thatcher",
+    occupation: "1925-2013",
+    description: "Margaret Thatcher was educated here from 1943 to 1947",
+    image: "https://upload.wikimedia.org/wikipedia/commons/6/68/Margaret_Thatcher_in_Israel.jpg",
+    tldr: "Britain's first female Prime Minister, known for her transformative leadership, economic reforms, and divisive legacy.",
+    events: [
+      { date: "1979", description: "Became the UK's first female Prime Minister and served for 11 years, the longest tenure of the 20th century👩‍💼" },
+      { date: "1980s", description: "Privatized major state-owned companies like British Telecom and British Airways, reshaping the UK economy💰" },
+      { date: "Legacy", description: "Shifted the UK towards free-market policies, reduced inflation from 25% to 2.5%, and played a key role in ending the Cold War🌍" }
+    ]
+  },
+  {
+    coords: [-0.6219693647756015, 51.19656216215057],
+    name: "Robert Baden-Powell",
+    occupation: "1857-1941",
+    description: "Robert Baden-Powell was educated at the prestigious Charterhouse school here",
+    image: "https://upload.wikimedia.org/wikipedia/commons/2/20/General_Baden-Powell%2C_Bain_news_service_portrait.jpg",
+    tldr: "Founder of the Boy Scouts and Girl Guides movements, revolutionizing youth development and creating a global phenomenon.",
+    events: [
+      { date: "1907", description: "Organized the first Scout camp at Brownsea Island, igniting a movement that grew to 3.3 million members worldwide by 1939🏕️" },
+      { date: "1908", description: "Published 'Scouting for Boys,' which sold 150 million copies, becoming the 4th best-selling book of the 20th century📚" },
+      { date: "Legacy", description: "Created a global movement now with 54 million Scouts in 216 countries and territories, promoting peace, self-reliance, and service🌍" }
+    ]
+  },
+  {
+    coords: [-1.977954464924396, 50.68810233475351],
+    name: "Robert Baden-Powell",
+    occupation: "1857-1941",
+    description: "Robert Baden-Powell trailed his first scout camp here at Brownsea Island Scout camp",
+    image: "https://upload.wikimedia.org/wikipedia/commons/2/20/General_Baden-Powell%2C_Bain_news_service_portrait.jpg",
+    tldr: "Founder of the Boy Scouts and Girl Guides movements, revolutionizing youth development and creating a global phenomenon.",
+    events: [
+      { date: "1907", description: "Organized the first Scout camp at Brownsea Island, igniting a movement that grew to 3.3 million members worldwide by 1939🏕️" },
+      { date: "1908", description: "Published 'Scouting for Boys,' which sold 150 million copies, becoming the 4th best-selling book of the 20th century📚" },
+      { date: "Legacy", description: "Created a global movement now with 54 million Scouts in 216 countries and territories, promoting peace, self-reliance, and service🌍" }
+    ]
+  },
+  {
+    coords: [-0.17389597298509643, 51.51244075707205],
+    name: "Robert Baden-Powell",
+    occupation: "1857-1941",
+    description: "Robert Baden-Powell was born here 1857",
+    image: "https://upload.wikimedia.org/wikipedia/commons/2/20/General_Baden-Powell%2C_Bain_news_service_portrait.jpg",
+    tldr: "Founder of the Boy Scouts and Girl Guides movements, revolutionizing youth development and creating a global phenomenon.",
+    events: [
+      { date: "1907", description: "Organized the first Scout camp at Brownsea Island, igniting a movement that grew to 3.3 million members worldwide by 1939🏕️" },
+      { date: "1908", description: "Published 'Scouting for Boys,' which sold 150 million copies, becoming the 4th best-selling book of the 20th century📚" },
+      { date: "Legacy", description: "Created a global movement now with 54 million Scouts in 216 countries and territories, promoting peace, self-reliance, and service🌍" }
+    ]
+  },
+  {
+    coords: [0.24634936121362322, 51.14007998835539],
+    name: "Robert Baden-Powell",
+    occupation: "1857-1941",
+    description: "Robert Baden-Powell attended school here",
+    image: "https://upload.wikimedia.org/wikipedia/commons/2/20/General_Baden-Powell%2C_Bain_news_service_portrait.jpg",
+    tldr: "Founder of the Boy Scouts and Girl Guides movements, revolutionizing youth development and creating a global phenomenon.",
+    events: [
+      { date: "1907", description: "Organized the first Scout camp at Brownsea Island, igniting a movement that grew to 3.3 million members worldwide by 1939🏕️" },
+      { date: "1908", description: "Published 'Scouting for Boys,' which sold 150 million copies, becoming the 4th best-selling book of the 20th century📚" },
+      { date: "Legacy", description: "Created a global movement now with 54 million Scouts in 216 countries and territories, promoting peace, self-reliance, and service🌍" }
+    ]
+  },
+  {
+    coords: [-1.6988814677044801, 54.3648099702143],
+    name: "Robert Baden-Powell",
+    occupation: "1857-1941",
+    description: "Robert Baden-Powell moved the Northumbrian division of the territorial army here to Catterick Garrison in 1907",
+    image: "https://upload.wikimedia.org/wikipedia/commons/2/20/General_Baden-Powell%2C_Bain_news_service_portrait.jpg",
+    tldr: "Founder of the Boy Scouts and Girl Guides movements, revolutionizing youth development and creating a global phenomenon.",
+    events: [
+      { date: "1907", description: "Organized the first Scout camp at Brownsea Island, igniting a movement that grew to 3.3 million members worldwide by 1939🏕️" },
+      { date: "1908", description: "Published 'Scouting for Boys,' which sold 150 million copies, becoming the 4th best-selling book of the 20th century📚" },
+      { date: "Legacy", description: "Created a global movement now with 54 million Scouts in 216 countries and territories, promoting peace, self-reliance, and service🌍" }
+    ]
+  },
+  {
+    coords: [-0.8913146626877073, 51.19206883578111],
+    name: "Robert Baden-Powell",
+    occupation: "1857-1941",
+    description: "Robert Baden-Powell moved here with wife in 1919",
+    image: "https://upload.wikimedia.org/wikipedia/commons/2/20/General_Baden-Powell%2C_Bain_news_service_portrait.jpg",
+    tldr: "Founder of the Boy Scouts and Girl Guides movements, revolutionizing youth development and creating a global phenomenon.",
+    events: [
+      { date: "1907", description: "Organized the first Scout camp at Brownsea Island, igniting a movement that grew to 3.3 million members worldwide by 1939🏕️" },
+      { date: "1908", description: "Published 'Scouting for Boys,' which sold 150 million copies, becoming the 4th best-selling book of the 20th century📚" },
+      { date: "Legacy", description: "Created a global movement now with 54 million Scouts in 216 countries and territories, promoting peace, self-reliance, and service🌍" }
+    ]
+  },
+  {
+    coords: [-0.06992499678081426, 51.42641372480882],
+    name: "Ernest Shackleton",
+    occupation: "1874-1922",
+    description: "Ernest Shackleton lived here",
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Ernest_Shackleton_before_1909.jpg/651px-Ernest_Shackleton_before_1909.jpg",
+    tldr: "Legendary Antarctic explorer whose leadership and resilience during the Heroic Age of Exploration remain unparalleled.",
+    events: [
+      { date: "1907-1909", description: "Led the Nimrod Expedition, reaching within 97 miles of the South Pole and discovering the Beardmore Glacier, one of the largest in the world🌍" },
+      { date: "1914-1916", description: "Commanded the Endurance expedition, surviving 635 days stranded in Antarctica and rescuing all 27 crew members without a single loss🧊" },
+      { date: "Legacy", description: "Celebrated as one of history's greatest leaders, his expeditions inspired generations and advanced polar exploration🔭" }
+    ]
+  },
+  {
+    coords: [-0.08491271185808662, 51.44027192857109],
+    name: "Ernest Shackleton",
+    occupation: "1874-1922",
+    description: "Ernest Shackleton was educated here from age 13",
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Ernest_Shackleton_before_1909.jpg/651px-Ernest_Shackleton_before_1909.jpg",
+    tldr: "Legendary Antarctic explorer whose leadership and resilience during the Heroic Age of Exploration remain unparalleled.",
+    events: [
+      { date: "1907-1909", description: "Led the Nimrod Expedition, reaching within 97 miles of the South Pole and discovering the Beardmore Glacier, one of the largest in the world🌍" },
+      { date: "1914-1916", description: "Commanded the Endurance expedition, surviving 635 days stranded in Antarctica and rescuing all 27 crew members without a single loss🧊" },
+      { date: "Legacy", description: "Celebrated as one of history's greatest leaders, his expeditions inspired generations and advanced polar exploration🔭" }
+    ]
+  },
+  {
+    coords: [-2.9924910920899044, 53.404696689482094],
+    name: "Ernest Shackleton",
+    occupation: "1874-1922",
+    description: "Ernest Shackleton worked on the ship Hoghton Tower for his apprenticeship here",
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Ernest_Shackleton_before_1909.jpg/651px-Ernest_Shackleton_before_1909.jpg",
+    tldr: "Legendary Antarctic explorer whose leadership and resilience during the Heroic Age of Exploration remain unparalleled.",
+    events: [
+      { date: "1907-1909", description: "Led the Nimrod Expedition, reaching within 97 miles of the South Pole and discovering the Beardmore Glacier, one of the largest in the world🌍" },
+      { date: "1914-1916", description: "Commanded the Endurance expedition, surviving 635 days stranded in Antarctica and rescuing all 27 crew members without a single loss🧊" },
+      { date: "Legacy", description: "Celebrated as one of history's greatest leaders, his expeditions inspired generations and advanced polar exploration🔭" }
+    ]
+  },
+  {
+    coords: [-1.3975080843553829, 50.896861009734884],
+    name: "Ernest Shackleton",
+    occupation: "1874-1922",
+    description: "Ernest Shackleton worked here for the Union Castle Line in 1898",
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Ernest_Shackleton_before_1909.jpg/651px-Ernest_Shackleton_before_1909.jpg",
+    tldr: "Legendary Antarctic explorer whose leadership and resilience during the Heroic Age of Exploration remain unparalleled.",
+    events: [
+      { date: "1907-1909", description: "Led the Nimrod Expedition, reaching within 97 miles of the South Pole and discovering the Beardmore Glacier, one of the largest in the world🌍" },
+      { date: "1914-1916", description: "Commanded the Endurance expedition, surviving 635 days stranded in Antarctica and rescuing all 27 crew members without a single loss🧊" },
+      { date: "Legacy", description: "Celebrated as one of history's greatest leaders, his expeditions inspired generations and advanced polar exploration🔭" }
+    ]
+  },
+  {
+    coords: [1.208025716389442, 52.94507329103027],
+    name: "Ernest Shackleton",
+    occupation: "1874-1922",
+    description: "Ernest Shackleton lived here at The Burlington Hotel in later years",
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Ernest_Shackleton_before_1909.jpg/651px-Ernest_Shackleton_before_1909.jpg",
+    tldr: "Legendary Antarctic explorer whose leadership and resilience during the Heroic Age of Exploration remain unparalleled.",
+    events: [
+      { date: "1907-1909", description: "Led the Nimrod Expedition, reaching within 97 miles of the South Pole and discovering the Beardmore Glacier, one of the largest in the world🌍" },
+      { date: "1914-1916", description: "Commanded the Endurance expedition, surviving 635 days stranded in Antarctica and rescuing all 27 crew members without a single loss🧊" },
+      { date: "Legacy", description: "Celebrated as one of history's greatest leaders, his expeditions inspired generations and advanced polar exploration🔭" }
+    ]
+  },
+    {
+    coords: [-2.8921369473899383, 53.36206337775156],
+    name: "John Lennon",
+    occupation: "1940-1980",
+    description: "John Lennon visited his mum here, where she played him Elvis and taught him banjo",
+    image: "https://upload.wikimedia.org/wikipedia/commons/9/9b/John_Lennon%2C_1974_(Restored)_(cropped).jpg",
+    tldr: "Iconic singer-songwriter, peace activist, and co-founder of The Beatles, whose music and message defined a generation.",
+    events: [
+      { date: "1950s", description: "Learned to play his first instrument, the banjo, under his mother Julia's guidance, laying the foundation for his musical career🎸" },
+      { date: "1960", description: "Co-founded The Beatles, selling over 600 million albums worldwide and becoming the best-selling band in history🎸" },
+      { date: "Legacy", description: "Ranked as one of the greatest songwriters of all time with 25 number-one singles on the Billboard Hot 100🎶" }
+    ]
+  },
+  {
+    coords: [-2.9681685506975195, 53.402874113295375],
+    name: "John Lennon",
+    occupation: "1940-1980",
+    description: "John Lennon was born here",
+    image: "https://upload.wikimedia.org/wikipedia/commons/9/9b/John_Lennon%2C_1974_(Restored)_(cropped).jpg",
+    tldr: "Iconic singer-songwriter, peace activist, and co-founder of The Beatles, whose music and message defined a generation.",
+    events: [
+      { date: "1960", description: "Co-founded The Beatles, selling over 600 million albums worldwide and becoming the best-selling band in history🎸" },
+      { date: "1969", description: "Released 'Give Peace a Chance,' an anti-war anthem sung by 250,000 protesters in Washington, D.C.🕊️" },
+      { date: "Legacy", description: "Ranked as one of the greatest songwriters of all time with 25 number-one singles on the Billboard Hot 100🎶" }
+    ]
+  },
+  {
+    coords: [-2.8813810564534985, 53.377211864007656],
+    name: "John Lennon",
+    occupation: "1940-1980",
+    description: "Childhood home of John Lennon",
+    image: "https://upload.wikimedia.org/wikipedia/commons/9/9b/John_Lennon%2C_1974_(Restored)_(cropped).jpg",
+    tldr: "Iconic singer-songwriter, peace activist, and co-founder of The Beatles, whose music and message defined a generation.",
+    events: [
+      { date: "1960", description: "Co-founded The Beatles, selling over 600 million albums worldwide and becoming the best-selling band in history🎸" },
+      { date: "1969", description: "Released 'Give Peace a Chance,' an anti-war anthem sung by 250,000 protesters in Washington, D.C.🕊️" },
+      { date: "Legacy", description: "Ranked as one of the greatest songwriters of all time with 25 number-one singles on the Billboard Hot 100🎶" }
+    ]
+  },
+  {
+    coords: [-2.913802257813908, 53.391084349154774],
+    name: "John Lennon",
+    occupation: "1940-1980",
+    description: "John Lennon lived here with his mum",
+    image: "https://upload.wikimedia.org/wikipedia/commons/9/9b/John_Lennon%2C_1974_(Restored)_(cropped).jpg",
+    tldr: "Iconic singer-songwriter, peace activist, and co-founder of The Beatles, whose music and message defined a generation.",
+    events: [
+      { date: "1960", description: "Co-founded The Beatles, selling over 600 million albums worldwide and becoming the best-selling band in history🎸" },
+      { date: "1969", description: "Released 'Give Peace a Chance,' an anti-war anthem sung by 250,000 protesters in Washington, D.C.🕊️" },
+      { date: "Legacy", description: "Ranked as one of the greatest songwriters of all time with 25 number-one singles on the Billboard Hot 100🎶" }
+    ]
+  },
+  {
+    coords: [-3.055550781798655, 53.8158349652701],
+    name: "John Lennon",
+    occupation: "1940-1980",
+    description: "John Lennon often visited and watched performances at Blackpool Tower circus",
+    image: "https://upload.wikimedia.org/wikipedia/commons/9/9b/John_Lennon%2C_1974_(Restored)_(cropped).jpg",
+    tldr: "Iconic singer-songwriter, peace activist, and co-founder of The Beatles, whose music and message defined a generation.",
+    events: [
+      { date: "1960", description: "Co-founded The Beatles, selling over 600 million albums worldwide and becoming the best-selling band in history🎸" },
+      { date: "1969", description: "Released 'Give Peace a Chance,' an anti-war anthem sung by 250,000 protesters in Washington, D.C.🕊️" },
+      { date: "Legacy", description: "Ranked as one of the greatest songwriters of all time with 25 number-one singles on the Billboard Hot 100🎶" }
+    ]
+  },
+  {
+    coords: [-2.9162361449127565, 53.38553304124221],
+    name: "John Lennon",
+    occupation: "1940-1980",
+    description: "John Lennon attended school here",
+    image: "https://upload.wikimedia.org/wikipedia/commons/9/9b/John_Lennon%2C_1974_(Restored)_(cropped).jpg",
+    tldr: "Iconic singer-songwriter, peace activist, and co-founder of The Beatles, whose music and message defined a generation.",
+    events: [
+      { date: "1960", description: "Co-founded The Beatles, selling over 600 million albums worldwide and becoming the best-selling band in history🎸" },
+      { date: "1969", description: "Released 'Give Peace a Chance,' an anti-war anthem sung by 250,000 protesters in Washington, D.C.🕊️" },
+      { date: "Legacy", description: "Ranked as one of the greatest songwriters of all time with 25 number-one singles on the Billboard Hot 100🎶" }
+    ]
+  },
+  {
+    coords: [-2.9013031593175223, 53.382585192983754],
+    name: "John Lennon",
+    occupation: "1940-1980",
+    description: "John Lennon attended Quarry Bank High School from 1952 to 1957 and named his first band Quarrymen",
+    image: "https://upload.wikimedia.org/wikipedia/commons/9/9b/John_Lennon%2C_1974_(Restored)_(cropped).jpg",
+    tldr: "Iconic singer-songwriter, peace activist, and co-founder of The Beatles, whose music and message defined a generation.",
+    events: [
+      { date: "1960", description: "Co-founded The Beatles, selling over 600 million albums worldwide and becoming the best-selling band in history🎸" },
+      { date: "1969", description: "Released 'Give Peace a Chance,' an anti-war anthem sung by 250,000 protesters in Washington, D.C.🕊️" },
+      { date: "Legacy", description: "Ranked as one of the greatest songwriters of all time with 25 number-one singles on the Billboard Hot 100🎶" }
+    ]
+  },
+  {
+    coords: [-2.972241109841164, 53.39986842155833],
+    name: "John Lennon",
+    occupation: "1940-1980",
+    description: "John Lennon attended Liverpool College of Art here",
+    image: "https://upload.wikimedia.org/wikipedia/commons/9/9b/John_Lennon%2C_1974_(Restored)_(cropped).jpg",
+    tldr: "Iconic singer-songwriter, peace activist, and co-founder of The Beatles, whose music and message defined a generation.",
+    events: [
+      { date: "1960", description: "Co-founded The Beatles, selling over 600 million albums worldwide and becoming the best-selling band in history🎸" },
+      { date: "1969", description: "Released 'Give Peace a Chance,' an anti-war anthem sung by 250,000 protesters in Washington, D.C.🕊️" },
+      { date: "Legacy", description: "Ranked as one of the greatest songwriters of all time with 25 number-one singles on the Billboard Hot 100🎶" }
+    ]
+  },
+  {
+    coords: [-2.894122187734302, 53.38151102429789],
+    name: "John Lennon",
+    occupation: "1940-1980",
+    description: "John Lennon spent time here as a child",
+    image: "https://upload.wikimedia.org/wikipedia/commons/9/9b/John_Lennon%2C_1974_(Restored)_(cropped).jpg",
+    tldr: "Iconic singer-songwriter, peace activist, and co-founder of The Beatles, whose music and message defined a generation.",
+    events: [
+      { date: "1960", description: "Co-founded The Beatles, selling over 600 million albums worldwide and becoming the best-selling band in history🎸" },
+      { date: "1969", description: "Released 'Give Peace a Chance,' an anti-war anthem sung by 250,000 protesters in Washington, D.C.🕊️" },
+      { date: "Legacy", description: "Ranked as one of the greatest songwriters of all time with 25 number-one singles on the Billboard Hot 100🎶" }
+    ]
+  },
+  {
+    coords: [-2.86958153924664, 53.37543471823512],
+    name: "John Lennon",
+    occupation: "1940-1980",
+    description: "John Lennon first met Paul McCartney here whilst performing in the church garden",
+    image: "https://upload.wikimedia.org/wikipedia/commons/9/9b/John_Lennon%2C_1974_(Restored)_(cropped).jpg",
+    tldr: "Iconic singer-songwriter, peace activist, and co-founder of The Beatles, whose music and message defined a generation.",
+    events: [
+      { date: "1960", description: "Co-founded The Beatles, selling over 600 million albums worldwide and becoming the best-selling band in history🎸" },
+      { date: "1969", description: "Released 'Give Peace a Chance,' an anti-war anthem sung by 250,000 protesters in Washington, D.C.🕊️" },
+      { date: "Legacy", description: "Ranked as one of the greatest songwriters of all time with 25 number-one singles on the Billboard Hot 100🎶" }
+    ]
+  },
+  {
+    coords: [-0.6343690466000332, 51.40644262949176],
+    name: "John Lennon",
+    occupation: "1940-1980",
+    description: "Lennon went through primal therapy for his childhood trauma whilst living here",
+    image: "https://upload.wikimedia.org/wikipedia/commons/9/9b/John_Lennon%2C_1974_(Restored)_(cropped).jpg",
+    tldr: "Iconic singer-songwriter, peace activist, and co-founder of The Beatles, whose music and message defined a generation.",
+    events: [
+      { date: "1960", description: "Co-founded The Beatles, selling over 600 million albums worldwide and becoming the best-selling band in history🎸" },
+      { date: "1969", description: "Released 'Give Peace a Chance,' an anti-war anthem sung by 250,000 protesters in Washington, D.C.🕊️" },
+      { date: "Legacy", description: "Ranked as one of the greatest songwriters of all time with 25 number-one singles on the Billboard Hot 100🎶" }
+    ]
+  },
+  {
+    coords: [-2.178785770221991, 51.62309384725528],
+    name: "Princess Diana",
+    occupation: "1961-1997",
+    description: "Princess Diana lived here with Charles",
+    image: "https://upload.wikimedia.org/wikipedia/commons/5/5e/Diana%2C_Princess_of_Wales_1997_(2).jpg",
+    tldr: "Beloved Princess of Wales, global humanitarian icon, and advocate for mental health, AIDS awareness, and landmine clearance.",
+    events: [
+      { date: "1961", description: "Born at Park House on the Sandringham Estate, marking the beginning of a life that would captivate the world👶" },
+      { date: "1981", description: "Married Prince Charles in a globally televised ceremony watched by 750 million people💍" },
+      { date: "Legacy", description: "Redefined the role of royalty through empathy and activism, leaving an enduring impact on humanitarian causes🌍" }
+    ]
+  },
+  {
+    coords: [0.08282777194886617, 51.58775986621765],
+    name: "Princess Diana",
+    occupation: "1961-1997",
+    description: "Princess Diana was the president of Barnados charity from 1984 to 1996",
+    image: "https://upload.wikimedia.org/wikipedia/commons/5/5e/Diana%2C_Princess_of_Wales_1997_(2).jpg",
+    tldr: "Beloved Princess of Wales, global humanitarian icon, and advocate for mental health, AIDS awareness, and landmine clearance.",
+    events: [
+      { date: "1961", description: "Born at Park House on the Sandringham Estate, marking the beginning of a life that would captivate the world👶" },
+      { date: "1981", description: "Married Prince Charles in a globally televised ceremony watched by 750 million people💍" },
+      { date: "Legacy", description: "Redefined the role of royalty through empathy and activism, leaving an enduring impact on humanitarian causes🌍" }
+    ]
+  },
+  {
+    coords: [-0.12086936017121466, 51.52315150891556],
+    name: "Princess Diana",
+    occupation: "1961-1997",
+    description: "From 1989, Princess Diana was president of Great Ormond Street Hospital",
+    image: "https://upload.wikimedia.org/wikipedia/commons/5/5e/Diana%2C_Princess_of_Wales_1997_(2).jpg",
+    tldr: "Beloved Princess of Wales, global humanitarian icon, and advocate for mental health, AIDS awareness, and landmine clearance.",
+    events: [
+      { date: "1961", description: "Born at Park House on the Sandringham Estate, marking the beginning of a life that would captivate the world👶" },
+      { date: "1981", description: "Married Prince Charles in a globally televised ceremony watched by 750 million people💍" },
+      { date: "Legacy", description: "Redefined the role of royalty through empathy and activism, leaving an enduring impact on humanitarian causes🌍" }
+    ]
+  },
+  {
+    coords: [-0.13138988252853423, 51.52178882386567],
+    name: "Princess Diana",
+    occupation: "1961-1997",
+    description: "Princess Diana served as president of the Royal Academy of Dramatic Art from 1989",
+    image: "https://upload.wikimedia.org/wikipedia/commons/5/5e/Diana%2C_Princess_of_Wales_1997_(2).jpg",
+    tldr: "Beloved Princess of Wales, global humanitarian icon, and advocate for mental health, AIDS awareness, and landmine clearance.",
+    events: [
+      { date: "1961", description: "Born at Park House on the Sandringham Estate, marking the beginning of a life that would captivate the world👶" },
+      { date: "1981", description: "Married Prince Charles in a globally televised ceremony watched by 750 million people💍" },
+      { date: "Legacy", description: "Redefined the role of royalty through empathy and activism, leaving an enduring impact on humanitarian causes🌍" }
+    ]
+  },
+  {
+    coords: [-0.17021617405683562, 51.48911633711429],
+    name: "Princess Diana",
+    occupation: "1961-1997",
+    description: "Princess Diana made several lengthy visits here each week to comfort dying patients",
+    image: "https://upload.wikimedia.org/wikipedia/commons/5/5e/Diana%2C_Princess_of_Wales_1997_(2).jpg",
+    tldr: "Beloved Princess of Wales, global humanitarian icon, and advocate for mental health, AIDS awareness, and landmine clearance.",
+    events: [
+      { date: "1961", description: "Born at Park House on the Sandringham Estate, marking the beginning of a life that would captivate the world👶" },
+      { date: "1981", description: "Married Prince Charles in a globally televised ceremony watched by 750 million people💍" },
+      { date: "Legacy", description: "Redefined the role of royalty through empathy and activism, leaving an enduring impact on humanitarian causes🌍" }
+    ]
+  },
+  {
+    coords: [-0.320217840541803, 51.57535820185794],
+    name: "Princess Diana",
+    occupation: "1961-1997",
+    description: "Princess Diana’s final official performance was here at Northwick Park Hospital in 1997",
+    image: "https://upload.wikimedia.org/wikipedia/commons/5/5e/Diana%2C_Princess_of_Wales_1997_(2).jpg",
+    tldr: "Beloved Princess of Wales, global humanitarian icon, and advocate for mental health, AIDS awareness, and landmine clearance.",
+    events: [
+      { date: "1961", description: "Born at Park House on the Sandringham Estate, marking the beginning of a life that would captivate the world👶" },
+      { date: "1981", description: "Married Prince Charles in a globally televised ceremony watched by 750 million people💍" },
+      { date: "Legacy", description: "Redefined the role of royalty through empathy and activism, leaving an enduring impact on humanitarian causes🌍" }
+    ]
+  },
+  {
+    coords: [-1.1255385090390546, 52.624512663059996],
+    name: "Princess Diana",
+    occupation: "1961-1997",
+    description: "Princess Diana opened the Attenborough Arts Center in 1997 with her friend David Attenborough",
+    image: "https://upload.wikimedia.org/wikipedia/commons/5/5e/Diana%2C_Princess_of_Wales_1997_(2).jpg",
+    tldr: "Beloved Princess of Wales, global humanitarian icon, and advocate for mental health, AIDS awareness, and landmine clearance.",
+    events: [
+      { date: "1961", description: "Born at Park House on the Sandringham Estate, marking the beginning of a life that would captivate the world👶" },
+      { date: "1981", description: "Married Prince Charles in a globally televised ceremony watched by 750 million people💍" },
+      { date: "Legacy", description: "Redefined the role of royalty through empathy and activism, leaving an enduring impact on humanitarian causes🌍" }
+    ]
+  },
+  {
+    coords: [-0.1375793008010321, 51.519056744821434],
+    name: "Princess Diana",
+    occupation: "1961-1997",
+    description: "Princess Diana hugged an AIDS patient here in 1991",
+    image: "https://upload.wikimedia.org/wikipedia/commons/5/5e/Diana%2C_Princess_of_Wales_1997_(2).jpg",
+    tldr: "Beloved Princess of Wales, global humanitarian icon, and advocate for mental health, AIDS awareness, and landmine clearance.",
+    events: [
+      { date: "1961", description: "Born at Park House on the Sandringham Estate, marking the beginning of a life that would captivate the world👶" },
+      { date: "1981", description: "Married Prince Charles in a globally televised ceremony watched by 750 million people💍" },
+      { date: "Legacy", description: "Redefined the role of royalty through empathy and activism, leaving an enduring impact on humanitarian causes🌍" }
+    ]
+  },
+  {
+    coords: [-0.19049065180237637, 51.34325481037852],
+    name: "Princess Diana",
+    occupation: "1961-1997",
+    description: "Princess Diana’s first solo official trip was to Royal Marsden Hospital",
+    image: "https://upload.wikimedia.org/wikipedia/commons/5/5e/Diana%2C_Princess_of_Wales_1997_(2).jpg",
+    tldr: "Beloved Princess of Wales, global humanitarian icon, and advocate for mental health, AIDS awareness, and landmine clearance.",
+    events: [
+      { date: "1961", description: "Born at Park House on the Sandringham Estate, marking the beginning of a life that would captivate the world👶" },
+      { date: "1981", description: "Married Prince Charles in a globally televised ceremony watched by 750 million people💍" },
+      { date: "Legacy", description: "Redefined the role of royalty through empathy and activism, leaving an enduring impact on humanitarian causes🌍" }
+    ]
+  },
+  {
+    coords: [0.5063558259602968, 52.82805262832018],
+    name: "Princess Diana",
+    occupation: "1961-1997",
+    description: "Princess Diana was born and grew up here at Park House",
+    image: "https://upload.wikimedia.org/wikipedia/commons/5/5e/Diana%2C_Princess_of_Wales_1997_(2).jpg",
+    tldr: "Beloved Princess of Wales, global humanitarian icon, and advocate for mental health, AIDS awareness, and landmine clearance.",
+    events: [
+      { date: "1961", description: "Born at Park House on the Sandringham Estate, marking the beginning of a life that would captivate the world👶" },
+      { date: "1981", description: "Married Prince Charles in a globally televised ceremony watched by 750 million people💍" },
+      { date: "Legacy", description: "Redefined the role of royalty through empathy and activism, leaving an enduring impact on humanitarian causes🌍" }
+    ]
+  },
+  {
+    coords: [-1.0018821786617846, 52.28023915781313],
+    name: "Princess Diana",
+    occupation: "1961-1997",
+    description: "Princess Diana lived here in the family seat",
+    image: "https://upload.wikimedia.org/wikipedia/commons/5/5e/Diana%2C_Princess_of_Wales_1997_(2).jpg",
+    tldr: "Beloved Princess of Wales, global humanitarian icon, and advocate for mental health, AIDS awareness, and landmine clearance.",
+    events: [
+      { date: "1961", description: "Born at Park House on the Sandringham Estate, marking the beginning of a life that would captivate the world👶" },
+      { date: "1981", description: "Married Prince Charles in a globally televised ceremony watched by 750 million people💍" },
+      { date: "Legacy", description: "Redefined the role of royalty through empathy and activism, leaving an enduring impact on humanitarian causes🌍" }
+    ]
+  },
+  {
+    coords: [0.43022776581846367, 52.75694156277541],
+    name: "Princess Diana",
+    occupation: "1961-1997",
+    description: "Princess Diana started her education here aged 7 in 1968",
+    image: "https://upload.wikimedia.org/wikipedia/commons/5/5e/Diana%2C_Princess_of_Wales_1997_(2).jpg",
+    tldr: "Beloved Princess of Wales, global humanitarian icon, and advocate for mental health, AIDS awareness, and landmine clearance.",
+    events: [
+      { date: "1961", description: "Born at Park House on the Sandringham Estate, marking the beginning of a life that would captivate the world👶" },
+      { date: "1981", description: "Married Prince Charles in a globally televised ceremony watched by 750 million people💍" },
+      { date: "Legacy", description: "Redefined the role of royalty through empathy and activism, leaving an enduring impact on humanitarian causes🌍" }
+    ]
+  },
+  {
+    coords: [0.8876078620781859, 52.39434109802214],
+    name: "Princess Diana",
+    occupation: "1961-1997",
+    description: "Princess Diana was educated here from age 9",
+    image: "https://upload.wikimedia.org/wikipedia/commons/5/5e/Diana%2C_Princess_of_Wales_1997_(2).jpg",
+    tldr: "Beloved Princess of Wales, global humanitarian icon, and advocate for mental health, AIDS awareness, and landmine clearance.",
+    events: [
+      { date: "1961", description: "Born at Park House on the Sandringham Estate, marking the beginning of a life that would captivate the world👶" },
+      { date: "1981", description: "Married Prince Charles in a globally televised ceremony watched by 750 million people💍" },
+      { date: "Legacy", description: "Redefined the role of royalty through empathy and activism, leaving an enduring impact on humanitarian causes🌍" }
+    ]
+  },
+  {
+    coords: [0.1863427465295221, 51.254771374524445],
+    name: "Princess Diana",
+    occupation: "1961-1997",
+    description: 'Princess Diana attended West Heath Girls School here from 1974 to 1977; she won an award as “the girl giving maximum help to the school and her schoolfellows”',
+    image: "https://upload.wikimedia.org/wikipedia/commons/5/5e/Diana%2C_Princess_of_Wales_1997_(2).jpg",
+    tldr: "Beloved Princess of Wales, global humanitarian icon, and advocate for mental health, AIDS awareness, and landmine clearance.",
+    events: [
+      { date: "1961", description: "Born at Park House on the Sandringham Estate, marking the beginning of a life that would captivate the world👶" },
+      { date: "1981", description: "Married Prince Charles in a globally televised ceremony watched by 750 million people💍" },
+      { date: "Legacy", description: "Redefined the role of royalty through empathy and activism, leaving an enduring impact on humanitarian causes🌍" }
+    ]
+  },
+  {
+    coords: [-0.1878283403379667, 51.489931923351726],
+    name: "Princess Diana",
+    occupation: "1961-1997",
+    description: "Princess Diana received this house as her 18th birthday present and lived here from 1979 to 1981",
+    image: "https://upload.wikimedia.org/wikipedia/commons/5/5e/Diana%2C_Princess_of_Wales_1997_(2).jpg",
+    tldr: "Beloved Princess of Wales, global humanitarian icon, and advocate for mental health, AIDS awareness, and landmine clearance.",
+    events: [
+      { date: "1961", description: "Born at Park House on the Sandringham Estate, marking the beginning of a life that would captivate the world👶" },
+      { date: "1981", description: "Married Prince Charles in a globally televised ceremony watched by 750 million people💍" },
+      { date: "Legacy", description: "Redefined the role of royalty through empathy and activism, leaving an enduring impact on humanitarian causes🌍" }
+    ]
+  },
+  {
+    coords: [-0.1352578205601323, 51.48833068849365],
+    name: "Princess Diana",
+    occupation: "1961-1997",
+    description: "Princess Diana worked here as a nursery teacher's assistant",
+    image: "https://upload.wikimedia.org/wikipedia/commons/5/5e/Diana%2C_Princess_of_Wales_1997_(2).jpg",
+    tldr: "Beloved Princess of Wales, global humanitarian icon, and advocate for mental health, AIDS awareness, and landmine clearance.",
+    events: [
+      { date: "1961", description: "Born at Park House on the Sandringham Estate, marking the beginning of a life that would captivate the world👶" },
+      { date: "1981", description: "Married Prince Charles in a globally televised ceremony watched by 750 million people💍" },
+      { date: "Legacy", description: "Redefined the role of royalty through empathy and activism, leaving an enduring impact on humanitarian causes🌍" }
+    ]
+  },
+  {
+    coords: [-0.13850798355302235, 51.50406583961384],
+    name: "Princess Diana",
+    occupation: "1961-1997",
+    description: "Princess Diana lived here before she got married to Charles",
+    image: "https://upload.wikimedia.org/wikipedia/commons/5/5e/Diana%2C_Princess_of_Wales_1997_(2).jpg",
+    tldr: "Beloved Princess of Wales, global humanitarian icon, and advocate for mental health, AIDS awareness, and landmine clearance.",
+    events: [
+      { date: "1961", description: "Born at Park House on the Sandringham Estate, marking the beginning of a life that would captivate the world👶" },
+      { date: "1981", description: "Married Prince Charles in a globally televised ceremony watched by 750 million people💍" },
+      { date: "Legacy", description: "Redefined the role of royalty through empathy and activism, leaving an enduring impact on humanitarian causes🌍" }
+    ]
+  },
+  {
+    coords: [-0.0959945411382334, 51.51569579889193],
+    name: "Princess Diana",
+    occupation: "1961-1997",
+    description: "Princess Diana’s first public appearance with Charles in 1981 was on this spot",
+    image: "https://upload.wikimedia.org/wikipedia/commons/5/5e/Diana%2C_Princess_of_Wales_1997_(2).jpg",
+    tldr: "Beloved Princess of Wales, global humanitarian icon, and advocate for mental health, AIDS awareness, and landmine clearance.",
+    events: [
+      { date: "1961", description: "Born at Park House on the Sandringham Estate, marking the beginning of a life that would captivate the world👶" },
+      { date: "1981", description: "Married Prince Charles in a globally televised ceremony watched by 750 million people💍" },
+      { date: "Legacy", description: "Redefined the role of royalty through empathy and activism, leaving an enduring impact on humanitarian causes🌍" }
+    ]
+  },
+  {
+    coords: [-2.304492222102994, 51.39915863455724],
+    name: "James Dyson",
+    occupation: "1947-present",
+    description: "James Dyson invented the bagless vacuum whilst living here",
+    image: "https://upload.wikimedia.org/wikipedia/commons/6/67/Sir_James_Dyson_CBE_FREng_FRS.jpg",
+    tldr: "Prolific inventor with 2,224 patents who revolutionized household appliances, becoming one of the UK's most successful entrepreneurs.",
+    events: [
+      { date: "1978", description: "Developed the cyclone separator technology, leading to 5,127 prototypes before perfecting the bagless vacuum🌪️" },
+      { date: "2010", description: "Filed a record-breaking 340 patent applications in a single year, showcasing unparalleled innovation📑" },
+      { date: "Legacy", description: "Created a £3 billion revenue company, selling over 10 million appliances in 35 countries worldwide🌍" }
+    ]
+  },
+  {
+    coords: [1.1050196936470866, 52.910687624177406],
+    name: "James Dyson",
+    occupation: "1947-present",
+    description: "James Dyson was educated here from 1956 to 1965",
+    image: "https://upload.wikimedia.org/wikipedia/commons/6/67/Sir_James_Dyson_CBE_FREng_FRS.jpg",
+    tldr: "Prolific inventor with 2,224 patents who revolutionized household appliances, becoming one of the UK's most successful entrepreneurs.",
+    events: [
+      { date: "1978", description: "Developed the cyclone separator technology, leading to 5,127 prototypes before perfecting the bagless vacuum🌪️" },
+      { date: "2010", description: "Filed a record-breaking 340 patent applications in a single year, showcasing unparalleled innovation📑" },
+      { date: "Legacy", description: "Created a £3 billion revenue company, selling over 10 million appliances in 35 countries worldwide🌍" }
+    ]
+  },
+  {
+    coords: [-0.13235866079086703, 51.565273473367405],
+    name: "James Dyson",
+    occupation: "1947-present",
+    description: "James Dyson attended here in 1965",
+    image: "https://upload.wikimedia.org/wikipedia/commons/6/67/Sir_James_Dyson_CBE_FREng_FRS.jpg",
+    tldr: "Prolific inventor with 2,224 patents who revolutionized household appliances, becoming one of the UK's most successful entrepreneurs.",
+    events: [
+      { date: "1978", description: "Developed the cyclone separator technology, leading to 5,127 prototypes before perfecting the bagless vacuum🌪️" },
+      { date: "2010", description: "Filed a record-breaking 340 patent applications in a single year, showcasing unparalleled innovation📑" },
+      { date: "Legacy", description: "Created a £3 billion revenue company, selling over 10 million appliances in 35 countries worldwide🌍" }
+    ]
+  },
+  {
+    coords: [-2.358203948479081, 51.51702543713454],
+    name: "James Dyson",
+    occupation: "1947-present",
+    description: "This is property of James Dyson",
+    image: "https://upload.wikimedia.org/wikipedia/commons/6/67/Sir_James_Dyson_CBE_FREng_FRS.jpg",
+    tldr: "Prolific inventor with 2,224 patents who revolutionized household appliances, becoming one of the UK's most successful entrepreneurs.",
+    events: [
+      { date: "1978", description: "Developed the cyclone separator technology, leading to 5,127 prototypes before perfecting the bagless vacuum🌪️" },
+      { date: "2010", description: "Filed a record-breaking 340 patent applications in a single year, showcasing unparalleled innovation📑" },
+      { date: "Legacy", description: "Created a £3 billion revenue company, selling over 10 million appliances in 35 countries worldwide🌍" }
+    ]
+  },
+  {
+    coords: [-2.354850534594992, 51.38244743054191],
+    name: "James Dyson",
+    occupation: "1947-present",
+    description: "James Dyson is a fan of Bath Rugby and regularly attends games here",
+    image: "https://upload.wikimedia.org/wikipedia/commons/6/67/Sir_James_Dyson_CBE_FREng_FRS.jpg",
+    tldr: "Prolific inventor with 2,224 patents who revolutionized household appliances, becoming one of the UK's most successful entrepreneurs.",
+    events: [
+      { date: "1978", description: "Developed the cyclone separator technology, leading to 5,127 prototypes before perfecting the bagless vacuum🌪️" },
+      { date: "2010", description: "Filed a record-breaking 340 patent applications in a single year, showcasing unparalleled innovation📑" },
+      { date: "Legacy", description: "Created a £3 billion revenue company, selling over 10 million appliances in 35 countries worldwide🌍" }
+    ]
+  },
+  {
+    coords: [-2.105495486056239, 51.59513572522471],
+    name: "James Dyson",
+    occupation: "1947-present",
+    description: "James Dyson set up the Dyson factory here",
+    image: "https://upload.wikimedia.org/wikipedia/commons/6/67/Sir_James_Dyson_CBE_FREng_FRS.jpg",
+    tldr: "Prolific inventor with 2,224 patents who revolutionized household appliances, becoming one of the UK's most successful entrepreneurs.",
+    events: [
+      { date: "1978", description: "Developed the cyclone separator technology, leading to 5,127 prototypes before perfecting the bagless vacuum🌪️" },
+      { date: "2010", description: "Filed a record-breaking 340 patent applications in a single year, showcasing unparalleled innovation📑" },
+      { date: "Legacy", description: "Created a £3 billion revenue company, selling over 10 million appliances in 35 countries worldwide🌍" }
+    ]
+  },
+  {
     coords: [-1.2025688490491881, 54.53833739729014],
     name: "James Cook",
     occupation: "1728-1779",
