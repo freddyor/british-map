@@ -2,6 +2,31 @@
 
 // Array to store image attributions
 const imageAttributions = [
+                     {
+      "name": "<a href='https://commons.wikimedia.org/wiki/File:Daniel_Craig-62900.jpg#Summary'>Daniel Craig</a>",
+      "author": "Harald Krichel",
+      "license": "CC BY-SA 4.0"
+    },
+                     {
+      "name": "https://www.flickr.com/photos/69880995@N04/48531949182/'>Chris Martin</a>",
+      "author": "Raph_PH",
+      "license": "CC BY-SA 2.0"
+    },
+                     {
+      "name": "<a href='https://www.flickr.com/photos/nickwebb/2947251757/'>Chris Hoy</a>",
+      "author": "Nick J Webb",
+      "license": "CC BY-SA 2.0"
+    },
+                     {
+      "name": "<a href='https://www.flickr.com/photos/governosp/52498120773/'>Lewis Hamilton</a>",
+      "author": "Governo do Estado de Sau Paulo",
+      "license": "CC BY-SA 2.0"
+    },
+                     {
+      "name": "<a href='https://commons.wikimedia.org/wiki/File:2015_Australian_Open_-_Andy_Murray_12.jpg'>Andy Murray</a>",
+      "author": "Brendan Dennis",
+      "license": "CC BY-SA 4.0"
+    },
                    {
       "name": "<a href='https://www.flickr.com/photos/goatee/161551696/'>Richard Hammond</a>",
       "author": "Ed Perchick",
