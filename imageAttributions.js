@@ -2,6 +2,15 @@
 
 // Array to store image attributions
 const imageAttributions = [
+                       {
+      "name": "<a href='https://www.sciencehistory.org/'>Jim Ratcliffe</a>",
+      "author": "Science History Institute",
+      "license": "CC BY-SA 3.0"
+    },
+                       {
+      "name": "<a href='https://www.thomascook.com/'>Thomas Cook</a>",
+      "author": "Courtesy of Thomas Cook Group",
+    },
                      {
       "name": "<a href='https://commons.wikimedia.org/wiki/File:Daniel_Craig-62900.jpg#Summary'>Daniel Craig</a>",
       "author": "Harald Krichel",
