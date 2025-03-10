@@ -2,6 +2,16 @@
 
 // Array to store image attributions
 const imageAttributions = [
+                   {
+      "name": "<a href='https://www.flickr.com/photos/goatee/161551696/'>Richard Hammond</a>",
+      "author": "Ed Perchick",
+      "license": "CC BY-SA 2.0"
+    },
+                   {
+      "name": "<a href='https://www.flickr.com/photos/mpetrucho/8207855885/'>Jeremy Clarkson</a>",
+      "author": "Petr Magera, image cropped",
+      "license": "CC BY-SA 2.0"
+    },
           {
       "name": "<a href='https://commons.wikimedia.org/wiki/User:Royal_Society_uploader'>James Dyson</a>",
       "author": "The Royal Society",
