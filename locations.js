@@ -1,5 +1,382 @@
 export const locations = [
   {
+    coords: [-1.848733473102809, 53.79101095391006],
+    name: "Charlotte Brontë",
+    occupation: "1816 - 1855",
+    description: "Charlotte Brontë was born here",
+    image: "https://upload.wikimedia.org/wikipedia/commons/c/c3/Charlotte_Bronte_by_George_Richmond.jpg",
+    tldr: "English novelist and poet, best known for Jane Eyre, a pioneering work in Gothic fiction.",
+    events: [
+      { date: "1833-1834", description: "At 17-18, wrote ~2,200 lines of poetry, showcasing her early literary talent📝" },
+      { date: "1847", description: "Jane Eyre sold 2,000+ copies in first 3 months, a bestseller for a debut Victorian novel📚" },
+      { date: "Legacy", description: "Jane Eyre in print for 178 years, selling millions and inspiring countless adaptations🔥" }
+    ]
+  },
+  {
+    coords: [-2.5620764364906776, 54.184137710048184],
+    name: "Charlotte Brontë",
+    occupation: "1816 - 1855",
+    description: "Charlotte Brontë attended here in 1824, using the poor school as the basis for Lowood School in Jane Eyre",
+    image: "https://upload.wikimedia.org/wikipedia/commons/c/c3/Charlotte_Bronte_by_George_Richmond.jpg",
+    tldr: "English novelist and poet, best known for Jane Eyre, a pioneering work in Gothic fiction.",
+    events: [
+      { date: "1833-1834", description: "At 17-18, wrote ~2,200 lines of poetry, showcasing her early literary talent📝" },
+      { date: "1847", description: "Jane Eyre sold 2,000+ copies in first 3 months, a bestseller for a debut Victorian novel📚" },
+      { date: "Legacy", description: "Jane Eyre in print for 178 years, selling millions and inspiring countless adaptations🔥" }
+    ]
+  },
+  {
+    coords: [-1.9576035192220405, 53.83117595101684],
+    name: "Charlotte Brontë",
+    occupation: "1816 - 1855",
+    description: "Charlotte Brontë wrote her first poem here in 1829, aged 13",
+    image: "https://upload.wikimedia.org/wikipedia/commons/c/c3/Charlotte_Bronte_by_George_Richmond.jpg",
+    tldr: "English novelist and poet, best known for Jane Eyre, a pioneering work in Gothic fiction.",
+    events: [
+      { date: "1833-1834", description: "At 17-18, wrote ~2,200 lines of poetry, showcasing her early literary talent📝" },
+      { date: "1847", description: "Jane Eyre sold 2,000+ copies in first 3 months, a bestseller for a debut Victorian novel📚" },
+      { date: "Legacy", description: "Jane Eyre in print for 178 years, selling millions and inspiring countless adaptations🔥" }
+    ]
+  },
+  {
+    coords: [-1.7141479950580605, 53.6921333584462],
+    name: "Charlotte Brontë",
+    occupation: "1816 - 1855",
+    description: "Charlotte Brontë boarded here in 1831 and 1832",
+    image: "https://upload.wikimedia.org/wikipedia/commons/c/c3/Charlotte_Bronte_by_George_Richmond.jpg",
+    tldr: "English novelist and poet, best known for Jane Eyre, a pioneering work in Gothic fiction.",
+    events: [
+      { date: "1833-1834", description: "At 17-18, wrote ~2,200 lines of poetry, showcasing her early literary talent📝" },
+      { date: "1847", description: "Jane Eyre sold 2,000+ copies in first 3 months, a bestseller for a debut Victorian novel📚" },
+      { date: "Legacy", description: "Jane Eyre in print for 178 years, selling millions and inspiring countless adaptations🔥" }
+    ]
+  },
+  {
+    coords: [-2.0503561214446107, 53.90797457757115],
+    name: "Charlotte Brontë",
+    occupation: "1816 - 1855",
+    description: "Charlotte Brontë worked as a governess here, taking care of naughty children",
+    image: "https://upload.wikimedia.org/wikipedia/commons/c/c3/Charlotte_Bronte_by_George_Richmond.jpg",
+    tldr: "English novelist and poet, best known for Jane Eyre, a pioneering work in Gothic fiction.",
+    events: [
+      { date: "1833-1834", description: "At 17-18, wrote ~2,200 lines of poetry, showcasing her early literary talent📝" },
+      { date: "1847", description: "Jane Eyre sold 2,000+ copies in first 3 months, a bestseller for a debut Victorian novel📚" },
+      { date: "Legacy", description: "Jane Eyre in print for 178 years, selling millions and inspiring countless adaptations🔥" }
+    ]
+  },
+  {
+    coords: [-1.9562307355943902, 53.8310906148676],
+    name: "Charlotte Brontë",
+    occupation: "1816 - 1855",
+    description: "Charlotte Brontë is buried here in family grave",
+    image: "https://upload.wikimedia.org/wikipedia/commons/c/c3/Charlotte_Bronte_by_George_Richmond.jpg",
+    tldr: "English novelist and poet, best known for Jane Eyre, a pioneering work in Gothic fiction.",
+    events: [
+      { date: "1833-1834", description: "At 17-18, wrote ~2,200 lines of poetry, showcasing her early literary talent📝" },
+      { date: "1847", description: "Jane Eyre sold 2,000+ copies in first 3 months, a bestseller for a debut Victorian novel📚" },
+      { date: "Legacy", description: "Jane Eyre in print for 178 years, selling millions and inspiring countless adaptations🔥" }
+    ]
+  },
+  {
+    coords: [-1.3070420049278315, 53.01864057755697],
+    name: "D.H. Lawrence",
+    occupation: "1885 - 1930",
+    description: "D.H. Lawrence was born here",
+    image: "https://upload.wikimedia.org/wikipedia/commons/4/44/D_H_Lawrence_passport_photograph.jpg",
+    tldr: "English writer known for novels like Sons and Lovers and Lady Chatterley's Lover.",
+    events: [
+      { date: "1885-1901", description: "Grew up in Eastwood, where his mining town upbringing shaped his writing, especially Sons and Lovers📚" },
+      { date: "1913", description: "Published Sons and Lovers, which sold over 100,000 copies annually in the U.S. for decades📚" },
+      { date: "1960", description: "Lady Chatterley's Lover sold 3 million copies after a landmark obscenity trial🚫" }
+    ]
+  },
+  {
+    coords: [-1.2752712389875527, 53.04042075458369],
+    name: "D.H. Lawrence",
+    occupation: "1885 - 1930",
+    description: "D.H. Lawrence roamed here in his youth, gaining inspiration from his surroundings",
+    image: "https://upload.wikimedia.org/wikipedia/commons/4/44/D_H_Lawrence_passport_photograph.jpg",
+    tldr: "English writer known for novels like Sons and Lovers and Lady Chatterley's Lover.",
+    events: [
+      { date: "1885-1901", description: "Grew up in Eastwood, where his mining town upbringing shaped his writing, especially Sons and Lovers📚" },
+      { date: "1913", description: "Published Sons and Lovers, which sold over 100,000 copies annually in the U.S. for decades📚" },
+      { date: "1960", description: "Lady Chatterley's Lover sold 3 million copies after a landmark obscenity trial🚫" }
+    ]
+  },
+  {
+    coords: [-1.2858582603967763, 53.01650630527528],
+    name: "D.H. Lawrence",
+    occupation: "1885 - 1930",
+    description: "D.H. Lawrence attended school here 1891-98",
+    image: "https://upload.wikimedia.org/wikipedia/commons/4/44/D_H_Lawrence_passport_photograph.jpg",
+    tldr: "English writer known for novels like Sons and Lovers and Lady Chatterley's Lover.",
+    events: [
+      { date: "1885-1901", description: "Grew up in Eastwood, where his mining town upbringing shaped his writing, especially Sons and Lovers📚" },
+      { date: "1913", description: "Published Sons and Lovers, which sold over 100,000 copies annually in the U.S. for decades📚" },
+      { date: "1960", description: "Lady Chatterley's Lover sold 3 million copies after a landmark obscenity trial🚫" }
+    ]
+  },
+  {
+    coords: [-1.1592695320744641, 52.962530378182905],
+    name: "D.H. Lawrence",
+    occupation: "1885 - 1930",
+    description: "D.H. Lawrence was the first student from his primary school to win a scholarship here",
+    image: "https://upload.wikimedia.org/wikipedia/commons/4/44/D_H_Lawrence_passport_photograph.jpg",
+    tldr: "English writer known for novels like Sons and Lovers and Lady Chatterley's Lover.",
+    events: [
+      { date: "1885-1901", description: "Grew up in Eastwood, where his mining town upbringing shaped his writing, especially Sons and Lovers📚" },
+      { date: "1913", description: "Published Sons and Lovers, which sold over 100,000 copies annually in the U.S. for decades📚" },
+      { date: "1960", description: "Lady Chatterley's Lover sold 3 million copies after a landmark obscenity trial🚫" }
+    ]
+  },
+  {
+    coords: [-1.1493136123366137, 52.95144304068715],
+    name: "D.H. Lawrence",
+    occupation: "1885 - 1930",
+    description: "D.H. Lawrence worked here until severe pneumonia retired him",
+    image: "https://upload.wikimedia.org/wikipedia/commons/4/44/D_H_Lawrence_passport_photograph.jpg",
+    tldr: "English writer known for novels like Sons and Lovers and Lady Chatterley's Lover.",
+    events: [
+      { date: "1885-1901", description: "Grew up in Eastwood, where his mining town upbringing shaped his writing, especially Sons and Lovers📚" },
+      { date: "1913", description: "Published Sons and Lovers, which sold over 100,000 copies annually in the U.S. for decades📚" },
+      { date: "1960", description: "Lady Chatterley's Lover sold 3 million copies after a landmark obscenity trial🚫" }
+    ]
+  },
+  {
+    coords: [-1.1489617727813506, 52.95183217865347],
+    name: "D.H. Lawrence",
+    occupation: "1885 - 1930",
+    description: "From 1902 to 1906 D.H. Lawrence served as a pupil-teacher here",
+    image: "https://upload.wikimedia.org/wikipedia/commons/4/44/D_H_Lawrence_passport_photograph.jpg",
+    tldr: "English writer known for novels like Sons and Lovers and Lady Chatterley's Lover.",
+    events: [
+      { date: "1885-1901", description: "Grew up in Eastwood, where his mining town upbringing shaped his writing, especially Sons and Lovers📚" },
+      { date: "1913", description: "Published Sons and Lovers, which sold over 100,000 copies annually in the U.S. for decades📚" },
+      { date: "1960", description: "Lady Chatterley's Lover sold 3 million copies after a landmark obscenity trial🚫" }
+    ]
+  },
+  {
+    coords: [-0.17609138260632587, 51.56293717598588],
+    name: "D.H. Lawrence",
+    occupation: "1885 - 1930",
+    description: "D.H. Lawrence lived and wrote Sons & Lovers here 1908-1911",
+    image:"https://upload.wikimedia.org/wikipedia/commons/4/44/D_H_Lawrence_passport_photograph.jpg",
+     tldr:"English writer known for novels like Sons.",
+    events: [
+      { date: "1885-1901", description: "Grew up in Eastwood, where his mining town upbringing shaped his writing, especially Sons and Lovers📚" },
+      { date: "1913", description: "Published Sons and Lovers, which sold over 100,000 copies annually in the U.S. for decades📚" },
+      { date: "1960", description: "Lady Chatterley's Lover sold 3 million copies after a landmark obscenity trial🚫" }
+    ]
+  },
+  {
+    coords: [-1.3070420049278315, 53.01864057755697],
+    name: "D.H. Lawrence",
+    occupation: "1885 - 1930",
+    description: "D.H. Lawrence was born here",
+    image: "https://upload.wikimedia.org/wikipedia/commons/4/44/D_H_Lawrence_passport_photograph.jpg",
+    tldr: "English writer and poet known for his novels, poems, plays, essays, and literary criticism, reflecting on modernity, industrialization, and human experience.",
+    events: [
+      { date: "1913", description: "Published Sons and Lovers, a semi-autobiographical novel that explored family dynamics and working-class life, selling over 100,000 copies in its first year📚" },
+      { date: "1960", description: "Lady Chatterley's Lover sold 3 million copies in just three months after its UK publication, following a highly publicized obscenity trial🚫" },
+      { date: "Legacy", description: "His works continue to spark debate and inspire readers with their themes of social class, sexuality, and the human condition, influencing generations of writers🔥" }
+    ]
+  },
+  {
+    coords: [-1.2752712389875527, 53.04042075458369],
+    name: "D.H. Lawrence",
+    occupation: "1885 - 1930",
+    description: "D.H. Lawrence roamed here in his youth, gaining inspiration from his surroundings",
+    image: "https://upload.wikimedia.org/wikipedia/commons/4/44/D_H_Lawrence_passport_photograph.jpg",
+    tldr: "English writer and poet known for his novels, poems, plays, essays, and literary criticism, reflecting on modernity, industrialization, and human experience.",
+    events: [
+      { date: "1913", description: "Published Sons and Lovers, a semi-autobiographical novel that explored family dynamics and working-class life, selling over 100,000 copies in its first year📚" },
+      { date: "1960", description: "Lady Chatterley's Lover sold 3 million copies in just three months after its UK publication, following a highly publicized obscenity trial🚫" },
+      { date: "Legacy", description: "His works continue to spark debate and inspire readers with their themes of social class, sexuality, and the human condition, influencing generations of writers🔥" }
+    ]
+  },
+  {
+    coords: [-1.2858582603967763, 53.01650630527528],
+    name: "D.H. Lawrence",
+    occupation: "1885 - 1930",
+    description: "D.H. Lawrence attended school here 1891-98, nit has subsequently been named Greasley Beauvale D. H. Lawrence Primary School",
+    image: "https://upload.wikimedia.org/wikipedia/commons/4/44/D_H_Lawrence_passport_photograph.jpg",
+    tldr: "English writer and poet known for his novels, poems, plays, essays, and literary criticism, reflecting on modernity, industrialization, and human experience.",
+    events: [
+      { date: "1913", description: "Published Sons and Lovers, a semi-autobiographical novel that explored family dynamics and working-class life, selling over 100,000 copies in its first year📚" },
+      { date: "1960", description: "Lady Chatterley's Lover sold 3 million copies in just three months after its UK publication, following a highly publicized obscenity trial🚫" },
+      { date: "Legacy", description: "His works continue to spark debate and inspire readers with their themes of social class, sexuality, and the human condition, influencing generations of writers🔥" }
+    ]
+  },
+  {
+    coords: [-1.1592695320744641, 52.962530378182905],
+    name: "D.H. Lawrence",
+    occupation: "1885 - 1930",
+    description: "D.H. Lawrence was the first student from his primary school to win a scholarship here",
+    image: "https://upload.wikimedia.org/wikipedia/commons/4/44/D_H_Lawrence_passport_photograph.jpg",
+    tldr: "English writer and poet known for his novels, poems, plays, essays, and literary criticism, reflecting on modernity, industrialization, and human experience.",
+    events: [
+      { date: "1913", description: "Published Sons and Lovers, a semi-autobiographical novel that explored family dynamics and working-class life, selling over 100,000 copies in its first year📚" },
+      { date: "1960", description: "Lady Chatterley's Lover sold 3 million copies in just three months after its UK publication, following a highly publicized obscenity trial🚫" },
+      { date: "Legacy", description: "His works continue to spark debate and inspire readers with their themes of social class, sexuality, and the human condition, influencing generations of writers🔥" }
+    ]
+  },
+  {
+    coords: [-1.1493136123366137, 52.95144304068715],
+    name: "D.H. Lawrence",
+    occupation: "1885 - 1930",
+    description: "D.H. Lawrence worked here until severe pneumonia retired him",
+    image: "https://upload.wikimedia.org/wikipedia/commons/4/44/D_H_Lawrence_passport_photograph.jpg",
+    tldr: "English writer and poet known for his novels, poems, plays, essays, and literary criticism, reflecting on modernity, industrialization, and human experience.",
+    events: [
+      { date: "1913", description: "Published Sons and Lovers, a semi-autobiographical novel that explored family dynamics and working-class life, selling over 100,000 copies in its first year📚" },
+      { date: "1960", description: "Lady Chatterley's Lover sold 3 million copies in just three months after its UK publication, following a highly publicized obscenity trial🚫" },
+      { date: "Legacy", description: "His works continue to spark debate and inspire readers with their themes of social class, sexuality, and the human condition, influencing generations of writers🔥" }
+    ]
+  },
+  {
+    coords: [-1.1489617727813506, 52.95183217865347],
+    name: "D.H. Lawrence",
+    occupation: "1885 - 1930",
+    description: "From 1902 to 1906 D.H. Lawrence served as a pupil-teacher here at the old British School",
+    image: "https://upload.wikimedia.org/wikipedia/commons/4/44/D_H_Lawrence_passport_photograph.jpg",
+    tldr: "English writer and poet known for his novels, poems, plays, essays, and literary criticism, reflecting on modernity, industrialization, and human experience.",
+    events: [
+      { date: "1913", description: "Published Sons and Lovers, a semi-autobiographical novel that explored family dynamics and working-class life, selling over 100,000 copies in its first year📚" },
+      { date: "1960", description: "Lady Chatterley's Lover sold 3 million copies in just three months after its UK publication, following a highly publicized obscenity trial🚫" },
+      { date: "Legacy", description: "His works continue to spark debate and inspire readers with their themes of social class, sexuality, and the human condition, influencing generations of writers🔥" }
+    ]
+  },
+  {
+    coords: [-0.17609138260632587, 51.56293717598588],
+    name: "D.H. Lawrence",
+    occupation: "1885 - 1930",
+    description: "D.H. Lawrence lived and wrote Sons & Lovers here 1908-1911",
+    image: "https://upload.wikimedia.org/wikipedia/commons/4/44/D_H_Lawrence_passport_photograph.jpg",
+    tldr: "English writer and poet known for his novels, poems, plays, essays, and literary criticism, reflecting on modernity, industrialization, and human experience.",
+    events: [
+      { date: "1913", description: "Published Sons and Lovers, a semi-autobiographical novel that explored family dynamics and working-class life, selling over 100,000 copies in its first year📚" },
+      { date: "1960", description: "Lady Chatterley's Lover sold 3 million copies in just three months after its UK publication, following a highly publicized obscenity trial🚫" },
+      { date: "Legacy", description: "His works continue to spark debate and inspire readers with their themes of social class, sexuality, and the human condition, influencing generations of writers🔥" }
+    ]
+  },
+  {
+    coords: [-0.9890571427728585, 51.133099530079654],
+    name: "Jane Austen",
+    occupation: "1775 - 1817",
+    description: "Jane Austen lived last 8 years of her life here",
+    image: "https://upload.wikimedia.org/wikipedia/commons/0/0e/Jane_Austen%2C_from_A_Memoir_of_Jane_Austen_(1870)_-_Original_scan_(cropped).png",
+    tldr: "English novelist whose works have inspired countless adaptations and remain a cornerstone of modern literature and pop culture.",
+    events: [
+      { date: "1813", description: "Pride and Prejudice has sold over 20 million copies worldwide, making it one of the best-selling novels of all time📚" },
+      { date: "1995", description: "The BBC adaptation of Pride and Prejudice, starring Colin Firth, sparked 'Austenmania' and influenced modern romantic comedies🎥" },
+      { date: "Legacy", description: "Her novels continue to inspire global fandoms, modern film adaptations like Clueless, and even themed tours and merchandise🌍" }
+    ]
+  },
+  {
+    coords: [-1.2123825719569536, 51.22155011142383],
+    name: "Jane Austen",
+    occupation: "1775 - 1817",
+    description: "Jane Austen visited this church regularly for most of her life",
+    image: "https://upload.wikimedia.org/wikipedia/commons/0/0e/Jane_Austen%2C_from_A_Memoir_of_Jane_Austen_(1870)_-_Original_scan_(cropped).png",
+    tldr: "English novelist whose works have inspired countless adaptations and remain a cornerstone of modern literature and pop culture.",
+    events: [
+      { date: "1813", description: "Pride and Prejudice has sold over 20 million copies worldwide, making it one of the best-selling novels of all time📚" },
+      { date: "1995", description: "The BBC adaptation of Pride and Prejudice, starring Colin Firth, sparked 'Austenmania' and influenced modern romantic comedies🎥" },
+      { date: "Legacy", description: "Her novels continue to inspire global fandoms, modern film adaptations like Clueless, and even themed tours and merchandise🌍" }
+    ]
+  },
+  {
+    coords: [-1.2143874813305042, 51.22753877865271],
+    name: "Jane Austen",
+    occupation: "1775 - 1817",
+    description: "Jane Austen grew up on an old house here for two decades",
+    image: "https://upload.wikimedia.org/wikipedia/commons/0/0e/Jane_Austen%2C_from_A_Memoir_of_Jane_Austen_(1870)_-_Original_scan_(cropped).png",
+    tldr: "English novelist whose works have inspired countless adaptations and remain a cornerstone of modern literature and pop culture.",
+    events: [
+      { date: "1813", description: "Pride and Prejudice has sold over 20 million copies worldwide, making it one of the best-selling novels of all time📚" },
+      { date: "1995", description: "The BBC adaptation of Pride and Prejudice, starring Colin Firth, sparked 'Austenmania' and influenced modern romantic comedies🎥" },
+      { date: "Legacy", description: "Her novels continue to inspire global fandoms, modern film adaptations like Clueless, and even themed tours and merchandise🌍" }
+    ]
+  },
+  {
+    coords: [-0.9668728682115898, 51.45638440262835],
+    name: "Jane Austen",
+    occupation: "1775 - 1817",
+    description: "Jane Austen attended Reading Abbey Girls School here in 1785 and 1786 but dropped out as they couldn’t afford the fees",
+    image: "https://upload.wikimedia.org/wikipedia/commons/0/0e/Jane_Austen%2C_from_A_Memoir_of_Jane_Austen_(1870)_-_Original_scan_(cropped).png",
+    tldr: "English novelist whose works have inspired countless adaptations and remain a cornerstone of modern literature and pop culture.",
+    events: [
+      { date: "1813", description: "Pride and Prejudice has sold over 20 million copies worldwide, making it one of the best-selling novels of all time📚" },
+      { date: "1995", description: "The BBC adaptation of Pride and Prejudice, starring Colin Firth, sparked 'Austenmania' and influenced modern romantic comedies🎥" },
+      { date: "Legacy", description: "Her novels continue to inspire global fandoms, modern film adaptations like Clueless, and even themed tours and merchandise🌍" }
+    ]
+  },
+  {
+    coords: [-2.3519809617364253, 51.38599226832784],
+    name: "Jane Austen",
+    occupation: "1775 - 1817",
+    description: "Jane Austen lived here with her family from 1800",
+    image: "https://upload.wikimedia.org/wikipedia/commons/0/0e/Jane_Austen%2C_from_A_Memoir_of_Jane_Austen_(1870)_-_Original_scan_(cropped).png",
+    tldr: "English novelist whose works have inspired countless adaptations and remain a cornerstone of modern literature and pop culture.",
+    events: [
+      { date: "1813", description: "Pride and Prejudice has sold over 20 million copies worldwide, making it one of the best-selling novels of all time📚" },
+      { date: "1995", description: "The BBC adaptation of Pride and Prejudice, starring Colin Firth, sparked 'Austenmania' and influenced modern romantic comedies🎥" },
+      { date: "Legacy", description: "Her novels continue to inspire global fandoms, modern film adaptations like Clueless, and even themed tours and merchandise🌍" }
+    ]
+  },
+  {
+    coords: [0.950928435178902, 51.21645542035943],
+    name: "Jane Austen",
+    occupation: "1775 - 1817",
+    description: "Jane Austen frequently visited her brother here and used the place as inspiration",
+    image: "https://upload.wikimedia.org/wikipedia/commons/0/0e/Jane_Austen%2C_from_A_Memoir_of_Jane_Austen_(1870)_-_Original_scan_(cropped).png",
+    tldr: "English novelist whose works have inspired countless adaptations and remain a cornerstone of modern literature and pop culture.",
+    events: [
+      { date: "1813", description: "Pride and Prejudice has sold over 20 million copies worldwide, making it one of the best-selling novels of all time📚" },
+      { date: "1995", description: "The BBC adaptation of Pride and Prejudice, starring Colin Firth, sparked 'Austenmania' and influenced modern romantic comedies🎥" },
+      { date: "Legacy", description: "Her novels continue to inspire global fandoms, modern film adaptations like Clueless, and even themed tours and merchandise🌍" }
+    ]
+  },
+  {
+    coords: [-0.3683187034134173, 50.81162265262798],
+    name: "Jane Austen",
+    occupation: "1775 - 1817",
+    description: "Jane Austen spent time here in the Autumn months, where she wrote Lady Susan",
+    image: "https://upload.wikimedia.org/wikipedia/commons/0/0e/Jane_Austen%2C_from_A_Memoir_of_Jane_Austen_(1870)_-_Original_scan_(cropped).png",
+    tldr: "English novelist whose works have inspired countless adaptations and remain a cornerstone of modern literature and pop culture.",
+    events: [
+      { date: "1813", description: "Pride and Prejudice has sold over 20 million copies worldwide, making it one of the best-selling novels of all time📚" },
+      { date: "1995", description: "The BBC adaptation of Pride and Prejudice, starring Colin Firth, sparked 'Austenmania' and influenced modern romantic comedies🎥" },
+      { date: "Legacy", description: "Her novels continue to inspire global fandoms, modern film adaptations like Clueless, and even themed tours and merchandise🌍" }
+    ]
+  },
+  {
+    coords: [-1.3134882989783987, 51.061237851223716],
+    name: "Jane Austen",
+    occupation: "1775 - 1817",
+    description: "Jane Austen is buried here in the family grave",
+    image: "https://upload.wikimedia.org/wikipedia/commons/0/0e/Jane_Austen%2C_from_A_Memoir_of_Jane_Austen_(1870)_-_Original_scan_(cropped).png",
+    tldr: "English novelist whose works have inspired countless adaptations and remain a cornerstone of modern literature and pop culture.",
+    events: [
+      { date: "1813", description: "Pride and Prejudice has sold over 20 million copies worldwide, making it one of the best-selling novels of all time📚" },
+      { date: "1995", description: "The BBC adaptation of Pride and Prejudice, starring Colin Firth, sparked 'Austenmania' and influenced modern romantic comedies🎥" },
+      { date: "Legacy", description: "Her novels continue to inspire global fandoms, modern film adaptations like Clueless, and even themed tours and merchandise🌍" }
+    ]
+  },
+  {
+    coords: [-1.4061595274971586, 50.901154596859456],
+    name: "Jane Austen",
+    occupation: "1775 - 1817",
+    description: "Former home of Jane Austen",
+    image: "https://upload.wikimedia.org/wikipedia/commons/0/0e/Jane_Austen%2C_from_A_Memoir_of_Jane_Austen_(1870)_-_Original_scan_(cropped).png",
+    tldr: "English novelist whose works have inspired countless adaptations and remain a cornerstone of modern literature and pop culture.",
+    events: [
+      { date: "1813", description: "Pride and Prejudice has sold over 20 million copies worldwide, making it one of the best-selling novels of all time📚" },
+      { date: "1995", description: "The BBC adaptation of Pride and Prejudice, starring Colin Firth, sparked 'Austenmania' and influenced modern romantic comedies🎥" },
+      { date: "Legacy", description: "Her novels continue to inspire global fandoms, modern film adaptations like Clueless, and even themed tours and merchandise🌍" }
+    ]
+  },
+  {
     coords: [-1.4318228100842598, 52.82291622272307],
     name: "Thomas Cook",
     occupation: "1808 - 1892",
