@@ -337,19 +337,6 @@ export const locations = [
       { date: "Legacy", description: "Sold over 12 million copies of 'The Phantom of the Opera' cast album, making it one of the best-selling cast recordings ever🌟" }
     ]
   },
-  {
-    coords: [-0.8999513218181766, 51.537392817319905],
-    name: "Michael Crawford",
-    occupation: "Born 1942",
-    description: "Michael Crawford competed here at Henley Royal Regatta for two decades",
-    image: "https://upload.wikimedia.org/wikipedia/commons/f/f7/Michael_Crawford_(6983823195).jpg",
-    tldr: "Award-winning English actor and singer, best known for his iconic roles in 'The Phantom of the Opera' and 'Some Mothers Do 'Ave 'Em.'",
-    events: [
-      { date: "1973-1978", description: "Starred as Frank Spencer in the BBC sitcom 'Some Mothers Do 'Ave 'Em,' becoming a household name📺" },
-      { date: "1998", description: "Nominated for an Emmy Award for his special, 'Michael Crawford in Concert,' showcasing his musical talent🎶" },
-      { date: "Legacy", description: "Appointed Commander of the Order of the British Empire (CBE) in 2014 for his contributions to entertainment and charity🇬🇧" }
-    ]
-  },
    {
     coords: [0.5232188903170766, 52.33589287674546],
     name: "Alexander Fleming",
