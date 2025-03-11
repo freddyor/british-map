@@ -1,5 +1,330 @@
 export const locations = [
   {
+    coords: [-1.679940191441075, 54.96630441577484],
+    name: "Charles Algernon Parsons",
+    occupation: "1854 - 1931",
+    description: "Charles Algernon Parsons apprenticed for the famous William Armstrong here after graduating in 1877",
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Charles_Algernon_Parsons.jpg/440px-Charles_Algernon_Parsons.jpg",
+    tldr: "Engineer whose steam turbine revolutionized power generation, apprenticed under William Armstrong.",
+    events: [
+      { date: "1877", description: "Apprenticed under William Armstrong, gaining practical experience in engineering and design⚙️" },
+      { date: "1884", description: "Developed the compound steam turbine, which significantly improved efficiency over existing designs⚡" },
+      { date: "Legacy", description: "His steam turbines transformed naval power and electricity generation, leading to modern power plants🚢" }
+    ]
+  },
+  {
+    coords: [-1.5359613216533106, 53.785195446343906],
+    name: "Charles Algernon Parsons",
+    occupation: "1854 - 1931",
+    description: "Charles Algernon Parsons worked on rocket-powered torpedoes at Kitsons Engineering here",
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Charles_Algernon_Parsons.jpg/440px-Charles_Algernon_Parsons.jpg",
+    tldr: "Engineer whose steam turbine revolutionized power generation, worked on rocket-powered torpedoes.",
+    events: [
+      { date: "1882", description: "Worked on rocket-powered torpedoes at Kitsons, gaining experience in propulsion systems🚀" },
+      { date: "1897", description: "His turbine-powered vessel Turbinia reached record speeds, demonstrating the superiority of his turbine design💨" },
+      { date: "Legacy", description: "His contributions greatly improved power output for ships and electrical power stations💡" }
+    ]
+  },
+  {
+    coords: [-0.15324253415342573, 51.511900025910684],
+    name: "Charles Algernon Parsons",
+    occupation: "1854 - 1931",
+    description: "Charles Algernon Parsons lived here from 1918 to 1931",
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Charles_Algernon_Parsons.jpg/440px-Charles_Algernon_Parsons.jpg",
+    tldr: "Engineer whose steam turbine revolutionized power generation, supported the Women’s Engineering Society.",
+    events: [
+      { date: "1918-1931", description: "Continued his engineering research and development from his London residence🏡" },
+      { date: "1919", description: "His company Parsons Marine Steam Turbine Company, built the first all turbine powered passenger ship, the King Orry🌊" },
+      { date: "Legacy", description: "His work helped to shape modern engineering practices and power generation methods⚡" }
+    ]
+  },
+  {
+    coords: [-0.20266361814293904, 51.8962544655424],
+    name: "Charles Algernon Parsons",
+    occupation: "1854 - 1931",
+    description: "Charles Algernon Parsons was a big supporter of the Women’s Engineering Society which his wife, Katherine, founded",
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Charles_Algernon_Parsons.jpg/440px-Charles_Algernon_Parsons.jpg",
+    tldr: "Engineer whose steam turbine revolutionized power generation, supported the Women’s Engineering Society.",
+    events: [
+      { date: "1919", description: "Supported the Women’s Engineering Society, founded by his wife Katherine Parsons, to promote women in engineering and technical fields👩‍🔧" },
+      { date: "1927", description: "Was a patron of the Girl’s school, the Newcastle High School for Girls, establishing engineering as an important subject for young women there📚" },
+      { date: "Legacy", description: "He advocated for inclusivity and diversity within the engineering profession🤝" }
+    ]
+  },
+  {
+    coords: [0.9595967237878854, 50.913445874175935],
+    name: "Charles Algernon Parsons",
+    occupation: "1854 - 1931",
+    description: "This power station uses Charles Algernon Parsons’s steam turbine invention",
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Charles_Algernon_Parsons.jpg/440px-Charles_Algernon_Parsons.jpg",
+    tldr: "Engineer renowned for inventing the steam turbine, revolutionizing naval power and electricity generation.",
+    events: [
+      { date: "1884", description: "Invented the multi-stage steam turbine, achieving speeds of up to 18,000 rpm and revolutionizing efficiency⚙️" },
+      { date: "1897", description: "Turbinia reached speeds of over 34 knots, outpacing the fastest naval ships of the time🚢" },
+      { date: "Legacy", description: "Transformed global electricity generation with turbines producing over 600 MW today, from his initial 7.5 kW designs⚡" }
+    ]
+  },
+  {
+    coords: [-3.497839721618294, 54.422018214036434],
+    name: "Charles Algernon Parsons",
+    occupation: "1854 - 1931",
+    description: "This power station uses Charles Algernon Parsons’s steam turbine invention",
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Charles_Algernon_Parsons.jpg/440px-Charles_Algernon_Parsons.jpg",
+    tldr: "Engineer renowned for inventing the steam turbine, revolutionizing naval power and electricity generation.",
+    events: [
+      { date: "1884", description: "Invented the multi-stage steam turbine, achieving speeds of up to 18,000 rpm and revolutionizing efficiency⚙️" },
+      { date: "1897", description: "Turbinia reached speeds of over 34 knots, outpacing the fastest naval ships of the time🚢" },
+      { date: "Legacy", description: "Transformed global electricity generation with turbines producing over 600 MW today, from his initial 7.5 kW designs⚡" }
+    ]
+  },
+  {
+    coords: [-2.9148423630521028, 54.029856392354404],
+    name: "Charles Algernon Parsons",
+    occupation: "1854 - 1931",
+    description: "This power station uses Charles Algernon Parsons’s steam turbine invention",
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Charles_Algernon_Parsons.jpg/440px-Charles_Algernon_Parsons.jpg",
+    tldr: "Engineer renowned for inventing the steam turbine, revolutionizing naval power and electricity generation.",
+    events: [
+      { date: "1884", description: "Invented the multi-stage steam turbine, achieving speeds of up to 18,000 rpm and revolutionizing efficiency⚙️" },
+      { date: "1897", description: "Turbinia reached speeds of over 34 knots, outpacing the fastest naval ships of the time🚢" },
+      { date: "Legacy", description: "Transformed global electricity generation with turbines producing over 600 MW today, from his initial 7.5 kW designs⚡" }
+    ]
+  },
+  {
+    coords: [-1.6161893655689001, 54.96577537788181],
+    name: "Charles Algernon Parsons",
+    occupation: "1854 - 1931",
+    description: "Charles Algernon Parsons opened the world’s first power station that used turbo alternators, his own invention",
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Charles_Algernon_Parsons.jpg/440px-Charles_Algernon_Parsons.jpg",
+    tldr: "Engineer renowned for inventing the steam turbine, revolutionizing naval power and electricity generation.",
+    events: [
+      { date: "1884", description: "Invented the multi-stage steam turbine, achieving speeds of up to 18,000 rpm and revolutionizing efficiency⚙️" },
+      { date: "1897", description: "Turbinia reached speeds of over 34 knots, outpacing the fastest naval ships of the time🚢" },
+      { date: "Legacy", description: "Transformed global electricity generation with turbines producing over 600 MW today, from his initial 7.5 kW designs⚡" }
+    ]
+  },
+  {
+    coords: [-1.5899727425757781, 54.98918583758877],
+    name: "William Armstrong",
+    occupation: "1810 - 1900",
+    description: "William Armstrong built Armstrong Bridge here near his home",
+    image: "https://upload.wikimedia.org/wikipedia/commons/b/bc/Mary_Lemon_Waller_-_Portrait_-_Sir_William_George_Armstrong_(1810–1900)%2C_1st_Baron_Armstrong_of_Cragside.jpg",
+    tldr: "Known as the 'Father of Modern Artillery,' Armstrong revolutionized engineering and armaments.",
+    events: [
+      { date: "1854", description: "Developed the Armstrong Gun, which was lighter, more accurate, and required only 2.5 pounds of charge compared to 10 pounds for traditional cannons🎯" },
+      { date: "1887", description: "Became Baron Armstrong of Cragside, the first engineer to be raised to the peerage for his contributions to Britain’s imperial might👑" },
+      { date: "Legacy", description: "His hydraulic systems are still foundational in modern engineering applications, they helped Britain become a global superpower⚙️" }
+    ]
+  },
+  {
+    coords: [-1.6131330210426138, 54.9803523281157],
+    name: "William Armstrong",
+    occupation: "1810 - 1900",
+    description: "Gave £11,500 (£1.1+ million now) in 1882 to build the Great North Museum here",
+    image: "https://upload.wikimedia.org/wikipedia/commons/b/bc/Mary_Lemon_Waller_-_Portrait_-_Sir_William_George_Armstrong_(1810–1900)%2C_1st_Baron_Armstrong_of_Cragside.jpg",
+    tldr: "Known as the 'Father of Modern Artillery,' Armstrong revolutionized engineering and armaments.",
+    events: [
+      { date: "1854", description: "Developed the Armstrong Gun, which was lighter, more accurate, and required only 2.5 pounds of charge compared to 10 pounds for traditional cannons🎯" },
+      { date: "1887", description: "Became Baron Armstrong of Cragside, the first engineer to be raised to the peerage for his contributions to Britain’s imperial might👑" },
+      { date: "Legacy", description: "His hydraulic systems are still foundational in modern engineering applications, they helped Britain become a global superpower⚙️" }
+    ]
+  },
+  {
+    coords: [-1.6199486981146116, 54.980149993047945],
+    name: "William Armstrong",
+    occupation: "1810 - 1900",
+    description: "In 1901, William Armstrong’s son gave £100,000 (£10+ million now) to build the Royal Victoria Infirmary here",
+    image: "https://upload.wikimedia.org/wikipedia/commons/b/bc/Mary_Lemon_Waller_-_Portrait_-_Sir_William_George_Armstrong_(1810–1900)%2C_1st_Baron_Armstrong_of_Cragside.jpg",
+    tldr: "Known as the 'Father of Modern Artillery,' Armstrong revolutionized engineering and armaments.",
+    events: [
+      { date: "1854", description: "Developed the Armstrong Gun, which was lighter, more accurate, and required only 2.5 pounds of charge compared to 10 pounds for traditional cannons🎯" },
+      { date: "1887", description: "Became Baron Armstrong of Cragside, the first engineer to be raised to the peerage for his contributions to Britain’s imperial might👑" },
+      { date: "Legacy", description: "His hydraulic systems are still foundational in modern engineering applications, they helped Britain become a global superpower⚙️" }
+    ]
+  },
+  {
+    coords: [-1.6166201642817906, 54.97973098773672],
+    name: "William Armstrong",
+    occupation: "1810 - 1900",
+    description: "In 1871, William Armstrong set up the College of Physical Science here- a forerunner of Newcastle University",
+    image: "https://upload.wikimedia.org/wikipedia/commons/b/bc/Mary_Lemon_Waller_-_Portrait_-_Sir_William_George_Armstrong_(1810–1900)%2C_1st_Baron_Armstrong_of_Cragside.jpg",
+    tldr: "Known as the 'Father of Modern Artillery,' Armstrong revolutionized engineering and armaments.",
+    events: [
+      { date: "1854", description: "Developed the Armstrong Gun, which was lighter, more accurate, and required only 2.5 pounds of charge compared to 10 pounds for traditional cannons🎯" },
+      { date: "1887", description: "Became Baron Armstrong of Cragside, the first engineer to be raised to the peerage for his contributions to Britain’s imperial might👑" },
+      { date: "Legacy", description: "His hydraulic systems are still foundational in modern engineering applications, they helped Britain become a global superpower⚙️" }
+    ]
+  },
+  {
+    coords: [-1.6035435483951406, 54.97496759119536],
+    name: "William Armstrong",
+    occupation: "1810 - 1900",
+    description: "William Armstrong was born and raised here",
+    image: "https://upload.wikimedia.org/wikipedia/commons/b/bc/Mary_Lemon_Waller_-_Portrait_-_Sir_William_George_Armstrong_(1810–1900)%2C_1st_Baron_Armstrong_of_Cragside.jpg",
+    tldr: "Known as the 'Father of Modern Artillery,' Armstrong revolutionized engineering and armaments.",
+    events: [
+      { date: "1854", description: "Developed the Armstrong Gun, which was lighter, more accurate, and required only 2.5 pounds of charge compared to 10 pounds for traditional cannons🎯" },
+      { date: "1887", description: "Became Baron Armstrong of Cragside, the first engineer to be raised to the peerage for his contributions to Britain’s imperial might👑" },
+      { date: "Legacy", description: "His hydraulic systems are still foundational in modern engineering applications, they helped Britain become a global superpower⚙️" }
+    ]
+  },
+  {
+    coords: [-1.6074141899580368, 54.98315506095614],
+    name: "William Armstrong",
+    occupation: "1810 - 1900",
+    description: "William Armstrong was educated here until he was sixteen",
+    image: "https://upload.wikimedia.org/wikipedia/commons/b/bc/Mary_Lemon_Waller_-_Portrait_-_Sir_William_George_Armstrong_(1810–1900)%2C_1st_Baron_Armstrong_of_Cragside.jpg",
+    tldr: "Known as the 'Father of Modern Artillery,' Armstrong revolutionized engineering and armaments.",
+    events: [
+      { date: "1854", description: "Developed the Armstrong Gun, which was lighter, more accurate, and required only 2.5 pounds of charge compared to 10 pounds for traditional cannons🎯" },
+      { date: "1887", description: "Became Baron Armstrong of Cragside, the first engineer to be raised to the peerage for his contributions to Britain’s imperial might👑" },
+      { date: "Legacy", description: "His hydraulic systems are still foundational in modern engineering applications, they helped Britain become a global superpower⚙️" }
+    ]
+  },
+  {
+    coords: [-1.8931869526921883, 54.73050559573183],
+    name: "William Armstrong",
+    occupation: "1810 - 1900",
+    description: "William Armstrong was educated here",
+    image: "https://upload.wikimedia.org/wikipedia/commons/b/bc/Mary_Lemon_Waller_-_Portrait_-_Sir_William_George_Armstrong_(1810–1900)%2C_1st_Baron_Armstrong_of_Cragside.jpg",
+    tldr: "Known as the 'Father of Modern Artillery,' Armstrong revolutionized engineering and armaments.",
+    events: [
+      { date: "1854", description: "Developed the Armstrong Gun, which was lighter, more accurate, and required only 2.5 pounds of charge compared to 10 pounds for traditional cannons🎯" },
+      { date: "1887", description: "Became Baron Armstrong of Cragside, the first engineer to be raised to the peerage for his contributions to Britain’s imperial might👑" },
+      { date: "Legacy", description: "His hydraulic systems are still foundational in modern engineering applications, they helped Britain become a global superpower⚙️" }
+    ]
+  },
+  {
+    coords: [-1.885644312992513, 55.313620896524355],
+    name: "William Armstrong",
+    occupation: "1810 - 1900",
+    description: "William Armstrong built this home, the first house in the world to be lit by hydroelectricity. He hosted the Shah of Persia, King of Siam, PM of China and King Edward VII.",
+    image: "https://upload.wikimedia.org/wikipedia/commons/b/bc/Mary_Lemon_Waller_-_Portrait_-_Sir_William_George_Armstrong_(1810–1900)%2C_1st_Baron_Armstrong_of_Cragside.jpg",
+    tldr: "Known as the 'Father of Modern Artillery,' Armstrong revolutionized engineering and armaments.",
+    events: [
+      { date: "1850", description: "Invented the hydraulic accumulator, which became the backbone of modern hydraulic systems, powering cranes, lifts, and bridges⚙️" },
+      { date: "1897", description: "Merged his company with Sir Joseph Whitworth's to form Armstrong Whitworth & Co., producing naval ships and advanced artillery globally🚢" },
+      { date: "Legacy", description: "His innovations in hydraulics and artillery made Britain a global industrial and military power🌍" }
+    ]
+  },
+  {
+    coords: [-1.7094049659087398, 55.6087575305755],
+    name: "William Armstrong",
+    occupation: "1810 - 1900",
+    description: "William Armstrong purchased and restored Bamburgh Castle in 1894 - it is still in the Armstrong family.",
+    image: "https://upload.wikimedia.org/wikipedia/commons/b/bc/Mary_Lemon_Waller_-_Portrait_-_Sir_William_George_Armstrong_(1810–1900)%2C_1st_Baron_Armstrong_of_Cragside.jpg",
+    tldr: "Known as the 'Father of Modern Artillery,' Armstrong revolutionized engineering and armaments.",
+    events: [
+      { date: "1854", description: "Developed the Armstrong Gun, which was lighter, more accurate, and required only 2.5 pounds of charge compared to 10 pounds for traditional cannons🎯" },
+      { date: "1863", description: "Elswick Works became one of the largest industrial complexes in Europe, spanning 1.5 miles along the River Tyne🏭" },
+      { date: "Legacy", description: "Armstrong's artillery designs influenced military technology worldwide, with his guns adopted by leading navies🌎" }
+    ]
+  },
+  {
+    coords: [-1.915056813186061, 55.30597037733237],
+    name: "William Armstrong",
+    occupation: "1810 - 1900",
+    description: "William Armstrong is buried here.",
+    image: "https://upload.wikimedia.org/wikipedia/commons/b/bc/Mary_Lemon_Waller_-_Portrait_-_Sir_Willman_George_Armstrong_(1810–1900)%2C_1st_Baron_Armstrong_of_Cragside.jpg",
+    tldr: "Known as the 'Father of Modern Artillery,' Armstrong revolutionized engineering and armaments.",
+    events: [
+      { date: "1854", description: "Developed the Armstrong Gun, which was lighter, more accurate, and required only 2.5 pounds of charge compared to 10 pounds for traditional cannons🎯" },
+      { date: "1887", description: "Became Baron Armstrong of Cragside, the first engineer to be raised to the peerage for his contributions to Britain’s imperial might👑" },
+      { date: "Legacy", description: "His hydraulic systems are still foundational in modern engineering applications, they helped Britain become a global superpower⚙️" }
+    ]
+  },
+  {
+    coords: [-0.07033113041432004, 53.583176736019986],
+    name: "William Armstrong",
+    occupation: "1810 - 1900",
+    description: "William Armstrong built Grimsby Dock Tower here, a marvel of engineering",
+    image: "https://upload.wikimedia.org/wikipedia/commons/b/bc/Mary_Lemon_Waller_-_Portrait_-_Sir_William_George_Armstrong_(1810–1900)%2C_1st_Baron_Armstrong_of_Cragside.jpg",
+    tldr: "Known as the 'Father of Modern Artillery,' Armstrong revolutionized engineering and armaments.",
+    events: [
+      { date: "1850", description: "Invented the hydraulic accumulator, which became the backbone of modern hydraulic systems, powering cranes, lifts, and bridges⚙️" },
+      { date: "1897", description: "Merged his company with Sir Joseph Whitworth's to form Armstrong Whitworth & Co., producing naval ships and advanced artillery globally🚢" },
+      { date: "Legacy", description: "His innovations in hydraulics and artillery made Britain a global industrial and military power🌍" }
+    ]
+  },
+  {
+    coords: [-1.684748451020895, 54.966793271401095],
+    name: "William Armstrong",
+    occupation: "1810 - 1900",
+    description: "William Armstrong created Elswick Ordnance Company for the War Office during the Crimean War to address issues with heavy field guns",
+    image: "https://upload.wikimedia.org/wikipedia/commons/b/bc/Mary_Lemon_Waller_-_Portrait_-_Sir_William_George_Armstrong_(1810–1900)%2C_1st_Baron_Armstrong_of_Cragside.jpg",
+    tldr: "Known as the 'Father of Modern Artillery,' Armstrong revolutionized engineering and armaments.",
+    events: [
+      { date: "1854", description: "Developed the Armstrong Gun, which was lighter, more accurate, and required only 2.5 pounds of charge compared to 10 pounds for traditional cannons🎯" },
+      { date: "1863", description: "Elswick Works became one of the largest industrial complexes in Europe, spanning 1.5 miles along the River Tyne🏭" },
+      { date: "Legacy", description: "Armstrong's artillery designs influenced military technology worldwide, with his guns adopted by leading navies🌎" }
+    ]
+  },
+  {
+    coords: [-1.607487452877978, 54.96739193620587],
+    name: "William Armstrong",
+    occupation: "1810 - 1900",
+    description: "William Armstrong built this bridge so that warships could have their guns fitted further down the river",
+    image: "https://upload.wikimedia.org/wikipedia/commons/b/bc/Mary_Lemon_Waller_-_Portrait_-_Sir_William_George_Armstrong_(1810–1900)%2C_1st_Baron_Armstrong_of_Cragside.jpg",
+    tldr: "Known as the 'Father of Modern Artillery,' Armstrong revolutionized engineering and armaments.",
+    events: [
+      { date: "1876", description: "Designed the Newcastle Swing Bridge using hydraulic power, enabling larger ships to access Elswick Works🚢" },
+      { date: "1887", description: "Became Baron Armstrong of Cragside, the first engineer to be raised to the peerage for his contributions to Britain’s imperial might👑" },
+      { date: "Legacy", description: "His hydraulic systems are still foundational in modern engineering applications⚙️" }
+    ]
+  },
+  {
+    coords: [-1.885644312992513, 55.313620896524355],
+    name: "William Armstrong",
+    occupation: "1810 - 1900",
+    description: "William Armstrong built Cragside, the first house in the world to be lit by hydroelectricity. He hosted royalty and global leaders here.",
+    image: "https://upload.wikimedia.org/wikipedia/commons/b/bc/Mary_Lemon_Waller_-_Portrait_-_Sir_William_George_Armstrong_(1810–1900)%2C_1st_Baron_Armstrong_of_Cragside.jpg",
+    tldr: "Known as the 'Father of Modern Artillery,' Armstrong revolutionized engineering and armaments.",
+    events: [
+      { date: "1876", description: "Designed the Newcastle Swing Bridge using hydraulic power, enabling larger ships to access Elswick Works🚢" },
+      { date: "1887", description: "Became Baron Armstrong of Cragside, the first engineer to be raised to the peerage for his contributions to Britain’s imperial might👑" },
+      { date: "Legacy", description: "His hydraulic systems are still foundational in modern engineering applications⚙️" }
+    ]
+  },
+  {
+    coords: [-1.609709943022005, 55.45062763340637],
+    name: "Charles Grey, 2nd Earl Grey",
+    occupation: "1764 - 1845",
+    description: "Charles Grey was born and died here",
+    image: "https://upload.wikimedia.org/wikipedia/commons/5/5e/Grey2.jpg",
+    tldr: "British Prime Minister known for the 1832 Reform Act and abolishing slavery in the British Empire.",
+    events: [
+      { date: "1832", description: "Championed the Reform Act, which expanded voting rights to small landowners and householders paying £10+ in yearly rent🗳️" },
+      { date: "1833", description: "Passed the Slavery Abolition Act, freeing all slaves under six in the British Empire and leading to full emancipation by 1840📜" },
+      { date: "1833", description: "Oversaw further reforms, including the Factory Act and a new Poor Law Act, improving working and living conditions🏛️" }
+    ]
+  },
+  {
+    coords: [-1.613166324541377, 54.97383676232503],
+    name: "Charles Grey, 2nd Earl Grey",
+    occupation: "1764 - 1845",
+    description: "Charles Grey is memorialized here",
+    image: "https://upload.wikimedia.org/wikipedia/commons/5/5e/Grey2.jpg",
+    tldr: "British Prime Minister known for the 1832 Reform Act and abolishing slavery in the British Empire.",
+    events: [
+      { date: "1832", description: "Championed the Reform Act, which expanded voting rights to small landowners and householders paying £10+ in yearly rent🗳️" },
+      { date: "1833", description: "Passed the Slavery Abolition Act, freeing all slaves under six in the British Empire and leading to full emancipation by 1840📜" },
+      { date: "1833", description: "Oversaw further reforms, including the Factory Act and a new Poor Law Act, improving working and living conditions🏛️" }
+    ]
+  },
+  {
+    coords: [-1.5755856700915953, 54.76482822021037],
+    name: "Charles Grey, 2nd Earl Grey",
+    occupation: "1764 - 1845",
+    description: "Grey College is named after Charles Grey, who supported the Act of Parliament in 1832 that established Durham University",
+    image: "https://upload.wikimedia.org/wikipedia/commons/5/5e/Grey2.jpg",
+    tldr: "British Prime Minister known for the 1832 Reform Act and abolishing slavery in the British Empire.",
+    events: [
+      { date: "1832", description: "Championed the Reform Act, which expanded voting rights to small landowners and householders paying £10+ in yearly rent🗳️" },
+      { date: "1833", description: "Passed the Slavery Abolition Act, freeing all slaves under six in the British Empire and leading to full emancipation by 1840📜" },
+      { date: "1833", description: "Oversaw further reforms, including the Factory Act and a new Poor Law Act, improving working and living conditions🏛️" }
+    ]
+  },
+  {
     coords: [-1.848733473102809, 53.79101095391006],
     name: "Charlotte Brontë",
     occupation: "1816 - 1855",
