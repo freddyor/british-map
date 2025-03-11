@@ -8,8 +8,8 @@ mapboxgl.accessToken = 'pk.eyJ1IjoiZnJlZGRvbWF0ZSIsImEiOiJjbTc1bm5zYnQwaG1mMmtxe
 var map = new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/freddomate/cm785h0qv00cf01r0e8xxaxbc',
-    center: [-1.0820, 53.9623],
-    zoom: 15,
+   center: [-3.435973, 55.378051], // New coordinates to center the map above the UK
+    zoom: 5,
     pitch: 45,
     bearing: -17.6
 });
