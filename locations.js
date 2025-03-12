@@ -1,5 +1,109 @@
 export const locations = [
   {
+    coords: [0.7475979464438308, 52.41596348423185],
+    name: "Thomas Paine",
+    occupation: "1737 - 1809",
+    description: "Thomas Paine was born here",
+    image: "https://upload.wikimedia.org/wikipedia/commons/b/bc/Laurent_Dabos_–_Thomas_Paine_–_Google_Art_Project.jpg",
+    tldr: "Founding Father and creator of the term 'United States of America'",
+    events: [
+      { date: "1776", description: "Published Common Sense, advocating American independence and transforming a tax rebellion into a full-scale revolution 🇺🇸" },
+      { date: "1776", description: "First publicly used the term 'United States of America' in a public declaration, shaping the nation's identity 📜" },
+      { date: "1791", description: "Wrote Rights of Man, defending the French Revolution and advocating for social welfare programs, which influenced modern social policies 🇫🇷" }
+    ]
+  },
+  {
+    coords: [0.744659263858248, 52.41333596385473],
+    name: "Thomas Paine",
+    occupation: "1737 - 1809",
+    description: "Thomas Paine was educated here from 1744 to 1749",
+    image: "https://upload.wikimedia.org/wikipedia/commons/b/bc/Laurent_Dabos_–_Thomas_Paine_–_Google_Art_Project.jpg",
+    tldr: "Founding Father and creator of the term 'United States of America'",
+    events: [
+      { date: "1776", description: "Published Common Sense, advocating American independence and transforming a tax rebellion into a full-scale revolution 🇺🇸" },
+      { date: "1776", description: "First publicly used the term 'United States of America' in a public declaration, shaping the nation's identity 📜" },
+      { date: "1791", description: "Wrote Rights of Man, defending the French Revolution and advocating for social welfare programs, which influenced modern social policies 🇫🇷" }
+    ]
+  },
+  {
+    coords: [-0.6426113529043579, 52.912469571251066],
+    name: "Thomas Paine",
+    occupation: "1737 - 1809",
+    description: "Thomas Paine worked here as a taxman for 22 months, before being sacked for ‘stamping without inspecting’",
+    image: "https://upload.wikimedia.org/wikipedia/commons/b/bc/Laurent_Dabos_–_Thomas_Paine_–_Google_Art_Project.jpg",
+    tldr: "Founding Father and creator of the term 'United States of America'",
+    events: [
+      { date: "1776", description: "Published Common Sense, advocating American independence and transforming a tax rebellion into a full-scale revolution 🇺🇸" },
+      { date: "1776", description: "First publicly used the term 'United States of America' in a public declaration, shaping the nation's identity 📜" },
+      { date: "1791", description: "Wrote Rights of Man, defending the French Revolution and advocating for social welfare programs, which influenced modern social policies 🇫🇷" }
+    ]
+  },
+  {
+    coords: [0.010064854924391155, 50.87287371498302],
+    name: "Thomas Paine",
+    occupation: "1737 - 1809",
+    description: "Thomas Paine lived above a tobacco shop here from 1768",
+    image: "https://upload.wikimedia.org/wikipedia/commons/b/bc/Laurent_Dabos_–_Thomas_Paine_–_Google_Art_Project.jpg",
+    tldr: "Founding Father and creator of the term 'United States of America'",
+    events: [
+      { date: "1776", description: "Published Common Sense, advocating American independence and transforming a tax rebellion into a full-scale revolution 🇺🇸" },
+      { date: "1776", description: "First publicly used the term 'United States of America' in a public declaration, shaping the nation's identity 📜" },
+      { date: "1791", description: "Wrote Rights of Man, defending the French Revolution and advocating for social welfare programs, which influenced modern social policies 🇫🇷" }
+    ]
+  },
+  {
+    coords: [0.007323539935107719, 50.87282009209204],
+    name: "Thomas Paine",
+    occupation: "1737 - 1809",
+    description: "Thomas Paine was first involved in civic matters here and wrote his first political pamphlet here",
+    image: "https://upload.wikimedia.org/wikipedia/commons/b/bc/Laurent_Dabos_–_Thomas_Paine_–_Google_Art_Project.jpg",
+    tldr: "Founding Father and creator of the term 'United States of America'",
+    events: [
+      { date: "1776", description: "Published Common Sense, advocating American independence and transforming a tax rebellion into a full-scale revolution 🇺🇸" },
+      { date: "1776", description: "First publicly used the term 'United States of America' in a public declaration, shaping the nation's identity 📜" },
+      { date: "1791", description: "Wrote Rights of Man, defending the French Revolution and advocating for social welfare programs, which influenced modern social policies 🇫🇷" }
+    ]
+  },
+  {
+    coords: [0.17929229014048956, 53.26113115813032],
+    name: "Thomas Paine",
+    occupation: "1737 - 1809",
+    description: "Thomas Paine worked here as a taxman in 1774",
+    image: "https://upload.wikimedia.org/wikipedia/commons/b/bc/Laurent_Dabos_–_Thomas_Paine_–_Google_Art_Project.jpg",
+    tldr: "Founding Father and creator of the term 'United States of America'",
+    events: [
+      { date: "1776", description: "Published Common Sense, advocating American independence and transforming a tax rebellion into a full-scale revolution 🇺🇸" },
+      { date: "1776", description: "First publicly used the term 'United States of America' in a public declaration, shaping the nation's identity 📜" },
+      { date: "1791", description: "Wrote Rights of Man, defending the French Revolution and advocating for social welfare programs, which influenced modern social policies 🇫🇷" }
+    ]
+  },
+  {
+    coords: [1.1054650080815787, 52.37699196641096],
+    name: "Thomas Paine",
+    occupation: "1737 - 1809",
+    description: "Thomas Paine worked here as a staymaker (corset maker) in the 1760s",
+    image: "https://upload.wikimedia.org/wikipedia/commons/b/bc/Laurent_Dabos_–_Thomas_Paine_–_Google_Art_Project.jpg",
+    tldr: "Founding Father and creator of the term 'United States of America'",
+    events: [
+      { date: "1776", description: "Published Common Sense, advocating American independence and transforming a tax rebellion into a full-scale revolution 🇺🇸" },
+      { date: "1776", description: "First publicly used the term 'United States of America' in a public declaration, shaping the nation's identity 📜" },
+      { date: "1791", description: "Wrote Rights of Man, defending the French Revolution and advocating for social welfare programs, which influenced modern social policies 🇫🇷" }
+    ]
+  },
+  {
+    coords: [1.3395956371129585, 51.274247102588376],
+    name: "Thomas Paine",
+    occupation: "1737 - 1809",
+    description: "Thomas Paine lived and worked here in 1759",
+    image: "https://upload.wikimedia.org/wikipedia/commons/b/bc/Laurent_Dabos_–_Thomas_Paine_–_Google_Art_Project.jpg",
+    tldr: "Founding Father and creator of the term 'United States of America'",
+    events: [
+      { date: "1776", description: "Published Common Sense, advocating American independence and transforming a tax rebellion into a full-scale revolution 🇺🇸" },
+      { date: "1776", description: "First publicly used the term 'United States of America' in a public declaration, shaping the nation's identity 📜" },
+      { date: "1791", description: "Wrote Rights of Man, defending the French Revolution and advocating for social welfare programs, which influenced modern social policies 🇫🇷" }
+    ]
+  },
+  {
     coords: [-1.679940191441075, 54.96630441577484],
     name: "Charles Algernon Parsons",
     occupation: "1854 - 1931",
