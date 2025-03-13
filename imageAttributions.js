@@ -17,7 +17,7 @@ const imageAttributions = [
       "license": "CC BY-SA 4.0"
     },
                      {
-      "name": "https://www.flickr.com/photos/69880995@N04/48531949182/'>Chris Martin</a>",
+      "name": "<a href='https://www.flickr.com/photos/69880995@N04/48531949182/'>Chris Martin</a>",
       "author": "Raph_PH",
       "license": "CC BY-SA 2.0"
     },
