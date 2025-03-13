@@ -185,36 +185,88 @@
 
     <div id="map"></div>
 
-    <div class="dropdown">
-        <button id="custom-bmc-button" class="custom-button">
-            ❤️ This project relies on your support ❤️
-        </button>
-        <div class="dropdown-content">
-            <a href="https://www.buymeacoffee.com/britmap" class="support-button" target="_blank">
-                <span>Support</span>
-            </a>
-            <div class="project-info">
-                This project costs me to run, I am determined to keep it free-to-use, but as a 22 year old I can't fund it forever. The project relies on public voluntary support ❤️
-            </div>
-            <div class="top-supporters">
-                <h4>Top Supporters:</h4>
-                <ul>
-                    <li>
-                        buffsteve24 <span class="donation-amount">£5</span>
-                        <div class="donation-comment">Great work!</div>
-                    </li>
-                    <li>
-                        Chip Pedro <span class="donation-amount">£5</span>
-                        <div class="donation-comment">Will be very useful on our upcoming trip - really nice work!</div>
-                    </li>
-                    <li>
-                        markwillgofaster <span class="donation-amount">£5</span>
-                        <div class="donation-comment">Lovely map. Really interesting.</div>
-                    </li>
-                </ul>
-            </div>
+   <div class="dropdown">
+    <button id="custom-bmc-button" class="custom-button">
+        ❤️ This project relies on your support ❤️
+    </button>
+    <div class="dropdown-content">
+        <a href="https://www.buymeacoffee.com/britmap" class="support-button" target="_blank">
+            <span>Support</span>
+        </a>
+        <div class="project-info">
+            This project costs me to run, I am determined to keep it free-to-use, but as a 22 year old I can't fund it forever. The project relies on public voluntary support ❤️
+        </div>
+        <div class="top-supporters">
+            <h4>Top Supporters:</h4>
+            <ul>
+                <li>
+                    buffsteve24 <span class="donation-amount">£5</span>
+                    <div class="donation-comment">Great work!</div>
+                </li>
+                <li>
+                    Chip Pedro <span class="donation-amount">£5</span>
+                    <div class="donation-comment">Will be very useful on our upcoming trip - really nice work!</div>
+                </li>
+                <li>
+                    markwillgofaster <span class="donation-amount">£5</span>
+                    <div class="donation-comment">Lovely map. Really interesting.</div>
+                </li>
+            </ul>
         </div>
     </div>
+</div>
+
+<!-- New Dropdown -->
+<div class="dropdown">
+    <button id="custom-guide-button" class="custom-button">
+        📖 A guide on how to help me fill out the site 📖
+    </button>
+    <div class="dropdown-content">
+        <div class="project-info">
+            <p>This guide will help you understand how to contribute to the project.</p>
+            <video width="320" height="240" controls>
+                <source src="images/tutorial.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.getElementById('custom-bmc-button').addEventListener('click', function(e) {
+        e.preventDefault();
+        var dropdownContent = this.nextElementSibling;
+        dropdownContent.style.display = dropdownContent.style.display === 'block' ? 'none' : 'block';
+    });
+
+    document.getElementById('custom-guide-button').addEventListener('click', function(e) {
+        e.preventDefault();
+        var dropdownContent = this.nextElementSibling;
+        dropdownContent.style.display = dropdownContent.style.display === 'block' ? 'none' : 'block';
+    });
+
+    // Close the dropdowns if the user clicks outside of them
+    window.onclick = function(event) {
+        if (!event.target.matches('.custom-button')) {
+            var dropdowns = document.getElementsByClassName("dropdown-content");
+            for (var i = 0; i < dropdowns.length; i++) {
+                var openDropdown = dropdowns[i];
+                if (openDropdown.style.display === 'block') {
+                    openDropdown.style.display = 'none';
+                }
+            }
+        }
+    }
+
+    // Set the width of the dropdown content to match the button's width
+    const buttons = document.querySelectorAll('.custom-button');
+    buttons.forEach(button => {
+        const dropdownContent = button.nextElementSibling;
+        if (dropdownContent) {
+            dropdownContent.style.width = `${button.offsetWidth}px`;
+        }
+    });
+</script>
 
     <script>
         document.getElementById('custom-bmc-button').addEventListener('click', function(e) {
