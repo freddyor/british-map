@@ -1,5 +1,239 @@
 export const locations = [
   {
+    coords: [-2.342995117226929, 51.364585198357126],
+    name: "Ralph Allen",
+    occupation: "1693 - 1764",
+    description: "Ralph Allen built this country house for himself",
+    image: "https://upload.wikimedia.org/wikipedia/commons/0/01/Ralph_Allen_(1693–1764).jpg",
+    tldr: "Entrepreneur and philanthropist who revolutionized the British postal system.",
+    events: [
+      { date: "1720s", description: "Established a contract with the British Postal Service, centralizing mail delivery and reducing theft by 90% 📮" },
+      { date: "1720-1764", description: "Saved the Post Office approximately £37,500 annually, equivalent to £39.3 million today 💸" },
+      { date: "1730s", description: "Used profits to acquire stone mines, marketing Bath stone for building projects across England 🏗️" }
+    ]
+  },
+  {
+    coords: [-2.3061393276625477, 51.375456247820736],
+    name: "Ralph Allen",
+    occupation: "1693 - 1764",
+    description: "Ralph Allen is buried here in a pyramid tomb",
+    image: "https://upload.wikimedia.org/wikipedia/commons/0/01/Ralph_Allen_(1693–1764).jpg",
+    tldr: "Entrepreneur and philanthropist who revolutionized the British postal system.",
+    events: [
+      { date: "1720s", description: "Established a contract with the British Postal Service, centralizing mail delivery and reducing theft by 90% 📮" },
+      { date: "1720-1764", description: "Saved the Post Office approximately £37,500 annually, equivalent to £39.3 million today 💸" },
+      { date: "1738", description: "Donated money and Bath stone to build the Mineral Water Hospital in Bath, aiding public health initiatives 🏥" }
+    ]
+  },
+  {
+    coords: [-4.940062558096177, 50.43519871845693],
+    name: "Ralph Allen",
+    occupation: "1693 - 1764",
+    description: "Ralph Allen worked here as a teenager at his grandmother’s post office",
+    image: "https://upload.wikimedia.org/wikipedia/commons/0/01/Ralph_Allen_(1693–1764).jpg",
+    tldr: "Entrepreneur and philanthropist who revolutionized the British postal system.",
+    events: [
+      { date: "1720s", description: "Established a contract with the British Postal Service, centralizing mail delivery and reducing theft by 90% 📮" },
+      { date: "1720-1764", description: "Saved the Post Office approximately £37,500 annually, equivalent to £39.3 million today 💸" },
+      { date: "Legacy", description: "His reforms modernized the postal system and funded architectural projects that shaped Georgian England 🏛️" }
+    ]
+  },
+  {
+    coords: [-2.3585640814665005, 51.38073913173054],
+    name: "Ralph Allen",
+    occupation: "1693 - 1764",
+    description: "Ralph Allen moved here as a teenager in 1710, became Postmaster of Bath in 1712",
+    image: "https://upload.wikimedia.org/wikipedia/commons/0/01/Ralph_Allen_(1693–1764).jpg",
+    tldr: "Entrepreneur and philanthropist who revolutionized the British postal system.",
+    events: [
+      { date: "1720s", description: "Established a contract with the British Postal Service, centralizing mail delivery and reducing theft by 90% 📮" },
+      { date: "1720-1764", description: "Saved the Post Office approximately £37,500 annually, equivalent to £39.3 million today 💸" },
+      { date: "Legacy", description: "His reforms modernized the postal system and funded architectural projects that shaped Georgian England 🏛️" }
+    ]
+  },
+  {
+    coords: [-2.344657753301866, 51.36104891834079],
+    name: "Ralph Allen",
+    occupation: "1693 - 1764",
+    description: "Ralph Allen used his wealth from postal reforms to purchase mines on this spot",
+    image: "https://upload.wikimedia.org/wikipedia/commons/0/01/Ralph_Allen_(1693–1764).jpg",
+    tldr: "Entrepreneur and philanthropist who revolutionized the British postal system.",
+    events: [
+      { date: "1720s", description: "Established a contract with the British Postal Service, centralizing mail delivery and reducing theft by 90% 📮" },
+      { date: "1720-1764", description: "Saved the Post Office approximately £37,500 annually, equivalent to £39.3 million today 💸" },
+      { date: "1730s", description: "Used profits to acquire stone mines, marketing Bath stone for building projects across England 🏗️" }
+    ]
+  },
+  {
+    coords: [-2.3293997985404644, 51.36347449192956],
+    name: "Ralph Allen",
+    occupation: "1693 - 1764",
+    description: "This school is named after Ralph Allen",
+    image: "https://upload.wikimedia.org/wikipedia/commons/0/01/Ralph_Allen_(1693–1764).jpg",
+    tldr: "Entrepreneur and philanthropist who revolutionized the British postal system.",
+    events: [
+      { date: "1720s", description: "Established a contract with the British Postal Service, centralizing mail delivery and reducing theft by 90% 📮" },
+      { date: "1720-1764", description: "Saved the Post Office approximately £37,500 annually, equivalent to £39.3 million today 💸" },
+      { date: "Legacy", description: "His reforms modernized the postal system and funded architectural projects that shaped Georgian England 🏛️" }
+    ]
+  },
+  {
+    coords: [-2.3111851665208, 51.37506107534538],
+    name: "Ralph Allen",
+    occupation: "1693 - 1764",
+    description: "Ralph Allen owned this house from 1758",
+    image: "https://upload.wikimedia.org/wikipedia/commons/0/01/Ralph_Allen_(1693–1764).jpg",
+    tldr: "Entrepreneur and philanthropist who revolutionized the British postal system.",
+    events: [
+      { date: "1720s", description: "Established a contract with the British Postal Service, centralizing mail delivery and reducing theft by 90% 📮" },
+      { date: "1720-1764", description: "Saved the Post Office approximately £37,500 annually, equivalent to £39.3 million today 💸" },
+      { date: "Legacy", description: "His reforms modernized the postal system and funded architectural projects that shaped Georgian England 🏛️" }
+    ]
+  },
+  {
+    coords: [-2.389927034027822, 51.39112679518011],
+    name: "Ralph Allen",
+    occupation: "1693 - 1764",
+    description: "Ralph Allen gave the money and stone used to build the Mineral Water Hospital here in 1738",
+    image: "https://upload.wikimedia.org/wikipedia/commons/0/01/Ralph_Allen_(1693–1764).jpg",
+    tldr: "Entrepreneur and philanthropist who revolutionized the British postal system.",
+    events: [
+      { date: "1720s", description: "Established a contract with the British Postal Service, centralizing mail delivery and reducing theft by 90% 📮" },
+      { date: "1720-1764", description: "Saved the Post Office approximately £37,500 annually, equivalent to £39.3 million today 💸" },
+      { date: "1738", description: "Donated money and Bath stone to build the Mineral Water Hospital in Bath, aiding public health initiatives 🏥" }
+    ]
+  },
+  {
+    coords: [-2.4531538653824843, 50.60589546876891],
+    name: "Ralph Allen",
+    occupation: "1693 - 1764",
+    description: "This was the summer house of Ralph Allen",
+    image: "https://upload.wikimedia.org/wikipedia/commons/0/01/Ralph_Allen_(1693–1764).jpg",
+    tldr: "Entrepreneur and philanthropist who revolutionized the British postal system.",
+    events: [
+      { date: "1720s", description: "Established a contract with the British Postal Service, centralizing mail delivery and reducing theft by 90% 📮" },
+      { date: "1720-1764", description: "Saved the Post Office approximately £37,500 annually, equivalent to £39.3 million today 💸" },
+      { date: "Legacy", description: "His reforms modernized the postal system and funded architectural projects that shaped Georgian England 🏛️" }
+    ]
+  },
+  {
+    coords: [-4.493148442517626, 50.63964204298144],
+    name: "John Couch Adams",
+    occupation: "1819 - 1892",
+    description: "John Couch Adams was born here into a poor farming family",
+    image: "https://upload.wikimedia.org/wikipedia/commons/2/2b/John_Couch_Adams.jpg",
+    tldr: "British mathematician and astronomer who predicted the existence and position of Neptune using only mathematics.",
+    events: [
+      { date: "1845", description: "Predicted Neptune's position within 1° of its actual location, using complex calculations to explain Uranus's orbital irregularities 🔭" },
+      { date: "1866", description: "Proved the Leonid meteor shower's orbit closely matched that of comet Tempel-Tuttle, revolutionizing our understanding of meteor showers ☄️" },
+      { date: "Legacy", description: "His work led to Neptune's discovery in 1846, expanding our solar system to 8 planets and doubling its known size at the time 🌌" }
+    ]
+  },
+  {
+    coords: [-4.505825500858386, 50.62915388228207],
+    name: "John Couch Adams",
+    occupation: "1819 - 1892",
+    description: "John Couch Adams attended school here in this village, where he learnt algebra",
+    image: "https://upload.wikimedia.org/wikipedia/commons/2/2b/John_Couch_Adams.jpg",
+    tldr: "British mathematician and astronomer who predicted the existence and position of Neptune using only mathematics.",
+    events: [
+      { date: "1845", description: "Predicted Neptune's position within 1° of its actual location, using complex calculations to explain Uranus's orbital irregularities 🔭" },
+      { date: "1866", description: "Proved the Leonid meteor shower's orbit closely matched that of comet Tempel-Tuttle, revolutionizing our understanding of meteor showers ☄️" },
+      { date: "Legacy", description: "His work led to Neptune's discovery in 1846, expanding our solar system to 8 planets and doubling its known size at the time 🌌" }
+    ]
+  },
+  {
+    coords: [-4.177157828994066, 50.37044564703958],
+    name: "John Couch Adams",
+    occupation: "1819 - 1892",
+    description: "John Couch Adams taught himself math in this old library",
+    image: "https://upload.wikimedia.org/wikipedia/commons/2/2b/John_Couch_Adams.jpg",
+    tldr: "British mathematician and astronomer who predicted the existence and position of Neptune using only mathematics.",
+    events: [
+      { date: "1845", description: "Predicted Neptune's position within 1° of its actual location, using complex calculations to explain Uranus's orbital irregularities 🔭" },
+      { date: "1866", description: "Proved the Leonid meteor shower's orbit closely matched that of comet Tempel-Tuttle, revolutionizing our understanding of meteor showers ☄️" },
+      { date: "Legacy", description: "His work led to Neptune's discovery in 1846, expanding our solar system to 8 planets and doubling its known size at the time 🌌" }
+    ]
+  },
+  {
+    coords: [-4.21055882875861, 50.4332279603846],
+    name: "John Couch Adams",
+    occupation: "1819 - 1892",
+    description: "John Couch Adams first observed Halley’s Comet here in this village in 1835",
+    image: "https://upload.wikimedia.org/wikipedia/commons/2/2b/John_Couch_Adams.jpg",
+    tldr: "British mathematician and astronomer who predicted the existence and position of Neptune using only mathematics.",
+    events: [
+      { date: "1845", description: "Predicted Neptune's position within 1° of its actual location, using complex calculations to explain Uranus's orbital irregularities 🔭" },
+      { date: "1866", description: "Proved the Leonid meteor shower's orbit closely matched that of comet Tempel-Tuttle, revolutionizing our understanding of meteor showers ☄️" },
+      { date: "Legacy", description: "His work led to Neptune's discovery in 1846, expanding our solar system to 8 planets and doubling its known size at the time 🌌" }
+    ]
+  },
+  {
+    coords: [0.11739070698273411, 52.20781535142039],
+    name: "John Couch Adams",
+    occupation: "1819 - 1892",
+    description: "John Couch Adams graduated here in 1843 as senior wrangler (top math undergraduate, often described as ‘the greatest intellectual attainment in Britain’",
+    image: "https://upload.wikimedia.org/wikipedia/commons/2/2b/John_Couch_Adams.jpg",
+    tldr: "British mathematician and astronomer who predicted the existence and position of Neptune using only mathematics.",
+    events: [
+      { date: "1845", description: "Predicted Neptune's position within 1° of its actual location, using complex calculations to explain Uranus's orbital irregularities 🔭" },
+      { date: "1866", description: "Proved the Leonid meteor shower's orbit closely matched that of comet Tempel-Tuttle, revolutionizing our understanding of meteor showers ☄️" },
+      { date: "Legacy", description: "His work led to Neptune's discovery in 1846, expanding our solar system to 8 planets and doubling its known size at the time 🌌" }
+    ]
+  },
+  {
+    coords: [-5.072378736726029, 50.15566154076865],
+    name: "John Couch Adams",
+    occupation: "1819 - 1892",
+    description: "This public library was built in honour of John Couch Adams",
+    image: "https://upload.wikimedia.org/wikipedia/commons/2/2b/John_Couch_Adams.jpg",
+    tldr: "British mathematician and astronomer who predicted the existence and position of Neptune using only mathematics.",
+    events: [
+      { date: "1845", description: "Predicted Neptune's position within 1° of its actual location, using complex calculations to explain Uranus's orbital irregularities 🔭" },
+      { date: "1866", description: "Proved the Leonid meteor shower's orbit closely matched that of comet Tempel-Tuttle, revolutionizing our understanding of meteor showers ☄️" },
+      { date: "Legacy", description: "His work led to Neptune's discovery in 1846, expanding our solar system to 8 planets and doubling its known size at the time 🌌" }
+    ]
+  },
+  {
+    coords: [0.09971843591090628, 52.217317360612675],
+    name: "John Couch Adams",
+    occupation: "1819 - 1892",
+    description: "John Couch Adams is buried here",
+    image: "https://upload.wikimedia.org/wikipedia/commons/2/2b/John_Couch_Adams.jpg",
+    tldr: "British mathematician and astronomer who predicted the existence and position of Neptune using only mathematics.",
+    events: [
+      { date: "1845", description: "Predicted Neptune's position within 1° of its actual location, using complex calculations to explain Uranus's orbital irregularities 🔭" },
+      { date: "1866", description: "Proved the Leonid meteor shower's orbit closely matched that of comet Tempel-Tuttle, revolutionizing our understanding of meteor showers ☄️" },
+      { date: "Legacy", description: "His work led to Neptune's discovery in 1846, expanding our solar system to 8 planets and doubling its known size at the time 🌌" }
+    ]
+  },
+  {
+    coords: [0.09531926701767483, 52.21454771112735],
+    name: "John Couch Adams",
+    occupation: "1819 - 1892",
+    description: "John Couch Adams was director of the Cambridge Observatory from 1960 until his death",
+    image: "https://upload.wikimedia.org/wikipedia/commons/2/2b/John_Couch_Adams.jpg",
+    tldr: "British mathematician and astronomer who predicted the existence and position of Neptune using only mathematics.",
+    events: [
+      { date: "1845", description: "Predicted Neptune's position within 1° of its actual location, using complex calculations to explain Uranus's orbital irregularities 🔭" },
+      { date: "1866", description: "Proved the Leonid meteor shower's orbit closely matched that of comet Tempel-Tuttle, revolutionizing our understanding of meteor showers ☄️" },
+      { date: "Legacy", description: "His work led to Neptune's discovery in 1846, expanding our solar system to 8 planets and doubling its known size at the time 🌌" }
+    ]
+  },
+  {
+    coords: [-2.8084397386421185, 56.33989341096719],
+    name: "John Couch Adams",
+    occupation: "1819 - 1892",
+    description: "John Couch Adams was professor of mathematics here in 1858",
+    image: "https://upload.wikimedia.org/wikipedia/commons/2/2b/John_Couch_Adams.jpg",
+    tldr: "British mathematician and astronomer who predicted the existence and position of Neptune using only mathematics.",
+    events: [
+      { date: "1845", description: "Predicted Neptune's position within 1° of its actual location, using complex calculations to explain Uranus's orbital irregularities 🔭" },
+      { date: "1866", description: "Proved the Leonid meteor shower's orbit closely matched that of comet Tempel-Tuttle, revolutionizing our understanding of meteor showers ☄️" },
+      { date: "Legacy", description: "His work led to Neptune's discovery in 1846, expanding our solar system to 8 planets and doubling its known size at the time 🌌" }
+    ]
+  },
+  {
     coords: [0.7475979464438308, 52.41596348423185],
     name: "Thomas Paine",
     occupation: "1737 - 1809",
