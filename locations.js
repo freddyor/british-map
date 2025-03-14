@@ -1,5 +1,161 @@
 export const locations = [
   {
+    coords: [-5.268161600026954, 50.225346482887836],
+    name: "Richard Trevithick",
+    occupation: "1771 - 1833",
+    description: "Richard Trevithick was born here in the mining heartland of Cornwall",
+    image: "https://upload.wikimedia.org/wikipedia/commons/d/da/Richard_Trevithick_portrait.jpg",
+    tldr: "Inventor and engineer, pioneer of high-pressure steam engines and railway locomotives.",
+    events: [
+      { date: "1801", description: "Demonstrated the Puffing Devil, the first full-size steam road locomotive, proving steam power could move people and goods 🚗" },
+      { date: "1804", description: "His Pen-y-darren locomotive hauled 10 tons of iron, 70 men, and 5 wagons at 5 mph, marking the first steam-powered railway journey 🚂" },
+      { date: "Legacy", description: "His high-pressure steam engine designs influenced the development of railways and steam-powered machinery worldwide 🌍" }
+    ]
+  },
+  {
+    coords: [-5.270072697472995, 50.25045911852064],
+    name: "Richard Trevithick",
+    occupation: "1771 - 1833",
+    description: "Richard Trevithick attended school here, where he was he was described as ‘disobedient, slow, obstinate’",
+    image: "https://upload.wikimedia.org/wikipedia/commons/d/da/Richard_Trevithick_portrait.jpg",
+    tldr: "Inventor and engineer, pioneer of high-pressure steam engines and railway locomotives.",
+    events: [
+      { date: "1801", description: "Demonstrated the Puffing Devil, the first full-size steam road locomotive, proving steam power could move people and goods 🚗" },
+      { date: "1804", description: "His Pen-y-darren locomotive hauled 10 tons of iron, 70 men, and 5 wagons at 5 mph, marking the first steam-powered railway journey 🚂" },
+      { date: "Legacy", description: "His high-pressure steam engine designs influenced the development of railways and steam-powered machinery worldwide 🌍" }
+    ]
+  },
+  {
+    coords: [-5.289262343374837, 50.21254249724515],
+    name: "Richard Trevithick",
+    occupation: "1771 - 1833",
+    description: "Richard Trevithick first worked in a mine here at 19, where he quickly became a consultant",
+    image: "https://upload.wikimedia.org/wikipedia/commons/d/da/Richard_Trevithick_portrait.jpg",
+    tldr: "Inventor and engineer, pioneer of high-pressure steam engines and railway locomotives.",
+    events: [
+      { date: "1801", description: "Demonstrated the Puffing Devil, the first full-size steam road locomotive, proving steam power could move people and goods 🚗" },
+      { date: "1804", description: "His Pen-y-darren locomotive hauled 10 tons of iron, 70 men, and 5 wagons at 5 mph, marking the first steam-powered railway journey 🚂" },
+      { date: "Legacy", description: "His high-pressure steam engine designs influenced the development of railways and steam-powered machinery worldwide 🌍" }
+    ]
+  },
+  {
+    coords: [-5.5837062907553054, 50.158002631603885],
+    name: "Richard Trevithick",
+    occupation: "1771 - 1833",
+    description: "Richard Trevithick pioneered the use of high pressure-steam here at Ding Dong Mine in1797",
+    image: "https://upload.wikimedia.org/wikipedia/commons/d/da/Richard_Trevithick_portrait.jpg",
+    tldr: "Inventor and engineer, pioneer of high-pressure steam engines and railway locomotives.",
+    events: [
+      { date: "1801", description: "Demonstrated the Puffing Devil, the first full-size steam road locomotive, proving steam power could move people and goods 🚗" },
+      { date: "1804", description: "His Pen-y-darren locomotive hauled 10 tons of iron, 70 men, and 5 wagons at 5 mph, marking the first steam-powered railway journey 🚂" },
+      { date: "Legacy", description: "His high-pressure steam engine designs influenced the development of railways and steam-powered machinery worldwide 🌍" }
+    ]
+  },
+  {
+    coords: [-5.299258032930421, 50.215690534508944],
+    name: "Richard Trevithick",
+    occupation: "1771 - 1833",
+    description: "Richard Trevithick was the first person to demonstrate a full-size steam locomotive on this spot in 1801",
+    image: "https://upload.wikimedia.org/wikipedia/commons/d/da/Richard_Trevithick_portrait.jpg",
+    tldr: "Inventor and engineer, pioneer of high-pressure steam engines and railway locomotives.",
+    events: [
+      { date: "1801", description: "Demonstrated the Puffing Devil, the first full-size steam road locomotive, proving steam power could move people and goods 🚗" },
+      { date: "1804", description: "His Pen-y-darren locomotive hauled 10 tons of iron, 70 men, and 5 wagons at 5 mph, marking the first steam-powered railway journey 🚂" },
+      { date: "Legacy", description: "His high-pressure steam engine designs influenced the development of railways and steam-powered machinery worldwide 🌍" }
+    ]
+  },
+  {
+    coords: [-4.928898971836594, 50.29220510231857],
+    name: "Richard Trevithick",
+    occupation: "1771 - 1833",
+    description: "Richard Trevithick installed a model pressure engine here on this farm in 1812, it proved far cheaper than using horses and was in use for 70 years",
+    image: "https://upload.wikimedia.org/wikipedia/commons/d/da/Richard_Trevithick_portrait.jpg",
+    tldr: "Inventor and engineer, pioneer of high-pressure steam engines and railway locomotives.",
+    events: [
+      { date: "1801", description: "Demonstrated the Puffing Devil, the first full-size steam road locomotive, proving steam power could move people and goods 🚗" },
+      { date: "1804", description: "His Pen-y-darren locomotive hauled 10 tons of iron, 70 men, and 5 wagons at 5 mph, marking the first steam-powered railway journey 🚂" },
+      { date: "Legacy", description: "His high-pressure steam engine designs influenced the development of railways and steam-powered machinery worldwide 🌍" }
+    ]
+  },
+  {
+    coords: [-5.529834058067348, 50.117221907340614],
+    name: "Richard Trevithick",
+    occupation: "1771 - 1833",
+    description: "Left here on a whaling ship, headed for Peruvian mines",
+    image: "https://upload.wikimedia.org/wikipedia/commons/d/da/Richard_Trevithick_portrait.jpg",
+    tldr: "Inventor and engineer, pioneer of high-pressure steam engines and railway locomotives.",
+    events: [
+      { date: "1801", description: "Demonstrated the Puffing Devil, the first full-size steam road locomotive, proving steam power could move people and goods 🚗" },
+      { date: "1804", description: "His Pen-y-darren locomotive hauled 10 tons of iron, 70 men, and 5 wagons at 5 mph, marking the first steam-powered railway journey 🚂" },
+      { date: "Legacy", description: "His high-pressure steam engine designs influenced the development of railways and steam-powered machinery worldwide 🌍" }
+    ]
+  },
+  {
+    coords: [-0.14334605269360323, 51.56942394853187],
+    name: "Richard Trevithick",
+    occupation: "1771 - 1833",
+    description: "This was the London home of Richard Trevithick",
+    image: "https://upload.wikimedia.org/wikipedia/commons/d/da/Richard_Trevithick_portrait.jpg",
+    tldr: "Inventor and engineer, pioneer of high-pressure steam engines and railway locomotives.",
+    events: [
+      { date: "1801", description: "Demonstrated the Puffing Devil, the first full-size steam road locomotive, proving steam power could move people and goods 🚗" },
+      { date: "1804", description: "His Pen-y-darren locomotive hauled 10 tons of iron, 70 men, and 5 wagons at 5 mph, marking the first steam-powered railway journey 🚂" },
+      { date: "Legacy", description: "His high-pressure steam engine designs influenced the development of railways and steam-powered machinery worldwide 🌍" }
+    ]
+  },
+  {
+    coords: [0.22453788787247966, 51.44342008326089],
+    name: "Richard Trevithick",
+    occupation: "1771 - 1833",
+    description: "Richard Trevithick was buried around here",
+    image: "https://upload.wikimedia.org/wikipedia/commons/d/da/Richard_Trevithick_portrait.jpg",
+    tldr: "Inventor and engineer, pioneer of high-pressure steam engines and railway locomotives.",
+    events: [
+      { date: "1801", description: "Demonstrated the Puffing Devil, the first full-size steam road locomotive, proving steam power could move people and goods 🚗" },
+      { date: "1804", description: "His Pen-y-darren locomotive hauled 10 tons of iron, 70 men, and 5 wagons at 5 mph, marking the first steam-powered railway journey 🚂" },
+      { date: "Legacy", description: "His high-pressure steam engine designs influenced the development of railways and steam-powered machinery worldwide 🌍" }
+    ]
+  },
+  {
+    coords: [0.21715653074737845, 51.44438610099955],
+    name: "Richard Trevithick",
+    occupation: "1771 - 1833",
+    description: "Richard Trevithick lived and died here in 1833",
+    image: "https://upload.wikimedia.org/wikipedia/commons/d/da/Richard_Trevithick_portrait.jpg",
+    tldr: "Inventor and engineer, pioneer of high-pressure steam engines and railway locomotives.",
+    events: [
+      { date: "1801", description: "Demonstrated the Puffing Devil, the first full-size steam road locomotive, proving steam power could move people and goods 🚗" },
+      { date: "1804", description: "His Pen-y-darren locomotive hauled 10 tons of iron, 70 men, and 5 wagons at 5 mph, marking the first steam-powered railway journey 🚂" },
+      { date: "Legacy", description: "His high-pressure steam engine designs influenced the development of railways and steam-powered machinery worldwide 🌍" }
+    ]
+  },
+  {
+    coords: [-5.297903175243565, 50.21141257200283],
+    name: "Richard Trevithick",
+    occupation: "1771 - 1833",
+    description: "Richard Trevithick is memorialized here. Every year, Trevithick Day is celebrated here with steam engines from all over the UK attending",
+    image: "https://upload.wikimedia.org/wikipedia/commons/d/da/Richard_Trevithick_portrait.jpg",
+    tldr: "Inventor and engineer, pioneer of high-pressure steam engines and railway locomotives.",
+    events: [
+      { date: "1801", description: "Demonstrated the Puffing Devil, the first full-size steam road locomotive, proving steam power could move people and goods 🚗" },
+      { date: "1804", description: "His Pen-y-darren locomotive hauled 10 tons of iron, 70 men, and 5 wagons at 5 mph, marking the first steam-powered railway journey 🚂" },
+      { date: "Legacy", description: "His high-pressure steam engine designs influenced the development of railways and steam-powered machinery worldwide 🌍" }
+    ]
+  },
+  {
+    coords: [-5.312259661853537, 50.20284647659604],
+    name: "Richard Trevithick",
+    occupation: "1771 - 1833",
+    description: "Richard Trevithick once lived here, the cottage is named after him",
+    image: "https://upload.wikimedia.org/wikipedia/commons/d/da/Richard_Trevithick_portrait.jpg",
+    tldr: "Inventor and engineer, pioneer of high-pressure steam engines and railway locomotives.",
+    events: [
+      { date: "1801", description: "Demonstrated the Puffing Devil, the first full-size steam road locomotive, proving steam power could move people and goods 🚗" },
+      { date: "1804", description: "His Pen-y-darren locomotive hauled 10 tons of iron, 70 men, and 5 wagons at 5 mph, marking the first steam-powered railway journey 🚂" },
+      { date: "Legacy", description: "His high-pressure steam engine designs influenced the development of railways and steam-powered machinery worldwide 🌍" }
+    ]
+  },
+  {
     coords: [-2.342995117226929, 51.364585198357126],
     name: "Ralph Allen",
     occupation: "1693 - 1764",
