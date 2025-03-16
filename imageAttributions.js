@@ -86,6 +86,58 @@ const imageAttributions = [
       "author": "Web Summit",
       "license": "CC BY-SA 2.0"
     },
+       {
+      "name": "<a href='https://commons.wikimedia.org/wiki/File:Queen_And_Adam_Lambert_-_The_O2_-_Tuesday_12th_December_2017_QueenO2121217-47_(39066610085).jpg'>Roger Taylor</a>",
+      "author": "Raph_PH",
+      "license": "CC BY-SA 2.0"
+    },
+       {
+      "name": "<a href='https://commons.wikimedia.org/wiki/File:Gordon_Ramsay_colour_Allan_Warren.jpg'>Gordon Ramsay</a>",
+      "author": "Allan warren",
+      "license": "CC BY-SA 2.0"
+    },
+       {
+      "name": "https://commons.wikimedia.org/wiki/File:Ben_Ainslie_(GBR)_2021.jpg'>Ben Aislie</a>",
+      "author": "Danwilkinson1414",
+      "license": "CC BY-SA 4.0"
+    },
+       {
+      "name": "https://commons.wikimedia.org/wiki/File:Shield_of_Arms_of_the_Lord_Arundell_of_Wardour.svg'>Humphrey Arundell</a>",
+      "author": "Erpecom",
+      "license": "CC BY-SA 3.0"
+    },
+       {
+      "name": "http://www.gahetna.nl/over-ons/open-data'>William Golding</a>",
+      "author": "Thomaswwp",
+      "license": "CC BY-SA 3.0"
+    },
+       {
+      "name": "https://www.flickr.com/photos/27811717@N00/414780367/'>Aphex Twin</a>",
+      "author": "clattimo",
+      "license": "CC BY-SA 2.0"
+    },
+
+       {
+      "name": "https://www.gov.uk/government/people/david-cameron'>David Cameron</a>",
+      "author": "Lauren Hurley",
+      "license": "Contains public sector information licensed under the Open Government Licence v3.0."
+    },
+       {
+      "name": "https://www.geograph.org.uk/photo/848496'>Penlee Lifeboat crew</a>",
+      "author": "Tony Atkin",
+      "license": "CC BY-SA 4.0"
+    },
+     {
+      "name": "https://www.flickr.com/photos/raph_ph/31359883398/'>Mick Fleetwood</a>",
+      "author": "Raphael Pour-Hashemi",
+      "license": "CC BY-SA 2.0"
+    },
+       {
+      "name": "<a href='https://wellcomeimages.org/indexplus/result.html?_IXMAXHITS_=1&_IXACTION_=query&_IXFIRST_=2&_IXSR_=X4mph8opvQF&_IXSS_=_IXMAXHITS_%3d250%26_IXFPFX_%3dtemplates%252ft%26_IXFIRST_%3d1%26c%3d%2522historical%2bimages%2522%2bOR%2b%2522contemporary%2bimages%2522%2bOR%2b%2522corporate%2bimages%2522%2bOR%2b%2522contemporary%2bclinical%2bimages%2522%26%252asform%3dwellcome%252dimages%26%2524%253dsi%3dtext%26_IXACTION_%3dquery%26i_pre%3d%26IXTO%3d%26t%3d%26_IXINITSR_%3dy%26i_num%3d%26%2524%253dsort%3dsort%2bsortexpr%2bimage_sort%26w%3d%26%2524%253ds%3drutherford%2bmorison%26IXFROM%3d%26_IXshc%3dy%26%2524%2b%2528%2528with%2bwi_sfgu%2bis%2bY%2529%2band%2bnot%2b%2528%2522contemporary%2bclinical%2bimages%2522%2bindex%2bwi_collection%2bor%2b%2522corporate%2bimages%2522%2bindex%2bwi_collection%2529%2529%2band%2bnot%2bwith%2bsys_deleted%3d%252e%26_IXrescount%3d3&_IXSPFX_=templates%2ft&_IXFPFX_=templates%2ft'>Richard Lander</a>",
+      "author": "Mezzotint by C. Turner, 1835, after W. Brockedon 1835",
+      "license": "CC BY-SA 2.0"
+    },
+  
 
 
 
