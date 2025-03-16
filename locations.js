@@ -1,5 +1,291 @@
 export const locations = [
   {
+    coords: [-5.042344675273508, 50.261122758361424],
+    name: "Ben Ainslie",
+    occupation: "Born 1977",
+    description: "Ben Ainslie was first educated here",
+    image: "https://upload.wikimedia.org/wikipedia/commons/f/f7/Ben_Ainslie_(GBR)_2021.jpg",
+    tldr: "Most successful Olympic sailor in history, with medals in five consecutive Games.",
+    events: [
+      { date: "2000", description: "Won his first Olympic gold medal at the Sydney Olympics, marking the beginning of his dominance in the Laser class 🥇" },
+      { date: "2012", description: "Secured his fourth consecutive gold medal at the London Olympics, becoming the most decorated Olympic sailor with a total of five medals 🥇🥇🥇🥇🥈" },
+      { date: "2013", description: "Contributed to one of the greatest comebacks in sports history, helping Oracle Team USA win the America's Cup from an 8-1 deficit, winning eight consecutive races 🏆" }
+    ]
+  },
+  {
+    coords: [-5.712706410273509, 50.06581918899326],
+    name: "Ben Ainslie",
+    occupation: "Born 1977",
+    description: "In 2012, Ben Ainslie was the first of 8000 people to carry the Olympic torch in the UK, from Land’s End",
+    image: "https://upload.wikimedia.org/wikipedia/commons/f/f7/Ben_Ainslie_(GBR)_2021.jpg",
+    tldr: "Most successful Olympic sailor in history, with medals in five consecutive Games.",
+    events: [
+      { date: "2000", description: "Won his first Olympic gold medal at the Sydney Olympics, marking the beginning of his dominance in the Laser class 🥇" },
+      { date: "2012", description: "Secured his fourth consecutive gold medal at the London Olympics, becoming the most decorated Olympic sailor with a total of five medals 🥇🥇🥇🥇🥈" },
+      { date: "2013", description: "Contributed to one of the greatest comebacks in sports history, helping Oracle Team USA win the America's Cup from an 8-1 deficit, winning eight consecutive races 🏆" }
+    ]
+  },
+  {
+    coords: [-5.072095122829732, 50.20428778365154],
+    name: "Ben Ainslie",
+    occupation: "Born 1977",
+    description: "Ben Ainslie learnt to sail right here",
+    image: "https://upload.wikimedia.org/wikipedia/commons/f/f7/Ben_Ainslie_(GBR)_2021.jpg",
+    tldr: "Most successful Olympic sailor in history, with medals in five consecutive Games.",
+    events: [
+      { date: "2000", description: "Won his first Olympic gold medal at the Sydney Olympics, marking the beginning of his dominance in the Laser class 🥇" },
+      { date: "2012", description: "Secured his fourth consecutive gold medal at the London Olympics, becoming the most decorated Olympic sailor with a total of five medals 🥇🥇🥇🥇🥈" },
+      { date: "2013", description: "Contributed to one of the greatest comebacks in sports history, helping Oracle Team USA win the America's Cup from an 8-1 deficit, winning eight consecutive races 🏆" }
+    ]
+  },
+  {
+    coords: [-2.307141241459607, 53.22771621897348],
+    name: "Ben Ainslie",
+    occupation: "Born 1977",
+    description: "Ben Ainslie was educated here",
+    image: "https://upload.wikimedia.org/wikipedia/commons/f/f7/Ben_Ainslie_(GBR)_2021.jpg",
+    tldr: "Most successful Olympic sailor in history, with medals in five consecutive Games.",
+    events: [
+      { date: "2000", description: "Won his first Olympic gold medal at the Sydney Olympics, marking the beginning of his dominance in the Laser class 🥇" },
+      { date: "2012", description: "Secured his fourth consecutive gold medal at the London Olympics, becoming the most decorated Olympic sailor with a total of five medals 🥇🥇🥇🥇🥈" },
+      { date: "2013", description: "Contributed to one of the greatest comebacks in sports history, helping Oracle Team USA win the America's Cup from an 8-1 deficit, winning eight consecutive races 🏆" }
+    ]
+  },
+  {
+    coords: [-1.3213273952833124, 51.07202953350017],
+    name: "Ben Ainslie",
+    occupation: "Born 1977",
+    description: "Ben Ainslie attended sixth form here",
+    image: "https://upload.wikimedia.org/wikipedia/commons/f/f7/Ben_Ainslie_(GBR)_2021.jpg",
+    tldr: "Most successful Olympic sailor in history, with medals in five consecutive Games.",
+    events: [
+      { date: "2000", description: "Won his first Olympic gold medal at the Sydney Olympics, marking the beginning of his dominance in the Laser class 🥇" },
+      { date: "2012", description: "Secured his fourth consecutive gold medal at the London Olympics, becoming the most decorated Olympic sailor with a total of five medals 🥇🥇🥇🥇🥈" },
+      { date: "2013", description: "Contributed to one of the greatest comebacks in sports history, helping Oracle Team USA win the America's Cup from an 8-1 deficit, winning eight consecutive races 🏆" }
+    ]
+  },
+  {
+    coords: [-5.064684822259332, 50.19573395122702],
+    name: "Ben Ainslie",
+    occupation: "Born 1977",
+    description: "Ben Ainslie moved into this house when he was 8",
+    image: "https://upload.wikimedia.org/wikipedia/commons/f/f7/Ben_Ainslie_(GBR)_2021.jpg",
+    tldr: "Most successful Olympic sailor in history, with medals in five consecutive Games.",
+    events: [
+      { date: "2000", description: "Won his first Olympic gold medal at the Sydney Olympics, marking the beginning of his dominance in the Laser class 🥇" },
+      { date: "2012", description: "Secured his fourth consecutive gold medal at the London Olympics, becoming the most decorated Olympic sailor with a total of five medals 🥇🥇🥇🥇🥈" },
+      { date: "2013", description: "Contributed to one of the greatest comebacks in sports history, helping Oracle Team USA win the America's Cup from an 8-1 deficit, winning eight consecutive races 🏆" }
+    ]
+  },
+  {
+    coords: [-4.923844520626414, 50.56129250828119],
+    name: "Gordon Ramsay",
+    occupation: "Born 1966",
+    description: "House of Gordon Ramsay and family from 2016 until 2022 - they spent the first lockdown here",
+    image: "https://upload.wikimedia.org/wikipedia/commons/0/02/Gordon_Ramsay_colour_Allan_Warren.jpg",
+    tldr: "World-renowned chef, restaurateur, and television personality known for his culinary expertise and fiery demeanor.",
+    events: [
+      { date: "1998", description: "Opened Restaurant Gordon Ramsay in London, which quickly earned 3 Michelin stars, solidifying his status in the culinary world 🌟🌟🌟" },
+      { date: "2005", description: "Launched Kitchen Nightmares, a hit TV show where he helps struggling restaurants turn their businesses around, reaching millions of viewers 📺" },
+      { date: "Legacy", description: "His restaurants have earned a total of 17 Michelin stars, and he's inspired countless chefs through his TV shows and cookbooks 👨‍🍳" }
+    ]
+  },
+  {
+    coords: [-4.6342537416384735, 50.33596611042286],
+    name: "Gordon Ramsay",
+    occupation: "Born 1966",
+    description: "Former house of Gordon Ramsay, his daughter spent the first lockdown here",
+    image: "https://upload.wikimedia.org/wikipedia/commons/0/02/Gordon_Ramsay_colour_Allan_Warren.jpg",
+    tldr: "World-renowned chef, restaurateur, and television personality known for his culinary expertise and fiery demeanor.",
+    events: [
+      { date: "1998", description: "Opened Restaurant Gordon Ramsay in London, which quickly earned 3 Michelin stars, solidifying his status in the culinary world 🌟🌟🌟" },
+      { date: "2005", description: "Launched Kitchen Nightmares, a hit TV show where he helps struggling restaurants turn their businesses around, reaching millions of viewers 📺" },
+      { date: "Legacy", description: "His restaurants have earned a total of 17 Michelin stars, and he's inspired countless chefs through his TV shows and cookbooks 👨‍🍳" }
+    ]
+  },
+  {
+    coords: [-4.919210441062467, 50.54395022366681],
+    name: "Gordon Ramsay",
+    occupation: "Born 1966",
+    description: "Gordon and David beckham surprised the chef here in 2020",
+    image: "https://upload.wikimedia.org/wikipedia/commons/0/02/Gordon_Ramsay_colour_Allan_Warren.jpg",
+    tldr: "World-renowned chef, restaurateur, and television personality known for his culinary expertise and fiery demeanor.",
+    events: [
+      { date: "1998", description: "Opened Restaurant Gordon Ramsay in London, which quickly earned 3 Michelin stars, solidifying his status in the culinary world 🌟🌟🌟" },
+      { date: "2005", description: "Launched Kitchen Nightmares, a hit TV show where he helps struggling restaurants turn their businesses around, reaching millions of viewers 📺" },
+      { date: "Legacy", description: "His restaurants have earned a total of 17 Michelin stars, and he's inspired countless chefs through his TV shows and cookbooks 👨‍🍳" }
+    ]
+  },
+  {
+    coords: [-4.983759230201953, 50.43283943528857],
+    name: "Gordon Ramsay",
+    occupation: "Born 1966",
+    description: "Gordon Ramsay and his wife are ambassadors of the Cornwall Air Ambulance Trust",
+    image: "https://upload.wikimedia.org/wikipedia/commons/0/02/Gordon_Ramsay_colour_Allan_Warren.jpg",
+    tldr: "World-renowned chef, restaurateur, and television personality known for his culinary expertise and fiery demeanor.",
+    events: [
+      { date: "1998", description: "Opened Restaurant Gordon Ramsay in London, which quickly earned 3 Michelin stars, solidifying his status in the culinary world 🌟🌟🌟" },
+      { date: "2005", description: "Launched Kitchen Nightmares, a hit TV show where he helps struggling restaurants turn their businesses around, reaching millions of viewers 📺" },
+      { date: "Legacy", description: "His restaurants have earned a total of 17 Michelin stars, and he's inspired countless chefs through his TV shows and cookbooks 👨‍🍳" }
+    ]
+  },
+  {
+    coords: [-4.812306549248478, 50.5254652802048],
+    name: "Gordon Ramsay",
+    occupation: "Born 1966",
+    description: "Gordon Ramsay has said that Nice Baps here do the best baps in the country",
+    image: "https://upload.wikimedia.org/wikipedia/commons/0/02/Gordon_Ramsay_colour_Allan_Warren.jpg",
+    tldr: "World-renowned chef, restaurateur, and television personality known for his culinary expertise and fiery demeanor.",
+    events: [
+      { date: "1998", description: "Opened Restaurant Gordon Ramsay in London, which quickly earned 3 Michelin stars, solidifying his status in the culinary world 🌟🌟🌟" },
+      { date: "2005", description: "Launched Kitchen Nightmares, a hit TV show where he helps struggling restaurants turn their businesses around, reaching millions of viewers 📺" },
+      { date: "Legacy", description: "His restaurants have earned a total of 17 Michelin stars, and he's inspired countless chefs through his TV shows and cookbooks 👨‍🍳" }
+    ]
+  },
+  {
+    coords: [-5.054251161905209, 50.256697983848355],
+    name: "Roger Taylor",
+    occupation: "Born 1949",
+    description: "Roger Taylor grew up on this street",
+    image: "https://upload.wikimedia.org/wikipedia/commons/5/5a/Queen_And_Adam_Lambert_-_The_O2_-_Tuesday_12th_December_2017_QueenO2121217-47_(39066610085)_Cropped.jpg",
+    tldr: "Drummer, songwriter, and vocalist for the legendary rock band Queen.",
+    events: [
+      { date: "1970s-80s", description: "Wrote and performed hit songs like 'Radio Ga Ga', which topped charts globally and sold millions of copies 🎶" },
+      { date: "1984", description: "His song 'Radio Ga Ga' inspired the iconic hand-clapping sequence at Live Aid, uniting 72,000 fans and a global TV audience in unison 👏" },
+      { date: "Legacy", description: "His drumming style and songwriting shaped Queen’s sound, influencing generations of musicians and selling over 300 million albums worldwide 🥁" }
+    ]
+  },
+  {
+    coords: [-5.041863914268723, 50.2614018896672],
+    name: "Roger Taylor",
+    occupation: "Born 1949",
+    description: "Roger Taylor attended here, where he joined his first serious band ‘The Reaction’",
+    image: "https://upload.wikimedia.org/wikipedia/commons/5/5a/Queen_And_Adam_Lambert_-_The_O2_-_Tuesday_12th_December_2017_QueenO2121217-47_(39066610085)_Cropped.jpg",
+    tldr: "Drummer, songwriter, and vocalist for the legendary rock band Queen.",
+    events: [
+      { date: "1970s-80s", description: "Wrote and performed hit songs like 'Radio Ga Ga', which topped charts globally and sold millions of copies 🎶" },
+      { date: "1984", description: "His song 'Radio Ga Ga' inspired the iconic hand-clapping sequence at Live Aid, uniting 72,000 fans and a global TV audience in unison 👏" },
+      { date: "Legacy", description: "His drumming style and songwriting shaped Queen’s sound, influencing generations of musicians and selling over 300 million albums worldwide 🥁" }
+    ]
+  },
+  {
+    coords: [-5.075576932488789, 50.41603729833175],
+    name: "Roger Taylor",
+    occupation: "Born 1949",
+    description: "Roger Taylor played here with his former band ‘The Reaction’ here at the old Blue Lagoon",
+    image: "https://upload.wikimedia.org/wikipedia/commons/5/5a/Queen_And_Adam_Lambert_-_The_O2_-_Tuesday_12th_December_2017_QueenO2121217-47_(39066610085)_Cropped.jpg",
+    tldr: "Drummer, songwriter, and vocalist for the legendary rock band Queen.",
+    events: [
+      { date: "1970s-80s", description: "Wrote and performed hit songs like 'Radio Ga Ga', which topped charts globally and sold millions of copies 🎶" },
+      { date: "1984", description: "His song 'Radio Ga Ga' inspired the iconic hand-clapping sequence at Live Aid, uniting 72,000 fans and a global TV audience in unison 👏" },
+      { date: "Legacy", description: "His drumming style and songwriting shaped Queen’s sound, influencing generations of musicians and selling over 300 million albums worldwide 🥁" }
+    ]
+  },
+  {
+    coords: [-4.466175523650202, 50.45571077945755],
+    name: "Roger Taylor",
+    occupation: "Born 1949",
+    description: "Roger Taylor played here with his former band ‘The Reaction’",
+    image: "https://upload.wikimedia.org/wikipedia/commons/5/5a/Queen_And_Adam_Lambert_-_The_O2_-_Tuesday_12th_December_2017_QueenO2121217-47_(39066610085)_Cropped.jpg",
+    tldr: "Drummer, songwriter, and vocalist for the legendary rock band Queen.",
+    events: [
+      { date: "1970s-80s", description: "Wrote and performed hit songs like 'Radio Ga Ga', which topped charts globally and sold millions of copies 🎶" },
+      { date: "1984", description: "His song 'Radio Ga Ga' inspired the iconic hand-clapping sequence at Live Aid, uniting 72,000 fans and a global TV audience in unison 👏" },
+      { date: "Legacy", description: "His drumming style and songwriting shaped Queen’s sound, influencing generations of musicians and selling over 300 million albums worldwide 🥁" }
+    ]
+  },
+  {
+    coords: [-4.718276650600392, 50.47025811045315],
+    name: "Roger Taylor",
+    occupation: "Born 1949",
+    description: "Roger Taylor played here with his former band ‘The Reaction’",
+    image: "https://upload.wikimedia.org/wikipedia/commons/5/5a/Queen_And_Adam_Lambert_-_The_O2_-_Tuesday_12th_December_2017_QueenO2121217-47_(39066610085)_Cropped.jpg",
+    tldr: "Drummer, songwriter, and vocalist for the legendary rock band Queen.",
+    events: [
+      { date: "1970s-80s", description: "Wrote and performed hit songs like 'Radio Ga Ga', which topped charts globally and sold millions of copies 🎶" },
+      { date: "1984", description: "His song 'Radio Ga Ga' inspired the iconic hand-clapping sequence at Live Aid, uniting 72,000 fans and a global TV audience in unison 👏" },
+      { date: "Legacy", description: "His drumming style and songwriting shaped Queen’s sound, influencing generations of musicians and selling over 300 million albums worldwide 🥁" }
+    ]
+  },
+  {
+    coords: [-5.6823652989993025, 50.12572870941897],
+    name: "Roger Taylor",
+    occupation: "Born 1949",
+    description: "Roger Taylor played here with his former band ‘The Reaction’",
+    image: "https://upload.wikimedia.org/wikipedia/commons/5/5a/Queen_And_Adam_Lambert_-_The_O2_-_Tuesday_12th_December_2017_QueenO2121217-47_(39066610085)_Cropped.jpg",
+    tldr: "Drummer, songwriter, and vocalist for the legendary rock band Queen.",
+    events: [
+      { date: "1970s-80s", description: "Wrote and performed hit songs like 'Radio Ga Ga', which topped charts globally and sold millions of copies 🎶" },
+      { date: "1984", description: "His song 'Radio Ga Ga' inspired the iconic hand-clapping sequence at Live Aid, uniting 72,000 fans and a global TV audience in unison 👏" },
+      { date: "Legacy", description: "His drumming style and songwriting shaped Queen’s sound, influencing generations of musicians and selling over 300 million albums worldwide 🥁" }
+    ]
+  },
+  {
+    coords: [-5.064763277650054, 50.14704194225504],
+    name: "Roger Taylor",
+    occupation: "Born 1949",
+    description: "Roger Taylor played here with his former band ‘The Reaction’",
+    image: "https://upload.wikimedia.org/wikipedia/commons/5/5a/Queen_And_Adam_Lambert_-_The_O2_-_Tuesday_12th_December_2017_QueenO2121217-47_(39066610085)_Cropped.jpg",
+    tldr: "Drummer, songwriter, and vocalist for the legendary rock band Queen.",
+    events: [
+      { date: "1970s-80s", description: "Wrote and performed hit songs like 'Radio Ga Ga', which topped charts globally and sold millions of copies 🎶" },
+      { date: "1984", description: "His song 'Radio GaGa' inspired the iconic hand-clapping sequence at Live Aid, uniting 72,000 fans and a global TV audience in unison 👏" },
+      { date: "Legacy", description: "His drumming style and songwriting shaped Queen’s sound, influencing generations of musicians and selling over 300 million albums worldwide 🥁" }
+    ]
+  },
+  {
+    coords: [-5.050563947099129, 50.263207235496374],
+    name: "Roger Taylor",
+    occupation: "Born 1949",
+    description: "Roger Taylor hosted Queen’s first ever performance in 1970, paid £50",
+    image: "https://upload.wikimedia.org/wikipedia/commons/5/5a/Queen_And_Adam_Lambert_-_The_O2_-_Tuesday_12th_December_2017_QueenO2121217-47_(39066610085)_Cropped.jpg",
+    tldr: "Drummer, songwriter, and vocalist for the legendary rock band Queen.",
+    events: [
+      { date: "1970s-80s", description: "Wrote and performed hit songs like 'Radio Ga Ga', which topped charts globally and sold millions of copies 🎶" },
+      { date: "1984", description: "His song 'Radio GaGa' inspired the iconic hand-clapping sequence at Live Aid, uniting 72,000 fans and a global TV audience in unison 👏" },
+      { date: "Legacy", description: "His drumming style and songwriting shaped Queen’s sound, influencing generations of musicians and selling over 300 million albums worldwide 🥁" }
+    ]
+  },
+  {
+    coords: [-5.050040526496195, 50.264213412716856],
+    name: "Roger Taylor",
+    occupation: "Born 1949",
+    description: "Roger Taylor used to hang out with his friends here at the old Riverside coffee shop",
+    image: "https://upload.wikimedia.org/wikipedia/commons/5/5a/Queen_And_Adam_Lambert_-_The_O2_-_Tuesday_12th_December_2017_QueenO2121217-47_(39066610085)_Cropped.jpg",
+    tldr: "Drummer, songwriter, and vocalist for the legendary rock band Queen.",
+    events: [
+      { date: "1970s-80s", description: "Wrote and performed hit songs like 'Radio Ga Ga', which topped charts globally and sold millions of copies 🎶" },
+      { date: "1984", description: "His song 'Radio GaGa' inspired the iconic hand-clapping sequence at Live Aid, uniting 72,000 fans and a global TV audience in unison 👏" },
+      { date: "Legacy", description: "His drumming style and songwriting shaped Queen’s sound, influencing generations of musicians and selling over 300 million albums worldwide 🥁" }
+    ]
+  },
+  {
+    coords: [-5.051255360091446, 50.26406416012611],
+    name: "Roger Taylor",
+    occupation: "Born 1949",
+    description: "Roger Taylor was a choirboy here for six months in 1960",
+    image: "https://upload.wikimedia.org/wikipedia/commons/5/5a/Queen_And_Adam_Lambert_-_The_O2_-_Tuesday_12th_December_2017_QueenO2121217-47_(39066610085)_Cropped.jpg",
+    tldr: "Drummer, songwriter, and vocalist for the legendary rock band Queen.",
+    events: [
+      { date: "1970s-80s", description: "Wrote and performed hit songs like 'Radio Ga Ga', which topped charts globally and sold millions of copies 🎶" },
+      { date: "1984", description: "His song 'Radio GaGa' inspired the iconic hand-clapping sequence at Live Aid, uniting 72,000 fans and a global TV audience in unison 👏" },
+      { date: "Legacy", description: "His drumming style and songwriting shaped Queen’s sound, influencing generations of musicians and selling over 300 million albums worldwide 🥁" }
+    ]
+  },
+  {
+    coords: [-5.05313790205067, 50.26436881573964],
+    name: "Roger Taylor",
+    occupation: "Born 1949",
+    description: "Roger Taylor used to buy all his records from Ford’s Record shop here",
+    image: "https://upload.wikimedia.org/wikipedia/commons/5/5a/Queen_And_Adam_Lambert_-_The_O2_-_Tuesday_12th_December_2017_QueenO2121217-47_(39066610085)_Cropped.jpg",
+    tldr: "Drummer, songwriter, and vocalist for the legendary rock band Queen.",
+    events: [
+      { date: "1970s-80s", description: "Wrote and performed hit songs like 'Radio Ga Ga', which topped charts globally and sold millions of copies 🎶" },
+      { date: "1984", description: "His song 'Radio GaGa' inspired the iconic hand-clapping sequence at Live Aid, uniting 72,000 fans and a global TV audience in unison 👏" },
+      { date: "Legacy", description: "His drumming style and songwriting shaped Queen’s sound, influencing generations of musicians and selling over 300 million albums worldwide 🥁" }
+    ]
+  },
+  {
     coords: [-5.268161600026954, 50.225346482887836],
     name: "Richard Trevithick",
     occupation: "1771 - 1833",
