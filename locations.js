@@ -1,5 +1,291 @@
 export const locations = [
   {
+    coords: [-1.793456259795039, 51.0642956630458],
+    name: "William Golding",
+    occupation: "1911 - 1993",
+    description: "William Golding was a schoolmaster here from 1945 to 1962",
+    image: "https://upload.wikimedia.org/wikipedia/commons/f/f9/William_Golding_1983.jpg",
+    tldr: "Nobel Prize-winning author, best known for 'Lord of the Flies,' exploring the dark side of human nature.",
+    events: [
+      { date: "1954", description: "Published 'Lord of the Flies,' a dystopian novel about boys stranded on an island, selling over 25 million copies worldwide 🏝️" },
+      { date: "1983", description: "Awarded the Nobel Prize in Literature for his novels that illuminate the human condition in the world of today 🏆" },
+      { date: "Legacy", description: "His works continue to be studied for their insights into morality, power, and the complexities of human society 📚" }
+    ]
+  },
+  {
+    coords: [-1.7294732495755267, 51.41526686734832],
+    name: "William Golding",
+    occupation: "1911 - 1993",
+    description: "William Golding attended school here at the old Marlborough Grammar School, where his father was a science master",
+    image: "https://upload.wikimedia.org/wikipedia/commons/f/f9/William_Golding_1983.jpg",
+    tldr: "Nobel Prize-winning author, best known for 'Lord of the Flies,' exploring the dark side of human nature.",
+    events: [
+      { date: "1954", description: "Published 'Lord of the Flies,' a dystopian novel about boys stranded on an island, selling over 25 million copies worldwide 🏝️" },
+      { date: "1983", description: "Awarded the Nobel Prize in Literature for his novels that illuminate the human condition in the world of today 🏆" },
+      { date: "Legacy", description: "His works continue to be studied for their insights into morality, power, and the complexities of human society 📚" }
+    ]
+  },
+  {
+    coords: [-5.082506446752308, 50.41169822206344],
+    name: "William Golding",
+    occupation: "1911 - 1993",
+    description: "William Golding was born here in his grandmother’s house, to a science teacher father and suffragette mother",
+    image: "https://upload.wikimedia.org/wikipedia/commons/f/f9/William_Golding_1983.jpg",
+    tldr: "Nobel Prize-winning author, best known for 'Lord of the Flies,' exploring the dark side of human nature.",
+    events: [
+      { date: "1954", description: "Published 'Lord of the Flies,' a dystopian novel about boys stranded on an island, selling over 25 million copies worldwide 🏝️" },
+      { date: "1983", description: "Awarded the Nobel Prize in Literature for his novels that illuminate the human condition in the world of today 🏆" },
+      { date: "Legacy", description: "His works continue to be studied for their insights into morality, power, and the complexities of human society 📚" }
+    ]
+  },
+  {
+    coords: [-1.7283990384317538, 51.421889177868366],
+    name: "William Golding",
+    occupation: "1911 - 1993",
+    description: "William Golding grew up in this house",
+    image: "https://upload.wikimedia.org/wikipedia/commons/f/f9/William_Golding_1983.jpg",
+    tldr: "Nobel Prize-winning author, best known for 'Lord of the Flies,' exploring the dark side of human nature.",
+    events: [
+      { date: "1954", description: "Published 'Lord of the Flies,' a dystopian novel about boys stranded on an island, selling over 25 million copies worldwide 🏝️" },
+      { date: "1983", description: "Awarded the Nobel Prize in Literature for his novels that illuminate the human condition in the world of today 🏆" },
+      { date: "Legacy", description: "His works continue to be studied for their insights into morality, power, and the complexities of human society 📚" }
+    ]
+  },
+  {
+    coords: [-1.2546254826078174, 51.75291344500161],
+    name: "William Golding",
+    occupation: "1911 - 1993",
+    description: "William Golding attended Brasenose College here in 1930",
+    image: "https://upload.wikimedia.org/wikipedia/commons/f/f9/William_Golding_1983.jpg",
+    tldr: "Nobel Prize-winning author, best known for 'Lord of the Flies,' exploring the dark side of human nature.",
+    events: [
+      { date: "1954", description: "Published 'Lord of the Flies,' a dystopian novel about boys stranded on an island, selling over 25 million copies worldwide 🏝️" },
+      { date: "1983", description: "Awarded the Nobel Prize in Literature for his novels that illuminate the human condition in the world of today 🏆" },
+      { date: "Legacy", description: "His works continue to be studied for their insights into morality, power, and the complexities of human society 📚" }
+    ]
+  },
+  {
+    coords: [0.024101747507238116, 51.09329020901604],
+    name: "William Golding",
+    occupation: "1911 - 1993",
+    description: "William Golding taught here for two years from 1935",
+    image: "https://upload.wikimedia.org/wikipedia/commons/f/f9/William_Golding_1983.jpg",
+    tldr: "Nobel Prize-winning author, best known for 'Lord of the Flies,' exploring the dark side of human nature.",
+    events: [
+      { date: "1954", description: "Published 'Lord of the Flies,' a dystopian novel about boys stranded on an island, selling over 25 million copies worldwide 🏝️" },
+      { date: "1983", description: "Awarded the Nobel Prize in Literature for his novels that illuminate the human condition in the world of today 🏆" },
+      { date: "Legacy", description: "His works continue to be studied for their insights into morality, power, and the complexities of human society 📚" }
+    ]
+  },
+  {
+    coords: [0.5301987161857431, 51.26523365522223],
+    name: "William Golding",
+    occupation: "1911 - 1993",
+    description: "William Golding was a schoolmaster here from 1938 to 1940, teaching English and Music",
+    image: "https://upload.wikimedia.org/wikipedia/commons/f/f9/William_Golding_1983.jpg",
+    tldr: "Nobel Prize-winning author, best known for 'Lord of the Flies,' exploring the dark side of human nature.",
+    events: [
+      { date: "1954", description: "Published 'Lord of the Flies,' a dystopian novel about boys stranded on an island, selling over 25 million copies worldwide 🏝️" },
+      { date: "1983", description: "Awarded the Nobel Prize in Literature for his novels that illuminate the human condition in the world of today 🏆" },
+      { date: "Legacy", description: "His works continue to be studied for their insights into morality, power, and the complexities of human society 📚" }
+    ]
+  },
+  {
+    coords: [-4.222788458661562, 50.37361254397136],
+    name: "William Golding",
+    occupation: "1911 - 1993",
+    description: "William Golding joined the Navy here from 1940 until the end of the war. He was involved in D-day and the attack of Bismarck",
+    image: "https://upload.wikimedia.org/wikipedia/commons/f/f9/William_Golding_1983.jpg",
+    tldr: "Nobel Prize-winning author, best known for 'Lord of the Flies,' exploring the dark side of human nature.",
+    events: [
+      { date: "1954", description: "Published 'Lord of the Flies,' a dystopian novel about boys stranded on an island, selling over 25 million copies worldwide 🏝️" },
+      { date: "1983", description: "Awarded the Nobel Prize in Literature for his novels that illuminate the human condition in the world of today 🏆" },
+      { date: "Legacy", description: "His works continue to be studied for their insights into morality, power, and the complexities of human society 📚" }
+    ]
+  },
+  {
+    coords: [-5.109265781937903, 50.20802440197848],
+    name: "William Golding",
+    occupation: "1911 - 1993",
+    description: "William Golding moved here in 1985 and died here in 1993 after a life battling alcohol addiction",
+    image: "https://upload.wikimedia.org/wikipedia/commons/f/f9/William_Golding_1983.jpg",
+    tldr: "Nobel Prize-winning author, best known for 'Lord of the Flies,' exploring the dark side of human nature.",
+    events: [
+      { date: "1954", description: "Published 'Lord of the Flies,' a dystopian novel about boys stranded on an island, selling over 25 million copies worldwide 🏝️" },
+      { date: "1983", description: "Awarded the Nobel Prize in Literature for his novels that illuminate the human condition in the world of today 🏆" },
+      { date: "Legacy", description: "His works continue to be studied for their insights into morality, power, and the complexities of human society 📚" }
+    ]
+  },
+  {
+    coords: [-1.9745021212170635, 51.00634696779683],
+    name: "William Golding",
+    occupation: "1911 - 1993",
+    description: "William Golding buried here near where he once lived",
+    image: "https://upload.wikimedia.org/wikipedia/commons/f/f9/William_Golding_1983.jpg",
+    tldr: "Nobel Prize-winning author, best known for 'Lord of the Flies,' exploring the dark side of human nature.",
+    events: [
+      { date: "1954", description: "Published 'Lord of the Flies,' a dystopian novel about boys stranded on an island, selling over 25 million copies worldwide 🏝️" },
+      { date: "1983", description: "Awarded the Nobel Prize in Literature for his novels that illuminate the human condition in the world of today 🏆" },
+      { date: "Legacy", description: "His works continue to be studied for their insights into morality, power, and the complexities of human society 📚" }
+    ]
+  },
+  {
+    coords: [-5.421261891172765, 50.18579032176779],
+    name: "Rick Rescorla",
+    occupation: "1939 - 2001",
+    description: "Childhood home of Rick Rescorla",
+    image: "https://upload.wikimedia.org/wikipedia/commons/9/91/Rick_Rescorla_in_war.jpg",
+    tldr: "Vietnam War veteran and security chief who saved thousands during the 9/11 attacks by defying orders and leading evacuations, famously using his megaphone to sing Cornish songs to keep spirits high.",
+    events: [
+      { date: "1960s", description: "Served as a platoon leader in the Vietnam War, earning a Silver Star for his bravery at the Battle of Ia Drang Valley 🎖️" },
+      { date: "1980s-90s", description: "As a security consultant, he predicted a terrorist attack on the World Trade Center and developed evacuation plans, emphasizing stairwell drills 🏢" },
+      { date: "2001", description: "On 9/11, he disregarded official instructions and led over 2,700 Morgan Stanley employees to safety from the South Tower, singing Cornish songs via megaphone to boost morale 🕊️" }
+    ]
+  },
+  {
+    coords: [-5.411934438526171, 50.17988866803747],
+    name: "Rick Rescorla",
+    occupation: "1939 - 2001",
+    description: "Rick Rescorla grew up around the US army preparing for D-day, he idolised them",
+    image: "https://upload.wikimedia.org/wikipedia/commons/9/91/Rick_Rescorla_in_war.jpg",
+    tldr: "Vietnam War veteran and security chief who saved thousands during the 9/11 attacks by defying orders and leading evacuations, famously using his megaphone to sing Cornish songs to keep spirits high.",
+    events: [
+      { date: "1960s", description: "Served as a platoon leader in the Vietnam War, earning a Silver Star for his bravery at the Battle of Ia Drang Valley 🎖️" },
+      { date: "1980s-90s", description: "As a security consultant, he predicted a terrorist attack on the World Trade Center and developed evacuation plans, emphasizing stairwell drills 🏢" },
+      { date: "2001", description: "On 9/11, he disregarded official instructions and led over 2,700 Morgan Stanley employees to safety from the South Tower, singing Cornish songs via megaphone to boost morale 🕊️" }
+    ]
+  },
+  {
+    coords: [-5.422153922471205, 50.18849474368585],
+    name: "Rick Rescorla",
+    occupation: "1939 - 2001",
+    description: "Rick Rescorla played along this seafront as a young boy",
+    image: "https://upload.wikimedia.org/wikipedia/commons/9/91/Rick_Rescorla_in_war.jpg",
+    tldr: "Vietnam War veteran and security chief who saved thousands during the 9/11 attacks by defying orders and leading evacuations, famously using his megaphone to sing Cornish songs to keep spirits high.",
+    events: [
+      { date: "1960s", description: "Served as a platoon leader in the Vietnam War, earning a Silver Star for his bravery at the Battle of Ia Drang Valley 🎖️" },
+      { date: "1980s-90s", description: "As a security consultant, he predicted a terrorist attack on the World Trade Center and developed evacuation plans, emphasizing stairwell drills 🏢" },
+      { date: "2001", description: "On 9/11, he disregarded official instructions and led over 2,700 Morgan Stanley employees to safety from the South Tower, singing Cornish songs via megaphone to boost morale 🕊️" }
+    ]
+  },
+  {
+    coords: [-5.5057185386756045, 50.1284946345166],
+    name: "Rick Rescorla",
+    occupation: "1939 - 2001",
+    description: "In 2019 a train here was named after Rick Rescorla",
+    image: "https://upload.wikimedia.org/wikipedia/commons/9/91/Rick_Rescorla_in_war.jpg",
+    tldr: "Vietnam War veteran and security chief who saved thousands during the 9/11 attacks by defying orders and leading evacuations, famously using his megaphone to sing Cornish songs to keep spirits high.",
+    events: [
+      { date: "1960s", description: "Served as a platoon leader in the Vietnam War, earning a Silver Star for his bravery at the Battle of Ia Drang Valley 🎖️" },
+      { date: "1980s-90s", description: "As a security consultant, he predicted a terrorist attack on the World Trade Center and developed evacuation plans, emphasizing stairwell drills 🏢" },
+      { date: "2001", description: "On 9/11, he disregarded official instructions and led over 2,700 Morgan Stanley employees to safety from the South Tower, singing Cornish songs via megaphone to boost morale 🕊️" }
+    ]
+  },
+  {
+    coords: [-5.397670792910571, 50.2231262704431],
+    name: "Helen Glover",
+    occupation: "Born 1986",
+    description: "Helen Glover grew up playing here by the sea",
+    image: "https://upload.wikimedia.org/wikipedia/commons/6/60/Helen_Glover_with_2012_Olympic_Gold_medal.jpg",
+    tldr: "Two-time Olympic gold medalist and world champion rower.",
+    events: [
+      { date: "2012", description: "Won her first Olympic gold medal at the London Olympics in the Women’s Pair event 🥇" },
+      { date: "2016", description: "Secured her second Olympic gold medal at the Rio Olympics in the Women’s Pair event 🥇" },
+      { date: "2020", description: "Returned to rowing after having three children and competed in the Tokyo Olympics 🌟" }
+    ]
+  },
+  {
+    coords: [-5.091790702288674, 50.266262085848545],
+    name: "Helen Glover",
+    occupation: "Born 1986",
+    description: "Helen Glover was born here in Penzance",
+    image: "https://upload.wikimedia.org/wikipedia/commons/6/60/Helen_Glover_with_2012_Olympic_Gold_medal.jpg",
+    tldr: "Two-time Olympic gold medalist and world champion rower.",
+    events: [
+      { date: "2012", description: "Won her first Olympic gold medal at the London Olympics in the Women’s Pair event 🥇" },
+      { date: "2016", description: "Secured her second Olympic gold medal at the Rio Olympics in the Women’s Pair event 🥇" },
+      { date: "2020", description: "Returned to rowing after having three children and competed in the Tokyo Olympics 🌟" }
+    ]
+  },
+  {
+    coords: [-5.557649683435314, 50.125100494680325],
+    name: "Helen Glover",
+    occupation: "Born 1986",
+    description: "Helen Glover attended primary school here",
+    image: "https://upload.wikimedia.org/wikipedia/commons/6/60/Helen_Glover_with_2012_Olympic_Gold_medal.jpg",
+    tldr: "Two-time Olympic gold medalist and world champion rower.",
+    events: [
+      { date: "2012", description: "Won her first Olympic gold medal at the London Olympics in the Women’s Pair event 🥇" },
+      { date: "2016", description: "Secured her second Olympic gold medal at the Rio Olympics in the Women’s Pair event 🥇" },
+      { date: "2020", description: "Returned to rowing after having three children and competed in the Tokyo Olympics 🌟" }
+    ]
+  },
+  {
+    coords: [-5.540952122889226, 50.1248730467631],
+    name: "Helen Glover",
+    occupation: "Born 1986",
+    description: "Helen Glover attended secondary school here",
+    image: "https://upload.wikimedia.org/wikipedia/commons/6/60/Helen_Glover_with_2012_Olympic_Gold_medal.jpg",
+    tldr: "Two-time Olympic gold medalist and world champion rower.",
+    events: [
+      { date: "2012", description: "Won her first Olympic gold medal at the London Olympics in the Women’s Pair event 🥇" },
+      { date: "2016", description: "Secured her second Olympic gold medal at the Rio Olympics in the Women’s Pair event 🥇" },
+      { date: "2020", description: "Returned to rowing after having three children and competed in the Tokyo Olympics 🌟" }
+    ]
+  },
+  {
+    coords: [-2.7295421521222822, 51.12436881210308],
+    name: "Helen Glover",
+    occupation: "Born 1986",
+    description: "Helen Glover won a scholarship here between 2002 and 2004",
+    image: "https://upload.wikimedia.org/wikipedia/commons/6/60/Helen_Glover_with_2012_Olympic_Gold_medal.jpg",
+    tldr: "Two-time Olympic gold medalist and world champion rower.",
+    events: [
+      { date: "2012", description: "Won her first Olympic gold medal at the London Olympics in the Women’s Pair event 🥇" },
+      { date: "2016", description: "Secured her second Olympic gold medal at the Rio Olympics in the Women’s Pair event 🥇" },
+      { date: "2020", description: "Returned to rowing after having three children and competed in the Tokyo Olympics 🌟" }
+    ]
+  },
+  {
+    coords: [-4.110211794332662, 50.42017741380633],
+    name: "Helen Glover",
+    occupation: "Born 1986",
+    description: "Helen Glover studied here to teach PE to children",
+    image: "https://upload.wikimedia.org/wikipedia/commons/6/60/Helen_Glover_with_2012_Olympic_Gold_medal.jpg",
+    tldr: "Two-time Olympic gold medalist and world champion rower.",
+    events: [
+      { date: "2012", description: "Won her first Olympic gold medal at the London Olympics in the Women’s Pair event 🥇" },
+      { date: "2016", description: "Secured her second Olympic gold medal at the Rio Olympics in the Women’s Pair event 🥇" },
+      { date: "2020", description: "Returned to rowing after having three children and competed in the Tokyo Olympics 🌟" }
+    ]
+  },
+    {
+    coords: [-5.421930794445449, 50.099805545542836],
+    name: "Helen Glover",
+    occupation: "Born 1986",
+    description: "Helen Glover married Steve Backshall here in 2016 at Prussia Cove",
+    image: "https://upload.wikimedia.org/wikipedia/commons/6/60/Helen_Glover_with_2012_Olympic_Gold_medal.jpg",
+    tldr: "Two-time Olympic gold medalist and world champion rower.",
+    events: [
+      { date: "2012", description: "Won her first Olympic gold medal at the London Olympics in the Women’s Pair event 🥇" },
+      { date: "2016", description: "Secured her second Olympic gold medal at the Rio Olympics in the Women’s Pair event 🥇" },
+      { date: "2020", description: "Returned to rowing after having three children and competed in the Tokyo Olympics 🌟" }
+    ]
+  },
+  {
+    coords: [-2.4077114188084185, 51.39186297813491],
+    name: "Helen Glover",
+    occupation: "Born 1986",
+    description: "Helen Glover first competed for Team GB at this club",
+    image: "https://upload.wikimedia.org/wikipedia/commons/6/60/Helen_Glover_with_2012_Olympic_Gold_medal.jpg",
+    tldr: "Two-time Olympic gold medalist and world champion rower.",
+    events: [
+      { date: "2012", description: "Won her first Olympic gold medal at the London Olympics in the Women’s Pair event 🥇" },
+      { date: "2016", description: "Secured her second Olympic gold medal at the Rio Olympics in the Women’s Pair event 🥇" },
+      { date: "2020", description: "Returned to rowing after having three children and competed in the Tokyo Olympics 🌟" }
+    ]
+  },
+  {
     coords: [-5.042344675273508, 50.261122758361424],
     name: "Ben Ainslie",
     occupation: "Born 1977",
