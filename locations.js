@@ -1,4 +1,278 @@
 export const locations = [
+  [
+  {
+    coords: [-4.715656905297219, 50.507647375858866],
+    name: "Humphrey Arundell",
+    occupation: "c. 1513 - 1550",
+    description: "Humphrey Arundell was born in this village",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSOy7bqC09Kptms4Dq1UP2wyUhBMGTjerJEw&s",
+    tldr: "Arundell led the Cornish rebellion against the Protestant religious reforms of Edward VI.",
+    events: [
+      { date: "1549", description: "Led the Cornish Rebellion, a significant uprising against the English government's imposition of Protestantism 🏹" },
+      { date: "1549", description: "His forces seized control of several key castles, including St Michael's Mount and Pendennis Castle, in an attempt to resist religious changes 🏰" },
+      { date: "1549", description: "The rebellion ultimately failed, leading to Arundell's capture and execution for treason, marking the end of a major resistance movement in Cornwall ⚔️" }
+    ]
+  },
+  {
+    coords: [-5.477802414773885, 50.11659637008989],
+    name: "Humphrey Arundell",
+    occupation: "c. 1513 - 1550",
+    description: "Humphrey Arundell was in charge of a garrison here at St Michael’s Mount in the 1540s",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSOy7bqC09Kptms4Dq1UP2wyUhBMGTjerJEw&s",
+    tldr: "Arundell led the Cornish rebellion against the Protestant religious reforms of Edward VI.",
+    events: [
+      { date: "1549", description: "Led the Cornish Rebellion, a significant uprising against the English government's imposition of Protestantism 🏹" },
+      { date: "1549", description: "His forces seized control of several key castles, including St Michael's Mount and Pendennis Castle, in an attempt to resist religious changes 🏰" },
+      { date: "1549", description: "The rebellion ultimately failed, leading to Arundell's capture and execution for treason, marking the end of a major resistance movement in Cornwall ⚔️" }
+    ]
+  },
+  {
+    coords: [-5.023765176794108, 50.155466710635096],
+    name: "Humphrey Arundell",
+    occupation: "c. 1513 - 1550",
+    description: "Humphrey Arundell’s forces stole guns from the King’s St Mawes Castle here in 1549",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSOy7bqC09Kptms4Dq1UP2wyUhBMGTjerJEw&s",
+    tldr: "Arundell led the Cornish rebellion against the Protestant religious reforms of Edward VI.",
+    events: [
+      { date: "1549", description: "Led the Cornish Rebellion, a significant uprising against the English government's imposition of Protestantism 🏹" },
+      { date: "1549", description: "His forces seized control of several key castles, including St Michael's Mount and Pendennis Castle, in an attempt to resist religious changes 🏰" },
+      { date: "1549", description: "The rebellion ultimately failed, leading to Arundell's capture and execution for treason, marking the end of a major resistance movement in Cornwall ⚔️" }
+    ]
+  },
+  {
+    coords: [-5.046545114342082, 50.14607031456893],
+    name: "Humphrey Arundell",
+    occupation: "c. 1513 - 1550",
+    description: "Humphrey Arundell’s forces stole guns from the King’s Pendennis Castle here in 1549",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSOy7bqC09Kptms4Dq1UP2wyUhBMGTjerJEw&s",
+    tldr: "Arundell led the Cornish rebellion against the Protestant religious reforms of Edward VI.",
+    events: [
+      { date: "1549", description: "Led the Cornish Rebellion, a significant uprising against the English government's imposition of Protestantism 🏹" },
+      { date: "1549", description: "His forces seized control of several key castles, including St Michael's Mount and Pendennis Castle, in an attempt to resist religious changes 🏰" },
+      { date: "1549", description: "The rebellion ultimately failed, leading to Arundell's capture and execution for treason, marking the end of a major resistance movement in Cornwall ⚔️" }
+    ]
+  },
+  {
+    coords: [-4.237765750308663, 50.40040709005201],
+    name: "Humphrey Arundell",
+    occupation: "c. 1513 - 1550",
+    description: "Humphrey Arundell’s forces stole guns from the King’s Trematon Castle here in 1549",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSOy7bqC09Kptms4Dq1UP2wyUhBMGTjerJEw&s",
+    tldr: "Arundell led the Cornish rebellion against the Protestant religious reforms of Edward VI.",
+    events: [
+      { date: "1549", description: "Led the Cornish Rebellion, a significant uprising against the English government's imposition of Protestantism 🏹" },
+      { date: "1549", description: "His forces seized control of several key castles, including St Michael's Mount and Pendennis Castle, in an attempt to resist religious changes 🏰" },
+      { date: "1549", description: "The rebellion ultimately failed, leading to Arundell's capture and execution for treason, marking the end of a major resistance movement in Cornwall ⚔️" }
+    ]
+  },
+  {
+    coords: [-4.361406048018749, 50.63753838327782],
+    name: "Humphrey Arundell",
+    occupation: "c. 1513 - 1550",
+    description: "Humphrey Arundell was imprisoned here in Launceston castle in 1549, before being taken to the Tower of London",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSOy7bqC09Kptms4Dq1UP2wyUhBMGTjerJEw&s",
+    tldr: "Arundell led the Cornish rebellion against the Protestant religious reforms of Edward VI.",
+    events: [
+      { date: "1549", description: "Led the Cornish Rebellion, a significant uprising against the English government's imposition of Protestantism 🏹" },
+      { date: "1549", description: "His forces seized control of several key castles, including St Michael's Mount and Pendennis Castle, in an attempt to resist religious changes 🏰" },
+      { date: "1549", description: "The rebellion ultimately failed, leading to Arundell's capture and execution for treason, marking the end of a major resistance movement in Cornwall ⚔️" }
+    ]
+  },
+  {
+    coords: [-3.9339798811380486, 50.79296102431608],
+    name: "Humphrey Arundell",
+    occupation: "c. 1513 - 1550",
+    description: "On this site, Humphrey Arundell, led the fifth and final battle of the Cornish Rebellion in 1549",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSOy7bqC09Kptms4Dq1UP2wyUhBMGTjerJEw&s",
+    tldr: "Arundell led the Cornish rebellion against the Protestant religious reforms of Edward VI.",
+    events: [
+      { date: "1549", description: "Led the Cornish Rebellion, a significant uprising against the English government's imposition of Protestantism 🏹" },
+      { date: "1549", description: "His forces seized control of several key castles, including St Michael's Mount and Pendennis Castle, in an attempt to resist religious changes 🏰" },
+      { date: "1549", description: "The rebellion ultimately failed, leading to Arundell's capture and execution for treason, marking the end of a major resistance movement in Cornwall ⚔️" }
+    ]
+  },
+  {
+    coords: [-5.536363188380317, 50.11892894605495],
+    name: "Humphry Davy",
+    occupation: "1778 - 1829",
+    description: "Humphry Davy is memorialised here, near where he was born and raised",
+    image: "https://upload.wikimedia.org/wikipedia/commons/8/8f/Sir_Humphry_Davy%2C_Bt_by_Thomas_Phillips.jpg",
+    tldr: "Brilliant chemist and inventor who discovered several elements and invented the miner's safety lamp.",
+    events: [
+      { date: "1807-1808", description: "Isolated several new elements, including sodium, potassium, calcium, strontium, barium, and magnesium, using electrolysis 🧪" },
+      { date: "1815", description: "Invented the Davy Lamp, a safety lamp for miners that significantly reduced the risk of explosions from flammable gases 🔥" },
+      { date: "1819", description: "Became the first man of science to be awarded a baronetcy, the highest honour ever given to a scientist in Britain at that time 🏰" }
+    ]
+  },
+  {
+    coords: [-5.53617928925978, 50.11916924184048],
+    name: "Humphry Davy",
+    occupation: "1778 - 1829",
+    description: "Humphry Davy was born here",
+    image: "https://upload.wikimedia.org/wikipedia/commons/8/8f/Sir_Humphry_Davy%2C_Bt_by_Thomas_Phillips.jpg",
+    tldr: "Brilliant chemist and inventor who discovered several elements and invented the miner's safety lamp.",
+    events: [
+      { date: "1807-1808", description: "Isolated several new elements, including sodium, potassium, calcium, strontium, barium, and magnesium, using electrolysis 🧪" },
+      { date: "1815", description: "Invented the Davy Lamp, a safety lamp for miners that significantly reduced the risk of explosions from flammable gases 🔥" },
+      { date: "1819", description: "Became the first man of science to be awarded a baronetcy, the highest honour ever given to a scientist in Britain at that time 🏰" }
+    ]
+  },
+  {
+    coords: [-5.051240826091462, 50.26465648917895],
+    name: "Humphry Davy",
+    occupation: "1778 - 1829",
+    description: "Humphry Davy attended Truro Grammar School here in 1793",
+    image: "https://upload.wikimedia.org/wikipedia/commons/8/8f/Sir_Humphry_Davy%2C_Bt_by_Thomas_Phillips.jpg",
+    tldr: "Brilliant chemist and inventor who discovered several elements and invented the miner's safety lamp.",
+    events: [
+      { date: "1807-1808", description: "Isolated several new elements, including sodium, potassium, calcium, strontium, barium, and magnesium, using electrolysis 🧪" },
+      { date: "1815", description: "Invented the Davy Lamp, a safety lamp for miners that significantly reduced the risk of explosions from flammable gases 🔥" },
+      { date: "1819", description: "Became the first man of science to be awarded a baronetcy, the highest honour ever given to a scientist in Britain at that time 🏰" }
+    ]
+  },
+  {
+    coords: [-5.4929796969170575, 50.13848277998981],
+    name: "Humphry Davy",
+    occupation: "1778 - 1829",
+    description: "Humphry Davy moved here with his family at age 9",
+    image: "https://upload.wikimedia.org/wikipedia/commons/8/8f/Sir_Humphry_Davy%2C_Bt_by_Thomas_Phillips.jpg",
+    tldr: "Brilliant chemist and inventor who discovered several elements and invented the miner's safety lamp.",
+    events: [
+      { date: "1807-1808", description: "Isolated several new elements, including sodium, potassium, calcium, strontium, barium, and magnesium, using electrolysis 🧪" },
+      { date: "1815", description: "Invented the Davy Lamp, a safety lamp for miners that significantly reduced the risk of explosions from flammable gases 🔥" },
+      { date: "1819", description: "Became the first man of science to be awarded a baronetcy, the highest honour ever given to a scientist in Britain at that time 🏰" }
+    ]
+  },
+  {
+    coords: [-5.548858411690544, 50.11553042460712],
+    name: "Humphry Davy",
+    occupation: "1778 - 1829",
+    description: "On this river, aged 17, a Quaker mentor showed Humphry Davy the effect of running two blocks of ice together",
+    image: "https://upload.wikimedia.org/wikipedia/commons/8/8f/Sir_Humphry_Davy%2C_Bt_by_Thomas_Phillips.jpg",
+    tldr: "Brilliant chemist and inventor who discovered several elements and invented the miner's safety lamp.",
+    events: [
+      { date: "1807-1808", description: "Isolated several new elements, including sodium, potassium, calcium, strontium, barium, and magnesium, using electrolysis 🧪" },
+      { date: "1815", description: "Invented the Davy Lamp, a safety lamp for miners that significantly reduced the risk of explosions from flammable gases 🔥" },
+      { date: "1819", description: "Became the first man of science to be awarded a baronetcy, the highest honour ever given to a scientist in Britain at that time 🏰" }
+    ]
+  },
+  {
+    coords: [-4.138456499554915, 50.37492981183739],
+    name: "Humphry Davy",
+    occupation: "1778 - 1829",
+    description: "The Chemistry building at the University of Plymouth, The Davy Building, is named after Humphry Davy",
+    image: "https://upload.wikimedia.org/wikipedia/commons/8/8f/Sir_Humphry_Davy%2C_Bt_by_Thomas_Phillips.jpg",
+    tldr: "Brilliant chemist and inventor who discovered several elements and invented the miner's safety lamp.",
+    events: [
+      { date: "1807-1808", description: "Isolated several new elements, including sodium, potassium, calcium, strontium, barium, and magnesium, using electrolysis 🧪" },
+      { date: "1815", description: "Invented the Davy Lamp, a safety lamp for miners that significantly reduced the risk of explosions from flammable gases 🔥" },
+      { date: "1819", description: "Became the first man of science to be awarded a baronetcy, the highest honour ever given to a scientist in Britain at that time 🏰" }
+    ]
+  },
+  {
+    coords: [-1.1075001671338205, 50.79859602116518],
+    name: "Humphry Davy",
+    occupation: "1778 - 1829",
+    description: "Humphry Davy conducted numerous tests here for the Navy after they had approached him in 1823",
+    image: "https://upload.wikimedia.org/wikipedia/commons/8/8f/Sir_Humphry_Davy%2C_Bt_by_Thomas_Phillips.jpg",
+    tldr: "Brilliant chemist and inventor who discovered several elements and invented the miner's safety lamp.",
+    events: [
+      { date: "1807-1808", description: "Isolated several new elements, including sodium, potassium, calcium, strontium, barium, and magnesium, using electrolysis 🧪" },
+      { date: "1815", description: "Invented the Davy Lamp, a safety lamp for miners that significantly reduced the risk of explosions from flammable gases 🔥" },
+      { date: "1819", description: "Became the first man of science to be awarded a baronetcy, the highest honour ever given to a scientist in Britain at that time 🏰" }
+    ]
+  },
+  {
+    coords: [-5.540381166210589, 50.12463378458647],
+    name: "Humphry Davy",
+    occupation: "1778 - 1829",
+    description: "This school is named after Humphry Davy",
+    image: "https://upload.wikimedia.org/wikipedia/commons/8/8f/Sir_Humphry_Davy%2C_Bt_by_Thomas_Phillips.jpg",
+    tldr: "Brilliant chemist and inventor who discovered several elements and invented the miner's safety lamp.",
+    events: [
+      { date: "1807-1808", description: "Isolated several new elements, including sodium, potassium, calcium, strontium, barium, and magnesium, using electrolysis 🧪" },
+      { date: "1815", description: "Invented the Davy Lamp, a safety lamp for miners that significantly reduced the risk of explosions from flammable gases 🔥" },
+      { date: "1819", description: "Became the first man of science to be awarded a baronetcy, the highest honour ever given to a scientist in Britain at that time 🏰" }
+    ]
+  },
+  {
+    coords: [-5.20236375871204, 50.231650795155886],
+    name: "Aphex Twin",
+    occupation: "Born 1971",
+    description: "Aphex Twin played gigs at the historic Gwennap Pit here",
+    image: "https://upload.wikimedia.org/wikipedia/commons/7/76/Aphex_Twin_2.jpg",
+    tldr: "Influential electronic musician and composer known for innovative and experimental sounds.",
+    events: [
+      { date: "1992", description: "Released his debut album 'Selected Ambient Works 85-92', widely regarded as a seminal work in ambient techno 🎵" },
+      { date: "1997", description: "His track 'Windowlicker' peaked at #16 on the UK Singles Chart and spent 362 weeks on the Official Physical Singles Chart 📈" },
+      { date: "2015", description: "Won a Grammy Award for Best Dance/Electronic Album for 'Syro', which peaked at #8 on the UK Albums Chart 🏆" }
+    ]
+  },
+  {
+    coords: [-5.21710181646881, 50.2532446185068],
+    name: "Aphex Twin",
+    occupation: "Born 1971",
+    description: "Aphex Twin worked in the mines around here at 17 to be able to afford to buy records",
+    image: "https://upload.wikimedia.org/wikipedia/commons/7/76/Aphex_Twin_2.jpg",
+    tldr: "Influential electronic musician and composer known for innovative and experimental sounds.",
+    events: [
+      { date: "1992", description: "Released his debut album 'Selected Ambient Works 85-92', widely regarded as a seminal work in ambient techno 🎵" },
+      { date: "1997", description: "'Come to Daddy' spent 256 weeks on the Official Physical Singles Chart, solidifying his reputation as an experimental icon 📈" },
+      { date: "2015", description: "Won a Grammy Award for Best Dance/Electronic Album for 'Syro', which peaked at #8 on the UK Albums Chart 🏆" }
+    ]
+  },
+  {
+    coords: [-5.199580218427612, 50.21574569925111],
+    name: "Aphex Twin",
+    occupation: "Born 1971",
+    description: "Aphex Twin grew up in this village, boredom made him turn to music",
+    image: "https://upload.wikimedia.org/wikipedia/commons/7/76/Aphex_Twin_2.jpg",
+    tldr: "Influential electronic musician and composer known for innovative and experimental sounds.",
+    events: [
+      { date: "1992", description: "'Selected Ambient Works - Vol II' reached #1 on the Official Dance Albums Chart, showcasing his ambient mastery 🎶" },
+      { date: "2015", description: "'Syro' won a Grammy Award and topped the Official Dance Albums Chart 🏆" },
+      { date: "2024", description: "Nominated for Best Dance/Electronic Recording at the Grammy Awards for 'Blackbox Life Recorder 21F' 🎧" }
+    ]
+  },
+  {
+    coords: [-5.07240984659558, 50.15581344344661],
+    name: "Aphex Twin",
+    occupation: "Born 1971",
+    description: "Aphex Twin plays gigs here still in the town he lives in",
+    image: "https://upload.wikimedia.org/wikipedia/commons/7/76/Aphex_Twin_2.jpg",
+    tldr: "Influential electronic musician and composer known for innovative and experimental sounds.",
+    events: [
+      { date: "1992", description: "'Selected Ambient Works - Vol II' reached #1 on the Official Dance Albums Chart, showcasing his ambient mastery 🎶" },
+      { date: "2015", description: "'Syro' won a Grammy Award and topped the Official Dance Albums Chart 🏆" },
+      { date: "2024", description: "Nominated for Best Dance/Electronic Recording at the Grammy Awards for 'Blackbox Life Recorder 21F' 🎧" }
+    ]
+  },
+  {
+    coords: [-5.092472733511018, 50.266231561701666],
+    name: "David Cameron",
+    occupation: "Born 1966",
+    description: "David Cameron’s daughter, Florence, was born here in 2010",
+    image: "https://upload.wikimedia.org/wikipedia/commons/d/db/David_Cameron_Official_Portrait_2023_(cropped).jpg",
+    tldr: "Former Prime Minister of the United Kingdom, known for leading Britain's first coalition government in 70 years and initiating the Brexit referendum.",
+    events: [
+      { date: "2010", description: "Led Britain's first coalition government since World War II, working with the Liberal Democrats 🇬🇧" },
+      { date: "2013", description: "Oversaw the legalization of same-sex marriage in Great Britain, a landmark moment for LGBTQ+ rights 🌈" },
+      { date: "2016", description: "Held the EU membership referendum, resulting in Brexit; resigned as Prime Minister following the outcome 🇪🇺" }
+    ]
+  },
+  {
+    coords: [-4.8296826, 50.5730600],
+    name: "David Cameron",
+    occupation: "Born 1966",
+    description: "David Cameron named his daughter Florence Endellion Cameron, Endellion after this village",
+    image: "https://upload.wikimedia.org/wikipedia/commons/d/db/David_Cameron_Official_Portrait_2023_(cropped).jpg",
+    tldr: "Former Prime Minister of the United Kingdom, known for leading Britain's first coalition government in 70 years and initiating the Brexit referendum.",
+    events: [
+      { date: "2010", description: "Increased the UK's foreign aid budget to £11.4 billion, achieving the UN target of 0.7% of GDP 🌍" },
+      { date: "2015", description: "Won an unexpected majority in the general election, securing 12 seats and ending the coalition government 🗳️" },
+      { date: "Legacy", description: "Introduced a 'National Living Wage,' raised tax-free personal allowance, and aimed to create 3 million apprenticeships by 2020 💼" }
+    ]
+  },
   {
     coords: [-1.793456259795039, 51.0642956630458],
     name: "William Golding",
