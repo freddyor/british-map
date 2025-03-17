@@ -1,5 +1,96 @@
 export const locations = [
   {
+    coords: [-3.228015999914237, 54.13454160720947],
+    name: "George Romney",
+    occupation: "1734 - 1802",
+    description: "George Romney was raised here",
+    image: "https://upload.wikimedia.org/wikipedia/commons/3/38/1795_Self-Portrait_by_George_Romney_-_Metropolitan_Museum_of_Art.jpg",
+    tldr: "English portrait painter, one of the most fashionable artists of his time.",
+    events: [
+      { date: "1782", description: "Became the portrait painter of Emma Hamilton, muse and later wife of Admiral Horatio Nelson, painting her over 60 times 🎨" },
+      { date: "1762", description: "Moved to London and quickly rose to fame as a portraitist for society's elite 🌆" },
+      { date: "1773", description: "Travelled to Italy to study the Old Masters, which profoundly influenced his artistic style 🇮🇹" }
+    ]
+  },
+  {
+    coords: [-3.153317954775332, 54.125626477684044],
+    name: "George Romney",
+    occupation: "1734 - 1802",
+    description: "George Romney went to primary school in this village",
+    image: "https://upload.wikimedia.org/wikipedia/commons/3/38/1795_Self-Portrait_by_George_Romney_-_Metropolitan_Museum_of_Art.jpg",
+    tldr: "English portrait painter, one of the most fashionable artists of his time.",
+    events: [
+      { date: "1782", description: "Became the portrait painter of Emma Hamilton, muse and later wife of Admiral Horatio Nelson, painting her over 60 times 🎨" },
+      { date: "1762", description: "Moved to London and quickly rose to fame as a portraitist for society's elite 🌆" },
+      { date: "1773", description: "Travelled to Italy to study the Old Masters, which profoundly influenced his artistic style 🇮🇹" }
+    ]
+  },
+  {
+    coords: [-3.180379875858941, 54.16017687511326],
+    name: "George Romney",
+    occupation: "1734 - 1802",
+    description: "This school is named after George Romney",
+    image: "https://upload.wikimedia.org/wikipedia/commons/3/38/1795_Self-Portrait_by_George_Romney_-_Metropolitan_Museum_of_Art.jpg",
+    tldr: "English portrait painter, one of the most fashionable artists of his time.",
+    events: [
+      { date: "1782", description: "Became the portrait painter of Emma Hamilton, muse and later wife of Admiral Horatio Nelson, painting her over 60 times 🎨" },
+      { date: "1762", description: "Moved to London and quickly rose to fame as a portraitist for society's elite 🌆" },
+      { date: "1773", description: "Travelled to Italy to study the Old Masters, which profoundly influenced his artistic style 🇮🇹" }
+    ]
+  },
+  {
+    coords: "24 Cavendish Square",
+    name: "George Romney",
+    occupation: "1734 - 1802",
+    description: "George Romney moved here after finding success",
+    image: "https://upload.wikimedia.org/wikipedia/commons/3/38/1795_Self-Portrait_by_George_Romney_-_Metropolitan_Museum_of_Art.jpg",
+    tldr: "English portrait painter, one of the most fashionable artists of his time.",
+    events: [
+      { date: "1782", description: "Became the portrait painter of Emma Hamilton, muse and later wife of Admiral Horatio Nelson, painting her over 60 times 🎨" },
+      { date: "1762", description: "Moved to London and quickly rose to fame as a portraitist for society's elite 🌆" },
+      { date: "1773", description: "Travelled to Italy to study the Old Masters, which profoundly influenced his artistic style 🇮🇹" }
+    ]
+  },
+  {
+    coords: [-3.18527318572754, 54.15137343960751],
+    name: "George Romney",
+    occupation: "1734 - 1802",
+    description: "George Romney is buried here",
+    image: "https://upload.wikimedia.org/wikipedia/commons/3/38/1795_Self-Portrait_by_George_Romney_-_Metropolitan_Museum_of_Art.jpg",
+    tldr: "English portrait painter, one of the most fashionable artists of his time.",
+    events: [
+      { date: "1782", description: "Became the portrait painter of Emma Hamilton, muse and later wife of Admiral Horatio Nelson, painting her over 60 times 🎨" },
+      { date: "1762", description: "Moved to London and quickly rose to fame as a portraitist for society's elite 🌆" },
+      { date: "1773", description: "Travelled to Italy to study the Old Masters, which profoundly influenced his artistic style 🇮🇹" }
+    ]
+  },
+  {
+    coords: [-2.7451660351214935, 54.31985106276896],
+    name: "George Romney",
+    occupation: "1734 - 1802",
+    description: "George Romney lived here",
+    image: "https://upload.wikimedia.org/wikipedia/commons/3/38/1795_Self-Portrait_by_George_Romney_-_Metropolitan_Museum_of_Art.jpg",
+    tldr: "English portrait painter, one of the most fashionable artists of his time.",
+    events: [
+      { date: "1782", description: "Became the portrait painter of Emma Hamilton, muse and later wife of Admiral Horatio Nelson, painting her over 60 times 🎨" },
+      { date: "1762", description: "Moved to London and quickly rose to fame as a portraitist for society's elite 🌆" },
+      { date: "1773", description: "Travelled to Italy to study the Old Masters, which profoundly influenced his artistic style 🇮🇹" }
+    ]
+  },
+  {
+    coords: [-2.747492617516814, 54.3279360534057],
+    name: "George Romney",
+    occupation: "1734 - 1802",
+    description: "George Romney apprenticed here as a painter in 1755",
+    image: "https://upload.wikimedia.org/wikipedia/commons/3/38/1795_Self-Portrait_by_George_Romney_-_Metropolitan_Museum_of_Art.jpg",
+    tldr: "English portrait painter, one of the most fashionable artists of his time.",
+    events: [
+      { date: "1782", description: "Became the portrait painter of Emma Hamilton, muse and later wife of Admiral Horatio Nelson, painting her over 60 times 🎨" },
+      { date: "1762", description: "Moved to London and quickly rose to fame as a portraitist for society's elite 🌆" },
+      { date: "1773", description: "Travelled to Italy to study the Old Masters, which profoundly influenced his artistic style 🇮🇹" }
+    ]
+  },
+  {
     coords: [-2.970573747818957, 54.35172960725651],
     name: "Beatrix Potter",
     occupation: "1866 - 1943",
