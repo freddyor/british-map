@@ -64,22 +64,22 @@
             text-align: center;
         }
 
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #e9e8e0;
-    border: 2px solid #f0f0f0;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 10000; /* Increase z-index */
-    border-radius: 8px;
-    overflow: hidden;
-    top: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-    padding: 5px;
-    box-sizing: border-box;
-}
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #e9e8e0;
+            border: 2px solid #f0f0f0;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 10000; /* Increase z-index */
+            border-radius: 8px;
+            overflow: hidden;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 5px;
+            box-sizing: border-box;
+        }
 
         .support-button {
             display: flex;
@@ -115,7 +115,7 @@
             margin: 0 0 8px 0;
             font-weight: bold;
             font-size: 14px;
-         text-decoration: underline;
+            text-decoration: underline;
         }
 
         .top-supporters ul {
@@ -128,7 +128,7 @@
 
         .top-supporters li {
             margin-bottom: 10px;
-           font-weight: bold;
+            font-weight: bold;
             font-size: 12px;
         }
 
@@ -147,7 +147,7 @@
             color: #666;
             margin-top: 2px;
             margin-left: 20px;
-           line-height: 1.2;
+            line-height: 1.2;
         }
 
         .project-info {
@@ -179,12 +179,60 @@
                 box-shadow: none;
             }
         }
+
+        .tab {
+            overflow: hidden;
+            background-color: #f1f1f1;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .tab button {
+            background-color: inherit;
+            float: left;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 14px 16px;
+            transition: 0.3s;
+            font-size: 17px;
+        }
+
+        .tab button:hover {
+            background-color: #ddd;
+        }
+
+        .tab button.active {
+            background-color: #ccc;
+        }
+
+        .tab-content {
+            display: none;
+            padding: 6px 12px;
+            border: 1px solid #ccc;
+            border-top: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
     </style>
 </head>
 <body>
 
-    <div id="map"></div>
+<!-- Tab navigation -->
+<div class="tab">
+    <button class="tablinks" onclick="openTab(event, 'Map')">Map</button>
+    <button class="tablinks" onclick="openTab(event, 'Blank')">Blank</button>
+</div>
 
+<!-- Tab content -->
+<div id="Map" class="tab-content">
+    <div id="map"></div>
+</div>
+
+<div id="Blank" class="tab-content">
+    <!-- Blank tab content -->
+</div>
 
 <!-- New Dropdown -->
 <div class="dropdown" style="top: 50px;">
@@ -195,7 +243,7 @@
         <div class="project-info">
             <p>This project will not be possible without volunteers who love their community. </p>
             <p>If you would like to help by adding some markers, please email <span style="color: purple;">freddy@britmap.com</span> </p>
-            <p>I really appreciate anyone trying to help, but please don't just email me names. Finding people to add to the map is not the part I need help with. I need help with the time-consuming part - getting a list of 5-10 pin-point co-ordinates of places from the person's life. I will show you exactly how to do it when you message me.</p>
+            <p>I really appreciate anyone trying to help, but please don't just email me names. Finding people to add to the map is not the part I need help with. I need help with the time-consuming p[...]
         </div>
         <div class="top-supporters">
             <h4>Top Contributors:</h4>
@@ -209,7 +257,7 @@
     </div>
 </div>
 
-      <!-- Existing Dropdown -->
+<!-- Existing Dropdown -->
 <div class="dropdown">
     <button id="custom-bmc-button" class="custom-button">
         ❤️ The people keeping this site running ❤️
@@ -219,7 +267,7 @@
             <span>Support</span>
         </a>
         <div class="project-info">
-            This project's servers costs me to run, I am determined to keep it free-to-use, but as a 22 year old I can't fund it forever. I have also put over 200 hours into this so far. The project relies on public voluntary support ❤️
+            This project's servers costs me to run, I am determined to keep it free-to-use, but as a 22 year old I can't fund it forever. I have also put over 200 hours into this so far. The project r[...]
         </div>
         <div class="top-supporters">
             <h4>Top Supporters:</h4>
@@ -242,6 +290,20 @@
 </div>
 
 <script>
+    function openTab(evt, tabName) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tab-content");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(tabName).style.display = "block";
+        evt.currentTarget.className += " active";
+    }
+
     document.getElementById('custom-bmc-button').addEventListener('click', function(e) {
         e.preventDefault();
         var dropdownContent = this.nextElementSibling;
@@ -275,37 +337,12 @@
             dropdownContent.style.width = `${button.offsetWidth}px`;
         }
     });
+
+    // Set default active tab
+    document.addEventListener('DOMContentLoaded', function() {
+        document.querySelector('.tablinks').click();
+    });
 </script>
-
-    <script>
-        document.getElementById('custom-bmc-button').addEventListener('click', function(e) {
-            e.preventDefault();
-            var dropdownContent = this.nextElementSibling;
-            dropdownContent.style.display = dropdownContent.style.display === 'block' ? 'none' : 'block';
-        });
-
-        // Close the dropdowns if the user clicks outside of them
-        window.onclick = function(event) {
-            if (!event.target.matches('.custom-button')) {
-                var dropdowns = document.getElementsByClassName("dropdown-content");
-                for (var i = 0; i < dropdowns.length; i++) {
-                    var openDropdown = dropdowns[i];
-                    if (openDropdown.style.display === 'block') {
-                        openDropdown.style.display = 'none';
-                    }
-                }
-            }
-        }
-
-        // Set the width of the dropdown content to match the button's width
-        const buttons = document.querySelectorAll('.custom-button');
-        buttons.forEach(button => {
-            const dropdownContent = button.nextElementSibling;
-            if (dropdownContent) {
-                dropdownContent.style.width = `${button.offsetWidth}px`;
-            }
-        });
-    </script>
 
     <!-- Firebase SDKs -->
     <script type="module" src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
@@ -315,8 +352,6 @@
     <script type="module" src="index.js"></script>
 
     <!-- Buy Me a Coffee Widget Script -->
-    <script data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="britmap" data-description="Support me on Buy me a coffee!" data-message="This site costs me to run - please consider buying me a coffee ☕❤️‍" data-color="#BD5FFF" data-position="Right" data-x_margin="18" data-y_margin="18"></script>
-
-
+    <script data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="britmap" data-description="Support me on Buy me a coffee!" data-message="[...]
 </body>
 </html>
