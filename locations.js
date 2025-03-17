@@ -1,4 +1,43 @@
 export const locations = [
+  [
+  {
+    coords: [-3.024519694138197, 54.738364346366474],
+    name: "Eddie Stobart",
+    occupation: "1934 - 2011",
+    description: "Eddie Stobart was born here, where his family farmed a small holding of eight cows",
+    image: "https://www.telegraph.co.uk/content/dam/obituaries/2024/12/06/TELEMMGLPICT000404331284_17334948564340_trans_NvBQzQNjv4BqVBOOXptsRGI8lw8GFenBES3eGJIAKn2ESThh_No3YbY.jpeg?imwidth=680",
+    tldr: "British businessman who founded the Eddie Stobart haulage company.",
+    events: [
+      { date: "1970", description: "Founded Eddie Stobart Ltd, which became known for its distinctive green and red lorries 🚚" },
+      { date: "2020", description: "Company reported revenue of £874.3 million, a 2% increase from the previous year 📈" },
+      { date: "Legacy", description: "Built a fleet of approximately 2,700 vehicles and 5,000 trailers, employing around 2,360 people 🏢" }
+    ],
+    stats: [
+      { label: "Fleet size", value: "2,700 vehicles, 5,000 trailers" },
+      { label: "Employees", value: "2,360" },
+      { label: "Warehouse capacity", value: "6.4 million square feet" },
+      { label: "Weekly operations", value: "47,000 vehicle movements, 1,850 container deliveries" }
+    ]
+  },
+  {
+    coords: [-3.02042226496299, 54.738287369000474],
+    name: "Eddie Stobart",
+    occupation: "1934 - 2011",
+    description: "Eddie Stobart did horse-and-cart work for the Cumberland County Council around the streets here",
+    image: "https://www.telegraph.co.uk/content/dam/obituaries/2024/12/06/TELEMMGLPICT000404331284_17334948564340_trans_NvBQzQNjv4BqVBOOXptsRGI8lw8GFenBES3eGJIAKn2ESThh_No3YbY.jpeg?imwidth=680",
+    tldr: "British businessman who founded the Eddie Stobart haulage company.",
+    events: [
+      { date: "1970", description: "Founded Eddie Stobart Ltd, which became known for its distinctive green and red lorries 🚚" },
+      { date: "2020", description: "Company reported revenue of £874.3 million, a 2% increase from the previous year 📈" },
+      { date: "Legacy", description: "Built a fleet of approximately 2,700 vehicles and 5,000 trailers, employing around 2,360 people 🏢" }
+    ],
+    stats: [
+      { label: "Fleet size", value: "2,700 vehicles, 5,000 trailers" },
+      { label: "Employees", value: "2,360" },
+      { label: "Warehouse capacity", value: "6.4 million square feet" },
+      { label: "Weekly operations", value: "47,000 vehicle movements, 1,850 container deliveries" }
+    ]
+  },
   {
     coords: [-3.3680230966077263, 54.66363287428178],
     name: "William Wordsworth",
