@@ -2,8 +2,13 @@
 
 // Array to store image attributions
 const imageAttributions = [
+                           {
+      "name": "<a href='https://www.telegraph.co.uk/content/dam/obituaries/2024/12/06/TELEMMGLPICT000404331284_17334948564340_trans_NvBQzQNjv4BqVBOOXptsRGI8lw8GFenBES3eGJIAKn2ESThh_No3YbY.jpeg?imwidth=960>Eddie Stobart</a>",
+      "author": "Christopher Furlong/Getty Images",
+      "license": ""
+    },
                          {
-      "name": "https://www.theguardian.com/books/2018/sep/28/john-cunliffe-obituary#img-1'>John Cunliffe</a>",
+      "name": "<a href='https://www.theguardian.com/books/2018/sep/28/john-cunliffe-obituary#img-1'>John Cunliffe</a>",
       "author": "Yorkshire Post/SWNS",
       "license": ""
     },
