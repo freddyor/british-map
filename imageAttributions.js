@@ -2,8 +2,13 @@
 
 // Array to store image attributions
 const imageAttributions = [
+                            {
+      "name": "<a href='https://www.teamwass.com/sports-talent/cricket/roster/liam-livingstone/'>Liam Livingstone</a>",
+      "author": "Wasserman",
+      "license": ""
+    },
                            {
-      "name": "<a href='https://www.telegraph.co.uk/content/dam/obituaries/2024/12/06/TELEMMGLPICT000404331284_17334948564340_trans_NvBQzQNjv4BqVBOOXptsRGI8lw8GFenBES3eGJIAKn2ESThh_No3YbY.jpeg?imwidth=960>Eddie Stobart</a>",
+      "name": "<a href='https://www.telegraph.co.uk/content/dam/obituaries/2024/12/06/TELEMMGLPICT000404331284_17334948564340_trans_NvBQzQNjv4BqVBOOXptsRGI8lw8GFenBES3eGJIAKn2ESThh_No3YbY.jpeg?imwidth=960'>Eddie Stobart</a>",
       "author": "Christopher Furlong/Getty Images",
       "license": ""
     },
