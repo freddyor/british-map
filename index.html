@@ -23,17 +23,13 @@
             width: 100%;
             height: 100%;
             font-family: 'Poppins', sans-serif;
-            overflow: hidden;
+            display: flex;
+            flex-direction: column;
         }
 
         #map {
-            position: fixed;
-            top: 50px; /* Adjust this value if the tab bar height changes */
-            left: 0;
-            right: 0;
-            bottom: 0;
+            flex: 1;
             width: 100%;
-            height: calc(100vh - 50px); /* Adjust this value if the tab bar height changes */
         }
 
         .dropdown {
@@ -190,21 +186,18 @@
             overflow: hidden;
             background-color: #f1f1f1;
             border-bottom: 1px solid #ccc;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
+            display: flex;
         }
 
         .tab button {
             background-color: inherit;
-            float: left;
             border: none;
             outline: none;
             cursor: pointer;
             padding: 14px 16px;
             transition: 0.3s;
             font-size: 17px;
+            flex: 1;
         }
 
         .tab button:hover {
@@ -218,11 +211,9 @@
         .tab-content {
             display: none;
             padding: 6px 12px;
-            border: 1px solid #ccc;
             border-top: none;
-            position: relative;
-            top: 50px;
-            height: calc(100vh - 50px); /* Adjust this value if the tab bar height changes */
+            flex: 1;
+            width: 100%;
         }
 
         .tab-content.active {
@@ -235,35 +226,13 @@
 <!-- Tab navigation -->
 <div class="tab">
     <button class="tablinks" onclick="openTab(event, 'Map')">Map</button>
-    <button class="tablinks" onclick="openTab(event, 'Blank')">Today</button>
+    <button class="tablinks" onclick="openTab(event, 'Blank')">Blank</button>
     <button class="tablinks" onclick="openTab(event, 'Support')">Support</button>
 </div>
 
 <!-- Tab content -->
-<div id="Map" class="tab-content">
+<div id="Map" class="tab-content active">
     <div id="map"></div>
-    <!-- Move the dropdowns here -->
-    <div class="dropdown" style="top: 50px;">
-        <button id="custom-guide-button" class="custom-button">
-            Help me fill the map by adding markers ➕
-        </button>
-        <div class="dropdown-content">
-            <div class="project-info">
-                <p>This project will not be possible without volunteers who love their community.</p>
-                <p>If you would like to help by adding some markers, please email <span style="color: purple;">freddy@britmap.com</span></p>
-                <p>I really appreciate anyone trying to help, but please don't just email me names. Finding people to add to the map is not the part I need help with. I need help with the time-consuming process of adding them to the map.</p>
-            </div>
-            <div class="top-supporters">
-                <h4>Top Contributors:</h4>
-                <ul>
-                    <li>
-                        nobody yet <span class="donation-amount">:(</span>
-                        <div class="donation-comment"></div>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
 </div>
 
 <div id="Blank" class="tab-content">
