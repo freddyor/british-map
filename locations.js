@@ -1,5 +1,122 @@
 export const locations = [
   {
+    coords: [-3.3680230966077263, 54.66363287428178],
+    name: "William Wordsworth",
+    occupation: "1770 - 1850",
+    description: "William Wordsworth was born here in 1770",
+    image: "https://upload.wikimedia.org/wikipedia/commons/5/59/British_(English)_School_-_William_Wordsworth_(1770–1850)_-_866458_-_National_Trust.jpg",
+    tldr: "Celebrated English Romantic poet, known for his lyrical verse and love of nature.",
+    events: [
+      { date: "1798", description: "Published 'Lyrical Ballads' with Samuel Taylor Coleridge, marking a turning point in English literary history ✍️" },
+      { date: "1843", description: "Appointed Poet Laureate, Britain's national poet, a position he held until his death 👑" },
+      { date: "Legacy", description: "His poetry continues to inspire readers with its exploration of nature, emotion, and the human spirit 📖" }
+    ]
+  },
+  {
+    coords: [-2.752786407048065, 54.66457125198575],
+    name: "William Wordsworth",
+    occupation: "1770 - 1850",
+    description: "William Wordsworth stayed here at his grandparents house during school term in 1776-77",
+    image: "https://upload.wikimedia.org/wikipedia/commons/5/59/British_(English)_School_-_William_Wordsworth_(1770–1850)_-_866458_-_National_Trust.jpg",
+    tldr: "Celebrated English Romantic poet, known for his lyrical verse and love of nature.",
+    events: [
+      { date: "1798", description: "Published 'Lyrical Ballads' with Samuel Taylor Coleridge, marking a turning point in English literary history ✍️" },
+      { date: "1843", description: "Appointed Poet Laureate, Britain's national poet, a position he held until his death 👑" },
+      { date: "Legacy", description: "His poetry continues to inspire readers with its exploration of nature, emotion, and the human spirit 📖" }
+    ]
+  },
+  {
+    coords: [-3.0167464490029974, 54.45430802845498],
+    name: "William Wordsworth",
+    occupation: "1770 - 1850",
+    description: "William Wordsworth lived here with his sister from 1799 to 1808, where they spent over eight years of ‘plain living, but high thinking’",
+    image: "https://upload.wikimedia.org/wikipedia/commons/5/59/British_(English)_School_-_William_Wordsworth_(1770–1850)_-_866458_-_National_Trust.jpg",
+    tldr: "Celebrated English Romantic poet, known for his lyrical verse and love of nature.",
+    events: [
+      { date: "1798", description: "Published 'Lyrical Ballads' with Samuel Taylor Coleridge, marking a turning point in English literary history ✍️" },
+      { date: "1843", description: "Appointed Poet Laureate, Britain's national poet, a position he held until his death 👑" },
+      { date: "Legacy", description: "His poetry continues to inspire readers with its exploration of nature, emotion, and the human spirit 📖" }
+    ]
+  },
+  {
+    coords: [-2.982438890480952, 54.44875098022908],
+    name: "William Wordsworth",
+    occupation: "1770 - 1850",
+    description: "Favourite family home of William Wordsworth 1813-1850, he also died here",
+    image: "https://upload.wikimedia.org/wikipedia/commons/5/59/British_(English)_School_-_William_Wordsworth_(1770–1850)_-_866458_-_National_Trust.jpg",
+    tldr: "Celebrated English Romantic poet, known for his lyrical verse and love of nature.",
+    events: [
+      { date: "1798", description: "Published 'Lyrical Ballads' with Samuel Taylor Coleridge, marking a turning point in English literary history ✍️" },
+      { date: "1843", description: "Appointed Poet Laureate, Britain's national poet, a position he held until his death 👑" },
+      { date: "Legacy", description: "His poetry continues to inspire readers with its exploration of nature, emotion, and the human spirit 📖" }
+    ]
+  },
+  {
+    coords: [-2.751677089913788, 54.66378880051424],
+    name: "William Wordsworth",
+    occupation: "1770 - 1850",
+    description: "William Wordsworth studied here, where he played with Mary Hutchinson, who later became his wife",
+    image: "https://upload.wikimedia.org/wikipedia/commons/5/59/British_(English)_School_-_William_Wordsworth_(1770–1850)_-_866458_-_National_Trust.jpg",
+    tldr: "Celebrated English Romantic poet, known for his lyrical verse and love of nature.",
+    events: [
+      { date: "1798", description: "Published 'Lyrical Ballads' with Samuel Taylor Coleridge, marking a turning point in English literary history ✍️" },
+      { date: "1843", description: "Appointed Poet Laureate, Britain's national poet, a position he held until his death 👑" },
+      { date: "Legacy", description: "His poetry continues to inspire readers with its exploration of nature, emotion, and the human spirit 📖" }
+    ]
+  },
+  {
+    coords: [-2.998447526594782, 54.37373209910392],
+    name: "William Wordsworth",
+    occupation: "1770 - 1850",
+    description: "William Wordsworth was sent here in 1778",
+    image: "https://upload.wikimedia.org/wikipedia/commons/5/59/British_(English)_School_-_William_Wordsworth_(1770–1850)_-_866458_-_National_Trust.jpg",
+    tldr: "Celebrated English Romantic poet, known for his lyrical verse and love of nature.",
+    events: [
+      { date: "1798", description: "Published 'Lyrical Ballads' with Samuel Taylor Coleridge, marking a turning point in English literary history ✍️" },
+      { date: "1843", description: "Appointed Poet Laureate, Britain's national poet, a position he held until his death 👑" },
+      { date: "Legacy", description: "His poetry continues to inspire readers with its exploration of nature, emotion, and the human spirit 📖" }
+    ]
+  },
+  {
+    coords: [0.11764145118751076, 52.208105433762114],
+    name: "William Wordsworth",
+    occupation: "1770 - 1850",
+    description: "William Wordsworth received his BA degree in 1791",
+    image: "https://upload.wikimedia.org/wikipedia/commons/5/59/British_(English)_School_-_William_Wordsworth_(1770–1850)_-_866458_-_National_Trust.jpg",
+    tldr: "Celebrated English Romantic poet, known for his lyrical verse and love of nature.",
+    events: [
+      { date: "1798", description: "Published 'Lyrical Ballads' with Samuel Taylor Coleridge, marking a turning point in English literary history ✍️" },
+      { date: "1843", description: "Appointed Poet Laureate, Britain's national poet, a position he held until his death 👑" },
+      { date: "Legacy", description: "His poetry continues to inspire readers with its exploration of nature, emotion, and the human spirit 📖" }
+    ]
+  },
+  {
+    coords: [-3.023189084283443, 54.45766251768946],
+    name: "William Wordsworth",
+    occupation: "1770 - 1850",
+    description: "William Wordsworth is buried here",
+    image: "https://upload.wikimedia.org/wikipedia/commons/5/59/British_(English)_School_-_William_Wordsworth_(1770–1850)_-_866458_-_National_Trust.jpg",
+    tldr: "Celebrated English Romantic poet, known for his lyrical verse and love of nature.",
+    events: [
+      { date: "1798", description: "Published 'Lyrical Ballads' with Samuel Taylor Coleridge, marking a turning point in English literary history ✍️" },
+      { date: "1843", description: "Appointed Poet Laureate, Britain's national poet, a position he held until his death 👑" },
+      { date: "Legacy", description: "His poetry continues to inspire readers with its exploration of nature, emotion, and the human spirit 📖" }
+    ]
+  },
+  {
+    coords: [-3.20815658845291, 51.16359156222983],
+    name: "William Wordsworth",
+    occupation: "1770 - 1850",
+    description: "William Wordsworth moved here with his sister in 1797, moving near his co-author Samuel Taylor Coleridge",
+    image: "https://upload.wikimedia.org/wikipedia/commons/5/59/British_(English)_School_-_William_Wordsworth_(1770–1850)_-_866458_-_National_Trust.jpg",
+    tldr: "Celebrated English Romantic poet, known for his lyrical verse and love of nature.",
+    events: [
+      { date: "1798", description: "Published 'Lyrical Ballads' with Samuel Taylor Coleridge, marking a turning point in English literary history ✍️" },
+      { date: "1843", description: "Appointed Poet Laureate, Britain's national poet, a position he held until his death 👑" },
+      { date: "Legacy", description: "His poetry continues to inspire readers with its exploration of nature, emotion, and the human spirit 📖" }
+    ]
+  },
+  {
     coords: [-3.228015999914237, 54.13454160720947],
     name: "George Romney",
     occupation: "1734 - 1802",
