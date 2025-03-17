@@ -1,5 +1,147 @@
 export const locations = [
-  [
+  {
+    coords: [-2.7937651720533605, 53.21582883557168],
+    name: "Liam Livingstone",
+    occupation: "1993 - Present",
+    description: "Liam Livingstone played over 100 matches for his local club here between 2007 and 2016",
+    image: "https://www.teamwass.com/wp-content/uploads/2024/03/Liam-Livingstone-updated.jpg",
+    tldr: "English cricketer known for his aggressive batting style and versatility.",
+    events: [
+      { date: "2015", description: "Made his first-class debut for Lancashire, showcasing his potential as a top-order batsman 🏏" },
+      { date: "2021", description: "Scored England's fastest-ever T20I century, reaching the milestone in just 42 balls against Pakistan 💥" },
+      { date: "2022", description: "Became one of the highest-paid overseas players in the Indian Premier League (IPL), joining Punjab Kings for $1.53 million 💰" }
+    ]
+  },
+  {
+    coords: [-3.543356280796476, 54.645573700872916],
+    name: "Liam Livingstone",
+    occupation: "1993 - Present",
+    description: "Liam Livingstone played for Cumbria C.C here",
+    image: "https://www.teamwass.com/wp-content/uploads/2024/03/Liam-Livingstone-updated.jpg",
+    tldr: "English cricketer known for his aggressive batting style and versatility.",
+    events: [
+      { date: "2015", description: "Made his first-class debut for Lancashire, showcasing his potential as a top-order batsman 🏏" },
+      { date: "2021", description: "Scored England's fastest-ever T20I century, reaching the milestone in just 42 balls against Pakistan 💥" },
+      { date: "2022", description: "Became one of the highest-paid overseas players in the Indian Premier League (IPL), joining Punjab Kings for $1.53 million 💰" }
+    ]
+  },
+  {
+    coords: [-2.749260829938609, 54.65769102932219],
+    name: "Liam Livingstone",
+    occupation: "1993 - Present",
+    description: "Liam Livingstone played for Cumbria C.C here",
+    image: "https://www.teamwass.com/wp-content/uploads/2024/03/Liam-Livingstone-updated.jpg",
+    tldr: "English cricketer known for his aggressive batting style and versatility.",
+    events: [
+      { date: "2015", description: "Made his first-class debut for Lancashire, showcasing his potential as a top-order batsman 🏏" },
+      { date: "2021", description: "Scored England's fastest-ever T20I century, reaching the milestone in just 42 balls against Pakistan 💥" },
+      { date: "2022", description: "Became one of the highest-paid overseas players in the Indian Premier League (IPL), joining Punjab Kings for $1.53 million 💰" }
+    ]
+  },
+  {
+    coords: [-2.9394135733602433, 54.900962513163726],
+    name: "Liam Livingstone",
+    occupation: "1993 - Present",
+    description: "Liam Livingstone played for Cumbria C.C here",
+    image: "https://www.teamwass.com/wp-content/uploads/2024/03/Liam-Livingstone-updated.jpg",
+    tldr: "English cricketer known for his aggressive batting style and versatility.",
+    events: [
+      { date: "2015", description: "Made his first-class debut for Lancashire, showcasing his potential as a top-order batsman 🏏" },
+      { date: "2021", description: "Scored England's fastest-ever T20I century, reaching the milestone in just 42 balls against Pakistan 💥" },
+      { date: "2022", description: "Became one of the highest-paid overseas players in the Indian Premier League (IPL), joining Punjab Kings for $1.53 million 💰" }
+    ]
+  },
+  {
+    coords: [-2.734654221485082, 54.32169947227375],
+    name: "Liam Livingstone",
+    occupation: "1993 - Present",
+    description: "Liam Livingstone played for Cumbria C.C here",
+    image: "https://www.teamwass.com/wp-content/uploads/2024/03/Liam-Livingstone-updated.jpg",
+    tldr: "English cricketer known for his aggressive batting style and versatility.",
+    events: [
+      { date: "2015", description: "Made his first-class debut for Lancashire, showcasing his potential as a top-order batsman 🏏" },
+      { date: "2021", description: "Scored England's fastest-ever T20I century, reaching the milestone in just 42 balls against Pakistan 💥" },
+      { date: "2022", description: "Became one of the highest-paid overseas players in the Indian Premier League (IPL), joining Punjab Kings for $1.53 million 💰" }
+    ]
+  },
+  {
+    coords: [-2.5092206951191205, 53.0775479085384],
+    name: "Liam Livingstone",
+    occupation: "1993 - Present",
+    description: "Liam Livingstone made a name for himself at Nantwich Cricket Club here",
+    image: "https://www.teamwass.com/wp-content/uploads/2024/03/Liam-Livingstone-updated.jpg",
+    tldr: "English cricketer known for his aggressive batting style and versatility.",
+    events: [
+      { date: "2015", description: "Made his first-class debut for Lancashire, showcasing his potential as a top-order batsman 🏏" },
+      { date: "2021", description: "Scored England's fastest-ever T20I century, reaching the milestone in just 42 balls against Pakistan 💥" },
+      { date: "2022", description: "Became one of the highest-paid overseas players in the Indian Premier League (IPL), joining Punjab Kings for $1.53 million 💰" }
+    ]
+  },
+  {
+    coords: [-2.286942136473242, 53.45635897921712],
+    name: "Liam Livingstone",
+    occupation: "1993 - Present",
+    description: "Liam Livingstone made his T20 debut here Lancashire Lightning",
+    image: "https://www.teamwass.com/wp-content/uploads/2024/03/Liam-Livingstone-updated.jpg",
+    tldr: "English cricketer known for his aggressive batting style and versatility.",
+    events: [
+      { date: "2015", description: "Made his first-class debut for Lancashire, showcasing his potential as a top-order batsman 🏏" },
+      { date: "2021", description: "Scored England's fastest-ever T20I century, reaching the milestone in just 42 balls against Pakistan 💥" },
+      { date: "2022", description: "Became one of the highest-paid overseas players in the Indian Premier League (IPL), joining Punjab Kings for $1.53 million 💰" }
+    ]
+  },
+  {
+    coords: [-2.736202523059774, 54.325053007752395],
+    name: "Catherine Parr",
+    occupation: "1512 - 1548",
+    description: "Kendal Castle was the family home of Catherine Parr",
+    image: "https://upload.wikimedia.org/wikipedia/commons/4/49/Catherine_Parr_from_NPG.jpg",
+    tldr: "The sixth wife of Henry VIII, a queen, regent, and pioneering author.",
+    events: [
+      { date: "1543", description: "Married Henry VIII at Hampton Court Palace in a small ceremony attended by only 20 guests, including his daughters Mary and Elizabeth 👑" },
+      { date: "1544", description: "Appointed regent of England during Henry's campaign in France, managing finances and provisions for over 40,000 soldiers 🛡️" },
+      { date: "1545", description: "Published Prayers or Meditations, becoming the first English queen to publish a book under her own name, with over 1,000 copies sold in the first year 📖" }
+    ]
+  },
+  {
+    coords: [-2.771525290611432, 54.28413683848113],
+    name: "Catherine Parr",
+    occupation: "1512 - 1548",
+    description: "Catherine Parr lived with her cousins here for a while",
+    image: "https://upload.wikimedia.org/wikipedia/commons/4/49/Catherine_Parr_from_NPG.jpg",
+    tldr: "The sixth wife of Henry VIII, a queen, regent, and pioneering author.",
+    events: [
+      { date: "1543", description: "Married Henry VIII at Hampton Court Palace in a small ceremony attended by only 20 guests, including his daughters Mary and Elizabeth 👑" },
+      { date: "1544", description: "Appointed regent of England during Henry's campaign in France, managing finances and provisions for over 40,000 soldiers 🛡️" },
+      { date: "1545", description: "Published Prayers or Meditations, becoming the first English queen to publish a book under her own name, with over 1,000 copies sold in the first year 📖" }
+    ]
+  },
+  {
+    coords: [-2.747165465733379, 54.32689129464498],
+    name: "Catherine Parr",
+    occupation: "1512 - 1548",
+    description: "Kendal Town Council still owns Catherine Parr’s prayer book",
+    image: "https://upload.wikimedia.org/wikipedia/commons/4/49/Catherine_Parr_from_NPG.jpg",
+    tldr: "The sixth wife of Henry VIII, a queen, regent, and pioneering author.",
+    events: [
+      { date: "1543", description: "Married Henry VIII at Hampton Court Palace in a small ceremony attended by only 20 guests, including his daughters Mary and Elizabeth 👑" },
+      { date: "1544", description: "Appointed regent of England during Henry's campaign in France, managing finances and provisions for over 40,000 soldiers 🛡️" },
+      { date: "1545", description: "Published Prayers or Meditations, becoming the first English queen to publish a book under her own name, with over 1,000 copies sold in the first year 📖" }
+    ]
+  },
+  {
+    coords: [-1.599448163908267, 54.25441935741699],
+    name: "Catherine Parr",
+    occupation: "1512 - 1548",
+    description: "Catherine Parr was held hostage here during the Pilgrimage of Grace in 1537",
+    image: "https://upload.wikimedia.org/wikipedia/commons/4/49/Catherine_Parr_from_NPG.jpg",
+    tldr: "The sixth wife of Henry VIII, a queen deeply involved in politics and education.",
+    events: [
+      { date: "1543", description: "Married Henry VIII at Hampton Court Palace in a small ceremony attended by only 20 guests, including his daughters Mary and Elizabeth 👑" },
+      { date: "1544", description: "Appointed regent of England during Henry's campaign in France, managing finances and provisions for over 40,000 soldiers 🛡️" },
+      { date: "1545", description: "Published Prayers or Meditations, becoming the first English queen to publish a book under her own name, with over 1,000 copies sold in the first year 📖" }
+    ]
+  },
   {
     coords: [-3.024519694138197, 54.738364346366474],
     name: "Eddie Stobart",
