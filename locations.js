@@ -153,12 +153,6 @@ export const locations = [
       { date: "1970", description: "Founded Eddie Stobart Ltd, which became known for its distinctive green and red lorries 🚚" },
       { date: "2020", description: "Company reported revenue of £874.3 million, a 2% increase from the previous year 📈" },
       { date: "Legacy", description: "Built a fleet of approximately 2,700 vehicles and 5,000 trailers, employing around 2,360 people 🏢" }
-    ],
-    stats: [
-      { label: "Fleet size", value: "2,700 vehicles, 5,000 trailers" },
-      { label: "Employees", value: "2,360" },
-      { label: "Warehouse capacity", value: "6.4 million square feet" },
-      { label: "Weekly operations", value: "47,000 vehicle movements, 1,850 container deliveries" }
     ]
   },
   {
@@ -172,12 +166,6 @@ export const locations = [
       { date: "1970", description: "Founded Eddie Stobart Ltd, which became known for its distinctive green and red lorries 🚚" },
       { date: "2020", description: "Company reported revenue of £874.3 million, a 2% increase from the previous year 📈" },
       { date: "Legacy", description: "Built a fleet of approximately 2,700 vehicles and 5,000 trailers, employing around 2,360 people 🏢" }
-    ],
-    stats: [
-      { label: "Fleet size", value: "2,700 vehicles, 5,000 trailers" },
-      { label: "Employees", value: "2,360" },
-      { label: "Warehouse capacity", value: "6.4 million square feet" },
-      { label: "Weekly operations", value: "47,000 vehicle movements, 1,850 container deliveries" }
     ]
   },
   {
