@@ -1,5 +1,239 @@
 export const locations = [
   {
+    coords: [-3.2254421710299748, 54.12627036050323],
+    name: "James Ramsden",
+    occupation: "1822 - 1896",
+    description: "James Ramsden was buried here in 1896",
+    image: "https://upload.wikimedia.org/wikipedia/commons/2/22/Sir_James_Ramsden.jpg",
+    tldr: "British engineer, industrialist, and civic leader, known as the 'Father of Barrow-in-Furness'.",
+    events: [
+      { date: "1846", description: "Joined the Furness Railway, playing a pivotal role in the development of Barrow-in-Furness as a major industrial center 🚂" },
+      { date: "1866", description: "Became the managing director of the Furness Railway, overseeing its expansion and contributing to the growth of the local economy 📈" },
+      { date: "Legacy", description: "His vision and leadership transformed Barrow-in-Furness from a small village into a thriving industrial town and shipbuilding hub 🏙️" }
+    ]
+  },
+  {
+    coords: [-3.231422473402549, 54.11408622363367],
+    name: "James Ramsden",
+    occupation: "1822 - 1896",
+    description: "James Ramsden is memorialized here in the new town he pretty much created, Barrow-in-Furness",
+    image: "https://upload.wikimedia.org/wikipedia/commons/2/22/Sir_James_Ramsden.jpg",
+    tldr: "British engineer, industrialist, and civic leader, known as the 'Father of Barrow-in-Furness'.",
+    events: [
+      { date: "1846", description: "Joined the Furness Railway, playing a pivotal role in the development of Barrow-in-Furness as a major industrial center 🚂" },
+      { date: "1866", description: "Became the managing director of the Furness Railway, overseeing its expansion and contributing to the growth of the local economy 📈" },
+      { date: "Legacy", description: "His vision and leadership transformed Barrow-in-Furness from a small village into a thriving industrial town and shipbuilding hub 🏙️" }
+    ]
+  },
+  {
+    coords: [-3.221763941535703, 54.108267548499285],
+    name: "James Ramsden",
+    occupation: "1822 - 1896",
+    description: "James Ramsden joined The Furness Railway Company in 1846, rising through the rank to become managing director from 1866 to 1895",
+    image: "https://upload.wikimedia.org/wikipedia/commons/2/22/Sir_James_Ramsden.jpg",
+    tldr: "British engineer, industrialist, and civic leader, known as the 'Father of Barrow-in-Furness'.",
+    events: [
+      { date: "1846", description: "Joined the Furness Railway, playing a pivotal role in the development of Barrow-in-Furness as a major industrial center 🚂" },
+      { date: "1866", description: "Became the managing director of the Furness Railway, overseeing its expansion and contributing to the growth of the local economy 📈" },
+      { date: "Legacy", description: "His vision and leadership transformed Barrow-in-Furness from a small village into a thriving industrial town and shipbuilding hub 🏙️" }
+    ]
+  },
+  {
+    coords: [-2.9945146733259485, 53.41703145942855],
+    name: "James Ramsden",
+    occupation: "1822 - 1896",
+    description: "James Ramsden served as an apprentice on this street at Bury, Curtis and Kennedy steam locomotive company",
+    image: "https://upload.wikimedia.org/wikipedia/commons/2/22/Sir_James_Ramsden.jpg",
+    tldr: "British engineer, industrialist, and civic leader, known as the 'Father of Barrow-in-Furness'.",
+    events: [
+      { date: "1846", description: "Joined the Furness Railway, playing a pivotal role in the development of Barrow-in-Furness as a major industrial center 🚂" },
+      { date: "1866", description: "Became the managing director of the Furness Railway, overseeing its expansion and contributing to the growth of the local economy 📈" },
+      { date: "Legacy", description: "His vision and leadership transformed Barrow-in-Furness from a small village into a thriving industrial town and shipbuilding hub 🏙️" }
+    ]
+  },
+  {
+    coords: [-3.173442024383138, 54.07245482839453],
+    name: "James Ramsden",
+    occupation: "1822 - 1896",
+    description: "James Ramsden was the main figure in the creation of Barrow Lifeboat Station here, he was Honorary Secretary",
+    image: "https://upload.wikimedia.org/wikipedia/commons/2/22/Sir_James_Ramsden.jpg",
+    tldr: "British engineer, industrialist, and civic leader, known as the 'Father of Barrow-in-Furness'.",
+    events: [
+      { date: "1846", description: "Joined the Furness Railway, playing a pivotal role in the development of Barrow-in-Furness as a major industrial center 🚂" },
+      { date: "1866", description: "Became the managing director of the Furness Railway, overseeing its expansion and contributing to the growth of the local economy 📈" },
+      { date: "Legacy", description: "His vision and leadership transformed Barrow-in-Furness from a small village into a thriving industrial town and shipbuilding hub 🏙️" }
+    ]
+  },
+  {
+    coords: [-3.2381457039395385, 54.12573430193883],
+    name: "James Ramsden",
+    occupation: "1822 - 1896",
+    description: "James Ramsden was managing director at the steel company here from 1866",
+    image: "https://upload.wikimedia.org/wikipedia/commons/2/22/Sir_James_Ramsden.jpg",
+    tldr: "British engineer, industrialist, and civic leader, known as the 'Father of Barrow-in-Furness'.",
+    events: [
+      { date: "1846", description: "Joined the Furness Railway, playing a pivotal role in the development of Barrow-in-Furness as a major industrial center 🚂" },
+      { date: "1866", description: "Became the managing director of the Furness Railway, overseeing its expansion and contributing to the growth of the local economy 📈" },
+      { date: "Legacy", description: "His vision and leadership transformed Barrow-in-Furness from a small village into a thriving industrial town and shipbuilding hub 🏙️" }
+    ]
+  },
+  {
+    coords: [-3.232215267340466, 54.104784280122885],
+    name: "James Ramsden",
+    occupation: "1822 - 1896",
+    description: "James Ramsden was managing director at the shipbuilding company here from 1875 to 1888",
+    image: "https://upload.wikimedia.org/wikipedia/commons/2/22/Sir_James_Ramsden.jpg",
+    tldr: "British engineer, industrialist, and civic leader, known as the 'Father of Barrow-in-Furness'.",
+    events: [
+      { date: "1846", description: "Joined the Furness Railway, playing a pivotal role in the development of Barrow-in-Furness as a major industrial center 🚂" },
+      { date: "1866", description: "Became the managing director of the Furness Railway, overseeing its expansion and contributing to the growth of the local economy 📈" },
+      { date: "Legacy", description: "His vision and leadership transformed Barrow-in-Furness from a small village into a thriving industrial town and shipbuilding hub 🏙️" }
+    ]
+  },
+  {
+    coords: [-3.1951287490171096, 54.13990569706774],
+    name: "James Ramsden",
+    occupation: "1822 - 1896",
+    description: "This area was once the location of Abbots Wood, a great country house built to be the home of James Ramsden",
+    image: "https://upload.wikimedia.org/wikipedia/commons/2/22/Sir_James_Ramsden.jpg",
+    tldr: "British engineer, industrialist, and civic leader, known as the 'Father of Barrow-in-Furness'.",
+    events: [
+      { date: "1846", description: "Joined the Furness Railway, playing a pivotal role in the development of Barrow-in-Furness as a major industrial center 🚂" },
+      { date: "1866", description: "Became the managing director of the Furness Railway, overseeing its expansion and contributing to the growth of the local economy 📈" },
+      { date: "Legacy", description: "His vision and leadership transformed Barrow-in-Furness from a small village into a thriving industrial town and shipbuilding hub 🏙️" }
+    ]
+  },
+  {
+    coords: "Colne, Lancashire",
+    name: "John Cunliffe",
+    occupation: "1933 - 2018",
+    description: "John Cunliffe was born here on June 16, 1933",
+    image: "https://i.guim.co.uk/img/media/1bdeade77bd0455319e8c514e92cca894f7adf9e/0_7_1640_984/master/1640.jpg?width=1200&height=1200&quality=85&auto=format&fit=crop&s=fe2e83f51be6a42f8ec71e6babaa8492",
+    tldr: "British author and television presenter, best known for creating the characters Postman Pat and Rosie and Jim.",
+    events: [
+      { date: "1964", description: "Published his first book, 'Farmer Barnes Buys a Pig', marking the beginning of his writing career 📚" },
+      { date: "1981", description: "Created Postman Pat, which debuted on September 16, 1981, and became a beloved children's series 📮" },
+      { date: "Legacy", description: "Authored around 190 books for young children, including five volumes of poetry 📖" }
+    ]
+  },
+  {
+    coords: "Ilkley, West Yorkshire",
+    name: "John Cunliffe",
+    occupation: "1933 - 2018",
+    description: "John Cunliffe moved here in 1992 and died here on September 20, 2018",
+    image: "https://i.guim.co.uk/img/media/1bdeade77bd0455319e8c514e92cca894f7adf9e/0_7_1640_984/master/1640.jpg?width=1200&height=1200&quality=85&auto=format&fit=crop&s=fe2e83f51be6a42f8ec71e6babaa8492",
+    tldr: "British author and television presenter, best known for creating the characters Postman Pat and Rosie and Jim.",
+    events: [
+      { date: "1964", description: "Published his first book, 'Farmer Barnes Buys a Pig', marking the beginning of his writing career 📚" },
+      { date: "1981", description: "Created Postman Pat, which debuted on September 16, 1981, and became a beloved children's series 📮" },
+      { date: "Legacy", description: "Authored around 190 books for young children, including five volumes of poetry 📖" }
+    ]
+  },
+  {
+    coords: "Colne Grammar School",
+    name: "John Cunliffe",
+    occupation: "1933 - 2018",
+    description: "John Cunliffe attended school here, where he was bullied for his height",
+    image: "https://i.guim.co.uk/img/media/1bdeade77bd0455319e8c514e92cca894f7adf9e/0_7_1640_984/master/1640.jpg?width=1200&height=1200&quality=85&auto=format&fit=crop&s=fe2e83f51be6a42f8ec71e6babaa8492",
+    tldr: "British author and television presenter, best known for creating the characters Postman Pat and Rosie and Jim.",
+    events: [
+      { date: "1964", description: "Published his first book, 'Farmer Barnes Buys a Pig', marking the beginning of his writing career 📚" },
+      { date: "1981", description: "Created Postman Pat, which debuted on September 16, 1981, and became a beloved children's series 📮" },
+      { date: "Legacy", description: "Authored around 190 books for young children, including five volumes of poetry 📖" }
+    ]
+  },
+  {
+    coords: "Castle Park Primary School",
+    name: "John Cunliffe",
+    occupation: "1933 - 2018",
+    description: "Taught here from 1975",
+    image: "https://i.guim.co.uk/img/media/1bdeade77bd0455319e8c514e92cca894f7adf9e/0_7_1640_984/master/1640.jpg?width=1200&height=1200&quality=85&auto=format&fit=crop&s=fe2e83f51be6a42f8ec71e6babaa8492",
+    tldr: "British author and television presenter, best known for creating the characters Postman Pat and Rosie and Jim.",
+    events: [
+      { date: "1964", description: "Published his first book, 'Farmer Barnes Buys a Pig', marking the beginning of his writing career 📚" },
+      { date: "1981", description: "Created Postman Pat, which debuted on September 16, 1981, and became a beloved children's series 📮" },
+      { date: "Legacy", description: "Authored around 190 books for young children, including five volumes of poetry 📖" }
+    ]
+  },
+  {
+    coords: "Crowcroft Park Primary School",
+    name: "John Cunliffe",
+    occupation: "1933 - 2018",
+    description: "Worked as a deputy teacher here from 1981 to 1985",
+    image: "https://i.guim.co.uk/img/media/1bdeade77bd0455319e8c514e92cca894f7adf9e/0_7_1640_984/master/1640.jpg?width=1200&height=1200&quality=85&auto=format&fit=crop&s=fe2e83f51be6a42f8ec71e6babaa8492",
+    tldr: "British author and television presenter, best known for creating the characters Postman Pat and Rosie and Jim.",
+    events: [
+      { date: "1964", description: "Published his first book, 'Farmer Barnes Buys a Pig', marking the beginning of his writing career 📚" },
+      { date: "1981", description: "Created Postman Pat, which debuted on September 16, 1981, and became a beloved children's series 📮" },
+      { date: "Legacy", description: "Authored around 190 books for young children, including five volumes of poetry 📖" }
+    ]
+  },
+  {
+    coords: [-3.21214487433357, 54.11782273413304],
+    name: "William Norman Birkett",
+    occupation: "1883 - 1962",
+    description: "William Norman Birkett was educated here in 1894",
+    image: "https://upload.wikimedia.org/wikipedia/commons/5/51/Norman_Birkett%2C_Judge_at_Nuremberg%2C_1945.jpg",
+    tldr: "British judge, politician, and prosecutor at the Nuremberg trials.",
+    events: [
+      { date: "1945-1946", description: "Served as the alternate British judge at the Nuremberg trials, contributing to the prosecution of Nazi war criminals ⚖️" },
+      { date: "1910-1918", description: "Served as a Member of Parliament, advocating for social reforms and liberal causes 🏛️" },
+      { date: "1950", description: "Appointed as a Lord Justice of Appeal, marking a distinguished career in the British judiciary 👨‍⚖️" }
+    ]
+  },
+  {
+    coords: [-3.096474219811808, 54.190103280447865],
+    name: "William Norman Birkett",
+    occupation: "1883 - 1962",
+    description: "William Norman Birkett was born in Ulverston and attended school here until 1985",
+    image: "https://upload.wikimedia.org/wikipedia/commons/5/51/Norman_Birkett%2C_Judge_at_Nuremberg%2C_1945.jpg",
+    tldr: "British judge, politician, and prosecutor at the Nuremberg trials.",
+    events: [
+      { date: "1945-1946", description: "Served as the alternate British judge at the Nuremberg trials, contributing to the prosecution of Nazi war criminals ⚖️" },
+      { date: "1910-1918", description: "Served as a Member of Parliament, advocating for social reforms and liberal causes 🏛️" },
+      { date: "1950", description: "Appointed as a Lord Justice of Appeal, marking a distinguished career in the British judiciary 👨‍⚖️" }
+    ]
+  },
+  {
+    coords: [0.12033061643822447, 52.196529653825785],
+    name: "William Norman Birkett",
+    occupation: "1883 - 1962",
+    description: "William Norman Birkett preached here when he moved to Cambridge",
+    image: "https://upload.wikimedia.org/wikipedia/commons/5/51/Norman_Birkett%2C_Judge_at_Nuremberg%2C_1945.jpg",
+    tldr: "British judge, politician, and prosecutor at the Nuremberg trials.",
+    events: [
+      { date: "1945-1946", description: "Served as the alternate British judge at the Nuremberg trials, contributing to the prosecution of Nazi war criminals ⚖️" },
+      { date: "1910-1918", description: "Served as a Member of Parliament, advocating for social reforms and liberal causes 🏛️" },
+      { date: "1950", description: "Appointed as a Lord Justice of Appeal, marking a distinguished career in the British judiciary 👨‍⚖️" }
+    ]
+  },
+  {
+    coords: [0.12380080708405086, 52.203738272938345],
+    name: "William Norman Birkett",
+    occupation: "1883 - 1962",
+    description: "William Norman Birkett attended here from 1907 to 1910, where he became president of the debating society. He made a speech in front of Theodore Roosevelt",
+    image: "https://upload.wikimedia.org/wikipedia/commons/5/51/Norman_Birkett%2C_Judge_at_Nuremberg%2C_1945.jpg",
+    tldr: "British judge, politician, and prosecutor at the Nuremberg trials.",
+    events: [
+      { date: "1945-1946", description: "Served as the alternate British judge at the Nuremberg trials, contributing to the prosecution of Nazi war criminals ⚖️" },
+      { date: "1910-1918", description: "Served as a Member of Parliament, advocating for social reforms and liberal causes 🏛️" },
+      { date: "1950", description: "Appointed as a Lord Justice of Appeal, marking a distinguished career in the British judiciary 👨‍⚖️" }
+    ]
+  },
+  {
+    coords: [-2.98471921132369, 54.56939355376168],
+    name: "William Norman Birkett",
+    occupation: "1883 - 1962",
+    description: "William Norman Birkett made a large contribution to make sure this lake did not become a government reservoir",
+    image: "https://upload.wikimedia.org/wikipedia/commons/5/51/Norman_Birkett%2C_Judge_at_Nuremberg%2C_1945.jpg",
+    tldr: "British judge, politician, and prosecutor at the Nuremberg trials.",
+    events: [
+      { date: "1945-1946", description: "Served as the alternate British judge at the Nuremberg trials, contributing to the prosecution of Nazi war criminals ⚖️" },
+      { date: "1910-1918", description: "Served as a Member of Parliament, advocating for social reforms and liberal causes 🏛️" },
+      { date: "1950", description: "Appointed as a Lord Justice of Appeal, marking a distinguished career in the British judiciary 👨‍⚖️" }
+    ]
+  },
+  {
     coords: [-5.2283879113636464, 50.234514088162676],
     name: "Mick Fleetwood",
     occupation: "Born 1947",
