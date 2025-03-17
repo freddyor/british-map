@@ -325,7 +325,7 @@ export const locations = [
     ]
   },
   {
-    coords: "24 Cavendish Square",
+    coords: [-2.7457422, 54.3379207],
     name: "George Romney",
     occupation: "1734 - 1802",
     description: "George Romney moved here after finding success",
