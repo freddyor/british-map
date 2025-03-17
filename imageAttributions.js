@@ -2,6 +2,11 @@
 
 // Array to store image attributions
 const imageAttributions = [
+                         {
+      "name": "https://www.theguardian.com/books/2018/sep/28/john-cunliffe-obituary#img-1'>John Cunliffe</a>",
+      "author": "Yorkshire Post/SWNS",
+      "license": ""
+    },
                        {
       "name": "<a href='https://www.sciencehistory.org/'>Jim Ratcliffe</a>",
       "author": "Science History Institute",
