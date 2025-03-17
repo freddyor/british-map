@@ -1,5 +1,122 @@
 export const locations = [
   {
+    coords: [-2.970573747818957, 54.35172960725651],
+    name: "Beatrix Potter",
+    occupation: "1866 - 1943",
+    description: "Beatrix Potter’s home from 1905 until 1943",
+    image: "https://upload.wikimedia.org/wikipedia/commons/6/6e/Potter_1912.JPG",
+    tldr: "Beloved British author and illustrator, best known for her charming children's books featuring animal characters.",
+    events: [
+      { date: "1902", description: "Published 'The Tale of Peter Rabbit', which launched her career as a children's author and became an instant classic 🐰" },
+      { date: "1905", description: "Published 'The Tale of Two Bad Mice', her second book, which further established her reputation as a children's author 📚" },
+      { date: "Legacy", description: "Her books have sold over 100 million copies worldwide and continue to enchant readers of all ages with their timeless appeal 📚" }
+    ]
+  },
+  {
+    coords: [-2.970108491168224, 54.351798865810565],
+    name: "Beatrix Potter",
+    occupation: "1866 - 1943",
+    description: "The Tower Bank Arms here appears in Potter’s The Tale of Jemima Puddle-Duck, reflecting her love for the local scenery",
+    image: "https://upload.wikimedia.org/wikipedia/commons/6/6e/Potter_1912.JPG",
+    tldr: "Beloved British author and illustrator, best known for her charming children's books featuring animal characters.",
+    events: [
+      { date: "1902", description: "Published 'The Tale of Peter Rabbit', which launched her career as a children's author and became an instant classic 🐰" },
+      { date: "1913", description: "Married William Heelis, a local solicitor, and continued to write while managing her farm and conservation efforts 🌼" },
+      { date: "Legacy", description: "Her books have sold over 100 million copies worldwide and continue to enchant readers of all ages with their timeless appeal 📚" }
+    ]
+  },
+  {
+    coords: [-2.964285823889168, 54.40059219833481],
+    name: "Beatrix Potter",
+    occupation: "1866 - 1943",
+    description: "Beatrix Potter first stayed here in 1882, beginning her long association with Cumbria",
+    image: "https://upload.wikimedia.org/wikipedia/commons/6/6e/Potter_1912.JPG",
+    tldr: "Beloved British author and illustrator, best known for her charming children's books featuring animal characters.",
+    events: [
+      { date: "1902", description: "Published 'The Tale of Peter Rabbit', which launched her career as a children's author and became an instant classic 🐰" },
+      { date: "1905", description: "Published 'The Tale of Two Bad Mice', her second book, which further established her reputation as a children's author 📚" },
+      { date: "Legacy", description: "Her books have sold over 100 million copies worldwide and continue to enchant readers of all ages with their timeless appeal 📚" }
+    ]
+  },
+  {
+    coords: [-3.1560299219872543, 54.589798250906405],
+    name: "Beatrix Potter",
+    occupation: "1866 - 1943",
+    description: "Beatrix Potter spent her summer holidays here from 1805 to 1907, the garden inspired Mr McGregor’s garden in Peter Rabbit",
+    image: "https://upload.wikimedia.org/wikipedia/commons/6/6e/Potter_1912.JPG",
+    tldr: "Beloved British author and illustrator, best known for her charming children's books featuring animal characters.",
+    events: [
+      { date: "1902", description: "Published 'The Tale of Peter Rabbit', which launched her career as a children's author and became an instant classic 🐰" },
+      { date: "1905", description: "Published 'The Tale of Two Bad Mice', her second book, which further established her reputation as a children's author 📚" },
+      { date: "Legacy", description: "Her books have sold over 100 million copies worldwide and continue to enchant readers of all ages with their timeless appeal 📚" }
+    ]
+  },
+  {
+    coords: [-0.18622378327637532, 51.49039725888439],
+    name: "Beatrix Potter",
+    occupation: "1866 - 1943",
+    description: "Beatrix Potter was born on this spot, at her family house that was destroyed during the blitz",
+    image: "https://upload.wikimedia.org/wikipedia/commons/6/6e/Potter_1912.JPG",
+    tldr: "Beloved British author and illustrator, best known for her charming children's books featuring animal characters.",
+    events: [
+      { date: "1902", description: "Published 'The Tale of Peter Rabbit', which launched her career as a children's author and became an instant classic 🐰" },
+      { date: "1905", description: "Published 'The Tale of Two Bad Mice', her second book, which further established her reputation as a children's author 📚" },
+      { date: "Legacy", description: "Her books have sold over 100 million copies worldwide and continue to enchant readers of all ages with their timeless appeal 📚" }
+    ]
+  },
+  {
+    coords: [-3.571535531881315, 56.56124285839885],
+    name: "Beatrix Potter",
+    occupation: "1866 - 1943",
+    description: "Beatrix Potter was on holiday here in 1893 when she first conceived of Peter Rabbit during a letter to a 5-year-old family friend",
+    image: "https://upload.wikimedia.org/wikipedia/commons/6/6e/Potter_1912.JPG",
+    tldr: "Beloved British author and illustrator, best known for her charming children's books featuring animal characters.",
+    events: [
+      { date: "1902", description: "Published 'The Tale of Peter Rabbit', which launched her career as a children's author and became an instant classic 🐰" },
+      { date: "1905", description: "Published 'The Tale of Two Bad Mice', her second book, which further established her reputation as a children's author 📚" },
+      { date: "Legacy", description: "Her books have sold over 100 million copies worldwide and continue to enchant readers of all ages with their timeless appeal 📚" }
+    ]
+  },
+  {
+    coords: [-2.923340900892364, 54.350338190765484],
+    name: "Beatrix Potter",
+    occupation: "1866 - 1943",
+    description: "Once a summer house of Beatrix Potter’s family",
+    image: "https://upload.wikimedia.org/wikipedia/commons/6/6e/Potter_1912.JPG",
+    tldr: "Beloved British author and illustrator, best known for her charming children's books featuring animal characters.",
+    events: [
+      { date: "1902", description: "Published 'The Tale of Peter Rabbit', which launched her career as a children's author and became an instant classic 🐰" },
+      { date: "1905", description: "Published 'The Tale of Two Bad Mice', her second book, which further established her reputation as a children's author 📚" },
+      { date: "Legacy", description: "Her books have sold over 100 million copies worldwide and continue to enchant readers of all ages with their timeless appeal 📚" }
+    ]
+  },
+  {
+    coords: [-2.89524954384651, 54.443320150896476],
+    name: "Beatrix Potter",
+    occupation: "1866 - 1943",
+    description: "Beatrix Potter purchased a large sheep farm here in 1923, making her one of the major Herdwick sheep farmers in England",
+    image: "https://upload.wikimedia.org/wikipedia/commons/6/6e/Potter_1912.JPG",
+    tldr: "Beloved British author and illustrator, best known for her charming children's books featuring animal characters.",
+    events: [
+      { date: "1902", description: "Published 'The Tale of Peter Rabbit', which launched her career as a children's author and became an instant classic 🐰" },
+      { date: "1905", description: "Published 'The Tale of Two Bad Mice', her second book, which further established her reputation as a children's author 📚" },
+      { date: "Legacy", description: "Her books have sold over 100 million copies worldwide and continue to enchant readers of all ages with their timeless appeal 📚" }
+    ]
+  },
+  {
+    coords: [-0.18265291522153662, 51.443967163654236],
+    name: "Beatrix Potter",
+    occupation: "1866 - 1943",
+    description: "This school is named after Beatrix Potter",
+    image: "https://upload.wikimedia.org/wikipedia/commons/6/6e/Potter_1912.JPG",
+    tldr: "Beloved British author and illustrator, best known for her charming children's books featuring animal characters.",
+    events: [
+      { date: "1902", description: "Published 'The Tale of Peter Rabbit', which launched her career as a children's author and became an instant classic 🐰" },
+      { date: "1905", description: "Published 'The Tale of Two Bad Mice', her second book, which further established her reputation as a children's author 📚" },
+      { date: "Legacy", description: "Her books have sold over 100 million copies worldwide and continue to enchant readers of all ages with their timeless appeal 📚" }
+    ]
+  },
+  {
     coords: [-3.2254421710299748, 54.12627036050323],
     name: "James Ramsden",
     occupation: "1822 - 1896",
