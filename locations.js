@@ -221,7 +221,7 @@ export const locations = [
     ]
   },
   {
-    coords: "Colne, Lancashire",
+    coords: [-2.7538392164127803, 54.32528401243328],
     name: "John Cunliffe",
     occupation: "1933 - 2018",
     description: "John Cunliffe was born here on June 16, 1933",
@@ -234,7 +234,7 @@ export const locations = [
     ]
   },
   {
-    coords: "Ilkley, West Yorkshire",
+    coords: [-1.823704137374541, 53.92232738938836],
     name: "John Cunliffe",
     occupation: "1933 - 2018",
     description: "John Cunliffe moved here in 1992 and died here on September 20, 2018",
@@ -247,7 +247,7 @@ export const locations = [
     ]
   },
   {
-    coords: "Colne Grammar School",
+    coords: [-2.221339213067969, 53.84434737157593],
     name: "John Cunliffe",
     occupation: "1933 - 2018",
     description: "John Cunliffe attended school here, where he was bullied for his height",
@@ -260,7 +260,7 @@ export const locations = [
     ]
   },
   {
-    coords: "Castle Park Primary School",
+   coords: [-2.7263852541048195, 54.32974220999022],
     name: "John Cunliffe",
     occupation: "1933 - 2018",
     description: "Taught here from 1975",
@@ -273,7 +273,7 @@ export const locations = [
     ]
   },
   {
-    coords: "Crowcroft Park Primary School",
+    coords: [-2.1905502220759345, 53.45156612711435],
     name: "John Cunliffe",
     occupation: "1933 - 2018",
     description: "Worked as a deputy teacher here from 1981 to 1985",
