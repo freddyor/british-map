@@ -61,13 +61,7 @@
             width: 100%;
             flex-direction: column;
             font-size: 16px;
-            line-height: 1.05; /* Reduced line spacing */
-            font-weight: bold;
-            margin-left: 0px; /* Added margin */
-            margin-right: 22px; /* Added margin */
-            overflow-y: scroll; /* Enables vertical scrolling */
-            -webkit-overflow-scrolling: touch; /* For smoother scrolling on iOS */
-            height: auto; /* Ensures content fits and scrolling works */
+            line-height: 1.5; /* Adjusted line spacing */
         }
 
         .tab-content.active {
@@ -77,170 +71,22 @@
         #map {
             flex: 1;
             width: 100%;
-            margin: 0; /* Ensure no margin */
-            padding: 0; /* Ensure no padding */
         }
 
-        .dropdown {
-            position: fixed;
-            left: 50%;
-            top: 10px;
-            transform: translateX(-50%);
-            z-index: 1001;
-        }
-
-        .button-group {
-            position: fixed;
-            left: 50%;
-            bottom: 10px;
-            transform: translateX(-50%);
-            display: flex;
-            gap: 10px;
-            z-index: 1001;
-        }
-
-        .custom-button {
-            background-color: #e9e8e0;
-            color: black;
-            border: 2px solid #f0f0f0;
-            padding: 3px 8px;
-            font-size: 12px;
-            font-weight: bold;
-            border-radius: 8px;
-            cursor: pointer;
-            text-decoration: none;
-            display: inline-block;
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
-            white-space: nowrap;
-            text-align: center;
-        }
-
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: #e9e8e0;
-            border: 2px solid #f0f0f0;
-            min-width: 160px;
-            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-            z-index: 10000; /* Increase z-index */
-            border-radius: 8px;
-            overflow: hidden;
-            top: 100%;
-            left: 50%;
-            transform: translateX(-50%);
-            padding: 5px;
-            box-sizing: border-box;
-        }
-
-        .support-button {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: calc(100% - 10px);
-            padding: 12px 16px;
-            background-color: #9b4dca;
-            color: white;
-            text-decoration: none;
-            border: none;
-            cursor: pointer;
-            border-radius: 4px;
-            margin: 5px;
-            box-sizing: border-box;
-        }
-
-        .support-button:hover {
-            background-color: #7c3ba5;
-        }
-
-        .support-button span {
-            font-weight: bold;
-        }
-
-        .top-supporters {
-            padding: 8px 10px;
-            font-weight: bold;
-            font-size: 16px;
-        }
-
-        .top-supporters h4 {
-            margin: 0 0 8px 0;
-            font-weight: bold;
-            font-size: 16px;
-            text-decoration: underline;
-        }
-
-        .top-supporters ul {
-            margin: 0;
-            padding-left: 0;
-            list-style-type: none;
-            font-weight: bold;
-            font-size: 16px;
-        }
-
-        .top-supporters li {
-            margin-bottom: 10px;
-            font-weight: bold;
-            font-size: 16px;
-        }
-
-        .donation-amount {
-            color: #9b4dca;
-            font-weight: bold;
-        }
-
-        .contribution-count {
-            color: #9b4dca;
-            font-weight: bold;
-        }
-
-        .donation-comment {
-            font-size: 12px;
-            color: #666;
-            margin-top: 2px;
-            margin-left: 20px;
-            line-height: 1.05; /* Reduced line spacing */
-        }
-
-        .project-info {
-            padding: 8px 10px;
-            font-size: 16px;
-            line-height: 1.05; /* Reduced line spacing */
-            font-weight: bold;
-            margin-left: 5px; /* Added margin */
-            margin-right: 5px; /* Added margin */
-        }
-
-        @media (max-width: 750px) {
-            .custom-button {
-                font-size: 14px;
-                padding: 4px 10px;
-            }
-        }
-
-        @media (max-width: 400px) {
-            .custom-button {
-                font-size: 12px;
-                padding: 2px 6px;
-            }
-        }
-
-        @media (prefers-contrast: more) {
-            .custom-button {
-                background-color: #000000;
-                color: #FFFFFF;
-                border-color: #FFFFFF;
-                box-shadow: none;
-            }
-        }
-
-        /* Add this media query */
-        @media (min-width: 751px) {
+        /* Styles for mobile-like dimensions on desktop */
+        @media (min-width: 750px) {
             #BritOnThisDay,
             #Support ❤️ {
-                max-width: 600px; /* Adjust this value as needed */
-                margin: 0 auto;
-                padding-left: 10px;
-                padding-right: 10px;
+                max-width: 400px; /* Mimics mobile width */
+                margin: 0 auto; /* Centers the content */
+                padding-left: 20px; /* Adds padding on the left */
+                padding-right: 20px; /* Adds padding on the right */
+                box-shadow: 0px 4px 10px rgba(0,0,0,0.1); /* Optional shadow for aesthetics */
+                border-radius: 8px; /* Optional rounded corners */
+                background-color: #fff; /* Optional background for contrast */
+                overflow-y: auto; /* Ensures scrolling works if content overflows */
+                height: auto; /* Adjusts height automatically */
+                box-sizing: border-box; /* Ensures padding doesn't affect width */
             }
         }
     </style>
@@ -250,10 +96,9 @@
 <!-- Tab navigation -->
 <div class="tab">
     <button class="tablinks" onclick="openTab(event, 'Map 🗺️')">Map 🗺️</button>
-    <button class="tablinks" onclick="openTab(event, 'Brit on this day 📅')">Brit on this day 📅</button>
+    <button class="tablinks" onclick="openTab(event, 'BritOnThisDay')">Brit on this day 📅</button>
     <button class="tablinks" onclick="openTab(event, 'Support ❤️')">Support ❤️</button>
 </div>
-
 <!-- Tab content -->
 <div id="Map 🗺️" class="tab-content active">
     <div id="map"></div>
