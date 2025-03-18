@@ -25,6 +25,7 @@
             font-family: 'Poppins', sans-serif;
             display: flex;
             flex-direction: column;
+              overflow: hidden;
         }
 
         .tab {
@@ -71,10 +72,12 @@
             display: flex;
         }
 
-        #map {
-            flex: 1;
-            width: 100%;
-        }
+#map {
+    flex: 1;
+    width: 100%;
+    margin: 0; /* Ensure no margin */
+    padding: 0; /* Ensure no padding */
+}
 
         .dropdown {
             position: fixed;
