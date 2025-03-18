@@ -360,7 +360,7 @@ imageAttributionsButton.textContent = 'Image Attributions';
 
 // Position the new button at the bottom of the page
 imageAttributionsButton.style.position = 'fixed';
-imageAttributionsButton.style.bottom = '20px'; // Adjust the bottom position as needed
+imageAttributionsButton.style.bottom = '10px'; // Adjust the bottom position as needed
 imageAttributionsButton.style.left = '50%';
 imageAttributionsButton.style.transform = 'translateX(-50%)';
 
