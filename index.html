@@ -15,8 +15,6 @@
     <!-- Mapbox GL JS & CSS -->
     <link href="https://api.mapbox.com/mapbox-gl-js/v3.10.0/mapbox-gl.css" rel="stylesheet">
     <script src="https://api.mapbox.com/mapbox-gl-js/v3.10.0/mapbox-gl.js"></script>
-    <link rel='stylesheet' href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.css' type='text/css' />
-    <script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.min.js'></script>
 
     <style>
         body, html {
@@ -73,12 +71,12 @@
         .tab-content.active {
             display: flex;
         }
-
+        
         #BritOnThisDay, #Support ❤️ {
             margin-left: 10px; /* Adjust the value as needed */
             margin-right: 10px; /* Adjust the value as needed */
         }
-
+        
         #map {
             flex: 1;
             width: 100%;
@@ -237,6 +235,26 @@
                 box-shadow: none;
             }
         }
+
+        #search-bar {
+            margin: 10px;
+            position: fixed;
+            left: 50%;
+            top: 10px;
+            transform: translateX(-50%);
+            z-index: 1001;
+        }
+
+        #search-input {
+            padding: 5px;
+            font-size: 14px;
+        }
+
+        #search-button {
+            padding: 5px;
+            font-size: 14px;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
@@ -246,6 +264,12 @@
     <button class="tablinks" onclick="openTab(event, 'Map 🗺️')">Map 🗺️</button>
     <button class="tablinks" onclick="openTab(event, 'Brit on this day 📅')">Brit on this day 📅</button>
     <button class="tablinks" onclick="openTab(event, 'Support ❤️')">Support ❤️</button>
+</div>
+
+<!-- Search bar -->
+<div id="search-bar">
+    <input type="text" id="search-input" placeholder="Search for a location">
+    <button id="search-button">Search</button>
 </div>
 
 <!-- Tab content -->
@@ -331,36 +355,28 @@
         document.querySelector('.tablinks').click();
     });
 
-    // Map initialization
-    mapboxgl.accessToken = 'pk.eyJ1IjoiZnJlZGR5b3Jrc2hpcmUiLCJhIjoiY2x0ZHp5eHFwMDZwbDJxbzI0aWlwcHV0NyJ9.CYrLUiV25DdYXVGTWnOc3Q'; // YOUR MAPBOX TOKEN HERE
-    var map = new mapboxgl.Map({
-        container: 'map',
-        style: 'mapbox://styles/mapbox/streets-v11',
-        center: [-2.5, 54], // Center on UK
-        zoom: 5
+    // Search functionality
+    document.getElementById('search-button').addEventListener('click', function() {
+        var query = document.getElementById('search-input').value.toLowerCase();
+        var found = false;
+
+        locations.forEach(function(location) {
+            if (location.name.toLowerCase() === query) {
+                map.flyTo({
+                    center: location.coords,
+                    zoom: 13
+                });
+                L.marker(location.coords).addTo(map)
+                    .bindPopup(location.name)
+                    .openPopup();
+                found = true;
+            }
+        });
+
+        if (!found) {
+            alert('Location not found');
+        }
     });
-
-       // Add search functionality using Mapbox Geocoder
-        const geocoder = new MapboxGeocoder({
-            accessToken: mapboxgl.accessToken,
-            mapboxgl: mapboxgl,
-            countries: 'gb', // Restrict search to the UK
-            types: 'place',
-            placeholder: 'Search for a UK location',
-            proximity: { longitude: -2.5, latitude: 54 } // Bias results towards the UK
-        });
-
-        // Add the geocoder control to the map
-        map.addControl(geocoder);
-
-        // Listen for the `result` event from the Geocoder
-        geocoder.on('result', (e) => {
-            map.flyTo({
-                center: e.result.center,
-                zoom: 10 // Adjust zoom level as needed
-            });
-        });
-
 </script>
 
 <!-- Firebase SDKs -->
