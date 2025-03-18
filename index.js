@@ -473,7 +473,7 @@ function loadMarkersFromFirebase() {
       });
     });
 
-      // Add all markers to the map after they are created
+    // Add all markers to the map after they are created
     allMarkers.forEach(marker => marker.addTo(map));
   }).catch(error => {
     console.error('Error loading markers: ', error);
@@ -503,59 +503,54 @@ map.getContainer().appendChild(resetButton);
 
 // Implement the filterMarkersByName function
 function filterMarkersByName(name) {
-  // Hide all markers
-  allMarkers.forEach(marker => marker.remove());
+    // Hide all markers
+    allMarkers.forEach(marker => marker.remove());
 
-  // Show only the markers with the matching name
-  const filteredMarkers = allMarkers.filter(marker => {
-    const popup = marker.getPopup();
-    if (popup) {
-      const popupContent = popup.getElement().innerHTML;
-      return popupContent.includes(name);
-    }
-    return false;
-  });
-  filteredMarkers.forEach(marker => marker.addTo(map));
+    // Show only the markers with the matching name
+    const filteredMarkers = allMarkers.filter(marker => {
+        const popup = marker.getPopup();
+        if (popup) {
+            const popupContent = popup.getElement().innerHTML;
+            return popupContent.includes(name);
+        }
+        return false;
+    });
+    filteredMarkers.forEach(marker => marker.addTo(map));
 
-  // Adjust the map view to fit all visible markers
-  adjustMapBounds(filteredMarkers);
+    // Adjust the map view to fit all visible markers
+    adjustMapBounds(filteredMarkers);
 }
 
 // Implement the showAllMarkers function
 function showAllMarkers() {
-  // Remove all existing markers from the map
-  allMarkers.forEach(marker => marker.remove());
+    // Remove all existing markers from the map
+    allMarkers.forEach(marker => marker.remove());
 
-  // Add all markers back to the map
-  locations.forEach(location => {
-    const { element: markerElement } = createCustomMarker(location.image, '#9B4DCA', true);
-    markerElement.className += ' location-marker';
+    // Add all markers back to the map
+    allMarkers.forEach(marker => marker.addTo(map));
 
-  // Adjust the map view to fit all visible markers
-  adjustMapBounds(allMarkers);
+    // Adjust the map view to fit all visible markers
+    adjustMapBounds(allMarkers);
 
-  // Reset the map view to the original bounds
-  map.fitBounds(originalBounds, { padding: 50 });
-
-  // Add all markers back to the map
-  allMarkers.forEach(marker => marker.addTo(map));
+    // Reset the map view to the original bounds
+    map.fitBounds(originalBounds, { padding: 50 });
 }
 
 // Implement the adjustMapBounds function
 function adjustMapBounds(markers) {
-  if (markers.length === 0) {
-    // If there are no markers, reset the map to the original bounds
-    map.fitBounds(originalBounds, { padding: 50 });
-  } else {
-    // Create a new bounds object
-    const bounds = new mapboxgl.LngLatBounds();
+    if (markers.length === 0) {
+        // If there are no markers, reset the map to the original bounds
+        map.fitBounds(originalBounds, { padding: 50 });
+    } else {
+        // Create a new bounds object
+        const bounds = new mapboxgl.LngLatBounds();
 
-    // Extend the bounds to include each marker
-    markers.forEach(marker => {
-      bounds.extend(marker.getLngLat());
-    });
+        // Extend the bounds to include each marker
+        markers.forEach(marker => {
+            bounds.extend(marker.getLngLat());
+        });
 
-    // Fit the map to the new bounds
-    map.fitBounds(bounds, { padding: 50 });
-  }
+        // Fit the map to the new bounds
+        map.fitBounds(bounds, { padding: 50 });
+    }
 }
