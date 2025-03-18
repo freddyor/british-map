@@ -25,7 +25,7 @@
             font-family: 'Poppins', sans-serif;
             display: flex;
             flex-direction: column;
-              overflow: hidden;
+            overflow: hidden;
         }
 
         .tab {
@@ -71,18 +71,18 @@
         .tab-content.active {
             display: flex;
         }
-        
-#BritOnThisDay, #Support ❤️ {
-    margin-left: 10px; /* Adjust the value as needed */
-    margin-right: 10px; /* Adjust the value as needed */
 
-}
-#map {
-    flex: 1;
-    width: 100%;
-    margin: 0; /* Ensure no margin */
-    padding: 0; /* Ensure no padding */
-}
+        #BritOnThisDay, #Support ❤️ {
+            margin-left: 10px; /* Adjust the value as needed */
+            margin-right: 10px; /* Adjust the value as needed */
+        }
+
+        #map {
+            flex: 1;
+            width: 100%;
+            margin: 0; /* Ensure no margin */
+            padding: 0; /* Ensure no padding */
+        }
 
         .dropdown {
             position: fixed;
@@ -258,23 +258,32 @@
 <div id="Support ❤️" class="tab-content">
     <div class="project-info">
         <p>Every time the map is loaded, it costs me money.</p>
-      <p>I want to keep this site completely free for use, but as a 22 year old, I cannot fund it myself forever.</p>  
+        <p>I want to keep this site completely free for use, but as a 22 year old, I cannot fund it myself forever.</p>  
         <p>I will need voluntary financial support to keep this project alive.</p>
         <p>This site is also taking me an extremely long time to build due to geo-locating the markers myself, any support is greatly appreciated 😊</p>
-<a href="https://www.buymeacoffee.com/britmap"><img src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=☕&slug=britmap&button_colour=BD5FFF&font_colour=ffffff&font_family=Poppins&outline_colour=000000&coffee_colour=FFDD00" alt="Buy me a coffee"></a>
-         <p>Email me: freddy@britmap.com</p>
+        <a href="https://www.buymeacoffee.com/britmap"><img src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=☕&slug=britmap&button_colour=BD5FFF&font_colour=ffffff&font_family=Poppins&outline_colour=000000&coffee_colour=FFDD00" /></a>
+        <p>Email me: freddy@britmap.com</p>
     </div>
     <div class="top-supporters">
         <h4>Top Supporters</h4>
         <ul>
             <li>someone - <span class="donation-amount">£15</span> <span class="contribution-count"></span></li>
             <li>markwillgofaster - <span class="donation-amount">£5</span> <span class="contribution-count"></span></li>
-             <li>Chip Pedro - <span class="donation-amount">£5</span> <span class="contribution-count"></span></li>
-             <li>buffsteve24 - <span class="donation-amount">£5</span> <span class="contribution-count"></span></li>
+            <li>Chip Pedro - <span class="donation-amount">£5</span> <span class="contribution-count"></span></li>
+            <li>buffsteve24 - <span class="donation-amount">£5</span> <span class="contribution-count"></span></li>
         </ul>
     </div>
 </div>
 
+<!-- Dropdown button for locations -->
+<div class="dropdown">
+  <button class="custom-button">Locations</button>
+  <div id="dropdown-content" class="dropdown-content">
+    <!-- Dynamic content will be inserted here -->
+  </div>
+</div>
+
+<script src="locations.js"></script>
 <script>
     function openTab(evt, tabName) {
         var i, tabcontent, tablinks;
@@ -328,6 +337,50 @@
     document.addEventListener('DOMContentLoaded', function() {
         document.querySelector('.tablinks').click();
     });
+
+    // Populate dropdown with locations
+    document.addEventListener('DOMContentLoaded', () => {
+        const locations = [
+            // Your locations array from locations.js
+        ];
+
+        const dropdownContent = document.getElementById('dropdown-content');
+
+        locations.forEach(location => {
+            const locationDiv = document.createElement('div');
+            
+            const nameToggle = document.createElement('a');
+            nameToggle.href = '#';
+            nameToggle.innerText = location.name;
+            locationDiv.appendChild(nameToggle);
+
+            const descriptionList = document.createElement('div');
+            descriptionList.style.display = 'none';
+
+            location.events.forEach(event => {
+                const descriptionLink = document.createElement('a');
+                descriptionLink.href = '#';
+                descriptionLink.innerText = event.description;
+                descriptionLink.addEventListener('click', () => {
+                    // Implement zoom to coordinates function here
+                    zoomToCoordinates(location.coords);
+                });
+                descriptionList.appendChild(descriptionLink);
+            });
+
+            nameToggle.addEventListener('click', () => {
+                descriptionList.style.display = descriptionList.style.display === 'none' ? 'block' : 'none';
+            });
+
+            locationDiv.appendChild(descriptionList);
+            dropdownContent.appendChild(locationDiv);
+        });
+
+        function zoomToCoordinates(coords) {
+            // Your logic to zoom to the map coordinates
+            console.log(`Zooming to coordinates: ${coords}`);
+        }
+    });
 </script>
 
 <!-- Firebase SDKs -->
@@ -337,7 +390,7 @@
 <!-- Your custom script -->
 <script type="module" src="index.js"></script>
 
-<script data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="britmap" data-description="Support me on Buy me a coffee!" data-message="" data-color="#FF813F" data-position="Right" data-x_margin="18" data-y_margin="18"></script>
+<script data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="britmap" data-description="Support me on Buy me a coffee!" data-message="Support me on Buy me a coffee!" data-color="#FFDD00" data-position="right" data-x_margin="18" data-y_margin="18"></script>
 
 </body>
 </html>
