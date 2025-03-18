@@ -423,7 +423,9 @@ function toggleImageAttributions() {
 }
 
 // Event listener for the new button
-document.getElementById('image-attributions-button').addEventListener('click', toggleImageAttributions);
+document.body.appendChild(imageAttributionsButton);
+imageAttributionsButton.addEventListener('click', toggleImageAttributions);
+
 
 function loadMarkersFromFirebase() {
   getDocs(collection(db, 'markers')).then((querySnapshot) => {
@@ -520,7 +522,6 @@ function filterMarkersByName(name) {
     // Adjust the map view to fit all visible markers
     adjustMapBounds(filteredMarkers);
 }
-
 // Implement the showAllMarkers function
 function showAllMarkers() {
     // Remove all existing markers from the map
