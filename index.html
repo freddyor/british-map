@@ -64,14 +64,13 @@
             font-size: 16px;
             line-height: 1.05; /* Reduced line spacing */
             font-weight: bold;
-            margin-left: 0px; /* Added margin */
+            margin-left: 10px; /* Added margin */
             margin-right: 22px; /* Added margin *//* Ensure flex direction is column */
         }
 
         .tab-content.active {
             display: flex;
         }
-        
 
 #map {
     flex: 1;
@@ -79,7 +78,6 @@
     margin: 0; /* Ensure no margin */
     padding: 0; /* Ensure no padding */
 }
-
 
         .dropdown {
             position: fixed;
@@ -150,10 +148,6 @@
 
         .support-button:hover {
             background-color: #7c3ba5;
-
-        .support-text {
-           margin-left: 5px; 
-            
         }
 
         .support-button span {
@@ -242,21 +236,21 @@
 
 <!-- Tab navigation -->
 <div class="tab">
-    <button class="tablinks" onclick="openTab(event, 'map')">Map 🗺️</button>
-    <button class="tablinks" onclick="openTab(event, 'BritOnThisDay')">Brit on this day 📅</button>
-    <button class="tablinks" onclick="openTab(event, 'Support')">Support ❤️</button>
+    <button class="tablinks" onclick="openTab(event, 'Map 🗺️')">Map 🗺️</button>
+    <button class="tablinks" onclick="openTab(event, 'Brit on this day 📅')">Brit on this day 📅</button>
+    <button class="tablinks" onclick="openTab(event, 'Support ❤️')">Support ❤️</button>
 </div>
 
 <!-- Tab content -->
-<div id="map" class="tab-content active">
+<div id="Map 🗺️" class="tab-content active">
     <div id="map"></div>
 </div>
 
-<div id="BritOnThisDay" class="tab-content">
+<div id="Brit on this day 📅" class="tab-content">
     <p>coming soon...</p>
 </div>
 
-<div id="Support" class="tab-content">
+<div id="Support ❤️" class="tab-content">
     <div class="support-text">
         <p>Every time the map is loaded, it costs me money. I want to keep this site completely free for use, but as a 22 year old, I cannot fund it myself forever. I will need voluntary financial support.</p>
         <p>This site is also taking me an extremely long time to build due to geo-locating the markers myself, any support is appreciated 😊</p>
