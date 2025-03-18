@@ -151,8 +151,8 @@
             background-color: #7c3ba5;
         }
 
-        .support-page {
-            margin-left: 10px;
+        .support-button span {
+            font-weight: bold;
         }
 
         .top-supporters {
@@ -223,15 +223,6 @@
             }
         }
 
-        /* CSS for desktop view */
-@media only screen and (min-width: 1024px) {
-  /* Select the containers for the Support and BritOnThisDay pages */
-  .support-page, .brit-on-this-day-page {
-    max-width: 320px; /* Set the width mimicking a mobile device */
-    margin: 0 auto; /* Center the content with margins on each side */
-  }
-}
-
         @media (prefers-contrast: more) {
             .custom-button {
                 background-color: #000000;
@@ -246,21 +237,21 @@
 
 <!-- Tab navigation -->
 <div class="tab">
-    <button class="tablinks" onclick="openTab(event, 'map-pag')">Map 🗺️</button>
-    <button class="tablinks" onclick="openTab(event, 'support-page')">Brit on this day 📅</button>
-    <button class="tablinks" onclick="openTab(event, 'britonthisday-page')">Support ❤️</button>
+    <button class="tablinks" onclick="openTab(event, 'Map 🗺️')">Map 🗺️</button>
+    <button class="tablinks" onclick="openTab(event, 'Brit on this day 📅')">Brit on this day 📅</button>
+    <button class="tablinks" onclick="openTab(event, 'Support ❤️')">Support ❤️</button>
 </div>
 
 <!-- Tab content -->
-<div id="map-page" class="tab-content active">
+<div id="Map 🗺️" class="tab-content active">
     <div id="map"></div>
 </div>
 
-<div id="support-page" class="tab-content">
+<div id="BritOnThisDay" class="tab-content">
     <p>coming soon...</p>
 </div>
 
-<div id="britonthisday-page" class="tab-content">
+<div id="Support ❤️" class="tab-content">
     <div class="support-text">
         <p>Every time the map is loaded, it costs me money. I want to keep this site completely free for use, but as a 22 year old, I cannot fund it myself forever. I will need voluntary financial support.</p>
         <p>This site is also taking me an extremely long time to build due to geo-locating the markers myself, any support is appreciated 😊</p>
