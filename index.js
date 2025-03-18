@@ -8,7 +8,7 @@ mapboxgl.accessToken = 'pk.eyJ1IjoiZnJlZGRvbWF0ZSIsImEiOiJjbTc1bm5zYnQwaG1mMmtxe
 var map = new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/freddomate/cm785h0qv00cf01r0e8xxaxbc',
-    center: [-3.435973, 55.378051], // New coordinates to center the map above the UK
+   center: [-3.435973, 55.378051], // New coordinates to center the map above the UK
     zoom: 5,
     pitch: 45,
     bearing: -17.6
@@ -48,29 +48,6 @@ buttonGroup.style.display = 'flex';
 buttonGroup.style.gap = '10px';
 document.body.appendChild(buttonGroup);
 
-// Search functionality
-document.getElementById('search-button').addEventListener('click', function() {
-    var query = document.getElementById('search-input').value.toLowerCase();
-    var found = false;
-
-    locations.forEach(function(location) {
-        if (location.name.toLowerCase() === query) {
-            map.flyTo({
-                center: location.coords,
-                zoom: 13
-            });
-            L.marker(location.coords).addTo(map)
-                .bindPopup(location.name)
-                .openPopup();
-            found = true;
-        }
-    });
-
-    if (!found) {
-        alert('Location not found');
-    }
-});
-
 function addLocationsList() {
     const list = document.createElement('ul');
     list.style.listStyleType = 'none';
@@ -106,7 +83,6 @@ function addLocationsList() {
 
     openableContainer.classList.add('hide-scrollbar');
 }
-
 
 // Create a <style> element to add the CSS
 const stylePopup = document.createElement('style');
