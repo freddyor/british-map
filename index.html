@@ -15,6 +15,8 @@
     <!-- Mapbox GL JS & CSS -->
     <link href="https://api.mapbox.com/mapbox-gl-js/v3.10.0/mapbox-gl.css" rel="stylesheet">
     <script src="https://api.mapbox.com/mapbox-gl-js/v3.10.0/mapbox-gl.js"></script>
+    <link rel='stylesheet' href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.css' type='text/css' />
+    <script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.min.js'></script>
 
     <style>
         body, html {
@@ -25,7 +27,7 @@
             font-family: 'Poppins', sans-serif;
             display: flex;
             flex-direction: column;
-              overflow: hidden;
+            overflow: hidden;
         }
 
         .tab {
@@ -72,17 +74,17 @@
             display: flex;
         }
         
-#BritOnThisDay, #Support ❤️ {
-    margin-left: 10px; /* Adjust the value as needed */
-    margin-right: 10px; /* Adjust the value as needed */
-
-}
-#map {
-    flex: 1;
-    width: 100%;
-    margin: 0; /* Ensure no margin */
-    padding: 0; /* Ensure no padding */
-}
+        #BritOnThisDay, #Support ❤️ {
+            margin-left: 10px; /* Adjust the value as needed */
+            margin-right: 10px; /* Adjust the value as needed */
+        }
+        
+        #map {
+            flex: 1;
+            width: 100%;
+            margin: 0; /* Ensure no margin */
+            padding: 0; /* Ensure no padding */
+        }
 
         .dropdown {
             position: fixed;
@@ -235,6 +237,33 @@
                 box-shadow: none;
             }
         }
+
+        #search-bar {
+            margin: 10px;
+            position: fixed;
+            left: 50%;
+            top: 45px; /* Adjusted to be below the tabs */
+            transform: translateX(-50%);
+            z-index: 1001;
+            width: 80%; /* Added width for better responsiveness */
+            max-width: 600px; /* Added max-width */
+            display: flex;
+        }
+
+        #search-input {
+            padding: 5px;
+            font-size: 14px;
+            flex: 1; /* Takes up remaining space */
+        }
+
+        #search-button {
+            padding: 5px;
+            font-size: 14px;
+            cursor: pointer;
+            background-color: #4CAF50; /* Optional styling */
+            color: white; /* Optional styling */
+            border: none; /* Optional styling */
+        }
     </style>
 </head>
 <body>
@@ -244,6 +273,12 @@
     <button class="tablinks" onclick="openTab(event, 'Map 🗺️')">Map 🗺️</button>
     <button class="tablinks" onclick="openTab(event, 'Brit on this day 📅')">Brit on this day 📅</button>
     <button class="tablinks" onclick="openTab(event, 'Support ❤️')">Support ❤️</button>
+</div>
+
+<!-- Search bar -->
+<div id="search-bar">
+    <input type="text" id="search-input" placeholder="Search for a UK location">
+    <button id="search-button">Search</button>
 </div>
 
 <!-- Tab content -->
@@ -258,19 +293,19 @@
 <div id="Support ❤️" class="tab-content">
     <div class="project-info">
         <p>Every time the map is loaded, it costs me money.</p>
-      <p>I want to keep this site completely free for use, but as a 22 year old, I cannot fund it myself forever.</p>  
+        <p>I want to keep this site completely free for use, but as a 22 year old, I cannot fund it myself forever.</p>
         <p>I will need voluntary financial support to keep this project alive.</p>
         <p>This site is also taking me an extremely long time to build due to geo-locating the markers myself, any support is greatly appreciated 😊</p>
-<a href="https://www.buymeacoffee.com/britmap"><img src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=☕&slug=britmap&button_colour=BD5FFF&font_colour=ffffff&font_family=Poppins&outline_colour=000000&coffee_colour=FFDD00" alt="Buy me a coffee"></a>
-         <p>Email me: freddy@britmap.com</p>
+        <a href="https://www.buymeacoffee.com/britmap"><img src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=☕&slug=britmap&button_colour=BD5FFF&font_colour=ffffff&font_family=Poppins&outline_colour=000000&coffee_colour=FFDD00"></a>
+        <p>Email me: freddy@britmap.com</p>
     </div>
     <div class="top-supporters">
         <h4>Top Supporters</h4>
         <ul>
             <li>someone - <span class="donation-amount">£15</span> <span class="contribution-count"></span></li>
             <li>markwillgofaster - <span class="donation-amount">£5</span> <span class="contribution-count"></span></li>
-             <li>Chip Pedro - <span class="donation-amount">£5</span> <span class="contribution-count"></span></li>
-             <li>buffsteve24 - <span class="donation-amount">£5</span> <span class="contribution-count"></span></li>
+            <li>Chip Pedro - <span class="donation-amount">£5</span> <span class="contribution-count"></span></li>
+            <li>buffsteve24 - <span class="donation-amount">£5</span> <span class="contribution-count"></span></li>
         </ul>
     </div>
 </div>
@@ -328,6 +363,43 @@
     document.addEventListener('DOMContentLoaded', function() {
         document.querySelector('.tablinks').click();
     });
+
+    // Map initialization
+    mapboxgl.accessToken = 'YOUR_MAPBOX_ACCESS_TOKEN'; // Replace with your Mapbox token
+    var map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/streets-v11',
+        center: [-2.5, 54], // Center on UK
+        zoom: 5
+    });
+
+    // Add search functionality using Mapbox Geocoder
+    var geocoder = new MapboxGeocoder({
+        accessToken: mapboxgl.accessToken,
+        mapboxgl: mapboxgl,
+        countries: 'gb', // Restrict search to the UK
+        types: 'place',
+        placeholder: 'Search for a UK location',
+        proximity: { longitude: -2.5, latitude: 54 } // Bias results towards the UK
+    });
+
+    // Add the geocoder control to the map
+    map.addControl(geocoder);
+
+    // After the map loads, add a default marker in the center of the UK
+    map.on('load', function() {
+        new mapboxgl.Marker()
+            .setLngLat([-2.5, 54])
+            .addTo(map);
+    });
+
+    // Listen for the `result` event from the Geocoder
+    geocoder.on('result', function(e) {
+        map.flyTo({
+            center: e.result.center,
+            zoom: 10 // Adjust zoom level as needed
+        });
+    });
 </script>
 
 <!-- Firebase SDKs -->
@@ -337,7 +409,7 @@
 <!-- Your custom script -->
 <script type="module" src="index.js"></script>
 
-<script data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="britmap" data-description="Support me on Buy me a coffee!" data-message="" data-color="#FF813F" data-position="Right" data-x_margin="18" data-y_margin="18"></script>
+<script data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="britmap" data-description="Support me on Buy me a coffee!" data-message="Support me on Buy me a coffee!" data-color="#BD5FFF" data-position="Right" data-x_margin="18" data-y_margin="18"></script>
 
 </body>
 </html>
