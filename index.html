@@ -64,12 +64,16 @@
             font-size: 16px;
             line-height: 1.05; /* Reduced line spacing */
             font-weight: bold;
-            margin-left: 0px; /* Added margin */
+            margin-left: 10px; /* Added margin */
             margin-right: 22px; /* Added margin *//* Ensure flex direction is column */
         }
 
         .tab-content.active {
             display: flex;
+                flex: 1;
+    width: 100%;
+    margin: 0; /* Ensure no margin */
+    padding: 0;
         }
         
 #Brit on this day 📅, #Support ❤️ {
@@ -247,7 +251,7 @@
 </div>
 
 <!-- Tab content -->
-<div id="Map 🗺️" class="tab-content active">
+<div id="Map 🗺️" class="tab-content.active">
     <div id="map"></div>
 </div>
 
