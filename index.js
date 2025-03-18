@@ -29,14 +29,11 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
-let originalBounds;
-
 map.on('load', () => {
   addBuildingMarkers();
   addLocationsList();
   loadMarkersFromFirebase();
   geolocate.trigger();
-  originalBounds = map.getBounds();
 });
 
 // Container for both buttons
@@ -267,22 +264,20 @@ function createCustomMarker(imageUrl, color = '#9b4dca', isLocation = false) {
   };
 }
 
-// Store a reference to all marker elements
-const allMarkers = [];
-
 locations.forEach(location => {
   const { element: markerElement } = createCustomMarker(location.image, '#9B4DCA', true);
   markerElement.className += ' location-marker';
-
   const marker = new mapboxgl.Marker({
     element: markerElement
   })
-    .setLngLat(location.coords); // Don't add to map yet
+    .setLngLat(location.coords)
+    .addTo(map);
 
-  // Store the marker instance
-  allMarkers.push(marker);
-
-  const popupContent = `
+  const popup = new mapboxgl.Popup({
+    closeButton: true,
+    closeOnClick: true,
+    className: 'custom-popup'
+  }).setHTML(`
     <p style="font-size: 6px; font-weight: bold; margin-bottom: 10px;">${location.description}</p>
     <div style="border-top: 1px solid #ccc; margin-bottom: 10px;"></div>
     <div style="display: flex; align-items: center; gap: 10px;">
@@ -302,18 +297,11 @@ locations.forEach(location => {
         `).join('')}
       </div>
     ` : ''}
-    <button class="explore-button" data-name="${location.name}" style="margin-top: 10px; padding: 5px 10px; background-color: #4CAF50; color: white; border: none; border-radius: 5px; cursor: pointer;">Explore all markers</button>
-  `;
-
-  const popup = new mapboxgl.Popup({
-    closeButton: true,
-    closeOnClick: true,
-    className: 'custom-popup'
-  }).setHTML(popupContent);
+  `);
 
   marker.setPopup(popup);
 
-  markerElement.addEventListener('click', () => {
+  marker.getElement().addEventListener('click', () => {
     map.getCanvas().style.cursor = 'pointer';
     popup.addTo(map);
   });
@@ -326,10 +314,8 @@ function addBuildingMarkers() {
     const marker = new mapboxgl.Marker({
       element: markerElement
     })
-      .setLngLat(building.coords);
-
-      // Store the marker instance
-    allMarkers.push(marker);
+      .setLngLat(building.coords)
+      .addTo(map);
 
     const popup = new mapboxgl.Popup({
       closeButton: true,
@@ -355,7 +341,6 @@ function addBuildingMarkers() {
           `).join('')}
         </div>
       ` : ''}
-       <button class="explore-button" data-name="${building.name}" style="margin-top: 10px; padding: 5px 10px; background-color: #4CAF50; color: white; border: none; border-radius: 5px; cursor: pointer;">Explore all markers</button>
     `);
 
     marker.setPopup(popup);
@@ -423,9 +408,7 @@ function toggleImageAttributions() {
 }
 
 // Event listener for the new button
-document.body.appendChild(imageAttributionsButton);
-imageAttributionsButton.addEventListener('click', toggleImageAttributions);
-
+document.getElementById('image-attributions-button').addEventListener('click', toggleImageAttributions);
 
 function loadMarkersFromFirebase() {
   getDocs(collection(db, 'markers')).then((querySnapshot) => {
@@ -436,12 +419,10 @@ function loadMarkersFromFirebase() {
       const marker = new mapboxgl.Marker({
         element: markerElement
       })
-        .setLngLat([data.longitude, data.latitude]);
+        .setLngLat([data.longitude, data.latitude])
+        .addTo(map);
 
-      // Store the marker instance
-      allMarkers.push(marker);
-
-      const popupContent = `
+      const popupHTML = `
         <div style="padding-top: 10px; padding-bottom: 10px;">
           <div style="display: flex; align-items: center; gap: 10px;">
             <img src="${data.imageUrl}" alt="${data.name}" style="width: 40px; height: 40px; object-fit: cover; border-radius: 50%;" />
@@ -458,100 +439,21 @@ function loadMarkersFromFirebase() {
             </div>
           `).join('')}
         </div>
-        <button class="explore-button" data-name="${data.name}" style="margin-top: 10px; padding: 5px 10px; background-color: #4CAF50; color: white; border: none; border-radius: 5px; cursor: pointer;">Explore all markers</button>
       `;
-
       const popup = new mapboxgl.Popup({
         closeButton: true,
         closeOnClick: true,
         className: 'custom-popup'
-      }).setHTML(popupContent);
+      }).setHTML(popupHTML);
 
       marker.setPopup(popup);
 
-      markerElement.addEventListener('click', () => {
+      marker.getElement().addEventListener('click', () => {
         map.getCanvas().style.cursor = 'pointer';
         popup.addTo(map);
       });
     });
-
-    // Add all markers to the map after they are created
-    allMarkers.forEach(marker => marker.addTo(map));
   }).catch(error => {
     console.error('Error loading markers: ', error);
   });
-}
-
-// Add the event listener for the "Explore all markers" button
-map.getContainer().addEventListener('click', (e) => {
-  if (e.target.classList.contains('explore-button')) {
-    const name = e.target.getAttribute('data-name');
-    filterMarkersByName(name);
-  }
-});
-
-// Add a "Show all markers" button to reset the filter
-const resetButton = document.createElement('button');
-resetButton.textContent = 'Show all markers';
-resetButton.className = 'custom-button';
-resetButton.style.position = 'absolute';
-resetButton.style.top = '10px';
-resetButton.style.right = '10px';
-resetButton.style.zIndex = '1';
-resetButton.addEventListener('click', () => {
-  showAllMarkers();
-});
-map.getContainer().appendChild(resetButton);
-
-// Implement the filterMarkersByName function
-function filterMarkersByName(name) {
-    // Hide all markers
-    allMarkers.forEach(marker => marker.remove());
-
-    // Show only the markers with the matching name
-    const filteredMarkers = allMarkers.filter(marker => {
-        const popup = marker.getPopup();
-        if (popup) {
-            const popupContent = popup.getElement().innerHTML;
-            return popupContent.includes(name);
-        }
-        return false;
-    });
-    filteredMarkers.forEach(marker => marker.addTo(map));
-
-    // Adjust the map view to fit all visible markers
-    adjustMapBounds(filteredMarkers);
-}
-// Implement the showAllMarkers function
-function showAllMarkers() {
-    // Remove all existing markers from the map
-    allMarkers.forEach(marker => marker.remove());
-
-    // Add all markers back to the map
-    allMarkers.forEach(marker => marker.addTo(map));
-
-    // Adjust the map view to fit all visible markers
-    adjustMapBounds(allMarkers);
-
-    // Reset the map view to the original bounds
-    map.fitBounds(originalBounds, { padding: 50 });
-}
-
-// Implement the adjustMapBounds function
-function adjustMapBounds(markers) {
-    if (markers.length === 0) {
-        // If there are no markers, reset the map to the original bounds
-        map.fitBounds(originalBounds, { padding: 50 });
-    } else {
-        // Create a new bounds object
-        const bounds = new mapboxgl.LngLatBounds();
-
-        // Extend the bounds to include each marker
-        markers.forEach(marker => {
-            bounds.extend(marker.getLngLat());
-        });
-
-        // Fit the map to the new bounds
-        map.fitBounds(bounds, { padding: 50 });
-    }
 }
