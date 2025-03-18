@@ -74,11 +74,6 @@
             display: flex;
         }
 
-        #BritOnThisDay, #Support ❤️ {
-            margin-left: 10px; /* Adjust the value as needed */
-            margin-right: 10px; /* Adjust the value as needed */
-
-        }
         #map {
             flex: 1;
             width: 100%;
@@ -237,10 +232,20 @@
                 box-shadow: none;
             }
         }
+
+        /* Add this media query */
+        @media (min-width: 751px) {
+            #BritOnThisDay,
+            #Support ❤️ {
+                max-width: 600px; /* Adjust this value as needed */
+                margin: 0 auto;
+                padding-left: 10px;
+                padding-right: 10px;
+            }
+        }
     </style>
 </head>
 <body>
-
 
 <!-- Tab navigation -->
 <div class="tab">
@@ -253,7 +258,6 @@
 <div id="Map 🗺️" class="tab-content active">
     <div id="map"></div>
 </div>
-
 <div id="Brit on this day 📅" class="tab-content">
     <div class="mapboxgl-popup-content">
         <p style="font-size: 16px; font-weight: bold; margin-bottom: 10px;">I've chosen Harry Coulby today as he was the main inspiration for starting this project. I discovered him when i was exploring the village of Claypole a few years ago, during Christmas at my auntie's house. I saw his giant gravestone and google dhim right away - his story was nothing short of inspiring.</p>
@@ -265,56 +269,54 @@
                 <div style="font-size: 14px; color: #666;">1865-1929</div>
             </div>
         </div>
-     <p style="background: #f9f9f9; padding: 10px; margin-top: 10px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); font-size: 16px;">
-    <span style="color: purple; font-weight: bold;">YOUTH:</span> Harry was born in the village of Claypole, Lincolnshire, working for his father on his farm. He was a voracious reader, first reading about the Great Lakes as a child, becoming instantly infatuated with them 🇺🇸
-</p>
-             <p style="background: #f9f9f9; padding: 10px; margin-top: 10px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); font-size: 16px;">
-    <span style="color: purple; font-weight: bold;">1879:</span> Harry left his local school in Claypole at the age of 11. Early signs of his confidence arose when he decided to leave home, just 14 years old, to move to the town of Newark-on-Trent. He won a position (without pay) at London, Midland and Scottish Railway. He became an expert at Morse code within three months.
-</p>
-             <p style="background: #f9f9f9; padding: 10px; margin-top: 10px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); font-size: 16px;">
-    <span style="color: purple; font-weight: bold;">1883:</span> He won a $800-per-year position for the British Cable Company. After a 26-day voyage, Harry arrived in Cuba 🇨🇺
-</p>
-             <p style="background: #f9f9f9; padding: 10px; margin-top: 10px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); font-size: 16px;">
-    <span style="color: purple; font-weight: bold;">MALARIA:</span> Within two months of arriving in Cuba, Harry had contracted malaria. His compnay refused to pay for the treatment costs, so he stowad away on a boat to New York City. He received free healthcare from the Sisters of Charity of New York, being discharged within two weeks.
-</p>
-             <p style="background: #f9f9f9; padding: 10px; margin-top: 10px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); font-size: 16px;">
-    <span style="color: purple; font-weight: bold;">GREAT LAKES:</span> Harry was hell-bent on making it to the great lakes, but he was without any money. In a show of sheer determination, he walked 600 miles from New York City to Cleveland, Ohio, doing odd jobs on the way to pay for his survival 🚶‍♂️
-</p>
-                     <p style="background: #f9f9f9; padding: 10px; margin-top: 10px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); font-size: 16px;">
-    <span style="color: purple; font-weight: bold;">REJECTION:</span> He applied for a job aboard the Onoko, one of the biggest ships on the Great Lakes. He was rejected due to lack of experience, settling at a job pushing wheelbarrows for a construction company 👷
-</p>
-                     <p style="background: #f9f9f9; padding: 10px; margin-top: 10px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); font-size: 16px;">
-    <span style="color: purple; font-weight: bold;">1924:</span> After 30 years of hustling in the Great Lakes, Harry retired in 1924 after creating the most dominant fleet on the Lakes. The fleet dominated into the 1970s and had a partnership with John D. Rockefeller 🚢
-</p>
-                     <p style="background: #f9f9f9; padding: 10px; margin-top: 10px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); font-size: 16px;">
-    <span style="color: purple; font-weight: bold;">1916:</span> He was made the first mayor of the newly incorporated village of Wickliffe, now a city 🇺🇸
-</p>
-                             <p style="background: #f9f9f9; padding: 10px; margin-top: 10px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); font-size: 16px;">
-    <span style="color: purple; font-weight: bold;">CLAYPOLE:</span> Harry frequently returned to Claypole to visit family. He donated the Claypole vilalge hall, made major donations to Claypole primary school and the Church of St Peter in Claypole. He never forgot where he came from. He passed away in London in 1928.
-</p>
-                     <p style="background: #f9f9f9; padding: 10px; margin-top: 10px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); font-size: 16px;">
-    <span style="color: purple; font-weight: bold;">1984:</span> Harry was elected to the National Maritime Hall of Fame, where he was known as the 'Master of the Lakes' 🛥️
-</p>
+        <p style="background: #f9f9f9; padding: 10px; margin-top: 10px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); font-size: 16px;">
+            <span style="color: purple; font-weight: bold;">YOUTH:</span> Harry was born in the village of Claypole, Lincolnshire, working for his father on his farm. He was a voracious reader, first reading about the Great Lakes as a child, becoming instantly infatuated with them 🇺🇸
+        </p>
+        <p style="background: #f9f9f9; padding: 10px; margin-top: 10px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); font-size: 16px;">
+            <span style="color: purple; font-weight: bold;">1879:</span> Harry left his local school in Claypole at the age of 11. Early signs of his confidence arose when he decided to leave home, just 14 years old, to move to the town of Newark-on-Trent. He won a position (without pay) at London, Midland and Scottish Railway. He became an expert at Morse code within three months.
+        </p>
+        <p style="background: #f9f9f9; padding: 10px; margin-top: 10px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); font-size: 16px;">
+            <span style="color: purple; font-weight: bold;">1883:</span> He won a $800-per-year position for the British Cable Company. After a 26-day voyage, Harry arrived in Cuba 🇨🇺
+        </p>
+        <p style="background: #f9f9f9; padding: 10px; margin-top: 10px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); font-size: 16px;">
+            <span style="color: purple; font-weight: bold;">MALARIA:</span> Within two months of arriving in Cuba, Harry had contracted malaria. His company refused to pay for the treatment costs, so he stowed away on a boat to New York City. He received free healthcare from the Sisters of Charity of New York, being discharged within two weeks.
+        </p>
+        <p style="background: #f9f9f9; padding: 10px; margin-top: 10px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); font-size: 16px;">
+            <span style="color: purple; font-weight: bold;">GREAT LAKES:</span> Harry was hell-bent on making it to the great lakes, but he was without any money. In a show of sheer determination, he walked 600 miles from New York City to Cleveland, Ohio, doing odd jobs on the way to pay for his survival 🚶‍♂️
+        </p>
+        <p style="background: #f9f9f9; padding: 10px; margin-top: 10px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); font-size: 16px;">
+            <span style="color: purple; font-weight: bold;">REJECTION:</span> He applied for a job aboard the Onoko, one of the biggest ships on the Great Lakes. He was rejected due to lack of experience, settling at a job pushing wheelbarrows for a construction company 👷
+        </p>
+        <p style="background: #f9f9f9; padding: 10px; margin-top: 10px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); font-size: 16px;">
+            <span style="color: purple; font-weight: bold;">1924:</span> After 30 years of hustling in the Great Lakes, Harry retired in 1924 after creating the most dominant fleet on the Lakes. The fleet dominated into the 1970s and had a partnership with John D. Rockefeller 🚢
+        </p>
+        <p style="background: #f9f9f9; padding: 10px; margin-top: 10px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); font-size: 16px;">
+            <span style="color: purple; font-weight: bold;">1916:</span> He was made the first mayor of the newly incorporated village of Wickliffe, now a city 🇺🇸
+        </p>
+        <p style="background: #f9f9f9; padding: 10px; margin-top: 10px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); font-size: 16px;">
+            <span style="color: purple; font-weight: bold;">CLAYPOLE:</span> Harry frequently returned to Claypole to visit family. He donated the Claypole vilalge hall, made major donations to Claypole primary school and the Church of St Peter in Claypole. He never forgot where he came from. He passed away in London in 1928.
+        </p>
+        <p style="background: #f9f9f9; padding: 10px; margin-top: 10px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); font-size: 16px;">
+            <span style="color: purple; font-weight: bold;">1984:</span> Harry was elected to the National Maritime Hall of Fame, where he was known as the 'Master of the Lakes' 🛥️
+        </p>
     </div>
 </div>
-
-
 <div id="Support ❤️" class="tab-content">
     <div class="project-info">
         <p>Every time the map is loaded, it costs me money.</p>
-      <p>I want to keep this site completely free for use, but as a 22 year old, I cannot fund it myself forever.</p>  
+        <p>I want to keep this site completely free for use, but as a 22 year old, I cannot fund it myself forever.</p>
         <p>I will need voluntary financial support to keep this project alive.</p>
         <p>This site is also taking me an extremely long time to build due to geo-locating the markers myself, any support is greatly appreciated 😊</p>
-<a href="https://www.buymeacoffee.com/britmap"><img src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=☕&slug=britmap&button_colour=BD5FFF&font_colour=ffffff&font_family=Poppins&outline_colour=000000&coffee_colour=FFDD00" alt="Buy me a coffee"></a>
-         <p>Email me: freddy@britmap.com</p>
+        <a href="https://www.buymeacoffee.com/britmap"><img src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=☕&slug=britmap&button_colour=BD5FFF&font_colour=ffffff&font_family=Poppins&outline_colour=000000&coffee_colour=FFDD00" alt="Buy me a coffee"></a>
+        <p>Email me: freddy@britmap.com</p>
     </div>
     <div class="top-supporters">
         <h4>Top Supporters</h4>
         <ul>
             <li>someone - <span class="donation-amount">£15</span> <span class="contribution-count"></span></li>
             <li>markwillgofaster - <span class="donation-amount">£5</span> <span class="contribution-count"></span></li>
-             <li>Chip Pedro - <span class="donation-amount">£5</span> <span class="contribution-count"></span></li>
-             <li>buffsteve24 - <span class="donation-amount">£5</span> <span class="contribution-count"></span></li>
+            <li>Chip Pedro - <span class="donation-amount">£5</span> <span class="contribution-count"></span></li>
+            <li>buffsteve24 - <span class="donation-amount">£5</span> <span class="contribution-count"></span></li>
         </ul>
     </div>
 </div>
