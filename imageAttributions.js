@@ -112,38 +112,38 @@ const imageAttributions = [
       "license": "CC BY-SA 2.0"
     },
        {
-      "name": "https://commons.wikimedia.org/wiki/File:Ben_Ainslie_(GBR)_2021.jpg'>Ben Aislie</a>",
+      "name": "<a href='https://commons.wikimedia.org/wiki/File:Ben_Ainslie_(GBR)_2021.jpg'>Ben Aislie</a>",
       "author": "Danwilkinson1414",
       "license": "CC BY-SA 4.0"
     },
        {
-      "name": "https://commons.wikimedia.org/wiki/File:Shield_of_Arms_of_the_Lord_Arundell_of_Wardour.svg'>Humphrey Arundell</a>",
+      "name": "<a href='https://commons.wikimedia.org/wiki/File:Shield_of_Arms_of_the_Lord_Arundell_of_Wardour.svg'>Humphrey Arundell</a>",
       "author": "Erpecom",
       "license": "CC BY-SA 3.0"
     },
        {
-      "name": "http://www.gahetna.nl/over-ons/open-data'>William Golding</a>",
+      "name": "<a href='http://www.gahetna.nl/over-ons/open-data'>William Golding</a>",
       "author": "Thomaswwp",
       "license": "CC BY-SA 3.0"
     },
        {
-      "name": "https://www.flickr.com/photos/27811717@N00/414780367/'>Aphex Twin</a>",
+      "name": "<a href='https://www.flickr.com/photos/27811717@N00/414780367/'>Aphex Twin</a>",
       "author": "clattimo",
       "license": "CC BY-SA 2.0"
     },
 
        {
-      "name": "https://www.gov.uk/government/people/david-cameron'>David Cameron</a>",
+      "name": "<a href='https://www.gov.uk/government/people/david-cameron'>David Cameron</a>",
       "author": "Lauren Hurley",
       "license": "Contains public sector information licensed under the Open Government Licence v3.0."
     },
        {
-      "name": "https://www.geograph.org.uk/photo/848496'>Penlee Lifeboat crew</a>",
+      "name": "<a href='https://www.geograph.org.uk/photo/848496'>Penlee Lifeboat crew</a>",
       "author": "Tony Atkin",
       "license": "CC BY-SA 4.0"
     },
      {
-      "name": "https://www.flickr.com/photos/raph_ph/31359883398/'>Mick Fleetwood</a>",
+      "name": "<a href='https://www.flickr.com/photos/raph_ph/31359883398/'>Mick Fleetwood</a>",
       "author": "Raphael Pour-Hashemi",
       "license": "CC BY-SA 2.0"
     },
