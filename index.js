@@ -31,6 +31,7 @@ const db = getFirestore(app);
 
 map.on('load', () => {
   addBuildingMarkers();
+      addLocationsList(); // Re-add this function call
   loadMarkersFromFirebase();
   geolocate.trigger();
 });
@@ -200,6 +201,51 @@ geolocate.on('geolocate', (e) => {
 
   userLocationMarker.setLngLat(position);
 });
+// Add this new function to create the locations list
+function addLocationsList() {
+  const listContainer = document.createElement('div');
+  listContainer.id = 'locations-list-container';
+  listContainer.style.position = 'absolute';
+  listContainer.style.top = '10px';
+  listContainer.style.right = '10px';
+  listContainer.style.backgroundColor = 'white';
+  listContainer.style.padding = '10px';
+  listContainer.style.borderRadius = '5px';
+  listContainer.style.maxHeight = '300px';
+  listContainer.style.overflowY = 'auto';
+  listContainer.style.zIndex = '1000';
+  listContainer.style.boxShadow = '0 0 10px rgba(0,0,0,0.1)';
+
+  const list = document.createElement('ul');
+  list.style.listStyleType = 'none';
+  list.style.padding = '0';
+  list.style.margin = '0';
+
+  // Sort locations alphabetically by name
+  const sortedLocations = [...locations].sort((a, b) => a.name.localeCompare(b.name));
+
+  sortedLocations.forEach(location => {
+    const listItem = document.createElement('li');
+    listItem.textContent = location.name;
+    listItem.style.cursor = 'pointer';
+    listItem.style.padding = '5px 0';
+    listItem.style.borderBottom = '1px solid #eee';
+    listItem.style.fontSize = '14px';
+
+    listItem.addEventListener('click', () => {
+      map.flyTo({
+        center: location.coords,
+        zoom: 15,
+        essential: true
+      });
+    });
+
+    list.appendChild(listItem);
+  });
+
+  listContainer.appendChild(list);
+  document.body.appendChild(listContainer);
+}
 
 function createCustomMarker(imageUrl, color = '#9b4dca', isLocation = false) {
   const markerDiv = document.createElement('div');
