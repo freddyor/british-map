@@ -31,31 +31,6 @@ buttonGroup.style.display = 'flex';
 buttonGroup.style.gap = '10px';
 document.body.appendChild(buttonGroup);
 
-function addLocationsList() {
-    const list = document.createElement('ul');
-    list.style.listStyleType = 'none';
-    list.style.padding = '0';
-    list.style.margin = '0';
-    list.style.fontSize = '12px';
-    list.style.lineHeight = '0.25';
-
-    const sortedLocations = [...locations].sort((a, b) => a.name.localeCompare(b.name));
-
-    sortedLocations.forEach(location => {
-        const listItem = document.createElement('li');
-        listItem.textContent = location.name;
-        listItem.style.cursor = 'pointer';
-        listItem.style.padding = '5px';
-
-        listItem.addEventListener('click', () => {
-            map.flyTo({
-                center: location.coords,
-                zoom: 20
-            });
-             openableContainer.style.display = 'none';
-        });
-        list.appendChild(listItem);
-    });
     
     openableContainer.innerHTML = '';
     openableContainer.style.maxHeight = '150px';
