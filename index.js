@@ -454,7 +454,7 @@ function addBuildingMarkers() {
        map.getCanvas().style.cursor = 'pointer';
       popup.addTo(map);
     });
-  });
+  };
 }
 
 // New code for the "Image Attributions" button
