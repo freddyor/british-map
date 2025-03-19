@@ -1,5 +1,317 @@
 export const locations = [
   {
+    coords: [-3.090567582787005, 54.193354780860396],
+    name: "Stan Laurel",
+    occupation: "1890 - 1965",
+    description: "Stan Laurel was born here at his grandparents house",
+    image: "https://upload.wikimedia.org/wikipedia/commons/3/34/Stan_Laurel_c1920.jpg",
+    tldr: "English comic actor, writer, and film director, best known as one half of the comedy duo Laurel and Hardy.",
+    events: [
+      { date: "1927", description: "Formed the legendary comedy duo Laurel and Hardy with Oliver Hardy, creating timeless slapstick routines that delighted audiences worldwide 🤣" },
+      { date: "1932", description: "Starred in 'The Music Box', which won an Academy Award for Best Short Subject (Comedy), cementing their status as comedic icons 🏆" },
+      { date: "Legacy", description: "Laurel and Hardy's films continue to be celebrated for their physical comedy and heartwarming camaraderie, influencing generations of comedians and filmmakers 🌟" }
+    ]
+  },
+  {
+    coords: [-3.0914979098486546, 54.199004633224334],
+    name: "Stan Laurel",
+    occupation: "1890 - 1965",
+    description: "Stan Laurel regularly attended church here as a boy",
+    image: "https://upload.wikimedia.org/wikipedia/commons/3/34/Stan_Laurel_c1920.jpg",
+    tldr: "English comic actor, writer, and film director, best known as one half of the comedy duo Laurel and Hardy.",
+    events: [
+      { date: "1927", description: "Formed the legendary comedy duo Laurel and Hardy with Oliver Hardy, creating timeless slapstick routines that delighted audiences worldwide 🤣" },
+      { date: "1932", description: "Starred in 'The Music Box', which won an Academy Award for Best Short Subject (Comedy), cementing their status as comedic icons 🏆" },
+      { date: "Legacy", description: "Laurel and Hardy's films continue to be celebrated for their physical comedy and heartwarming camaraderie, influencing generations of comedians and filmmakers 🌟" }
+    ]
+  },
+  {
+    coords: [-3.0870824404607107, 54.1839708866996],
+    name: "Stan Laurel",
+    occupation: "1890 - 1965",
+    description: "Stan Laurel thought of the lighthouse memorial here as the Eight Wonder of the World, he used to walk by it every day. The memorial had a constant light burning on top of it.",
+    image: "https://upload.wikimedia.org/wikipedia/commons/3/34/Stan_Laurel_c1920.jpg",
+    tldr: "English comic actor, writer, and film director, best known as one half of the comedy duo Laurel and Hardy.",
+    events: [
+      { date: "1927", description: "Formed the legendary comedy duo Laurel and Hardy with Oliver Hardy, creating timeless slapstick routines that delighted audiences worldwide 🤣" },
+      { date: "1932", description: "Starred in 'The Music Box', which won an Academy Award for Best Short Subject (Comedy), cementing their status as comedic icons 🏆" },
+      { date: "Legacy", description: "Laurel and Hardy's films continue to be celebrated for their physical comedy and heartwarming camaraderie, influencing generations of comedians and filmmakers 🌟" }
+    ]
+  },
+  {
+    coords: [-2.9723916808148965, 54.17442310679718],
+    name: "Stan Laurel",
+    occupation: "1890 - 1965",
+    description: "Stan Laurel frequently visited this village with his family as a boy",
+    image: "https://upload.wikimedia.org/wikipedia/commons/3/34/Stan_Laurel_c1920.jpg",
+    tldr: "English comic actor, writer, and film director, best known as one half of the comedy duo Laurel and Hardy.",
+    events: [
+      { date: "1927", description: "Formed the legendary comedy duo Laurel and Hardy with Oliver Hardy, creating timeless slapstick routines that delighted audiences worldwide 🤣" },
+      { date: "1932", description: "Starred in 'The Music Box', which won an Academy Award for Best Short Subject (Comedy), cementing their status as comedic icons 🏆" },
+      { date: "Legacy", description: "Laurel and Hardy's films continue to be celebrated for their physical comedy and heartwarming camaraderie, influencing generations of comedians and filmmakers 🌟" }
+    ]
+  },
+  {
+    coords: [-2.9366922327820024, 54.36566606252481],
+    name: "Stan Laurel",
+    occupation: "1890 - 1965",
+    description: "Lake Windermere is one of Stan Laurel’s favourite places to visit",
+    image: "https://upload.wikimedia.org/wikipedia/commons/3/34/Stan_Laurel_c1920.jpg",
+    tldr: "English comic actor, writer, and film director, best known as one half of the comedy duo Laurel and Hardy.",
+    events: [
+      { date: "1927", description: "Formed the legendary comedy duo Laurel and Hardy with Oliver Hardy, creating timeless slapstick routines that delighted audiences worldwide 🤣" },
+      { date: "1932", description: "Starred in 'The Music Box', which won an Academy Award for Best Short Subject (Comedy), cementing their status as comedic icons 🏆" },
+      { date: "Legacy", description: "Laurel and Hardy's films continue to be celebrated for their physical comedy and heartwarming camaraderie, influencing generations of comedians and filmmakers 🌟" }
+    ]
+  },
+  {
+    coords: [-3.088702876041439, 54.19138255767768],
+    name: "Stan Laurel",
+    occupation: "1890 - 1965",
+    description: "Stan Laurel watched his first theatre here at the now-demolished Hippodrome theatre",
+    image: "https://upload.wikimedia.org/wikipedia/commons/3/34/Stan_Laurel_c1920.jpg",
+    tldr: "English comic actor, writer, and film director, best known as one half of the comedy duo Laurel and Hardy.",
+    events: [
+      { date: "1927", description: "Formed the legendary comedy duo Laurel and Hardy with Oliver Hardy, creating timeless slapstick routines that delighted audiences worldwide 🤣" },
+      { date: "1932", description: "Starred in 'The Music Box', which won an Academy Award for Best Short Subject (Comedy), cementing their status as comedic icons 🏆" },
+      { date: "Legacy", description: "Laurel and Hardy's films continue to be celebrated for their physical comedy and heartwarming camaraderie, influencing generations of comedians and filmmakers 🌟" }
+    ]
+  },
+  {
+    coords: [-1.6705759996049427, 54.659732657701525],
+    name: "Stan Laurel",
+    occupation: "1890 - 1965",
+    description: "Stan Laurel attended school here",
+    image: "https://upload.wikimedia.org/wikipedia/commons/3/34/Stan_Laurel_c1920.jpg",
+    tldr: "English comic actor, writer, and film director, best known as one half of the comedy duo Laurel and Hardy.",
+    events: [
+      { date: "1927", description: "Formed the legendary comedy duo Laurel and Hardy with Oliver Hardy, creating timeless slapstick routines that delighted audiences worldwide 🤣" },
+      { date: "1932", description: "Starred in 'The Music Box', which won an Academy Award for Best Short Subject (Comedy), cementing their status as comedic icons 🏆" },
+      { date: "Legacy", description: "Laurel and Hardy's films continue to be celebrated for their physical comedy and heartwarming camaraderie, influencing generations of comedians and filmmakers 🌟" }
+    ]
+  },
+  {
+    coords: [-1.427049695586073, 55.017210031662145],
+    name: "Stan Laurel",
+    occupation: "1890 - 1965",
+    description: "Stan Laurel attended school here",
+    image: "https://upload.wikimedia.org/wikipedia/commons/3/34/Stan_Laurel_c1920.jpg",
+    tldr: "English comic actor, writer, and film director, best known as one half of the comedy duo Laurel and Hardy.",
+    events: [
+      { date: "1927", description: "Formed the legendary comedy duo Laurel and Hardy with Oliver Hardy, creating timeless slapstick routines that delighted audiences worldwide 🤣" },
+      { date: "1932", description: "Starred in 'The Music Box', which won an Academy Award for Best Short Subject (Comedy), cementing their status as comedic icons 🏆" },
+      { date: "Legacy", description: "Laurel and Hardy's films continue to be celebrated for their physical comedy and heartwarming camaraderie, influencing generations of comedians and filmmakers 🌟" }
+    ]
+  },
+  {
+    coords: [-4.196117885733238, 55.821022958627836],
+    name: "Stan Laurel",
+    occupation: "1890 - 1965",
+    description: "Stan Laurel attended school here",
+    image: "https://upload.wikimedia.org/wikipedia/commons/3/34/Stan_Laurel_c1920.jpg",
+    tldr: "English comic actor, writer, and film director, best known as one half of the comedy duo Laurel and Hardy.",
+    events: [
+      { date: "1927", description: "Formed the legendary comedy duo Laurel and Hardy with Oliver Hardy, creating timeless slapstick routines that delighted audiences worldwide 🤣" },
+      { date: "1932", description: "Starred in 'The Music Box', which won an Academy Award for Best Short Subject (Comedy), cementing their status as comedic icons 🏆" },
+      { date: "Legacy", description: "Laurel and Hardy's films continue to be celebrated for their physical comedy and heartwarming camaraderie, influencing generations of comedians and filmmakers 🌟" }
+    ]
+  },
+  {
+    coords: [-4.250468649897652, 55.85494629243618],
+    name: "Stan Laurel",
+    occupation: "1890 - 1965",
+    description: "Stan Laurel‘s first place of work at the now-demolished Metropole Theatre, which his father managed",
+    image: "https://upload.wikimedia.org/wikipedia/commons/3/34/Stan_Laurel_c1920.jpg",
+    tldr: "English comic actor, writer, and film director, best known as one half of the comedy duo Laurel and Hardy.",
+    events: [
+      { date: "1927", description: "Formed the legendary comedy duo Laurel and Hardy with Oliver Hardy, creating timeless slapstick routines that delighted audiences worldwide 🤣" },
+      { date: "1932", description: "Starred in 'The Music Box', which won an Academy Award for Best Short Subject (Comedy), cementing their status as comedic icons 🏆" },
+      { date: "Legacy", description: "Laurel and Hardy's films continue to be celebrated for their physical comedy and heartwarming camaraderie, influencing generations of comedians and filmmakers 🌟" }
+    ]
+  },
+  {
+    coords: [-3.094778003931466, 54.19463822700121],
+    name: "Stan Laurel",
+    occupation: "1890 - 1965",
+    description: "Stan Laurel is memorialised here with Oliver hardy",
+    image: "https://upload.wikimedia.org/wikipedia/commons/3/34/Stan_Laurel_c1920.jpg",
+    tldr: "English comic actor, writer, and film director, best known as one half of the comedy duo Laurel and Hardy.",
+    events: [
+      { date: "1927", description: "Formed the legendary comedy duo Laurel and Hardy with Oliver Hardy, creating timeless slapstick routines that delighted audiences worldwide 🤣" },
+      { date: "1932", description: "Starred in 'The Music Box', which won an Academy Award for Best Short Subject (Comedy), cementing their status as comedic icons 🏆" },
+      { date: "Legacy", description: "Laurel and Hardy's films continue to be celebrated for their physical comedy and heartwarming camaraderie, influencing generations of comedians and filmmakers 🌟" }
+    ]
+  },
+  {
+    coords: [-1.438589558078697, 55.009220226465935],
+    name: "Stan Laurel",
+    occupation: "1890 - 1965",
+    description: "Stan Laurel is memorialised here",
+    image: "https://upload.wikimedia.org/wikipedia/commons/3/34/Stan_Laurel_c1920.jpg",
+    tldr: "English comic actor, writer, and film director, best known as one half of the comedy duo Laurel and Hardy.",
+    events: [
+      { date: "1927", description: "Formed the legendary comedy duo Laurel and Hardy with Oliver Hardy, creating timeless slapstick routines that delighted audiences worldwide 🤣" },
+      { date: "1932", description: "Starred in 'The Music Box', which won an Academy Award for Best Short Subject (Comedy), cementing their status as comedic icons 🏆" },
+      { date: "Legacy", description: "Laurel and Hardy's films continue to be celebrated for their physical comedy and heartwarming camaraderie, influencing generations of comedians and filmmakers 🌟" }
+    ]
+  },
+  {
+    coords: [-1.438974883690334, 55.00958768241348],
+    name: "Stan Laurel",
+    occupation: "1890 - 1965",
+    description: "Stan Laurel lived here",
+    image: "https://upload.wikimedia.org/wikipedia/commons/3/34/Stan_Laurel_c1920.jpg",
+    tldr: "English comic actor, writer, and film director, best known as one half of the comedy duo Laurel and Hardy.",
+    events: [
+      { date: "1927", description: "Formed the legendary comedy duo Laurel and Hardy with Oliver Hardy, creating timeless slapstick routines that delighted audiences worldwide 🤣" },
+      { date: "1932", description: "Starred in 'The Music Box', which won an Academy Award for Best Short Subject (Comedy), cementing their status as comedic icons 🏆" },
+      { date: "Legacy", description: "Laurel and Hardy's films continue to be celebrated for their physical comedy and heartwarming camaraderie, influencing generations of comedians and filmmakers 🌟" }
+    ]
+  },
+  {
+    coords: [-1.6757864486029341, 54.66162174894143],
+    name: "Stan Laurel",
+    occupation: "1890 - 1965",
+    description: "Statue of Stan Laurel, outside the place where his parent’s theater once stood.",
+    image: "https://upload.wikimedia.org/wikipedia/commons/3/34/Stan_Laurel_c1920.jpg",
+    tldr: "English comic actor, writer, and film director, best known as one half of the comedy duo Laurel and Hardy.",
+    events: [
+      { date: "1927", description: "Formed the legendary comedy duo Laurel and Hardy with Oliver Hardy, creating timeless slapstick routines that delighted audiences worldwide 🤣" },
+      { date: "1932", description: "Starred in 'The Music Box', which won an Academy Award for Best Short Subject (Comedy), cementing their status as comedic icons 🏆" },
+      { date: "Legacy", description: "Laurel and Hardy's films continue to be celebrated for their physical comedy and heartwarming camaraderie, influencing generations of comedians and filmmakers 🌟" }
+    ]
+  },
+  {
+    coords: [-0.8022235662576052, 52.941685145625755],
+    name: "Stan Laurel",
+    occupation: "1890 - 1965",
+    description: "Stan Laurel stayed here at his sisters pub whilst performing in Nottingham 1952-53",
+    image: "https://upload.wikimedia.org/wikipedia/commons/3/34/Stan_Laurel_c1920.jpg",
+    tldr: "English comic actor, writer, and film director, best known as one half of the comedy duo Laurel and Hardy.",
+    events: [
+      { date: "1927", description: "Formed the legendary comedy duo Laurel and Hardy with Oliver Hardy, creating timeless slapstick routines that delighted audiences worldwide 🤣" },
+      { date: "1932", description: "Starred in 'The Music Box', which won an Academy Award for Best Short Subject (Comedy), cementing their status as comedic icons 🏆" },
+      { date: "Legacy", description: "Laurel and Hardy's films continue to be celebrated for their physical comedy and heartwarming camaraderie, influencing generations of comedians and filmmakers 🌟" }
+    ]
+  },
+  {
+    coords: [-3.4058658663568306, 54.64137202079056],
+    name: "John Dalton",
+    occupation: "1766 - 1844",
+    description: "John Dalton was born here",
+    image: "https://upload.wikimedia.org/wikipedia/commons/0/00/John_Dalton_by_Thomas_Phillips%2C_1835.jpg",
+    tldr: "English chemist and physicist, often regarded as the father of modern chemistry, famous for his pioneering work in atomic theory.",
+    events: [
+      { date: "1803", description: "Introduced his atomic theory, proposing that all matter is composed of indivisible and indestructible atoms ⚛️" },
+      { date: "1808", description: "Published 'A New System of Chemical Philosophy', detailing his atomic theory and the law of multiple proportions 🧪" },
+      { date: "1822", description: "Elected a Fellow of the Royal Society, recognizing his significant contributions to science 🏅" }
+    ]
+  },
+  {
+    coords: [-3.3895491870664225, 54.616372740524106],
+    name: "John Dalton",
+    occupation: "1766 - 1844",
+    description: "John Dalton received his early education here",
+    image: "https://upload.wikimedia.org/wikipedia/commons/0/00/John_Dalton_by_Thomas_Phillips%2C_1835.jpg",
+    tldr: "English chemist and physicist, often regarded as the father of modern chemistry, famous for his pioneering work in atomic theory.",
+    events: [
+      { date: "1803", description: "Introduced his atomic theory, proposing that all matter is composed of indivisible and indestructible atoms ⚛️" },
+      { date: "1808", description: "Published 'A New System of Chemical Philosophy', detailing his atomic theory and the law of multiple proportions 🧪" },
+      { date: "1822", description: "Elected a Fellow of the Royal Society, recognizing his significant contributions to science 🏅" }
+    ]
+  },
+  {
+    coords: [-2.2443594105918208, 53.479219994607966],
+    name: "John Dalton",
+    occupation: "1766 - 1844",
+    description: "John Dalton body lay in state here for four days, more than 40,000 people filed past his coffin",
+    image: "https://upload.wikimedia.org/wikipedia/commons/0/00/John_Dalton_by_Thomas_Phillips%2C_1835.jpg",
+    tldr: "English chemist and physicist, often regarded as the father of modern chemistry, famous for his pioneering work in atomic theory.",
+    events: [
+      { date: "1803", description: "Introduced his atomic theory, proposing that all matter is composed of indivisible and indestructible atoms ⚛️" },
+      { date: "1808", description: "Published 'A New System of Chemical Philosophy', detailing his atomic theory and the law of multiple proportions 🧪" },
+      { date: "1822", description: "Elected a Fellow of the Royal Society, recognizing his significant contributions to science 🏅" }
+    ]
+  },
+  {
+    coords: [-2.216233639173283, 53.46939239445837],
+    name: "John Dalton",
+    occupation: "1766 - 1844",
+    description: "John Dalton was buried here",
+    image: "https://upload.wikimedia.org/wikipedia/commons/0/00/John_Dalton_by_Thomas_Phillips%2C_1835.jpg",
+    tldr: "English chemist and physicist, often regarded as the father of modern chemistry, famous for his pioneering work in atomic theory.",
+    events: [
+      { date: "1803", description: "Introduced his atomic theory, proposing that all matter is composed of indivisible and indestructible atoms ⚛️" },
+      { date: "1808", description: "Published 'A New System of Chemical Philosophy', detailing his atomic theory and the law of multiple proportions 🧪" },
+      { date: "1822", description: "Elected a Fellow of the Royal Society, recognizing his significant contributions to science 🏅" }
+    ]
+  },
+  {
+    coords: [-2.239198480390871, 53.47204919095243],
+    name: "John Dalton",
+    occupation: "1766 - 1844",
+    description: "The Dalton building here is named after John Dalton",
+    image: "https://upload.wikimedia.org/wikipedia/commons/0/00/John_Dalton_by_Thomas_Phillips%2C_1835.jpg",
+    tldr: "English chemist and physicist, often regarded as the father of modern chemistry, famous for his pioneering work in atomic theory.",
+    events: [
+      { date: "1803", description: "Introduced his atomic theory, proposing that all matter is composed of indivisible and indestructible atoms ⚛️" },
+      { date: "1808", description: "Published 'A New System of Chemical Philosophy', detailing his atomic theory and the law of multiple proportions 🧪" },
+      { date: "1822", description: "Elected a Fellow of the Royal Society, recognizing his significant contributions to science 🏅" }
+    ]
+  },
+  {
+    coords: [-2.2396910604492435, 53.47954201057334],
+    name: "John Dalton",
+    occupation: "1766 - 1844",
+    description: "John Dalton worked in his laboratory here",
+    image: "https://upload.wikimedia.org/wikipedia/commons/0/00/John_Dalton_by_Thomas_Phillips%2C_1835.jpg",
+    tldr: "English chemist and physicist, often regarded as the father of modern chemistry, famous for his pioneering work in atomic theory.",
+    events: [
+      { date: "1803", description: "Introduced his atomic theory, proposing that all matter is composed of indivisible and indestructible atoms ⚛️" },
+      { date: "1808", description: "Published 'A New System of Chemical Philosophy', detailing his atomic theory and the law of multiple proportions 🧪" },
+      { date: "1822", description: "Elected a Fellow of the Royal Society, recognizing his significant contributions to science 🏅" }
+    ]
+  },
+  {
+    coords: [-2.218006421046877, 53.45673380953065],
+    name: "John Dalton",
+    occupation: "1766 - 1844",
+    description: "Dalton Hall is named after John Dalton",
+    image: "https://upload.wikimedia.org/wikipedia/commons/0/00/John_Dalton_by_Thomas_Phillips%2C_1835.jpg",
+    tldr: "English chemist and physicist, often regarded as the father of modern chemistry, famous for his pioneering work in atomic theory.",
+    events: [
+      { date: "1803", description: "Introduced his atomic theory, proposing that all matter is composed of indivisible and indestructible atoms ⚛️" },
+      { date: "1808", description: "Published 'A New System of Chemical Philosophy', detailing his atomic theory and the law of multiple proportions 🧪" },
+      { date: "1822", description: "Elected a Fellow of the Royal Society, recognizing his significant contributions to science 🏅" }
+    ]
+  },
+  {
+    coords: [-2.743460797575168, 54.32905528611874],
+    name: "John Dalton",
+    occupation: "1766 - 1844",
+    description: "John Dalton taught here from 1781 to 1793",
+    image: "https://upload.wikimedia.org/wikipedia/commons/0/00/John_Dalton_by_Thomas_Phillips%2C_1835.jpg",
+    tldr: "English chemist and physicist, often regarded as the father of modern chemistry, famous for his pioneering work in atomic theory.",
+    events: [
+      { date: "1803", description: "Introduced his atomic theory, proposing that all matter is composed of indivisible and indestructible atoms ⚛️" },
+      { date: "1808", description: "Published 'A New System of Chemical Philosophy', detailing his atomic theory and the law of multiple proportions 🧪" },
+      { date: "1822", description: "Elected a Fellow of the Royal Society, recognizing his significant contributions to science 🏅" }
+    ]
+  },
+  {
+    coords: [-2.240586732680195, 53.479744689044736],
+    name: "John Dalton",
+    occupation: "1766 - 1844",
+    description: "John Dalton was a prominent member of Manchester Literary and Philosophical Society here",
+    image: "https://upload.wikimedia.org/wikipedia/commons/0/00/John_Dalton_by_Thomas_Phillips%2C_1835.jpg",
+    tldr: "English chemist and physicist, often regarded as the father of modern chemistry, famous for his pioneering work in atomic theory.",
+    events: [
+      { date: "1803", description: "Introduced his atomic theory, proposing that all matter is composed of indivisible and indestructible atoms ⚛️" },
+      { date: "1808", description: "Published 'A New System of Chemical Philosophy', detailing his atomic theory and the law of multiple proportions 🧪" },
+      { date: "1822", description: "Elected a Fellow of the Royal Society, recognizing his significant contributions to science 🏅" }
+    ]
+  },
+  {
     coords: [-2.7937651720533605, 53.21582883557168],
     name: "Liam Livingstone",
     occupation: "1993 - Present",
