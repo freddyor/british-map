@@ -1,4 +1,135 @@
 export const locations = [
+  
+  {
+    coords: [-2.7377114291157536, 54.3215544105035],
+    name: "Trooper Pearson",
+    occupation: "1826 - 1909",
+    description: "Trooper Pearson is buried here",
+    image: "https://i0.wp.com/bitaboutbritain.com/wp-content/uploads/2017/04/Trooper_Pearson_29.jpg?w=226&ssl=1",
+    tldr: "British cavalryman and survivor of the infamous Charge of the Light Brigade during the Crimean War.",
+    events: [
+      { date: "1854", description: "Participated in the Charge of the Light Brigade at Balaklava, surviving one of history's most infamous military blunders ⚔️" },
+      { date: "1854", description: "Treated by Florence Nightingale at the Scutari hospital after frostbite led to the amputation of four toes, highlighting her compassionate care 🩺" },
+      { date: "1909", description: "Passed away at his home in Kendal and was buried with military honors 🌟" }
+    ]
+  },
+  {
+    coords: [-2.7482556408619065, 54.678522748443356],
+    name: "Trooper Pearson",
+    occupation: "1826 - 1909",
+    description: "Trooper Pearson worked here for 25 years at the old racecourse, for the Cumberland and Westmorland Imperial Yeomanry",
+    image: "https://i0.wp.com/bitaboutbritain.com/wp-content/uploads/2017/04/Trooper_Pearson_29.jpg?w=226&ssl=1",
+    tldr: "British cavalryman and survivor of the infamous Charge of the Light Brigade during the Crimean War.",
+    events: [
+      { date: "1854", description: "Participated in the Charge of the Light Brigade at Balaklava, surviving one of history's most infamous military blunders ⚔️" },
+      { date: "1854", description: "Treated by Florence Nightingale at the Scutari hospital after frostbite led to the amputation of four toes, highlighting her compassionate care 🩺" },
+      { date: "1909", description: "Passed away at his home in Kendal and was buried with military honors 🌟" }
+    ]
+  },
+  {
+    coords: [-2.7394860461883286, 54.33004281791985],
+    name: "Trooper Pearson",
+    occupation: "1826 - 1909",
+    description: "Trooper Pearson died here",
+    image: "https://i0.wp.com/bitaboutbritain.com/wp-content/uploads/2017/04/Trooper_Pearson_29.jpg?w=226&ssl=1",
+    tldr: "British cavalryman and survivor of the infamous Charge of the Light Brigade during the Crimean War.",
+    events: [
+      { date: "1854", description: "Participated in the Charge of the Light Brigade at Balaklava, surviving one of history's most infamous military blunders ⚔️" },
+      { date: "1854", description: "Treated by Florence Nightingale at the Scutari hospital after frostbite led to the amputation of four toes, highlighting her compassionate care 🩺" },
+      { date: "1909", description: "Passed away at his home in Kendal and was buried with military honors 🌟" }
+    ]
+  },
+  {
+    coords: [-2.8266071022291843, 54.32653620058794],
+    name: "Trooper Pearson",
+    occupation: "1826 - 1909",
+    description: "Trooper Pearson moved to this village, Underbarrow, in 1880",
+    image: "https://i0.wp.com/bitaboutbritain.com/wp-content/uploads/2017/04/Trooper_Pearson_29.jpg?w=226&ssl=1",
+    tldr: "British cavalryman and survivor of the infamous Charge of the Light Brigade during the Crimean War.",
+    events: [
+      { date: "1854", description: "Participated in the Charge of the Light Brigade at Balaklava, surviving one of history's most infamous military blunders ⚔️" },
+      { date: "1854", description: "Treated by Florence Nightingale at the Scutari hospital after frostbite led to the amputation of four toes, highlighting her compassionate care 🩺" },
+      { date: "1909", description: "Passed away at his home in Kendal and was buried with military honors 🌟" }
+    ]
+  },
+  {
+    coords: [-3.0539760917540626, 54.93838432663667],
+    name: "Edward I",
+    occupation: "1239 - 1307",
+    description: "Edward I died on this spot",
+    image: "https://upload.wikimedia.org/wikipedia/commons/c/cb/Edward_I_-_Westminster_Abbey_Sedilia.jpg",
+    tldr: "King of England from 1272 to 1307, known for his military leadership and legal reforms.",
+    events: [
+      { date: "1295", description: "Established the Model Parliament, a significant step in the development of representative government in England 🏛️" },
+      { date: "1296", description: "Seized the Stone of Scone from Scotland, symbolizing English dominance and adding it to the coronation chair at Westminster Abbey 👑" },
+      { date: "1307", description: "Died while leading an army against the Scots, leaving a legacy of strong governance and territorial expansion ⚔️" }
+    ]
+  },
+  {
+    coords: [-3.0489556691852937, 54.92213156044226],
+    name: "Edward I",
+    occupation: "1239 - 1307",
+    description: "Edward I lay in state here before he was moved to Westminster Abbey",
+    image: "https://upload.wikimedia.org/wikipedia/commons/c/cb/Edward_I_-_Westminster_Abbey_Sedilia.jpg",
+    tldr: "King of England from 1272 to 1307, known for his military leadership and legal reforms.",
+    events: [
+      { date: "1295", description: "Established the Model Parliament, a significant step in the development of representative government in England 🏛️" },
+      { date: "1296", description: "Seized the Stone of Scone from Scotland, symbolizing English dominance and adding it to the coronation chair at Westminster Abbey 👑" },
+      { date: "1307", description: "Died while leading an army against the Scots, leaving a legacy of strong governance and territorial expansion ⚔️" }
+    ]
+  },
+  {
+    coords: [-2.7345813997456734, 54.309787565979754],
+    name: "Lee Child",
+    occupation: "1954 - Present",
+    description: "Lee Child came up with the name Jack Reacher whilst in this Asda supermarket. An old lady asked Lee to reach to the top shelves to get her products. Lee’s wife joked that ‘if the writing gig doesn’t work out you could be a reacher in a supermarket’. This was the lightbulb moment for Jack Reacher",
+    image: "https://upload.wikimedia.org/wikipedia/commons/e/ee/Lee_Child%2C_Bouchercon_2010.jpg",
+    tldr: "British author known for the Jack Reacher series of action thriller novels.",
+    events: [
+      { date: "1997", description: "Published 'Killing Floor', the first Jack Reacher novel, introducing the world to the nomadic ex-military policeman 📖" },
+      { date: "2012", description: "Jack Reacher book 'One Shot' was adapted into the film 'Jack Reacher' starring Tom Cruise 🎬" },
+      { date: "Present", description: "The Jack Reacher series has sold over 100 million copies worldwide, establishing him as one of the best-selling authors of the 21st century 🌟" }
+    ]
+  },
+  {
+    coords: [-3.2352745514052805, 54.114868599481866],
+    name: "Caroline Alexander",
+    occupation: "1971 - Present",
+    description: "Caroline Alexander, Barrow born and bred, joined Barrow Raiders Community Foundation as Sport and Wellbeing champion here in 2021",
+    image: "https://upload.wikimedia.org/wikipedia/en/4/42/Caroline_Alexander_Budapest_1995_GWC.jpg?20100401125047",
+    tldr: "British cyclist and rower, who has represented Great Britain at the Olympic Games and won multiple world championships.",
+    events: [
+      { date: "1996", description: "Competed in the Summer Olympics in both cycling and rowing, showcasing her versatility as an athlete 🏅" },
+      { date: "1996", description: "Won the UCI Mountain Bike World Championships, solidifying her status as a dominant force in mountain biking 🚴‍♀️" },
+      { date: "Legacy", description: "Continues to be involved in sports and community initiatives, promoting health and wellbeing in her hometown 💪" }
+    ]
+  },
+  {
+    coords: [-3.232278767917712, 54.10737175418677],
+    name: "Caroline Alexander",
+    occupation: "1971 - Present",
+    description: "Caroline Alexander left her draughtswoman job here at the Barrow shipyards to become a full-time cyclist",
+    image: "https://upload.wikimedia.org/wikipedia/en/4/42/Caroline_Alexander_Budapest_1995_GWC.jpg?20100401125047",
+    tldr: "British cyclist and rower, who has represented Great Britain at the Olympic Games and won multiple world championships.",
+    events: [
+      { date: "1996", description: "Competed in the Summer Olympics in both cycling and rowing, showcasing her versatility as an athlete 🏅" },
+      { date: "1996", description: "Won the UCI Mountain Bike World Championships, solidifying her status as a dominant force in mountain biking 🚴‍♀️" },
+      { date: "Legacy", description: "Continues to be involved in sports and community initiatives, promoting health and wellbeing in her hometown 💪" }
+    ]
+  },
+  {
+    coords: [-3.2088469705864906, 54.136459442973745],
+    name: "Grian Chatten",
+    occupation: "1995 - Present",
+    description: "Grian Chatten was born here",
+    image: "https://upload.wikimedia.org/wikipedia/commons/0/0e/Fontaines_D.C._at_Rough_Trade_West_(46688858695).jpg",
+    tldr: "Irish singer and songwriter, best known as the frontman of the post-punk band Fontaines D.C.",
+    events: [
+      { date: "2019", description: "Released Fontaines D.C.'s debut album 'Dogrel', earning critical acclaim and a Mercury Prize nomination 🎶" },
+      { date: "2020", description: "Released Fontaines D.C's 2nd album 'A Hero's Death' which earned critical acclaim and a Grammy Nomination 🎸" },
+      { date: "2022", description: "Released Fontaines D.C's 3rd album 'Skinty Fia' which earned critical acclaim and won Best Irish Album of the Year Award 🏆" }
+    ]
+  },
   {
     coords: [-2.93910757949028, 54.41154311755503],
     name: "David Hasselhoff",
