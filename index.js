@@ -31,7 +31,6 @@ const db = getFirestore(app);
 
 map.on('load', () => {
   addBuildingMarkers();
-  addLocationsList();
   loadMarkersFromFirebase();
   geolocate.trigger();
 });
@@ -47,42 +46,6 @@ buttonGroup.style.zIndex = '1000';
 buttonGroup.style.display = 'flex';
 buttonGroup.style.gap = '10px';
 document.body.appendChild(buttonGroup);
-
-function addLocationsList() {
-    const list = document.createElement('ul');
-    list.style.listStyleType = 'none';
-    list.style.padding = '0';
-    list.style.margin = '0';
-    list.style.fontSize = '12px';
-    list.style.lineHeight = '0.25';
-
-    const sortedLocations = [...locations].sort((a, b) => a.name.localeCompare(b.name));
-
-    sortedLocations.forEach(location => {
-        const listItem = document.createElement('li');
-        listItem.textContent = location.name;
-        listItem.style.cursor = 'pointer';
-        listItem.style.padding = '5px';
-
-        listItem.addEventListener('click', () => {
-            map.flyTo({
-                center: location.coords,
-                zoom: 20
-            });
-             openableContainer.style.display = 'none';
-        });
-        list.appendChild(listItem);
-    });
-    
-    openableContainer.innerHTML = '';
-    openableContainer.style.maxHeight = '150px';
-    openableContainer.style.overflowY = 'scroll';
-    openableContainer.style.scrollbarWidth = 'none';
-    openableContainer.style.msOverflowStyle = 'none';
-    openableContainer.appendChild(list);
-
-    openableContainer.classList.add('hide-scrollbar');
-}
 
 // Create a <style> element to add the CSS
 const stylePopup = document.createElement('style');
@@ -263,49 +226,6 @@ function createCustomMarker(imageUrl, color = '#9b4dca', isLocation = false) {
     id: `marker-${Date.now()}-${Math.random()}`
   };
 }
-
-locations.forEach(location => {
-  const { element: markerElement } = createCustomMarker(location.image, '#9B4DCA', true);
-  markerElement.className += ' location-marker';
-  const marker = new mapboxgl.Marker({
-    element: markerElement
-  })
-    .setLngLat(location.coords)
-    .addTo(map);
-
-  const popup = new mapboxgl.Popup({
-    closeButton: true,
-    closeOnClick: true,
-    className: 'custom-popup'
-  }).setHTML(`
-    <p style="font-size: 6px; font-weight: bold; margin-bottom: 10px;">${location.description}</p>
-    <div style="border-top: 1px solid #ccc; margin-bottom: 10px;"></div>
-    <div style="display: flex; align-items: center; gap: 10px;">
-      <img src="${location.image}" alt="${location.name}" style="width: 40px; height: 40px; object-fit: cover; border-radius: 50%;" />
-      <div>
-        <div style="font-size: 16px; font-weight: bold;">${location.name}</div>
-        <div style="font-size: 14px; color: #666;">${location.occupation}</div>
-      </div>
-    </div>
-    <p style="background: #f9f9f9; padding: 10px; margin-top: 10px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); font-size: 12px;">${location.tldr}</p>
-    ${location.events.length ? `
-      <div style="margin-top: 10px;">
-        ${location.events.map(event => `
-          <div style="background: #f9f9f9; border: 1px solid #ddd; border-radius: 8px; padding: 10px; margin-bottom: 10px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
-            <strong style="color: #9b4dca; font-size: 14px;">${event.date}</strong>: <span style="font-size: 12px;">${event.description}</span>
-          </div>
-        `).join('')}
-      </div>
-    ` : ''}
-  `);
-
-  marker.setPopup(popup);
-
-  marker.getElement().addEventListener('click', () => {
-    map.getCanvas().style.cursor = 'pointer';
-    popup.addTo(map);
-  });
-});
 
 function addBuildingMarkers() {
   buildings.forEach(building => {
