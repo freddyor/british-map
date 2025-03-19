@@ -165,7 +165,6 @@ stylePopup.innerHTML = `
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
     white-space: nowrap;
     text-align: center;
-    outline: none; /* Remove the outline */
   }
 
   #button-group {
@@ -279,9 +278,7 @@ function createPopupContent(location, isFirebase = false) {
         <div style="font-size: 14px; color: #666;">${data.occupation || data.dates}</div>
       </div>
     </div>
-    <div style="text-align: center; margin-top: 5px;">
-      <button class="custom-button" id="expand-button">▼ Discover ▼</button>
-    </div>
+    <div style="text-align: center; margin-top: 5px; cursor: pointer;" id="expand-text">▼ Discover ▼</div>
     <div id="additional-content" style="display: none;">
       <p style="background: #f9f9f9; padding: 10px; margin-top: 10px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); font-size: 12px;">${data.tldr}</p>
       ${eventsData && eventsData.length ? `
@@ -293,9 +290,7 @@ function createPopupContent(location, isFirebase = false) {
           `).join('')}
         </div>
       ` : ''}
-      <div style="text-align: center;">
-        <button class="custom-button" id="collapse-button" style="margin-top: 10px;">▲ Hide ▲</button>
-      </div>
+      <div style="text-align: center; cursor: pointer; margin-top: 10px;" id="collapse-text">▲ Hide ▲</div>
     </div>
   `;
 }
@@ -323,18 +318,18 @@ locations.forEach(location => {
 
     // Add event listener to the expand button
     popup.on('open', () => {
-      const expandButton = popup.getElement().querySelector('#expand-button');
+      const expandText = popup.getElement().querySelector('#expand-text');
       const additionalContent = popup.getElement().querySelector('#additional-content');
-      const collapseButton = popup.getElement().querySelector('#collapse-button');
+      const collapseText = popup.getElement().querySelector('#collapse-text');
 
-      expandButton.addEventListener('click', () => {
+      expandText.addEventListener('click', () => {
         additionalContent.style.display = 'block';
-        expandButton.style.display = 'none';
+        expandText.style.display = 'none';
       });
 
-      collapseButton.addEventListener('click', () => {
+      collapseText.addEventListener('click', () => {
         additionalContent.style.display = 'none';
-        expandButton.style.display = 'inline-block'; // Or 'block', depending on desired layout
+        expandText.style.display = 'block';
       });
     });
   });
@@ -364,18 +359,18 @@ function addBuildingMarkers() {
 
          // Add event listener to the expand button
          popup.on('open', () => {
-          const expandButton = popup.getElement().querySelector('#expand-button');
+          const expandText = popup.getElement().querySelector('#expand-text');
           const additionalContent = popup.getElement().querySelector('#additional-content');
-          const collapseButton = popup.getElement().querySelector('#collapse-button');
+          const collapseText = popup.getElement().querySelector('#collapse-text');
 
-          expandButton.addEventListener('click', () => {
+          expandText.addEventListener('click', () => {
             additionalContent.style.display = 'block';
-            expandButton.style.display = 'none';
+            expandText.style.display = 'none';
           });
 
-          collapseButton.addEventListener('click', () => {
+          collapseText.addEventListener('click', () => {
             additionalContent.style.display = 'none';
-            expandButton.style.display = 'inline-block'; // Or 'block', depending on desired layout
+            expandText.style.display = 'block';
           });
         });
     });
@@ -452,12 +447,33 @@ function loadMarkersFromFirebase() {
         .setLngLat([data.longitude, data.latitude])
         .addTo(map);
 
-      // Create the popup with initial content and the "Show More" button
+      const popupHTML = `
+        <div style="padding-top: 10px; padding-bottom: 10px;">
+          <div style="display: flex; align-items: center; gap: 10px;">
+            <img src="${data.imageUrl}" alt="${data.name}" style="width: 40px; height: 40px; object-fit: cover; border-radius: 50%;" />
+            <div>
+              <div style="font-size: 16px; font-weight: bold;">${data.name}</div>
+              <div style="font-size: 14px; color: #666;">${data.dates}</div>
+            </div>
+          </div>
+          <div style="text-align: center; margin-top: 5px; cursor: pointer;" id="expand-text">▼ Discover ▼</div>
+          <div id="additional-content" style="display: none;">
+            <p style="background: #f9f9f9; padding: 10px; margin-top: 10px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); font-size: 12px; font-weight: bold;">${data.tldr}</p>
+            ${data.events.map(event => `
+              <div style="background: #f9f9f9; padding: 10px; margin-top: 10px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); font-size: 12px;">
+                <strong style="color: #9b4dca; font-size: 12px; display: block; margin-bottom: 2px;">${event.label}</strong>
+                ${event.description}
+              </div>
+            `).join('')}
+            <div style="text-align: center; cursor: pointer; margin-top: 10px;" id="collapse-text">▲ Hide ▲</div>
+          </div>
+        </div>
+      `;
       const popup = new mapboxgl.Popup({
         closeButton: true,
         closeOnClick: true,
         className: 'custom-popup'
-      }).setHTML(createPopupContent(data, true));
+      }).setHTML(popupHTML);
 
       marker.setPopup(popup);
 
@@ -465,20 +481,19 @@ function loadMarkersFromFirebase() {
         map.getCanvas().style.cursor = 'pointer';
         popup.addTo(map);
 
-        // Add event listener to the expand button
         popup.on('open', () => {
-          const expandButton = popup.getElement().querySelector('#expand-button');
+          const expandText = popup.getElement().querySelector('#expand-text');
           const additionalContent = popup.getElement().querySelector('#additional-content');
-          const collapseButton = popup.getElement().querySelector('#collapse-button');
+          const collapseText = popup.getElement().querySelector('#collapse-text');
 
-          expandButton.addEventListener('click', () => {
+          expandText.addEventListener('click', () => {
             additionalContent.style.display = 'block';
-            expandButton.style.display = 'none';
+            expandText.style.display = 'none';
           });
 
-          collapseButton.addEventListener('click', () => {
+          collapseText.addEventListener('click', () => {
             additionalContent.style.display = 'none';
-            expandButton.style.display = 'inline-block'; // Or 'block', depending on desired layout
+            expandText.style.display = 'block';
           });
         });
       });
