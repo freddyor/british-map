@@ -264,6 +264,36 @@ function createCustomMarker(imageUrl, color = '#9b4dca', isLocation = false) {
   };
 }
 
+function createPopupContent(location, isFirebase = false) {
+  const data = isFirebase ? location : location;
+  const eventsData = isFirebase ? data.events : data.events;
+
+  return `
+    <p style="font-size: 6px; font-weight: bold; margin-bottom: 10px;">${data.description}</p>
+    <div style="border-top: 1px solid #ccc; margin-bottom: 10px;"></div>
+    <div style="display: flex; align-items: center; gap: 10px;">
+      <img src="${data.image || data.imageUrl}" alt="${data.name}" style="width: 40px; height: 40px; object-fit: cover; border-radius: 50%;" />
+      <div>
+        <div style="font-size: 16px; font-weight: bold;">${data.name}</div>
+        <div style="font-size: 14px; color: #666;">${data.occupation || data.dates}</div>
+      </div>
+    </div>
+    <button class="custom-button" id="expand-button">Show More</button>
+    <div id="additional-content" style="display: none;">
+      <p style="background: #f9f9f9; padding: 10px; margin-top: 10px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); font-size: 12px;">${data.tldr}</p>
+      ${eventsData && eventsData.length ? `
+        <div style="margin-top: 10px;">
+          ${eventsData.map(event => `
+            <div style="background: #f9f9f9; border: 1px solid #ddd; border-radius: 8px; padding: 10px; margin-bottom: 10px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
+              <strong style="color: #9b4dca; font-size: 14px;">${event.date || event.label}</strong>: <span style="font-size: 12px;">${event.description}</span>
+            </div>
+          `).join('')}
+        </div>
+      ` : ''}
+    </div>
+  `;
+}
+
 locations.forEach(location => {
   const { element: markerElement } = createCustomMarker(location.image, '#9B4DCA', true);
   markerElement.className += ' location-marker';
@@ -277,33 +307,23 @@ locations.forEach(location => {
     closeButton: true,
     closeOnClick: true,
     className: 'custom-popup'
-  }).setHTML(`
-    <p style="font-size: 6px; font-weight: bold; margin-bottom: 10px;">${location.description}</p>
-    <div style="border-top: 1px solid #ccc; margin-bottom: 10px;"></div>
-    <div style="display: flex; align-items: center; gap: 10px;">
-      <img src="${location.image}" alt="${location.name}" style="width: 40px; height: 40px; object-fit: cover; border-radius: 50%;" />
-      <div>
-        <div style="font-size: 16px; font-weight: bold;">${location.name}</div>
-        <div style="font-size: 14px; color: #666;">${location.occupation}</div>
-      </div>
-    </div>
-    <p style="background: #f9f9f9; padding: 10px; margin-top: 10px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); font-size: 12px;">${location.tldr}</p>
-    ${location.events.length ? `
-      <div style="margin-top: 10px;">
-        ${location.events.map(event => `
-          <div style="background: #f9f9f9; border: 1px solid #ddd; border-radius: 8px; padding: 10px; margin-bottom: 10px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
-            <strong style="color: #9b4dca; font-size: 14px;">${event.date}</strong>: <span style="font-size: 12px;">${event.description}</span>
-          </div>
-        `).join('')}
-      </div>
-    ` : ''}
-  `);
+  }).setHTML(createPopupContent(location));
 
   marker.setPopup(popup);
 
   marker.getElement().addEventListener('click', () => {
     map.getCanvas().style.cursor = 'pointer';
     popup.addTo(map);
+
+    // Add event listener to the expand button
+    popup.on('open', () => {
+      const expandButton = popup.getElement().querySelector('#expand-button');
+      expandButton.addEventListener('click', () => {
+        const additionalContent = popup.getElement().querySelector('#additional-content');
+        additionalContent.style.display = 'block';
+        expandButton.style.display = 'none';
+      });
+    });
   });
 });
 
@@ -321,33 +341,23 @@ function addBuildingMarkers() {
       closeButton: true,
       closeOnClick: true,
       className: 'custom-popup'
-    }).setHTML(`
-      <p style="font-size: 6px; font-weight: bold; margin-bottom: 10px;">${building.description}</p>
-      <div style="border-top: 1px solid #ccc; margin-bottom: 10px;"></div>
-      <div style="display: flex; align-items: center; gap: 10px;">
-        <img src="${building.image}" alt="${building.name}" style="width: 40px; height: 40px; object-fit: cover; border-radius: 50%;" />
-        <div>
-          <div style="font-size: 16px; font-weight: bold;">${building.name}</div>
-          <div style="font-size: 14px; color: #666;">${building.occupation}</div>
-        </div>
-      </div>
-      <p style="background: #f9f9f9; padding: 10px; margin-top: 10px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); font-size: 12px;">${building.tldr}</p>
-      ${building.events.length ? `
-        <div style="margin-top: 10px;">
-          ${building.events.map(event => `
-            <div style="background: #f9f9f9; border: 1px solid #ddd; border-radius: 8px; padding: 10px; margin-bottom: 10px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
-              <strong style="color: #9b4dca; font-size: 14px;">${event.date}</strong>: <span style="font-size: 12px;">${event.description}</span>
-            </div>
-          `).join('')}
-        </div>
-      ` : ''}
-    `);
+    }).setHTML(createPopupContent(building));
 
     marker.setPopup(popup);
 
     marker.getElement().addEventListener('click', () => {
       map.getCanvas().style.cursor = 'pointer';
       popup.addTo(map);
+
+         // Add event listener to the expand button
+         popup.on('open', () => {
+          const expandButton = popup.getElement().querySelector('#expand-button');
+          expandButton.addEventListener('click', () => {
+            const additionalContent = popup.getElement().querySelector('#additional-content');
+            additionalContent.style.display = 'block';
+            expandButton.style.display = 'none';
+          });
+        });
     });
   });
 }
@@ -422,35 +432,28 @@ function loadMarkersFromFirebase() {
         .setLngLat([data.longitude, data.latitude])
         .addTo(map);
 
-      const popupHTML = `
-        <div style="padding-top: 10px; padding-bottom: 10px;">
-          <div style="display: flex; align-items: center; gap: 10px;">
-            <img src="${data.imageUrl}" alt="${data.name}" style="width: 40px; height: 40px; object-fit: cover; border-radius: 50%;" />
-            <div>
-              <div style="font-size: 16px; font-weight: bold;">${data.name}</div>
-              <div style="font-size: 14px; color: #666;">${data.dates}</div>
-            </div>
-          </div>
-          <div style="background: #f9f9f9; padding: 10px; margin-top: 10px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); font-size: 12px; font-weight: bold;">${data.tldr}</div>
-          ${data.events.map(event => `
-            <div style="background: #f9f9f9; padding: 10px; margin-top: 10px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); font-size: 12px;">
-              <strong style="color: #9b4dca; font-size: 12px; display: block; margin-bottom: 2px;">${event.label}</strong>
-              ${event.description}
-            </div>
-          `).join('')}
-        </div>
-      `;
+      // Create the popup with initial content and the "Show More" button
       const popup = new mapboxgl.Popup({
         closeButton: true,
         closeOnClick: true,
         className: 'custom-popup'
-      }).setHTML(popupHTML);
+      }).setHTML(createPopupContent(data, true));
 
       marker.setPopup(popup);
 
       marker.getElement().addEventListener('click', () => {
         map.getCanvas().style.cursor = 'pointer';
         popup.addTo(map);
+
+          // Add event listener to the expand button
+          popup.on('open', () => {
+            const expandButton = popup.getElement().querySelector('#expand-button');
+            expandButton.addEventListener('click', () => {
+              const additionalContent = popup.getElement().querySelector('#additional-content');
+              additionalContent.style.display = 'block';
+              expandButton.style.display = 'none';
+            });
+          });
       });
     });
   }).catch(error => {
