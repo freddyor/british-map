@@ -1,3 +1,5 @@
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js";
+import { getFirestore, collection, addDoc, getDocs } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js";
 import { locations } from './locations.js';
 import { imageAttributions } from './imageAttributions.js';
 
@@ -12,10 +14,25 @@ var map = new mapboxgl.Map({
     bearing: -17.6
 });
 
+// Firebase configuration
+const firebaseConfig = {
+  apiKey: "AIzaSyDjv5uUNOx86FvYsXdKSMkl8vui2Jynt7M",
+  authDomain: "britmap-64cb3.firebaseapp.com",
+  projectId: "britmap-64cb3",
+  storageBucket: "britmap-64cb3.firebasestorage.app",
+  messagingSenderId: "821384262397",
+  appId: "1:821384262397:web:ca81d64ab6a8dea562c494",
+  measurementId: "G-03E2BB7BQH"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
 
 map.on('load', () => {
   addBuildingMarkers();
   addLocationsList();
+  loadMarkersFromFirebase();
   geolocate.trigger();
 });
 
@@ -30,6 +47,45 @@ buttonGroup.style.zIndex = '1000';
 buttonGroup.style.display = 'flex';
 buttonGroup.style.gap = '10px';
 document.body.appendChild(buttonGroup);
+
+function addLocationsList() {
+    const list = document.createElement('ul');
+    list.style.listStyleType = 'none';
+    list.style.padding = '0';
+    list.style.margin = '0';
+    list.style.fontSize = '12px';
+    list.style.lineHeight = '0.25';
+
+    const sortedLocations = [...locations].sort((a, b) => a.name.localeCompare(b.name));
+
+    sortedLocations.forEach(location => {
+        const listItem = document.createElement('li');
+        listItem.textContent = location.name;
+        listItem.style.cursor = 'pointer';
+        listItem.style.padding = '5px';
+
+        listItem.addEventListener('click', () => {
+            map.flyTo({
+                center: location.coords,
+                zoom: 20
+            });
+             openableContainer.style.display = 'none';
+        });
+        list.appendChild(listItem);
+    });
+    
+    openableContainer.innerHTML = '';
+    openableContainer.style.maxHeight = '150px';
+    openableContainer.style.overflowY = 'scroll';
+    openableContainer.style.scrollbarWidth = 'none';
+    openableContainer.style.msOverflowStyle = 'none';
+    openableContainer.appendChild(list);
+
+    openableContainer.classList.add('hide-scrollbar');
+}
+
+// Create a <style> element to add the CSS
+const stylePopup = document.createElement('style');
 
 // Add the link to Google Fonts for Poppins
 const link = document.createElement('link');
@@ -353,6 +409,18 @@ function toggleImageAttributions() {
 
 // Event listener for the new button
 document.getElementById('image-attributions-button').addEventListener('click', toggleImageAttributions);
+
+function loadMarkersFromFirebase() {
+  getDocs(collection(db, 'markers')).then((querySnapshot) => {
+    querySnapshot.forEach((doc) => {
+      const data = doc.data();
+      console.log('Fetched marker data:', data); // Add this line
+      const { element: markerElement } = createCustomMarker(data.imageUrl, '#E9E8E0', false);
+      const marker = new mapboxgl.Marker({
+        element: markerElement
+      })
+        .setLngLat([data.longitude, data.latitude])
+        .addTo(map);
 
       const popupHTML = `
         <div style="padding-top: 10px; padding-bottom: 10px;">
