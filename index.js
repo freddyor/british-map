@@ -1,5 +1,3 @@
-import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js";
-import { getFirestore, collection, addDoc, getDocs } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js";
 import { locations } from './locations.js';
 import { imageAttributions } from './imageAttributions.js';
 
@@ -14,25 +12,10 @@ var map = new mapboxgl.Map({
     bearing: -17.6
 });
 
-// Firebase configuration
-const firebaseConfig = {
-  apiKey: "AIzaSyDjv5uUNOx86FvYsXdKSMkl8vui2Jynt7M",
-  authDomain: "britmap-64cb3.firebaseapp.com",
-  projectId: "britmap-64cb3",
-  storageBucket: "britmap-64cb3.firebasestorage.app",
-  messagingSenderId: "821384262397",
-  appId: "1:821384262397:web:ca81d64ab6a8dea562c494",
-  measurementId: "G-03E2BB7BQH"
-};
-
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);
 
 map.on('load', () => {
   addBuildingMarkers();
   addLocationsList();
-  loadMarkersFromFirebase();
   geolocate.trigger();
 });
 
@@ -409,18 +392,6 @@ function toggleImageAttributions() {
 
 // Event listener for the new button
 document.getElementById('image-attributions-button').addEventListener('click', toggleImageAttributions);
-
-function loadMarkersFromFirebase() {
-  getDocs(collection(db, 'markers')).then((querySnapshot) => {
-    querySnapshot.forEach((doc) => {
-      const data = doc.data();
-      console.log('Fetched marker data:', data); // Add this line
-      const { element: markerElement } = createCustomMarker(data.imageUrl, '#E9E8E0', false);
-      const marker = new mapboxgl.Marker({
-        element: markerElement
-      })
-        .setLngLat([data.longitude, data.latitude])
-        .addTo(map);
 
       const popupHTML = `
         <div style="padding-top: 10px; padding-bottom: 10px;">
