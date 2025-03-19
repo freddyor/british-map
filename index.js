@@ -278,7 +278,9 @@ function createPopupContent(location, isFirebase = false) {
         <div style="font-size: 14px; color: #666;">${data.occupation || data.dates}</div>
       </div>
     </div>
-    <button class="custom-button" id="expand-button">Show More</button>
+    <div style="text-align: center;">
+      <button class="custom-button" id="expand-button">▼ Discover ▼</button>
+    </div>
     <div id="additional-content" style="display: none;">
       <p style="background: #f9f9f9; padding: 10px; margin-top: 10px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); font-size: 12px;">${data.tldr}</p>
       ${eventsData && eventsData.length ? `
@@ -290,6 +292,9 @@ function createPopupContent(location, isFirebase = false) {
           `).join('')}
         </div>
       ` : ''}
+      <div style="text-align: center;">
+        <button class="custom-button" id="collapse-button" style="margin-top: 10px;">▲ Hide ▲</button>
+      </div>
     </div>
   `;
 }
@@ -318,10 +323,17 @@ locations.forEach(location => {
     // Add event listener to the expand button
     popup.on('open', () => {
       const expandButton = popup.getElement().querySelector('#expand-button');
+      const additionalContent = popup.getElement().querySelector('#additional-content');
+      const collapseButton = popup.getElement().querySelector('#collapse-button');
+
       expandButton.addEventListener('click', () => {
-        const additionalContent = popup.getElement().querySelector('#additional-content');
         additionalContent.style.display = 'block';
         expandButton.style.display = 'none';
+      });
+
+      collapseButton.addEventListener('click', () => {
+        additionalContent.style.display = 'none';
+        expandButton.style.display = 'inline-block'; // Or 'block', depending on desired layout
       });
     });
   });
@@ -352,10 +364,17 @@ function addBuildingMarkers() {
          // Add event listener to the expand button
          popup.on('open', () => {
           const expandButton = popup.getElement().querySelector('#expand-button');
+          const additionalContent = popup.getElement().querySelector('#additional-content');
+          const collapseButton = popup.getElement().querySelector('#collapse-button');
+
           expandButton.addEventListener('click', () => {
-            const additionalContent = popup.getElement().querySelector('#additional-content');
             additionalContent.style.display = 'block';
             expandButton.style.display = 'none';
+          });
+
+          collapseButton.addEventListener('click', () => {
+            additionalContent.style.display = 'none';
+            expandButton.style.display = 'inline-block'; // Or 'block', depending on desired layout
           });
         });
     });
@@ -445,15 +464,22 @@ function loadMarkersFromFirebase() {
         map.getCanvas().style.cursor = 'pointer';
         popup.addTo(map);
 
-          // Add event listener to the expand button
-          popup.on('open', () => {
-            const expandButton = popup.getElement().querySelector('#expand-button');
-            expandButton.addEventListener('click', () => {
-              const additionalContent = popup.getElement().querySelector('#additional-content');
-              additionalContent.style.display = 'block';
-              expandButton.style.display = 'none';
-            });
+        // Add event listener to the expand button
+        popup.on('open', () => {
+          const expandButton = popup.getElement().querySelector('#expand-button');
+          const additionalContent = popup.getElement().querySelector('#additional-content');
+          const collapseButton = popup.getElement().querySelector('#collapse-button');
+
+          expandButton.addEventListener('click', () => {
+            additionalContent.style.display = 'block';
+            expandButton.style.display = 'none';
           });
+
+          collapseButton.addEventListener('click', () => {
+            additionalContent.style.display = 'none';
+            expandButton.style.display = 'inline-block'; // Or 'block', depending on desired layout
+          });
+        });
       });
     });
   }).catch(error => {
