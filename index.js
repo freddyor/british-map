@@ -31,17 +31,6 @@ buttonGroup.style.display = 'flex';
 buttonGroup.style.gap = '10px';
 document.body.appendChild(buttonGroup);
 
-    
-    openableContainer.innerHTML = '';
-    openableContainer.style.maxHeight = '150px';
-    openableContainer.style.overflowY = 'scroll';
-    openableContainer.style.scrollbarWidth = 'none';
-    openableContainer.style.msOverflowStyle = 'none';
-    openableContainer.appendChild(list);
-
-    openableContainer.classList.add('hide-scrollbar');
-}
-
 // Add the link to Google Fonts for Poppins
 const link = document.createElement('link');
 link.href = "https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap";
