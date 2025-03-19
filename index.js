@@ -42,9 +42,6 @@ document.body.appendChild(buttonGroup);
     openableContainer.classList.add('hide-scrollbar');
 }
 
-// Create a <style> element to add the CSS
-const stylePopup = document.createElement('style');
-
 // Add the link to Google Fonts for Poppins
 const link = document.createElement('link');
 link.href = "https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap";
