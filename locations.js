@@ -1,5 +1,242 @@
 export const locations = [
   {
+    coords: [-2.93910757949028, 54.41154311755503],
+    name: "David Hasselhoff",
+    occupation: "1952 - Present",
+    description: "This lake and hotel are some of David Hasselhoff’s favorite places he has visited.",
+    image: "https://upload.wikimedia.org/wikipedia/commons/a/a4/David_Hasselhoff_2009.jpg",
+    tldr: "American actor, singer, producer, and businessman, best known for his lead roles in 'Knight Rider' and 'Baywatch'.",
+    events: [
+      { date: "1982", description: "Starred as Michael Knight in 'Knight Rider', driving the iconic talking car KITT and becoming a global sensation 🚗" },
+      { date: "2011", description: "Held the Guinness World Record for the most-watched man on television, with over 1 billion viewers worldwide 📺" },
+      { date: "1989", description: "Performed his song 'Looking for Freedom' at the Berlin Wall on New Year's Eve, symbolizing the fall of the wall and German reunification 🎤" }
+    ],
+    stats: [
+      { label: "Net Worth", value: "$10 million (2025)" },
+      { label: "Awards", value: "10 wins, including Bambi Awards and People's Choice Awards" },
+      { label: "TV Shows", value: "Knight Rider, Baywatch, America's Got Talent" },
+      { label: "Music Hits", value: "2 number-one hits in Germany in 1989" }
+    ]
+  },
+  {
+    coords: [-2.4947955461274223, 54.58369353794313],
+    name: "George Washington",
+    occupation: "1732 - 1799",
+    description: "George Washington’s father and two half-brothers were educated at Appleby Grammar School here. George was also meant to be educated here but his father suddenly died.",
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Gilbert_Stuart_Williamstown_Portrait_of_George_Washington.jpg/741px-Gilbert_Stuart_Williamstown_Portrait_of_George_Washington.jpg",
+    tldr: "American statesman, soldier, and Founding Father who served as the first president of the United States from 1789 to 1797.",
+    events: [
+      { date: "1775", description: "Appointed commander-in-chief of the Continental Army during the American Revolutionary War ⚔️" },
+      { date: "1789", description: "Elected as the first President of the United States, setting precedents for future presidents 🇺🇸" },
+      { date: "1796", description: "Delivered his Farewell Address, advocating for national unity and cautioning against foreign entanglements 📜" }
+    ],
+    stats: [
+      { label: "Presidential Terms", value: "2 terms (1789-1797)" },
+      { label: "Electoral Votes", value: "Unanimously elected both times" },
+      { label: "Key Legislation", value: "Established the First Bank of the United States and the U.S. Mint" },
+      { label: "Historical Ranking", value: "Consistently ranked among the top three U.S. presidents" }
+    ]
+  },
+  {
+    coords: [-2.9283024098056814, 54.89389689287312],
+    name: "Woodrow Wilson",
+    occupation: "1856 - 1924",
+    description: "This is the ancestral home of Woodrow Wilson. His mother was born in Carlisle and his grandfather was a reverend here before emigrating to the US. Woodrow returned here in 1918, calling it a ‘pilgrimage of the heart’.",
+    image: "https://upload.wikimedia.org/wikipedia/commons/b/b4/President_Woodrow_Wilson_in_1914%2C_Harris_%26_Ewing_(3x4_cropped_b).jpg",
+    tldr: "American statesman and academic who served as the 28th president of the United States from 1913 to 1921.",
+    events: [
+      { date: "1917", description: "Led the United States into World War I, advocating for 'making the world safe for democracy' 🕊️" },
+      { date: "1919", description: "Played a central role in negotiating the Treaty of Versailles and establishing the League of Nations 🤝" },
+      { date: "1919", description: "Awarded the Nobel Peace Prize for his efforts to create the League of Nations and promote international cooperation 🏅" }
+    ],
+    stats: [
+      { label: "Presidential Terms", value: "2 terms (1913-1921)" },
+      { label: "Domestic Reforms", value: "Implemented banking reform, tariff reduction, and labor rights" },
+      { label: "International Impact", value: "Led the creation of the League of Nations" },
+      { label: "Nobel Prize", value: "Awarded in 1919 for peace efforts" }
+    ]
+  },
+  {
+    coords: [-3.2114825905669564, 54.11805191757013],
+    name: "Dave Myers",
+    occupation: "1957 - 2024",
+    description: "Dave Myers attended Barrow-in-Furness Grammar School for Boys here. His art teacher, Mr Eaton, inspired Dave, who struggled with alopecia.",
+    image: "https://upload.wikimedia.org/wikipedia/commons/0/09/Hairy_Bikers_Book_Signing.jpg",
+    tldr: "English celebrity chef, television presenter, and one half of the motorcycle-riding cooking duo, the Hairy Bikers.",
+    events: [
+      { date: "2004", description: "Debuted as one half of the Hairy Bikers with Si King, combining their love of motorcycles and cooking in their first TV show 🏍️" },
+      { date: "2012", description: "Published 'The Hairy Bikers' Best of British', celebrating traditional British cuisine and becoming a bestseller 📚" },
+      { date: "2024", description: "Passed away, leaving behind a legacy of culinary adventure and inspiring a love for food and travel ❤️" }
+    ]
+  },
+  {
+    coords: [-3.229251958102289, 54.11119841896386],
+    name: "Dave Myers",
+    occupation: "1957 - 2024",
+    description: "Every year, Dave Day is celebrated here in memory of Dave Myers. Bikers travel from London to this spot, the hometown of Dave Myers.",
+    image: "https://upload.wikimedia.org/wikipedia/commons/0/09/Hairy_Bikers_Book_Signing.jpg",
+    tldr: "English celebrity chef, television presenter, and one half of the motorcycle-riding cooking duo, the Hairy Bikers.",
+    events: [
+      { date: "2004", description: "Debuted as one half of the Hairy Bikers with Si King, combining their love of motorcycles and cooking in their first TV show 🏍️" },
+      { date: "2012", description: "Published 'The Hairy Bikers' Best of British', celebrating traditional British cuisine and becoming a bestseller 📚" },
+      { date: "2024", description: "Passed away, leaving behind a legacy of culinary adventure and inspiring a love for food and travel ❤️" }
+    ]
+  },
+  {
+    coords: [-3.38253961238283, 54.638117138149624],
+    name: "Fletcher Christian",
+    occupation: "1764 - 1793 (presumed)",
+    description: "Fletcher Christian was born here at the family home",
+    image: "https://upload.wikimedia.org/wikipedia/commons/5/5e/Fletcher_Christian2.jpg",
+    tldr: "English seaman, best known for leading the mutiny on the HMS Bounty in 1789.",
+    events: [
+      { date: "1787", description: "Appointed acting lieutenant on the HMS Bounty under Captain William Bligh ⚓" },
+      { date: "1789", description: "Led the infamous mutiny on the Bounty, overthrowing Captain Bligh and setting him adrift with loyal crew members 💥" },
+      { date: "1793", description: "Discovered by the HMS Pandora on Pitcairn Island, where he and the other mutineers had sought refuge; his fate remains a mystery 🤔" }
+    ]
+  },
+  {
+    coords: [-3.3610873799949883, 54.663163498639214],
+    name: "Fletcher Christian",
+    occupation: "1764 - 1793 (presumed)",
+    description: "Fletcher Christian attended Grammar School here for 7 years, school friends with William Wordsworth",
+    image: "https://upload.wikimedia.org/wikipedia/commons/5/5e/Fletcher_Christian2.jpg",
+    tldr: "English seaman, best known for leading the mutiny on the HMS Bounty in 1789.",
+    events: [
+      { date: "1787", description: "Appointed acting lieutenant on the HMS Bounty under Captain William Bligh ⚓" },
+      { date: "1789", description: "Led the infamous mutiny on the Bounty, overthrowing Captain Bligh and setting him adrift with loyal crew members 💥" },
+      { date: "1793", description: "Discovered by the HMS Pandora on Pitcairn Island, where he and the other mutineers had sought refuge; his fate remains a mystery 🤔" }
+    ]
+  },
+  {
+    coords: [-3.160897730049481, 54.81944131510774],
+    name: "Melvyn Bragg",
+    occupation: "1939 - Present",
+    description: "Melvyn Bragg attended primary school here",
+    image: "https://upload.wikimedia.org/wikipedia/commons/2/28/Official_portrait_of_Lord_Bragg_crop_2.jpg",
+    tldr: "English broadcaster, author, and parliamentarian, known for his work in television and radio.",
+    events: [
+      { date: "1961", description: "Joined the BBC as a trainee, launching his career in broadcasting 🎤" },
+      { date: "1998", description: "Became a life peer, taking the title Baron Bragg, of Wigton in the County of Cumbria 👑" },
+      { date: "Present", description: "Hosts 'In Our Time' on BBC Radio 4, a renowned discussion program covering history, philosophy, science, and culture 📻" }
+    ],
+    stats: [
+      { label: "Years Active", value: "Over 60 years" },
+      { label: "Awards", value: "10 wins, including BAFTA Academy Fellowship" },
+      { label: "Programmes Hosted", value: "The South Bank Show, In Our Time, Start the Week" },
+      { label: "Books Published", value: "Numerous novels and non-fiction works" }
+    ]
+  },
+  {
+    coords: [-3.1552473064763134, 54.821683389804726],
+    name: "Melvyn Bragg",
+    occupation: "1939 - Present",
+    description: "Melvyn Bragg was head boy here",
+    image: "https://upload.wikimedia.org/wikipedia/commons/2/28/Official_portrait_of_Lord_Bragg_crop_2.jpg",
+    tldr: "English broadcaster, author, and parliamentarian, known for his work in television and radio.",
+    events: [
+      { date: "1961", description: "Joined the BBC as a trainee, launching his career in broadcasting 🎤" },
+      { date: "1998", description: "Became a life peer, taking the title Baron Bragg, of Wigton in the County of Cumbria 👑" },
+      { date: "Present", description: "Hosts 'In Our Time' on BBC Radio 4, a renowned discussion program covering history, philosophy, science, and culture 📻" }
+    ],
+    stats: [
+      { label: "Years Active", value: "Over 60 years" },
+      { label: "Awards", value: "10 wins, including BAFTA Academy Fellowship" },
+      { label: "Programmes Hosted", value: "The South Bank Show, In Our Time, Start the Week" },
+      { label: "Books Published", value: "Numerous novels and non-fiction works" }
+    ]
+  },
+  {
+    coords: [-3.158546324039913, 54.8262662764809],
+    name: "Melvyn Bragg",
+    occupation: "1939 - Present",
+    description: "Melvyn Bragg lived above a pub here from 8 years old until he left for university",
+    image: "https://upload.wikimedia.org/wikipedia/commons/2/28/Official_portrait_of_Lord_Bragg_crop_2.jpg",
+    tldr: "English broadcaster, author, and parliamentarian, known for his work in television and radio.",
+    events: [
+      { date: "1961", description: "Joined the BBC as a trainee, launching his career in broadcasting 🎤" },
+      { date: "1998", description: "Became a life peer, taking the title Baron Bragg, of Wigton in the County of Cumbria 👑" },
+      { date: "Present", description: "Hosts 'In Our Time' on BBC Radio 4, a renowned discussion program covering history, philosophy, science, and culture 📻" }
+    ],
+    stats: [
+      { label: "Years Active", value: "Over 60 years" },
+      { label: "Awards", value: "10 wins, including BAFTA Academy Fellowship" },
+      { label: "Programmes Hosted", value: "The South Bank Show, In Our Time, Start the Week" },
+      { label: "Books Published", value: "Numerous novels and non-fiction works" }
+    ]
+  },
+  {
+    coords: [-1.2539073510416179, 51.75573144928679],
+    name: "Melvyn Bragg",
+    occupation: "1939 - Present",
+    description: "Melvyn Bragg read modern history here in the late 1950s",
+    image: "https://upload.wikimedia.org/wikipedia/commons/2/28/Official_portrait_of_Lord_Bragg_crop_2.jpg",
+    tldr: "English broadcaster, author, and parliamentarian, known for his work in television and radio.",
+    events: [
+      { date: "1961", description: "Joined the BBC as a trainee, launching his career in broadcasting 🎤" },
+      { date: "1998", description: "Became a life peer, taking the title Baron Bragg, of Wigton in the County of Cumbria 👑" },
+      { date: "Present", description: "Hosts 'In Our Time' on BBC Radio 4, a renowned discussion program covering history, philosophy, science, and culture 📻" }
+    ],
+    stats: [
+      { label: "Years Active", value: "Over 60 years" },
+      { label: "Awards", value: "10 wins, including BAFTA Academy Fellowship" },
+      { label: "Programmes Hosted", value: "The South Bank Show, In Our Time, Start the Week" },
+      { label: "Books Published", value: "Numerous novels and non-fiction works" }
+    ]
+  },
+  {
+    coords: [-3.071101237937216, 53.564914919919154],
+    name: "Thomas Fresh",
+    occupation: "1816 - 1887",
+    description: "Thomas Fresh lived here, in the town named after him",
+    image: "https://upload.wikimedia.org/wikipedia/commons/f/f0/Thomas_Fresh_Blue_Plaque.jpg",
+    tldr: "English physician and public health reformer, known for his significant contributions to improving sanitation and health in Liverpool.",
+    events: [
+      { date: "1847", description: "Appointed Medical Officer of Health for the port of Liverpool, one of the first such positions in Britain 🩺" },
+      { date: "1866", description: "Played a key role in establishing the first system of main sewers in Liverpool, drastically improving sanitation 🚰" },
+      { date: "Legacy", description: "His efforts led to a significant reduction in mortality rates and improved public health, establishing him as a pioneer in sanitation reform 🏅" }
+    ]
+  },
+  {
+    coords: [-3.071984264008893, 53.56650891972124],
+    name: "Thomas Fresh",
+    occupation: "1816 - 1887",
+    description: "Thomas Fresh donated his land for this station, hence it’s called Freshfield",
+    image: "https://upload.wikimedia.org/wikipedia/commons/f/f0/Thomas_Fresh_Blue_Plaque.jpg",
+    tldr: "English physician and public health reformer, known for his significant contributions to improving sanitation and health in Liverpool.",
+    events: [
+      { date: "1847", description: "Appointed Medical Officer of Health for the port of Liverpool, one of the first such positions in Britain 🩺" },
+      { date: "1866", description: "Played a key role in establishing the first system of main sewers in Liverpool, drastically improving sanitation 🚰" },
+      { date: "Legacy", description: "His efforts led to a significant reduction in mortality rates and improved public health, establishing him as a pioneer in sanitation reform 🏅" }
+    ]
+  },
+  {
+    coords: [-2.972899072882637, 53.398595950203536],
+    name: "Thomas Fresh",
+    occupation: "1816 - 1887",
+    description: "Thomas Fresh is buried here",
+    image: "https://upload.wikimedia.org/wikipedia/commons/f/f0/Thomas_Fresh_Blue_Plaque.jpg",
+    tldr: "English physician and public health reformer, known for his significant contributions to improving sanitation and health in Liverpool.",
+    events: [
+      { date: "1847", description: "Appointed Medical Officer of Health for the port of Liverpool, one of the first such positions in Britain 🩺" },
+      { date: "1866", description: "Played a key role in establishing the first system of main sewers in Liverpool, drastically improving sanitation 🚰" },
+      { date: "Legacy", description: "His efforts led to a significant reduction in mortality rates and improved public health, establishing him as a pioneer in sanitation reform 🏅" }
+    ]
+  },
+  {
+    coords: [-3.2079549129563305, 54.12649906853231],
+    name: "Thomas Fresh",
+    occupation: "1816 - 1887",
+    description: "Thomas Fresh was born somewhere around here on the family farm",
+    image: "https://upload.wikimedia.org/wikipedia/commons/f/f0/Thomas_Fresh_Blue_Plaque.jpg",
+    tldr: "English physician and public health reformer, known for his significant contributions to improving sanitation and health in Liverpool.",
+    events: [
+      { date: "1847", description: "Appointed Medical Officer of Health for the port of Liverpool, one of the first such positions in Britain 🩺" },
+      { date: "1866", description: "Played a key role in establishing the first system of main sewers in Liverpool, drastically improving sanitation 🚰" },
+      { date: "Legacy", description: "His efforts led to a significant reduction in mortality rates and improved public health, establishing him as a pioneer in sanitation reform 🏅" }
+    ]
+  },
+  {
     coords: [-3.090567582787005, 54.193354780860396],
     name: "Stan Laurel",
     occupation: "1890 - 1965",
