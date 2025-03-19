@@ -34,6 +34,7 @@ map.on('load', () => {
   addLocationsList();
   loadMarkersFromFirebase();
   geolocate.trigger();
+  initializeSearch(); // Initialize the search functionality
 });
 
 // Container for both buttons
@@ -47,6 +48,95 @@ buttonGroup.style.zIndex = '1000';
 buttonGroup.style.display = 'flex';
 buttonGroup.style.gap = '10px';
 document.body.appendChild(buttonGroup);
+
+// SEARCH BAR IMPLEMENTATION
+let searchInput, searchResultsContainer;
+
+function initializeSearch() {
+    // Create search input element
+    searchInput = document.createElement('input');
+    searchInput.type = 'text';
+    searchInput.placeholder = 'Search locations...';
+    searchInput.id = 'location-search';  // Added ID for easier styling
+    searchInput.style.padding = '5px';
+    searchInput.style.borderRadius = '5px';
+    searchInput.style.border = '1px solid #ccc';
+    searchInput.style.fontSize = '12px';
+    searchInput.style.fontFamily = 'Poppins, sans-serif'; // Match the font
+    searchInput.style.marginTop = '5px'; // Added some spacing
+    searchInput.style.marginBottom = '5px';
+    searchInput.style.width = '200px'; // Set a width
+
+    // Create search results container
+    searchResultsContainer = document.createElement('ul');
+    searchResultsContainer.id = 'search-results';
+    searchResultsContainer.style.position = 'absolute';
+    searchResultsContainer.style.top = '100%';
+    searchResultsContainer.style.left = '0';
+    searchResultsContainer.style.width = '100%';
+    searchResultsContainer.style.listStyleType = 'none';
+    searchResultsContainer.style.padding = '0';
+    searchResultsContainer.style.margin = '0';
+    searchResultsContainer.style.backgroundColor = 'white';
+    searchResultsContainer.style.border = '1px solid #ccc';
+    searchResultsContainer.style.borderRadius = '5px';
+    searchResultsContainer.style.zIndex = '1001'; // Ensure it's above other elements
+    searchResultsContainer.style.display = 'none'; // Hidden by default
+    searchResultsContainer.style.maxHeight = '150px'; // limit height
+    searchResultsContainer.style.overflowY = 'scroll';
+
+    // Container for the search input and results
+    const searchContainer = document.createElement('div');
+    searchContainer.style.position = 'relative'; // Positioning context for absolute positioning of results
+    searchContainer.appendChild(searchInput);
+    searchContainer.appendChild(searchResultsContainer);
+
+    buttonGroup.appendChild(searchContainer); // Add to the button group
+
+    // Event listener for input changes
+    searchInput.addEventListener('input', handleSearch);
+
+}
+
+function handleSearch(event) {
+    const searchTerm = event.target.value.toLowerCase();
+    const filteredLocations = locations.filter(location =>
+        location.name.toLowerCase().includes(searchTerm)
+    );
+
+    displaySearchResults(filteredLocations);
+}
+
+function displaySearchResults(results) {
+    searchResultsContainer.innerHTML = ''; // Clear previous results
+
+    if (results.length > 0) {
+        results.forEach(location => {
+            const listItem = document.createElement('li');
+            listItem.textContent = location.name;
+            listItem.style.padding = '5px';
+            listItem.style.cursor = 'pointer';
+
+            listItem.addEventListener('click', () => {
+                map.flyTo({
+                    center: location.coords,
+                    zoom: 14  // Zoom in a bit more
+                });
+                searchInput.value = location.name; // Optional: Fill the search bar with the selected name
+                searchResultsContainer.style.display = 'none'; // Hide the results
+            });
+
+            searchResultsContainer.appendChild(listItem);
+        });
+        searchResultsContainer.style.display = 'block'; // Show the results
+    } else {
+        const listItem = document.createElement('li');
+        listItem.textContent = 'No results found.';
+        listItem.style.padding = '5px';
+        searchResultsContainer.appendChild(listItem);
+        searchResultsContainer.style.display = 'block'; // Still show, but with "no results"
+    }
+}
 
 function addLocationsList() {
     const list = document.createElement('ul');
@@ -174,13 +264,20 @@ stylePopup.innerHTML = `
     transform: translateX(-50%);
     display: flex;
     gap: 10px;
-    z-index: 1000;
   }
     .dropdown-content {
     line-height: 1.05; /* Added line-height */
     font-size: 12px; /* Added font-size */
   }
 
+  #location-search {
+    font-family: 'Poppins', sans-serif !important;
+  }
+
+  #search-results {
+      font-family: 'Poppins', sans-serif !important;
+      z-index: 2000;
+  }
 `;
 
 // Append the style to the document
