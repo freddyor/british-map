@@ -1,5 +1,5 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js";
-import { getFirestore, collection, addDoc, getDocs } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js";
+import { getFirestore, collection, getDocs } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js";
 import { locations } from './locations.js';
 import { imageAttributions } from './imageAttributions.js';
 
@@ -91,7 +91,16 @@ function initializeSearch() {
     searchContainer.appendChild(searchInput);
     searchContainer.appendChild(searchResultsContainer);
 
-    buttonGroup.appendChild(searchContainer); // Add to the button group
+    // Add to the middle of the page instead of buttonGroup
+    const searchWrapper = document.createElement('div');
+    searchWrapper.style.position = 'absolute';
+    searchWrapper.style.top = '50%';
+    searchWrapper.style.left = '50%';
+    searchWrapper.style.transform = 'translate(-50%, -50%)';
+    searchWrapper.style.zIndex = '1000';
+    searchWrapper.appendChild(searchContainer);
+
+    document.body.appendChild(searchWrapper); // Add to the body
 
     // Event listener for input changes
     searchInput.addEventListener('input', handleSearch);
@@ -442,8 +451,7 @@ function addBuildingMarkers() {
 
     marker.setPopup(popup);
 
-    marker.getElement().addEventListener('click', () => {
-      map.getCanvas().style.cursor = 'pointer';
+       map.getCanvas().style.cursor = 'pointer';
       popup.addTo(map);
     });
   });
@@ -551,6 +559,7 @@ function loadMarkersFromFirebase() {
       });
     });
   }).catch(error => {
-    console.error('Error loading markers: ', error);
+    console.error('Error loading markers:', error);
   });
 }
+
