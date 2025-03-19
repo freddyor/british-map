@@ -165,6 +165,7 @@ stylePopup.innerHTML = `
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
     white-space: nowrap;
     text-align: center;
+    outline: none; /* Remove the outline */
   }
 
   #button-group {
@@ -278,7 +279,7 @@ function createPopupContent(location, isFirebase = false) {
         <div style="font-size: 14px; color: #666;">${data.occupation || data.dates}</div>
       </div>
     </div>
-    <div style="text-align: center;">
+    <div style="text-align: center; margin-top: 5px;">
       <button class="custom-button" id="expand-button">▼ Discover ▼</button>
     </div>
     <div id="additional-content" style="display: none;">
