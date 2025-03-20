@@ -5,7 +5,7 @@ export const buildings = [
       54.2947,
       -0.9551
     ],
-    "image": "",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/b/bc/Whitby_Abbey_%28geograph_7249897%29.jpg",
     "description": "",
     "occupation": "Various",
     "tldr": "Open-air museum featuring relocated historic buildings spanning six centuries of rural Yorkshire life.",
