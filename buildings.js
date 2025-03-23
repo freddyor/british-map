@@ -50,56 +50,6 @@ export const buildings = [
       ]
     },
     {
-      "name": "St Michael's Church, Barton-le-Street",
-      "coords": [
-        54.15882921368322,
-        -0.8969419364899545
-      ],
-      "image": "https://upload.wikimedia.org/wikipedia/commons/5/5b/Barton-le-Street_Church_%2897%29.JPG",
-      "description": "AI-generated",
-      "occupation": "11th Century",
-      "tldr": "Quaint village church with Norman origins, featuring notable architectural details and a serene setting.",
-      "events": [
-        {
-          "date": "1086",
-          "description": "Mentioned in the Domesday Book, suggesting its existence during the Norman era. 🏰"
-        },
-        {
-          "date": "1400s",
-          "description": "Features a beautifully carved Norman doorway and other original features. 🚪"
-        },
-        {
-          "date": "Present",
-          "description": "Serves as a cherished landmark and a testament to the village's enduring heritage. 🏘️"
-        }
-      ]
-    },
-    {
-      "name": "St Helen's Church, Bilton-in-Ainsty",
-      "coords": [
-        53.947381771658804,
-        -1.2761887126083449
-      ],
-      "image": "https://upload.wikimedia.org/wikipedia/commons/1/19/Bilton-in-Ainsty_St_Helen_from_S_GeoUK_7362785.jpg",
-      "description": "AI-generated",
-      "occupation": "12th Century",
-      "tldr": "Charming village church showcasing a blend of architectural styles and a peaceful ambiance.",
-      "events": [
-        {
-          "date": "1100s",
-          "description": "Features a Norman font and other architectural elements from its early years. 💧"
-        },
-        {
-          "date": "1870",
-          "description": "Underwent significant restoration, adding new elements while preserving its character. 🔨"
-        },
-        {
-          "date": "Present",
-          "description": "Continues to be a cherished landmark and an active place of worship. 🕊️"
-        }
-      ]
-    },
-    {
       "name": "Ferry Bridge, Brotherton",
       "coords": [
         53.715855388966894,
