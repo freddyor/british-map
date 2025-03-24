@@ -1,5 +1,323 @@
 export const buildings = [
   {
+    "name": "Ruswarp Hydro",
+    "coords": [
+      -0.6336834338474555,
+      54.46828554574612
+    ],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Ruswarp_Hydro_plant.jpg/450px-Ruswarp_Hydro_plant.jpg",
+    "description": "",
+    "occupation": "2012",
+    "tldr": "Ruswarp Hydro is a Hydroelectric generation scheme on the River Esk. It uses Archimedes Screw in a reverse direction to generate electricity.",
+    "events": [
+      {
+        "date": "LOCAL",
+        "description": "It was funded by people on the community and generates enough energy to power 45-48 local homes (160,000 Kilo-watt hours per year) ⚡."
+      }
+    ]
+  },
+  {
+    "name": "Ruswarp Railway Station",
+    "coords": [
+      -0.6280783499379236,
+      54.469882523534075
+    ],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Ruswarp_railway_station.jpg/500px-Ruswarp_railway_station.jpg",
+    "description": "",
+    "occupation": "1835",
+    "tldr": "Opened for the Whitby-Pickering line, the station still serves five trains a day.",
+    "events": [
+      {
+        "date": "1835",
+        "description": "Over 1,000 people were carried between Pickering and Ruswarp for the Ruswarp Fair Day 🎡."
+      }
+    ]
+  },
+  {
+    "name": "Larpool Viaduct",
+    "coords": [
+      -0.6186003277568669,
+      54.474558262074886
+    ],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/Larpool_Viaduct%2C_Whitby.jpg/375px-Larpool_Viaduct%2C_Whitby.jpg",
+    "description": "",
+    "occupation": "1884",
+    "tldr": "The viaduct was constructed for the Scarborough and Whitby Railway to cross the River Esk.",
+    "events": [
+      {
+        "date": "1882",
+        "description": "Two workers fell from the piers during construction, but both recovered 🏗️."
+      },
+      {
+        "date": "1897",
+        "description": "The viaduct was mentioned in Bram Stoker's 'Dracula' as 'a great viaduct… with high piers, through which the view seems somehow further away than it really is' 📚."
+      },
+      {
+        "date": "1965",
+        "description": "The line ended as a result of the Beeching Report, a major series of route closures across the country with the goal of improving economic efficiency 🚂."
+      }
+    ]
+  },
+  {
+    "name": "Ruswarp Hall",
+    "coords": [
+      -0.6294234206344508,
+      54.47155421064509
+    ],
+    "image": "https://s0.geograph.org.uk/geophotos/06/02/84/6028480_d72dff67_original.jpg",
+    "description": "",
+    "occupation": "1603",
+    "tldr": "One of the oldest buildings in Whitby.",
+    "events": [
+      {
+        "date": "BUILT",
+        "description": "It was built in the Reign of James I, by Nicholas Bushell, a prosperous Merchant and Ship owner, who's portrait hangs in the entrance hall 🖼️."
+      },
+      {
+        "date": "BUSHELL",
+        "description": "Bushell's son, Brown Bushell, married a daughter of Sir Thomas Fairfax and resided at the hall whilst he maintained the position of Captain in the parliamentary forces in Scarborough. He was executed for multiple acts of betrayal in 1651 ⚔️."
+      }
+    ]
+  },
+  {
+    "name": "Goathland Railway Station",
+    "coords": [
+      -0.7121390331806847,
+      54.400421773591844
+    ],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Goathland_Railway_Station.jpg/330px-Goathland_Railway_Station.jpg",
+    "description": "",
+    "occupation": "1865",
+    "tldr": "It was opened as Goathland Mill, and was so named due to its proximity to the watermill on the Murk Esk river adjacent to the station.",
+    "events": [
+      {
+        "date": "HARRY POTTER",
+        "description": "This station served as Hogsmeade station for the Hogwarts Express 🚂."
+      }
+    ]
+  },
+  {
+    "name": "RAF Danby Beacon",
+    "coords": [
+      -0.8656722524608466,
+      54.473519821303995
+    ],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/9/9f/Site_of_RAF_radar_station_-_geograph.org.uk_-_129941.jpg",
+    "description": "",
+    "occupation": "1937",
+    "tldr": "This site was an early warning radar station for the RAF, until it was demolished in 1957.",
+    "events": [
+      {
+        "date": "1940",
+        "description": "It was a plot from Danby that led to the shoot down of a German bomber over Whitby, the first German aircraft shot down over England in the war ✈️."
+      }
+    ]
+  },
+  {
+    "name": "Lilla Cross",
+    "coords": [
+      -0.6325724427450614,
+      54.37595006677475
+    ],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Lilla_Cross_-_geograph.org.uk_-_1704939.jpg/375px-Lilla_Cross_-_geograph.org.uk_-_1704939.jpg",
+    "description": "",
+    "occupation": "10th century",
+    "tldr": "The oldest cross on the North York Moors, with royal connections.",
+    "events": [
+      {
+        "date": "EDWIN",
+        "description": "It is believed that Lilla, an aristocratic servant of King Edwin of Northumbria, was buried here. He prevented Edwin from being assassinated, and in doing so was killed himself. Lilla was a Christian - this act of heroism is believed to have converted Edwin ✝️."
+      },
+      {
+        "date": "1942",
+        "description": "Certain items of gold and silver dug up from beneath the cross were destroyed by enemy action in Liverpool during the war 💥."
+      },
+      {
+        "date": "1952",
+        "description": "The cross was temporarily moved to Simon Howe whilst the area became a military training ground 🏔️."
+      }
+    ]
+  },
+  {
+    "name": "Beckhole Railway Station",
+    "coords": [
+      -0.7358816423520187,
+      54.407711141744834
+    ],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Beckhole_station_site_remains_geograph-3259150-by-Ben-Brooksbank.jpg/500px-Beckhole_station_site_remains_geograph-3259150-by-Ben-Brooksbank.jpg",
+    "description": "",
+    "occupation": "1836",
+    "tldr": "It was an old railway station on the Whitby-Pickering line.",
+    "events": [
+      {
+        "date": "1914",
+        "description": "It closed after 78 years of passenger service 🚉."
+      },
+      {
+        "date": "1951",
+        "description": "After 1914, the station was still used for freight traffic until it completely closed in 1951 🚂."
+      }
+    ]
+  },
+  {
+    "name": "Malo Cross",
+    "coords": [
+      -0.6683159750661166,
+      54.342640266548095
+    ],
+    "image": "https://s0.geograph.org.uk/photos/31/67/316723_e4f134a9.jpg",
+    "description": "",
+    "occupation": "1619",
+    "tldr": "Erected by Sir Richard Egerton (hence the R E initials) as a boundary marker for his manor. It still acts as a parish marker today.",
+    "events": [
+      {
+        "date": "MALO",
+        "description": "It is named after the de Mauley family of Mulgrave Castle near Sandsend 🏰."
+      },
+      {
+        "date": "1924",
+        "description": "It was returned here to its original site after it went missing for 50 years. It was found in a garden in Pickering 🌳."
+      }
+    ]
+  },
+  {
+    "name": "Hunters Sty Bridge",
+    "coords": [
+      -0.9795117825938282,
+      54.446588511587194
+    ],
+    "image": "https://s0.geograph.org.uk/geophotos/01/86/63/1866362_04fcc45f.jpg",
+    "description": "",
+    "occupation": "13th century",
+    "tldr": "Part of a major medieval packhorse route linking Kirbymoorside to Redcar and Guisborough.",
+    "events": [
+      {
+        "date": "TEMPLAR",
+        "description": "It is believed the bridge was built by the Knights Templar, as they resided nearby in this time ⚔️."
+      },
+      {
+        "date": "CREST",
+        "description": "The crest on the bridge is of the powerful Duncombe family. Octavious Duncombe restored the bridge as he was a regular shooter round here 🏹."
+      }
+    ]
+  },
+  {
+    "name": "Westerdale Hall",
+    "coords": [
+      -0.9798786162825739,
+      54.445226086496305
+    ],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Westerdale_hall.jpg/330px-Westerdale_hall.jpg",
+    "description": "",
+    "occupation": "Early 19th",
+    "tldr": "Built as a shooting lodge for the Duncombe family, mainly for grouse shooting in late summer and autumn.",
+    "events": [
+      {
+        "date": "USE",
+        "description": "From 1946-1992, it became a very popular youth hostel, but is now a private residence 🏠."
+      }
+    ]
+  },
+  {
+    "name": "Woodlands Hall",
+    "coords": [
+      -0.6728803942601733,
+      54.46018068840388
+    ],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/The_former_Woodlands_Hall%2C_Aislaby_-_geograph.org.uk_-_4083893.jpg/330px-The_former_Woodlands_Hall%2C_Aislaby_-_geograph.org.uk_-_4083893.jpg",
+    "description": "",
+    "occupation": "18th century",
+    "tldr": "The house was built for Henry Walker Yeoman, which was then inherited through the family.",
+    "events": [
+      {
+        "date": "1958",
+        "description": "For 30 years, the building was home to St Hilda's Preparatory School 🏫."
+      },
+      {
+        "date": "1988",
+        "description": "It became a nursing home, until it was converted to 14 apartments in 1999 🏠."
+      }
+    ]
+  },
+  {
+    "name": "Aislaby War Memorial",
+    "coords": [
+      -0.6791517270124888,
+      54.465812503637345
+    ],
+    "image": "https://www.warmemorialsonline.org.uk/public/img/250950/Aislaby_547x410.jpg",
+    "description": "",
+    "occupation": "1918",
+    "tldr": "It is in stone, and consists of a Celtic cross with interlaced ornament, on a square tapering plinth, on a round stepped base. On the plinth are panels with the names of those lost in the two World Wars",
+    "events": []
+  },
+  {
+    "name": "Aislaby Quarry",
+    "coords": [
+      -0.6899896604199504,
+      54.46664586622658
+    ],
+    "image": "https://www.geograph.org.uk/photo/6867116",
+    "description": "",
+    "occupation": "",
+    "tldr": "One of only two quarries still operating in the North York Moors,",
+    "events": [
+      {
+        "date": "1847",
+        "description": "In 1847 alone, 27,424 tons of 'blockstones' were shipped out of Whitby. They were used on notable places such as Whitby Harbour, Waterloo Bridge and Ramsgate Pier 🏗️."
+      },
+      {
+        "date": "1661",
+        "description": "When England acquired Tangier, considered the first colony, Sir Hugh Cholmley took 11 skilled men from this area to built the Tangier Port 🇲🇦."
+      }
+    ]
+  },
+  {
+    "name": "St Margaret's Church, Aislaby",
+    "coords": [
+      -0.6793466325770993,
+      54.465495638129674
+    ],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/b/b6/St_Margaret_C_of_E_Church._-_geograph.org.uk_-_1920780.jpg",
+    "description": "",
+    "occupation": "1732",
+    "tldr": "There was a Mediaeval chapel in Aislaby, which in 1732 was replaced by a church, a plain, rectangular building. This church was replaced in 1896 by a new church, designed by Edward H. Smales. The church of 1732 survived, and was later converted into a parish hall.",
+    "events": []
+  },
+  {
+    "name": "Ash Tree Cottage",
+    "coords": [
+      -0.7190301088531666,
+      54.40283830971565
+    ],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/4/4a/Ash_Tree_Cottage.jpg",
+    "description": "",
+    "occupation": "1836",
+    "tldr": "This building is all that remains of the Goathland Bank Top Railway Station, that stood here for 30 years. This building was the 'overseers cottage' or ticketing office.",
+    "events": []
+  },
+  {
+    "name": "Beckhole Incline",
+    "coords": [
+      -0.7277726266958292,
+      54.40501712875373
+    ],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/3/3b/Goathland_(Incline_Top)_station_site_today.jpg",
+    "description": "",
+    "occupation": "1836",
+    "tldr": "Beckhole Incline was a steep, rope-worked gradient on the Whitby-Pickering railway line that lasted until 1865.",
+    "events": [
+      {
+        "date": "1861",
+        "description": "Charles Dickens travelled along the incline, describing it as a 'quaint old railway' 🚂."
+      },
+      {
+        "date": "1851",
+        "description": "A boy aged fifteen was knocked down by a train descending the incline. The train severed one of his legs and one of his arms. He died two hours later. Many more deaths occurred here 😢."
+      }
+    ]
+  },
+  {
     "name": "Oliver’s Mount",
     "coords": [
       -0.40992762141795897,
