@@ -2853,7 +2853,7 @@ export const buildings = [
     "name": "Newby Hall",
     "coords": [-1.4694297681554747, 54.101605681592005],
     "image": "images/newbyhall.png",
-    "description": ",
+    "description": "",
     "occupation": "1690s",
     "tldr": "An elegant 17th-century house with renowned gardens and a rich history of aristocratic ownership.",
     "events": [
