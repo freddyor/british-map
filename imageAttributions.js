@@ -2,6 +2,82 @@
 
 // Array to store image attributions
 const imageAttributions = [
+  {
+      "name": "<a href='https://www.geograph.org.uk/photo/126358'>Oliver's Mount</a>",
+      "author": "colin grice",
+      "license": "CC BY-SA 2.0"
+    },
+{
+      "name": "<a href='https://www.geograph.org.uk/photo/1741549'>GCHQ Scarborough</a>",
+      "author": "JThomas",
+      "license": "CC BY-SA 2.0"
+    },
+{
+      "name": "<a href='https://commons.wikimedia.org/wiki/File:Peasholm_Park_(Naval_battle0.jpg'>Peasholm Park Lake</a>",
+      "author": "DS Pugh",
+      "license": "CC BY-SA 3.0"
+    },
+{
+      "name": "<a href='https://commons.wikimedia.org/wiki/File:20190219130240_IMG_5600-02.jpg'>North Bay Railway</a>",
+      "author": "Kaly99",
+      "license": "CC BY-SA 4.0"
+    },
+{
+      "name": "<a href='https://www.geograph.org.uk/photo/4106498'>Open Air Theatre</a>",
+      "author": "Gordon Hatton",
+      "license": "CC BY-SA 2.0"
+    },
+{
+      "name": "<a href='https://commons.wikimedia.org/wiki/File:Scarborough_Castle_3.jpg'>Scarborough Castle 3</a>",
+      "author": "Nilfanion",
+      "license": "CC BY-SA 4.0"
+    },
+{
+      "name": "<a href='https://www.geograph.org.uk/photo/5691799'>Scarborough Town Hall</a>",
+      "author": "David Dixon",
+      "license": "CC BY-SA 2.0"
+    },
+{
+      "name": "<a href='https://commons.wikimedia.org/wiki/File:Rotunda_Museum_Scarborough_060615.JPG'>Rotunda Museum</a>",
+      "author": "Mtaylor848",
+      "license": "CC BY-SA 4.0"
+    },
+  {
+      "name": "<a href='https://www.geograph.org.uk/photo/1778540'>Scarborough Spa</a>",
+      "author": "Michael Steele",
+      "license": "CC BY-SA 2.0"
+    },
+{
+      "name": "<a href='https://www.geograph.org.uk/photo/1398434'>The Grand Hotel</a>",
+      "author": "JThomas",
+      "license": "CC BY-SA 2.0"
+    },
+{
+      "name": "<a href='https://www.geograph.org.uk/photo/774043'>Cliff Bridge, Scarborough</a>",
+      "author": "Peter Church",
+      "license": "CC BY-SA 2.0"
+    },
+{
+      "name": "<a href='https://commons.wikimedia.org/wiki/File:ScarboroughRailwayStation.jpg'>Scarborough Railway Station</a>",
+      "author": "Clem Rutter, Rochester, Kent.",
+      "license": "CC BY-SA 3.0"
+    },
+{
+      "name": "<a href='https://commons.wikimedia.org/wiki/File:Central_Tramway_Company,_Scarborough.jpg'>Central Tramway Company, Scarborough</a>",
+      "author": "Amy Bartle",
+      "license": "CC BY-SA 4.0"
+    },
+{
+      "name": "<a href='https://www.geograph.org.uk/photo/1903682'>Scarborough Lighthouse</a>",
+      "author": "David Wright",
+      "license": "CC BY-SA 2.0"
+    },
+{
+      "name": "<a href='https://commons.wikimedia.org/wiki/File:The_Stephen_Joseph_Theatre_in_Scarborough.jpg'>The Stephen Joseph Theatre in Scarborough</a>",
+      "author": "Rept0n1x",
+      "license": "CC BY-SA 4.0"
+    },
+
                             {
       "name": "<a href='https://www.teamwass.com/sports-talent/cricket/roster/liam-livingstone/'>Liam Livingstone</a>",
       "author": "Wasserman",
