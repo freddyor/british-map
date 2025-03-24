@@ -1,5 +1,386 @@
 export const buildings = [
   {
+    "name": "Oliver’s Mount",
+    "coords": [
+      -0.40992762141795897,
+      54.25919638584704
+    ],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Motorcycle_racing_-_Olivers_Mount_-_geograph.org.uk_-_126358.jpg/390px-Motorcycle_racing_-_Olivers_Mount_-_Olivers_Mount_-_geograph.org.uk_-_126358.jpg",
+    "description": "",
+    "occupation": "",
+    "tldr": "Oliver’s Mount is an area of high ground, named after Oliver Cromwell as it was said he sited guns here.",
+    "events": [
+      {
+        "date": "2016",
+        "description": "Oliver’s Mount was the summit for the final climb on the third stage of the Tour de Yorkshire 🚴."
+      },
+      {
+        "date": "FIGURES",
+        "description": "It has played host to domestic rallying and motorcycling events over the years. Spectators have reached 58,000 at once 🏍️."
+      }
+    ]
+  },
+  {
+    "name": "GCHQ Scarborough",
+    "coords": [
+      -0.44713178943331766,
+      54.266887817909165
+    ],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Aerials%2C_Irton_Moor_-_geograph.org.uk_-_1741549.jpg/375px-Aerials%2C_Irton_Moor_-_geograph.org.uk_-_1741549.jpg",
+    "description": "",
+    "occupation": "1912",
+    "tldr": "It is the longest continuous serving site for signals intelligence in the world.",
+    "events": [
+      {
+        "date": "WW1",
+        "description": "The station's original purpose was to monitor the German fleets on the East Coast ⚓."
+      },
+      {
+        "date": "1941",
+        "description": "The station played a key role in the locating and sinking of the Bismarck, for which they were thanked by Churchill 🚢."
+      },
+      {
+        "date": "COLD WAR",
+        "description": "It became the main station for intercepting Soviet ship communications, including during the Cuban Missile Crisis 🛰️."
+      }
+    ]
+  },
+  {
+    "name": "Peasholm Park Lake",
+    "coords": [
+      -0.4099454903346991,
+      54.29057204149255
+    ],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Peasholm_Park_by-DS-Pugh.jpg/300px-Peasholm_Park_by-DS-Pugh.jpg",
+    "description": "",
+    "occupation": "1912",
+    "tldr": "The Battle of Peasholm has played out on this artificial lake for half an hour three times a week during summer for the last 80 years.",
+    "events": [
+      {
+        "date": "WW1",
+        "description": "In the early days, the models were WW1 boats and a German U-boat 🚤."
+      },
+      {
+        "date": "WW2",
+        "description": "Following WW2, the battle that has been recreated is the Battle of River Plate, the first British Naval Battle of the Second World War ⚓."
+      }
+    ]
+  },
+  {
+    "name": "North Bay Railway",
+    "coords": [
+      -0.4120747706125886,
+      54.29339603442299
+    ],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/20190219130240_IMG_5600-02.jpg/266px-20190219130240_IMG_5600-02.jpg",
+    "description": "",
+    "occupation": "1931",
+    "tldr": "Scarborough North Bay Railway is a ridable miniature railway that attracts hundreds of thousands of riders annually.",
+    "events": [
+      {
+        "date": "1932",
+        "description": "During the second operating season of the line, a head-on collision took place at Beach station, killing engine driver Herbert Carr and injuring 31 passengers 🚂."
+      },
+      {
+        "date": "STAR",
+        "description": "'Locomotion' was performed by Kylie Minogue on some carriages ahead of her concert at the open-air theatre 🎤."
+      }
+    ]
+  },
+  {
+    "name": "Open Air Theatre",
+    "coords": [
+      -0.41242283666481366,
+      54.294587644094314
+    ],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Open_air_theatre_(geograph_4106498).jpg/375px-Open_air_theatre_(geograph_4106498).jpg",
+    "description": "",
+    "occupation": "1932",
+    "tldr": "It originally closed in 1986, but re-opened in 2010.",
+    "events": [
+      {
+        "date": "2010",
+        "description": "It was opened by Queen Elizabeth II and Philip 👑."
+      },
+      {
+        "date": "2010",
+        "description": "All England matches were shown for free on the screen ⚽."
+      },
+      {
+        "date": "2024",
+        "description": "116,606 people attended 18 concerts, ending with popular British band ‘Busted’ 🎶."
+      }
+    ]
+  },
+  {
+    "name": "Scarborough Town Hall",
+    "coords": [
+      -0.39833564218071893,
+      54.28177934329324
+    ],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Scarborough_Town_Hall_(geograph_5691799)_(cropped).jpg/390px-Scarborough_Town_Hall_(geograph_5691799)_(cropped).jpg",
+    "description": "",
+    "occupation": "1844",
+    "tldr": "Originally built as the home of John Woodall, his son sold the building to the council in 1898 for £33,575 (£4.7m now)",
+    "events": [
+      {
+        "date": "1903",
+        "description": "Queen Victoria’s youngest daughter, Princess Beatrice, formally opened the Town Hall - the ceremonial key used is still inside a cabinet in the building 🔑."
+      },
+      {
+        "date": "2012",
+        "description": "Office space was reduced by 71% due to extreme expected maintenance costs 🏢."
+      }
+    ]
+  },
+  {
+    "name": "Rotunda Museum",
+    "coords": [
+      -0.39926486083108703,
+      54.27941981199614
+    ],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Rotunda_Museum_Scarborough_060615.JPG/330px-Rotunda_Museum_Scarborough_060615.JPG",
+    "description": "",
+    "occupation": "1829",
+    "tldr": "The Rotunda Museum is described as the finest surviving purpose-built museum of its age in the country, and one of the first.",
+    "events": [
+      {
+        "date": "JURASSIC",
+        "description": "It contains over 5,500 fossils and 3,000 minerals from the Jurassic coastline of Yorkshire 🦕."
+      },
+      {
+        "date": "INVENTION",
+        "description": "The cabinets now display items such as a model of George Cayley’s original flying machine and an early steam car model by Sir Edward Harland 🚗."
+      }
+    ]
+  },
+  {
+    "name": "Crown Spa Hotel",
+    "coords": [
+      -0.39956137748508475,
+      54.276762954644994
+    ],
+    "image": "https://upload.wikimedia.org/wikipedia/en/thumb/3/3e/Crown_in_Scarborough.JPG/330px-Crown_in_Scarborough.JPG",
+    "description": "",
+    "occupation": "1844",
+    "tldr": "This is the first purpose-built hotel in Scarborough and one of the first in the world.",
+    "events": [
+      {
+        "date": "FILM",
+        "description": "The hotel has been a location for television and film productions, including 'Little Voice', 'Heartbeat' and 'The Royal' 🎬."
+      }
+    ]
+  },
+  {
+    "name": "Grand Hotel",
+    "coords": [
+      -0.3980161062361065,
+      54.28053130742651
+    ],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/The_Grand_Hotel_-_geograph.org.uk_-_1398434.jpg/375px-The_Grand_Hotel_-_geograph.org.uk_-_1398434.jpg",
+    "description": "",
+    "occupation": "1867",
+    "tldr": "At the time of its opening, it was the largest brick structure in Europe. Hitler planned to make this building his personal palace and headquarters of the Third Reich.",
+    "events": [
+      {
+        "date": "THEME",
+        "description": "The building is designed around the theme of time: four towers to represent the seasons, 12 floors for the months of the year, 52 chimneys symbolise the weeks, and originally there were 365 bedrooms, one for each day of a non-leap year 🕰️."
+      },
+      {
+        "date": "SHAPE",
+        "description": "The hotel is in the shape of a V in honour of Queen Victoria 👑."
+      },
+      {
+        "date": "WW2",
+        "description": "It was used to RAF trainees while also housing anti-aircraft guns. Later, after the Iranian Embassy siege in 1980, the hotel was used in a covert training exercise by the SAS in preparation for other anticipated terrorist incidents 🪖."
+      }
+    ]
+  },
+  {
+    "name": "Cliffe Bridge",
+    "coords": [
+      -0.3983682713105591,
+      54.27936032063311
+    ],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Cliff_Bridge%2C_Scarborough.jpg/330px-Cliff_Bridge%2C_Scarborough.jpg",
+    "description": "",
+    "occupation": "1827",
+    "tldr": "A 414-feet-long iron bridge.",
+    "events": [
+      {
+        "date": "1827",
+        "description": "During the opening ceremony, a mail coach was pulled by horses at high speed across the bridge 🐎."
+      },
+      {
+        "date": "TOLL",
+        "description": "It quickly became a toll bridge due to its usage, with a toll bridge on St Nicholas Cliff end of the bridge 💰."
+      },
+      {
+        "date": "1951",
+        "description": "The Corporation of Scarborough purchased the bridge, removing the tolls and demolishing the toll booth 🏛️."
+      }
+    ]
+  },
+  {
+    "name": "Scarborough Lighthouse",
+    "coords": [
+      -0.38988583586131403,
+      54.28194676016681
+    ],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Scarborough_Lighthouse.jpg/330px-Scarborough_Lighthouse.jpg",
+    "description": "",
+    "occupation": "1806",
+    "tldr": "Now the HQ of Scarborough Yacht club.",
+    "events": [
+      {
+        "date": "1914",
+        "description": "The lighthouse was hit by the very last shot of the Imperial German Navy raid on Scarborough. 520 shells were fired, killing 18 townspeople 💥."
+      },
+      {
+        "date": "1931",
+        "description": "The Scarborough Townsmen's Guild sought public donations, raising £2,225. It was re-lit on 22 December 1931 💡."
+      }
+    ]
+  },
+  {
+    "name": "Stephen Joseph Theatre",
+    "coords": [
+      -0.40573439609656703,
+      54.28049473430112
+    ],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/The_Stephen_Joseph_Theatre_in_Scarborough.jpg/375px-The_Stephen_Joseph_Theatre_in_Scarborough.jpg",
+    "description": "",
+    "occupation": "1996",
+    "tldr": "This was the first theatre-in-the-round founded in Britain",
+    "events": [
+      {
+        "date": "1955",
+        "description": "Stephen Joseph established a tiny theatre-in-the-round on the first floor of the Public Library 🎭."
+      },
+      {
+        "date": "1995",
+        "description": "The theatre moved here in the old Odeon cinema 🎦."
+      }
+    ]
+  },
+  {
+    "name": "Scarborough Spa",
+    "coords": [
+      -0.39732742504347296,
+      54.27569422010907
+    ],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Scarborough_Spa_Complex.jpg/500px-Scarborough_Spa_Complex.jpg",
+    "description": "",
+    "occupation": "1858",
+    "tldr": "Built on the site of Scarborough's historic spas, it is a venue for conferences, exhibitions and live music.",
+    "events": [
+      {
+        "date": "17th CENTURY",
+        "description": "Spa waters, bubbling waters said to cure minor ailments, were discovered here ⛲. The first 'Spaw House' was built in the early 1700s 🏠."
+      },
+      {
+        "date": "1876",
+        "description": "The building was destroyed by fire 🔥. It was rebuilt in less than three years 🏗️."
+      }
+    ]
+  },
+  {
+    "name": "Central Tramway Company",
+    "coords": [
+      -0.398249753338489,
+      54.280997547667226
+    ],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Central_Tramway_Company%2C_Scarborough.jpg/435px-Central_Tramway_Company%2C_Scarborough.jpg",
+    "description": "",
+    "occupation": "1881",
+    "tldr": "The Central Tramway Company is an electric-powered funicular railway - the oldest surviving Tramway company in the UK.",
+    "events": [
+      {
+        "date": "1881",
+        "description": "2.834 passengers traveled on the tram on its opening day on 1 August 1881 🚡."
+      },
+      {
+        "date": "1908",
+        "description": "Percy Henry Askham was delivering coal for the steam engine 😔. The driver did not see Mr Askham working on the track, setting the carriages in motion. As the Tram moved down the tracks Mr Askham was knocked backwards into the coal shed. He died later in hospital 🏥."
+      },
+      {
+        "date": "1920",
+        "description": "The Tram was converted to electrical power ⚡."
+      }
+    ]
+  },
+  {
+    "name": "Scarborough Railway Station",
+    "coords": [
+      -0.4053965520526119,
+      54.27983742399367
+    ],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/ScarboroughRailwayStation.jpg/500px-ScarboroughRailwayStation.jpg",
+    "description": "",
+    "occupation": "1845",
+    "tldr": "The railway station was opened following the completion of the line from York.",
+    "events": [
+      {
+        "date": "1845",
+        "description": "All the local shops closed and 15,000 spectators watched the first train arrive at the station 🚂."
+      },
+      {
+        "date": "1943",
+        "description": "The late-running 09:05 express from Hull as wrongly routed by the signalman and hit the 11:18 stopping train, which was waiting to depart 💥. Four passengers in the first coach of the stopping train – all soldiers – were killed, eight received serious injuries and a further 22 suffered minor injuries 💔."
+      }
+    ]
+  },
+        {
+      "name": "Whitby Abbey",
+      "coords": [
+        54.48836708473829,
+        -0.6080535277845063
+      ],
+      "image": "https://upload.wikimedia.org/wikipedia/commons/b/bc/Whitby_Abbey_%28geograph_7249897%29.jpg",
+      "description": "",
+      "occupation": "7th Century",
+      "tldr": "Iconic ruins perched on a cliff overlooking the North Sea, steeped in history and legend.",
+      "events": [
+        {
+          "date": "657",
+          "description": "Founded as a monastery by St. Hilda, playing a vital role in early Christianity. ✝️"
+        },
+        {
+          "date": "1539",
+          "description": "Dissolved by Henry VIII during the Dissolution of the Monasteries, leading to its decay. 💥"
+        },
+        {
+          "date": "Present",
+          "description": "Remains a striking landmark, inspiring artists and writers, including Bram Stoker. 🧛"
+        }
+      ]
+    },
+    {
+      "name": "Gisborough Priory",
+      "coords": [
+        54.53628444986801,
+        -1.047228284437669
+      ],
+      "image": "https://upload.wikimedia.org/wikipedia/commons/a/a0/Gisborough_priory_snow_portrait.jpg",
+      "description": "AI-generated",
+      "occupation": "12th Century",
+      "tldr": "Majestic ruins of an Augustinian priory, showcasing Gothic architecture and a peaceful atmosphere.",
+      "events": [
+        {
+          "date": "1119",
+          "description": "Established by Robert de Brus, Lord of Annandale, as a place of worship and learning. 🕊️"
+        },
+        {
+          "date": "1540",
+          "description": "Surrendered to Henry VIII during the Dissolution, resulting in its partial destruction. 🔥"
+        },
+        {
+          "date": "Present",
+          "description": "Continues to inspire visitors with its grandeur and historical significance. ✨"
+        }
+      ]
+    },
+  {
     name: "York Minster",
     coords: [-1.0831787084457822, 53.96223749484881],
     image: "images/yorkminster.png",
@@ -2310,7 +2691,7 @@ export const buildings = [
     "coords": [-1.1630636782658454, 54.55228494132578],
     "image": "images/normanbyhall.png",
     "description": "",
-    "occupation": "",
+    "occupation": null,
     "tldr": "The Hall now sits in a state of despair, most recently being a retirement home.",
     "events": [
       {
@@ -2332,7 +2713,7 @@ export const buildings = [
     "coords": [-1.5130423846918362, 54.181718445932965],
     "image": "images/nortonconyersmanor.png",
     "description": "",
-    "occupation": "",
+    "occupation": null,
     "tldr": "The building is said to be the inspiration for Charlotte Brontë’s Jane Eyre.",
     "events": [
       {
@@ -2372,7 +2753,7 @@ export const buildings = [
     "coords": [-0.9013770093562412, 54.0838579613409],
     "image": "images/whitwellhall.png",
     "description": "",
-    "occupation": "",
+    "occupation": null,
     "tldr": "The manor was originally part of the estate of William the Conqueror and his brother Robert.",
     "events": [
       {
@@ -2567,7 +2948,7 @@ export const buildings = [
     "name": "Bedale Hall",
     "coords": [-1.5941471380639638, 54.29031499838431],
     "image": "images/bedalehall.png",
-    "description": "AI-generated",
+    "description": "",
     "occupation": "1730",
     "tldr": "A Georgian mansion turned community center, hosting various events.",
     "events": [
@@ -2589,7 +2970,7 @@ export const buildings = [
     "name": "Carlton Towers",
     "coords": [-1.0175469829618722, 53.70653952502289],
     "image": "images/carltontowers.png",
-    "description": "AI-generated",
+    "description": "",
     "occupation": "17th century",
     "tldr": "A Victorian Gothic country house, home to the Fitzalan-Howard family.",
     "events": [
@@ -2611,7 +2992,7 @@ export const buildings = [
     "name": "Duncombe Park",
     "coords": [-1.0746527568910413, 54.238982780795546],
     "image": "images/duncombepark.png",
-    "description": "AI-generated",
+    "description": "",
     "occupation": "1713",
     "tldr": "One of Yorkshire's finest historic houses and estates, with a colorful history of ownership.",
     "events": [
@@ -2633,7 +3014,7 @@ export const buildings = [
     "name": "Easby Abbey, Richmond",
     "coords": [-1.716605245691516, 54.39752454185147],
     "image": "images/easbyabbey.png",
-    "description": "AI-generated",
+    "description": "",
     "occupation": "1152",
     "tldr": "A picturesque ruined abbey with a rich history of religious and artistic significance.",
     "events": [
@@ -2655,7 +3036,7 @@ export const buildings = [
     "name": "Forcett Hall",
     "coords": [-1.7347246139762906, 54.506278249132066],
     "image": "images/forcetthall.png",
-    "description": "AI-generated",
+    "description": "",
     "occupation": "1710",
     "tldr": "An early 18th-century country house with connections to the Shuttleworth family.",
     "events": [
@@ -2677,7 +3058,7 @@ export const buildings = [
     "name": "Fountains Hall",
     "coords": [-1.5864835392954224, 54.109730854372906],
     "image": "images/fountainshall.png",
-    "description": "AI-generated",
+    "description": "",
     "occupation": "1611",
     "tldr": "A Jacobean mansion built partially with stone from the nearby Fountains Abbey.",
     "events": [
@@ -2699,7 +3080,7 @@ export const buildings = [
     "name": "Ganton Hall",
     "coords": [-0.48161547661788484, 54.179818762547534],
     "image": "images/gantonhall.png",
-    "description": "AI-generated",
+    "description": "",
     "occupation": "1860",
     "tldr": "A Victorian country house with strong connections to golf and aristocracy.",
     "events": [
@@ -2721,7 +3102,7 @@ export const buildings = [
     "name": "Grantley Hall",
     "coords": [-1.620756983757019 , 54.11891246047191],
     "image": "images/grantleyhall.png",
-    "description": "AI-generated",
+    "description": "",
     "occupation": "1680",
     "tldr": "A 17th-century hall turned luxury hotel with a rich history of notable guests.",
     "events": [
@@ -3024,5 +3405,6 @@ export const buildings = [
         "description": "Despite public outcry, Thirkleby Hall was demolished, with over 200 tons of architectural elements sold at auction for £25,000 (£550,000 today) 🏚️"
       }
     ]
-  }
+  },
+
 ];
