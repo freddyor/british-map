@@ -10,7 +10,7 @@ var map = new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/freddomate/cm785h0qv00cf01r0e8xxaxbc',
    center: [-1.4708553, 54.2503595], 
-    zoom: 7,
+    zoom: 9,
     pitch: 45,
     bearing: -17.6
 });
