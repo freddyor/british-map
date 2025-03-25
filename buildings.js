@@ -257,7 +257,7 @@ export const buildings = [
       -0.6899896604199504,
       54.46664586622658
     ],
-    "image": "https://www.geograph.org.uk/photo/6867116",
+    "image": "https://s0.geograph.org.uk/geophotos/06/86/71/6867116_bb2a5b9a.jpg",
     "description": "",
     "occupation": "",
     "tldr": "One of only two quarries still operating in the North York Moors,",
