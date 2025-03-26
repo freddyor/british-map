@@ -8,7 +8,7 @@ mapboxgl.accessToken = 'pk.eyJ1IjoiZnJlZGRvbWF0ZSIsImEiOiJjbTc1bm5zYnQwaG1mMmtxe
 
 var map = new mapboxgl.Map({
     container: 'map',
-    style: 'mapbox://styles/freddomate/cm785h0qv00cf01r0e8xxaxbc',
+    style: 'mapbox://styles/freddomate/cm8q8wtwx00a801qzdayccnvz',
    center: [-1.08271, 53.95763], 
     zoom: 15,
     pitch: 45,
