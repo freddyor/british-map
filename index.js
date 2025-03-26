@@ -31,6 +31,7 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
 map.on('load', () => {
+  addBuildingMarkers();
   addLocationsList();
   loadMarkersFromFirebase();
   geolocate.trigger();
