@@ -1,5 +1,82 @@
 export const locations = [
-  
+  {
+    name: "Gladys Deacon",
+    image: "https://upload.wikimedia.org/wikipedia/commons/b/b5/Gladys_Deacon02.jpg",
+    coords: [-1.3615969478607421, 51.84208481888197],
+    occupation: "1881-1997",
+    tldr: "French-born socialite who became the Duchess of Marlborough and lived at Blenheim Palace.",
+    description: "Gladys Deacon is memorialised here on the head of a sphinx, where she lived",
+    events: [
+      { date: "1881", description: "Born in Paris to American parents Edward Parker Deacon and Florence Baldwin. 🌎" },
+      { date: "1892", description: "Her father shot her mother's lover, leading to a tumultuous childhood. 🚨" },
+      { date: "1921", description: "Married Charles Spencer-Churchill, 9th Duke of Marlborough, becoming Duchess of Marlborough. 💍" }
+    ]
+  },
+  {
+    name: "John Vanbrugh",
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/John_Vanbrugh.jpg/330px-John_Vanbrugh.jpg",
+    coords: [-1.3607104926726672, 51.84153307911896],
+    occupation: "1664-1726",
+    tldr: "English architect and playwright, best known for designing Blenheim Palace and Castle Howard.",
+    description: "John Vanburgh was the designer of this great palace",
+    events: [
+      { date: "1704", description: "Commissioned to design Blenheim Palace, a gift from Queen Anne to the Duke of Marlborough. 🏗️" },
+      { date: "1702", description: "Designed Castle Howard in Yorkshire, another iconic Baroque masterpiece. 🏰" },
+      { date: "1697", description: "Achieved fame as a playwright with his comedy 'The Relapse.' 🎭" }
+    ]
+  },
+  {
+    name: "Sir Winston Churchill",
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Sir_Winston_Churchill_-_19086236948.jpg/330px-Sir_Winston_Churchill_-_19086236948.jpg",
+    coords: [-1.3496128590781082, 51.83038768395918],
+    occupation: "1874-1965",
+    tldr: "British statesman and wartime leader who served as Prime Minister during World War II.",
+    description: "Winston Churchill s buried here",
+    events: [
+      { date: "1940", description: "Led Britain through World War II as Prime Minister, delivering his famous speeches. 🎙️" },
+      { date: "1953", description: "Awarded the Nobel Prize in Literature for his historical writings and speeches. 📚" },
+      { date: "2002", description: "Voted the Greatest Briton of all time in a BBC poll, garnering 28% of the votes. 🏆" }
+    ]
+  },
+   {
+    name: "Sir Winston Churchill",
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Sir_Winston_Churchill_-_19086236948.jpg/330px-Sir_Winston_Churchill_-_19086236948.jpg",
+    coords: [-1.3607104926726672, 51.84153307911896],
+    occupation: "1874-1965",
+    tldr: "British statesman and wartime leader who served as Prime Minister during World War II.",
+    description: "Winston Churchill was born here and lived here",
+    events: [
+      { date: "1940", description: "Led Britain through World War II as Prime Minister, delivering his famous speeches. 🎙️" },
+      { date: "1953", description: "Awarded the Nobel Prize in Literature for his historical writings and speeches. 📚" },
+      { date: "2002", description: "Voted the Greatest Briton of all time in a BBC poll, garnering 28% of the votes. 🏆" }
+    ]
+  },
+  {
+    name: "Lancelot ‘Capability’ Brown",
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Nathaniel_Dance-Holland_(1735-1811)_-_Capability_Brown_-_NPG_6049_-_National_Portrait_Gallery.jpg/330px-Nathaniel_Dance-Holland_(1735-1811)_-_Capability_Brown_-_NPG_6049_-_National_Portrait_Gallery.jpg",
+    coords: [-1.3626517461184997, 51.84088674070521],
+    occupation: "1716-1783",
+    tldr: "Celebrated landscape architect nicknamed 'Capability' for his vision to see a property's 'capabilities'.",
+    description: "Lancelot ‘Capability’ Brown designed all these great gardens at Blenheim Palace",
+    events: [
+      { date: "1764", description: "Designed the landscape gardens at Blenheim Palace, creating a picturesque park. 🌳" },
+      { date: "1751", description: "Appointed Head Gardener at Hampton Court Palace, marking a peak in his career. 🌸" },
+      { date: "1770", description: "Designed over 170 parks, many of which still exist today, influencing landscape design for generations. 🏞️" }
+    ]
+  },
+  {
+    name: "John Churchill, 1st Duke of Marlborough",
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/John_Churchill%2C_1st_Duke_of_Marlborough%2C_Captain-General_of_the_English_forces_and_Master-General_of_the_Ordnance%2C_1702_(c)%2C_attributed_to_Michael_Dahl_91996.jpg/330px-thumbnail.jpg",
+    coords: [-1.3611570034340679, 51.8415168513765],
+    occupation: "1650-1722",
+    tldr: "Renowned British general and statesman, commander of the allied forces in the War of the Spanish Succession.",
+    description: "This Palace was built for John Churchill upon his return from war",
+    events: [
+      { date: "1704", description: "Led the Allied forces to victory at the Battle of Blenheim, a decisive moment in the War of the Spanish Succession. ⚔️" },
+      { date: "1702", description: "Appointed Captain-General of the English forces by Queen Anne, highlighting his military prowess. 🛡️" },
+      { date: "1705", description: "Awarded the title Duke of Marlborough and granted the estate at Blenheim as a reward for his services. 👑" }
+    ]
+  },
   {
     coords: [-2.7377114291157536, 54.3215544105035],
     name: "Trooper Pearson",
