@@ -1,5 +1,292 @@
 export const buildings = [
   {
+    "name": "Woodstock Palace",
+    "coords": [
+      -1.3639435149874881,
+      51.845964464552175
+    ],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/b/bb/Woodstock_Palace.jpg",
+    "description": "",
+    "occupation": "12th century",
+    "tldr": "This was the location of the old royal manor, named Woodstock Palace.",
+    "events": [
+      {
+        "date": "ROYAL",
+        "description": "Henry I first built a hunting lodge here, which also included a park that contained lions and leopards. His grandson, Henry II, turned it into a palace, where he spent time with his mistress 👑."
+      },
+      {
+        "date": "EVENTS",
+        "description": "William the Lion, king of Scots was married here in 1186. Edward the Black Prince was born here in 1330. Isabella of England was born here in 1332. Queen Elizabeth 1 was imprisoned here from 1554-1558 🏰."
+      },
+      {
+        "date": "1723",
+        "description": "The ruins of the palace were completely removed, to make way for Blenheim Palace 🏚️."
+      }
+    ]
+  },
+  {
+    "name": "Italian Garden",
+    "coords": [
+      -1.3598995254677717,
+      51.841892559185965
+    ],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/f/f7/The_Italian_Garden%2C_Blenheim_Palace_-_geograph.org.uk_-_3600803.jpg",
+    "description": "",
+    "occupation": "1890s",
+    "tldr": "The Italian garden was designed for the 9th Duke by French landscape-architect Achille Duchene in the 1890s. This is the Duke's private garden",
+    "events": []
+  },
+  {
+    "name": "Elm Trees",
+    "coords": [
+      -1.3691852667937214,
+      51.84882063820374
+    ],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/b/b2/Blenheim_Palace_Park_%26_Lake_(6092921111).jpg",
+    "description": "",
+    "occupation": "",
+    "tldr": "From the Palace to the Column, there is a long avenue of elm trees. These were plated in the position of the duke's troops during the Battle of Blenheim.",
+    "events": []
+  },
+  {
+    "name": "Blenheim Palace",
+    "coords": [
+      -1.360943583514362,
+      51.84122638777966
+    ],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/0/09/Blenheim_Palace_-_geograph.org.uk_-_7349662.jpg",
+    "description": "",
+    "occupation": "1722",
+    "tldr": "Blenheim Palace is the seat of the Duke of Marlborough and is one of the largest houses in England.",
+    "events": [
+      {
+        "date": "NAME",
+        "description": "The building is named after the Battle of Blenheim 1704 after the military triumph of John Churchill, 1st Duke of Marlborough. He was given the land by Queen Anne as a gift. It is still in the Churchill family now, over 300 years later 🏛️."
+      },
+      {
+        "date": "1712",
+        "description": "After an argument with Queen Anne, she ceased all funding for the project. Money was owed and the Marlborough's went into exile in Europe, returning after Anne's death in 1714 💰."
+      },
+      {
+        "date": "1874",
+        "description": "Sir Winston Churchill was born here on 30th November 👶."
+      }
+    ]
+  },
+  {
+    "name": "Woodstock Town Hall",
+    "coords": [
+      -1.3558470160545193,
+      51.84750455673226
+    ],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Woodstock_Town_Hall_(geograph_4363959).jpg/375px-Woodstock_Town_Hall_(geograph_4363959).jpg",
+    "description": "",
+    "occupation": "1767",
+    "tldr": "George Spencer, 4th Duke of Marlborough approved plans for a site here and laid the foundation stone in 1766.",
+    "events": [
+      {
+        "date": "1861",
+        "description": "A drinking fountain was installed on the south side of the building at the expense of John Spencer-Churchill, 7th Duke, in appreciation of efforts of people of the town in extinguishing a major fire at Blenheim Palace that year 🚒."
+      },
+      {
+        "date": "1875",
+        "description": "Suffragette Jane Ronniger gave a votes for women speech in here 🗳️."
+      },
+      {
+        "date": "1979",
+        "description": "The building was used to depict a Nazi headquarters in 'Hanover Street', a film starring Harrison Ford 🎬."
+      }
+    ]
+  },
+  {
+    "name": "Vanburgh's Grand Bridge",
+    "coords": [
+      -1.364373322923861,
+      51.844640676062454
+    ],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Vanbrugh's_'Grand_Bridge'_-_geograph.org.uk_-_2334864.jpg/1200px-Vanbrugh's_'Grand_Bridge'_-_geograph.org.uk_-_2334864.jpg?20210715021044",
+    "description": "",
+    "occupation": "1710",
+    "tldr": "Before the lake was created, this bridge was over a river and had 31 rooms in it.",
+    "events": [
+      {
+        "date": "VIEW",
+        "description": "Winston Churchill's father, Lord Randolph Churchill, described the bridge as 'the finest view in England' 🏞️."
+      },
+      {
+        "date": "2018",
+        "description": "The 160-acre lake was drained for the first time in 250 years in a £12m project to save the bridge 🚧."
+      }
+    ]
+  },
+  {
+    "name": "Blenheim Palace Chapel",
+    "coords": [
+      -1.3617088541762716,
+      51.84144457881618
+    ],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Blenheim_Palace_Chapel.jpg/255px-Blenheim_Palace_Chapel.jpg",
+    "description": "",
+    "occupation": "1733",
+    "tldr": "The 1st Duke of Marlborough's widow, Sarah, completed this chapel in 1733, eleven years after her husbands death. It features the Duke as a Roman leader, with his wife and two sons,",
+    "events": [
+      {
+        "date": "1744",
+        "description": "Sir Winston Churchill was baptised here on 27 December 👶."
+      },
+      {
+        "date": "1744",
+        "description": "The Duke was reinterred in the crypt underneath the chapel alongside his wife after her death. Many other members of the family are buried here. John Spencer-Churchill, 11th Duke, was buried here in 2014 ⚰️."
+      }
+    ]
+  },
+  {
+    "name": "Marlborough Maze",
+    "coords": [
+      -1.3497796165922904,
+      51.83745695493411
+    ],
+    "image": "https://www.blenheimpalace.com/assets/components/phpthumbof/cache/maze-close-up.1b805e7b8da22d45a71305f5900eeeda.jpg",
+    "description": "",
+    "occupation": "1991",
+    "tldr": "2 miles in length, it is one of the largest symbolic mazes in the world.",
+    "events": [
+      {
+        "date": "DUKE",
+        "description": "The maze pays tribute to the 1st Duke of Marlborough, with pathways forming symbols of his military triumph, including cannons, drums and flags 🎖️."
+      },
+      {
+        "date": "YEW",
+        "description": "The maze features 3000 yew trees 🌳."
+      },
+      {
+        "date": "WINSTON",
+        "description": "The maze also incorporates a V sign in honour of Winston Churchill ✌️."
+      }
+    ]
+  },
+  {
+    "name": "Rosamund's Well",
+    "coords": [
+      -1.3677454365839883,
+      51.84510958351098
+    ],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Fair_Rosamund's_Well%2C_Blenheim_-_geograph.org.uk_-_1015851.jpg/300px-Fair_Rosamund's_Well%2C_Blenheim_-_geograph.org.uk_-_1015851.jpg",
+    "description": "",
+    "occupation": "12th century",
+    "tldr": "This is a royal well built by King Henry II for his mistress, Rosamund Clifford, to bathe in.",
+    "events": [
+      {
+        "date": "ROYAL",
+        "description": "Henry II's royal manor at Woodstock was near the site of the Palace today. He built a labyrinthine bower here for his secret lover, to hide her from Queen Eleanor 👑."
+      },
+      {
+        "date": "SIZE",
+        "description": "The bathing place was part of the bower, which was said to have 150 doors 🚪."
+      }
+    ]
+  },
+  {
+    "name": "Temple of Diana",
+    "coords": [
+      -1.3628049717731248,
+      51.83935331853018
+    ],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/1/15/ENG_Woodstock_Blenheim_Palace_034.jpg",
+    "description": "",
+    "occupation": "1773",
+    "tldr": "A small neoclassical temple dedicated to the goddess of hunting",
+    "events": [
+      {
+        "date": "1908",
+        "description": "On the 11th August, Winston Churchill was sat here with Clementine Hozier, sheltering from the pouring rain whilst looking over the lake. Winston proposed to his over - she said yes 💍."
+      },
+      {
+        "date": "2015",
+        "description": "The Churchill Memorial Garden here was opened to commemorate the 50th anniversary of Sir Winston Churchill's death 🌹."
+      }
+    ]
+  },
+  {
+    "name": "Column of Victory",
+    "coords": [
+      -1.3696224396755183,
+      51.84987355524924
+    ],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/e/ed/The_Column_of_Victory_-_geograph.org.uk_-_5954542.jpg",
+    "description": "",
+    "occupation": "1730",
+    "tldr": "The Column of Victory was built to commemorate the military victories of the 1st Duke of Marlborough. It was built 8 years after his death.",
+    "events": [
+      {
+        "date": "CAESAR",
+        "description": "The Duke is portrayed as Caesar, with Roman eagles and plaques of lions' heads 🦁."
+      },
+      {
+        "date": "ROME",
+        "description": "The column was inspired by the Piazza Navona, Rome 🏛️."
+      }
+    ]
+  },
+  {
+    "name": "Temple of Health",
+    "coords": [
+      -1.3562424182575337,
+      51.841234716897965
+    ],
+    "image": "",
+    "description": "",
+    "occupation": "1798",
+    "tldr": "This Corinthian temple was built to celebrate King George III's recovery from illness.",
+    "events": []
+  },
+  {
+    "name": "Harry Potter Tree",
+    "coords": [
+      -1.3664221428405747,
+      51.84524529314993
+    ],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/6/66/Snape-tree-Blenheim_Palace_IMG_3687.jpg",
+    "description": "",
+    "occupation": "",
+    "tldr": "This is the only surviving tree that had a major role in the Harry Potter film series.",
+    "events": [
+      {
+        "date": "2007",
+        "description": "The tree featured in a well-known scene from 'Harry Potter and the Order of the Phoenix'. It was the scene where a young Professor Snape sat whilst he was bullied by Harry Potter's father 🧙‍♂️."
+      }
+    ]
+  },
+  {
+    "name": "Woodstock Gate",
+    "coords": [
+      -1.3587582237728988,
+      51.847317549309125
+    ],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/e/ef/Woodstock_Gate%2C_Blenheim_Palace.jpg",
+    "description": "",
+    "occupation": "1723",
+    "tldr": "Woodstock Gate is also known as the Triumphal Arch.",
+    "events": [
+      {
+        "date": "ROME",
+        "description": "The gate is based of the Arch of Titus in Rome 🏛️."
+      }
+    ]
+  },
+  {
+    "name": "Bernini Fountain",
+    "coords": [
+      -1.362693320328824,
+      51.840596631001354
+    ],
+    "image": "https://historicengland.org.uk/etl/1052889/6e957e5c-d785-46c9-afa9-60e0bb1b3d2a.jpg?autorotate=true&height=500&mode=max&quality=80",
+    "description": "",
+    "occupation": "1890s",
+    "tldr": "This fountain is a scaled copy of the fountain in Piazza Navona, Rome.",
+    "events": []
+  },
+  {
     "name": "Ruswarp Hydro",
     "coords": [
       -0.6336834338474555,
