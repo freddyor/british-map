@@ -234,7 +234,7 @@ export const buildings = [
       -1.3562424182575337,
       51.841234716897965
     ],
-    "image": "",
+    "image": "https://www.geograph.org.uk/photo/3705246",
     "description": "",
     "occupation": "1798",
     "tldr": "This Corinthian temple was built to celebrate King George III's recovery from illness.",
