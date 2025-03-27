@@ -1,7 +1,7 @@
 export const locations = [
     {
     name: "George Spencer-Churchill, 5th Duke of Marlborough",
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Georgespencer1793.jpg/330px-Georgespencer1793.jpg",
+    image: "https://upload.wikimedia.org/wikipedia/commons/3/33/Cosway_-_5th_Duke_of_Marlborough%2C_with_Blenheim_in_the_Distance.jpg",
     coords: [-1.3608989741130721, 51.841521656590544],
     occupation: "1766-1840",
     tldr: "George Spencer-Churchill was a British nobleman, politician, peer, and collector of antiquities and books.",
