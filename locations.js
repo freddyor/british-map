@@ -1,4 +1,108 @@
 export const locations = [
+    {
+    name: "George Spencer-Churchill, 5th Duke of Marlborough",
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Georgespencer1793.jpg/330px-Georgespencer1793.jpg",
+    coords: [-1.3608989741130721, 51.841521656590544],
+    occupation: "1766-1840",
+    tldr: "British peer who was the first to use the surname Spencer-Churchill.",
+    description: "",
+    events: [
+      { date: "1817", description: "Assumed the surname Spencer-Churchill, solidifying the family name. 👨‍👩‍👧‍👦" },
+      { date: "WINSTON", description: "He was a close friend of Winston Churchill, his first cousin." },
+      { date: "1831", description: "Invested as a Knight of the Garter, indicating his standing within the British aristocracy. 👑" }
+    ]
+  },
+  {
+    name: "George Spencer-Churchill, 6th Duke of Marlborough",
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Georgespencer1793.jpg/330px-Georgespencer1793.jpg",
+    coords: [-1.3606415728909553, 51.841632334439396],
+    occupation: "1793-1857",
+    tldr: "British peer who lived and died at Blenheim Palace.",
+    description: "",
+    events: [
+      { date: "1819", description: "Married Lady Jane Stewart, daughter of the 1st Earl of Galloway. 💍" },
+      { date: "1840", description: "Inherited the title of Duke of Marlborough upon his father's death. 👑" },
+      { date: "1857", description: "Died at Blenheim Palace, passing the title to his son, John Spencer-Churchill. ⚰️" }
+    ]
+  },
+  {
+    name: "John Spencer-Churchill, 7th Duke of Marlborough",
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/John_Spencer-Churchill%2C_7th_Duke_of_Marlborough.jpg/330px-John_Spencer-Churchill%2C_7th_Duke_of_Marlborough.jpg",
+    coords: [-1.3604659139488349, 51.84153025293809],
+    occupation: "1822-1883",
+    tldr: "British statesman and peer who served in various government positions.",
+    description: "",
+    events: [
+      { date: "1843", description: "Married Lady Frances Anne Emily Vane, daughter of the 3rd Marquess of Londonderry. 💍" },
+      { date: "1866", description: "Appointed Lord President of the Council, serving in the government of Lord Derby. 🏛️" },
+      { date: "1876", description: "Appointed Lord Lieutenant of Ireland, a significant political role. 🇮🇪" }
+    ]
+  },
+  {
+    name: "John Spencer-Churchill, 10th Duke of Marlborough",
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/John_Albert_Edward_William_Spencer-Churchill%2C_10th_Duke_of_Marlborough.jpg/363px-John_Albert_Edward_William_Spencer-Churchill%2C_10th_Duke_of_Marlborough.jpg",
+    coords: [-1.3611494185477284, 51.84137874206894],
+    occupation: "1897-1972",
+    tldr: "British peer who opened Blenheim Palace to the public and pioneered the 'stately home' business.",
+    description: "",
+    events: [
+      { date: "1936", description: "Appointed Deputy Lieutenant (D.L.) of Oxfordshire 🎖️" },
+      { date: "1937-1942", description: "Served as Mayor of Woodstock." },
+      { date: "1942", description: "Gained the rank of Lieutenant-Colonel in the Life Guards, serving as Liaison Officer to the US Forces during WWII. 🎖️" }
+    ]
+  },
+  {
+    name: "John Spencer-Churchill, 10th Duke of Marlborough (Woodstock)",
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/John_Albert_Edward_William_Spencer-Churchill%2C_10th_Duke_of_Marlborough.jpg/363px-John_Albert_Edward_William_Spencer-Churchill%2C_10th_Duke_of_Marlborough.jpg",
+    coords: [-1.356093744619479, 51.84756294397494],
+    occupation: "1897-1972",
+    tldr: "British peer who served as Mayor of Woodstock from 1937 to 1942.",
+    description: "",
+    events: [
+      { date: "1936", description: "Appointed Deputy Lieutenant (D.L.) of Oxfordshire 🎖️" },
+      { date: "1937-1942", description: "Served as Mayor of Woodstock." },
+      { date: "1942", description: "Gained the rank of Lieutenant-Colonel in the Life Guards, serving as Liaison Officer to the US Forces during WWII. 🎖️" }
+    ]
+  },
+  {
+    name: "John Spencer-Churchill, 10th Duke of Marlborough (Burial Site)",
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/John_Albert_Edward_William_Spencer-Churchill%2C_10th_Duke_of_Marlborough.jpg/363px-John_Albert_Edward_William_Spencer-Churchill%2C_10th_Duke_of_Marlborough.jpg",
+    coords: [-1.3496086077069591, 51.83005616065924],
+    occupation: "1897-1972",
+    tldr: "British peer buried at St Martin's Church, Bladon, alongside his first wife.",
+    description: "",
+     events: [
+      { date: "1936", description: "Appointed Deputy Lieutenant (D.L.) of Oxfordshire 🎖️" },
+      { date: "1937-1942", description: "Served as Mayor of Woodstock." },
+      { date: "1942", description: "Gained the rank of Lieutenant-Colonel in the Life Guards, serving as Liaison Officer to the US Forces during WWII. 🎖️" }
+    ]
+  },
+   {
+    name: "Charles Spencer-Churchill, 9th Duke of Marlborough",
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Charles_Spencer-Churchill%2C_9th_Duke_of_Marlborough.jpg/330px-Charles_Spencer-Churchill%2C_9th_Duke_of_Marlborough.jpg",
+    coords: [-1.3615320419860104, 51.84119284506217],
+    occupation: "1871-1934",
+    tldr: "British peer who became the 9th Duke of Marlborough and resided at Blenheim Palace.",
+    description: "",
+    events: [
+      { date: "1899", description: "Served as a captain in the Boer War, showcasing his military background. ⚔️" },
+      { date: "1905", description: "Employed landscape gardener Achille Duchêne to create the water garden at Blenheim Palace. 🌳" },
+      { date: "1934", description: "At the time of his death, owned nearly 20,000 acres of land. 🏞️" }
+    ]
+  },
+  {
+    name: "George Spencer, 4th Duke of Marlborough",
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/George_Spencer-Churchill_(1739–1817)%2C_4th_Duke_of_Marlborough.jpg/330px-George_Spencer-Churchill_(1739–1817)%2C_4th_Duke_of_Marlborough.jpg",
+    coords: [-1.361486822852395, 51.84133253652625],
+    occupation: "1739-1817",
+    tldr: "George Spencer, 4th Duke of Marlborough, lived at Blenheim Palace, where he built a private observatory.",
+    description: "",
+    events: [
+      { date: "1755", description: "Entered the Coldstream Guards, beginning his military career. 🛡️" },
+      { date: "1760", description: "Became Lord-Lieutenant of Oxfordshire and took his seat in the House of Lords. 📜" },
+      { date: "1768", description: "Made a Knight of the Garter, a prestigious honor. 👑" }
+    ]
+  },
   {
     name: "Treaty of Woodstock",
     image: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/HenryIII.jpg/425px-HenryIII.jpg",
