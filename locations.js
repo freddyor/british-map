@@ -72,7 +72,7 @@ export const locations = [
     description: "William Chambers was the architect of the Town Hall here",
     events: [
      { date: "1723", description: "Born in Stockholm, Sweden, where his father was a merchant. He began his career as a supercargo with the Swedish East India Company, traveling to China and learning about its architecture 🇨🇳" },
-    { date: "1762", description: "Appointed architectural tutor to the Prince of Wales, later King George IV. 👑" }
+    { date: "1762", description: "Appointed architectural tutor to the Prince of Wales, later King George IV. 👑" },
     { date: "LEGACY", description: "He is responsible for hundreds of Britain's best buildings, most notably Somerset House in London." },
     ]
   },
@@ -85,7 +85,7 @@ export const locations = [
     description: "William Chambers was the architect of the Blagdon Bridge here",
     events: [
      { date: "1723", description: "Born in Stockholm, Sweden, where his father was a merchant. He began his career as a supercargo with the Swedish East India Company, traveling to China and learning about its architecture 🇨🇳" },
-    { date: "1762", description: "Appointed architectural tutor to the Prince of Wales, later King George IV. 👑" }
+    { date: "1762", description: "Appointed architectural tutor to the Prince of Wales, later King George IV. 👑" },
     { date: "LEGACY", description: "He is responsible for hundreds of Britain's best buildings, most notably Somerset House in London." },
     ]
   },
@@ -98,7 +98,7 @@ export const locations = [
     description: "William Chambers was the architect of the Temple of Flora here",
     events: [
      { date: "1723", description: "Born in Stockholm, Sweden, where his father was a merchant. He began his career as a supercargo with the Swedish East India Company, traveling to China and learning about its architecture 🇨🇳" },
-    { date: "1762", description: "Appointed architectural tutor to the Prince of Wales, later King George IV. 👑" }
+    { date: "1762", description: "Appointed architectural tutor to the Prince of Wales, later King George IV. 👑" },
     { date: "LEGACY", description: "He is responsible for hundreds of Britain's best buildings, most notably Somerset House in London." },
     ]
   },
@@ -125,7 +125,7 @@ export const locations = [
     events: [
    { date: "1810", description: "He provided writing tuition to the children of George Spencer, the 4th Duke of Marlborough 🖋️" },
       { date: "1799", description: "Mavor invented a system of shorthand writing, which he explained in 'Universal Stenography' 📖" },
-      { date: "1808", description: "He was first elected as Mayor of Woodstock. He went on to hold mayoral office in the town ten times." } }
+      { date: "1808", description: "He was first elected as Mayor of Woodstock. He went on to hold mayoral office in the town ten times." } 
     ]
   },
   {
