@@ -1,4 +1,83 @@
 export const locations = [
+  [
+  {
+    name: "Treaty of Woodstock",
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/HenryIII.jpg/425px-HenryIII.jpg",
+    coords: [-1.3646437009212038, 51.84586576603532],
+    occupation: "1268",
+    tldr: "The Treaty of Woodstock was signed here at the old Woodstock Palace.",
+    description: "",
+    events: [
+      { date: "1268", description: "Signed by King Henry III of England and Prince Llywelyn ap Gruffudd of Wales. 📜" },
+      { date: "13th Century", description: "Formally recognized Llywelyn as Prince of Wales by the English Crown. 👑" },
+      { date: "13th Century", description: "Aimed to establish peace and define the boundaries between England and Wales. 🤝" }
+    ]
+  },
+  {
+    name: "William the Lion",
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/William_I%2C_King_of_Scots_(seal_01).png/330px-William_I%2C_King_of_Scots_(seal_01).png",
+    coords: [-1.364150174471891, 51.845723262720014],
+    occupation: "1143-1214",
+    tldr: "William the Lion married Ermengarde de Beaumont here at the old Woodstock Palace in 1186.",
+    description: "",
+    events: [
+      { date: "1186", description: "Married Ermengarde de Beaumont, a significant event in Scottish history. 💍" },
+      { date: "12th Century", description: "His reign saw the modernization of the Scottish administration and legal system. 📜" },
+      { date: "1174", description: "Captured by the English and forced to sign the Treaty of Falaise, subordinating Scotland to England. ⚔️" }
+    ]
+  },
+ {
+    name: "Edward the Black Prince",
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/TombaPrincepNegre_(cropped).JPG/429px-TombaPrincepNegre_(cropped).JPG",
+    coords: [-1.3638175805603974, 51.84568018023353],
+    occupation: "1330-1376",
+    tldr: "Edward the Black Prince was born at the old Woodstock Palace here in 1330.",
+    description: "",
+    events: [
+      { date: "1337", description: "Created Duke of Cornwall, becoming the first English duke at the age of seven. 👑" },
+      { date: "1356", description: "Led the English to victory at the Battle of Poitiers during the Hundred Years' War. ⚔️" },
+      { date: "1346", description: "Distinguished himself at the Battle of Crécy at just sixteen years of age. 🛡️" }
+    ]
+  },
+  {
+    name: "Thomas of Woodstock",
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/ThomasWoodstock.jpg/445px-ThomasWoodstock.jpg",
+    coords: [-1.3634688933951222, 51.84580279950977],
+    occupation: "1355-1397",
+    tldr: "Thomas of Woodstock was born at the old Woodstock Palace here.",
+    description: "",
+    events: [
+      { date: "1374", description: "Married Eleanor de Bohun, a wealthy heiress, gaining significant property including Pleshey Castle. 💍" },
+      { date: "1385", description: "Created Duke of Gloucester by his nephew, King Richard II. 👑" },
+      { date: "1397", description: "Murdered in Calais, likely on the orders of King Richard II due to political tensions. 💀" }
+    ]
+  },
+  {
+    name: "Queen Elizabeth I",
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Darnley_stage_3.jpg/328px-Darnley_stage_3.jpg",
+    coords: [-1.3636351903508688, 51.84603478101049],
+    occupation: "1533-1603",
+    tldr: "Queen Elizabeth I was imprisoned here at the old Woodstock Palace from 1554 to 1558.",
+    description: "",
+    events: [
+      { date: "1554", description: "Imprisoned at Woodstock Palace under the reign of her half-sister, Queen Mary I. 🔒" },
+      { date: "1558", description: "Ascended to the throne of England, beginning her reign as Queen Elizabeth I. 👑" },
+      { date: "1588", description: "Successfully defended England against the Spanish Armada, marking a pivotal moment in English history. 🛡️" }
+    ]
+  },
+  {
+    name: "John IV, Duke of Brittany",
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/John_V%2C_Duke_of_Brittany%2C_KG.png/480px-John_V%2C_Duke_of_Brittany%2C_KG.png",
+    coords: [-1.364101894710545, 51.84610768923524],
+    occupation: "1339-1399",
+    tldr: "John IV, Duke of Brittany married Mary of Waltham here at the old Woodstock Palace in 1361.",
+    description: "",
+    events: [
+      { date: "1361", description: "Married Mary of Waltham, daughter of King Edward III, at Woodstock Palace. 💍" },
+      { date: "14th Century", description: "Reigned as Duke of Brittany during a period of conflict with France. ⚔️" },
+      { date: "1380", description: "Exiled from Brittany by the French king, seeking refuge in England. 🏰" }
+    ]
+  },
   {
     name: "Gladys Deacon",
     image: "https://upload.wikimedia.org/wikipedia/commons/b/b5/Gladys_Deacon02.jpg",
