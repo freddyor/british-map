@@ -4,8 +4,8 @@ export const locations = [
     image: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Georgespencer1793.jpg/330px-Georgespencer1793.jpg",
     coords: [-1.3608989741130721, 51.841521656590544],
     occupation: "1766-1840",
-    tldr: "British peer who was the first to use the surname Spencer-Churchill.",
-    description: "",
+    tldr: "George Spencer-Churchill was a British nobleman, politician, peer, and collector of antiquities and books.",
+    description: "George Spencer-Churchill, 5th Duke of Marlborough lived here. He was the first to use the surname Spencer-Churchill",
     events: [
       { date: "1817", description: "Assumed the surname Spencer-Churchill, solidifying the family name. 👨‍👩‍👧‍👦" },
       { date: "WINSTON", description: "He was a close friend of Winston Churchill, his first cousin." },
@@ -29,10 +29,10 @@ export const locations = [
     image: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/John_Spencer-Churchill%2C_7th_Duke_of_Marlborough.jpg/330px-John_Spencer-Churchill%2C_7th_Duke_of_Marlborough.jpg",
     coords: [-1.3604659139488349, 51.84153025293809],
     occupation: "1822-1883",
-    tldr: "British statesman and peer who served in various government positions.",
-    description: "",
+    tldr: "He was a cabinet minister, politician, peer, and nobleman. The paternal grandfather of Winston Churchill",
+    description: "John Spencer-Churchill, 7th Duke of Marlborough lived here",
     events: [
-      { date: "1843", description: "Married Lady Frances Anne Emily Vane, daughter of the 3rd Marquess of Londonderry. 💍" },
+      { date: "1842", description: "Commissioned as a lieutenant in the Queen's Own Oxfordshire Yeomanry. He was promoted to captain in 1847." },
       { date: "1866", description: "Appointed Lord President of the Council, serving in the government of Lord Derby. 🏛️" },
       { date: "1876", description: "Appointed Lord Lieutenant of Ireland, a significant political role. 🇮🇪" }
     ]
@@ -42,8 +42,8 @@ export const locations = [
     image: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/John_Albert_Edward_William_Spencer-Churchill%2C_10th_Duke_of_Marlborough.jpg/363px-John_Albert_Edward_William_Spencer-Churchill%2C_10th_Duke_of_Marlborough.jpg",
     coords: [-1.3611494185477284, 51.84137874206894],
     occupation: "1897-1972",
-    tldr: "British peer who opened Blenheim Palace to the public and pioneered the 'stately home' business.",
-    description: "",
+    tldr: "John Spencer-Churchill was a British military officer and peer.",
+    description: "John Spencer-Churchill, 10th Duke of Marlborough lived here and first opened Blenheim Palace to the public. He is known as one of the originators of the ‘stately home’ business.",
     events: [
       { date: "1936", description: "Appointed Deputy Lieutenant of Oxfordshire 🎖️" },
       { date: "1937-1942", description: "Served as Mayor of Woodstock." },
@@ -51,12 +51,12 @@ export const locations = [
     ]
   },
   {
-    name: "John Spencer-Churchill, 10th Duke of Marlborough (Woodstock)",
+    name: "John Spencer-Churchill, 10th Duke of Marlborough",
     image: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/John_Albert_Edward_William_Spencer-Churchill%2C_10th_Duke_of_Marlborough.jpg/363px-John_Albert_Edward_William_Spencer-Churchill%2C_10th_Duke_of_Marlborough.jpg",
     coords: [-1.356093744619479, 51.84756294397494],
     occupation: "1897-1972",
-    tldr: "British peer who served as Mayor of Woodstock from 1937 to 1942.",
-    description: "",
+    tldr: "John Spencer-Churchill was a British military officer and peer.",
+    description: "John Spencer-Churchill, 10th Duke of Marlborough served as Mayor of Woodstock here",
     events: [
       { date: "1936", description: "Appointed Deputy Lieutenant (D.L.) of Oxfordshire 🎖️" },
       { date: "1937-1942", description: "Served as Mayor of Woodstock." },
@@ -64,12 +64,12 @@ export const locations = [
     ]
   },
   {
-    name: "John Spencer-Churchill, 10th Duke of Marlborough (Burial Site)",
+    name: "John Spencer-Churchill, 10th Duke of Marlborough",
     image: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/John_Albert_Edward_William_Spencer-Churchill%2C_10th_Duke_of_Marlborough.jpg/363px-John_Albert_Edward_William_Spencer-Churchill%2C_10th_Duke_of_Marlborough.jpg",
     coords: [-1.3496086077069591, 51.83005616065924],
     occupation: "1897-1972",
-    tldr: "British peer buried at St Martin's Church, Bladon, alongside his first wife.",
-    description: "",
+    tldr: "John Spencer-Churchill was a British military officer and peer.",
+    description: "John Spencer-Churchill, 10th Duke of Marlborough is buried here next to his wife",
      events: [
       { date: "1936", description: "Appointed Deputy Lieutenant (D.L.) of Oxfordshire 🎖️" },
       { date: "1937-1942", description: "Served as Mayor of Woodstock." },
@@ -81,8 +81,8 @@ export const locations = [
     image: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Charles_Spencer-Churchill%2C_9th_Duke_of_Marlborough.jpg/330px-Charles_Spencer-Churchill%2C_9th_Duke_of_Marlborough.jpg",
     coords: [-1.3615320419860104, 51.84119284506217],
     occupation: "1871-1934",
-    tldr: "British peer who became the 9th Duke of Marlborough and resided at Blenheim Palace.",
-    description: "",
+    tldr: "Charles Spencer-Churchill was a British soldier and Conservative politician.",
+    description: "Charles Spencer-Churchill lived here for a while",
     events: [
       { date: "1899", description: "Served as a captain in the Boer War, showcasing his military background. ⚔️" },
       { date: "1905", description: "Employed landscape gardener Achille Duchêne to create the water garden at Blenheim Palace. 🌳" },
@@ -94,12 +94,12 @@ export const locations = [
     image: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/George_Spencer-Churchill_(1739–1817)%2C_4th_Duke_of_Marlborough.jpg/330px-George_Spencer-Churchill_(1739–1817)%2C_4th_Duke_of_Marlborough.jpg",
     coords: [-1.361486822852395, 51.84133253652625],
     occupation: "1739-1817",
-    tldr: "George Spencer, 4th Duke of Marlborough, lived at Blenheim Palace, where he built a private observatory.",
+    tldr: "George Spencer was a nobleman,courtier and politician. Great-great-great-grandfather of Winston Churchill.",
     description: "",
     events: [
-      { date: "1755", description: "Entered the Coldstream Guards, beginning his military career. 🛡️" },
-      { date: "1760", description: "Became Lord-Lieutenant of Oxfordshire and took his seat in the House of Lords. 📜" },
-      { date: "1768", description: "Made a Knight of the Garter, a prestigious honor. 👑" }
+      { date: "1762", description: "He became Lord Chamberlain, the most senior officer in the Royal household 👑" },
+      { date: "1763", description: "He became Lord Privy Seal 📜" },
+      { date: "1768", description: "Made a Knight of the Garter, a prestigious honor 👑" }
     ]
   },
   {
@@ -107,12 +107,9 @@ export const locations = [
     image: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/HenryIII.jpg/425px-HenryIII.jpg",
     coords: [-1.3646437009212038, 51.84586576603532],
     occupation: "1268",
-    tldr: "The Treaty of Woodstock was signed here at the old Woodstock Palace.",
-    description: "",
+    tldr: "For some years the treaty of Woodstock was the high‐water mark of English advance against Wales. When Dafydd ap Llywelyn died in 1246 without sons, his nephews Owain and Llywelyn ap Gruffydd made peace with Henry III. They gave up their lands east of the Conwy and agreed to hold north Wales by military service.",
+    description: "The Treaty of Woodstock was signed here at the old Woodstock Palace",
     events: [
-      { date: "1268", description: "Signed by King Henry III of England and Prince Llywelyn ap Gruffudd of Wales. 📜" },
-      { date: "13th Century", description: "Formally recognized Llywelyn as Prince of Wales by the English Crown. 👑" },
-      { date: "13th Century", description: "Aimed to establish peace and define the boundaries between England and Wales. 🤝" }
     ]
   },
   {
@@ -120,8 +117,8 @@ export const locations = [
     image: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/William_I%2C_King_of_Scots_(seal_01).png/330px-William_I%2C_King_of_Scots_(seal_01).png",
     coords: [-1.364150174471891, 51.845723262720014],
     occupation: "1143-1214",
-    tldr: "William the Lion married Ermengarde de Beaumont here at the old Woodstock Palace in 1186.",
-    description: "",
+    tldr: "William the Lion was King of Alba for 49 years, the longest for a Scottish monarch before the 1603 Union of the Crowns.",
+    description: "William the Lion married Ermengarde de Beaumont here at the old Woodstock Palace in 1186",
     events: [
       { date: "1186", description: "Married Ermengarde de Beaumont, a significant event in Scottish history. 💍" },
       { date: "12th Century", description: "His reign saw the modernization of the Scottish administration and legal system. 📜" },
@@ -133,8 +130,8 @@ export const locations = [
     image: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/TombaPrincepNegre_(cropped).JPG/429px-TombaPrincepNegre_(cropped).JPG",
     coords: [-1.3638175805603974, 51.84568018023353],
     occupation: "1330-1376",
-    tldr: "Edward the Black Prince was born at the old Woodstock Palace here in 1330.",
-    description: "",
+    tldr: "Edward of Woodstock, also known as the Black Prince, was the heir apparent of King Edward III.",
+    description: "Edward the Black Prince was born at the old Woodstock Palace here in 1330",
     events: [
       { date: "1337", description: "Created Duke of Cornwall, becoming the first English duke at the age of seven. 👑" },
       { date: "1356", description: "Led the English to victory at the Battle of Poitiers during the Hundred Years' War. ⚔️" },
@@ -146,8 +143,8 @@ export const locations = [
     image: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/ThomasWoodstock.jpg/445px-ThomasWoodstock.jpg",
     coords: [-1.3634688933951222, 51.84580279950977],
     occupation: "1355-1397",
-    tldr: "Thomas of Woodstock was born at the old Woodstock Palace here.",
-    description: "",
+    tldr: "Thomas of Woodstock was the fifth surviving son of King Edward III and Philippa of Hainult.",
+    description: "Thomas of Woodstock was born at the old Woodstock Palace here",
     events: [
       { date: "1374", description: "Married Eleanor de Bohun, a wealthy heiress, gaining significant property including Pleshey Castle. 💍" },
       { date: "1385", description: "Created Duke of Gloucester by his nephew, King Richard II. 👑" },
@@ -159,8 +156,8 @@ export const locations = [
     image: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Darnley_stage_3.jpg/328px-Darnley_stage_3.jpg",
     coords: [-1.3636351903508688, 51.84603478101049],
     occupation: "1533-1603",
-    tldr: "Queen Elizabeth I was imprisoned here at the old Woodstock Palace from 1554 to 1558.",
-    description: "",
+    tldr: "Queen Elizabeth was the longest reigning monarch of the House of Tudor.",
+    description: "Queen Elizabeth I was imprisoned here at the old Woodstock Palace from 1554 to 1558",
     events: [
       { date: "1554", description: "Imprisoned at Woodstock Palace under the reign of her half-sister, Queen Mary I. 🔒" },
       { date: "1558", description: "Ascended to the throne of England, beginning her reign as Queen Elizabeth I. 👑" },
@@ -172,8 +169,8 @@ export const locations = [
     image: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/John_V%2C_Duke_of_Brittany%2C_KG.png/480px-John_V%2C_Duke_of_Brittany%2C_KG.png",
     coords: [-1.364101894710545, 51.84610768923524],
     occupation: "1339-1399",
-    tldr: "John IV, Duke of Brittany married Mary of Waltham here at the old Woodstock Palace in 1361.",
-    description: "",
+    tldr: "John IV is the only Duke of Brittany to be knighted.",
+    description: "John IV, Duke of Brittany married Mary of Waltham here at the old Woodstock Palace in 1361",
     events: [
       { date: "1361", description: "Married Mary of Waltham, daughter of King Edward III, at Woodstock Palace. 💍" },
       { date: "14th Century", description: "Reigned as Duke of Brittany during a period of conflict with France. ⚔️" },
