@@ -80,7 +80,7 @@ export const locations = [
   {
     name: "Gladys Deacon",
     image: "https://upload.wikimedia.org/wikipedia/commons/b/b5/Gladys_Deacon02.jpg",
-    coords: [-1.3615969478607421, 51.84208481888197],
+    coords: [-1.3628019494793453, 51.84086095906232],
     occupation: "1881-1997",
     tldr: "French-born socialite who became the Duchess of Marlborough and lived at Blenheim Palace.",
     description: "Gladys Deacon is memorialised here on the head of a sphinx, where she lived",
@@ -132,7 +132,7 @@ export const locations = [
   {
     name: "Lancelot ‘Capability’ Brown",
     image: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Nathaniel_Dance-Holland_(1735-1811)_-_Capability_Brown_-_NPG_6049_-_National_Portrait_Gallery.jpg/330px-Nathaniel_Dance-Holland_(1735-1811)_-_Capability_Brown_-_NPG_6049_-_National_Portrait_Gallery.jpg",
-    coords: [-1.3626517461184997, 51.84088674070521],
+    coords: [-1.359783542394555, 51.841996150190404],
     occupation: "1716-1783",
     tldr: "Celebrated landscape architect nicknamed 'Capability' for his vision to see a property's 'capabilities'.",
     description: "Lancelot ‘Capability’ Brown designed all these great gardens at Blenheim Palace",
@@ -145,7 +145,7 @@ export const locations = [
   {
     name: "John Churchill, 1st Duke of Marlborough",
     image: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/John_Churchill%2C_1st_Duke_of_Marlborough%2C_Captain-General_of_the_English_forces_and_Master-General_of_the_Ordnance%2C_1702_(c)%2C_attributed_to_Michael_Dahl_91996.jpg/330px-thumbnail.jpg",
-    coords: [-1.3611570034340679, 51.8415168513765],
+    coords: [-1.3608694077588037, 51.84127880909136],
     occupation: "1650-1722",
     tldr: "Renowned British general and statesman, commander of the allied forces in the War of the Spanish Succession.",
     description: "This Palace was built for John Churchill upon his return from war",
