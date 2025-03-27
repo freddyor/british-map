@@ -1,4 +1,185 @@
 export const locations = [
+  {
+    name: "Richard Burton",
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Richard_Burton_-_The_Robe.jpg/220px-Richard_Burton_-_The_Robe.jpg",
+    coords: [-1.3564297271928578, 51.84743042980108],
+    occupation: "1925-1984",
+    tldr: "Welsh actor known as one of the greatest Shakespearean actors of the 1950s.",
+    description: "Richard Burton stayed as a guest here many times in the Marlboro suite",
+    events: [
+      { date: "1963", description: "Starred as Mark Antony in 'Cleopatra', beginning his famous romance with Elizabeth Taylor. 🎬" },
+      { date: "1964", description: "Received his first of seven Academy Award nominations for 'Becket'. 🏆" },
+      { date: "1966", description: "Starred in 'Who's Afraid of Virginia Woolf?', considered one of his greatest performances. 🎭" }
+    ]
+  },
+  {
+    name: "Elizabeth Taylor",
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Taylor%2C_Elizabeth_posed.jpg/250px-Taylor%2C_Elizabeth_posed.jpg",
+    coords: [-1.3565924193191472, 51.84737874184333],
+    occupation: "1932-2011",
+    tldr: "Iconic actress who was the highest-paid movie star in the world in the 1960s.",
+    description: "Elizabeth Taylor stayed as a guest here many times in the Marlboro suite",
+    events: [
+      { date: "1961", description: "Won her first Academy Award for Best Actress for 'Butterfield 8' 🏆" },
+      { date: "1963", description: "Starred in 'Cleopatra', becoming the highest-paid actress in the world at the time 🎬" },
+      { date: "1999", description: "The American Film Institute ranked her seventh on its greatest female screen legends🏆" }
+    ]
+  },
+  {
+    name: "Joshua McEachran",
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/McEachran_Boro.jpg/250px-McEachran_Boro.jpg",
+    coords: [-1.3405978051329221, 51.84807147849754],
+    occupation: "1993-Present",
+    tldr: "Joshua McEachran is a proffesional footballer who plays for Oxford United.",
+    description: "Joshua McEachran attended school here, when he got his first England call up for the U16s",
+    events: [
+      { date: "2007", description: "Joshue won 38 caps and scored three goals for England at youth level ⚽" },
+      { date: "2010", description: "Made his Premier League debut for Chelsea FC ⚽" },
+    ]
+  },
+  {
+    name: "Clementine Spencer Churchill",
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Clementine_Churchill_1915.jpg/250px-Clementine_Churchill_1915.jpg",
+    coords: [-1.3495315024281165, 51.83036075782825],
+    occupation: "1885-1977",
+    tldr: "Loyal wife of Winston Churchill, known for her intelligence and support during WWII.",
+    description: "Clementine Spencer Churchill is buried here",
+    events: [
+      { date: "1908", description: "Married Winston Churchill, beginning a partnership of 56 years 💍" },
+      { date: "1940-1945", description: "She was Chairman of the Red Cross Aid to Russia Fund during Hitler's offensive 🇷🇺" },
+      { date: "1965", description: "Created a life peer as Baroness Spencer-Churchill, in recognition of her support for her husband. 👑" }
+    ]
+  },
+  {
+    name: "Rupert Friend",
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Rupert_Friend-65102_(cropped).jpg/220px-Rupert_Friend-65102_(cropped).jpg",
+    coords: [-1.3405434460935148, 51.848938976794784],
+    occupation: "1981-Present",
+    tldr: "Talented actor known for his versatile roles in film and television.",
+    description: "Rupert Friend attended school here",
+    events: [
+      { date: "2005", description: "Gained recognition for his role as Mr. Wickham in 'Pride & Prejudice'. He met Keria Knightley on set, they dated from 2005 to 2010 🎬" },
+      { date: "2012", description: "Starred as Peter Quinn in the hit TV series 'Homeland'. 📺" },
+      { date: "2015", description: "Received a Primetime Emmy Award nomination for Outstanding Guest Actor in a Drama Series for his work in 'Homeland'. 🏆" }
+    ]
+  },
+  {
+    name: "William Chambers",
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Sir_William_Chambers.jpg/250px-Sir_William_Chambers.jpg",
+    coords: [-1.355772460628412, 51.84754143066276],
+    occupation: "1723-1796",
+      tldr: "William Chambers was a Swedish-British architect who left a mark on British architecture forever. He was also a founding member of the Royal Academy",
+    description: "William Chambers was the architect of the Town Hall here",
+    events: [
+     { date: "1723", description: "Born in Stockholm, Sweden, where his father was a merchant. He began his career as a supercargo with the Swedish East India Company, traveling to China and learning about its architecture 🇨🇳" },
+    { date: "1762", description: "Appointed architectural tutor to the Prince of Wales, later King George IV. 👑" }
+    { date: "LEGACY", description: "He is responsible for hundreds of Britain's best buildings, most notably Somerset House in London." },
+    ]
+  },
+  {
+    name: "William Chambers",
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Sir_William_Chambers.jpg/250px-Sir_William_Chambers.jpg",
+    coords: [-1.3571037107971644, 51.83402752743014],
+    occupation: "1723-1796",
+    tldr: "William Chambers was a Swedish-British architect who left a mark on British architecture forever. He was also a founding member of the Royal Academy",
+    description: "William Chambers was the architect of the Blagdon Bridge here",
+    events: [
+     { date: "1723", description: "Born in Stockholm, Sweden, where his father was a merchant. He began his career as a supercargo with the Swedish East India Company, traveling to China and learning about its architecture 🇨🇳" },
+    { date: "1762", description: "Appointed architectural tutor to the Prince of Wales, later King George IV. 👑" }
+    { date: "LEGACY", description: "He is responsible for hundreds of Britain's best buildings, most notably Somerset House in London." },
+    ]
+  },
+  {
+    name: "William Chambers",
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Sir_William_Chambers.jpg/250px-Sir_William_Chambers.jpg",
+    coords: [-1.3643421309770605, 51.83604230025014],
+    occupation: "1723-1796",
+    tldr: "William Chambers was a Swedish-British architect who left a mark on British architecture forever. He was also a founding member of the Royal Academy",
+    description: "William Chambers was the architect of the Temple of Flora here",
+    events: [
+     { date: "1723", description: "Born in Stockholm, Sweden, where his father was a merchant. He began his career as a supercargo with the Swedish East India Company, traveling to China and learning about its architecture 🇨🇳" },
+    { date: "1762", description: "Appointed architectural tutor to the Prince of Wales, later King George IV. 👑" }
+    { date: "LEGACY", description: "He is responsible for hundreds of Britain's best buildings, most notably Somerset House in London." },
+    ]
+  },
+  {
+    name: "William Fordyce Mavor",
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Mavor_Saxon.jpg/250px-Mavor_Saxon.jpg",
+    coords: [-1.3497091324295425, 51.83027284559264],
+    occupation: "1758-1837",
+    tldr: "A Scottish teacher, priest and educational inventor.",
+    description: "William Fordyce Mavor was rector here in 1810. This is also where he is buried.",
+    events: [
+      { date: "1810", description: "He provided writing tuition to the children of George Spencer, the 4th Duke of Marlborough 🖋️" },
+      { date: "1799", description: "Mavor invented a system of shorthand writing, which he explained in 'Universal Stenography' 📖" },
+      { date: "1808", description: "He was first elected as Mayor of Woodstock. He went on to hold mayoral office in the town ten times." }
+    ]
+  },
+  {
+    name: "William Fordyce Mavor",
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Mavor_Saxon.jpg/250px-Mavor_Saxon.jpg",
+    coords: [-1.3417612416983689, 51.84912757089352],
+    occupation: "1758-1837",
+    tldr: "A Scottish teacher, priest and educational inventor.",
+    description: "William Fordyce Mavor became headmaster of the Woodstock Grammar School in 1810",
+    events: [
+   { date: "1810", description: "He provided writing tuition to the children of George Spencer, the 4th Duke of Marlborough 🖋️" },
+      { date: "1799", description: "Mavor invented a system of shorthand writing, which he explained in 'Universal Stenography' 📖" },
+      { date: "1808", description: "He was first elected as Mayor of Woodstock. He went on to hold mayoral office in the town ten times." } }
+    ]
+  },
+  {
+    name: "William Fordyce Mavor",
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Mavor_Saxon.jpg/250px-Mavor_Saxon.jpg",
+    coords: [-1.3559177198971692, 51.84754814190618],
+    occupation: "1758-1837",
+    tldr: "A Scottish teacher, priest and educational inventor.",
+    description: "William Fordyce Mavor became Mayor here in 1808, he went on to hold mayoral office in the town 10 times",
+    events: [
+   { date: "1810", description: "He provided writing tuition to the children of George Spencer, the 4th Duke of Marlborough 🖋️" },
+      { date: "1799", description: "Mavor invented a system of shorthand writing, which he explained in 'Universal Stenography' 📖" },
+      { date: "1808", description: "He was first elected as Mayor of Woodstock. He went on to hold mayoral office in the town ten times." }
+    ]
+  },
+  {
+    name: "Anne, Princess Royal",
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Princess_Anne_Wellington_2023.jpg/220px-Princess_Anne_Wellington_2023.jpg",
+    coords: [-1.3569199219269266, 51.84773901107665],
+    occupation: "1950-Present",
+    tldr: "She is the second child and only daughter of Queen Elizabeth II and Prince Philip, Duke of Edinburgh, and the only sister of King Charles III.",
+    description: "Anne, Princess Royal opened the Soldiers of Oxfordshire Museum here in 2014",
+    events: [
+      { date: "1976", description: "Competed in the Montreal Olympic Games as a member of the British equestrian team 🏅" },
+      { date: "2014", description: "Opened the Soldiers of Oxfordshire Museum, highlighting her support for military heritage 🎗️" },
+      { date: "1987", description: "Became the Princess Royal, a title traditionally given to the eldest daughter of the monarch 👑" }
+    ]
+  },
+  {
+    name: "Thomas Chaucer's Home",
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Thomas_Chaucer%2C_memorial_brass_(cropped).jpg/250px-Thomas_Chaucer%2C_memorial_brass_(cropped).jpg",
+    coords: [-1.35760675875062, 51.847784929512216],
+    occupation: "1367-1434",
+    tldr: "Influential statesman and son of Geoffrey Chaucer, renowned for his political achievements.",
+    description: "This was the home of Thomas Chaucer",
+    events: [
+      { date: "1400", description: "Served multiple times as Speaker of the House of Commons 🏛️" },
+      { date: "1402", description: "Appointed Chief Butler of England by King Henry IV 🍷" },
+      { date: "CHAUCER", description: "He was the son of Geoffrey Chaucer, who was known as the 'father of English literature' and the first person to be buried in Poet's Corner at St Paul's Cathedral 🖋️" }
+    ]
+  },
+  {
+    name: "Samuel Taylor Coleridge",
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/SamuelTaylorColeridge.jpg/250px-SamuelTaylorColeridge.jpg",
+    coords: [-1.3554872961179156, 51.847193146910435],
+    occupation: "1772-1834",
+    tldr: "Visionary poet and philosopher, celebrated for his profound contributions to English literature.",
+    description: "Coleridges’ character ‘Ancient Mariner’ was based on a real person who lived in this house",
+    events: [
+      { date: "1797", description: "Wrote 'The Rime of the Ancient Mariner', one of the most famous poems in the English language. ✍️" },
+      { date: "LEGACY", description: "He was one of the founders of the Romantic Movement in England." },
+      { date: "POET", description: "His best friend was well-known poet William Wordsworth, who were both members of the Lake Poets" }
+    ]
+  },
     {
     name: "George Spencer-Churchill, 5th Duke of Marlborough",
     image: "https://upload.wikimedia.org/wikipedia/commons/3/33/Cosway_-_5th_Duke_of_Marlborough%2C_with_Blenheim_in_the_Distance.jpg",
