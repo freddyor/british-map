@@ -308,7 +308,7 @@ export const buildings = [
     ],
     "image": "https://upload.wikimedia.org/wikipedia/commons/6/66/Snape-tree-Blenheim_Palace_IMG_3687.jpg",
     "description": "",
-    "occupation": "",
+    "occupation": " ",
     "tldr": "This is the only surviving tree that had a major role in the Harry Potter film series.",
     "events": [
       {
