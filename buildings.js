@@ -1,5 +1,65 @@
 export const buildings = [
   {
+    "name": "The Woodstock almshouses",
+    "coords": [
+      -1.3522495620095447,
+      51.84622224091812
+    ],
+    "image": "https://cdn.seearoundbritain.com/images/59279/p1910854-1622825875.jpg",
+    "description": "",
+    "occupation": "1797",
+    "tldr": "These almshouses were set up by Caroline Duchess of Marlborough, wife of the 4th Duke. Queen Charlotte described her as 'the proudest woman in England'. Almshouses were homes for the poor, on condition they attended church (there is one opposite).",
+    "events": []
+  },
+  {
+    "name": "Bladon Primary School",
+    "coords": [
+      -1.3500909907229843,
+      51.830893960349044
+    ],
+    "image": "https://www.schoolsmith.co.uk/wp-content/uploads/2018/10/Bladon-CofE-Primary-School-Woodstock-OX20-CC-640x340.jpg",
+    "description": "",
+    "occupation": "1858",
+    "tldr": "The Duchess of Marlborough, wife of the 7th Duke, provided this school and owned it until 1937. It changed from Duchess of Marlborough's School to Bladon Church of England Primary School.",
+    "events": []
+  },
+  {
+    "name": "Dinosaur Garden",
+    "coords": [
+      -1.3569554526478578,
+      51.84808462434673
+    ],
+    "image": "https://i0.wp.com/oxfordshiremummies.co.uk/wp-content/uploads/2022/03/IMG_7491.jpg?fit=1024%2C576&ssl=1",
+    "description": "",
+    "occupation": "",
+    "tldr": "Displayed in this garden are megalosaur footprints, found in a limestone quarry near Ardley.",
+    "events": []
+  },
+  {
+    "name": "Woodstock Headstocks",
+    "coords": [
+      -1.3569736874002762,
+      51.847678488104066
+    ],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/TitusOates-pilloried_300dpi.jpg/800px-TitusOates-pilloried_300dpi.jpg",
+    "description": "",
+    "occupation": "",
+    "tldr": "Right here are the village headstocks, right in the center of town where old food would have been thrown at minor offenders",
+    "events": []
+  },
+  {
+    "name": "Last Bus To Woodstock",
+    "coords": [
+      -1.359171706372669,
+      51.850150899210504
+    ],
+    "image": "https://d2s8km3brsjp0y.cloudfront.net/eyJidWNrZXQiOiJ3aGF0cHViIiwia2V5IjoiT1hOXC9PWE4rMzEtMjE2OTUtNjAwLTQ1MC5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjgwMCwiaGVpZ2h0Ijo2MDAsImZpdCI6ImNvdmVyIn19fQ==",
+    "description": "",
+    "occupation": "1975",
+    "tldr": "This is the site where Sylvia Kaye is found murdered in the 'Last Bus to Woodstock'",
+    "events": []
+  },
+  {
     "name": "Woodstock Palace",
     "coords": [
       -1.3639435149874881,
