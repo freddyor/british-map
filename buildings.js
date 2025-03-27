@@ -31,7 +31,7 @@ export const buildings = [
     ],
     "image": "https://i0.wp.com/oxfordshiremummies.co.uk/wp-content/uploads/2022/03/IMG_7491.jpg?fit=1024%2C576&ssl=1",
     "description": "",
-    "occupation": "",
+    "occupation": " ",
     "tldr": "Displayed in this garden are megalosaur footprints, found in a limestone quarry near Ardley.",
     "events": []
   },
@@ -43,7 +43,7 @@ export const buildings = [
     ],
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/TitusOates-pilloried_300dpi.jpg/800px-TitusOates-pilloried_300dpi.jpg",
     "description": "",
-    "occupation": "",
+    "occupation": " ",
     "tldr": "Right here are the village headstocks, right in the center of town where old food would have been thrown at minor offenders",
     "events": []
   },
@@ -104,7 +104,7 @@ export const buildings = [
     ],
     "image": "https://upload.wikimedia.org/wikipedia/commons/b/b2/Blenheim_Palace_Park_%26_Lake_(6092921111).jpg",
     "description": "",
-    "occupation": "",
+    "occupation": " ",
     "tldr": "From the Palace to the Column, there is a long avenue of elm trees. These were plated in the position of the duke's troops during the Battle of Blenheim.",
     "events": []
   },
