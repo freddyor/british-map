@@ -1,5 +1,4 @@
 export const locations = [
-  [
   {
     name: "Treaty of Woodstock",
     image: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/HenryIII.jpg/425px-HenryIII.jpg",
