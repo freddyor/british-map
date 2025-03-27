@@ -56,7 +56,7 @@ export const buildings = [
     "image": "https://d2s8km3brsjp0y.cloudfront.net/eyJidWNrZXQiOiJ3aGF0cHViIiwia2V5IjoiT1hOXC9PWE4rMzEtMjE2OTUtNjAwLTQ1MC5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjgwMCwiaGVpZ2h0Ijo2MDAsImZpdCI6ImNvdmVyIn19fQ==",
     "description": "",
     "occupation": "1975",
-    "tldr": "This is the site where Sylvia Kaye is found murdered in the 'Last Bus to Woodstock'",
+    "tldr": "This is the site where Sylvia Kaye was found murdered in the 'Last Bus to Woodstock', the first book in the Inspector Morse novels by Colin Dexter 🕵️‍♂️",
     "events": []
   },
   {
