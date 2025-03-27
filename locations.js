@@ -37,6 +37,19 @@ export const locations = [
       { date: "1876", description: "Appointed Lord Lieutenant of Ireland, a significant political role. 🇮🇪" }
     ]
   },
+      {
+    name: "John Spencer-Churchill, 7th Duke of Marlborough",
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/John_Spencer-Churchill%2C_7th_Duke_of_Marlborough.jpg/330px-John_Spencer-Churchill%2C_7th_Duke_of_Marlborough.jpg",
+    coords: [-1.3524233544308233, 51.84668361028477],
+    occupation: "1822-1883",
+    tldr: "He was a cabinet minister, politician, peer, and nobleman. The paternal grandfather of Winston Churchill",
+    description: "John Spencer-Churchill was convinced a railway station should be erected here. He actually died two and a half years before it was built, but it was his thinking. The station is now not in use.",
+    events: [
+      { date: "1842", description: "Commissioned as a lieutenant in the Queen's Own Oxfordshire Yeomanry. He was promoted to captain in 1847." },
+      { date: "1866", description: "Appointed Lord President of the Council, serving in the government of Lord Derby. 🏛️" },
+      { date: "1876", description: "Appointed Lord Lieutenant of Ireland, a significant political role. 🇮🇪" }
+    ]
+  },
   {
     name: "John Spencer-Churchill, 10th Duke of Marlborough",
     image: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/John_Albert_Edward_William_Spencer-Churchill%2C_10th_Duke_of_Marlborough.jpg/363px-John_Albert_Edward_William_Spencer-Churchill%2C_10th_Duke_of_Marlborough.jpg",
