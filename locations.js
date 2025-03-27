@@ -17,12 +17,11 @@ export const locations = [
     image: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Georgespencer1793.jpg/330px-Georgespencer1793.jpg",
     coords: [-1.3606415728909553, 51.841632334439396],
     occupation: "1793-1857",
-    tldr: "British peer who lived and died at Blenheim Palace.",
-    description: "",
+    tldr: "George Spencer-Churchill was a British nobleman, politician, and the great-grandfather of Winston Churchill",
+    description: "George Spencer-Churchill, 6th Duke, lived and died here",
     events: [
-      { date: "1819", description: "Married Lady Jane Stewart, daughter of the 1st Earl of Galloway. 💍" },
-      { date: "1840", description: "Inherited the title of Duke of Marlborough upon his father's death. 👑" },
-      { date: "1857", description: "Died at Blenheim Palace, passing the title to his son, John Spencer-Churchill. ⚰️" }
+      { date: "1842", description: "He served as Lord-Lieutenant of Oxfordshire for 15 years until his death." },
+      { date: "MP", description: "He served as Tory MP of Woodstock from 1826 to 1831, from 1832 to 1835 and from 1838 to 1840, when he succeeded to the dukedom and entered the House of Lords 🇬🇧" },
     ]
   },
   {
@@ -46,7 +45,7 @@ export const locations = [
     tldr: "British peer who opened Blenheim Palace to the public and pioneered the 'stately home' business.",
     description: "",
     events: [
-      { date: "1936", description: "Appointed Deputy Lieutenant (D.L.) of Oxfordshire 🎖️" },
+      { date: "1936", description: "Appointed Deputy Lieutenant of Oxfordshire 🎖️" },
       { date: "1937-1942", description: "Served as Mayor of Woodstock." },
       { date: "1942", description: "Gained the rank of Lieutenant-Colonel in the Life Guards, serving as Liaison Officer to the US Forces during WWII. 🎖️" }
     ]
