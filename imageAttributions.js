@@ -3,6 +3,41 @@
 // Array to store image attributions
 const imageAttributions = [
   {
+  "name": "<a href='https://commons.wikimedia.org/wiki/File:ENG_Woodstock_Blenheim_Palace_034.jpg'>Blenheim Palace, Woodstock</a>",
+  "author": "-wuppertaler",
+  "license": "CC BY-SA 4.0"
+},
+{
+  "name": "<a href='https://www.geograph.org.uk/photo/5954542'>The Column of Victory</a>",
+  "author": "Steve Daniels",
+  "license": "CC BY-SA 2.0"
+},
+{
+  "name": "<a href='https://www.geograph.org.uk/photo/3705246'>A field near Blenheim Palace</a>",
+  "author": "Peter Sebbage",
+  "license": "CC BY-SA 2.0"
+},
+{
+  "name": "<a href='https://commons.wikimedia.org/wiki/File:Snape-tree-Blenheim_Palace_IMG_3687.jpg'>Blenheim Palace</a>",
+  "author": "Snape507",
+  "license": "CC BY-SA 4.0"
+},
+{
+  "name": "<a href='https://commons.wikimedia.org/wiki/File:Woodstock_Gate,_Blenheim_Palace.jpg'>Woodstock Gate, Blenheim Palace</a>",
+  "author": "Newton2",
+  "license": "CC BY-SA 3.0"
+},
+{
+  "name": "<a href='https://www.geograph.org.uk/photo/2334864'>Vanbrugh's 'Grand Bridge'</a>",
+  "author": "Les Chatfield",
+  "license": "CC BY-SA 2.0"
+},
+{
+  "name": "<a href='https://en.wikipedia.org/wiki/File:Blenheim_Palace_Chapel.jpg'>Blenheim Palace Chapel</a>",
+  "author": "Dudlajzu",
+  "license": "CC BY-SA 4.0"
+},
+  {
       "name": "<a href='https://www.geograph.org.uk/photo/126358'>Oliver's Mount</a>",
       "author": "colin grice",
       "license": "CC BY-SA 2.0"
