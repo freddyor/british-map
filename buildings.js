@@ -48,11 +48,9 @@ export const buildings = [
         "description": "Flying a Maurice Farman Longhorn, he took off from Redcar on his first solo flight on 15 April. He crashed on this spot aged 19, after encountering snow clouds ✈️"
       }
     ]
-  }
-]
-
+  },
  {
-    "name": "St Thomas’ Church, Glaisdale",
+    "name": "St Thomas’ Church Glaisdale",
     "coords": [
       -0.8079984020462675,
       54.43763455701139
