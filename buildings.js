@@ -19,7 +19,7 @@ export const buildings = [
     ],
     "image": "https://s0.geograph.org.uk/geophotos/01/59/85/1598568_59628ec6.jpg",
     "description": "",
-    "occupation": "",
+    "occupation": " ",
     "tldr": "‘These men passed out of the site of men by the path of duty and self-sacrifice’",
     "events": [
       {
@@ -237,11 +237,11 @@ export const buildings = [
       },
       {
         "date": "WW2",
-        "The building was commandeered as a first aid post 🚑"
+        "description": "The building was commandeered as a first aid post 🚑"
       },
       {
                 "date": "2021",
-        "The accommodation owners competed on the TV show ‘Four in a Bed' 🎥"
+        "description": "The accommodation owners competed on the TV show ‘Four in a Bed' 🎥"
       }
       ]
   },
