@@ -1,4 +1,475 @@
 export const buildings = [
+    {
+    "name": "Lealholm Methodist Chapel",
+    "coords": [
+      -0.8274309631537885,
+      54.45789557000447
+    ],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Wesleyan_Chapel%2C_Lealholm_(1)_-_geograph.org.uk_-_2835480.jpg/330px-Wesleyan_Chapel%2C_Lealholm_(1)_-_geograph.org.uk_-_2835480.jpg",
+    "description": "",
+    "occupation": "",
+    "tldr": "On the sidewall of the chapel records the heights of previous floods. The major flood of 23rd July 1930 put the chapel more than 3 feet underwater",
+    "events": []
+  },
+  {
+    "name": "Lealholm War Memorial",
+    "coords": [
+      -0.8244380,
+      54.4584462
+    ],
+    "image": "https://s0.geograph.org.uk/geophotos/01/59/85/1598568_59628ec6.jpg",
+    "description": "",
+    "occupation": "",
+    "tldr": "‘These men passed out of the site of men by the path of duty and self-sacrifice’",
+    "events": [
+      {
+        "date": "HEROES",
+        "description": "C W Branch, J W Coverdale, J Fawbert, F Hart, N E W G Lacy, C F A Ley, M A Ley, J Y Light, J R Lonsdale, W Russell, J A Wilson, G E Wood ❤️"
+      },
+      {
+        "date": "LEY",
+        "description": "CFA Ley and MA Ley were the sons of Sir Francis Ley, an industrialist who founded an ironworks and brought baseball to the city of Derby. He was a major benefactor to the village around 1904, whilst owning Lealholm Estate ⚾"
+      }
+    ]
+  },
+  {
+    "name": "Swinsty Cross",
+    "coords": [
+      -0.7552842,
+      54.4182751
+    ],
+    "image": "https://i0.wp.com/live.staticflickr.com/65535/52186166315_ec33f42b70_c.jpg?w=584&ssl=1",
+    "description": "",
+    "occupation": "1929",
+    "tldr": "This cross is a memorial to Francis Holt Yates Titcomb of the Royal Naval Air Service",
+    "events": [
+      {
+        "date": "1917",
+        "description": "Flying a Maurice Farman Longhorn, he took off from Redcar on his first solo flight on 15 April. He crashed on this spot aged 19, after encountering snow clouds ✈️"
+      }
+    ]
+  }
+]
+
+ {
+    "name": "St Thomas’ Church, Glaisdale",
+    "coords": [
+      -0.8079984020462675,
+      54.43763455701139
+    ],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/St_Thomas's_Church%2C_Glaisdale_-_geograph.org.uk_-_1997478.jpg/330px-St_Thomas's_Church%2C_Glaisdale_-_geograph.org.uk_-_1997478.jpg",
+    "description": "",
+    "occupation": "1794",
+    "tldr": "In 1585, a church was constructed in Glaisdale as a chapel of ease to St Hilda’s Church in Danby. It was demolished and this new church was built between 1792 and 1794",
+    "events": [
+      {
+        "date": "1585",
+        "description": "The building incorporates the datestone from the old chapel, inscribed ‘1585’ ⛪"
+      }
+    ]
+  },
+  {
+    "name": "Lealholm Mills",
+    "coords": [
+      -0.8256078710722285,
+      54.45883298343887
+    ],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Lealholm_village.jpg/360px-Lealholm_village.jpg",
+    "description": "",
+    "occupation": "1709",
+    "tldr": "Now a garden centre, this site has been the home of two water mills",
+    "events": [
+      {
+        "date": "1336",
+        "description": "William le Latimer, Lord of the Manor opened the first water mill here, this was demolished in 1709 🏞️"
+      },
+      {
+        "date": "CURRENT",
+        "description": "Thomas Whatson, a Quaker, built a new mill on the old site 🛠️"
+      }
+    ]
+  },
+  {
+    "name": "Glaisdale Railway Station",
+    "coords": [
+      -0.7938785122060502,
+      54.439373879957536
+    ],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Glaisdale_railway_station_MMB_06.jpg/500px-Glaisdale_railway_station_MMB_06.jpg",
+    "description": "",
+    "occupation": "1865",
+    "tldr": "The station takes around 19,000 passengers a year",
+    "events": [
+      {
+        "date": "IRON",
+        "description": "Until 1876, three blast furnaces were located in the village. The station was used to forward building stone, iron and ironstone 🏗️"
+      },
+      {
+        "date": "COACH",
+        "description": "The station was host to a camping coach in 1933 and 1935, and two coaches from 1936 to 1939. These were old passenger coaches used for holiday accommodation 🚂"
+      }
+    ]
+  },
+  {
+    "name": "Beggar’s Bridge",
+    "coords": [
+      -0.7921563857143904,
+      54.438653033531764
+    ],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Beggar's_Bridge_over_the_River_Esk_-_geograph.org.uk_-_4568221.jpg/375px-Beggar's_Bridge_over_the_River_Esk_-_geograph.org.uk_-_4568221.jpg",
+    "description": "",
+    "occupation": "1619",
+    "tldr": "The current bridge replaced a Medieval bridge on the same location due to a romance",
+    "events": [
+      {
+        "date": "1577",
+        "description": "The Medieval bridge, one of only 5 that crossed the River Esk, collapsed 🌊"
+      },
+      {
+        "date": "1619",
+        "description": "The current bridge was built using stone from the old bridge. It was built by Thomas Ferris, who used to secretly wade across the river here to meet his lover Agnes, whose father disapproved of their relationship due to Thomas’ lack of wealth. Thomas went to sea to win her father’s approval. However, on the eve of his departure, he could not cross the bridge due to flooding. He vowed to return and build a bridge on that very spot. Agnes apparently died in 1618 but Thomas returned an extremely rich man and built the bridge in her honour ❤️"
+      }
+    ]
+  },
+  {
+    "name": "Stump Cross",
+    "coords": [
+      -0.8535789655788513,
+      54.47531396537965
+    ],
+    "image": "https://s0.geograph.org.uk/geophotos/05/99/67/5996763_6705f8b7.jpg",
+    "description": "",
+    "occupation": "Ancient",
+    "tldr": "This is an ancient waymarker cross which marked the junction of two ancient tracks. Stonegate, running east/west, met Leavergate, running north to Staithes, here",
+    "events": []
+  },
+  {
+    "name": "Glaisdale Head Methodist Church",
+    "coords": [
+      -0.8332467889888849,
+      54.42954474292424
+    ],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Glaisdale_Head_Methodist_Church_-_geograph.org.uk_-_5747080.jpg/330px-Glaisdale_Head_Methodist_Church_-_geograph.org.uk_-_5747080.jpg",
+    "description": "",
+    "occupation": "1821",
+    "tldr": "The church was built by the Wesleyan Methodist Church, with an attached manse (minister’s house)",
+    "events": [
+      {
+        "date": "RISK",
+        "description": "The building is on the Heritage at Risk Register, due to damp caused by being built partly into the ground 🏚️"
+      }
+    ]
+  },
+  {
+    "name": "Egton Railway Station",
+    "coords": [
+      -0.7616221051588925,
+      54.437574830878894
+    ],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Egton_Station_on_the_Esk_Valley_Line_(geograph_5138721).jpg/450px-Egton_Station_on_the_Esk_Valley_Line_(geograph_5138721).jpg",
+    "description": "",
+    "occupation": "1865",
+    "tldr": "The station opened at the same time as the Castleton and Grosmont line by North Eastern Railway",
+    "events": [
+      {
+        "date": "1965",
+        "description": "The station stopped forwarding and receiving goods. It is still owned and used by Network Rail, taking over 10,000 passengers in 2023/24 🚉"
+      }
+    ]
+  },
+  {
+    "name": "St Hedda’s Catholic Primary School",
+    "coords": [
+      -0.7614896324630531,
+      54.436932022645394
+    ],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/RC_School_at_Egton_Bridge_-_geograph.org.uk_-_5764892.jpg/330px-RC_School_at_Egton_Bridge_-_geograph.org.uk_-_5764892.jpg",
+    "description": "",
+    "occupation": "1743",
+    "tldr": "A Catholic chapel turned into a primary school",
+    "events": [
+      {
+        "date": "1780",
+        "description": "415 Catholics were recorded in the district ✝️"
+      },
+      {
+        "date": "1867",
+        "description": "A new church was built in Egton Bridge, named St Hedda’s Church. This building became St Hedda’s Catholic Primary School and was extended in the 20th century 🏫"
+      }
+    ]
+  },
+  {
+    "name": "St Hedda’s Church, Egton Bridge",
+    "coords": [
+      -0.7613614270006802,
+      54.436790000651534
+    ],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/St_Hedda's_Church%2C_Egton_Bridge_-_geograph.org.uk_-_595835.jpg/330px-St_Hedda's_Church%2C_Egton_Bridge_-_geograph.org.uk_-_595835.jpg",
+    "description": "",
+    "occupation": "1867",
+    "tldr": "This church was built to replace the old village church which became St Hedda’s Catholic Primary School",
+    "events": []
+  },
+  {
+    "name": "Gristhorpe Railway Station",
+    "coords": [
+      -0.34141969807194916,
+      54.217930274305736
+    ],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/GristhorpeStation.jpg/375px-GristhorpeStation.jpg",
+    "description": "",
+    "occupation": "1846",
+    "tldr": "The station opened in 1846 to serve Gristhorpe and Lebbertson on the Yorkshire Coast Line. It closed on 16 February 1959",
+    "events": []
+  },
+  {
+    "name": "Horseshoe Hotel",
+    "coords": [
+      -0.7663917106861563,
+      54.435690673682274
+    ],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/The_Horse_Shoe%2C_Egton_Bridge_-_geograph.org.uk_-_448737.jpg/330px-The_Horse_Shoe%2C_Egton_Bridge_-_geograph.org.uk_-_448737.jpg",
+    "description": "",
+    "occupation": "early 19th",
+    "tldr": "This free house has been purposed for many things over the years",
+    "events": [
+      {
+        "date": "1930s",
+        "description": "A summerhouse was constructed at the rear, which was used to host the Egton Bridge Gooseberry Show 🍇"
+      },
+      {
+        "date": "WW2",
+        "The building was commandeered as a first aid post 🚑"
+      },
+      {
+                "date": "2021",
+        "The accommodation owners competed on the TV show ‘Four in a Bed' 🎥"
+      }
+      ]
+  },
+
+  {
+    "name": "All Saints Church, Hawsker",
+    "coords": [
+      -0.5787557114758916,
+      54.462353166025174
+    ],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Church_of_All_Saints%2C_Hawsker-cum-Stainsacre_(2)_-_geograph.org.uk_-_2817923.jpg/330px-Church_of_All_Saints%2C_Hawsker-cum-Stainsacre_(2)_-_geograph.org.uk_-_2817923.jpg",
+    "description": "",
+    "occupation": "1877",
+    "tldr": "The current church was built between 1876 and 1877",
+    "events": [
+      {
+        "date": "SAXON",
+        "description": "The first chapel in Hawsker was built in the Anglo-Saxon period, from which a cross-shaft survives 🏰"
+      },
+      {
+        "date": "1140s",
+        "description": "A new chapel, dedicated to All Saints, was built by Aschetin de Hawsker. It survived into the 16th century, but no trace of it now remains 🏛️"
+      }
+    ]
+  },
+  {
+    "name": "Star Carr",
+    "coords": [
+      -0.42344952245642486,
+      54.21421691173693
+    ],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/View_of_Star_Carr_site_looking_NWW..jpg/330px-View_of_Star_Carr_site_looking_NWW..jpg",
+    "description": "",
+    "occupation": "9300BC",
+    "tldr": "This site was occupied for 800 years during the Mesolithic period. John Moore discovered the site in 1947",
+    "events": [
+      {
+        "date": "RECORD",
+        "description": "A human-made structure roughly 3.5 metres wide was built here, this is Britain’s oldest known house 🏠"
+      },
+      {
+        "date": "CARPENTRY",
+        "description": "A large wooden platform has been discovered on the shore of the former lake, this is the oldest known example of carpentry in Europe 🛠️"
+      },
+      {
+        "date": "FINDS",
+        "description": "21 red deer stag skull-caps were found here, that may have been used as headdresses. Nearly 200 projectile, or harpoon, points made of red deer antler were also found 🦌"
+      }
+    ]
+  },
+  {
+    "name": "Old St Margaret’s Church",
+    "coords": [
+      -0.5366433267454993,
+      54.35583178514838
+    ],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Old_St_Margaret's_Church%2C_Harwood_Dale_-_geograph.org.uk_-_218402.jpg/330px-Old_St_Margaret's_Church%2C_Harwood_Dale_-_geograph.org.uk_-_218402.jpg",
+    "description": "",
+    "occupation": "1634",
+    "tldr": "It was built by Thomas Posthumous Hoby, in memory of his wife",
+    "events": [
+      {
+        "date": "HOBY",
+        "description": "Thomas was MP for Yorkshire, Scarborough and Appleby over his life. He was the inspiration for Shakespeare’s character Malvolio in ‘Twelfth Night’. Thomas was the son of the English Ambassador to France and nephew to the English Ambassador to the Holy Roman Empire 📚"
+      },
+      {
+        "date": "1862",
+        "description": "The church was replaced by St Margaret’s Church, a mile down the valley, as this church fell into ruin 🏛️"
+      }
+    ]
+  },
+  {
+    "name": "Commondale Memorial Cross",
+    "coords": [
+      -0.9785069349069013,
+      54.485541407669274
+    ],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/War_Memorial%2C_Commondale.jpg/1200px-War_Memorial%2C_Commondale.jpg",
+    "description": "",
+    "occupation": "1921",
+    "tldr": "'In Honoured Memory of the Men of Commondale, who Gave Their Lives for God, King, and Country, in the Great War. 1914 - 1918'",
+    "events": [
+      {
+        "date": "HEROES",
+        "description": "Thomas Monk, Samuel Lawson, Thomas Gibson, Robert H Leggott, William Hill, Frederick W Robinson, Charles E Foster, Alfred Cockerill, David Johnson ❤️"
+      }
+    ]
+  },
+  {
+    "name": "Shepherds’ Memorial",
+    "coords": [
+      -1.002677714750988,
+      54.49704343953882
+    ],
+    "image": "https://historicengland.org.uk/etl/1436162/260d724f-a5d4-41e4-8910-6b977efd1f8f.jpg?autorotate=true&height=500&mode=max&quality=80",
+    "description": "",
+    "occupation": "1920",
+    "tldr": "This memorial commemorates the lives of two shepherds who lived and worked on this spot",
+    "events": [
+      {
+        "date": "*ROBBIE LEGGOTT*",
+        "description": "*Robert Leggott* lied about his age; he was only 17. He was killed in 1916 at the Somme aged 19 and his body was never found 😢"
+      },
+      {
+        "date": "*ALF COCKERILL*",
+        "description": "*Alf Cockerill* was wounded in the head during the Somme and sent home. He later died in 1920 from epilepsy and meningitis 🏥"
+      }
+    ]
+  },
+  {
+    "name": "Dibble’s Bridge",
+    "coords": [
+      -1.9225468581151204,
+      54.063381383547316
+    ],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Dibbles_Bridge_-_geograph.org.uk_-_1757509.jpg/330px-Dibbles_Bridge_-_geograph.org.uk_-_1757509.jpg",
+    "description": "",
+    "occupation": "",
+    "tldr": "Dibble Bridge was the scene of the worst-ever road accident in the UK by fatalities in 1975",
+    "events": [
+      {
+        "date": "1925",
+        "description": "7 were killed and 11 injured after a coach crashed into the bridge after its brakes failed coming down the reservoir hill 🚨"
+      },
+      {
+        "date": "1975",
+        "description": "A coach carrying elderly women on a day out, crashed on the bridge after the brakes failed coming down the hill. Everyone on board was injured, with 33 passing away 😢"
+      }
+    ]
+  },
+  {
+    "name": "Speeton Clay Formation",
+    "coords": [
+      -0.24093333061703792,
+      54.16445233988584
+    ],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Speeton_Clay_at_Reighton_Sands.JPG/500px-Speeton_Clay_at_Reighton_Sands.JPG",
+    "description": "",
+    "occupation": " ",
+    "tldr": "It is a Cretaceous formation, a geological period that lasted from about 143.1 to 66 million years ago.",
+    "events": [
+      {
+        "date": "FOSSILS",
+        "description": "Dinosaur remains are among the fossils found in this formation. The most common fossils are belemnites and ammonites (most similar to squid and lobster) 🦑."
+      }
+    ]
+  },
+  {
+    "name": "Wreck of The Laura",
+    "coords": [
+      -0.23688854505488288,
+      54.16401823855081
+    ],
+    "image": "https://s0.geograph.org.uk/geophotos/04/12/72/4127287_ae2861f4.jpg",
+    "description": "",
+    "occupation": "1897",
+    "tldr": "The two boilers and stern post of the ship Laura lay on this spot.",
+    "events": [
+      {
+        "date": "1897",
+        "description": "The Laura, an Austrian owned ship, was carrying coke from Newcastle to Trieste (Italy). Around 10am she ran aground, her calls for assistance were answered by the Filey lifeboat and a couple of fishing cobles. However, the captain of the Laura decided to remain aboard and attempt to refloat the ship on the high tide. Unfortunately those attempts failed and so her cargo of coke was offloaded onto the beach. By now tugs had arrived to attempt to pull her off the sands. Two of the tow ropes broke in the attempt and the Laura shifted position and her back was broken by the tide 🚢."
+      },
+      {
+        "date": "AFTERMATH",
+        "description": "The twenty-four man crew abandoned the ship and the Laura was left to the salvagers and the elements. A large part of the ship was cut up for scrap, but her two boilers and stern post are still clearly visible at low tide over a century on 🌊."
+      }
+    ]
+  },
+  {
+    "name": "Wreck of The Diamond",
+    "coords": [
+      -0.23651535456498823,
+      54.16465774755743
+    ],
+    "image": "https://s0.geograph.org.uk/geophotos/05/97/07/5970766_d57fe494.jpg",
+    "description": "",
+    "occupation": "1912",
+    "tldr": "The Diamond’s stern-post and boiler lay on the beach here to this day.",
+    "events": [
+      {
+        "date": "1912",
+        "description": "The Diamond, a modern steam trawler, had been fishing on the East Fladen grounds, roughly 100 miles north east of Aberdeen, and was returning to Hull with a hold full of fish. There was a heavy sea running and a thick fog enveloped the coastline. A navigation error saw the Diamond run onto the rocks in almost zero visibility ⚓."
+      },
+      {
+        "date": "AFTERMATH",
+        "description": "The Diamond’s distress calls were heard by William Hodgson of Bempton. With the tide running out he saw the Diamond’s crew beginning to man their lifeboat. He called out to them, warning of the danger of the submerged rocks that would have ripped their small boat to pieces. Fortunately, out of the gloom two fishing cobles, the Elizabeth and the Mabel from Flamborough appeared, they had also heard the Diamond’s distress calls. They took the Diamond’s crew on board and put them ashore at North Landing. The crew was taken to the North Star Hotel where they enjoyed a welcome meal 🍴."
+      },
+    ]
+  },
+  {
+    "name": "Speeton Sands Pillbox and Defences",
+    "coords": [
+      -0.23361031361578274,
+      54.16206228463445
+    ],
+    "image": "https://s0.geograph.org.uk/geophotos/03/59/75/3597525_80edbf84_original.jpg",
+    "description": "",
+    "occupation": "1940",
+    "tldr": "These coastal defences were built during the Second World War, in case of invasion.",
+    "events": []
+  },
+  {
+    "name": "Hawsker Railway Station",
+    "coords": [
+      -0.57868083158339,
+      54.45937861924138
+    ],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Platform_at_Hawsker_Station_-_geograph.org.uk_-_451486.jpg/450px-Platform_at_Hawsker_Station_-_geograph.org.uk_-_451486.jpg",
+    "description": "",
+    "occupation": "1885",
+    "tldr": "The station served High Hawsker, Low Hawsker and Stainsacre.",
+    "events": [
+      {
+        "date": "1922",
+        "description": "It sold only 8,982 tickets that year, reflecting its status as a small intermediate stop 🚉."
+      },
+      {
+        "date": "1965",
+        "description": "The station was a victim of the Beeching cuts (government spending cuts) and closed to passengers in 1965 🚂."
+      },
+      {
+        "date": "1990s",
+        "description": "The road overbridge to the south of the station was removed and became a pelican crossing 🚦."
+      }
+    ]
+  },
   {
     "name": "The Woodstock almshouses",
     "coords": [
