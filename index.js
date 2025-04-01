@@ -338,7 +338,7 @@ locations.forEach(location => {
 
 function addBuildingMarkers() {
   buildings.forEach(building => {
-    const { element: markerElement } = createCustomMarker(building.image, '#87CEFA', false);
+    const { element: markerElement } = createCustomMarker(building.image, '#C72481', false);
     markerElement.className += ' building-marker';
     const marker = new mapboxgl.Marker({
       element: markerElement
