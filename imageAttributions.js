@@ -2,6 +2,182 @@
 
 // Array to store image attributions
 const imageAttributions = [
+  [
+  {
+    "name": "<a href='https://www.geograph.org.uk/photo/4083893'>Woodlands Hall</a>",
+    "author": "Mike Kirby",
+    "license": "CC BY-SA 2.0"
+  },
+  {
+    "name": "<a href='https://www.geograph.org.uk/photo/810322'>Aislaby War Memorial</a>",
+    "author": "Stephen McCulloch",
+    "license": "CC BY-SA 2.0"
+  },
+  {
+    "name": "<a href='https://www.geograph.org.uk/photo/6867116'>Aislaby Quarry</a>",
+    "author": "Mick Garratt",
+    "license": "CC BY-SA 2.0"
+  },
+  {
+    "name": "<a href='https://www.geograph.org.uk/photo/1920780'>St Margaret’s Church, Aislaby</a>",
+    "author": "Martin Dawes",
+    "license": "CC BY-SA 2.0"
+  },
+  {
+    "name": "<a href='https://commons.wikimedia.org/wiki/File:Ash_Tree_Cottage.jpg'>Ash Tree Cottage</a>",
+    "author": "XTOV",
+    "license": "CC BY-SA 3.0"
+  },
+  {
+    "name": "<a href='https://commons.wikimedia.org/wiki/File:Goathland_(Incline_Top)_station_site_today.jpg'>Beckhole Incline</a>",
+    "author": "XTOV",
+    "license": "CC BY-SA 3.0"
+  },
+  {
+    "name": "<a href='https://www.geograph.org.uk/photo/129941'>RAF Danby Beacon</a>",
+    "author": "colin grice",
+    "license": "CC BY-SA 2.0"
+  },
+  {
+    "name": "<a href='https://www.geograph.org.uk/photo/1704939'>Lilla Cross</a>",
+    "author": "Phil Catterall",
+    "license": "CC BY-SA 2.0"
+  },
+  {
+    "name": "<a href='https://www.geograph.org.uk/photo/3259150'>Beckhole Railway Station</a>",
+    "author": "Ben Brooksbank",
+    "license": "CC BY-SA 2.0"
+  },
+  {
+    "name": "<a href='https://www.geograph.org.uk/photo/316723'>Malo Cross</a>",
+    "author": "Mick Garratt",
+    "license": "CC BY-SA 2.0"
+  },
+  {
+    "name": "<a href='https://www.geograph.org.uk/photo/1866362'>Hunters Sty Bridge</a>",
+    "author": "Tom Richardson",
+    "license": "CC BY-SA 2.0"
+  },
+  {
+    "name": "<a href='https://www.geograph.org.uk/photo/676492'>Westerdale Hall</a>",
+    "author": "colin grice",
+    "license": "CC BY-SA 2.0"
+  },
+  {
+    "name": "<a href='https://en.wikipedia.org/wiki/File:Ruswarp_Hydro_plant.jpg'>Ruswarp Hydro</a>",
+    "author": "The joy of all things",
+    "license": "CC BY-SA 4.0"
+  },
+  {
+    "name": "<a href='https://en.wikipedia.org/wiki/File:Larpool_Viaduct,_Whitby.jpg'>Larpool Viaduct</a>",
+    "author": "Acasson",
+    "license": "CC BY-SA 4.0"
+  },
+  {
+    "name": "<a href='https://www.geograph.org.uk/photo/6028480'>Ruswarp Hall</a>",
+    "author": "Stephen Craven",
+    "license": "CC BY-SA 2.0"
+  },
+  {
+    "name": "<a href='https://www.geograph.org.uk/photo/4127287'>Wreck of The Laura</a>",
+    "author": "JThomas",
+    "license": "CC BY-SA 2.0"
+  },
+  {
+    "name": "<a href='https://www.geograph.org.uk/photo/5970766'>Wreck of The Diamond</a>",
+    "author": "Mat Fascione",
+    "license": "CC BY-SA 2.0"
+  },
+  {
+    "name": "<a href='https://www.geograph.org.uk/photo/3597525'>Speeton Sands Pillbox and Defences</a>",
+    "author": "Pauline E ",
+    "license": "CC BY-SA 2.0"
+  },
+  {
+    "name": "<a href='https://www.geograph.org.uk/photo/451486'>Hawsker Railway Station</a>",
+    "author": "Stephen McCulloch",
+    "license": "CC BY-SA 2.0"
+  },
+  {
+    "name": "<a href='https://www.geograph.org.uk/photo/2817923'>All Saints Church, Hawsker</a>",
+    "author": "Mike Kirby",
+    "license": "CC BY-SA 2.0"
+  },
+  {
+    "name": "<a href='https://www.geograph.org.uk/photo/218402'>Old St Margaret’s Church</a>",
+    "author": "Oliver Dixon",
+    "license": "CC BY-SA 2.0"
+  },
+  {
+    "name": "<a href='https://historicengland.org.uk/listing/the-list/list-entry/1436162'>Sheperds’ Memorial</a>",
+    "author": "War Memorials Online",
+    "license": " "
+  },
+  {
+    "name": "<a href='https://www.geograph.org.uk/photo/1757509'>Dibble’s Bridge</a>",
+    "author": "Karl and Ali",
+    "license": "CC BY-SA 2.0"
+  },
+  {
+    "name": "<a href='https://www.geograph.org.uk/photo/5138721'>Egton Railway Station</a>",
+    "author": "Peter Moore",
+    "license": "CC BY-SA 2.0"
+  },
+  {
+    "name": "<a href='https://www.geograph.org.uk/photo/5764892'>St Hedda’s Catholic Primary School</a>",
+    "author": "op47",
+    "license": "CC BY-SA 2.0"
+  },
+  {
+    "name": "<a href='https://www.geograph.org.uk/photo/595835'>St Hedda’s Church, Egton Bridge</a>",
+    "author": "Trish Steel",
+    "license": "CC BY-SA 2.0"
+  },
+  {
+    "name": "<a href='https://www.geograph.org.uk/photo/448737'>Horseshoe Hotel</a>",
+    "author": " 	Stephen McKay",
+    "license": "CC BY-SA 2.0"
+  },
+  {
+    "name": "<a href='https://en.wikipedia.org/wiki/File:Glaisdale_railway_station_MMB_06.jpg'>Glaisdale Railway Station</a>",
+    "author": "mattbuck",
+    "license": "CC BY-SA 2.0"
+  },
+  {
+    "name": "<a href='https://www.geograph.org.uk/photo/4568221'>Beggar’s Bridge</a>",
+    "author": "David Smith",
+    "license": "CC BY-SA 2.0"
+  },
+  {
+    "name": "<a href='https://www.geograph.org.uk/photo/5996763'>Stump Cross</a>",
+    "author": "Mick Garratt",
+    "license": "CC BY-SA 2.0"
+  },
+  {
+    "name": "<a href='https://www.geograph.org.uk/photo/5747080'>Glaisdale Head Methodist Church</a>",
+    "author": "op47",
+    "license": "CC BY-SA 2.0"
+  },
+  {
+    "name": "<a href='https://www.geograph.org.uk/photo/1997478'>St Thomas’ Church, Glaisdale</a>",
+    "author": "Bill Boaden",
+    "license": "CC BY-SA 2.0"
+  },
+  {
+    "name": "<a href='https://en.wikipedia.org/wiki/File:Lealholm_village.jpg'>Lealholm Mills</a>",
+    "author": "Mat Overton",
+    "license": "CC BY-SA 3.0"
+  },
+  {
+    "name": "<a href='https://www.geograph.org.uk/photo/2835480'>Lealholm Methodist Chapel</a>",
+    "author": "Mike Kirby",
+    "license": "CC BY-SA 2.0"
+  },
+  {
+    "name": "<a href='https://www.geograph.org.uk/photo/1598568'>Lealholm War Memorial</a>",
+    "author": "Philip Barker",
+    "license": "CC BY-SA 2.0"
+  },  
   {
   "name": "<a href='https://commons.wikimedia.org/wiki/File:ENG_Woodstock_Blenheim_Palace_034.jpg'>Blenheim Palace, Woodstock</a>",
   "author": "-wuppertaler",
