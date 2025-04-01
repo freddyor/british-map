@@ -2,7 +2,6 @@
 
 // Array to store image attributions
 const imageAttributions = [
-  [
   {
     "name": "<a href='https://www.geograph.org.uk/photo/4083893'>Woodlands Hall</a>",
     "author": "Mike Kirby",
