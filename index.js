@@ -41,17 +41,6 @@ map.on('load', () => {
 
 function addVideoMarkers() {
   videos.forEach(video => {
-    const { element: videoMarkerElement } = createVideoMarker(video.videoUrl, video.thumbnail);
-    const videoMarker = new mapboxgl.Marker({
-      element: videoMarkerElement
-    })
-      .setLngLat(video.coords)
-      .addTo(map);
-  });
-}
-
-function addVideoMarkers() {
-  videos.forEach(video => {
     const { element: videoMarkerElement } = createVideoMarker(video.videoUrl, video.thumbnail, video.url);
     const videoMarker = new mapboxgl.Marker({
       element: videoMarkerElement
