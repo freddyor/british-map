@@ -14,7 +14,7 @@ const coordinates = {
 };
 
 // Get the current subpage from the URL
-const subpage = window.location.pathname.substring(1); // Get the subpage from the URL path
+const subpage = getQueryParameter('path') ? getQueryParameter('path').substring(1) : '';
 
 // Default coordinates if no subpage is specified
 let initialLatLng = { lat: 51.505, lng: -0.09 };
