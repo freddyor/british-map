@@ -131,7 +131,6 @@ window.addEventListener('popstate', (event) => {
     if (videoContainer) {
       document.body.removeChild(videoContainer);
     }
-  }
 });
 // Container for both buttons
 const buttonGroup = document.createElement('div');
