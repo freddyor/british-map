@@ -2,6 +2,7 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.1/firebase
 import { getFirestore, collection, addDoc, getDocs } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js";
 import { buildings } from './buildings.js';
 import { locations } from './locations.js';
+import { videos } from './videos.js'; 
 import { imageAttributions } from './imageAttributions.js';
 
 mapboxgl.accessToken = 'pk.eyJ1IjoiZnJlZGRvbWF0ZSIsImEiOiJjbTc1bm5zYnQwaG1mMmtxeDdteXNmeXZ0In0.PuDNORq4qExIJ_fErdO_8g';
@@ -32,10 +33,91 @@ const db = getFirestore(app);
 
 map.on('load', () => {
   addBuildingMarkers();
+  addVideoMarkers();
   addLocationsList();
   loadMarkersFromFirebase();
   geolocate.trigger();
 });
+
+function addVideoMarkers() {
+  videos.forEach(video => {
+    const { element: videoMarkerElement } = createVideoMarker(video.videoUrl, video.thumbnail);
+    const videoMarker = new mapboxgl.Marker({
+      element: videoMarkerElement
+    })
+      .setLngLat(video.coords)
+      .addTo(map);
+  });
+}
+
+function createVideoMarker(videoUrl, thumbnailUrl, color = '#FF0000') {
+  const markerDiv = document.createElement('div');
+  markerDiv.className = 'video-marker';
+  markerDiv.style.width = '3em';
+  markerDiv.style.height = '3em';
+  markerDiv.style.position = 'absolute';
+  markerDiv.style.borderRadius = '50%';
+  markerDiv.style.border = `0.25em solid ${color}`;
+  markerDiv.style.boxSizing = 'border-box';
+  markerDiv.style.overflow = 'hidden';
+
+  const thumbnailElement = document.createElement('img');
+  thumbnailElement.src = thumbnailUrl;
+  thumbnailElement.style.width = '100%';
+  thumbnailElement.style.height = '100%';
+  thumbnailElement.style.objectFit = 'cover';
+  thumbnailElement.style.borderRadius = '50%';
+
+  markerDiv.appendChild(thumbnailElement);
+
+  markerDiv.addEventListener('click', () => {
+    openVideoOnScreen(videoUrl);
+  });
+
+  return {
+    element: markerDiv,
+    id: `video-marker-${Date.now()}-${Math.random()}`
+  };
+}
+
+function openVideoOnScreen(videoUrl) {
+  const videoContainer = document.createElement('div');
+  videoContainer.style.position = 'fixed';
+  videoContainer.style.top = '50%';
+  videoContainer.style.left = '50%';
+  videoContainer.style.transform = 'translate(-50%, -50%)';
+  videoContainer.style.zIndex = '10000';
+  videoContainer.style.backgroundColor = 'rgba(0, 0, 0, 0.8)';
+  videoContainer.style.padding = '20px';
+  videoContainer.style.borderRadius = '10px';
+  videoContainer.style.boxShadow = '0 6px 15px rgba(0, 0, 0, 0.3)';
+
+  const videoElement = document.createElement('video');
+  videoElement.src = videoUrl;
+  videoElement.controls = true;
+  videoElement.style.width = '100%';
+  videoElement.style.height = '100%';
+
+  const closeButton = document.createElement('button');
+  closeButton.textContent = 'Close';
+  closeButton.style.position = 'absolute';
+  closeButton.style.top = '10px';
+  closeButton.style.right = '10px';
+  closeButton.style.backgroundColor = '#FF0000';
+  closeButton.style.color = '#FFFFFF';
+  closeButton.style.border = 'none';
+  closeButton.style.borderRadius = '5px';
+  closeButton.style.padding = '5px 10px';
+  closeButton.style.cursor = 'pointer';
+
+  closeButton.addEventListener('click', () => {
+    document.body.removeChild(videoContainer);
+  });
+
+  videoContainer.appendChild(videoElement);
+  videoContainer.appendChild(closeButton);
+  document.body.appendChild(videoContainer);
+}
 
 // Container for both buttons
 const buttonGroup = document.createElement('div');
