@@ -2,6 +2,7 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.1/firebase
 import { getFirestore, collection, addDoc, getDocs } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js";
 import { buildings } from './buildings.js';
 import { locations } from './locations.js';
+import { videos } from './videos.js';
 import { imageAttributions } from './imageAttributions.js';
 
 mapboxgl.accessToken = 'pk.eyJ1IjoiZnJlZGRvbWF0ZSIsImEiOiJjbTc1bm5zYnQwaG1mMmtxeDdteXNmeXZ0In0.PuDNORq4qExIJ_fErdO_8g';
@@ -376,6 +377,53 @@ locations.forEach(location => {
       });
     });
   });
+});
+
+// Function to create a custom marker for video
+function createVideoMarker(videoUrl, coords, description) {
+    const markerDiv = document.createElement('div');
+    markerDiv.className = 'custom-marker';
+    markerDiv.style.width = '3em';
+    markerDiv.style.height = '3em';
+    markerDiv.style.position = 'absolute';
+    markerDiv.style.borderRadius = '50%';
+    markerDiv.style.border = '0.25em solid #ff0000'; // Red border for video marker
+    markerDiv.style.boxSizing = 'border-box';
+    markerDiv.style.overflow = 'hidden';
+    markerDiv.style.backgroundColor = '#ff0000';
+
+    const videoIcon = document.createElement('div');
+    videoIcon.innerHTML = '🎥'; // Camera emoji for video marker
+    videoIcon.style.fontSize = '2em';
+    videoIcon.style.textAlign = 'center';
+    videoIcon.style.lineHeight = '1.5';
+    videoIcon.style.color = 'white';
+
+    markerDiv.appendChild(videoIcon);
+
+    const marker = new mapboxgl.Marker({element: markerDiv})
+        .setLngLat(coords)
+        .addTo(map);
+
+    marker.getElement().addEventListener('click', () => {
+        const videoPopup = new mapboxgl.Popup({closeButton: true, closeOnClick: true})
+            .setLngLat(coords)
+            .setHTML(`
+                <div style="width: 200px;">
+                    <p style="font-size: 12px; font-weight: bold;">${description}</p>
+                    <video width="200" controls>
+                        <source src="${videoUrl}" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            `)
+            .addTo(map);
+    });
+}
+
+// Load video markers from videos.js
+videos.forEach(video => {
+    createVideoMarker(video.videoUrl, video.coords, video.description);
 });
 
 function addBuildingMarkers() {
