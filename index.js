@@ -3,22 +3,17 @@ import { getFirestore, collection, addDoc, getDocs } from "https://www.gstatic.c
 import { buildings } from './buildings.js';
 import { locations } from './locations.js';
 import { imageAttributions } from './imageAttributions.js';
-import { initialCoordinates } from './setCoordinates.js'; // Import the initial coordinates
 
 mapboxgl.accessToken = 'pk.eyJ1IjoiZnJlZGRvbWF0ZSIsImEiOiJjbTc1bm5zYnQwaG1mMmtxeDdteXNmeXZ0In0.PuDNORq4qExIJ_fErdO_8g';
 
 var map = new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/freddomate/cm8q8wtwx00a801qzdayccnvz',
-    center: [initialCoordinates.lng, initialCoordinates.lat], // Use the imported coordinates
-    zoom: initialCoordinates.zoom, // Use the imported zoom level
+   center: [-1.0835104081554843, 53.95838745239521], 
+    zoom: 15,
     pitch: 45,
     bearing: -17.6
 });
-
-// ... Rest of your existing code ...
-
-// ... Rest of your existing code ...
 
 // Firebase configuration
 const firebaseConfig = {
@@ -41,7 +36,6 @@ map.on('load', () => {
   loadMarkersFromFirebase();
   geolocate.trigger();
 });
-
 
 // Container for both buttons
 const buttonGroup = document.createElement('div');
