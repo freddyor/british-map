@@ -71,7 +71,7 @@ function createVideoMarker(videoUrl, thumbnailUrl, linkUrl, color = '#FF0000') {
   markerDiv.appendChild(thumbnailElement);
 
   markerDiv.addEventListener('click', () => {
-    window.location.href = linkUrl; // Set window location to the marker's URL
+    history.pushState({ videoUrl }, '', linkUrl); // Update the browser history and URL
     openVideoOnScreen(videoUrl, linkUrl); // Pass the linkUrl to the function
   });
 
@@ -81,7 +81,7 @@ function createVideoMarker(videoUrl, thumbnailUrl, linkUrl, color = '#FF0000') {
   };
 }
 
-function openVideoOnScreen(videoUrl, linkUrl) {
+function openVideoOnScreen(videoUrl, originalUrl) {
   const videoContainer = document.createElement('div');
   videoContainer.style.position = 'fixed';
   videoContainer.style.top = '50%';
@@ -113,13 +113,26 @@ function openVideoOnScreen(videoUrl, linkUrl) {
 
   closeButton.addEventListener('click', () => {
     document.body.removeChild(videoContainer);
-    window.history.pushState({}, '', linkUrl); // Revert back to the original site URL
+    history.pushState({}, '', originalUrl); // Revert back to the original site URL
   });
 
   videoContainer.appendChild(videoElement);
   videoContainer.appendChild(closeButton);
   document.body.appendChild(videoContainer);
 }
+
+// Handle the back button navigation
+window.addEventListener('popstate', (event) => {
+  if (event.state && event.state.videoUrl) {
+    openVideoOnScreen(event.state.videoUrl, window.location.href);
+  } else {
+    // Close the video container if it exists
+    const videoContainer = document.querySelector('div[style*="fixed"]');
+    if (videoContainer) {
+      document.body.removeChild(videoContainer);
+    }
+  }
+});
 // Container for both buttons
 const buttonGroup = document.createElement('div');
 buttonGroup.id = 'button-group';
