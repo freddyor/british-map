@@ -37,6 +37,7 @@ map.on('load', () => {
   geolocate.trigger();
 });
 
+
 // Container for both buttons
 const buttonGroup = document.createElement('div');
 buttonGroup.id = 'button-group';
