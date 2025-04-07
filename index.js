@@ -50,7 +50,18 @@ function addVideoMarkers() {
   });
 }
 
-function createVideoMarker(videoUrl, thumbnailUrl, color = '#FF0000') {
+function addVideoMarkers() {
+  videos.forEach(video => {
+    const { element: videoMarkerElement } = createVideoMarker(video.videoUrl, video.thumbnail, video.url);
+    const videoMarker = new mapboxgl.Marker({
+      element: videoMarkerElement
+    })
+      .setLngLat(video.coords)
+      .addTo(map);
+  });
+}
+
+function createVideoMarker(videoUrl, thumbnailUrl, linkUrl, color = '#FF0000') {
   const markerDiv = document.createElement('div');
   markerDiv.className = 'video-marker';
   markerDiv.style.width = '3em';
@@ -71,7 +82,8 @@ function createVideoMarker(videoUrl, thumbnailUrl, color = '#FF0000') {
   markerDiv.appendChild(thumbnailElement);
 
   markerDiv.addEventListener('click', () => {
-    openVideoOnScreen(videoUrl);
+    window.location.href = linkUrl; // Set window location to the marker's URL
+    openVideoOnScreen(videoUrl, linkUrl); // Pass the linkUrl to the function
   });
 
   return {
@@ -80,7 +92,7 @@ function createVideoMarker(videoUrl, thumbnailUrl, color = '#FF0000') {
   };
 }
 
-function openVideoOnScreen(videoUrl) {
+function openVideoOnScreen(videoUrl, linkUrl) {
   const videoContainer = document.createElement('div');
   videoContainer.style.position = 'fixed';
   videoContainer.style.top = '50%';
@@ -112,13 +124,13 @@ function openVideoOnScreen(videoUrl) {
 
   closeButton.addEventListener('click', () => {
     document.body.removeChild(videoContainer);
+    window.history.pushState({}, '', linkUrl); // Revert back to the original site URL
   });
 
   videoContainer.appendChild(videoElement);
   videoContainer.appendChild(closeButton);
   document.body.appendChild(videoContainer);
 }
-
 // Container for both buttons
 const buttonGroup = document.createElement('div');
 buttonGroup.id = 'button-group';
