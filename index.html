@@ -2,9 +2,30 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta name="description" content="Interactive UK map of all Britain's greatest figures from past and present. Be proud to be British 🇬🇧">
-    <title>Britmap</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>British Map</title>
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.css" rel="stylesheet">
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.js"></script>
+</head>
+<body>
+    <div id="map" style="width: 100%; height: 100vh;"></div>
+
+    <script>
+        mapboxgl.accessToken = 'pk.eyJ1IjoiZnJlZGRvbWF0ZSIsImEiOiJjbTc1bm5zYnQwaG1mMmtxeDdteXNmeXZ0In0.PuDNORq4qExIJ_fErdO_8g';
+        
+        var map = new mapboxgl.Map({
+            container: 'map',
+            style: 'mapbox://styles/freddomate/cm8q8wtwx00a801qzdayccnvz',
+            center: [-1.0835104081554843, 53.95838745239521], 
+            zoom: 15,
+            pitch: 45,
+            bearing: -17.6
+        });
+
+        // Add other map-related initializations and functions here
+    </script>
+</body>
+</html>
 
     <!-- Add your favicon here -->
     <link rel="icon" href="/favicon.png" type="image/png" sizes="32x32">
