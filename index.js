@@ -4,6 +4,17 @@ import { buildings } from './buildings.js';
 import { locations } from './locations.js';
 import { imageAttributions } from './imageAttributions.js';
 
+mapboxgl.accessToken = 'pk.eyJ1IjoiZnJlZGRvbWF0ZSIsImEiOiJjbTc1bm5zYnQwaG1mMmtxeDdteXNmeXZ0In0.PuDNORq4qExIJ_fErdO_8g';
+
+var map = new mapboxgl.Map({
+    container: 'map',
+    style: 'mapbox://styles/freddomate/cm8q8wtwx00a801qzdayccnvz',
+   center: [-1.0835104081554843, 53.95838745239521], 
+    zoom: 15,
+    pitch: 45,
+    bearing: -17.6
+});
+
 // Firebase configuration
 const firebaseConfig = {
   apiKey: "AIzaSyDjv5uUNOx86FvYsXdKSMkl8vui2Jynt7M",
