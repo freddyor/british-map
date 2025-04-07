@@ -18,6 +18,8 @@ var map = new mapboxgl.Map({
 
 // ... Rest of your existing code ...
 
+// ... Rest of your existing code ...
+
 // Firebase configuration
 const firebaseConfig = {
   apiKey: "AIzaSyDjv5uUNOx86FvYsXdKSMkl8vui2Jynt7M",
