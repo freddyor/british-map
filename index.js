@@ -33,15 +33,18 @@ const db = getFirestore(app);
 
 map.on('load', () => {
   addBuildingMarkers();
-  addVideoMarkers();
   addLocationsList();
   loadMarkersFromFirebase();
+  addVideoMarkers(); // Add this line to load video markers
   geolocate.trigger();
+
+  // Check if there's a video ID in the URL and open the video
+  checkAndOpenVideoFromURL();
 });
 
 function addVideoMarkers() {
   videos.forEach(video => {
-    const { element: videoMarkerElement } = createVideoMarker(video.videoUrl, video.thumbnail);
+    const { element: videoMarkerElement } = createVideoMarker(video.videoUrl, video.thumbnail, video.id);
     const videoMarker = new mapboxgl.Marker({
       element: videoMarkerElement
     })
@@ -50,7 +53,7 @@ function addVideoMarkers() {
   });
 }
 
-function createVideoMarker(videoUrl, thumbnailUrl, color = '#FF0000') {
+function createVideoMarker(videoUrl, thumbnailUrl, videoId, color = '#FF0000') {
   const markerDiv = document.createElement('div');
   markerDiv.className = 'video-marker';
   markerDiv.style.width = '3em';
@@ -71,7 +74,7 @@ function createVideoMarker(videoUrl, thumbnailUrl, color = '#FF0000') {
   markerDiv.appendChild(thumbnailElement);
 
   markerDiv.addEventListener('click', () => {
-    openVideoOnScreen(videoUrl);
+    openVideoOnScreen(videoUrl, videoId);
   });
 
   return {
@@ -80,7 +83,7 @@ function createVideoMarker(videoUrl, thumbnailUrl, color = '#FF0000') {
   };
 }
 
-function openVideoOnScreen(videoUrl) {
+function openVideoOnScreen(videoUrl, videoId) {
   const videoContainer = document.createElement('div');
   videoContainer.style.position = 'fixed';
   videoContainer.style.top = '50%';
@@ -112,11 +115,27 @@ function openVideoOnScreen(videoUrl) {
 
   closeButton.addEventListener('click', () => {
     document.body.removeChild(videoContainer);
+    history.pushState({}, document.title, window.location.pathname); // Remove video ID from URL
   });
 
   videoContainer.appendChild(videoElement);
   videoContainer.appendChild(closeButton);
   document.body.appendChild(videoContainer);
+
+  // Update the URL with the video ID
+  history.pushState({}, document.title, `${window.location.pathname}?videoId=${videoId}`);
+}
+
+function checkAndOpenVideoFromURL() {
+  const urlParams = new URLSearchParams(window.location.search);
+  const videoId = urlParams.get('videoId');
+
+  if (videoId) {
+    const videoData = videos.find(video => video.id === parseInt(videoId, 10));
+    if (videoData) {
+      openVideoOnScreen(videoData.videoUrl, videoData.id);
+    }
+  }
 }
 
 // Container for both buttons
