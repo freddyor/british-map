@@ -2,9 +2,9 @@ export const videos = [
   {
     id: 1,
     name: 'Video 1',
-    coords: [-1.082, 53.958],
+    coords: [-1.1542607110252983, 54.07323103272233],
     videoUrl: 'https://path.to/your/video1.mp4',
-    thumbnail: 'https://path.to/your/thumbnail1.jpg'
+    thumbnail: 'https://www.britmap.com/images/yorkcountyhospital.png'
   },
   {
     id: 2,
