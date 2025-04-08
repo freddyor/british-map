@@ -274,30 +274,32 @@ function createPopupContent(location, isFirebase = false) {
     const videoUrl = data.videoUrl ? data.videoUrl : null;
 
     return `
-        <p style="font-size: 6px; font-weight: bold; margin-bottom: 10px;">${data.description}</p>
-        <div style="border-top: 1px solid #ccc; margin-bottom: 10px;"></div>
-        <div style="display: flex; align-items: center; gap: 10px;">
-            <img src="${data.image || data.imageUrl}" alt="${data.name}" style="width: 40px; height: 40px; object-fit: cover; border-radius: 50%;" />
-            <div>
-                <div style="font-size: 16px; font-weight: bold;">${data.name}</div>
-                <div style="font-size: 14px; color: #666;">${data.occupation || data.dates}</div>
+        <div style="padding: 0; margin: 0;">
+            <p style="font-size: 6px; font-weight: bold; margin-bottom: 10px;">${data.description}</p>
+            <div style="border-top: 1px solid #ccc; margin-bottom: 10px;"></div>
+            <div style="display: flex; align-items: center; gap: 10px;">
+                <img src="${data.image || data.imageUrl}" alt="${data.name}" style="width: 40px; height: 40px; object-fit: cover; border-radius: 50%;" />
+                <div>
+                    <div style="font-size: 16px; font-weight: bold;">${data.name}</div>
+                    <div style="font-size: 14px; color: #666;">${data.occupation || data.dates}</div>
+                </div>
             </div>
+            ${eventsData && eventsData.length ? `
+                <div style="margin-top: 10px;">
+                    ${eventsData.map(event => `
+                        <div style="background: #f9f9f9; border: 1px solid #ddd; border-radius: 8px; padding: 10px; margin-bottom: 10px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
+                            <strong style="color: #9b4dca; font-size: 14px;">${event.date || event.label}</strong>: <span style="font-size: 12px;">${event.description}</span>
+                        </div>
+                    `).join('')}
+                </div>
+            ` : ''}
+            <!-- Conditional rendering of the video element -->
+            ${videoUrl ? `
+                <div style="margin-top: 10px; width: 100%;">
+                    <iframe width="100%" height="480" src="${videoUrl}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="display: block; width: 100%; height: 100%; border: none; margin: 0; padding: 0;"></iframe>
+                </div>
+            ` : ''}
         </div>
-        ${eventsData && eventsData.length ? `
-            <div style="margin-top: 10px;">
-                ${eventsData.map(event => `
-                    <div style="background: #f9f9f9; border: 1px solid #ddd; border-radius: 8px; padding: 10px; margin-bottom: 10px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
-                        <strong style="color: #9b4dca; font-size: 14px;">${event.date || event.label}</strong>: <span style="font-size: 12px;">${event.description}</span>
-                    </div>
-                `).join('')}
-            </div>
-        ` : ''}
-        <!-- Conditional rendering of the video element -->
-        ${videoUrl ? `
-            <div style="margin-top: 10px; width: 100%;">
-                <iframe width="100%" height="calc(100vw * 16 / 9)" src="${videoUrl}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="display: block; width: 100%; height: calc(100vw * 16 / 9); margin: 0; padding: 0;"></iframe>
-            </div>
-        ` : ''}
     `;
 }
 locations.forEach(location => {
