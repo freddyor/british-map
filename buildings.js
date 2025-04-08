@@ -2,7 +2,7 @@ export const buildings = [
         {
     "name": "Huby Hedge",
     "coords": [-1.1272733177814396, 54.087035686092115],
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Wesleyan_Chapel%2C_Lealholm_(1)_-_geograph.org.uk_-_2835480.jpg/330px-Wesleyan_Chapel%2C_Lealholm_(1)_-_geograph.org.uk_-_2835480.jpg",
+    "image": "images/hubyhedge.png",
     "description": "",
     "occupation": " ",
      "videoUrl": "https://www.britmap.com/videos/copy_DA33DE0F-19ED-494A-8E3B-F6544D42C8F1(1).mp4", 
