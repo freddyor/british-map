@@ -1,9 +1,9 @@
 export const videos = [
     {
-        name: "Sample Video",
-        coords: [-1.1362937813011333, 54.08187448382417],
-        videoUrl: "images/huby.mp4",
-        description: "This is a sample video description."
+        name: "Hello Video",
+        coords: [-1.0835104081554843, 53.95838745239521],
+        videoUrl: "https://github.com/freddyor/british-map/raw/main/videos/hello.mp4",
+        description: "This is a hello video."
     },
-    // Add more video marker data here
+    // Add more video marker data here if needed
 ];
