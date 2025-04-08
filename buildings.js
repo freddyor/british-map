@@ -5,7 +5,7 @@ export const buildings = [
     "image": "images/hubyhedge.png",
     "description": "",
     "occupation": " ",
-     "videoUrl": "https://youtube.com/shorts/3ufs_akEcK8?si=nJbW9UIJOEbNf68Q", 
+     "videoUrl": "https://www.britmap.com/videos/copy_DA33DE0F-19ED-494A-8E3B-F6544D42C8F1(1).mp4", 
     "tldr": "",
     "events": []
   },
