@@ -31,12 +31,64 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
+// Add this function BEFORE map.on('load')
+function addVideoMarkers() {
+    videoMarkers.forEach(marker => {
+        // 1. Create Marker Element
+        const el = document.createElement('div');
+        el.className = 'marker video-marker';
+        
+        // 2. Handle Thumbnail
+        if (marker.thumbnail) {
+            el.style.backgroundImage = `url(${marker.thumbnail})`;
+            el.style.width = '40px';
+            el.style.height = '40px';
+            el.style.backgroundSize = 'cover';
+            el.style.borderRadius = '50%';
+        } else {
+            el.style.backgroundColor = '#ff0000';
+            el.style.width = '20px';
+            el.style.height = '20px';
+            el.style.borderRadius = '50%';
+        }
+
+        // 3. Create Popup
+        const popup = new mapboxgl.Popup({ offset: 25 })
+            .setHTML(`
+                <div class="video-popup">
+                    <h4>${marker.title}</h4>
+                    <video controls width="250">
+                        <source src="${marker.videoUrl}" type="video/mp4">
+                    </video>
+                </div>
+            `);
+
+        // 4. Add to Map
+        new mapboxgl.Marker(el)
+            .setLngLat(marker.coordinates) // IMPORTANT: [lng, lat] format
+            .setPopup(popup)
+            .addTo(map);
+
+        // 5. Video Controls
+        el.addEventListener('click', () => {
+            const video = popup.getElement().querySelector('video');
+            video.play().catch(() => {}); // Handle autoplay restrictions
+        });
+
+        popup.on('close', () => {
+            const video = popup.getElement().querySelector('video');
+            video.pause();
+        });
+    });
+}
+
+// Add to map.on('load')
 map.on('load', () => {
-  addBuildingMarkers();
-  addLocationsList();
-  loadMarkersFromFirebase();
-    addVideoMarkers();
-  geolocate.trigger();
+    addBuildingMarkers();
+    addLocationsList();
+    loadMarkersFromFirebase();
+    addVideoMarkers(); // MUST BE CALLED
+    geolocate.trigger();
 });
 
 
@@ -355,58 +407,6 @@ locations.forEach(location => {
   });
 });
 
-function addVideoMarkers() {
-    videoMarkers.forEach(marker => {
-        // Create marker
-        const el = document.createElement('div');
-        el.className = 'marker video-marker';
-        
-        // Add thumbnail if available
-        if (marker.thumbnail) {
-            el.style.backgroundImage = `url(${marker.thumbnail})`;
-            el.style.width = '40px';
-            el.style.height = '40px';
-            el.style.backgroundSize = 'cover';
-            el.style.borderRadius = '50%';
-        } else {
-            // Default video marker style
-            el.style.backgroundColor = '#ff0000';
-            el.style.width = '20px';
-            el.style.height = '20px';
-            el.style.borderRadius = '50%';
-        }
-
-        // Create video popup
-        const popup = new mapboxgl.Popup({
-            offset: 25,
-            closeButton: false
-        }).setHTML(`
-            <div class="video-popup">
-                <h4>${marker.title}</h4>
-                <video controls width="250">
-                    <source src="${marker.videoUrl}" type="video/mp4">
-                </video>
-            </div>
-        `);
-
-        // Add marker to map
-        new mapboxgl.Marker(el)
-            .setLngLat(marker.coordinates)
-            .setPopup(popup)
-            .addTo(map);
-
-        // Auto-play/pause handling
-        el.addEventListener('click', () => {
-            const video = popup.getElement().querySelector('video');
-            video.play();
-        });
-
-        popup.on('close', () => {
-            const video = popup.getElement().querySelector('video');
-            video.pause();
-        });
-    });
-}
 
 function addBuildingMarkers() {
   buildings.forEach(building => {
