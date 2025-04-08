@@ -2,7 +2,6 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.1/firebase
 import { getFirestore, collection, addDoc, getDocs } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js";
 import { buildings } from './buildings.js';
 import { locations } from './locations.js';
-import { videoMarkers } from './videos.js';
 import { imageAttributions } from './imageAttributions.js';
 
 mapboxgl.accessToken = 'pk.eyJ1IjoiZnJlZGRvbWF0ZSIsImEiOiJjbTc1bm5zYnQwaG1mMmtxeDdteXNmeXZ0In0.PuDNORq4qExIJ_fErdO_8g';
@@ -31,64 +30,11 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
-// Add this function BEFORE map.on('load')
-function addVideoMarkers() {
-    videoMarkers.forEach(marker => {
-        // 1. Create Marker Element
-        const el = document.createElement('div');
-        el.className = 'marker video-marker';
-        
-        // 2. Handle Thumbnail
-        if (marker.thumbnail) {
-            el.style.backgroundImage = `url(${marker.thumbnail})`;
-            el.style.width = '40px';
-            el.style.height = '40px';
-            el.style.backgroundSize = 'cover';
-            el.style.borderRadius = '50%';
-        } else {
-            el.style.backgroundColor = '#ff0000';
-            el.style.width = '20px';
-            el.style.height = '20px';
-            el.style.borderRadius = '50%';
-        }
-
-        // 3. Create Popup
-        const popup = new mapboxgl.Popup({ offset: 25 })
-            .setHTML(`
-                <div class="video-popup">
-                    <h4>${marker.title}</h4>
-                    <video controls width="250">
-                        <source src="${marker.videoUrl}" type="video/mp4">
-                    </video>
-                </div>
-            `);
-
-        // 4. Add to Map
-        new mapboxgl.Marker(el)
-            .setLngLat(marker.coordinates) // IMPORTANT: [lng, lat] format
-            .setPopup(popup)
-            .addTo(map);
-
-        // 5. Video Controls
-        el.addEventListener('click', () => {
-            const video = popup.getElement().querySelector('video');
-            video.play().catch(() => {}); // Handle autoplay restrictions
-        });
-
-        popup.on('close', () => {
-            const video = popup.getElement().querySelector('video');
-            video.pause();
-        });
-    });
-}
-
-// Add to map.on('load')
 map.on('load', () => {
-    addBuildingMarkers();
-    addLocationsList();
-    loadMarkersFromFirebase();
-    addVideoMarkers(); // MUST BE CALLED
-    geolocate.trigger();
+  addBuildingMarkers();
+  addLocationsList();
+  loadMarkersFromFirebase();
+  geolocate.trigger();
 });
 
 
@@ -103,7 +49,6 @@ buttonGroup.style.zIndex = '1000';
 buttonGroup.style.display = 'flex';
 buttonGroup.style.gap = '10px';
 document.body.appendChild(buttonGroup);
-
 
 function addLocationsList() {
     const list = document.createElement('ul');
@@ -199,21 +144,6 @@ stylePopup.innerHTML = `
   .building-marker {
     z-index: 1;
   }
-  .video-marker {
-    border: 2px solid white;
-    box-shadow: 0 0 10px rgba(255,0,0,0.5);
-}
-
-.video-popup {
-    max-width: 300px;
-    text-align: center;
-}
-
-.video-popup video {
-    max-width: 100%;
-    border-radius: 5px;
-    margin-top: 10px;
-}
 
   .mapboxgl-popup {
     z-index: 9999 !important;
@@ -406,7 +336,6 @@ locations.forEach(location => {
     });
   });
 });
-
 
 function addBuildingMarkers() {
   buildings.forEach(building => {
