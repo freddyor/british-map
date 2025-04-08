@@ -267,34 +267,42 @@ function createCustomMarker(imageUrl, color = '#9b4dca', isLocation = false) {
 }
 
 function createPopupContent(location, isFirebase = false) {
-  const data = isFirebase ? location : location;
-  const eventsData = isFirebase ? data.events : data.events;
+    const data = isFirebase ? location : location;
+    const eventsData = isFirebase ? data.events : data.events;
 
-  return `
-    <p style="font-size: 6px; font-weight: bold; margin-bottom: 10px;">${data.description}</p>
-    <div style="border-top: 1px solid #ccc; margin-bottom: 10px;"></div>
-    <div style="display: flex; align-items: center; gap: 10px;">
-      <img src="${data.image || data.imageUrl}" alt="${data.name}" style="width: 40px; height: 40px; object-fit: cover; border-radius: 50%;" />
-      <div>
-        <div style="font-size: 16px; font-weight: bold;">${data.name}</div>
-        <div style="font-size: 14px; color: #666;">${data.occupation || data.dates}</div>
-      </div>
-    </div>
-    <div style="text-align: center; margin-top: 5px; cursor: pointer;" id="expand-text">▼ Discover ▼</div>
-    <div id="additional-content" style="display: none;">
-      <p style="background: #f9f9f9; padding: 10px; margin-top: 10px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); font-size: 12px;">${data.tldr}</p>
-      ${eventsData && eventsData.length ? `
-        <div style="margin-top: 10px;">
-          ${eventsData.map(event => `
-            <div style="background: #f9f9f9; border: 1px solid #ddd; border-radius: 8px; padding: 10px; margin-bottom: 10px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
-              <strong style="color: #9b4dca; font-size: 14px;">${event.date || event.label}</strong>: <span style="font-size: 12px;">${event.description}</span>
+    // Video path (adjust the path according to your folder structure)
+    const videoPath = `videos/${data.videoFileName}`; // Assuming `videoFileName` is a property of the building
+
+    return `
+        <p style="font-size: 6px; font-weight: bold; margin-bottom: 10px;">${data.description}</p>
+        <div style="border-top: 1px solid #ccc; margin-bottom: 10px;"></div>
+        <div style="display: flex; align-items: center; gap: 10px;">
+            <img src="${data.image || data.imageUrl}" alt="${data.name}" style="width: 40px; height: 40px; object-fit: cover; border-radius: 50%;" />
+            <div>
+                <div style="font-size: 16px; font-weight: bold;">${data.name}</div>
+                <div style="font-size: 14px; color: #666;">${data.occupation || data.dates}</div>
             </div>
-          `).join('')}
         </div>
-      ` : ''}
-      <div style="text-align: center; cursor: pointer; margin-top: 10px;" id="collapse-text">▲ Hide ▲</div>
-    </div>
-  `;
+        <div style="text-align: center; margin-top: 5px; cursor: pointer;" id="expand-text">▼ Discover ▼</div>
+        <div id="additional-content" style="display: none;">
+            <p style="background: #f9f9f9; padding: 10px; margin-top: 10px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); font-size: 12px;">${data.tldr}</p>
+            ${eventsData && eventsData.length ? `
+                <div style="margin-top: 10px;">
+                    ${eventsData.map(event => `
+                        <div style="background: #f9f9f9; border: 1px solid #ddd; border-radius: 8px; padding: 10px; margin-bottom: 10px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
+                            <strong style="color: #9b4dca; font-size: 14px;">${event.date || event.label}</strong>: <span style="font-size: 12px;">${event.description}</span>
+                        </div>
+                    `).join('')}
+                </div>
+            ` : ''}
+            <!-- Video element -->
+            <video width="320" height="240" controls>
+                <source src="${videoPath}" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div style="text-align: center; cursor: pointer; margin-top: 10px;" id="collapse-text">▲ Hide ▲</div>
+        </div>
+    `;
 }
 
 locations.forEach(location => {
@@ -338,45 +346,45 @@ locations.forEach(location => {
 });
 
 function addBuildingMarkers() {
-  buildings.forEach(building => {
-    const { element: markerElement } = createCustomMarker(building.image, '#C72481', false);
-    markerElement.className += ' building-marker';
-    const marker = new mapboxgl.Marker({
-      element: markerElement
-    })
-      .setLngLat(building.coords)
-      .addTo(map);
+    buildings.forEach(building => {
+        const { element: markerElement } = createCustomMarker(building.image, '#C72481', false);
+        markerElement.className += ' building-marker';
+        const marker = new mapboxgl.Marker({
+            element: markerElement
+        })
+            .setLngLat(building.coords)
+            .addTo(map);
 
-    const popup = new mapboxgl.Popup({
-      closeButton: true,
-      closeOnClick: true,
-      className: 'custom-popup'
-    }).setHTML(createPopupContent(building));
+        const popup = new mapboxgl.Popup({
+            closeButton: true,
+            closeOnClick: true,
+            className: 'custom-popup'
+        }).setHTML(createPopupContent(building));
 
-    marker.setPopup(popup);
+        marker.setPopup(popup);
 
-    marker.getElement().addEventListener('click', () => {
-      map.getCanvas().style.cursor = 'pointer';
-      popup.addTo(map);
+        marker.getElement().addEventListener('click', () => {
+            map.getCanvas().style.cursor = 'pointer';
+            popup.addTo(map);
 
-         // Add event listener to the expand button
-         popup.on('open', () => {
-          const expandText = popup.getElement().querySelector('#expand-text');
-          const additionalContent = popup.getElement().querySelector('#additional-content');
-          const collapseText = popup.getElement().querySelector('#collapse-text');
+            // Add event listener to the expand button
+            popup.on('open', () => {
+                const expandText = popup.getElement().querySelector('#expand-text');
+                const additionalContent = popup.getElement().querySelector('#additional-content');
+                const collapseText = popup.getElement().querySelector('#collapse-text');
 
-          expandText.addEventListener('click', () => {
-            additionalContent.style.display = 'block';
-            expandText.style.display = 'none';
-          });
+                expandText.addEventListener('click', () => {
+                    additionalContent.style.display = 'block';
+                    expandText.style.display = 'none';
+                });
 
-          collapseText.addEventListener('click', () => {
-            additionalContent.style.display = 'none';
-            expandText.style.display = 'block';
-          });
+                collapseText.addEventListener('click', () => {
+                    additionalContent.style.display = 'none';
+                    expandText.style.display = 'block';
+                });
+            });
         });
     });
-  });
 }
 
 // New code for the "Image Attributions" button
