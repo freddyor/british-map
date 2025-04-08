@@ -52,59 +52,6 @@ buttonGroup.style.display = 'flex';
 buttonGroup.style.gap = '10px';
 document.body.appendChild(buttonGroup);
 
-function addVideoMarkers() {
-    videoMarkers.forEach(marker => {
-        // Create marker
-        const el = document.createElement('div');
-        el.className = 'marker video-marker';
-        
-        // Add thumbnail if available
-        if (marker.thumbnail) {
-            el.style.backgroundImage = `url(${marker.thumbnail})`;
-            el.style.width = '40px';
-            el.style.height = '40px';
-            el.style.backgroundSize = 'cover';
-            el.style.borderRadius = '50%';
-        } else {
-            // Default video marker style
-            el.style.backgroundColor = '#ff0000';
-            el.style.width = '20px';
-            el.style.height = '20px';
-            el.style.borderRadius = '50%';
-        }
-
-        // Create video popup
-        const popup = new mapboxgl.Popup({
-            offset: 25,
-            closeButton: false
-        }).setHTML(`
-            <div class="video-popup">
-                <h4>${marker.title}</h4>
-                <video controls width="250">
-                    <source src="${marker.videoUrl}" type="video/mp4">
-                </video>
-            </div>
-        `);
-
-        // Add marker to map
-        new mapboxgl.Marker(el)
-            .setLngLat(marker.coordinates)
-            .setPopup(popup)
-            .addTo(map);
-
-        // Auto-play/pause handling
-        el.addEventListener('click', () => {
-            const video = popup.getElement().querySelector('video');
-            video.play();
-        });
-
-        popup.on('close', () => {
-            const video = popup.getElement().querySelector('video');
-            video.pause();
-        });
-    });
-}
-
 
 function addLocationsList() {
     const list = document.createElement('ul');
@@ -407,6 +354,59 @@ locations.forEach(location => {
     });
   });
 });
+
+function addVideoMarkers() {
+    videoMarkers.forEach(marker => {
+        // Create marker
+        const el = document.createElement('div');
+        el.className = 'marker video-marker';
+        
+        // Add thumbnail if available
+        if (marker.thumbnail) {
+            el.style.backgroundImage = `url(${marker.thumbnail})`;
+            el.style.width = '40px';
+            el.style.height = '40px';
+            el.style.backgroundSize = 'cover';
+            el.style.borderRadius = '50%';
+        } else {
+            // Default video marker style
+            el.style.backgroundColor = '#ff0000';
+            el.style.width = '20px';
+            el.style.height = '20px';
+            el.style.borderRadius = '50%';
+        }
+
+        // Create video popup
+        const popup = new mapboxgl.Popup({
+            offset: 25,
+            closeButton: false
+        }).setHTML(`
+            <div class="video-popup">
+                <h4>${marker.title}</h4>
+                <video controls width="250">
+                    <source src="${marker.videoUrl}" type="video/mp4">
+                </video>
+            </div>
+        `);
+
+        // Add marker to map
+        new mapboxgl.Marker(el)
+            .setLngLat(marker.coordinates)
+            .setPopup(popup)
+            .addTo(map);
+
+        // Auto-play/pause handling
+        el.addEventListener('click', () => {
+            const video = popup.getElement().querySelector('video');
+            video.play();
+        });
+
+        popup.on('close', () => {
+            const video = popup.getElement().querySelector('video');
+            video.pause();
+        });
+    });
+}
 
 function addBuildingMarkers() {
   buildings.forEach(building => {
