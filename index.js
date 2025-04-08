@@ -294,9 +294,16 @@ function createPopupContent(location, isFirebase = false) {
             ` : ''}
             <!-- Conditional rendering of the video element -->
             ${videoUrl ? `
-                <div style="margin-top: 10px; width: 100%;">
-                    <iframe width="100%" height="360" src="${videoUrl}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="display: block; width: 100%; height: 360px; border: none; margin: 0; padding: 0;"></iframe>
+                <div id="video-container" style="margin-top: 10px; width: 100%; position: relative;">
+                    <div id="loading-message" style="text-align: center; padding: 20px; font-size: 14px; color: #666;">Video loading...</div>
+                    <iframe id="video-iframe" width="100%" height="360" src="${videoUrl}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="display: none; width: 100%; height: 360px; border: none; margin: 0; padding: 0;"></iframe>
                 </div>
+                <script>
+                    document.getElementById('video-iframe').addEventListener('load', function() {
+                        document.getElementById('loading-message').style.display = 'none';
+                        document.getElementById('video-iframe').style.display = 'block';
+                    });
+                </script>
             ` : ''}
         </div>
     `;
