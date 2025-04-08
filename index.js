@@ -298,7 +298,7 @@ function createPopupContent(location, isFirebase = false) {
             <!-- Conditional rendering of the video element -->
             ${videoPath ? `
                 <video width="80" height="240" controls>
-                    <source src="${videos}" type="video/mp4">
+                    <source src="${videoPath}" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
             ` : ''}
