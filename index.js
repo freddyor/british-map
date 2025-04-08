@@ -447,6 +447,7 @@ function addBuildingMarkers() {
     });
   });
 });
+}
 
 // New code for the "Image Attributions" button
 const imageAttributionsButton = document.createElement('button');
