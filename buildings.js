@@ -2622,6 +2622,7 @@ export const buildings = [
     "image": "images/yorkrailwaystation.png",
     "description": "",
     "occupation": "1877",
+    "videoFileName": "hello.mp4",
     "tldr": "When it opened, its 13 platforms made it the largest railway station in the world 🚂",
     "events": [
       {
@@ -2629,7 +2630,6 @@ export const buildings = [
         "description": "The station was heavily bombed during the war. On one occasion, 800 passengers had to be evacuated from a King's Cross-Edinburgh train which arrived during a bombing raid 💣"
       }
     ]
-      "videoFileName": "hello.mp4",
   },
  {
     "name": "Acklam hall",
