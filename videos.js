@@ -1,9 +1,16 @@
-export const videos = [
+// videos.js
+export const videoMarkers = [
     {
-        name: "Hello Video",
-        coords: [-1.0835104081554843, 53.95838745239521],
-      videoUrl: "https://github.com/freddyor/british-map/raw/main/videos/IMG_4629.mov",
-        description: "This is a hello video."
+        coordinates: [-1.0914, 53.9552], // York coordinates
+        title: "York Castle Tour",
+        videoUrl: "https://example.com/york-tour.mp4",
+        thumbnail: "images/gateforthhall.png" // Optional
     },
-    // Add more video marker data here if needed
+    {
+        coordinates: [-2.9916, 53.4084], // Liverpool coordinates
+        title: "Liverpool Docks",
+        videoUrl: "https://example.com/liverpool.mp4"
+        // thumbnail omitted = will use default marker
+    }
 ];
+
