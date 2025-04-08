@@ -283,26 +283,21 @@ function createPopupContent(location, isFirebase = false) {
                 <div style="font-size: 14px; color: #666;">${data.occupation || data.dates}</div>
             </div>
         </div>
-        <div style="text-align: center; margin-top: 5px; cursor: pointer;" id="expand-text">▼ Discover ▼</div>
-        <div id="additional-content" style="display: none;">
-            <p style="background: #f9f9f9; padding: 10px; margin-top: 10px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); font-size: 12px;">${data.tldr}</p>
-            ${eventsData && eventsData.length ? `
-                <div style="margin-top: 10px;">
-                    ${eventsData.map(event => `
-                        <div style="background: #f9f9f9; border: 1px solid #ddd; border-radius: 8px; padding: 10px; margin-bottom: 10px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
-                            <strong style="color: #9b4dca; font-size: 14px;">${event.date || event.label}</strong>: <span style="font-size: 12px;">${event.description}</span>
-                        </div>
-                    `).join('')}
-                </div>
-            ` : ''}
-            <!-- Conditional rendering of the video element -->
-            ${videoUrl ? `
-                <div style="margin-top: 10px;">
-                    <iframe width="100%" height="240" src="${videoUrl}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                </div>
-            ` : ''}
-            <div style="text-align: center; cursor: pointer; margin-top: 10px;" id="collapse-text">▲ Hide ▲</div>
-        </div>
+        ${eventsData && eventsData.length ? `
+            <div style="margin-top: 10px;">
+                ${eventsData.map(event => `
+                    <div style="background: #f9f9f9; border: 1px solid #ddd; border-radius: 8px; padding: 10px; margin-bottom: 10px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
+                        <strong style="color: #9b4dca; font-size: 14px;">${event.date || event.label}</strong>: <span style="font-size: 12px;">${event.description}</span>
+                    </div>
+                `).join('')}
+            </div>
+        ` : ''}
+        <!-- Conditional rendering of the video element -->
+        ${videoUrl ? `
+            <div style="margin-top: 10px;">
+                <iframe width="100%" height="240" src="${videoUrl}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        ` : ''}
     `;
 }
 locations.forEach(location => {
