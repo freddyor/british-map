@@ -2622,7 +2622,7 @@ export const buildings = [
     "image": "images/yorkrailwaystation.png",
     "description": "",
     "occupation": "1877",
-    "videoFileName": "hello.mp4",
+    "videoFileName": "videos/hello.mp4",
     "tldr": "When it opened, its 13 platforms made it the largest railway station in the world 🚂",
     "events": [
       {
