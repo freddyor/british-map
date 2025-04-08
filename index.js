@@ -140,6 +140,7 @@ link.rel = "stylesheet";
 document.head.appendChild(link);
 
 // Style for the popup and markers
+// Style for the popup and markers
 stylePopup.innerHTML = `
   .mapboxgl-popup-content {
     border-radius: 12px !important;
@@ -153,6 +154,7 @@ stylePopup.innerHTML = `
     padding-bottom: 0 !important;
     margin-left: 3px;
     margin-right: 5px;
+    margin-bottom: 10px; /* Add this line */
   }
 
   .mapboxgl-popup-content img {
