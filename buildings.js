@@ -2629,6 +2629,7 @@ export const buildings = [
         "description": "The station was heavily bombed during the war. On one occasion, 800 passengers had to be evacuated from a King's Cross-Edinburgh train which arrived during a bombing raid 💣"
       }
     ]
+      "videoFileName": "hello.mp4",
   },
  {
     "name": "Acklam hall",
