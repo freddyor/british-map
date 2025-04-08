@@ -270,8 +270,8 @@ function createPopupContent(location, isFirebase = false) {
     const data = isFirebase ? location : location;
     const eventsData = isFirebase ? data.events : data.events;
 
-    // Video path (adjust the path according to your folder structure)
-    const videoPath = `videos/${data.videoFileName}`; // Assuming `videoFileName` is a property of the building
+    // Check if videoFileName property exists and is not empty
+    const videoPath = data.videoFileName ? `videos/${data.videoFileName}` : null; // Assuming `videoFileName` is a property of the building
 
     return `
         <p style="font-size: 6px; font-weight: bold; margin-bottom: 10px;">${data.description}</p>
@@ -295,16 +295,17 @@ function createPopupContent(location, isFirebase = false) {
                     `).join('')}
                 </div>
             ` : ''}
-            <!-- Video element -->
-            <video width="320" height="240" controls>
-                <source src="${videoPath}" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
+            <!-- Conditional rendering of the video element -->
+            ${videoPath ? `
+                <video width="320" height="240" controls>
+                    <source src="${videoPath}" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            ` : ''}
             <div style="text-align: center; cursor: pointer; margin-top: 10px;" id="collapse-text">▲ Hide ▲</div>
         </div>
     `;
 }
-
 locations.forEach(location => {
   const { element: markerElement } = createCustomMarker(location.image, '#9B4DCA', true);
   markerElement.className += ' location-marker';
