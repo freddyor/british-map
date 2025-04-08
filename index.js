@@ -173,6 +173,16 @@ stylePopup.innerHTML = `
   .mapboxgl-popup-close-button {
     display: none !important;
   }
+  
+    .centered-popup {
+    position: fixed !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    width: auto !important;
+    max-width: 90vw !important;
+    z-index: 10000 !important;
+  }
 
   .user-location-marker {
     width: 20px;
@@ -368,8 +378,13 @@ locations.forEach(location => {
     map.getCanvas().style.cursor = 'pointer';
     popup.addTo(map);
 
-    // Add event listener to the expand button
+    // Add the centered-popup class when the popup is opened
     popup.on('open', () => {
+      const popupElement = document.querySelector('.mapboxgl-popup');
+      if (popupElement) {
+        popupElement.classList.add('centered-popup');
+      }
+      
       const expandText = popup.getElement().querySelector('#expand-text');
       const additionalContent = popup.getElement().querySelector('#additional-content');
       const collapseText = popup.getElement().querySelector('#collapse-text');
@@ -389,45 +404,49 @@ locations.forEach(location => {
 
 function addBuildingMarkers() {
     buildings.forEach(building => {
-        const { element: markerElement } = createCustomMarker(building.image, '#C72481', false);
-        markerElement.className += ' building-marker';
-        const marker = new mapboxgl.Marker({
-            element: markerElement
-        })
-            .setLngLat(building.coords)
-            .addTo(map);
+  const { element: markerElement } = createCustomMarker(building.image, '#C72481', false);
+  markerElement.className += ' building-marker';
+  const marker = new mapboxgl.Marker({
+    element: markerElement
+  })
+    .setLngLat(building.coords)
+    .addTo(map);
 
-        const popup = new mapboxgl.Popup({
-            closeButton: true,
-            closeOnClick: true,
-            className: 'custom-popup'
-        }).setHTML(createPopupContent(building));
+  const popup = new mapboxgl.Popup({
+    closeButton: true,
+    closeOnClick: true,
+    className: 'custom-popup'
+  }).setHTML(createPopupContent(building));
 
-        marker.setPopup(popup);
+  marker.setPopup(popup);
 
-        marker.getElement().addEventListener('click', () => {
-            map.getCanvas().style.cursor = 'pointer';
-            popup.addTo(map);
+  marker.getElement().addEventListener('click', () => {
+    map.getCanvas().style.cursor = 'pointer';
+    popup.addTo(map);
 
-            // Add event listener to the expand button
-            popup.on('open', () => {
-                const expandText = popup.getElement().querySelector('#expand-text');
-                const additionalContent = popup.getElement().querySelector('#additional-content');
-                const collapseText = popup.getElement().querySelector('#collapse-text');
+    // Add the centered-popup class when the popup is opened
+    popup.on('open', () => {
+      const popupElement = document.querySelector('.mapboxgl-popup');
+      if (popupElement) {
+        popupElement.classList.add('centered-popup');
+      }
+      
+      const expandText = popup.getElement().querySelector('#expand-text');
+      const additionalContent = popup.getElement().querySelector('#additional-content');
+      const collapseText = popup.getElement().querySelector('#collapse-text');
 
-                expandText.addEventListener('click', () => {
-                    additionalContent.style.display = 'block';
-                    expandText.style.display = 'none';
-                });
+      expandText.addEventListener('click', () => {
+        additionalContent.style.display = 'block';
+        expandText.style.display = 'none';
+      });
 
-                collapseText.addEventListener('click', () => {
-                    additionalContent.style.display = 'none';
-                    expandText.style.display = 'block';
-                });
-            });
-        });
+      collapseText.addEventListener('click', () => {
+        additionalContent.style.display = 'none';
+        expandText.style.display = 'block';
+      });
     });
-}
+  });
+});
 
 // New code for the "Image Attributions" button
 const imageAttributionsButton = document.createElement('button');
