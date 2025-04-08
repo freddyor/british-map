@@ -1,4 +1,14 @@
 export const buildings = [
+        {
+    "name": "Huby Hedge",
+    "coords": [-1.1272733177814396, 54.087035686092115],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Wesleyan_Chapel%2C_Lealholm_(1)_-_geograph.org.uk_-_2835480.jpg/330px-Wesleyan_Chapel%2C_Lealholm_(1)_-_geograph.org.uk_-_2835480.jpg",
+    "description": "",
+    "occupation": "",
+     "videoUrl": "https://www.britmap.com/videos/copy_DA33DE0F-19ED-494A-8E3B-F6544D42C8F1(1).mp4", 
+    "tldr": "",
+    "events": []
+  },
     {
     "name": "Lealholm Methodist Chapel",
     "coords": [
@@ -2621,8 +2631,7 @@ export const buildings = [
     "coords": [-1.0927368374514534, 53.95807056397365],
     "image": "images/yorkrailwaystation.png",
     "description": "",
-    "occupation": "1877",
-     "videoUrl": "https://www.britmap.com/videos/copy_DA33DE0F-19ED-494A-8E3B-F6544D42C8F1(1).mp4", // Add this line
+    "occupation": "1877",// Add this line
     "tldr": "When it opened, its 13 platforms made it the largest railway station in the world 🚂",
     "events": [
       {
