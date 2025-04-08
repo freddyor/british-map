@@ -6,24 +6,66 @@ import { imageAttributions } from './imageAttributions.js';
 
 mapboxgl.accessToken = 'pk.eyJ1IjoiZnJlZGRvbWF0ZSIsImEiOiJjbTc1bm5zYnQwaG1mMmtxeDdteXNmeXZ0In0.PuDNORq4qExIJ_fErdO_8g';
 
+// Function to parse URL parameters
+function getUrlParameter(name) {
+    name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+    var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+    var results = regex.exec(location.search);
+    return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+};
+
+// Get parameters from URL
+const lat = getUrlParameter('lat');
+const lng = getUrlParameter('lng');
+const zoom = getUrlParameter('zoom');
+
+// Default York coordinates and zoom
+const defaultCenter = [-1.0835104081554843, 53.95838745239521];
+const defaultZoom = 15;
+
+// Use URL parameters if available, otherwise use default values
+const initialCenter = lat && lng ? [parseFloat(lng), parseFloat(lat)] : defaultCenter;
+const initialZoom = zoom ? parseFloat(zoom) : defaultZoom;
+
 var map = new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/freddomate/cm8q8wtwx00a801qzdayccnvz',
-   center: [-1.0835104081554843, 53.95838745239521], 
-    zoom: 15,
+    center: initialCenter,
+    zoom: initialZoom,
     pitch: 45,
     bearing: -17.6
 });
 
+// Function to generate a URL with given coordinates and zoom
+function generateMapLink(latitude, longitude, zoomLevel) {
+    const baseUrl = window.location.origin + window.location.pathname;
+    const params = `?lat=${latitude}&lng=${longitude}&zoom=${zoomLevel}`;
+    return baseUrl + params;
+}
+
+// Example usage:
+// You can call this function when a user clicks on a marker or interacts with the map
+// to generate a link for the current view.
+// For example:
+map.on('click', (e) => {
+    const currentLat = e.lngLat.lat;
+    const currentLng = e.lngLat.lng;
+    const currentZoom = map.getZoom();
+
+    const mapLink = generateMapLink(currentLat, currentLng, currentZoom);
+    console.log('Map Link:', mapLink);
+    // You can display this link in a popup or share it with others
+});
+
 // Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyDjv5uUNOx86FvYsXdKSMkl8vui2Jynt7M",
-  authDomain: "britmap-64cb3.firebaseapp.com",
-  projectId: "britmap-64cb3",
-  storageBucket: "britmap-64cb3.firebasestorage.app",
-  messagingSenderId: "821384262397",
-  appId: "1:821384262397:web:ca81d64ab6a8dea562c494",
-  measurementId: "G-03E2BB7BQH"
+    apiKey: "AIzaSyDjv5uUNOx86FvYsXdKSMkl8vui2Jynt7M",
+    authDomain: "britmap-64cb3.firebaseapp.com",
+    projectId: "britmap-64cb3",
+    storageBucket: "britmap-64cb3.firebasestorage.app",
+    messagingSenderId: "821384262397",
+    appId: "1:821384262397:web:ca81d64ab6a8dea562c494",
+    measurementId: "G-03E2BB7BQH"
 };
 
 // Initialize Firebase
@@ -31,11 +73,13 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
 map.on('load', () => {
-  addBuildingMarkers();
-  addLocationsList();
-  loadMarkersFromFirebase();
-  geolocate.trigger();
+    addBuildingMarkers();
+    addLocationsList();
+    loadMarkersFromFirebase();
+    geolocate.trigger();
 });
+
+// rest of your code remains the same
 
 
 // Container for both buttons
