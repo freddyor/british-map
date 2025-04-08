@@ -340,8 +340,8 @@ function createPopupContent(location, isFirebase = false) {
             ` : ''}
             <!-- Conditional rendering of the video element -->
             ${videoUrl ? `
-                <div style="margin-top: 10px; width: 100%;">
-                    <iframe width="100%" height="370" src="${videoUrl}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="display: block; width: 100%; height: 370px; border: none; margin: 0; padding: 0;"></iframe>
+                <div style="margin-top: 10px; width: 100%; margin-bottom: 10px;"> <!-- Add margin-bottom here -->
+                    <iframe width="100%" height="370" src="${videoUrl}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
             ` : ''}
         </div>
