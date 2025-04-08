@@ -2622,7 +2622,7 @@ export const buildings = [
     "image": "images/yorkrailwaystation.png",
     "description": "",
     "occupation": "1877",
-     "videoUrl:" "https://www.britmap.com/videos/copy_DA33DE0F-19ED-494A-8E3B-F6544D42C8F1(1).mp4" // Add this line
+     "videoUrl": "https://www.britmap.com/videos/copy_DA33DE0F-19ED-494A-8E3B-F6544D42C8F1(1).mp4" // Add this line
     "tldr": "When it opened, its 13 platforms made it the largest railway station in the world 🚂",
     "events": [
       {
@@ -2636,7 +2636,7 @@ export const buildings = [
     "coords": [-1.2485630227759836, 54.54574393320777],
     "image": "images/acklamhall.png",
     "occupation": "1683",
-    description: "",
+    "description": "",
     "tldr": "Acklam Hall was built by William Hustler, MP for Northallerton.",
     "events": [
       {
