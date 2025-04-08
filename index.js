@@ -280,7 +280,7 @@ function createPopupContent(location, isFirebase = false) {
         <div style="font-size: 14px; color: #666;">${data.occupation || data.dates}</div>
       </div>
     </div>
-    <div style="text-align: center; margin-top: 5px; cursor: pointer;" id="expand-text">â–¼ Discover â–¼</div>
+    <div style="text-align: center; margin-top: 5px; cursor: pointer;" id="expand-text">▼ Discover ▼</div>
     <div id="additional-content" style="display: none;">
       <p style="background: #f9f9f9; padding: 10px; margin-top: 10px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); font-size: 12px;">${data.tldr}</p>
       ${eventsData && eventsData.length ? `
@@ -292,7 +292,7 @@ function createPopupContent(location, isFirebase = false) {
           `).join('')}
         </div>
       ` : ''}
-      <div style="text-align: center; cursor: pointer; margin-top: 10px;" id="collapse-text">â–² Hide â–²</div>
+      <div style="text-align: center; cursor: pointer; margin-top: 10px;" id="collapse-text">▲ Hide ▲</div>
     </div>
   `;
 }
