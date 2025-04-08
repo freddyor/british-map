@@ -181,6 +181,7 @@ stylePopup.innerHTML = `
     transform: translate(-50%, -50%) !important;
     width: auto !important;
     max-width: 90vw !important;
+    max-height: 90vh !important; /* Add this line to set maximum height */
     z-index: 10000 !important;
   }
 
