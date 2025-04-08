@@ -270,8 +270,8 @@ function createPopupContent(location, isFirebase = false) {
     const data = isFirebase ? location : location;
     const eventsData = isFirebase ? data.events : data.events;
 
-    // Check if videoFileName property exists and is not empty
-    const videoPath = data.videoFileName ? `videos/${data.videoFileName}` : null; // Assuming `videoFileName` is a property of the building
+    // Check if videoUrl property exists and is not empty
+    const videoUrl = data.videoUrl ? data.videoUrl : null;
 
     return `
         <p style="font-size: 6px; font-weight: bold; margin-bottom: 10px;">${data.description}</p>
@@ -296,11 +296,10 @@ function createPopupContent(location, isFirebase = false) {
                 </div>
             ` : ''}
             <!-- Conditional rendering of the video element -->
-            ${videoPath ? `
-                <video width="80" height="240" controls>
-                    <source src="${videoPath}" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
+            ${videoUrl ? `
+                <div style="margin-top: 10px;">
+                    <iframe width="100%" height="240" src="${videoUrl}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
             ` : ''}
             <div style="text-align: center; cursor: pointer; margin-top: 10px;" id="collapse-text">▲ Hide ▲</div>
         </div>
