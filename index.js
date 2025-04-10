@@ -1,5 +1,3 @@
-import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js";
-import { getFirestore, collection, addDoc, getDocs } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js";
 import { buildings } from './buildings.js';
 import { locations } from './locations.js';
 import { imageAttributions } from './imageAttributions.js';
@@ -57,21 +55,6 @@ map.on('click', (e) => {
     // You can display this link in a popup or share it with others
 });
 
-// Firebase configuration
-const firebaseConfig = {
-    apiKey: "AIzaSyDjv5uUNOx86FvYsXdKSMkl8vui2Jynt7M",
-    authDomain: "britmap-64cb3.firebaseapp.com",
-    projectId: "britmap-64cb3",
-    storageBucket: "britmap-64cb3.firebasestorage.app",
-    messagingSenderId: "821384262397",
-    appId: "1:821384262397:web:ca81d64ab6a8dea562c494",
-    measurementId: "G-03E2BB7BQH"
-};
-
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);
-
 map.on('load', () => {
     addBuildingMarkers();
     addLocationsList();
@@ -79,7 +62,6 @@ map.on('load', () => {
     geolocate.trigger();
 });
 
-// rest of your code remains the same
 
 
 // Container for both buttons
