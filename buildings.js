@@ -1477,8 +1477,8 @@ export const buildings = [
         {
       "name": "Whitby Abbey",
       "coords": [
-        54.48836708473829,
-        -0.6080535277845063
+          -0.6080535277845063,
+        54.48836708473829
       ],
       "image": "https://upload.wikimedia.org/wikipedia/commons/b/bc/Whitby_Abbey_%28geograph_7249897%29.jpg",
       "description": "",
@@ -1502,8 +1502,8 @@ export const buildings = [
     {
       "name": "Gisborough Priory",
       "coords": [
-        54.53628444986801,
-        -1.047228284437669
+        1.047228284437669,
+        54.53628444986801
       ],
       "image": "https://upload.wikimedia.org/wikipedia/commons/a/a0/Gisborough_priory_snow_portrait.jpg",
       "description": "AI-generated",
