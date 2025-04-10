@@ -2376,15 +2376,14 @@ export const buildings = [
     ]
   },
   {
-    "name": "Dean Court Armorial Plaque",
+    "name": "Cross Keys Symbols",
     "coords": [-1.0839206184987948, 53.9620920783174],
     "image": "images/crosskeys.png",
     "description": "",
-    "occupation": "1864",
-    "tldr": "Dean Court Armorial plaque is sculpted on the wall of Dean Court Hotel.",
-    "events": [
-      { "date": "DEAN", "description": "This armorial plaque denotes the building was once owned by the Dean and Chapter of York Minster 🛡️" }
-    ]
+    "videoUrl": "https://www.britmap.com/videos/copy_80CA9C38-D963-4632-AB3A-DFA00E94E35F.mp4", 
+    "occupation": "",
+    "tldr": " ",
+    "events": [ ]
   },
   {
     "name": "Kings Square",
