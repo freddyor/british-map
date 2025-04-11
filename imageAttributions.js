@@ -2,6 +2,61 @@
 
 // Array to store image attributions
 const imageAttributions = [
+            {
+    "name": "<a href='https://commons.wikimedia.org/wiki/File:Judi_Dench_at_the_BAFTAs_2007_(cropped).jpg'>Judi Dench</a>",
+    "author": "Georgfotoart",
+    "license": "CC BY-SA 3.0"
+  },
+            {
+    "name": "<a href='https://www.flickr.com/photos/48861782@N05/7682776840'>Steve McClaren</a>",
+    "author": "Thomas Rodenbücher",
+    "license": "CC BY-SA 2.0"
+  },
+            {
+    "name": "<a href='https://commons.wikimedia.org/wiki/File:David_Bradley_by_Gage_Skidmore_2.jpg'>David Bradley</a>",
+    "author": "Gage Skidmore",
+    "license": "CC BY-SA 3.0"
+  },
+            {
+    "name": "<a href='https://commons.wikimedia.org/wiki/File:Frankie_Howerd_Allan_Warren.jpg'>Frankie Howerd</a>",
+    "author": "Allan warren",
+    "license": "CC BY-SA 3.0"
+  },
+            {
+    "name": "<a href='https://wellcomeimages.org/indexplus/image/V0005920.html'>Samuel Tuke</a>",
+    "author": "Iconographic Collections",
+    "license": "CC BY-SA 4.0"
+  },
+            {
+    "name": "<a href='https://commons.wikimedia.org/wiki/File:Barry_in_concert.jpg'>John Barry</a>",
+    "author": "Geoff Leonard",
+    "license": "CC BY-SA 1.0"
+  },
+            {
+    "name": "<a href='https://commons.wikimedia.org/wiki/File:Tom_Scott_avatar_by_Matt_Gray_(cropped)_3.jpg'>Tom Scott</a>",
+    "author": "Matt Gray",
+    "license": "CC BY-SA 4.0"
+  },
+            {
+    "name": "<a href='https://www.flickr.com/photos/techcrunch/38818572802/Gavin Wood</a>",
+    "author": "TechCrunch",
+    "license": "CC BY-SA 2.0"
+  },
+            {
+    "name": "<a href='https://commons.wikimedia.org/wiki/File:RobinsonArms.svg'>Sir William Robinson</a>",
+    "author": "Lobsterthermidor",
+    "license": "CC BY-SA 3.0"
+  },
+            {
+    "name": "<a href='https://commons.wikimedia.org/wiki/File:Anthony_Horowitz_20221130.jpg'>Anthony Horowitz</a>",
+    "author": "Edwardx",
+    "license": "CC BY-SA 2.0"
+  },
+            {
+    "name": "<a href='https://members-api.parliament.uk/api/Members/150/Portrait?cropType=ThreeFour'>Harriet Harman</a>",
+    "author": "Richard Townshend",
+    "license": "CC BY-SA 3.0"
+  },
       {
     "name": "<a href='https://commons.wikimedia.org/wiki/File:York_Minster_from_M%26S.JPG'>York Minster</a>",
     "author": "MatzeTrier",
