@@ -4,7 +4,7 @@ export const locations = [
     name: "George Hudson", 
     occupation: "1800-1871", 
     description: "George Hudson lived here at number 44",
-    image: "images/georgehudson.png",
+    image: "https://upload.wikimedia.org/wikipedia/commons/6/6f/George_Hudson_%284%29.png",
     tldr: "George Hudson, known as 'the Railway King', was once the richest man in England. His business ultimately declined and he died with large debt.",
     events: [
 { date: "1837", description: "George became Lord Mayor of York whilst being the wealthiest resident of the city. He held a grand parade and dinner for 14,000 York people to celebrate Queen Victoria 🥳" },
@@ -14,9 +14,9 @@ export const locations = [
   { 
     coords: [ -1.0861561, 53.9587634 ], 
     name: "John Snow", 
-    occupation: "1813-1858", 
+    occupation: "https://upload.wikimedia.org/wikipedia/commons/c/cc/John_Snow.jpg", 
     description: "John Snow was born into poverty here on 15 March 1813 and is memorialized in the garden opposite.",
-    image: "images/johnsnow.png",
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/John_Snow.jpg/330px-John_Snow.jpg",
     tldr: "Snow is famous for proving cholera was waterborne during an 1854 cholera outbreak. He was also a pioneer in the use of chloroform.",
      events: [
 { date: "Royalty", description: " Snow’s reputation for safety and skill led to his successful administration of chloroform to Queen Victoria during the births of Prince Leopold (1853) and Princess Beatrice (1857)👑"},
@@ -29,7 +29,7 @@ export const locations = [
     name: "John Carr", 
     occupation: "1813-1858", 
     description: "This is another example of John Carr's architectural prowess.",
-    image: "images/johncarr.png",
+    image: "https://upload.wikimedia.org/wikipedia/commons/9/9b/John_Carr_by_Sir_William_Beechey.jpg",
     tldr: "John Carr is the most renowned architect in York's history, best known for Buxton Crescent in Derbyshire and Harewood House.",
      events: [
 { date: "MAYOR", description: "Carr became Lord Mayor in 1770 and 1785." },
@@ -42,7 +42,7 @@ export const locations = [
     name: "William Milner", 
     occupation: "1900-1942", 
     description: "William Milner heroically lost his life here during the Blitz.",
-    image: "images/williammilner.png",
+    image: "http://yorkstories.co.uk/war/ww2/images/memorials_ww2/william-milner-plaque-071010-360.jpg",
     tldr: "During the Baedeker Blitz, William Milner, Station Foreman, ran into this burning building to obtain a medical box to treat the wounded. He didn't make it back out.",
      events: [
 { date: "2001", description: "When his body was discovered, he was still clutching the first-aid box." },
@@ -53,7 +53,7 @@ export const locations = [
     name: "George Leeman", 
     occupation: "1809-1882", 
     description: "George Leeman once lived here with his family",
-    image: "images/georgeleeman.png",
+    image: "https://upload.wikimedia.org/wikipedia/commons/e/e0/George_Leeman_Vanity_Fair_13_July_1872.JPG",
     tldr: "George Leeman is a vital figure in York history, politics and rail.",
     events: [
       { date: "1853", description: "He became Chairman of the North Eastern Railway after succeeding Hudson and merging three Northern railways. He had played a large role in the legal investigations that brought down Hudson, the York-born richest man in England 🚂" },
@@ -66,7 +66,7 @@ export const locations = [
     name: "John Goodricke", 
     occupation: "1764-1786", 
     description: "John Goodricke recorded his planetary discoveries in this location",
-    image: "images/johngoodricke.png",
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Goodricke_John.jpg/330px-Goodricke_John.jpg",
     tldr: "John Goodricke was a pioneering astronomer and inspiration for all deaf people.",
     events: [
       { date: "1783", description: "John won the Copley Medal for his observations of the variable star Algol, the highest scientific honour of the Royal Society of London (RSL) 🔭" },
@@ -78,7 +78,7 @@ export const locations = [
     name: "Judi Dench", 
     occupation: "1934-", 
     description: "Judi Dench watched her first plays here as a child",
-    image: "images/judidench.png",
+    image: "https://upload.wikimedia.org/wikipedia/commons/3/36/Judi_Dench_at_the_BAFTAs_2007_%28cropped%29_b.jpg",
     tldr: "Judi Dench needs no introduction, she is one of the greatest actresses of all time.",
     events: [
       { date: "1998", description: "Dench won an Academy Award for playing Queen Elizabeth in 'Shakespeare in Love.' She has won over 20 prestigious awards over her seven-decade career, including two Golden Globes 🎭" },
@@ -91,7 +91,7 @@ export const locations = [
     name: "W.H. Auden", 
     occupation: "1907-1973", 
     description: "W.H.Auden was born and lived his initial years at this location",
-    image: "images/whauden.png",
+    image: "https://upload.wikimedia.org/wikipedia/commons/a/aa/AudenVanVechten1939.jpg",
     tldr: "Wystan Hugh Auden is often classed as Britain's greatest 20th century writer.",
     events: [
       { date: "1948", description: "He won the Pulitzer Prize for 'The Age of Anxiety'✒️" },
@@ -103,7 +103,7 @@ export const locations = [
     name: "Steve McLaren", 
     occupation: "1961-", 
     description: "Steve McClaren studied here as a child",
-    image: "images/stevemclaren.png",
+    image: "https://upload.wikimedia.org/wikipedia/commons/d/de/Steve_McClaren_2012_1_%28cropped%29.jpg",
     tldr: "Steve McClaren is one of England's greatest football managers.",
     events: [
       { date: "1970s", description: "Steve chose to cycle 4 miles a day to Nunthorpe school due to its emphasis on sports 🚴" },
@@ -116,7 +116,7 @@ export const locations = [
     name: "David Bradley", 
     occupation: "1942-", 
     description: "Award-winning David Bradley performed stage musicals here as a child",
-    image: "images/davidbradley.png",
+    image: "https://upload.wikimedia.org/wikipedia/commons/9/93/David_Bradley_by_Gage_Skidmore_2.jpg",
     tldr: "David Bradley is one of the finest actors Britain has produced.",
     events: [
       { date: "FILCH", description: "He played Argus Filch in the 'Harry Potter' series 🪄" },
@@ -129,7 +129,7 @@ export const locations = [
     occupation: "1871-1954", 
     description: "Joseph Seebohm Rowntree lived here for most of his life", 
     tldr: "Son of Joseph Rowntree, Benjamin was also Rowntrees chairman and a stark social reformer.", 
-    image: "images/seebohmrowntree.png", 
+    image: "https://upload.wikimedia.org/wikipedia/commons/9/92/Benjamin_rowntree.jpg", 
     events: [
         { date: "1941", description: "Seebohm retired as chair after 17 years, leaving the third largest business of its kind in the world 🍫" },
         { date: "REFORM", description: "He produced some of the most influential research in British history, exposing the truths of poverty in York in 'Poverty: A Study in Town Life'. His work changed the course of British society forever." },
@@ -142,7 +142,7 @@ export const locations = [
     occupation: "1606-1682", 
     description: "Sir Thomas Herbert was born and raised on this site", 
     tldr: "Sir Thomas Herbert was a traveller and gentlemann to King Charles I.", 
-    image: "images/robertherbert.png", 
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/SirThomasHerbert.jpg/800px-SirThomasHerbert.jpg", 
     events: [
         { date: "1649", description: "On behalf of England, he sailed around Africa to Persia on a diplomatic mission ⛵" },
         { date: "1649", description: "He was the only servant to stay with Charles I until the moment of his execution. On the last walk they made together through St James’s Park, the king gave Thomas a silver clock for memory." },
@@ -156,7 +156,7 @@ export const locations = [
     occupation: "1189", 
     description: "Benedict of York once lived here", 
     tldr: "Benedict of York was a leading York Jew and the second-greatest moneylender behind Josce.", 
-    image: "images/benedictofyork.png", 
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Leningrad_Codex_Folio_474a.jpg/330px-Leningrad_Codex_Folio_474a.jpg", 
     events: [
         { date: "WEALTH", description: "William of Newburgh described Benedict's house as \"unto a royal palace in size and strength\" 🏘️" },
         { date: "1189", description: "Benedict attended the coronation of King Richard I where he was forcibly baptised. He was killed shortly after." },
@@ -170,7 +170,7 @@ export const locations = [
     occupation: "1190", 
     description: "Josce of York once lived here", 
     tldr: "Josce of York was the wealthy leader of the Jewish community in York.", 
-    image: "images/josceofyork.png", 
+    image: "https://www.britmap.com/images/josceofyork.png", 
     events: [
         { date: "JEWISH", description: "Josce owned the land of which the Chief Synagogue in London was built." },
         { date: "1190", description: "When an angry mob trapped York's Jewish community in Clifford's Tower, the decision was made to mutually commit suicide rather than face the mob. Josce was the first to act, slaying his wife and children." },
@@ -183,7 +183,7 @@ export const locations = [
     occupation: "1586-1630", 
     description: "Christopher Levett was born and raised here", 
     tldr: "Christopher Levett was a key figure in the New World discovery.", 
-    image: "images/christopherlevett.png", 
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Christopher_Levett.jpg/263px-Christopher_Levett.jpg", 
     events: [
         { date: "1623", description: "Levett became the first European to settle present-day Maine after securing 6000 acres from the King. He called the settlement York, this was the original New York 🌎" },
         { date: "1624", description: "He commanded HMS Susan and Ellen during the attack of the Spanish at Cadiz ⚓" },
@@ -197,7 +197,7 @@ export const locations = [
     occupation: "1718-1800", 
     description: "Elizabeth Montagu was raised here in Treasurer's House", 
     tldr: "Elizabeth Montagu was a philanthropist who used her privileged social position to advance the status of women.", 
-    image: "images/elizabethmontagu.png", 
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Elizabeth_Montagu%2C_as_Anne_Boleyn%2C_by_Christian_Friedrich_Zincke%2C_in_a_friendship_box%2C_miniature%2C_circa_1740.jpg/330px-Elizabeth_Montagu%2C_as_Anne_Boleyn%2C_by_Christian_Friedrich_Zincke%2C_in_a_friendship_box%2C_miniature%2C_circa_1740.jpg", 
     events: [
         { date: "WEALTH", description: "Elizabeth married into the extremely wealthy Montagu family. She inherited substantial amounts upon her husband's death 💰" },
         { date: "Late 1800s", description: "Elizabeth used her London mansion to hold Bluestocking meetings, which gave women the chance to join debate. Queen Charlotte and her daughters even visited 👑" },
@@ -211,7 +211,7 @@ export const locations = [
     occupation: "1909-1999", 
     description: "Tessa Rowntree went to school here at The Mount", 
     tldr: "Tessa Rowntree was a charity worker, descendant of Joseph Rowntree.", 
-    image: "images/tessarowntree.png", 
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTv04UJhmmA2-670NbA1PSie4cMKeI8axScFw&s", 
     events: [
         { date: "1938", description: "Tessa was in Germany when she saw Hitler. She saw his personal magnetism despite his 'horrid little voice'. She also saw Joseph Goebbels." },
         { date: "1939", description: "She helped evacuate and settle hundreds of refugees from Europe in England. She escorted 66 kindergarten children to England 🏴󠁧󠁢󠁥󠁮󠁧󠁿" },
@@ -225,7 +225,7 @@ export const locations = [
     occupation: "1890-1917", 
     description: "Bertram Best-Dunkley grew up on this street", 
     tldr: "Lt Col Best-Dunkley was a heroic military captain who died in Belgium.", 
-    image: "images/bestdunkley.png", 
+    image: "https://vcgca.org/files/uploads/c/f/a/cfaabc4bd45acc9f4d76e8066256f0414ea4b3b2/phpBjQVWm", 
     events: [
         { date: "CHINA", description: "Before the war, Best-Dunkley was a teacher at Tienstin Grammar School, China 🇨🇳" },
         { date: "1917", description: "\"Lt.-Col. Best-Dunkley dashed forward, rallied his leading waves, and personally led them to the assault of these positions, which, despite heavy losses, were carried. He continued to lead his battalion until all their objectives had been gained. This gallant officer has since died of wounds\"." },
@@ -238,7 +238,7 @@ export const locations = [
     name: "Frederick Belmont", 
     occupation: "-1952", 
     description: "This is where Frederick Belmont opened up the second Bettys",
-    image: "images/frederickbelmont.png",
+    image: "https://www.bettys.co.uk/media/blog/History/Young_Confectioner.jpg",
     tldr: "Frederick Belmont was a Swiss orphan who founded Bettys Tea Rooms.",
     events: [
       { date: "YOUTH", description: "He was orphaned at five years and effectively auctioned off to a farmer." },
@@ -253,7 +253,7 @@ export const locations = [
   "occupation": "1876-1970",
   "description": "Edna Annie Crichton moved here to be closer to her constituents",
   "tldr": "Crichton was an influential bipartisan social reformer and servant to York.",
-  "image": "images/ednaanniechrichton.png",
+  "image": "https://upload.wikimedia.org/wikipedia/en/a/aa/Edna_Annie_Crichton_%281876-1970%29.jpeg",
   "events": [
     { "date": "1941", "description": "Edna became the first female Lord Mayor of York in its 700 year history 🎉" },
     { "date": "1955", "description": "Edna was awarded the honorary freedom of the City of York, the second woman to be honoured after Mary, Princess Royal 👸" },
@@ -267,7 +267,7 @@ export const locations = [
   "occupation": "1787-1849",
   "description": "William Etty was born here above his father's bakery shop",
   "tldr": "William Etty was a renowned York artist and Royal Academy member.",
-  "image": "images/williametty.png",
+  "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1VwxSqKLauhuLZRrDgUh6-E5OktF53zxWvQ&s",
   "events": [
     { "date": "1823", "description": "Etty became a memeber of the Royal Academy after travelling to Italy and France to further his painting skills 🌍" },
     { "date": "WALLS", "description": "He is credited with saving the York City Walls, after donating to campaigns and giving lectures." },
@@ -281,7 +281,7 @@ export const locations = [
   "occupation": "1860-1935",
   "description": "Dr Evelyn lived out the end of his life here",
   "tldr": "There are few people who have done more to preserve York than Dr Evelyn.",
-  "image": "images/williamarthurevelyn.png",
+  "image": "https://upload.wikimedia.org/wikipedia/en/c/cf/William_Arthur_Evelyn.jpg",
   "events": [
     { "date": "1912", "description": "Evelyn campaigned for the poor and was instrumental in the opening of an open-air ward in Heworth 🏥" },
     { "date": "1948", "description": "His enthusiasm for the wellbeing of the city inspired the York Civic Trust and prevented many buildings from being demolished 🏛️" },
@@ -295,7 +295,7 @@ export const locations = [
     occupation: "1570-1606", 
     description: "Guy Fawkes grew up in this very location", 
     tldr: "Guy Fawkes is the most famous figure to come from York.", 
-    image: "images/guyfawkes.png", 
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/The_Gunpowder_Plot_Conspirators%2C_1605_from_NPG_%28cropped%29.jpg/330px-The_Gunpowder_Plot_Conspirators%2C_1605_from_NPG_%28cropped%29.jpg", 
     events: [
         { date: "1592", description: "Fawkes sold his property to go and fight Protestants in Netherlands 🇳🇱" },
         { date: "1606", description: "Fawkes was executed after his failed plot to blow up Protestant Royalty and the Houses of Parliament." },
@@ -309,7 +309,7 @@ export const locations = [
   "occupation": "1627-1710",
   "description": "Lady Hewley grew up and created her trust fund on this street",
   "tldr": "Lady Hewley is noted for providing charity that would far outlive her existence.",
-  "image": "images/ladysarahhewley.png",
+  "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/Portrait_of_Sarah_Woolryce_%281627-1710%29.jpg/330px-Portrait_of_Sarah_Woolryce_%281627-1710%29.jpg",
   "events": [
     { "date": "1705", "description": "Lady Hewley founded almshouses for the elderly and disadvantaged in York. Personally financing the project and setting up a large trust for when she passed. 300 years later, the Trust still maintains the almshouses in St Saviourgate 🏘️" },
 
@@ -321,7 +321,7 @@ export const locations = [
     name: "Frankie Howerd OBE", 
     occupation: "1917-1992", 
     description: "Frankie Howerd grew up in this location", 
-    image: "images/frankiehowerd.png", 
+    image: "https://upload.wikimedia.org/wikipedia/commons/9/99/Frankie_Howerd_Allan_Warren.jpg", 
     tldr: "Frankie Howerd was one of the greatest British entertainers of the 20th century. His plaque reads: 'Son of York.", 
     events: [
         { date: "1940", description: "Howerd served in the Royal Artillery which he became popular in - as an entertainer for the troops 🪖" },
@@ -335,7 +335,7 @@ export const locations = [
     name: "Anne Lister", 
     occupation: "1791-1840", 
     description: "The first modern lesbian marriage happened here", 
-    image: "images/annelister.png", 
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Lister_anne.jpg/330px-Lister_anne.jpg", 
     tldr: "Anne Lister was a pioneering diarist and writer known for documenting her life and same-sex relationships in her detailed journals.", 
     events: [
         { date: "1798", description: "At the age of only 7, Anne was sent to school in Ripon, an unheard-of show of her intelligence and independence 👩‍🎓" },
@@ -349,7 +349,7 @@ export const locations = [
   "occupation": "1919-1962",
   "description": "Yves Mahe is commemorated here",
   "tldr": "Yves Mahe was a French WW2 hero to the city of York",
-  "image": "images/yvesmahe.png",
+  "image": "https://www.yorkpress.co.uk/resources/images/8156848.jpg?type=mds-article-962",
   "events": [
     { "date": "1940", "description": "Yves refused to accept French defeat in the war, so he flew to Gibraltar and then England to join Charles De Gaulle's exiled forces 🇫🇷" },
     { "date": "1945", "description": "During the Baedeker Blitz on York, Yves attacked the whole Luftwaffe fleet alone with all 8 machine guns blazing, shooting a bomber down. Yves, by himself, caused the enemy aircraft to retreat, preventing them from wiping out the Rowntree's factory 🛩️" },
@@ -362,7 +362,7 @@ export const locations = [
   "occupation": "1873-1963",
   "description": "This was the home of J.B. Morrell",
   "tldr": "J.B. Morrell turned down a seat in parliament and a knighthood, putting every ounce of his life into York.",
-  "image": "images/johnbowesmorell.png",
+  "image": "https://www.yorkconservationtrust.org/media/0rqbasjs/img_4881_1.jpg?center=0.44233736837845222,0.53470504296551724&mode=crop&width=350",
   "events": [
     { "date": "1914", "description": "John was appointed Lord Mayor due to his abilities on the York council. He became Lord Mayor again in 1949, whilst already chairing 6 public committees." },
     { "date": "1914", "description": "John released a book named The City of our Dreams, which analysed the past and future of York 📖" },
@@ -377,7 +377,7 @@ export const locations = [
   "occupation": "1800-1874",
   "description": "John Phillips chose to refurbish and live here in St Mary's Lodge.",
   "tldr": "Orphaned at 7 years old, John Phillips became one of England's finest geologists and once debated Charles Darwin.",
-  "image": "images/johnphilips.png",
+  "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/J_Phillips_Geologist_1866_SLNSW.jpg/330px-J_Phillips_Geologist_1866_SLNSW.jpg",
   "events": [
     { "date": "1831", "description": "John founded the British Association for the Advancement of Science in 1831. He was secretary until 1863, then becoming President." },
     { "date": "1856", "description": "He became Professor of Geology at University of Oxford and was elected President to the Geological Society of London 🏫" },
@@ -390,7 +390,7 @@ export const locations = [
   "occupation": "1789-1868",
   "description": "James Pigott Pritchett was the architect of this cemetery and was buried here",
   "tldr": "Pritchett was a renowned architect, responsible for many of York's buildings",
-  "image": "images/jamespigottpritchett.png",
+  "image": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRWsWYJNh6Uy3fNBwomSQDkY-wwxCX9I7ZrIpC_WwgbIOc6CeGJ",
   "events": [
     { "date": "1845", "description": "Pritchett was the architect of Huddersfield Railway Station, considered one of the most impressive stations in England 🚂" },
     { "date": "YORK", "description": "He was also the architect of the chapel – now Zizzi’s restaurant – on Lendal (1816), the Chapel on Little Stonegate (1851, now The Banyan bar) and York County Savings Bank in St Helen’s Square (1829-30). " },
@@ -402,7 +402,7 @@ export const locations = [
     name: "Joseph Rowntree", 
     occupation: "1836-1925", 
     description: "Joseph Rowntree lived out the end of his life right here", 
-    image: "images/josephrowntree.png", 
+    image: "https://upload.wikimedia.org/wikipedia/commons/f/fb/Joseph_rowntree_old.jpg", 
     tldr: "Joseph Rowntree was the son of Rowntrees founder and one of the first radical supporters of social welfare.", 
     events: [
         { date: "1902", description: "Joseph founded the village of New Earswick for people of low incomes, 'for the improvement of the condition of the working classes' 🏠" },
@@ -416,7 +416,7 @@ export const locations = [
     name: "Laurence Stern", 
     occupation: "1713-1768", 
     description: "This is where Tristam Shandy was first published. ", 
-    image: "images/laurencestern.png", 
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/Laurence_Sterne_by_Sir_Joshua_Reynolds.jpg/330px-Laurence_Sterne_by_Sir_Joshua_Reynolds.jpg", 
     tldr: "Laurence Stern was the author of The Life and Opinions of Tristram Shandy, Gentleman, a groundbreaking yet divisive work in literature.", 
     events: [
         { date: "1759", description: "First 200 copies of Tristam Shandy were sold in Stonegate. A London bookseller turned him down so he did this at his own expense. 📚" },
@@ -429,7 +429,7 @@ export const locations = [
     name: "Samuel Tuke", 
     occupation: "1784-1857", 
     description: "Samuel Tuke lived here for most of his life", 
-    image: "images/samueltuke.png", 
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/Samuel_Tuke._Etching_by_C._Callet._Wellcome_V0005920.jpg/330px-Samuel_Tuke._Etching_by_C._Callet._Wellcome_V0005920.jpg", 
     tldr: "Samuel was a pioneer of mental health healing, calling it a 'divine art'.", 
     events: [
         { date: "1813", description: "Samuel published 'Description of the Retreat' which helped publicise the term 'moral treatment' for mental health patients. " },
@@ -444,7 +444,7 @@ export const locations = [
   "occupation": "1585-1645",
   "description": "Mary Ward died here at Heworth Manor",
   "tldr": "Mary Ward was a Catholic missionary who has one of the greatest religious legacies of all time.",
-  "image": "images/maryward.png",
+  "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/Mary_Ward.jpg/330px-Mary_Ward.jpg",
   "events": [
     { "date": "1605", "description": "Two of Mary’s uncles and a brother-in-law were killed after the Gunpowder Plot 🧨" },
     { "date": "1620s", "description": "Mary founded 7 institutions across Europe, believing there should be no difference between men and women being able to do God's work." },
@@ -457,7 +457,7 @@ export const locations = [
     name: "John Woolman",
     occupation: "1720-1772",
     description: "John Woolman died in this house.",
-    image: "images/johnwoolman.png",
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/John_Woolman.jpg/330px-John_Woolman.jpg",
     tldr: "John Woolman was an American anti-slavery campaigner, who died in York. Before his death he said 'York looks like home to me'.",
     events: [
       { date: "1758", description: "Woolman made a passionate speech to his fellow Quakers to abolish holding slaves. The Quakers then became the first large body to free slaves in America." },
@@ -470,7 +470,7 @@ export const locations = [
     name: "Joseph Terry",
     occupation: "1793-1850",
     description: "Joseph Terry lived here on Tadcaster Road",
-    image: "images/josephterry.png",
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/JosephTerry_by_GeorgeFall.jpg/330px-JosephTerry_by_GeorgeFall.jpg",
     tldr: "Joseph Terry is the founder of the company behind Chocolate Orange and many more famous chocolates.",
     events: [
       { date: "CHEMIST", description: "Joseph apprenticed as a chemist, utilising these skills to make cakes, sweets, marmalade, candied peel, mushroom ketchup and lozenges 🍫" },
@@ -483,7 +483,7 @@ export const locations = [
     name: "Joseph Terry",
     occupation: "1793-1850",
     description: "This is where Joseph Terry founded the chocolate brand",
-    image: "images/josephterry.png",
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/JosephTerry_by_GeorgeFall.jpg/330px-JosephTerry_by_GeorgeFall.jpg",
     tldr: "Joseph Terry is the founder of the company behind Chocolate Orange and many more famous chocolates.",
     events: [
       { date: "CHEMIST", description: "Joseph apprenticed as a chemist in York, utilising these skills to make cakes, sweets, marmalade, candied peel, mushroom ketchup and lozenges 🍫" },
@@ -496,7 +496,7 @@ export const locations = [
     name: "James Backhouse",
     occupation: "1794-1869",
     description: "James Backhouse ran his botanic nursery here.",
-    image: "images/jamesbackhouse.png",
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/James_Backhouse_%281794-1869%29.jpg/330px-James_Backhouse_%281794-1869%29.jpg",
     tldr: "James Backhouse was a botanist, missionary and philanthropist.",
     events: [
       { date: "1815", description: "James bought a York botanic nursery and allowed it to flourish 🌿" },
@@ -509,7 +509,7 @@ export const locations = [
     name: "Henry Baines",
     occupation: "1793-1878",
     description: "This is where Henry Baines first put a shovel in the ground.",
-    image: "images/henrybaines.png",
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Thomas_Joseph_Banks_painting_of_Henry_Baines.jpg/330px-Thomas_Joseph_Banks_painting_of_Henry_Baines.jpg",
     tldr: "Henry Baines is the man to whom we owe gratitude for Museum Gardens.",
     events: [
       { date: "1830", description: "The Yorkshire Museum opened and the initial three acres of Museum Gardens were landscaped and planted by Henry 🌷" },
@@ -519,10 +519,10 @@ export const locations = [
   },
   { 
     coords: [-1.0720158, 53.9361983],
-    name: "John Barry OBE",
+    name: "John Barry",
     occupation: "1933-2011",
     description: "John Barry grew up here.",
-    image: "images/johnbarry.png",
+    image: "https://upload.wikimedia.org/wikipedia/commons/f/f8/John-barry-2006.jpg",
     tldr: "John Barry is the man behind the James Bond theme tune.",
     events: [
       { date: "1947", description: "John worked as a projectionist at the York Rialto cinema from the age of 14. He also played in a York jazz band called the Modernaires 📽️" },
@@ -536,7 +536,7 @@ export const locations = [
     name: "Mary Ellen Best",
     occupation: "1809-1891",
     description: "Mary Ellen Best lived here in number 14.",
-    image: "images/maryellenbest.png",
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Crop_of_The_Artist_at_Work_YORAG-R2396.jpg/220px-Crop_of_The_Artist_at_Work_YORAG-R2396.jpg",
     tldr: "Mary Ellen Best was a prominent York water-colour artist.",
     events: [
       { date: "1840", description: "Mary went on three continental tours of Europe, painting various people and places. She then moved to Germany with her new husband." },
@@ -548,7 +548,7 @@ export const locations = [
     name: "George Butterworth",
     occupation: "1885-1916",
     description: "George Butterworth grew up here on Driffield Terrace.",
-    image: "images/georgebutterworth.png",
+    image: "https://upload.wikimedia.org/wikipedia/en/a/a7/Butterworth_2.jpg",
     tldr: "George Butterworth was a folksinger and composer.",
     events: [
       { date: "EDUCATED", description: "George won a scholarship to Eton College in 1899. Five years later he joined Trinity College, Oxford 🎓" },
@@ -559,11 +559,11 @@ export const locations = [
   },
   { 
     coords: [-1.0837224, 53.9553593],
-    name: "Hans Hess OBE",
+    name: "Hans Hess",
     occupation: "1907–1975",
     description: "Hans Hess lived here in Skeldergate. He once hosted Charlie Chaplin.",
-    image: "images/hanshess.png",
-    tldr: "German-born Jew Hans Hess was a museum curator and art historian.",
+    image: "https://upload.wikimedia.org/wikipedia/en/6/65/Hans_Hess_%28museologist%29.jpg",
+    tldr: "German-born Jew Hans Hess was a museum curator and art historian, granted an OBE.",
     events: [
       { date: "UPBRINGING", description: "His wealthy father won the contract to provide boots for the Soviet Red Army 🥾" },
       { date: "1935", description: "Moved to London to escape Nazi Germany." },
@@ -575,7 +575,7 @@ export const locations = [
     name: "Thomas Cooke",
     occupation: "1807-1868",
     description: "Thomas Cooke's 1850 telescope is housed here.",
-    image: "images/thomascooke.png",
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Thomas_Cook_%28machinist%29.jpg/255px-Thomas_Cook_%28machinist%29.jpg",
     tldr: "Self-made Thomas Cooke was one of England's leading optical instrument makers.",
     events: [
       { date: "1860", description: "He was invited by Prince Albert to Osborne House where he received an order for a 5¼-inch telescope 👑" },
@@ -584,10 +584,10 @@ export const locations = [
   },
   { 
     coords: [-1.0906194, 53.9647176],
-    name: "Stephen Corder",
+    name: "Stephen 'Pit' Corder",
     occupation: "1918-1990",
     description: "Stephen Corder was born here in Bootham.",
-    image: "images/stephencorder.png",
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Pit_Corder_photo.jpg/330px-Pit_Corder_photo.jpg",
     tldr: "Stephen Corder was one of the founding fathers of applied linguistics and founding chair of the British Association for Applied Linguistics (BAAL).",
     events: [
       { date: "1918", description: "Raised by a Dutch mother, Corder was bilingual from birth 🇳🇱" },
@@ -600,7 +600,7 @@ export const locations = [
     name: "Constantine",
     occupation: "272-337",
     description: "Constantine was proclaimed Roman Emporer on this spot.",
-    image: "images/constantine.png",
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Statua_di_Costantino_ai_musei_capitolini.jpg/330px-Statua_di_Costantino_ai_musei_capitolini.jpg",
     tldr: "Constantine the Great is one of the most impactful Roman Emporers there ever was.",
     events: [
       { date: "LEGACY", description: "He founded the city of Constantinople and made it the capital of the Empire, which it remained for over a millennium." },
@@ -612,7 +612,7 @@ export const locations = [
     "name": "Richard III",
     "occupation": "1452-1485",
     "description": "Richard III would stay here when he visited York, where the Augustin Friary used to lay...",
-    "image": "images/richardiii.png",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Richard_III_portrait.jpg/330px-Richard_III_portrait.jpg",
     "tldr": "He was the last king of the House of York, His death at the Battle of Bosworth Field marked the end of the Middle Ages in England.",
     "events": [
       {
@@ -630,7 +630,7 @@ export const locations = [
     "name": "Sarah Booth",
     "occupation": "",
     "description": "Sarah Booth lived here",
-    "image": "images/sarahbooth.png",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Venus_symbol_%28heavy_pink%29.svg/120px-Venus_symbol_%28heavy_pink%29.svg.png",
     "tldr": "Sarah Booth is the first ever woman to vote in York, at 8am on the 14th December 1918. This was when women voted in a general election for the first time 🗳️",
     "events": []
   },
@@ -639,7 +639,7 @@ export const locations = [
     "name": "Annie Coultate",
     "occupation": "1856-1931",
     "description": "Annie Coultate lived in this location.",
-    "image": "images/anniecoultate.png",
+    "image": "Annie Coultate",
     "tldr": "Annie Coultate was one of the best-known suffragettes in York.",
     "events": [
       {
@@ -657,7 +657,7 @@ export const locations = [
     "name": "Walter Brierley",
     "occupation": "1862-1926",
     "description": "Walter Brierley lived here in his self-built home",
-    "image": "images/walterbrierley.png",
+    "image": "https://maltonians.maltonschool.org/images/gallery/people/WalterBrierley.jpg",
     "tldr": "Known as 'the Yorkshire Luytens', this architect was responsible for over 300 beautiful buildings in York and the north 🏘️",
     "events": [
       {
@@ -675,7 +675,7 @@ export const locations = [
     "name": "Alcuin",
     "occupation": "735-804",
     "description": "Alcuin was educated here at what was York School",
-    "image": "images/alcuin.png",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsI3jTPt9519vgacYEUTXNR53YdZTVW7ozMw&s",
     "tldr": "\"The most learned man anywhere to be found\", Alcuin is one of the most important intellectual figures in European history.",
     "events": [
       {
@@ -693,7 +693,7 @@ export const locations = [
     "name": "Dick Turpin",
     "occupation": "1705-1739",
     "description": "Dick Turpin was executed on this spot",
-    "image": "images/dickturpin.png",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/0/0f/Dick_turpin_jumping_hornsey_tollgate.jpg",
     "tldr": "Dick Turpin was an infamous highwayman and robber.",
     "events": [
       {
@@ -711,7 +711,7 @@ export const locations = [
     "name": "Tom Scott",
     "occupation": "1984-",
     "description": "Tom Scott was elected president of the Students Union here",
-    "image": "images/tomscott.png",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/a/a9/Tom_Scott_avatar_by_Matt_Gray_%28cropped%29_3.jpg",
     "tldr": "Tom Scott is an educational YouTuber and web-developer.",
     "events": [
       {
@@ -729,7 +729,7 @@ export const locations = [
     "name": "Gavin Wood",
     "occupation": "1980-",
     "description": "Gavin Wood studied his Masters and PhD here and has been back to give talks",
-    "image": "images/gavinwood.png",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/b/bc/Gavin_Wood_in_2017.jpg",
     "tldr": "Gavin Wood is a computer scientist and co-founder of Ethereum.",
     "events": [
       {
@@ -747,7 +747,7 @@ export const locations = [
     "name": "Harriet Harman",
     "occupation": "1950-",
     "description": "Harriet Harman studied and engaged in student politics here at Goodricke College",
-    "image": "images/harrietharman.png",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/b/bd/Official_portrait_of_Rt_Hon_Harriet_Harman_QC_MP_crop_2.jpg",
     "tldr": "Harriet Harman is one of the most decorated politicians int he UK.",
     "events": [
       {
@@ -762,10 +762,10 @@ export const locations = [
   },
   {
     "coords": [-1.0540578170695625, 53.94817372974372],
-    "name": "Anthony Horowitz CBE",
+    "name": "Anthony Horowitz",
     "occupation": "1955-",
     "description": "Anthony Horowitz studied here at Vanburgh College",
-    "image": "images/anthonyhorowitz.png",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/3/33/Anthony_Horowitz_20221130.jpg",
     "tldr": "Anthony Horowitz is a world-famous novelist",
     "events": [
       {
@@ -783,7 +783,7 @@ export const locations = [
     name: "Mary Ann Craven",
     occupation: "1826-1900",
     description: "This is where Mary Ann Craven moved her family to after her heroic business success.",
-    image: "images/maryanncraven.png",
+    image: "https://yorkcivictrust.co.uk/wp-content/uploads/2018/06/Mary-Craven-4-P1110456-947x1200.jpg",
     tldr: "Mary Ann Craven was known for building one of the largest boiled sweets businesses of her time whilst dealing with personal setbacks remarkably.",
     events: [
       { date: "1860", description: "Her father and husband both died within two years. She faced raising three young children whilst running two businesses." },
@@ -807,7 +807,7 @@ export const locations = [
     "name": "Septimius Severus",
     "occupation": "145-211",
     "description": "Emperor Severus was cremated on this hill",
-    "image": "images/severus.png",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Septimius_Severus_Glyptothek_Munich_357.jpg/330px-Septimius_Severus_Glyptothek_Munich_357.jpg",
     "tldr": "Lucius Septimius Severus was Roman emperor from 193 to 211 after advancing under the reigns of Marcus Aurelius 👑",
     "events": [
       {
@@ -821,7 +821,7 @@ export const locations = [
     "name": "William the Conqueror",
     "occupation": "1028-1087",
     "description": "William the Conqueror marched on York and built two castles by the river here",
-    "image": "images/williamtheconqueror.png",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/King_William_I_%28%27The_Conqueror%27%29_from_NPG.jpg/640px-King_William_I_%28%27The_Conqueror%27%29_from_NPG.jpg",
     "tldr": "William the Conqueror is the most consequential figure in English History 👑",
     "events": [
       {
@@ -835,7 +835,7 @@ export const locations = [
     "name": "William II",
     "occupation": "1060-1100",
     "description": "William II visited here in 1089 to lay the foundation stone for St. Mary's Abbey",
-    "image": "images/williamii.png",
+    "image": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSfSFHzWFk1doQ2MfETIVnZYOR5S18cUWPJdzWmDZ3fYbLXe5UFYKGaGworPxU4j99Pd1Ar82XVRc_FBY0KkwoWUw",
     "tldr": "William (Rufus) II was King of England 1087-1100 and son of William the Conqueror",
     "events": [
       {
@@ -849,7 +849,7 @@ export const locations = [
     "name": "Florence Nightingale",
     "occupation": "1820-1910",
     "description": "Florence Nightingale crossed the river here in 1852.",
-    "image": "images/florencenightingale.png",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Florence_Nightingale_%28H_Hering_NPG_x82368%29.jpg/330px-Florence_Nightingale_%28H_Hering_NPG_x82368%29.jpg",
     "tldr": "Lendal bridge was built on the site where the old rope-ferry used to operate. In 1852, en route to Castle Howard, Florence Nightingale crossed at this exact point, using the ferry ⛴️",
     "events": []
   },
@@ -858,7 +858,7 @@ export const locations = [
     "name": "Emmeline Pankhurst",
     "occupation": "1858-1928",
     "description": "Emmeline Pankhurst spoke to an audience of women here in the square in 1903",
-    "image": "images/emmelinepankhurst.png",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Emmeline_Pankhurst%2C_seated_%281913%29.jpg/330px-Emmeline_Pankhurst%2C_seated_%281913%29.jpg",
     "tldr": "Pankhurst was the instrumental figure in achieving women's suffrage in the UK.",
     "events": [
       {
@@ -876,7 +876,7 @@ export const locations = [
     "name": "Sir William Robinson",
     "occupation": "1655-1736",
     "description": "This was the house of Sir William Robinson",
-    "image": "images/sirwilliamrobinson.png",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/RobinsonArms.svg/330px-RobinsonArms.svg.png",
     "tldr": "Robinson was Lord Mayor of York in 1700 and MP for York from 1698 to 1722.",
     "events": [
       {
@@ -890,7 +890,7 @@ export const locations = [
     "name": "John Bright",
     "occupation": "1811-1889",
     "description": "John Bright studied here, it is now called John Bright Library",
-    "image": "images/johnbright.png",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/John_Bright.jpg/330px-John_Bright.jpg",
     "tldr": "John Bright is seen as the greatest reformist liberal politicians of the 19th Century.",
     "events": [
       {
@@ -916,7 +916,7 @@ export const locations = [
     "name": "Lord Philip Noel-Baker",
     "occupation": "1889-1982",
     "description": "Lord Philip Noel-Baker studied here",
-    "image": "images/philipnoelbaker.png",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Philip_Noel-Baker_1942.jpg/330px-Philip_Noel-Baker_1942.jpg",
     "tldr": "Noel-Baker is the only person to have won an Olympic medal and a Nobel Prize.",
     "events": [
       {
@@ -938,7 +938,7 @@ export const locations = [
     "name": "Lord Stuart Rose",
     "occupation": "1949-",
     "description": "Lord Stuart Rose studied here",
-    "image": "images/lordstuartrose.png",
+    "image": "https://www.scampspeakers.co.uk/wp-content/uploads/2019/02/stuart-rose.jpg",
     "tldr": "Lord Stuart Rose, Baron Rose of Monewden, is a businessman and MP",
     "events": [
       {
