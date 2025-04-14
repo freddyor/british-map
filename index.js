@@ -312,6 +312,11 @@ function createPopupContent(location, isFirebase = false) {
     // Check if videoUrl property exists and is not empty
     const videoUrl = data.videoUrl ? data.videoUrl : null;
 
+    // Exclude the "tldr" if the videoUrl is present
+    const tldrContent = !videoUrl
+        ? `<p style="background: #f9f9f9; padding: 10px; margin-top: 10px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); font-size: 12px;">${data.tldr}</p>`
+        : '';
+
     return `
         <div style="padding: 0; margin: 0;">
             <p style="font-size: 6px; font-weight: bold; margin-bottom: 10px;">${data.description}</p>
@@ -322,7 +327,7 @@ function createPopupContent(location, isFirebase = false) {
                     <div style="font-size: 14px; color: #666;">${data.occupation || data.dates}</div>
                 </div>
             </div>
-                  <p style="background: #f9f9f9; padding: 10px; margin-top: 10px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); font-size: 12px;">${data.tldr}</p>
+            ${tldrContent}
             ${eventsData && eventsData.length ? `
                 <div style="margin-top: 10px;">
                     ${eventsData.map(event => `
@@ -332,10 +337,9 @@ function createPopupContent(location, isFirebase = false) {
                     `).join('')}
                 </div>
             ` : ''}
-            <!-- Conditional rendering of the video element -->
             ${videoUrl ? `
-                <div style="margin-top: 10px; width: 100%; margin-bottom: 10px;"> <!-- Add margin-bottom here -->
-                            <iframe width="160" height="280" src="${videoUrl}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="display: block; width: 180; height: 280px; border: none; margin: 0; padding: 0;"></iframe>
+                <div style="margin-top: 10px; width: 100%; margin-bottom: 10px;">
+                    <iframe width="160" height="280" src="${videoUrl}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
             ` : ''}
         </div>
