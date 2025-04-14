@@ -14,7 +14,7 @@ export const locations = [
   { 
     coords: [ -1.0861561, 53.9587634 ], 
     name: "John Snow", 
-    occupation: "https://upload.wikimedia.org/wikipedia/commons/c/cc/John_Snow.jpg", 
+    occupation: "1813-1858", 
     description: "John Snow was born into poverty here on 15 March 1813 and is memorialized in the garden opposite.",
     image: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/John_Snow.jpg/330px-John_Snow.jpg",
     tldr: "Snow is famous for proving cholera was waterborne during an 1854 cholera outbreak. He was also a pioneer in the use of chloroform.",
