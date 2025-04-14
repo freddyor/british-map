@@ -1,4 +1,15 @@
 export const buildings = [
+    {
+    "name": "Baile Hill",
+    "coords": [-1.082972820397241323, 53.95394761457478],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/7/77/Baile_Hill%2C_York.JPG",
+    "description": "",
+      "videoUrl": "https://www.britmap.com/videos/copy_70DADB1F-4F3C-4E0C-9042-06EC7BC59F2E.mp4", 
+    "occupation": "1068",
+    "tldr": " ",
+    "events": [
+    ]
+  },
                         {
     "name": "Archbishop's Palace Remains",
     "coords": [-1.0829645954763294, 53.9632344396616],
@@ -2325,17 +2336,6 @@ export const buildings = [
     "events": [
       { "date": "BEACON", "description": "The hill was known as Beacon Hill in the early 1800s during fears of Napoleonic invasion 🏕️" },
       { "date": "WWII", "description": "Several bombs fell on Severus Hill during the aerial bombing of April 1942" }
-    ]
-  },
-  {
-    "name": "Baile Hill",
-    "coords": [-1.082972820397241323, 53.95394761457478],
-    "image": "https://upload.wikimedia.org/wikipedia/commons/7/77/Baile_Hill%2C_York.JPG",
-    "description": "",
-    "occupation": "1068",
-    "tldr": "William the Conqueror built Baile Hill on the other side of the Ouse to Clifford's Tower after seizing York in 1068.",
-    "events": [
-      { "date": "IMPORTANCE", "description": "The city's continuing importance was thus confirmed - it was the only place in the country with two castles outside London 🏰" }
     ]
   },
   {
