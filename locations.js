@@ -42,7 +42,7 @@ export const locations = [
     name: "William Milner", 
     occupation: "1900-1942", 
     description: "William Milner heroically lost his life here during the Blitz.",
-    image: "http://yorkstories.co.uk/war/ww2/images/memorials_ww2/william-milner-plaque-071010-360.jpg",
+    image: "https://www.militaryhistories.co.uk/assets/images/york/milner_w.jpg",
     tldr: "During the Baedeker Blitz, William Milner, Station Foreman, ran into this burning building to obtain a medical box to treat the wounded. He didn't make it back out.",
      events: [
 { date: "2001", description: "When his body was discovered, he was still clutching the first-aid box." },
@@ -170,7 +170,7 @@ export const locations = [
     occupation: "1190", 
     description: "Josce of York once lived here", 
     tldr: "Josce of York was the wealthy leader of the Jewish community in York.", 
-    image: "https://www.britmap.com/images/josceofyork.png", 
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Leningrad_Codex_Folio_474a.jpg/330px-Leningrad_Codex_Folio_474a.jpg", 
     events: [
         { date: "JEWISH", description: "Josce owned the land of which the Chief Synagogue in London was built." },
         { date: "1190", description: "When an angry mob trapped York's Jewish community in Clifford's Tower, the decision was made to mutually commit suicide rather than face the mob. Josce was the first to act, slaying his wife and children." },
@@ -639,7 +639,7 @@ export const locations = [
     "name": "Annie Coultate",
     "occupation": "1856-1931",
     "description": "Annie Coultate lived in this location.",
-    "image": "Annie Coultate",
+    "image": "https://ffhyork.weebly.com/uploads/8/2/0/5/8205739/published/annie-coultate-portrait-in-1911.jpg?1690543903",
     "tldr": "Annie Coultate was one of the best-known suffragettes in York.",
     "events": [
       {
@@ -795,7 +795,7 @@ export const locations = [
     name: "Mary Ann Craven",
     occupation: "1826-1900",
     description: "This is where Mary Ann Craven built her business and raised her three kids.",
-    image: "images/maryanncraven.png",
+    image: "https://yorkcivictrust.co.uk/wp-content/uploads/2018/06/Mary-Craven-4-P1110456-947x1200.jpg",
     tldr: "Mary Ann Craven was known for building one of the largest boiled sweets businesses of her time whilst dealing with personal setbacks remarkably.",
     events: [
       { date: "1860", description: "Her father and husband both died within two years. She faced raising three young children whilst running two businesses." },
@@ -960,7 +960,7 @@ export const locations = [
     "name": "Mary Wandesford",
     "occupation": "1655-1726",
     "description": "Mary Wandesford devoted this building in her will",
-    "image": "images/marywandesford.png",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2-aZteAegC2x9fpbBbl38Ud5nGc-bi3NJdw&s",
     "tldr": "Mary Wandesford was a devious religious unmarried woman",
     "events": [
       {
@@ -978,7 +978,7 @@ export const locations = [
   name: "The Beatles",
   occupation: "1960-1970",
   description: "",
-  image: "images/thebeatles.png", 
+  image: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/The_Beatles_members_at_New_York_City_in_1964.jpg/250px-The_Beatles_members_at_New_York_City_in_1964.jpg", 
   tldr: "This location was once home to The York Rialto. Before international stardom, the most iconic band of all time performed here 4 times in 1963 🎙️",
   events: []
 },
@@ -987,7 +987,7 @@ export const locations = [
   name: "The Rolling Stones",
   occupation: "1960s",
   description: "",
-  image: "images/therollingstones.png", 
+  image: "https://upload.wikimedia.org/wikipedia/commons/f/fa/Aankomst_van_de_Rolling_Stones_op_Schiphol%2C_Bestanddeelnr_916-7420.jpg", 
   tldr: "On this location, in the 1960s, the Rolling Stones signed their names in lipstick on the top floor of the Eagle & Child pub 🎙️",
   events: []
 },
