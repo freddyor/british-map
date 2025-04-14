@@ -2378,8 +2378,9 @@ export const buildings = [
     "coords": [-1.0839206184987948, 53.9620920783174],
     "image": "http://www.historyofyork.org.uk/inc/img.php/tpl/uploads/crossed-keys-york-2.jpg/240/1/fill",
     "description": "",
-    "videoUrl": "http://www.historyofyork.org.uk/inc/img.php/tpl/uploads/crossed-keys-york-2.jpg/240/1/fill", 
+    "videoUrl": "https://upload.wikimedia.org/wikipedia/en/thumb/e/e2/IMG_Academy_Logo.svg/640px-IMG_Academy_Logo.svg.png", 
     "occupation": " ",
+ "tldr": " ",
     "events": [ ]
   },
   {
