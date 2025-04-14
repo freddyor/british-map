@@ -322,6 +322,7 @@ function createPopupContent(location, isFirebase = false) {
                     <div style="font-size: 14px; color: #666;">${data.occupation || data.dates}</div>
                 </div>
             </div>
+                  <p style="background: #f9f9f9; padding: 10px; margin-top: 10px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); font-size: 12px;">${data.tldr}</p>
             ${eventsData && eventsData.length ? `
                 <div style="margin-top: 10px;">
                     ${eventsData.map(event => `
