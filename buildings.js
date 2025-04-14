@@ -1,4 +1,14 @@
 export const buildings = [
+                        {
+    "name": "Archbishop's Palace Remains",
+    "coords": [-1.0829645954763294, 53.9632344396616],
+    "image": "https://www.britmap.com/videos/IMG_4876.jpeg",
+    "description": "",
+    "videoUrl": "https://www.britmap.com/videos/copy_5B52503E-1CA1-4E8C-AEA0-2DCA7A3CCEDD.mp4", 
+    "occupation": " ",
+    "tldr": " ",
+    "events": [ ]
+  },
             {
     "name": "Great Flood Markers",
     "coords": [-1.0869728885846095, 53.96042019659332],
