@@ -4,7 +4,7 @@ export const buildings = [
     "coords": [-1.0839206184987948, 53.9620920783174],
     "image": "http://www.historyofyork.org.uk/inc/img.php/tpl/uploads/crossed-keys-york-2.jpg/240/1/fill",
     "description": "",
-    "videoUrl": "https://www.britmap.com/videos/copy_80CA9C38-D963-4632-AB3A-DFA00E94E35F.mp4", 
+    "videoUrl": "https://live.staticflickr.com/7084/13927402284_f1a3583bb0_b.jpg", 
     "occupation": " ",
     "tldr": " ",
     "events": [ ]
