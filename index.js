@@ -436,7 +436,6 @@ locations.forEach(location => {
       });
     });
   });
-});
 
 function addBuildingMarkers() {
     buildings.forEach(building => {
