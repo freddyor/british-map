@@ -41,12 +41,20 @@ bottomSheet.style.position = 'fixed';
 bottomSheet.style.bottom = '-100%'; // Initially hidden
 bottomSheet.style.left = '0';
 bottomSheet.style.width = '100%';
-bottomSheet.style.height = '50%'; // Adjust height as needed
+bottomSheet.style.height = '70%'; // Adjust height as needed
 bottomSheet.style.backgroundColor = '#fff';
 bottomSheet.style.borderTop = '2px solid #ccc';
 bottomSheet.style.boxShadow = '0 -6px 15px rgba(0, 0, 0, 0.3)';
 bottomSheet.style.zIndex = '10000';
 bottomSheet.style.transition = 'bottom 0.3s ease';
+bottomSheet.style.borderRadius = '12px'; // Matches the popup's border-radius
+bottomSheet.style.boxShadow = '0 6px 15px rgba(0, 0, 0, 0.3)'; // Matches the popup's shadow
+bottomSheet.style.backgroundColor = '#E9E8E0'; // Matches popup background color
+bottomSheet.style.border = '2px solid #f0f0f0'; // Matches popup border
+bottomSheet.style.fontFamily = "'Poppins', sans-serif"; // Matches popup font-family
+bottomSheet.style.fontSize = '14px'; // Matches popup font size
+bottomSheet.style.lineHeight = '1.05'; // Matches popup line height
+bottomSheet.style.padding = '10px'; // Matches popup padding
 bottomSheet.style.overflowY = 'auto'; // Make it scrollable
 document.body.appendChild(bottomSheet);
 
