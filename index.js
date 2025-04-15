@@ -58,6 +58,71 @@ bottomSheet.style.padding = '10px'; // Matches popup padding
 bottomSheet.style.overflowY = 'auto'; // Make it scrollable
 document.body.appendChild(bottomSheet);
 
+// Add draggable functionality to the bottom sheet
+let startY;
+let startHeight;
+let isDragging = false;
+
+// Add a draggable handle to the bottom sheet
+const dragHandle = document.createElement('div');
+dragHandle.style.width = '100%';
+dragHandle.style.height = '20px';
+dragHandle.style.backgroundColor = '#ccc';
+dragHandle.style.cursor = 'grab';
+dragHandle.style.borderTopLeftRadius = '12px';
+dragHandle.style.borderTopRightRadius = '12px';
+bottomSheet.appendChild(dragHandle);
+
+// Add drag events
+dragHandle.addEventListener('mousedown', (e) => {
+    isDragging = true;
+    startY = e.clientY;
+    startHeight = bottomSheet.offsetHeight;
+    dragHandle.style.cursor = 'grabbing';
+});
+
+document.addEventListener('mousemove', (e) => {
+    if (!isDragging) return;
+    const deltaY = startY - e.clientY;
+    const newHeight = startHeight + deltaY;
+
+    // Limit the height between a minimum and maximum value
+    if (newHeight >= 100 && newHeight <= window.innerHeight) {
+        bottomSheet.style.height = `${newHeight}px`;
+    }
+});
+
+document.addEventListener('mouseup', () => {
+    if (isDragging) {
+        isDragging = false;
+        dragHandle.style.cursor = 'grab';
+    }
+});
+
+// Add touch support for mobile devices
+dragHandle.addEventListener('touchstart', (e) => {
+    isDragging = true;
+    startY = e.touches[0].clientY;
+    startHeight = bottomSheet.offsetHeight;
+});
+
+document.addEventListener('touchmove', (e) => {
+    if (!isDragging) return;
+    const deltaY = startY - e.touches[0].clientY;
+    const newHeight = startHeight + deltaY;
+
+    // Limit the height between a minimum and maximum value
+    if (newHeight >= 100 && newHeight <= window.innerHeight) {
+        bottomSheet.style.height = `${newHeight}px`;
+    }
+});
+
+document.addEventListener('touchend', () => {
+    if (isDragging) {
+        isDragging = false;
+    }
+});
+
 // Function to generate a URL with given coordinates and zoom
 function generateMapLink(latitude, longitude, zoomLevel) {
     const baseUrl = window.location.origin + window.location.pathname;
