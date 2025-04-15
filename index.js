@@ -34,6 +34,22 @@ var map = new mapboxgl.Map({
     bearing: -17.6
 });
 
+// Create a bottom sheet container
+const bottomSheet = document.createElement('div');
+bottomSheet.id = 'bottom-sheet';
+bottomSheet.style.position = 'fixed';
+bottomSheet.style.bottom = '-100%'; // Initially hidden
+bottomSheet.style.left = '0';
+bottomSheet.style.width = '100%';
+bottomSheet.style.height = '50%'; // Adjust height as needed
+bottomSheet.style.backgroundColor = '#fff';
+bottomSheet.style.borderTop = '2px solid #ccc';
+bottomSheet.style.boxShadow = '0 -6px 15px rgba(0, 0, 0, 0.3)';
+bottomSheet.style.zIndex = '10000';
+bottomSheet.style.transition = 'bottom 0.3s ease';
+bottomSheet.style.overflowY = 'auto'; // Make it scrollable
+document.body.appendChild(bottomSheet);
+
 // Function to generate a URL with given coordinates and zoom
 function generateMapLink(latitude, longitude, zoomLevel) {
     const baseUrl = window.location.origin + window.location.pathname;
@@ -222,6 +238,24 @@ stylePopup.innerHTML = `
     font-size: 12px; /* Added font-size */
   }
 
+// Add styles for the bottom sheet
+stylePopup.innerHTML += `
+  #bottom-sheet {
+    font-family: 'Poppins', sans-serif !important;
+    padding: 20px;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  #bottom-sheet img {
+    max-width: 100%;
+    border-radius: 8px;
+    margin-bottom: 10px;
+  }
+
+  #bottom-sheet p {
+    margin-bottom: 10px;
+  }
 `;
 
 // Append the style to the document
@@ -305,6 +339,19 @@ function createCustomMarker(imageUrl, color = '#9b4dca', isLocation = false) {
   };
 }
 
+// Toggle functionality for the bottom sheet
+let isBottomSheetOpen = false;
+
+function toggleBottomSheet(contentHTML) {
+    if (isBottomSheetOpen) {
+        bottomSheet.style.bottom = '-100%'; // Hide
+    } else {
+        bottomSheet.innerHTML = contentHTML; // Populate with content
+        bottomSheet.style.bottom = '0'; // Show
+    }
+    isBottomSheetOpen = !isBottomSheetOpen;
+}
+
 function createPopupContent(location, isFirebase = false) {
     const data = isFirebase ? location : location;
     const eventsData = isFirebase ? data.events : data.events;
@@ -364,7 +411,9 @@ locations.forEach(location => {
 
   marker.getElement().addEventListener('click', () => {
     map.getCanvas().style.cursor = 'pointer';
-    popup.addTo(map);
+    const contentHTML = createPopupContent(location); // Use the existing function to create the content
+    toggleBottomSheet(contentHTML);
+});
 
     // Add the centered-popup class when the popup is opened
     popup.on('open', () => {
@@ -410,7 +459,9 @@ function addBuildingMarkers() {
 
   marker.getElement().addEventListener('click', () => {
     map.getCanvas().style.cursor = 'pointer';
-    popup.addTo(map);
+    const contentHTML = createPopupContent(location); // Use the existing function to create the content
+    toggleBottomSheet(contentHTML);
+});
 
     // Add the centered-popup class when the popup is opened
     popup.on('open', () => {
