@@ -239,7 +239,6 @@ stylePopup.innerHTML = `
   }
 
 // Add styles for the bottom sheet
-stylePopup.innerHTML += `
   #bottom-sheet {
     font-family: 'Poppins', sans-serif !important;
     padding: 20px;
