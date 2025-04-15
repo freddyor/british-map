@@ -458,6 +458,8 @@ marker.getElement().addEventListener('click', () => {
     const contentHTML = createPopupContent(building);
     toggleBottomSheet(contentHTML);
 });
+    });
+} 
 
   
 // New code for the "Image Attributions" button
