@@ -458,7 +458,7 @@ function createPopupContent(location, isFirebase = false) {
             ` : ''}
             ${videoUrl ? `
                 <div style="margin-top: 10px; width: 100%; margin-bottom: 10px;">
-                        <iframe width="360" height="580" src="${videoUrl}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="display: block; width: 180; height: 290px; border: none; margin: 0; padding: 0;"></iframe>
+                        <iframe width="360" height="580" src="${videoUrl}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="display: block; width: 180; height: 580px; border: none; margin: 0; padding: 0;"></iframe>
                 </div>
             ` : ''}
         </div>
