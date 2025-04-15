@@ -58,29 +58,6 @@ bottomSheet.style.padding = '10px'; // Matches popup padding
 bottomSheet.style.overflowY = 'auto'; // Make it scrollable
 document.body.appendChild(bottomSheet);
 
-// Add draggable functionality to the bottom sheet
-let startY;
-let startHeight;
-let isDragging = false;
-
-// Add a draggable handle to the bottom sheet
-const dragHandle = document.createElement('div');
-dragHandle.style.width = '100%';
-dragHandle.style.height = '20px';
-dragHandle.style.backgroundColor = '#ccc';
-dragHandle.style.cursor = 'grab';
-dragHandle.style.borderTopLeftRadius = '12px';
-dragHandle.style.borderTopRightRadius = '12px';
-bottomSheet.appendChild(dragHandle);
-
-// Add drag events
-dragHandle.addEventListener('mousedown', (e) => {
-    isDragging = true;
-    startY = e.clientY;
-    startHeight = bottomSheet.offsetHeight;
-    dragHandle.style.cursor = 'grabbing';
-});
-
 
 // Function to generate a URL with given coordinates and zoom
 function generateMapLink(latitude, longitude, zoomLevel) {
