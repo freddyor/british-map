@@ -439,53 +439,51 @@ locations.forEach(location => {
 
 function addBuildingMarkers() {
     buildings.forEach(building => {
-  const { element: markerElement } = createCustomMarker(building.image, '#C72481', false);
-  markerElement.className += ' building-marker';
-  const marker = new mapboxgl.Marker({
-    element: markerElement
-  })
-    .setLngLat(building.coords)
-    .addTo(map);
+        const { element: markerElement } = createCustomMarker(building.image, '#C72481', false);
+        markerElement.className += ' building-marker';
+        const marker = new mapboxgl.Marker({
+            element: markerElement
+        })
+        .setLngLat(building.coords)
+        .addTo(map);
 
-  const popup = new mapboxgl.Popup({
-    closeButton: true,
-    closeOnClick: true,
-    className: 'custom-popup'
-  }).setHTML(createPopupContent(building));
+        const popup = new mapboxgl.Popup({
+            closeButton: true,
+            closeOnClick: true,
+            className: 'custom-popup'
+        }).setHTML(createPopupContent(building));
 
-  marker.setPopup(popup);
+        marker.setPopup(popup);
 
-  marker.getElement().addEventListener('click', () => {
-    map.getCanvas().style.cursor = 'pointer';
-    const contentHTML = createPopupContent(location); // Use the existing function to create the content
-    toggleBottomSheet(contentHTML);
-});
+        marker.getElement().addEventListener('click', () => {
+            map.getCanvas().style.cursor = 'pointer';
+            const contentHTML = createPopupContent(building); // Fixed the reference to `building`
+            toggleBottomSheet(contentHTML);
+        });
 
-    // Add the centered-popup class when the popup is opened
-    popup.on('open', () => {
-      const popupElement = document.querySelector('.mapboxgl-popup');
-      if (popupElement) {
-        popupElement.classList.add('centered-popup');
-      }
-      
-      const expandText = popup.getElement().querySelector('#expand-text');
-      const additionalContent = popup.getElement().querySelector('#additional-content');
-      const collapseText = popup.getElement().querySelector('#collapse-text');
+        // Add the centered-popup class when the popup is opened
+        popup.on('open', () => {
+            const popupElement = document.querySelector('.mapboxgl-popup');
+            if (popupElement) {
+                popupElement.classList.add('centered-popup');
+            }
 
-      expandText.addEventListener('click', () => {
-        additionalContent.style.display = 'block';
-        expandText.style.display = 'none';
-      });
+            const expandText = popup.getElement().querySelector('#expand-text');
+            const additionalContent = popup.getElement().querySelector('#additional-content');
+            const collapseText = popup.getElement().querySelector('#collapse-text');
 
-      collapseText.addEventListener('click', () => {
-        additionalContent.style.display = 'none';
-        expandText.style.display = 'block';
-      });
+            expandText.addEventListener('click', () => {
+                additionalContent.style.display = 'block';
+                expandText.style.display = 'none';
+            });
+
+            collapseText.addEventListener('click', () => {
+                additionalContent.style.display = 'none';
+                expandText.style.display = 'block';
+            });
+        });
     });
-  });
-});
 }
-
 // New code for the "Image Attributions" button
 const imageAttributionsButton = document.createElement('button');
 imageAttributionsButton.id = 'image-attributions-button';
