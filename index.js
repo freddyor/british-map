@@ -417,34 +417,18 @@ locations.forEach(location => {
 
   marker.setPopup(popup);
 
-  marker.getElement().addEventListener('click', () => {
+marker.getElement().addEventListener('click', () => {
     map.getCanvas().style.cursor = 'pointer';
-    const contentHTML = createPopupContent(location); // Use the existing function to create the content
+
+    // Hide all dynamically created custom popups
+    hideDynamicCustomPopups();
+
+    // Toggle the bottom sheet content
+    const contentHTML = createPopupContent(location);
     toggleBottomSheet(contentHTML);
 });
 
-    // Add the centered-popup class when the popup is opened
-    popup.on('open', () => {
-      const popupElement = document.querySelector('.mapboxgl-popup');
-      if (popupElement) {
-        popupElement.classList.add('centered-popup');
-      }
-      
-      const expandText = popup.getElement().querySelector('#expand-text');
-      const additionalContent = popup.getElement().querySelector('#additional-content');
-      const collapseText = popup.getElement().querySelector('#collapse-text');
-
-      expandText.addEventListener('click', () => {
-        additionalContent.style.display = 'block';
-        expandText.style.display = 'none';
-      });
-
-      collapseText.addEventListener('click', () => {
-        additionalContent.style.display = 'none';
-        expandText.style.display = 'block';
-      });
-    });
-  });
+ 
 
 function addBuildingMarkers() {
     buildings.forEach(building => {
@@ -464,35 +448,18 @@ function addBuildingMarkers() {
 
         marker.setPopup(popup);
 
-        marker.getElement().addEventListener('click', () => {
-            map.getCanvas().style.cursor = 'pointer';
-            const contentHTML = createPopupContent(building); // Fixed the reference to `building`
-            toggleBottomSheet(contentHTML);
-        });
+marker.getElement().addEventListener('click', () => {
+    map.getCanvas().style.cursor = 'pointer';
 
-        // Add the centered-popup class when the popup is opened
-        popup.on('open', () => {
-            const popupElement = document.querySelector('.mapboxgl-popup');
-            if (popupElement) {
-                popupElement.classList.add('centered-popup');
-            }
+    // Hide all dynamically created custom popups
+    hideDynamicCustomPopups();
 
-            const expandText = popup.getElement().querySelector('#expand-text');
-            const additionalContent = popup.getElement().querySelector('#additional-content');
-            const collapseText = popup.getElement().querySelector('#collapse-text');
+    // Toggle the bottom sheet content
+    const contentHTML = createPopupContent(building);
+    toggleBottomSheet(contentHTML);
+});
 
-            expandText.addEventListener('click', () => {
-                additionalContent.style.display = 'block';
-                expandText.style.display = 'none';
-            });
-
-            collapseText.addEventListener('click', () => {
-                additionalContent.style.display = 'none';
-                expandText.style.display = 'block';
-            });
-        });
-    });
-}
+  
 // New code for the "Image Attributions" button
 const imageAttributionsButton = document.createElement('button');
 imageAttributionsButton.id = 'image-attributions-button';
