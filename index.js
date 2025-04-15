@@ -427,7 +427,8 @@ marker.getElement().addEventListener('click', () => {
     const contentHTML = createPopupContent(location);
     toggleBottomSheet(contentHTML);
 });
-
+    });
+} 
  
 
 function addBuildingMarkers() {
