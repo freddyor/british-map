@@ -41,7 +41,7 @@ bottomSheet.style.position = 'fixed';
 bottomSheet.style.bottom = '-100%'; // Initially hidden
 bottomSheet.style.left = '0';
 bottomSheet.style.width = '100%';
-bottomSheet.style.height = '70%'; // Adjust height as needed
+bottomSheet.style.height = '85%'; // Adjust height as needed
 bottomSheet.style.backgroundColor = '#fff';
 bottomSheet.style.borderTop = '2px solid #ccc';
 bottomSheet.style.boxShadow = '0 -6px 15px rgba(0, 0, 0, 0.3)';
@@ -81,47 +81,6 @@ dragHandle.addEventListener('mousedown', (e) => {
     dragHandle.style.cursor = 'grabbing';
 });
 
-document.addEventListener('mousemove', (e) => {
-    if (!isDragging) return;
-    const deltaY = startY - e.clientY;
-    const newHeight = startHeight + deltaY;
-
-    // Limit the height between a minimum and maximum value
-    if (newHeight >= 100 && newHeight <= window.innerHeight) {
-        bottomSheet.style.height = `${newHeight}px`;
-    }
-});
-
-document.addEventListener('mouseup', () => {
-    if (isDragging) {
-        isDragging = false;
-        dragHandle.style.cursor = 'grab';
-    }
-});
-
-// Add touch support for mobile devices
-dragHandle.addEventListener('touchstart', (e) => {
-    isDragging = true;
-    startY = e.touches[0].clientY;
-    startHeight = bottomSheet.offsetHeight;
-});
-
-document.addEventListener('touchmove', (e) => {
-    if (!isDragging) return;
-    const deltaY = startY - e.touches[0].clientY;
-    const newHeight = startHeight + deltaY;
-
-    // Limit the height between a minimum and maximum value
-    if (newHeight >= 100 && newHeight <= window.innerHeight) {
-        bottomSheet.style.height = `${newHeight}px`;
-    }
-});
-
-document.addEventListener('touchend', () => {
-    if (isDragging) {
-        isDragging = false;
-    }
-});
 
 // Function to generate a URL with given coordinates and zoom
 function generateMapLink(latitude, longitude, zoomLevel) {
