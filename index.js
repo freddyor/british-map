@@ -380,17 +380,17 @@ function createPopupContent(location, isFirebase = false) {
 
     // Exclude the "tldr" if the videoUrl is present
     const tldrContent = !videoUrl
-        ? `<p style="background: #f9f9f9; padding: 10px; margin-top: 10px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); font-size: 12px;">${data.tldr}</p>`
+        ? `<p style="background: #f9f9f9; padding: 10px; margin-top: 10px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); font-size: 15px;">${data.tldr}</p>`
         : '';
 
     return `
         <div style="padding: 0; margin: 0;">
-            <p style="font-size: 14px; font-weight: bold; margin-bottom: 10px;">${data.description}</p>
+            <p style="font-size: 15px; font-weight: bold; margin-bottom: 10px;">${data.description}</p>
             <div style="display: flex; align-items: center; gap: 10px;">
                 <img src="${data.image || data.imageUrl}" alt="${data.name}" style="width: 40px; height: 40px; object-fit: cover; border-radius: 50%;" />
                 <div>
-                    <div style="font-size: 16px; font-weight: bold; margin-top: 0;">${data.name}</div>
-                    <div style="font-size: 14px; color: #666;">${data.occupation || data.dates}</div>
+                    <div style="font-size: 15px; font-weight: bold; margin-top: 0;">${data.name}</div>
+                    <div style="font-size: 15px; color: #666;">${data.occupation || data.dates}</div>
                 </div>
             </div>
             ${tldrContent}
@@ -398,7 +398,7 @@ function createPopupContent(location, isFirebase = false) {
                 <div style="margin-top: 10px;">
                     ${eventsData.map(event => `
                         <div style="background: #f9f9f9; border: 1px solid #ddd; border-radius: 8px; padding: 10px; margin-bottom: 10px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
-                            <strong style="color: #9b4dca; font-size: 14px;">${event.date || event.label}</strong>: <span style="font-size: 16px;">${event.description}</span>
+                            <strong style="color: #9b4dca; font-size: 15px;">${event.date || event.label}</strong>: <span style="font-size: 15px;">${event.description}</span>
                         </div>
                     `).join('')}
                 </div>
@@ -527,16 +527,16 @@ function loadMarkersFromFirebase() {
           <div style="display: flex; align-items: center; gap: 10px;">
             <img src="${data.imageUrl}" alt="${data.name}" style="width: 40px; height: 40px; object-fit: cover; border-radius: 50%;" />
             <div>
-              <div style="font-size: 16px; font-weight: bold;">${data.name}</div>
-              <div style="font-size: 14px; color: #666;">${data.dates}</div>
+              <div style="font-size: 15px; font-weight: bold;">${data.name}</div>
+              <div style="font-size: 15px; color: #666;">${data.dates}</div>
             </div>
           </div>
           <div style="text-align: center; margin-top: 5px; cursor: pointer;" id="expand-text">â–¼ Discover â–¼</div>
           <div id="additional-content" style="display: none;">
-            <p style="background: #f9f9f9; padding: 10px; margin-top: 10px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); font-size: 12px; font-weight: bold;">${data.tldr}</p>
+            <p style="background: #f9f9f9; padding: 10px; margin-top: 10px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); font-size: 15px; font-weight: bold;">${data.tldr}</p>
             ${data.events.map(event => `
-              <div style="background: #f9f9f9; padding: 10px; margin-top: 10px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); font-size: 12px;">
-                <strong style="color: #9b4dca; font-size: 12px; display: block; margin-bottom: 2px;">${event.label}</strong>
+              <div style="background: #f9f9f9; padding: 10px; margin-top: 10px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); font-size: 15px;">
+                <strong style="color: #9b4dca; font-size: 15px; display: block; margin-bottom: 2px;">${event.label}</strong>
                 ${event.description}
               </div>
             `).join('')}
