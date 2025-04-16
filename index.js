@@ -353,7 +353,7 @@ function toggleBottomSheet(contentHTML) {
                 top: 10px;
                 right: 10px;
                 padding: 6px 12px;
-                background-color: #e74c3c;
+                background: none;
                 color: #fff;
                 border: none;
                 border-radius: 5px;
@@ -400,14 +400,14 @@ function createPopupContent(location, isFirebase = false) {
                 <div style="margin-top: 10px;">
                     ${eventsData.map(event => `
                         <div style="background: #f9f9f9; border: 1px solid #ddd; border-radius: 8px; padding: 10px; margin-bottom: 10px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
-                            <strong style="color: #9b4dca; font-size: 14px;">${event.date || event.label}</strong>: <span style="font-size: 12px;">${event.description}</span>
+                            <strong style="color: #9b4dca; font-size: 14px;">${event.date || event.label}</strong>: <span style="font-size: 16px;">${event.description}</span>
                         </div>
                     `).join('')}
                 </div>
             ` : ''}
             ${videoUrl ? `
                 <div style="margin-top: 10px; width: 100%; margin-bottom: 10px;">
-                        <iframe width="360" height="580" src="${videoUrl}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="display: block; width: 180; height: 290px; border: none; margin: 0; padding: 0;"></iframe>
+                        <iframe width="220" height="580" src="${videoUrl}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="display: block; width: 220px; height: 580px; border: none; margin: 0; padding: 0;"></iframe>
                 </div>
             ` : ''}
         </div>
