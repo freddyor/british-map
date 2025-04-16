@@ -501,7 +501,7 @@ function toggleImageAttributions() {
 
     imageAttributions.forEach(image => {
       const imageElement = document.createElement('p');
-      imageElement.innerHTML = `<strong>${image.name}</strong> by ${image.author} - ${image.license}`;
+        imageElement.innerHTML = `<strong>${image.name}</strong> by ${image.author} - ${image.license}`;
       attributionsContainer.appendChild(imageElement);
     });
 
