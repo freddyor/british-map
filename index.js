@@ -371,18 +371,6 @@ function createCustomMarker(imageUrl, color = '#9b4dca', isLocation = false) {
   };
 }
 
-// Toggle functionality for the bottom sheet
-let isBottomSheetOpen = false;
-
-function toggleBottomSheet(contentHTML) {
-    if (isBottomSheetOpen) {
-        bottomSheet.style.bottom = '-100%'; // Hide
-    } else {
-        bottomSheet.innerHTML = contentHTML; // Populate with content
-        bottomSheet.style.bottom = '0'; // Show
-    }
-    isBottomSheetOpen = !isBottomSheetOpen;
-}
 
 function createPopupContent(location, isFirebase = false) {
     const data = isFirebase ? location : location;
