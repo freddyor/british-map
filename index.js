@@ -63,17 +63,23 @@ let startY;
 let startHeight;
 let isDragging = false;
 
-// Add a draggable handle to the bottom sheet
+// Create a draggable handle and add it to the top of the bottom sheet
 const dragHandle = document.createElement('div');
 dragHandle.style.width = '100%';
-dragHandle.style.height = '20px';
-dragHandle.style.backgroundColor = '#ccc';
-dragHandle.style.cursor = 'grab';
+dragHandle.style.height = '40px'; // Make the handle thick
+dragHandle.style.backgroundColor = '#ccc'; // Gray background for visibility
+dragHandle.style.cursor = 'grab'; // Cursor changes to indicate it's draggable
 dragHandle.style.borderTopLeftRadius = '12px';
 dragHandle.style.borderTopRightRadius = '12px';
+dragHandle.style.display = 'flex';
+dragHandle.style.alignItems = 'center';
+dragHandle.style.justifyContent = 'center';
+dragHandle.style.fontWeight = 'bold';
+dragHandle.style.color = '#333';
+dragHandle.innerText = 'Drag Me'; // Optional: Add text for better user experience
 bottomSheet.appendChild(dragHandle);
 
-// Add drag events
+// Add drag events for the handle to make the bottom sheet draggable
 dragHandle.addEventListener('mousedown', (e) => {
     isDragging = true;
     startY = e.clientY;
