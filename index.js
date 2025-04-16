@@ -58,16 +58,6 @@ bottomSheet.style.padding = '5px'; // Matches popup padding
 bottomSheet.style.overflowY = 'auto'; // Make it scrollable
 document.body.appendChild(bottomSheet);
 
-function toggleBottomSheet(contentHTML) {
-    if (isBottomSheetOpen) {
-        bottomSheet.style.bottom = '-100%'; // Hide
-    } else {
-        bottomSheet.innerHTML = contentHTML; // Populate with content
-        bottomSheet.style.bottom = '0'; // Show
-    }
-    isBottomSheetOpen = !isBottomSheetOpen;
-}
-
 // Create a close button
 const closeButton = document.createElement('button');
 closeButton.innerText = 'X'; // Text for the button
