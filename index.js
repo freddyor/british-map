@@ -68,6 +68,15 @@ document.addEventListener('click', (event) => {
     }
 });
 
+// Ensure marker clicks don't dismiss the bottom sheet
+const markerClickHandler = (markerElement, contentHTML) => {
+    markerElement.addEventListener('click', (event) => {
+        event.stopPropagation(); // Stop the event from propagating to the document
+        map.getCanvas().style.cursor = 'pointer';
+        toggleBottomSheet(contentHTML);
+    });
+};
+
 // Add draggable functionality to the bottom sheet
 let startY;
 let startHeight;
@@ -464,6 +473,7 @@ function createPopupContent(location, isFirebase = false) {
         </div>
     `;
 }
+
 locations.forEach(location => {
     const { element: markerElement } = createCustomMarker(location.image, '#9B4DCA', true);
     markerElement.className += ' location-marker';
@@ -473,30 +483,23 @@ locations.forEach(location => {
     .setLngLat(location.coords)
     .addTo(map);
 
-    marker.getElement().addEventListener('click', () => {
-        map.getCanvas().style.cursor = 'pointer';
-        const contentHTML = createPopupContent(location); // Use the existing function to create the content
-        toggleBottomSheet(contentHTML);
-    });
+    // Use the new markerClickHandler
+    markerClickHandler(marker.getElement(), createPopupContent(location));
 });
 
 function addBuildingMarkers() {
-    buildings.forEach(building => {
-        const { element: markerElement } = createCustomMarker(building.image, '#C72481', false);
-        markerElement.className += ' building-marker';
-        const marker = new mapboxgl.Marker({
-            element: markerElement
-        })
-        .setLngLat(building.coords)
-        .addTo(map);
+buildings.forEach(building => {
+    const { element: markerElement } = createCustomMarker(building.image, '#C72481', false);
+    markerElement.className += ' building-marker';
+    const marker = new mapboxgl.Marker({
+        element: markerElement
+    })
+    .setLngLat(building.coords)
+    .addTo(map);
 
-        marker.getElement().addEventListener('click', () => {
-            map.getCanvas().style.cursor = 'pointer';
-            const contentHTML = createPopupContent(building);
-            toggleBottomSheet(contentHTML);
-        });
-    });
-}
+    // Use the new markerClickHandler
+    markerClickHandler(marker.getElement(), createPopupContent(building));
+});
 // New code for the "Image Attributions" button
 const imageAttributionsButton = document.createElement('button');
 imageAttributionsButton.id = 'image-attributions-button';
