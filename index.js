@@ -40,8 +40,8 @@ bottomSheet.id = 'bottom-sheet';
 bottomSheet.style.position = 'fixed';
 bottomSheet.style.bottom = '-100%'; // Initially hidden
 bottomSheet.style.left = '0';
-bottomSheet.style.width = '100%';
-bottomSheet.style.height = '70%'; // Adjust height as needed
+bottomSheet.style.width = '90%';
+bottomSheet.style.height = '80%'; // Adjust height as needed
 bottomSheet.style.backgroundColor = '#fff';
 bottomSheet.style.borderTop = '2px solid #ccc';
 bottomSheet.style.boxShadow = '0 -6px 15px rgba(0, 0, 0, 0.3)';
@@ -54,7 +54,7 @@ bottomSheet.style.border = '2px solid #f0f0f0'; // Matches popup border
 bottomSheet.style.fontFamily = "'Poppins', sans-serif"; // Matches popup font-family
 bottomSheet.style.fontSize = '14px'; // Matches popup font size
 bottomSheet.style.lineHeight = '1.05'; // Matches popup line height
-bottomSheet.style.padding = '10px'; // Matches popup padding
+bottomSheet.style.padding = '5px'; // Matches popup padding
 bottomSheet.style.overflowY = 'auto'; // Make it scrollable
 document.body.appendChild(bottomSheet);
 
@@ -454,7 +454,7 @@ function createPopupContent(location, isFirebase = false) {
             ` : ''}
             ${videoUrl ? `
                 <div style="margin-top: 10px; width: 100%; margin-bottom: 10px;">
-                        <iframe width="360" height="580" src="${videoUrl}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="display: block; width: 180; height: 290px; border: none; margin: 0; padding: 0;"></iframe>
+                        <iframe width="360" height="580" src="${videoUrl}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="display: block; width: 360; height: 580px; border: none; margin: 0; padding: 0;"></iframe>
                 </div>
             ` : ''}
         </div>
