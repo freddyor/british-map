@@ -466,7 +466,7 @@ ${videoUrl ? `
             style="display: block; margin: 0 auto;">
         </iframe>
     </div>
-    `;
+   ` : ''}
 }
 locations.forEach(location => {
     const { element: markerElement } = createCustomMarker(location.image, '#9B4DCA', true);
