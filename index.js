@@ -60,76 +60,29 @@ bottomSheet.style.padding = '5px'; // Matches popup padding
 bottomSheet.style.overflowY = 'auto'; // Make it scrollable
 document.body.appendChild(bottomSheet);
 
-// Add draggable functionality to the bottom sheet
-let startY;
-let startHeight;
-let isDragging = false;
+// Create a close button
+const closeButton = document.createElement('button');
+closeButton.innerText = 'X'; // Text for the button
+closeButton.style.position = 'absolute'; // Position it within the bottom sheet
+closeButton.style.top = '10px'; // Adjust top position
+closeButton.style.right = '10px'; // Adjust right position
+closeButton.style.backgroundColor = 'transparent'; // Transparent background
+closeButton.style.border = 'none'; // Remove border
+closeButton.style.fontSize = '18px'; // Font size for the "X"
+closeButton.style.cursor = 'pointer'; // Pointer cursor on hover
+closeButton.style.color = '#333'; // Button text color
+closeButton.style.fontWeight = 'bold'; // Bold text
 
-// Create a draggable handle and add it to the top of the bottom sheet
-const dragHandle = document.createElement('div');
-dragHandle.style.width = '100%';
-dragHandle.style.height = '40px'; // Make the handle thick
-dragHandle.style.backgroundColor = '#ccc'; // Gray background for visibility
-dragHandle.style.cursor = 'grab'; // Cursor changes to indicate it's draggable
-dragHandle.style.borderTopLeftRadius = '12px';
-dragHandle.style.borderTopRightRadius = '12px';
-dragHandle.style.display = 'flex';
-dragHandle.style.alignItems = 'center';
-dragHandle.style.justifyContent = 'center';
-dragHandle.style.fontWeight = 'bold';
-dragHandle.style.color = '#333';
-dragHandle.innerText = 'Drag Me'; // Optional: Add text for better user experience
-bottomSheet.appendChild(dragHandle);
+// Append the close button to the bottom sheet
+bottomSheet.appendChild(closeButton);
 
-// Add drag events for the handle to make the bottom sheet draggable
-dragHandle.addEventListener('mousedown', (e) => {
-    isDragging = true;
-    startY = e.clientY;
-    startHeight = bottomSheet.offsetHeight;
-    dragHandle.style.cursor = 'grabbing';
+// Add click event listener to close the bottom sheet
+closeButton.addEventListener('click', () => {
+    bottomSheet.style.bottom = '-100%'; // Hide the bottom sheet
+    isBottomSheetOpen = false; // Update the state
 });
 
-document.addEventListener('mousemove', (e) => {
-    if (!isDragging) return;
-    const deltaY = startY - e.clientY;
-    const newHeight = startHeight + deltaY;
 
-    // Limit the height between a minimum and maximum value
-    if (newHeight >= 100 && newHeight <= window.innerHeight) {
-        bottomSheet.style.height = `${newHeight}px`;
-    }
-});
-
-document.addEventListener('mouseup', () => {
-    if (isDragging) {
-        isDragging = false;
-        dragHandle.style.cursor = 'grab';
-    }
-});
-
-// Add touch support for mobile devices
-dragHandle.addEventListener('touchstart', (e) => {
-    isDragging = true;
-    startY = e.touches[0].clientY;
-    startHeight = bottomSheet.offsetHeight;
-});
-
-document.addEventListener('touchmove', (e) => {
-    if (!isDragging) return;
-    const deltaY = startY - e.touches[0].clientY;
-    const newHeight = startHeight + deltaY;
-
-    // Limit the height between a minimum and maximum value
-    if (newHeight >= 100 && newHeight <= window.innerHeight) {
-        bottomSheet.style.height = `${newHeight}px`;
-    }
-});
-
-document.addEventListener('touchend', () => {
-    if (isDragging) {
-        isDragging = false;
-    }
-});
 
 // Function to generate a URL with given coordinates and zoom
 function generateMapLink(latitude, longitude, zoomLevel) {
