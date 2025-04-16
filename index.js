@@ -348,15 +348,15 @@ function toggleBottomSheet(contentHTML) {
         const closeButtonHTML = `
             <button id="close-bottom-sheet" style="
                 position: absolute;
-                top: 10px;
-                right: 10px;
+                top: 5px;
+                right: 5px;
                 padding: 6px 12px;
                 background: none;
                 color: #fff;
                 border: none;
                 border-radius: 5px;
                 cursor: pointer;
-                font-size: 12px;
+                font-size: 10px;
             ">❌</button>
         `;
 
