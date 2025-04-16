@@ -56,7 +56,7 @@ bottomSheet.style.border = '2px solid #f0f0f0'; // Matches popup border
 bottomSheet.style.fontFamily = "'Poppins', sans-serif"; // Matches popup font-family
 bottomSheet.style.fontSize = '14px'; // Matches popup font size
 bottomSheet.style.lineHeight = '1.05'; // Matches popup line height
-bottomSheet.style.padding = '1px'; // Matches popup padding
+bottomSheet.style.padding = '5px'; // Matches popup padding
 bottomSheet.style.overflowY = 'auto'; // Make it scrollable
 document.body.appendChild(bottomSheet);
 
