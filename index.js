@@ -108,7 +108,7 @@ dragHandle.addEventListener('touchstart', (e) => {
 
 document.addEventListener('touchmove', (e) => {
     if (!isDragging) return;
-    const deltaY = startY - e.clientY;
+    const deltaY = startY - e.touches[0].clientY;
     const newHeight = startHeight + deltaY;
 
     // Limit the height between a minimum and maximum value
@@ -144,42 +144,16 @@ map.on('click', (e) => {
     // You can display this link in a popup or share it with others
 });
 
-// Dropdown
-const openableContainer = document.createElement('div');
-openableContainer.id = 'openable-container';
-openableContainer.style.position = 'fixed';
-openableContainer.style.top = '100px';
-openableContainer.style.left = '50%';
-openableContainer.style.transform = 'translateX(-50%)';
-openableContainer.style.width = '200px';
-openableContainer.style.background = '#f9f9f9';
-openableContainer.style.border = '1px solid #ddd';
-openableContainer.style.borderRadius = '8px';
-openableContainer.style.boxShadow = '0 2px 4px rgba(0,0,0,0.2)';
-openableContainer.style.zIndex = '1000'; // Ensure it's above other elements
-openableContainer.style.padding = '10px';
-openableContainer.style.display = 'none'; // Initially hidden
-document.body.appendChild(openableContainer);
-
-const dropdownButton = document.createElement('button');
-dropdownButton.id = 'dropdown-button';
-dropdownButton.textContent = 'Toggle List';
-dropdownButton.style.background = '#e9e8e0';
-dropdownButton.style.color = 'black';
-dropdownButton.style.border = '2px solid #f0f0f0';
-dropdownButton.style.padding = '5px 10px';
-dropdownButton.style.fontSize = '12px';
-dropdownButton.style.fontWeight = 'bold';
-dropdownButton.style.borderRadius = '8px';
-dropdownButton.style.cursor = 'pointer';
-dropdownButton.style.boxShadow = '0 6px 15px rgba(0, 0, 0, 0.3)';
-dropdownButton.style.whiteSpace = 'nowrap';
-dropdownButton.style.textAlign = 'center';
-dropdownButton.addEventListener('click', () => {
-    openableContainer.style.display = openableContainer.style.display === 'none' ? 'block' : 'none';
+map.on('load', () => {
+    addBuildingMarkers();
+    addLocationsList();
+    loadMarkersFromFirebase();
+    geolocate.trigger();
 });
 
-// Append the button to the button group
+
+
+// Container for both buttons
 const buttonGroup = document.createElement('div');
 buttonGroup.id = 'button-group';
 buttonGroup.style.position = 'fixed';
@@ -216,7 +190,7 @@ function addLocationsList() {
         });
         list.appendChild(listItem);
     });
-
+    
     openableContainer.innerHTML = '';
     openableContainer.style.maxHeight = '150px';
     openableContainer.style.overflowY = 'scroll';
@@ -237,6 +211,7 @@ link.rel = "stylesheet";
 document.head.appendChild(link);
 
 // Style for the popup and markers
+// Style for the popup and markers
 stylePopup.innerHTML = `
   .mapboxgl-popup-content {
     border-radius: 12px !important;
@@ -250,7 +225,7 @@ stylePopup.innerHTML = `
     padding-bottom: 0 !important;
     margin-left: 3px;
     margin-right: 5px;
-    margin-bottom: 10px;
+    margin-bottom: 10px; /* Add this line */
   }
 
   .mapboxgl-popup-content img {
@@ -270,31 +245,6 @@ stylePopup.innerHTML = `
     display: none !important;
   }
 
-  .mapboxgl-control-container .mapboxgl-ctrl-geolocate {
-    top: 100px;
-    left: 20px;
-    border-radius: 12px;
-    padding: 10px;
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
-    background-color: #e9e8e0;
-    border: 2px solid #f0f0f0;
-  }
-
-  .mapboxgl-ctrl-geolocate .mapboxgl-ctrl-icon {
-    width: 20px;
-    height: 20px;
-  }
-
-  .custom-marker {
-    background-color: #fff;
-    border-radius: 50%;
-    width: 20px;
-    height: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-  }
 
   .user-location-marker {
     width: 20px;
@@ -530,14 +480,6 @@ function addBuildingMarkers() {
         .setLngLat(building.coords)
         .addTo(map);
 
-        const popup = new mapboxgl.Popup({
-            closeButton: true,
-            closeOnClick: true,
-            className: 'custom-popup'
-        }).setHTML(createPopupContent(building));
-
-        marker.setPopup(popup);
-
         marker.getElement().addEventListener('click', () => {
             map.getCanvas().style.cursor = 'pointer';
             const contentHTML = createPopupContent(building);
@@ -545,13 +487,6 @@ function addBuildingMarkers() {
         });
     });
 }
-
-map.on('load', () => {
-    addBuildingMarkers();
-    addLocationsList();
-    geolocate.trigger();
-});
-
 // New code for the "Image Attributions" button
 const imageAttributionsButton = document.createElement('button');
 imageAttributionsButton.id = 'image-attributions-button';
