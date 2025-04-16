@@ -42,7 +42,7 @@ bottomSheet.style.bottom = '-100%'; // Initially hidden
 bottomSheet.style.left = '50%'; // Center horizontally
 bottomSheet.style.top = '50%'; // Center vertically
 bottomSheet.style.transform = 'translate(-50%, -50%)'; // Adjust position to align center both ways
-bottomSheet.style.width = '90%'; // Optional: Adjust width
+bottomSheet.style.width = '80%'; // Optional: Adjust width
 bottomSheet.style.height = '80%'; // Optional: Adjust height
 bottomSheet.style.backgroundColor = '#fff';
 bottomSheet.style.borderTop = '2px solid #ccc';
@@ -454,12 +454,18 @@ function createPopupContent(location, isFirebase = false) {
                     `).join('')}
                 </div>
             ` : ''}
-            ${videoUrl ? `
-                <div style="margin-top: 10px; width: 100%; margin-bottom: 10px;">
-                        <iframe width="340" height="580" src="${videoUrl}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="display: block; width: 340; height: 580px; border: none; margin: 0; padding: 0;"></iframe>
-                </div>
-            ` : ''}
-        </div>
+${videoUrl ? `
+    <div style="margin-top: 10px; margin-bottom: 10px; text-align: center;">
+        <iframe 
+            width="340" 
+            height="580" 
+            src="${videoUrl}" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen 
+            style="display: block; margin: 0 auto;">
+        </iframe>
+    </div>
     `;
 }
 locations.forEach(location => {
