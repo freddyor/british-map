@@ -408,6 +408,7 @@ function createPopupContent(location, isFirebase = false) {
 <video 
     width="262" 
     height="464" 
+    autoplay 
     controlsList="nodownload nofullscreen noremoteplayback" 
     controls 
     style="display: block; margin: 0 auto;">
