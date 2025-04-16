@@ -350,7 +350,7 @@ function toggleBottomSheet(contentHTML) {
                 position: absolute;
                 top: 5px;
                 right: 5px;
-                padding: 6px 12px;
+                padding: 3px 3px;
                 background: none;
                 color: #fff;
                 border: none;
