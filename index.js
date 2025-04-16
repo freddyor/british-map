@@ -346,22 +346,23 @@ function toggleBottomSheet(contentHTML) {
     if (isBottomSheetOpen) {
         bottomSheet.style.bottom = '-100%'; // Hide
     } else {
-        // Add a close button to the content
+        // Add a close button to the top-right corner of the content
         const closeButtonHTML = `
             <button id="close-bottom-sheet" style="
-                display: block;
-                margin: 10px auto;
-                padding: 8px 16px;
+                position: absolute;
+                top: 10px;
+                right: 10px;
+                padding: 6px 12px;
                 background-color: #e74c3c;
                 color: #fff;
                 border: none;
-                border-radius: 8px;
+                border-radius: 5px;
                 cursor: pointer;
-                font-size: 14px;
-            ">Close</button>
+                font-size: 12px;
+            ">❌</button>
         `;
 
-        bottomSheet.innerHTML = contentHTML + closeButtonHTML; // Add content + close button
+        bottomSheet.innerHTML = closeButtonHTML + contentHTML; // Add close button + content
         bottomSheet.style.bottom = '0'; // Show
 
         // Attach event listener to the close button
