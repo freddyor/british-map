@@ -34,15 +34,14 @@ var map = new mapboxgl.Map({
 });
 
 // Create a bottom sheet container
+// Create a bottom sheet container
 const bottomSheet = document.createElement('div');
 bottomSheet.id = 'bottom-sheet';
 bottomSheet.style.position = 'fixed';
 bottomSheet.style.bottom = '-100%'; // Initially hidden
-bottomSheet.style.left = '50%'; // Align to the left
-bottomSheet.style.transform = 'translate(-50%)'; 
-bottomSheet.style.right = '50%'; // Align to the right
-bottomSheet.style.width = '80%'; // Optional: Adjust width
-bottomSheet.style.height = '80%'; // Optional: Adjust height
+bottomSheet.style.left = '0';
+bottomSheet.style.width = '95%';
+bottomSheet.style.height = '85%'; // Adjust height as needed
 bottomSheet.style.backgroundColor = '#fff';
 bottomSheet.style.borderTop = '2px solid #ccc';
 bottomSheet.style.boxShadow = '0 -6px 15px rgba(0, 0, 0, 0.3)';
