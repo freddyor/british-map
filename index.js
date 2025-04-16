@@ -474,7 +474,9 @@ locations.forEach(location => {
     map.getCanvas().style.cursor = 'pointer';
     const contentHTML = createPopupContent(location); // Use the existing function to create the content
     toggleBottomSheet(contentHTML);
-});
+        });
+    });
+}
 
 
 function addBuildingMarkers() {
@@ -499,7 +501,9 @@ function addBuildingMarkers() {
             map.getCanvas().style.cursor = 'pointer';
             const contentHTML = createPopupContent(building); // Fixed the reference to `building`
             toggleBottomSheet(contentHTML);
-        });
+               });
+    });
+}
 
 
 // New code for the "Image Attributions" button
