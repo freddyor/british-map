@@ -405,10 +405,15 @@ function createPopupContent(location, isFirebase = false) {
             ` : ''}
         ${videoUrl ? `
 <div style="margin-top: 10px; margin-bottom: 10px; text-align: center;">
-    <video controlsList="nodownload nofullscreen noremoteplayback" controls>
-        <source src="${videoUrl}" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
+<video 
+    width="262" 
+    height="464" 
+    controlsList="nodownload nofullscreen noremoteplayback" 
+    controls 
+    style="display: block; margin: 0 auto;">
+    <source src="${videoUrl}" type="video/mp4">
+    Your browser does not support the video tag.
+</video>
 </div>
         ` : ''}
     </div>
