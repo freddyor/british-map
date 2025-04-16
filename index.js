@@ -41,7 +41,7 @@ bottomSheet.style.position = 'fixed';
 bottomSheet.style.bottom = '-100%'; // Initially hidden
 bottomSheet.style.left = '0';
 bottomSheet.style.width = '100%';
-bottomSheet.style.height = '85%'; // Adjust height as needed
+bottomSheet.style.height = '70%'; // Adjust height as needed
 bottomSheet.style.backgroundColor = '#fff';
 bottomSheet.style.borderTop = '2px solid #ccc';
 bottomSheet.style.boxShadow = '0 -6px 15px rgba(0, 0, 0, 0.3)';
@@ -58,6 +58,70 @@ bottomSheet.style.padding = '10px'; // Matches popup padding
 bottomSheet.style.overflowY = 'auto'; // Make it scrollable
 document.body.appendChild(bottomSheet);
 
+// Add draggable functionality to the bottom sheet
+let startY;
+let startHeight;
+let isDragging = false;
+
+// Add a draggable handle to the bottom sheet
+const dragHandle = document.createElement('div');
+dragHandle.style.width = '100%';
+dragHandle.style.height = '20px';
+dragHandle.style.backgroundColor = '#ccc';
+dragHandle.style.cursor = 'grab';
+dragHandle.style.borderTopLeftRadius = '12px';
+dragHandle.style.borderTopRightRadius = '12px';
+bottomSheet.appendChild(dragHandle);
+
+// Add drag events
+dragHandle.addEventListener('mousedown', (e) => {
+    isDragging = true;
+    startY = e.clientY;
+    startHeight = bottomSheet.offsetHeight;
+    dragHandle.style.cursor = 'grabbing';
+});
+
+document.addEventListener('mousemove', (e) => {
+    if (!isDragging) return;
+    const deltaY = startY - e.clientY;
+    const newHeight = startHeight + deltaY;
+
+    // Limit the height between a minimum and maximum value
+    if (newHeight >= 100 && newHeight <= window.innerHeight) {
+        bottomSheet.style.height = `${newHeight}px`;
+    }
+});
+
+document.addEventListener('mouseup', () => {
+    if (isDragging) {
+        isDragging = false;
+        dragHandle.style.cursor = 'grab';
+    }
+});
+
+// Add touch support for mobile devices
+dragHandle.addEventListener('touchstart', (e) => {
+    isDragging = true;
+    startY = e.touches[0].clientY;
+    startHeight = bottomSheet.offsetHeight;
+});
+
+document.addEventListener('touchmove', (e) => {
+    if (!isDragging) return;
+    const deltaY = startY - e.touches[0].clientY;
+    const newHeight = startHeight + deltaY;
+
+    // Limit the height between a minimum and maximum value
+    if (newHeight >= 100 && newHeight <= window.innerHeight) {
+        bottomSheet.style.height = `${newHeight}px`;
+    }
+});
+
+document.addEventListener('touchend', () => {
+    if (isDragging) {
+        isDragging = false;
+    }
+});
 
 // Function to generate a URL with given coordinates and zoom
 function generateMapLink(latitude, longitude, zoomLevel) {
@@ -394,7 +458,7 @@ function createPopupContent(location, isFirebase = false) {
             ` : ''}
             ${videoUrl ? `
                 <div style="margin-top: 10px; width: 100%; margin-bottom: 10px;">
-                        <iframe width="360" height="580" src="${videoUrl}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="display: block; width: 180; height: 580px; border: none; margin: 0; padding: 0;"></iframe>
+                        <iframe width="360" height="580" src="${videoUrl}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="display: block; width: 180; height: 290px; border: none; margin: 0; padding: 0;"></iframe>
                 </div>
             ` : ''}
         </div>
@@ -417,19 +481,34 @@ locations.forEach(location => {
 
   marker.setPopup(popup);
 
-marker.getElement().addEventListener('click', () => {
+  marker.getElement().addEventListener('click', () => {
     map.getCanvas().style.cursor = 'pointer';
-
-    // Hide all dynamically created custom popups
-    hideDynamicCustomPopups();
-
-    // Toggle the bottom sheet content
-    const contentHTML = createPopupContent(location);
+    const contentHTML = createPopupContent(location); // Use the existing function to create the content
     toggleBottomSheet(contentHTML);
 });
-    }
-}
- 
+
+    // Add the centered-popup class when the popup is opened
+    popup.on('open', () => {
+      const popupElement = document.querySelector('.mapboxgl-popup');
+      if (popupElement) {
+        popupElement.classList.add('centered-popup');
+      }
+      
+      const expandText = popup.getElement().querySelector('#expand-text');
+      const additionalContent = popup.getElement().querySelector('#additional-content');
+      const collapseText = popup.getElement().querySelector('#collapse-text');
+
+      expandText.addEventListener('click', () => {
+        additionalContent.style.display = 'block';
+        expandText.style.display = 'none';
+      });
+
+      collapseText.addEventListener('click', () => {
+        additionalContent.style.display = 'none';
+        expandText.style.display = 'block';
+      });
+    });
+  });
 
 function addBuildingMarkers() {
     buildings.forEach(building => {
@@ -449,20 +528,35 @@ function addBuildingMarkers() {
 
         marker.setPopup(popup);
 
-marker.getElement().addEventListener('click', () => {
-    map.getCanvas().style.cursor = 'pointer';
+        marker.getElement().addEventListener('click', () => {
+            map.getCanvas().style.cursor = 'pointer';
+            const contentHTML = createPopupContent(building); // Fixed the reference to `building`
+            toggleBottomSheet(contentHTML);
+        });
 
-    // Hide all dynamically created custom popups
-    hideDynamicCustomPopups();
+        // Add the centered-popup class when the popup is opened
+        popup.on('open', () => {
+            const popupElement = document.querySelector('.mapboxgl-popup');
+            if (popupElement) {
+                popupElement.classList.add('centered-popup');
+            }
 
-    // Toggle the bottom sheet content
-    const contentHTML = createPopupContent(building);
-    toggleBottomSheet(contentHTML);
-});
-    }
-     }
+            const expandText = popup.getElement().querySelector('#expand-text');
+            const additionalContent = popup.getElement().querySelector('#additional-content');
+            const collapseText = popup.getElement().querySelector('#collapse-text');
 
-  
+            expandText.addEventListener('click', () => {
+                additionalContent.style.display = 'block';
+                expandText.style.display = 'none';
+            });
+
+            collapseText.addEventListener('click', () => {
+                additionalContent.style.display = 'none';
+                expandText.style.display = 'block';
+            });
+        });
+    });
+}
 // New code for the "Image Attributions" button
 const imageAttributionsButton = document.createElement('button');
 imageAttributionsButton.id = 'image-attributions-button';
