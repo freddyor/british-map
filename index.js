@@ -240,9 +240,9 @@ stylePopup.innerHTML = `
 // Add styles for the bottom sheet
   #bottom-sheet {
     font-family: 'Poppins', sans-serif !important;
-    padding: 20px;
+    padding: 5px;
     font-size: 14px;
-    line-height: 1.5;
+    line-height: 1.05;
   }
 
   #bottom-sheet img {
@@ -389,7 +389,7 @@ function createPopupContent(location, isFirebase = false) {
             <div style="display: flex; align-items: center; gap: 10px;">
                 <img src="${data.image || data.imageUrl}" alt="${data.name}" style="width: 40px; height: 40px; object-fit: cover; border-radius: 50%;" />
                 <div>
-                    <div style="font-size: 16px; font-weight: bold;">${data.name}</div>
+                    <div style="font-size: 16px; font-weight: bold; margin-top: 0;">${data.name}</div>
                     <div style="font-size: 14px; color: #666;">${data.occupation || data.dates}</div>
                 </div>
             </div>
