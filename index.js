@@ -406,7 +406,7 @@ function createPopupContent(location, isFirebase = false) {
         ${videoUrl ? `
             <div style="margin-top: 10px; margin-bottom: 10px; text-align: center;">
                 <iframe 
-                    width="264" 
+                    width="260" 
                     height="464" 
                     src="${videoUrl}" 
                     frameborder="0" 
