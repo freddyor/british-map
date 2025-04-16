@@ -40,8 +40,8 @@ bottomSheet.id = 'bottom-sheet';
 bottomSheet.style.position = 'fixed';
 bottomSheet.style.bottom = '-100%'; // Initially hidden
 bottomSheet.style.left = '0';
-bottomSheet.style.width = '95%';
-bottomSheet.style.height = '85%'; // Adjust height as needed
+bottomSheet.style.width = '100%';
+bottomSheet.style.height = '70%'; // Adjust height as needed
 bottomSheet.style.backgroundColor = '#fff';
 bottomSheet.style.borderTop = '2px solid #ccc';
 bottomSheet.style.boxShadow = '0 -6px 15px rgba(0, 0, 0, 0.3)';
@@ -54,10 +54,74 @@ bottomSheet.style.border = '2px solid #f0f0f0'; // Matches popup border
 bottomSheet.style.fontFamily = "'Poppins', sans-serif"; // Matches popup font-family
 bottomSheet.style.fontSize = '14px'; // Matches popup font size
 bottomSheet.style.lineHeight = '1.05'; // Matches popup line height
-bottomSheet.style.padding = '5px'; // Matches popup padding
+bottomSheet.style.padding = '10px'; // Matches popup padding
 bottomSheet.style.overflowY = 'auto'; // Make it scrollable
 document.body.appendChild(bottomSheet);
 
+// Add draggable functionality to the bottom sheet
+let startY;
+let startHeight;
+let isDragging = false;
+
+// Add a draggable handle to the bottom sheet
+const dragHandle = document.createElement('div');
+dragHandle.style.width = '100%';
+dragHandle.style.height = '20px';
+dragHandle.style.backgroundColor = '#ccc';
+dragHandle.style.cursor = 'grab';
+dragHandle.style.borderTopLeftRadius = '12px';
+dragHandle.style.borderTopRightRadius = '12px';
+bottomSheet.appendChild(dragHandle);
+
+// Add drag events
+dragHandle.addEventListener('mousedown', (e) => {
+    isDragging = true;
+    startY = e.clientY;
+    startHeight = bottomSheet.offsetHeight;
+    dragHandle.style.cursor = 'grabbing';
+});
+
+document.addEventListener('mousemove', (e) => {
+    if (!isDragging) return;
+    const deltaY = startY - e.clientY;
+    const newHeight = startHeight + deltaY;
+
+    // Limit the height between a minimum and maximum value
+    if (newHeight >= 100 && newHeight <= window.innerHeight) {
+        bottomSheet.style.height = `${newHeight}px`;
+    }
+});
+
+document.addEventListener('mouseup', () => {
+    if (isDragging) {
+        isDragging = false;
+        dragHandle.style.cursor = 'grab';
+    }
+});
+
+// Add touch support for mobile devices
+dragHandle.addEventListener('touchstart', (e) => {
+    isDragging = true;
+    startY = e.touches[0].clientY;
+    startHeight = bottomSheet.offsetHeight;
+});
+
+document.addEventListener('touchmove', (e) => {
+    if (!isDragging) return;
+    const deltaY = startY - e.touches[0].clientY;
+    const newHeight = startHeight + deltaY;
+
+    // Limit the height between a minimum and maximum value
+    if (newHeight >= 100 && newHeight <= window.innerHeight) {
+        bottomSheet.style.height = `${newHeight}px`;
+    }
+});
+
+document.addEventListener('touchend', () => {
+    if (isDragging) {
+        isDragging = false;
+    }
+});
 
 // Function to generate a URL with given coordinates and zoom
 function generateMapLink(latitude, longitude, zoomLevel) {
@@ -384,7 +448,7 @@ function createPopupContent(location, isFirebase = false) {
             ` : ''}
             ${videoUrl ? `
                 <div style="margin-top: 10px; width: 100%; margin-bottom: 10px;">
-                        <iframe width="340" height="580" src="${videoUrl}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="display: block; width: 340; height: 580px; border: none; margin: 0; padding: 0;"></iframe>
+                        <iframe width="360" height="580" src="${videoUrl}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="display: block; width: 180; height: 290px; border: none; margin: 0; padding: 0;"></iframe>
                 </div>
             ` : ''}
         </div>
