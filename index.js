@@ -60,6 +60,14 @@ bottomSheet.style.padding = '10px'; // Matches popup padding
 bottomSheet.style.overflowY = 'auto'; // Make it scrollable
 document.body.appendChild(bottomSheet);
 
+// Add click listener to dismiss bottom sheet when clicking outside of it
+document.addEventListener('click', (event) => {
+    if (isBottomSheetOpen && !bottomSheet.contains(event.target)) {
+        bottomSheet.style.bottom = '-100%'; // Hide the bottom sheet
+        isBottomSheetOpen = false;
+    }
+});
+
 // Add draggable functionality to the bottom sheet
 let startY;
 let startHeight;
