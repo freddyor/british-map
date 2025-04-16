@@ -408,8 +408,8 @@ return `
         ${videoUrl ? `
             <div style="margin-top: 10px; margin-bottom: 10px; text-align: center;">
                 <iframe 
-                    width="340" 
-                    height="580" 
+                    width="264" 
+                    height="464" 
                     src="${videoUrl}" 
                     frameborder="0" 
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
