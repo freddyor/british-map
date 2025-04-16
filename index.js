@@ -346,8 +346,28 @@ function toggleBottomSheet(contentHTML) {
     if (isBottomSheetOpen) {
         bottomSheet.style.bottom = '-100%'; // Hide
     } else {
-        bottomSheet.innerHTML = contentHTML; // Populate with content
+        // Add a close button to the content
+        const closeButtonHTML = `
+            <button id="close-bottom-sheet" style="
+                display: block;
+                margin: 10px auto;
+                padding: 8px 16px;
+                background-color: #e74c3c;
+                color: #fff;
+                border: none;
+                border-radius: 8px;
+                cursor: pointer;
+                font-size: 14px;
+            ">Close</button>
+        `;
+
+        bottomSheet.innerHTML = contentHTML + closeButtonHTML; // Add content + close button
         bottomSheet.style.bottom = '0'; // Show
+
+        // Attach event listener to the close button
+        document.getElementById('close-bottom-sheet').addEventListener('click', () => {
+            toggleBottomSheet(); // Close when the button is clicked
+        });
     }
     isBottomSheetOpen = !isBottomSheetOpen;
 }
