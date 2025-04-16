@@ -475,7 +475,7 @@ locations.forEach(location => {
     const contentHTML = createPopupContent(location); // Use the existing function to create the content
     toggleBottomSheet(contentHTML);
         });
-    });
+    }
 
 
 
@@ -502,7 +502,7 @@ function addBuildingMarkers() {
             const contentHTML = createPopupContent(building); // Fixed the reference to `building`
             toggleBottomSheet(contentHTML);
                });
-    });
+    }
 
 
 
