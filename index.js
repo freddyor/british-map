@@ -39,6 +39,7 @@ bottomSheet.id = 'bottom-sheet';
 bottomSheet.style.position = 'fixed';
 bottomSheet.style.bottom = '-100%'; // Initially hidden
 bottomSheet.style.left = '0'; // Align to the left
+bottomSheet.style.transform = 'translate(-50%, -50%)'; // Adjust position to align center both ways
 bottomSheet.style.right = '0'; // Align to the right
 bottomSheet.style.width = '80%'; // Optional: Adjust width
 bottomSheet.style.height = '80%'; // Optional: Adjust height
