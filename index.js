@@ -1,5 +1,6 @@
 import { buildings } from './buildings.js';
 import { locations } from './locations.js';
+import { imageAttributions } from './imageAttributions.js';
 
 mapboxgl.accessToken = 'pk.eyJ1IjoiZnJlZGRvbWF0ZSIsImEiOiJjbTc1bm5zYnQwaG1mMmtxeDdteXNmeXZ0In0.PuDNORq4qExIJ_fErdO_8g';
 
@@ -34,7 +35,6 @@ var map = new mapboxgl.Map({
 });
 
 // Create a bottom sheet container
-// Create a bottom sheet container
 const bottomSheet = document.createElement('div');
 bottomSheet.id = 'bottom-sheet';
 bottomSheet.style.position = 'fixed';
@@ -57,17 +57,6 @@ bottomSheet.style.lineHeight = '1.05'; // Matches popup line height
 bottomSheet.style.padding = '5px'; // Matches popup padding
 bottomSheet.style.overflowY = 'auto'; // Make it scrollable
 document.body.appendChild(bottomSheet);
-
-// Toggle functionality for the bottom sheet
-function toggleBottomSheet(contentHTML) {
-    if (isBottomSheetOpen) {
-        bottomSheet.style.bottom = '-100%'; // Hide
-    } else {
-        bottomSheet.innerHTML = contentHTML; // Populate with content
-        bottomSheet.style.bottom = '0'; // Show
-    }
-    isBottomSheetOpen = !isBottomSheetOpen;
-}
 
 
 // Function to generate a URL with given coordinates and zoom
@@ -348,6 +337,18 @@ function createCustomMarker(imageUrl, color = '#9b4dca', isLocation = false) {
   };
 }
 
+// Toggle functionality for the bottom sheet
+let isBottomSheetOpen = false;
+
+function toggleBottomSheet(contentHTML) {
+    if (isBottomSheetOpen) {
+        bottomSheet.style.bottom = '-100%'; // Hide
+    } else {
+        bottomSheet.innerHTML = contentHTML; // Populate with content
+        bottomSheet.style.bottom = '0'; // Show
+    }
+    isBottomSheetOpen = !isBottomSheetOpen;
+}
 
 function createPopupContent(location, isFirebase = false) {
     const data = isFirebase ? location : location;
@@ -361,41 +362,33 @@ function createPopupContent(location, isFirebase = false) {
         ? `<p style="background: #f9f9f9; padding: 10px; margin-top: 10px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); font-size: 12px;">${data.tldr}</p>`
         : '';
 
-return `
-    <div style="padding: 0; margin: 0;">
-        <p style="font-size: 6px; font-weight: bold; margin-bottom: 10px;">${data.description}</p>
-        <div style="display: flex; align-items: center; gap: 10px;">
-            <img src="${data.image || data.imageUrl}" alt="${data.name}" style="width: 40px; height: 40px; object-fit: cover; border-radius: 50%;" />
-            <div>
-                <div style="font-size: 16px; font-weight: bold;">${data.name}</div>
-                <div style="font-size: 14px; color: #666;">${data.occupation || data.dates}</div>
+    return `
+        <div style="padding: 0; margin: 0;">
+            <p style="font-size: 6px; font-weight: bold; margin-bottom: 10px;">${data.description}</p>
+            <div style="display: flex; align-items: center; gap: 10px;">
+                <img src="${data.image || data.imageUrl}" alt="${data.name}" style="width: 40px; height: 40px; object-fit: cover; border-radius: 50%;" />
+                <div>
+                    <div style="font-size: 16px; font-weight: bold;">${data.name}</div>
+                    <div style="font-size: 14px; color: #666;">${data.occupation || data.dates}</div>
+                </div>
             </div>
+            ${tldrContent}
+            ${eventsData && eventsData.length ? `
+                <div style="margin-top: 10px;">
+                    ${eventsData.map(event => `
+                        <div style="background: #f9f9f9; border: 1px solid #ddd; border-radius: 8px; padding: 10px; margin-bottom: 10px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
+                            <strong style="color: #9b4dca; font-size: 14px;">${event.date || event.label}</strong>: <span style="font-size: 12px;">${event.description}</span>
+                        </div>
+                    `).join('')}
+                </div>
+            ` : ''}
+            ${videoUrl ? `
+                <div style="margin-top: 10px; width: 100%; margin-bottom: 10px;">
+                        <iframe width="340" height="580" src="${videoUrl}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="display: block; width: 340; height: 580px; border: none; margin: 0; padding: 0;"></iframe>
+                </div>
+            ` : ''}
         </div>
-        ${tldrContent}
-        ${eventsData && eventsData.length ? `
-            <div style="margin-top: 10px;">
-                ${eventsData.map(event => `
-                    <div style="background: #f9f9f9; border: 1px solid #ddd; border-radius: 8px; padding: 10px; margin-bottom: 10px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
-                        <strong style="color: #9b4dca; font-size: 14px;">${event.date || event.label}</strong>: <span style="font-size: 12px;">${event.description}</span>
-                    </div>
-                `).join('')}
-            </div>
-        ` : ''}
-        ${videoUrl ? `
-            <div style="margin-top: 10px; margin-bottom: 10px; text-align: center;">
-                <iframe 
-                    width="264" 
-                    height="464" 
-                    src="${videoUrl}" 
-                    frameborder="0" 
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                    allowfullscreen 
-                    style="display: block; margin: 0 auto;">
-                </iframe>
-            </div>
-        ` : ''}
-    </div>
-`;
+    `;
 }
 locations.forEach(location => {
     const { element: markerElement } = createCustomMarker(location.image, '#9B4DCA', true);
@@ -430,6 +423,63 @@ function addBuildingMarkers() {
         });
     });
 }
+// New code for the "Image Attributions" button
+const imageAttributionsButton = document.createElement('button');
+imageAttributionsButton.id = 'image-attributions-button';
+imageAttributionsButton.className = 'custom-button';
+imageAttributionsButton.textContent = 'Image Attributions';
+
+// Position the new button at the bottom of the page
+imageAttributionsButton.style.position = 'fixed';
+imageAttributionsButton.style.bottom = '10px'; // Adjust the bottom position as needed
+imageAttributionsButton.style.left = '50%';
+imageAttributionsButton.style.transform = 'translateX(-50%)';
+
+// Add the new button to the document body
+document.body.appendChild(imageAttributionsButton);
+
+// Function to display or hide image attributions
+function toggleImageAttributions() {
+  let attributionsContainer = document.getElementById('attributions-container');
+
+  if (attributionsContainer) {
+    // If the container exists, toggle its visibility
+    if (attributionsContainer.style.display === 'none' || attributionsContainer.style.display === '') {
+      attributionsContainer.style.display = 'block';
+    } else {
+      attributionsContainer.style.display = 'none';
+    }
+  } else {
+    // If the container does not exist, create it
+    attributionsContainer = document.createElement('div');
+    attributionsContainer.id = 'attributions-container';
+    attributionsContainer.style.position = 'fixed';
+    attributionsContainer.style.bottom = '70px';
+    attributionsContainer.style.left = '50%';
+    attributionsContainer.style.transform = 'translateX(-50%)';
+    attributionsContainer.style.backgroundColor = 'white';
+    attributionsContainer.style.padding = '10px';
+    attributionsContainer.style.border = '1px solid #ccc';
+    attributionsContainer.style.borderRadius = '8px';
+    attributionsContainer.style.boxShadow = '0 6px 15px rgba(0, 0, 0, 0.3)';
+    attributionsContainer.style.fontSize = '12px';
+    attributionsContainer.style.lineHeight = '1.05';
+    attributionsContainer.style.zIndex = '10000'; // Ensure it goes above everything else
+    attributionsContainer.style.maxHeight = '200px'; // Set a max height
+    attributionsContainer.style.overflowY = 'scroll'; // Make it scrollable
+
+    imageAttributions.forEach(image => {
+      const imageElement = document.createElement('p');
+      imageElement.innerHTML = `<strong>${image.name}</strong> by ${image.author} - ${image.license}`;
+      attributionsContainer.appendChild(imageElement);
+    });
+
+    document.body.appendChild(attributionsContainer);
+  }
+}
+
+// Event listener for the new button
+document.getElementById('image-attributions-button').addEventListener('click', toggleImageAttributions);
 
 function loadMarkersFromFirebase() {
   getDocs(collection(db, 'markers')).then((querySnapshot) => {
