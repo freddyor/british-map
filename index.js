@@ -38,9 +38,9 @@ const bottomSheet = document.createElement('div');
 bottomSheet.id = 'bottom-sheet';
 bottomSheet.style.position = 'fixed';
 bottomSheet.style.bottom = '-100%'; // Initially hidden
-bottomSheet.style.left = '0'; // Align to the left
+bottomSheet.style.left = '50%'; // Align to the left
 bottomSheet.style.transform = 'translate(-50%, -50%)'; // Adjust position to align center both ways
-bottomSheet.style.right = '0'; // Align to the right
+bottomSheet.style.right = '50%'; // Align to the right
 bottomSheet.style.width = '80%'; // Optional: Adjust width
 bottomSheet.style.height = '80%'; // Optional: Adjust height
 bottomSheet.style.backgroundColor = '#fff';
@@ -58,28 +58,6 @@ bottomSheet.style.lineHeight = '1.05'; // Matches popup line height
 bottomSheet.style.padding = '5px'; // Matches popup padding
 bottomSheet.style.overflowY = 'auto'; // Make it scrollable
 document.body.appendChild(bottomSheet);
-
-// Create a close button
-const closeButton = document.createElement('button');
-closeButton.innerText = 'X'; // Text for the button
-closeButton.style.position = 'absolute'; // Position it within the bottom sheet
-closeButton.style.top = '10px'; // Adjust top position
-closeButton.style.right = '10px'; // Adjust right position
-closeButton.style.backgroundColor = 'transparent'; // Transparent background
-closeButton.style.border = 'none'; // Remove border
-closeButton.style.fontSize = '18px'; // Font size for the "X"
-closeButton.style.cursor = 'pointer'; // Pointer cursor on hover
-closeButton.style.color = '#333'; // Button text color
-closeButton.style.fontWeight = 'bold'; // Bold text
-
-// Append the close button to the bottom sheet
-bottomSheet.appendChild(closeButton);
-
-// Add click event listener to close the bottom sheet
-closeButton.addEventListener('click', () => {
-    bottomSheet.style.bottom = '-100%'; // Hide the bottom sheet
-    isBottomSheetOpen = false; // Update the state
-});
 
 
 
