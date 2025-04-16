@@ -404,17 +404,12 @@ function createPopupContent(location, isFirebase = false) {
                 </div>
             ` : ''}
         ${videoUrl ? `
-            <div style="margin-top: 10px; margin-bottom: 10px; text-align: center;">
-                <iframe 
-                    width="262" 
-                    height="464" 
-                    src="${videoUrl}" 
-                    frameborder="0" 
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                    allowfullscreen 
-                    style="display: block; margin: 0 auto;">
-                </iframe>
-            </div>
+<div style="margin-top: 10px; margin-bottom: 10px; text-align: center;">
+    <video controlsList="nodownload nofullscreen noremoteplayback" controls>
+        <source src="${videoUrl}" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+</div>
         ` : ''}
     </div>
 `;
