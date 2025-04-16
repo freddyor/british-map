@@ -56,7 +56,7 @@ bottomSheet.style.border = '2px solid #f0f0f0'; // Matches popup border
 bottomSheet.style.fontFamily = "'Poppins', sans-serif"; // Matches popup font-family
 bottomSheet.style.fontSize = '14px'; // Matches popup font size
 bottomSheet.style.lineHeight = '1.05'; // Matches popup line height
-bottomSheet.style.padding = '10px'; // Matches popup padding
+bottomSheet.style.padding = '5px'; // Matches popup padding
 bottomSheet.style.overflowY = 'auto'; // Make it scrollable
 document.body.appendChild(bottomSheet);
 
@@ -88,8 +88,6 @@ map.on('load', () => {
     loadMarkersFromFirebase();
     geolocate.trigger();
 });
-
-
 
 // Container for both buttons
 const buttonGroup = document.createElement('div');
@@ -407,7 +405,7 @@ function createPopupContent(location, isFirebase = false) {
             ` : ''}
             ${videoUrl ? `
                 <div style="margin-top: 10px; width: 100%; margin-bottom: 10px;">
-                        <iframe width="220" height="580" src="${videoUrl}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="display: block; width: 220px; height: 580px; border: none; margin: 0; padding: 0;"></iframe>
+                        <iframe width="300" height="480" src="${videoUrl}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="display: block; width: 300px; height: 480px; border: none; margin: 0; padding: 0;"></iframe>
                 </div>
             ` : ''}
         </div>
