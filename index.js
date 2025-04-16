@@ -473,13 +473,7 @@ locations.forEach(location => {
     .setLngLat(location.coords)
     .addTo(map);
 
-  const popup = new mapboxgl.Popup({
-    closeButton: true,
-    closeOnClick: true,
-    className: 'custom-popup'
-  }).setHTML(createPopupContent(location));
 
-  marker.setPopup(popup);
 
   marker.getElement().addEventListener('click', () => {
     map.getCanvas().style.cursor = 'pointer';
