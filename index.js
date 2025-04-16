@@ -386,39 +386,41 @@ function createPopupContent(location, isFirebase = false) {
         ? `<p style="background: #f9f9f9; padding: 10px; margin-top: 10px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); font-size: 12px;">${data.tldr}</p>`
         : '';
 
-    return `
-        <div style="padding: 0; margin: 0;">
-            <p style="font-size: 6px; font-weight: bold; margin-bottom: 10px;">${data.description}</p>
-            <div style="display: flex; align-items: center; gap: 10px;">
-                <img src="${data.image || data.imageUrl}" alt="${data.name}" style="width: 40px; height: 40px; object-fit: cover; border-radius: 50%;" />
-                <div>
-                    <div style="font-size: 16px; font-weight: bold;">${data.name}</div>
-                    <div style="font-size: 14px; color: #666;">${data.occupation || data.dates}</div>
-                </div>
+return `
+    <div style="padding: 0; margin: 0;">
+        <p style="font-size: 6px; font-weight: bold; margin-bottom: 10px;">${data.description}</p>
+        <div style="display: flex; align-items: center; gap: 10px;">
+            <img src="${data.image || data.imageUrl}" alt="${data.name}" style="width: 40px; height: 40px; object-fit: cover; border-radius: 50%;" />
+            <div>
+                <div style="font-size: 16px; font-weight: bold;">${data.name}</div>
+                <div style="font-size: 14px; color: #666;">${data.occupation || data.dates}</div>
             </div>
-            ${tldrContent}
-            ${eventsData && eventsData.length ? `
-                <div style="margin-top: 10px;">
-                    ${eventsData.map(event => `
-                        <div style="background: #f9f9f9; border: 1px solid #ddd; border-radius: 8px; padding: 10px; margin-bottom: 10px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
-                            <strong style="color: #9b4dca; font-size: 14px;">${event.date || event.label}</strong>: <span style="font-size: 12px;">${event.description}</span>
-                        </div>
-                    `).join('')}
-                </div>
-            ` : ''}
-${videoUrl ? `
-    <div style="margin-top: 10px; margin-bottom: 10px; text-align: center;">
-        <iframe 
-            width="340" 
-            height="580" 
-            src="${videoUrl}" 
-            frameborder="0" 
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-            allowfullscreen 
-            style="display: block; margin: 0 auto;">
-        </iframe>
+        </div>
+        ${tldrContent}
+        ${eventsData && eventsData.length ? `
+            <div style="margin-top: 10px;">
+                ${eventsData.map(event => `
+                    <div style="background: #f9f9f9; border: 1px solid #ddd; border-radius: 8px; padding: 10px; margin-bottom: 10px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
+                        <strong style="color: #9b4dca; font-size: 14px;">${event.date || event.label}</strong>: <span style="font-size: 12px;">${event.description}</span>
+                    </div>
+                `).join('')}
+            </div>
+        ` : ''}
+        ${videoUrl ? `
+            <div style="margin-top: 10px; margin-bottom: 10px; text-align: center;">
+                <iframe 
+                    width="340" 
+                    height="580" 
+                    src="${videoUrl}" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen 
+                    style="display: block; margin: 0 auto;">
+                </iframe>
+            </div>
+        ` : ''}
     </div>
-   ` : ''}
+`;
 }
 locations.forEach(location => {
     const { element: markerElement } = createCustomMarker(location.image, '#9B4DCA', true);
