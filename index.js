@@ -403,13 +403,21 @@ function createPopupContent(location, isFirebase = false) {
                     `).join('')}
                 </div>
             ` : ''}
-            ${videoUrl ? `
-                <div style="margin-top: 10px; width: 100%; margin-bottom: 10px;">
-                        <iframe width="300" height="380" src="${videoUrl}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="display: block; width: 300px; height: 380px; border: none; margin: 0; padding: 0;"></iframe>
-                </div>
-            ` : ''}
-        </div>
-    `;
+        ${videoUrl ? `
+            <div style="margin-top: 10px; margin-bottom: 10px; text-align: center;">
+                <iframe 
+                    width="264" 
+                    height="464" 
+                    src="${videoUrl}" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen 
+                    style="display: block; margin: 0 auto;">
+                </iframe>
+            </div>
+        ` : ''}
+    </div>
+`;
 }
 locations.forEach(location => {
     const { element: markerElement } = createCustomMarker(location.image, '#9B4DCA', true);
