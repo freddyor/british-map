@@ -72,14 +72,26 @@ closeButton.style.cursor = 'pointer';
 closeButton.style.color = '#000'; // Optional: Adjust color
 closeButton.style.zIndex = '10001'; // Ensure it is above other content
 
-// Add the close button to the bottom sheet
-bottomSheet.appendChild(closeButton);
-
 // Add functionality to close the bottom sheet when the button is clicked
 closeButton.addEventListener('click', () => {
     bottomSheet.style.bottom = '-100%'; // Hide the bottom sheet
     isBottomSheetOpen = false; // Update the state
 });
+
+// Toggle functionality for the bottom sheet
+function toggleBottomSheet(contentHTML) {
+    if (isBottomSheetOpen) {
+        bottomSheet.style.bottom = '-100%'; // Hide
+    } else {
+        bottomSheet.innerHTML = contentHTML; // Populate with content
+        bottomSheet.appendChild(closeButton); // Ensure the close button is added
+        bottomSheet.style.bottom = '0'; // Show
+    }
+    isBottomSheetOpen = !isBottomSheetOpen;
+}
+
+// Ensure the close button is added initially
+bottomSheet.appendChild(closeButton);
 
 // Function to generate a URL with given coordinates and zoom
 function generateMapLink(latitude, longitude, zoomLevel) {
