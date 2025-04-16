@@ -476,7 +476,7 @@ locations.forEach(location => {
     toggleBottomSheet(contentHTML);
         });
     });
-}
+
 
 
 function addBuildingMarkers() {
@@ -503,7 +503,7 @@ function addBuildingMarkers() {
             toggleBottomSheet(contentHTML);
                });
     });
-}
+
 
 
 // New code for the "Image Attributions" button
