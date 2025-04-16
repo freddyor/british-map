@@ -428,7 +428,7 @@ marker.getElement().addEventListener('click', () => {
     toggleBottomSheet(contentHTML);
 });
     }
-
+}
  
 
 function addBuildingMarkers() {
@@ -460,6 +460,7 @@ marker.getElement().addEventListener('click', () => {
     toggleBottomSheet(contentHTML);
 });
     }
+     }
 
   
 // New code for the "Image Attributions" button
