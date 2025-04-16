@@ -42,7 +42,7 @@ bottomSheet.style.bottom = '-100%'; // Initially hidden
 bottomSheet.style.left = '50%'; // Align to the left
 bottomSheet.style.transform = 'translate(-50%)'; // Adjust position to align center both ways
 bottomSheet.style.right = '50%';
-bottomSheet.style.width = '70%';
+bottomSheet.style.width = '75%';
 bottomSheet.style.height = '80%'; // Adjust height as needed
 bottomSheet.style.backgroundColor = '#fff';
 bottomSheet.style.borderTop = '2px solid #ccc';
@@ -406,7 +406,7 @@ function createPopupContent(location, isFirebase = false) {
         ${videoUrl ? `
             <div style="margin-top: 10px; margin-bottom: 10px; text-align: center;">
                 <iframe 
-                    width="260" 
+                    width="262" 
                     height="464" 
                     src="${videoUrl}" 
                     frameborder="0" 
