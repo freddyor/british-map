@@ -511,18 +511,6 @@ function toggleImageAttributions() {
 // Event listener for the new button
 document.getElementById('image-attributions-button').addEventListener('click', toggleImageAttributions);
 
-function loadMarkersFromFirebase() {
-  getDocs(collection(db, 'markers')).then((querySnapshot) => {
-    querySnapshot.forEach((doc) => {
-      const data = doc.data();
-      console.log('Fetched marker data:', data); // Add this line
-      const { element: markerElement } = createCustomMarker(data.imageUrl, '#E9E8E0', false);
-      const marker = new mapboxgl.Marker({
-        element: markerElement
-      })
-        .setLngLat([data.longitude, data.latitude])
-        .addTo(map);
-
       const popupHTML = `
         <div style="padding-top: 10px; padding-bottom: 10px;">
           <div style="display: flex; align-items: center; gap: 10px;">
