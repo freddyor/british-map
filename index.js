@@ -244,6 +244,17 @@ stylePopup.innerHTML = `
   .mapboxgl-popup-close-button {
     display: none !important;
   }
+  
+    .centered-popup {
+    position: fixed !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    width: auto !important;
+    max-width: 90vw !important;
+    max-height: 90vh !important; /* Add this line to set maximum height */
+    z-index: 10000 !important;
+  }
 
   .user-location-marker {
     width: 20px;
@@ -474,10 +485,30 @@ locations.forEach(location => {
     map.getCanvas().style.cursor = 'pointer';
     const contentHTML = createPopupContent(location); // Use the existing function to create the content
     toggleBottomSheet(contentHTML);
-        });
-    }
+});
 
+    // Add the centered-popup class when the popup is opened
+    popup.on('open', () => {
+      const popupElement = document.querySelector('.mapboxgl-popup');
+      if (popupElement) {
+        popupElement.classList.add('centered-popup');
+      }
+      
+      const expandText = popup.getElement().querySelector('#expand-text');
+      const additionalContent = popup.getElement().querySelector('#additional-content');
+      const collapseText = popup.getElement().querySelector('#collapse-text');
 
+      expandText.addEventListener('click', () => {
+        additionalContent.style.display = 'block';
+        expandText.style.display = 'none';
+      });
+
+      collapseText.addEventListener('click', () => {
+        additionalContent.style.display = 'none';
+        expandText.style.display = 'block';
+      });
+    });
+  });
 
 function addBuildingMarkers() {
     buildings.forEach(building => {
@@ -501,11 +532,31 @@ function addBuildingMarkers() {
             map.getCanvas().style.cursor = 'pointer';
             const contentHTML = createPopupContent(building); // Fixed the reference to `building`
             toggleBottomSheet(contentHTML);
-               });
-    }
+        });
 
+        // Add the centered-popup class when the popup is opened
+        popup.on('open', () => {
+            const popupElement = document.querySelector('.mapboxgl-popup');
+            if (popupElement) {
+                popupElement.classList.add('centered-popup');
+            }
 
+            const expandText = popup.getElement().querySelector('#expand-text');
+            const additionalContent = popup.getElement().querySelector('#additional-content');
+            const collapseText = popup.getElement().querySelector('#collapse-text');
 
+            expandText.addEventListener('click', () => {
+                additionalContent.style.display = 'block';
+                expandText.style.display = 'none';
+            });
+
+            collapseText.addEventListener('click', () => {
+                additionalContent.style.display = 'none';
+                expandText.style.display = 'block';
+            });
+        });
+    });
+}
 // New code for the "Image Attributions" button
 const imageAttributionsButton = document.createElement('button');
 imageAttributionsButton.id = 'image-attributions-button';
