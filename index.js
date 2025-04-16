@@ -455,38 +455,20 @@ function createPopupContent(location, isFirebase = false) {
     `;
 }
 locations.forEach(location => {
-  const { element: markerElement } = createCustomMarker(location.image, '#9B4DCA', true);
-  markerElement.className += ' location-marker';
-  const marker = new mapboxgl.Marker({
-    element: markerElement
-  })
+    const { element: markerElement } = createCustomMarker(location.image, '#9B4DCA', true);
+    markerElement.className += ' location-marker';
+    const marker = new mapboxgl.Marker({
+        element: markerElement
+    })
     .setLngLat(location.coords)
     .addTo(map);
 
-
-
-  marker.getElement().addEventListener('click', () => {
-    map.getCanvas().style.cursor = 'pointer';
-    const contentHTML = createPopupContent(location); // Use the existing function to create the content
-    toggleBottomSheet(contentHTML);
-});
-
-      
-      const expandText = popup.getElement().querySelector('#expand-text');
-      const additionalContent = popup.getElement().querySelector('#additional-content');
-      const collapseText = popup.getElement().querySelector('#collapse-text');
-
-      expandText.addEventListener('click', () => {
-        additionalContent.style.display = 'block';
-        expandText.style.display = 'none';
-      });
-
-      collapseText.addEventListener('click', () => {
-        additionalContent.style.display = 'none';
-        expandText.style.display = 'block';
-      });
+    marker.getElement().addEventListener('click', () => {
+        map.getCanvas().style.cursor = 'pointer';
+        const contentHTML = createPopupContent(location); // Use the existing function to create the content
+        toggleBottomSheet(contentHTML);
     });
-  });
+});
 
 function addBuildingMarkers() {
     buildings.forEach(building => {
@@ -508,30 +490,8 @@ function addBuildingMarkers() {
 
         marker.getElement().addEventListener('click', () => {
             map.getCanvas().style.cursor = 'pointer';
-            const contentHTML = createPopupContent(building); // Fixed the reference to `building`
+            const contentHTML = createPopupContent(building);
             toggleBottomSheet(contentHTML);
-        });
-
-        // Add the centered-popup class when the popup is opened
-        popup.on('open', () => {
-            const popupElement = document.querySelector('.mapboxgl-popup');
-            if (popupElement) {
-                popupElement.classList.add('centered-popup');
-            }
-
-            const expandText = popup.getElement().querySelector('#expand-text');
-            const additionalContent = popup.getElement().querySelector('#additional-content');
-            const collapseText = popup.getElement().querySelector('#collapse-text');
-
-            expandText.addEventListener('click', () => {
-                additionalContent.style.display = 'block';
-                expandText.style.display = 'none';
-            });
-
-            collapseText.addEventListener('click', () => {
-                additionalContent.style.display = 'none';
-                expandText.style.display = 'block';
-            });
         });
     });
 }
