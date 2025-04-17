@@ -1,4 +1,15 @@
 export const buildings = [
+     {
+    name: "Cumberland House",
+    coords: [-1.0828489169782274, 53.956814504153286],
+    image: "https://upload.wikimedia.org/wikipedia/commons/f/f0/Cumberland_House%2C_York_%284198379598%29.jpg",
+    description: "",
+    "videoUrl": "https://www.britmap.com/videos/Captions_8BC5F8.mp4",
+    occupation: "1710",
+    tldr: " ",
+    events: [
+    ]
+  },
     {
     "name": "Baile Hill",
     "coords": [-1.082972820397241323, 53.95394761457478],
@@ -1689,17 +1700,6 @@ export const buildings = [
     tldr: "Walter Brierley, architect of many of York's greatest buildings, built this house for himself.",
     events: [
       { date: "2016", description: "It was the first house in York to sell for over £2million 💰" }
-    ]
-  },
-  {
-    name: "Cumberland House",
-    coords: [-1.0828489169782274, 53.956814504153286],
-    image: "https://upload.wikimedia.org/wikipedia/commons/f/f0/Cumberland_House%2C_York_%284198379598%29.jpg",
-    description: "",
-    occupation: "1710",
-    tldr: "It was built by Lord Mayor William Cornwell.",
-    events: [
-      { date: "1746", description: "The house acquired its name from Prince William, Duke of Cumberland, who stayed here following his victory at the Battle of Culloden ⚔️" }
     ]
   },
   {
