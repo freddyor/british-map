@@ -1,4 +1,14 @@
 export const buildings = [
+    {
+    "name": "The Red House",
+    "coords": [-1.0850877895635525, 53.96151482928061],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/1/13/Red_House_Antiques_Centre.jpg",
+    "description": "",
+      "videoUrl": "https://www.britmap.com/videos/Captions_25D270.mp4",
+    "occupation": "1714",
+    "tldr": "",
+    "events": [    ]
+  },
                 {
     "name": "Eye of York",
     "coords": [-1.0789737325379596, 53.95538800264272],
@@ -2400,17 +2410,6 @@ export const buildings = [
     "videoUrl": "https://www.britmap.com/videos/copy_8250E92B-5789-4C53-9148-68E554C7075E.mp4", 
     "tldr": "It commemorates the soldiers from Yorkshire who died during the Second Boer War (1899–1902).",
     "events": []
-  },
-  {
-    "name": "The Red House",
-    "coords": [-1.0850877895635525, 53.96151482928061],
-    "image": "https://upload.wikimedia.org/wikipedia/commons/1/13/Red_House_Antiques_Centre.jpg",
-    "description": "",
-    "occupation": "1714",
-    "tldr": "This building was made for Sir William Robinson, MP for York.",
-    "events": [
-      { "date": "MANSION HOUSE", "description": "This building was supposed to be the original York Mansion House (home of the Lord Mayor), but Sir William refused" }
-    ]
   },
   {
     "name": "Kings Square",
