@@ -4,7 +4,7 @@ export const buildings = [
     "coords": [-1.08116092937947, 53.95928389428395],
     "image": "https://upload.wikimedia.org/wikipedia/commons/8/87/Jubbergate_entrance_to_Shambles_Market%2C_York_%28geograph_5435307%29.jpg",
     "description": "",
-    "occupation": "",
+    "occupation": " ",
      "videoUrl": "https://www.britmap.com/videos/Captions_7195D0.mp4",
     "tldr": "",
     "events": [    ]
