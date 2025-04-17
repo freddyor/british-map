@@ -1,4 +1,24 @@
 export const buildings = [
+                {
+    "name": "Eye of York",
+    "coords": [-1.0789737325379596, 53.95538800264272],
+    "image": "https://www.yorkpress.co.uk/resources/images/12869391/?type=responsive-gallery-fullscreen",
+    "description": "",
+    "occupation": " ",
+"videoUrl": "https://www.britmap.com/videos/Captions_79729E.mp4",
+    "tldr": "",
+    "events": [    ]
+  },
+         {
+    "name": "Colliergiate Drill Hall",
+    "coords": [-1.0795023251420366, 53.96036710551679],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/8/8b/Colliergate_drill_hall_2023.jpg",
+    "description": "",
+    "occupation": "1872",
+"videoUrl": "https://www.britmap.com/videos/Captions_4396D2.mp4",
+    "tldr": "",
+    "events": [    ]
+  },
        {
     "name": "Jubbergate",
     "coords": [-1.08116092937947, 53.95928389428395],
@@ -2412,17 +2432,6 @@ export const buildings = [
     "tldr": "The church was closed in 1548 and was sold to the city council in 1581 - it then became a brothel.",
     "events": [
       { "date": "ST PETERS", "description": "Before the Civil War, the church was home to St Peter's School for a short while ⛪" }
-    ]
-  },
-  {
-    "name": "Colliergiate Drill Hall",
-    "coords": [-1.0795023251420366, 53.96036710551679],
-    "image": "https://upload.wikimedia.org/wikipedia/commons/8/8b/Colliergate_drill_hall_2023.jpg",
-    "description": "",
-    "occupation": "1872",
-    "tldr": "Now used as a hardware store, the building was built for The Prince of Wales's Own Regiment of Yorkshire.",
-    "events": [
-      { "date": "1914", "description": "The battalion was mobilized here before being sent to the Western Front on 1914 🪖" }
     ]
   },
   {
