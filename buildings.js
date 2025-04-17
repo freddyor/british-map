@@ -1,4 +1,14 @@
 export const buildings = [
+       {
+    "name": "Jubbergate",
+    "coords": [-1.08116092937947, 53.95928389428395],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/8/87/Jubbergate_entrance_to_Shambles_Market%2C_York_%28geograph_5435307%29.jpg",
+    "description": "",
+    "occupation": "",
+     "videoUrl": "https://www.britmap.com/videos/Captions_7195D0.mp4",
+    "tldr": "",
+    "events": [    ]
+  },
      {
     name: "Cumberland House",
     coords: [-1.0828489169782274, 53.956814504153286],
@@ -2193,17 +2203,6 @@ export const buildings = [
     "tldr": "It was built to monitor nuclear explosions and fallout in Yorkshire in the event of nuclear war.",
     "events": [
       { "date": "RARE", "description": "It is one of 30 of the kind in the UK, but the only one still left in operational condition ☢️" }
-    ]
-  },
-  {
-    "name": "Jubbergate",
-    "coords": [-1.08116092937947, 53.95928389428395],
-    "image": "https://upload.wikimedia.org/wikipedia/commons/8/87/Jubbergate_entrance_to_Shambles_Market%2C_York_%28geograph_5435307%29.jpg",
-    "description": "",
-    "occupation": "",
-    "tldr": "Jubbergate was originally the southern point to a Roman fortress, built on the site of York Minster.",
-    "events": [
-      { "date": "JEWISH", "description": "The street was originally called Brettegate (the street where the Celtic Britons lived), and when the Jewish community moved in 1280, it became Jewbrettgate, later becoming Jubbergate ✡️" }
     ]
   },
   {
