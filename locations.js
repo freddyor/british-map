@@ -871,20 +871,6 @@ export const locations = [
       }
     ]
   },
-{
-    "coords": [-1.0849712112742305, 53.96150423948602],
-    "name": "Sir William Robinson",
-    "occupation": "1655-1736",
-    "description": "This was the house of Sir William Robinson",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/RobinsonArms.svg/330px-RobinsonArms.svg.png",
-    "tldr": "Robinson was Lord Mayor of York in 1700 and MP for York from 1698 to 1722.",
-    "events": [
-      {
-        "date": "1688",
-        "description": "Robinson was captain of the Bulmer Troop and played a role in the Glorious Revolution, when both England and Scotland's kings were dethroned ⚔️ FAMILY: his father has also been Lord Mayor and MP. His son went on to become a Baron and Leader of the House of Commons 🏛️"
-      }
-    ]
-  },
   {
     "coords": [-1.087373638880722, 53.96436886923295],
     "name": "John Bright",
