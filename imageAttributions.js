@@ -2,6 +2,11 @@
 
 // Array to store image attributions
 const imageAttributions = [
+                        {
+    "name": "<a href='https://www.geograph.org.uk/photo/766094'>The Destructor</a>",
+    "author": "Richard Croft",
+    "license": "CC BY-SA 2.0"
+  },
             {
     "name": "<a href='https://commons.wikimedia.org/wiki/File:Judi_Dench_at_the_BAFTAs_2007_(cropped).jpg'>Judi Dench</a>",
     "author": "Georgfotoart",
