@@ -626,15 +626,6 @@ export const locations = [
     ]
   },
   {
-    "coords": [-1.0775199477702802, 53.97183820061223],
-    "name": "Sarah Booth",
-    "occupation": "",
-    "description": "Sarah Booth lived here",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Venus_symbol_%28heavy_pink%29.svg/120px-Venus_symbol_%28heavy_pink%29.svg.png",
-    "tldr": "Sarah Booth is the first ever woman to vote in York, at 8am on the 14th December 1918. This was when women voted in a general election for the first time 🗳️",
-    "events": []
-  },
-  {
     "coords": [-1.074206471799719, 53.95128885479212],
     "name": "Annie Coultate",
     "occupation": "1856-1931",
