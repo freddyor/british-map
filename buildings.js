@@ -1,4 +1,15 @@
 export const buildings = [
+                        {
+    "name": "The Destructor",
+    "coords": [-1.0714592650102257, 53.96033310550022],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/4/42/Foss_Islands_chimney_-_geograph.org.uk_-_766094.jpg",
+    "description": "",
+    "occupation": "1899",
+    "videoUrl": "https://www.britmap.com/videos/Captions_B9E98C.mp4",
+    "tldr": "",
+    "events": [
+    ]
+  },
             {
     "name": "Memorial Gardens",
     "coords": [-1.0895344308173005, 53.95991546490111],
@@ -26,7 +37,7 @@ export const buildings = [
     "image": "https://upload.wikimedia.org/wikipedia/commons/c/c2/Cosy_Club_Fossgate_York_01.jpg",
     "description": "",
     "occupation": "1911",
-    "videoUrl": "https://www.britmap.com/videos/Captions_5443BE.mp4",
+    "videoUrl": "https://www.britmap.com/videos/Captions_B9E98C.mp4",
     "tldr": "",
     "events": []
   },
@@ -47,7 +58,7 @@ export const buildings = [
     "image": "https://upload.wikimedia.org/wikipedia/commons/8/80/Lady_Row%2C_Goodramgate_-_geograph.org.uk_-_676090.jpg",
     "description": "",
     "occupation": "1316",
-            "videoUrl": "https://www.britmap.com/videos/Captions_10809A.mp4",
+            "videoUrl": "https://www.britmap.com/videos/Captions_FAFF0D.mp4",
     "tldr": "",
     "events": [
     ]
