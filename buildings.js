@@ -1,4 +1,36 @@
 export const buildings = [
+      {
+    "name": "The Norman House",
+    "coords": [-1.0832804552932895, 53.96153403928001],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/f/fa/NormanHouseYork.jpg",
+    "description": "",
+    "occupation": "12th Century",
+    "videoUrl": "https://www.britmap.com/videos/Captions_ED8ABD.mp4",
+    "tldr": "",
+    "events": [
+    ]
+  },
+      {
+    name: "Garforth House",
+    coords: [-1.0872525932033406, 53.95744218582411],
+    image: "https://upload.wikimedia.org/wikipedia/commons/4/4c/Garforth_House%2C_Micklegate_-_geograph.org.uk_-_673504.jpg",
+    description: "",
+    occupation: "1757",
+ "videoUrl": "https://www.britmap.com/videos/Captions_65CE21.mp4",
+    tldr: "",
+    events: []
+  },
+      {
+    "name": "Memorial Gardens",
+    "coords": [-1.0895344308173005, 53.95991546490111],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/War_memorial%2C_York_-_DSC07862.JPG/960px-War_memorial%2C_York_-_DSC07862.JPG",
+    "description": "",
+    "occupation": "1925",
+    "videoUrl": "https://www.britmap.com/videos/Captions_83C59A.mp4",
+    "tldr": "'e",
+    "events": [
+    ]
+  },
     {
     "name": "The Red House",
     "coords": [-1.0850877895635525, 53.96151482928061],
@@ -1778,15 +1810,6 @@ export const buildings = [
     ]
   },
   {
-    name: "Garforth House",
-    coords: [-1.0872525932033406, 53.95744218582411],
-    image: "https://upload.wikimedia.org/wikipedia/commons/4/4c/Garforth_House%2C_Micklegate_-_geograph.org.uk_-_673504.jpg",
-    description: "",
-    occupation: "1757",
-    tldr: "The Georgian townhouse was St Margaret's Independent Grammar School for Girls, run by nuns from 1918-1968. Each year, the current owners host the nuns, now in their 90s, for a school reunion 🍾",
-    events: []
-  },
-  {
     name: "The Grand",
     coords: [-1.0889314522636129, 53.9585617368568],
     image: "https://upload.wikimedia.org/wikipedia/commons/9/96/The_Grand_Hotel_%26_Spa%2C_York.jpg",
@@ -1945,24 +1968,6 @@ export const buildings = [
     ]
   },
   {
-    "name": "The Norman House",
-    "coords": [-1.0832804552932895, 53.96153403928001],
-    "image": "https://upload.wikimedia.org/wikipedia/commons/f/fa/NormanHouseYork.jpg",
-    "description": "",
-    "occupation": "12th Century",
-    "tldr": "Known as 'York's oldest house', it was only discovered in 1939.",
-    "events": [
-      {
-        "date": "OWNER",
-        "description": "The York Civic Trust speculate it may have been home to a Jewish financier ✡️"
-      },
-      {
-        "date": "LAYOUT",
-        "description": "It was once a two story house made of magnesian limestone."
-      }
-    ]
-  },
-  {
     "name": "St William's College",
     "coords": [-1.0802937994910167, 53.96232365544075],
     "image": "https://upload.wikimedia.org/wikipedia/commons/5/5a/St_William%27s_College_York_2023.jpg",
@@ -2038,24 +2043,6 @@ export const buildings = [
       {
         "date": "ROMAN",
         "description": "The building is built directly over a Roman road, four columns were discovered during renovation."
-      }
-    ]
-  },
-  {
-    "name": "Memorial Gardens",
-    "coords": [-1.0895344308173005, 53.95991546490111],
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/War_memorial%2C_York_-_DSC07862.JPG/960px-War_memorial%2C_York_-_DSC07862.JPG",
-    "description": "",
-    "occupation": "1925",
-    "tldr": "'Their name liveth forever more",
-    "events": [
-      {
-        "date": "1925",
-        "description": "King George VI unveiled the memorial 👑"
-      },
-      {
-        "date": "CENOTAPH",
-        "description": "It was designed by Sir Edwin Luxten, who also designed the Cenotaph in London 🇬🇧"
       }
     ]
   },
