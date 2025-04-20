@@ -1,4 +1,77 @@
 export const buildings = [
+            {
+    "name": "Memorial Gardens",
+    "coords": [-1.0895344308173005, 53.95991546490111],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/War_memorial%2C_York_-_DSC07862.JPG/960px-War_memorial%2C_York_-_DSC07862.JPG",
+    "description": "",
+    "occupation": "1925",
+    "videoUrl": "https://www.britmap.com/videos/Captions_194368.mp4",
+    "tldr": "",
+    "events": [
+    ]
+  },
+              {
+    "name": "York Fiddler",
+    "coords": [-1.0820912596212449, 53.961976155693264],
+    "image": "https://i.ebayimg.com/00/s/MTYwMFgxMDM2/z/cCQAAOSwFcFj4thG/$_57.PNG?set_id=880000500F",
+    "description": "",
+    "occupation": " ",
+    "videoUrl": "https://www.britmap.com/videos/Captions_583941.mp4",
+    "tldr": "",
+    "events": []
+  },
+        {
+    "name": "Electric Cinema",
+    "coords": [-1.0785844693813007, 53.95843522950068],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/c/c2/Cosy_Club_Fossgate_York_01.jpg",
+    "description": "",
+    "occupation": "1911",
+    "videoUrl": "https://www.britmap.com/videos/Captions_5443BE.mp4",
+    "tldr": "",
+    "events": []
+  },
+        {
+    "name": "The Milner York",
+    "coords": [-1.091757496638528, 53.95866308006686],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/c/cc/York_Station_Hotel.JPG",
+    "description": "",
+    "occupation": "1878",
+    "videoUrl": "https://www.britmap.com/videos/Captions_5443BE.mp4",
+    "tldr": "",
+    "events": [
+    ]
+  },
+        {
+    "name": "Lady Row",
+    "coords": [-1.0800538837309381, 53.96089531337014],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/8/80/Lady_Row%2C_Goodramgate_-_geograph.org.uk_-_676090.jpg",
+    "description": "",
+    "occupation": "1316",
+            "videoUrl": "https://www.britmap.com/videos/Captions_10809A.mp4",
+    "tldr": "",
+    "events": [
+    ]
+  },
+        {
+              "name": "Sarah Booth",
+    "coords": [-1.0775199477702802, 53.97183820061223],
+    "occupation": "",
+    "description": "",
+    "image": "https://www.britmap.com/videos/IMG_5241.jpeg",
+      "videoUrl": "https://www.britmap.com/videos/Captions_10809A.mp4",
+    "tldr": "",
+    "events": []
+  },
+        {
+    name: "Red Tower",
+    coords: [-1.0713779227295128, 53.95795987409401],
+    image: "https://upload.wikimedia.org/wikipedia/commons/d/d5/The_Red_Tower_on_York_city_walls_%285%29.JPG",
+    description: "",
+    occupation: "1490",
+      "videoUrl": "https://www.britmap.com/videos/Captions_700C01.mp4",
+    tldr: "",
+    events: [   ]
+  },
       {
     "name": "The Norman House",
     "coords": [-1.0832804552932895, 53.96153403928001],
@@ -19,17 +92,6 @@ export const buildings = [
  "videoUrl": "https://www.britmap.com/videos/Captions_65CE21.mp4",
     tldr: "",
     events: []
-  },
-      {
-    "name": "Memorial Gardens",
-    "coords": [-1.0895344308173005, 53.95991546490111],
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/War_memorial%2C_York_-_DSC07862.JPG/960px-War_memorial%2C_York_-_DSC07862.JPG",
-    "description": "",
-    "occupation": "1925",
-    "videoUrl": "https://www.britmap.com/videos/Captions_83C59A.mp4",
-    "tldr": "'e",
-    "events": [
-    ]
   },
     {
     "name": "The Red House",
@@ -1775,18 +1837,6 @@ export const buildings = [
     ]
   },
   {
-    name: "Red Tower",
-    coords: [-1.0713779227295128, 53.95795987409401],
-    image: "https://upload.wikimedia.org/wikipedia/commons/d/d5/The_Red_Tower_on_York_city_walls_%285%29.JPG",
-    description: "",
-    occupation: "1490",
-    tldr: "It is the only brick tower in the city.",
-    events: [
-      { date: "BRICK", description: "The Tilers' Guild were employed to build the tower in brick, as it was cheaper than stone. This led to a rift between the Tilers' and the Masons' Guilds with the former asking the city for protection following threats and damage to their tools by the Mason's." },
-      { date: "2018", description: "It was converted into a hub and cafe, for which it won a York Design Award 🏆" }
-    ]
-  },
-  {
     name: "Grays Court",
     coords: [-1.0803656155532937, 53.96293921598464],
     image: "https://upload.wikimedia.org/wikipedia/commons/b/b6/Grays_Court_York.jpg",
@@ -1904,20 +1954,6 @@ export const buildings = [
       {
         "date": "17TH CENTURY",
         "description": "The building originally had a spire but it was hit by a cannon ball and by lightning ⚡️"
-      }
-    ]
-  },
-  {
-    "name": "Lady Row",
-    "coords": [-1.0800538837309381, 53.96089531337014],
-    "image": "https://upload.wikimedia.org/wikipedia/commons/8/80/Lady_Row%2C_Goodramgate_-_geograph.org.uk_-_676090.jpg",
-    "description": "",
-    "occupation": "1316",
-    "tldr": "Historic England describe it as some of the earliest urban vernacular building surviving in England.",
-    "events": [
-      {
-        "date": "CRAMPED",
-        "description": "This tiny row initially housed ten tenants at once."
       }
     ]
   },
@@ -2061,24 +2097,6 @@ export const buildings = [
       {
         "date": "1925",
         "description": "It was restored and The Duchess of York unveiled it as the only memorial in the UK dedicated to all the women of the British Empire who were killed in WW1 🇬🇧"
-      }
-    ]
-  },
-  {
-    "name": "The Milner York",
-    "coords": [-1.091757496638528, 53.95866308006686],
-    "image": "https://upload.wikimedia.org/wikipedia/commons/c/cc/York_Station_Hotel.JPG",
-    "description": "",
-    "occupation": "1878",
-    "tldr": "The building was originally opened as an addition to the railways station, but has changed hands ever since.",
-    "events": [
-      {
-        "date": "1854",
-        "description": "Queen Victoria visited the hotel, thus it became the Royal Station Hotel for a while 👑"
-      },
-      {
-        "date": "2024",
-        "description": "It was named The Milner York after the war hero who died inside here. William Milner's 95-year-old granddaughter cut the ribbon at the opening ceremony."
       }
     ]
   },
@@ -2502,15 +2520,6 @@ export const buildings = [
         "description": "In 1903, George Robinson became the landlord of the pub; he was later the founding director of York City Football Club, and the club initially held its meetings in the pub ⚽"
       }
     ]
-  },
-  {
-    "name": "Electric Cinema",
-    "coords": [-1.0785844693813007, 53.95843522950068],
-    "image": "https://upload.wikimedia.org/wikipedia/commons/c/c2/Cosy_Club_Fossgate_York_01.jpg",
-    "description": "",
-    "occupation": "1911",
-    "tldr": "Now a restaurant, this building was the first purpose-built cinema in York. It closed in 1957 Ⅱ",
-    "events": []
   },
   {
     "name": "Old White Swan",
