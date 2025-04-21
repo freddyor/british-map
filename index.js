@@ -135,25 +135,25 @@ toggleContainerButton.addEventListener('click', () => {
     }
 });
 
-function addLocationsList() {
+function addBuildingsList() {
     const list = document.createElement('ul');
     list.style.listStyleType = 'none';
     list.style.padding = '0';
     list.style.margin = '0';
     list.style.fontSize = '12px';
-    list.style.lineHeight = '0.25';
+    list.style.lineHeight = '1.25';
 
-    const sortedLocations = [...locations].sort((a, b) => a.name.localeCompare(b.name));
+    const sortedBuildings = [...buildings].sort((a, b) => a.name.localeCompare(b.name));
 
-    sortedLocations.forEach(location => {
+    sortedBuildings.forEach(building => {
         const listItem = document.createElement('li');
-        listItem.textContent = location.name;
+        listItem.textContent = building.name;
         listItem.style.cursor = 'pointer';
         listItem.style.padding = '5px';
 
         listItem.addEventListener('click', () => {
             map.flyTo({
-                center: location.coords,
+                center: building.coords,
                 zoom: 20
             });
              openableContainer.style.display = 'none';
