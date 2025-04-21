@@ -1366,7 +1366,7 @@ export const buildings = [
     "image": "https://upload.wikimedia.org/wikipedia/commons/4/4a/Ash_Tree_Cottage.jpg",
     "description": "",
     "occupation": "1836",
-          "excludeFromList": "true"
+          "excludeFromList": "true",
     "tldr": "This building is all that remains of the Goathland Bank Top Railway Station, that stood here for 30 years. This building was the 'overseers cottage' or ticketing office.",
     "events": []
   },
