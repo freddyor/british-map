@@ -34,6 +34,22 @@ var map = new mapboxgl.Map({
     bearing: -17.6
 });
 
+// Create the openable container
+const openableContainer = document.createElement('div');
+openableContainer.id = 'openable-container'; // Add an ID for easier debugging
+openableContainer.style.position = 'fixed';
+openableContainer.style.bottom = '10px';
+openableContainer.style.left = '10px';
+openableContainer.style.width = '300px'; // Adjust width as needed
+openableContainer.style.height = '200px'; // Adjust height as needed
+openableContainer.style.backgroundColor = '#fff';
+openableContainer.style.border = '1px solid #ccc';
+openableContainer.style.borderRadius = '8px';
+openableContainer.style.boxShadow = '0 6px 15px rgba(0, 0, 0, 0.3)';
+openableContainer.style.overflowY = 'auto'; // Make it scrollable
+openableContainer.style.zIndex = '1000'; // Ensure it appears above other elements
+document.body.appendChild(openableContainer);
+
 // Create a bottom sheet container
 const bottomSheet = document.createElement('div');
 bottomSheet.id = 'bottom-sheet';
@@ -107,7 +123,7 @@ function addLocationsList() {
     list.style.padding = '0';
     list.style.margin = '0';
     list.style.fontSize = '12px';
-    list.style.lineHeight = '0.25';
+    list.style.lineHeight = '1.25';
 
     const sortedLocations = [...locations].sort((a, b) => a.name.localeCompare(b.name));
 
@@ -122,10 +138,14 @@ function addLocationsList() {
                 center: location.coords,
                 zoom: 20
             });
-             openableContainer.style.display = 'none';
+            openableContainer.style.display = 'none';
         });
         list.appendChild(listItem);
     });
+
+    openableContainer.innerHTML = ''; // Clear any previous content
+    openableContainer.appendChild(list);
+}
     
     openableContainer.innerHTML = '';
     openableContainer.style.maxHeight = '150px';
