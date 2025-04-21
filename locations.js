@@ -37,17 +37,6 @@ export const locations = [
 { date: "LEGACY", description: "He has built a large amount of York's grade listed buildings, such as the York Crown Court, York Castle Museum, Fairfax House, Bootham Mental Hospital and Micklegate House 🏛️" },
 ]
   },
-{ 
-    coords: [ -1.0916981690535232, 53.95852196150802 ], 
-    name: "William Milner", 
-    occupation: "1900-1942", 
-    description: "William Milner heroically lost his life here during the Blitz.",
-    image: "https://www.militaryhistories.co.uk/assets/images/york/milner_w.jpg",
-    tldr: "During the Baedeker Blitz, William Milner, Station Foreman, ran into this burning building to obtain a medical box to treat the wounded. He didn't make it back out.",
-     events: [
-{ date: "2001", description: "When his body was discovered, he was still clutching the first-aid box." },
-]
-  },
    {
     coords: [ -1.0910483420666228, 53.95554211040348 ], 
     name: "George Leeman", 
