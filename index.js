@@ -143,6 +143,9 @@ function addBuildingsList() {
     list.style.fontSize = '12px';
     list.style.lineHeight = '1.25';
 
+     // Filter to exclude buildings with excludeFromList: true
+    const filteredBuildings = buildings.filter(building => !building.excludeFromList);
+
     const sortedBuildings = [...buildings].sort((a, b) => a.name.localeCompare(b.name));
 
     sortedBuildings.forEach(building => {
