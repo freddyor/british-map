@@ -34,22 +34,6 @@ var map = new mapboxgl.Map({
     bearing: -17.6
 });
 
-// Create the openable container
-const openableContainer = document.createElement('div');
-openableContainer.id = 'openable-container'; // Add an ID for easier debugging
-openableContainer.style.position = 'fixed';
-openableContainer.style.bottom = '10px';
-openableContainer.style.left = '10px';
-openableContainer.style.width = '300px'; // Adjust width as needed
-openableContainer.style.height = '200px'; // Adjust height as needed
-openableContainer.style.backgroundColor = '#fff';
-openableContainer.style.border = '1px solid #ccc';
-openableContainer.style.borderRadius = '8px';
-openableContainer.style.boxShadow = '0 6px 15px rgba(0, 0, 0, 0.3)';
-openableContainer.style.overflowY = 'auto'; // Make it scrollable
-openableContainer.style.zIndex = '1000'; // Ensure it appears above other elements
-document.body.appendChild(openableContainer);
-
 // Create a bottom sheet container
 const bottomSheet = document.createElement('div');
 bottomSheet.id = 'bottom-sheet';
@@ -117,13 +101,47 @@ buttonGroup.style.display = 'flex';
 buttonGroup.style.gap = '10px';
 document.body.appendChild(buttonGroup);
 
+// Find People button
+const toggleContainerButton = document.createElement('button');
+toggleContainerButton.id = 'toggle-container-button';
+toggleContainerButton.textContent = 'Find people 🔍';
+toggleContainerButton.className = 'custom-button';
+buttonGroup.appendChild(toggleContainerButton);
+
+const openableContainer = document.createElement('div');
+openableContainer.id = 'openable-container';
+openableContainer.style.display = 'none';
+openableContainer.style.position = 'fixed';
+openableContainer.style.left = '50%';
+openableContainer.style.top = '80px';
+openableContainer.style.transform = 'translateX(-50%)';
+openableContainer.style.zIndex = '999';
+openableContainer.style.backgroundColor = '#fff';
+openableContainer.style.border = '2px solid #f0f0f0';
+openableContainer.style.borderRadius = '8px';
+openableContainer.style.boxShadow = '0 6px 15px rgba(0, 0, 0, 0.3)';
+openableContainer.style.padding = '10px';
+openableContainer.style.width = '200px';
+openableContainer.style.textAlign = 'center';
+document.body.appendChild(openableContainer);
+
+toggleContainerButton.addEventListener('click', () => {
+    if (openableContainer.style.display === 'none' || openableContainer.style.display === '') {
+        openableContainer.style.display = 'block';
+        toggleContainerButton.textContent = 'Find people 🔍';
+    } else {
+        openableContainer.style.display = 'none';
+        toggleContainerButton.textContent = 'Find people 🔍';
+    }
+});
+
 function addLocationsList() {
     const list = document.createElement('ul');
     list.style.listStyleType = 'none';
     list.style.padding = '0';
     list.style.margin = '0';
     list.style.fontSize = '12px';
-    list.style.lineHeight = '1.25';
+    list.style.lineHeight = '0.25';
 
     const sortedLocations = [...locations].sort((a, b) => a.name.localeCompare(b.name));
 
@@ -138,14 +156,10 @@ function addLocationsList() {
                 center: location.coords,
                 zoom: 20
             });
-            openableContainer.style.display = 'none';
+             openableContainer.style.display = 'none';
         });
         list.appendChild(listItem);
     });
-
-    openableContainer.innerHTML = ''; // Clear any previous content
-    openableContainer.appendChild(list);
-}
     
     openableContainer.innerHTML = '';
     openableContainer.style.maxHeight = '150px';
@@ -156,6 +170,7 @@ function addLocationsList() {
 
     openableContainer.classList.add('hide-scrollbar');
 }
+    
 
 // Create a <style> element to add the CSS
 const stylePopup = document.createElement('style');
