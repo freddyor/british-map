@@ -66,7 +66,7 @@ export const buildings = [
         {
               "name": "Sarah Booth",
     "coords": [-1.0775199477702802, 53.97183820061223],
-    "occupation": "",
+    "occupation": " ",
     "description": "",
     "image": "https://www.britmap.com/videos/IMG_5241.jpeg",
       "videoUrl": "https://www.britmap.com/videos/Captions_10809A.mp4",
