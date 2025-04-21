@@ -104,7 +104,7 @@ document.body.appendChild(buttonGroup);
 // Find People button
 const toggleContainerButton = document.createElement('button');
 toggleContainerButton.id = 'toggle-container-button';
-toggleContainerButton.textContent = 'Find people 🔍';
+toggleContainerButton.textContent = 'Discover places 🔍';
 toggleContainerButton.className = 'custom-button';
 buttonGroup.appendChild(toggleContainerButton);
 
