@@ -5,7 +5,7 @@ export const buildings = [
     "image": "https://upload.wikimedia.org/wikipedia/commons/4/42/Foss_Islands_chimney_-_geograph.org.uk_-_766094.jpg",
     "description": "",
     "occupation": "1899",
-    "videoUrl": "https://www.britmap.com/videos/Captions_B9E98C.mp4",
+    "videoUrl": "https://www.britmap.com/videos/Captions_31CDB1.mp4",
     "tldr": "",
     "events": [
     ]
