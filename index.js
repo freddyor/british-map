@@ -148,21 +148,44 @@ function addBuildingsList() {
 
     const sortedBuildings = [...buildings].sort((a, b) => a.name.localeCompare(b.name));
 
-    sortedBuildings.forEach(building => {
+ sortedBuildings.forEach(building => {
         const listItem = document.createElement('li');
-        listItem.textContent = building.name;
         listItem.style.cursor = 'pointer';
         listItem.style.padding = '5px';
+        listItem.style.display = 'flex'; // Use flexbox for image and text alignment
+        listItem.style.alignItems = 'center'; // Align image and text vertically
+        listItem.style.gap = '10px'; // Add spacing between image and text
 
+        // Create an image element for the building
+        const image = document.createElement('img');
+        image.src = building.image;
+        image.alt = building.name;
+        image.style.width = '40px'; // Adjust image size
+        image.style.height = '40px'; // Adjust image size
+        image.style.objectFit = 'cover';
+        image.style.borderRadius = '8px'; // Optional: rounded corners
+
+        // Create a text element for the building name
+        const text = document.createElement('span');
+        text.textContent = building.name;
+
+        // Append the image and text to the list item
+        listItem.appendChild(image);
+        listItem.appendChild(text);
+
+        // Add click event to fly to the building's location on the map
         listItem.addEventListener('click', () => {
             map.flyTo({
                 center: building.coords,
                 zoom: 20
             });
-             openableContainer.style.display = 'none';
+            openableContainer.style.display = 'none';
         });
+
+        // Append the list item to the list
         list.appendChild(listItem);
     });
+
     
     openableContainer.innerHTML = '';
     openableContainer.style.maxHeight = '150px';
