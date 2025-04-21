@@ -204,6 +204,7 @@ export const buildings = [
     ],
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Wesleyan_Chapel%2C_Lealholm_(1)_-_geograph.org.uk_-_2835480.jpg/330px-Wesleyan_Chapel%2C_Lealholm_(1)_-_geograph.org.uk_-_2835480.jpg",
     "description": "",
+      "excludeFromList": "true",
     "occupation": "",
     "tldr": "On the sidewall of the chapel records the heights of previous floods. The major flood of 23rd July 1930 put the chapel more than 3 feet underwater",
     "events": []
@@ -217,6 +218,7 @@ export const buildings = [
     "image": "https://s0.geograph.org.uk/geophotos/01/59/85/1598568_59628ec6.jpg",
     "description": "",
     "occupation": " ",
+    "excludeFromList": "true",
     "tldr": "‘These men passed out of the site of men by the path of duty and self-sacrifice’",
     "events": [
       {
@@ -238,6 +240,7 @@ export const buildings = [
     "image": "https://i0.wp.com/live.staticflickr.com/65535/52186166315_ec33f42b70_c.jpg?w=584&ssl=1",
     "description": "",
     "occupation": "1929",
+    "excludeFromList": "true",
     "tldr": "This cross is a memorial to Francis Holt Yates Titcomb of the Royal Naval Air Service",
     "events": [
       {
@@ -255,6 +258,7 @@ export const buildings = [
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/St_Thomas's_Church%2C_Glaisdale_-_geograph.org.uk_-_1997478.jpg/330px-St_Thomas's_Church%2C_Glaisdale_-_geograph.org.uk_-_1997478.jpg",
     "description": "",
     "occupation": "1794",
+   "excludeFromList": "true",
     "tldr": "In 1585, a church was constructed in Glaisdale as a chapel of ease to St Hilda’s Church in Danby. It was demolished and this new church was built between 1792 and 1794",
     "events": [
       {
@@ -272,6 +276,7 @@ export const buildings = [
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Lealholm_village.jpg/360px-Lealholm_village.jpg",
     "description": "",
     "occupation": "1709",
+    "excludeFromList": "true",
     "tldr": "Now a garden centre, this site has been the home of two water mills",
     "events": [
       {
@@ -293,6 +298,7 @@ export const buildings = [
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Glaisdale_railway_station_MMB_06.jpg/500px-Glaisdale_railway_station_MMB_06.jpg",
     "description": "",
     "occupation": "1865",
+    "excludeFromList": "true",
     "tldr": "The station takes around 19,000 passengers a year",
     "events": [
       {
@@ -314,6 +320,7 @@ export const buildings = [
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Beggar's_Bridge_over_the_River_Esk_-_geograph.org.uk_-_4568221.jpg/375px-Beggar's_Bridge_over_the_River_Esk_-_geograph.org.uk_-_4568221.jpg",
     "description": "",
     "occupation": "1619",
+    "excludeFromList": "true",
     "tldr": "The current bridge replaced a Medieval bridge on the same location due to a romance",
     "events": [
       {
@@ -334,6 +341,7 @@ export const buildings = [
     ],
     "image": "https://s0.geograph.org.uk/geophotos/05/99/67/5996763_6705f8b7.jpg",
     "description": "",
+    "excludeFromList": "true",
     "occupation": "Ancient",
     "tldr": "This is an ancient waymarker cross which marked the junction of two ancient tracks. Stonegate, running east/west, met Leavergate, running north to Staithes, here",
     "events": []
@@ -347,6 +355,7 @@ export const buildings = [
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Glaisdale_Head_Methodist_Church_-_geograph.org.uk_-_5747080.jpg/330px-Glaisdale_Head_Methodist_Church_-_geograph.org.uk_-_5747080.jpg",
     "description": "",
     "occupation": "1821",
+    "excludeFromList": "true",
     "tldr": "The church was built by the Wesleyan Methodist Church, with an attached manse (minister’s house)",
     "events": [
       {
@@ -364,6 +373,7 @@ export const buildings = [
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Egton_Station_on_the_Esk_Valley_Line_(geograph_5138721).jpg/450px-Egton_Station_on_the_Esk_Valley_Line_(geograph_5138721).jpg",
     "description": "",
     "occupation": "1865",
+    "excludeFromList": "true",
     "tldr": "The station opened at the same time as the Castleton and Grosmont line by North Eastern Railway",
     "events": [
       {
@@ -381,6 +391,7 @@ export const buildings = [
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/RC_School_at_Egton_Bridge_-_geograph.org.uk_-_5764892.jpg/330px-RC_School_at_Egton_Bridge_-_geograph.org.uk_-_5764892.jpg",
     "description": "",
     "occupation": "1743",
+    "excludeFromList": "true",
     "tldr": "A Catholic chapel turned into a primary school",
     "events": [
       {
@@ -402,6 +413,7 @@ export const buildings = [
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/St_Hedda's_Church%2C_Egton_Bridge_-_geograph.org.uk_-_595835.jpg/330px-St_Hedda's_Church%2C_Egton_Bridge_-_geograph.org.uk_-_595835.jpg",
     "description": "",
     "occupation": "1867",
+    "excludeFromList": "true",
     "tldr": "This church was built to replace the old village church which became St Hedda’s Catholic Primary School",
     "events": []
   },
@@ -414,6 +426,7 @@ export const buildings = [
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/GristhorpeStation.jpg/375px-GristhorpeStation.jpg",
     "description": "",
     "occupation": "1846",
+    "excludeFromList": "true",
     "tldr": "The station opened in 1846 to serve Gristhorpe and Lebbertson on the Yorkshire Coast Line. It closed on 16 February 1959",
     "events": []
   },
@@ -426,6 +439,7 @@ export const buildings = [
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/The_Horse_Shoe%2C_Egton_Bridge_-_geograph.org.uk_-_448737.jpg/330px-The_Horse_Shoe%2C_Egton_Bridge_-_geograph.org.uk_-_448737.jpg",
     "description": "",
     "occupation": "early 19th",
+    "excludeFromList": "true",
     "tldr": "This free house has been purposed for many things over the years",
     "events": [
       {
@@ -452,6 +466,7 @@ export const buildings = [
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Church_of_All_Saints%2C_Hawsker-cum-Stainsacre_(2)_-_geograph.org.uk_-_2817923.jpg/330px-Church_of_All_Saints%2C_Hawsker-cum-Stainsacre_(2)_-_geograph.org.uk_-_2817923.jpg",
     "description": "",
     "occupation": "1877",
+    "excludeFromList": "true",
     "tldr": "The current church was built between 1876 and 1877",
     "events": [
       {
@@ -473,6 +488,7 @@ export const buildings = [
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/View_of_Star_Carr_site_looking_NWW..jpg/330px-View_of_Star_Carr_site_looking_NWW..jpg",
     "description": "",
     "occupation": "9300BC",
+    "excludeFromList": "true",
     "tldr": "This site was occupied for 800 years during the Mesolithic period. John Moore discovered the site in 1947",
     "events": [
       {
@@ -498,6 +514,7 @@ export const buildings = [
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Old_St_Margaret's_Church%2C_Harwood_Dale_-_geograph.org.uk_-_218402.jpg/330px-Old_St_Margaret's_Church%2C_Harwood_Dale_-_geograph.org.uk_-_218402.jpg",
     "description": "",
     "occupation": "1634",
+    "excludeFromList": "true",
     "tldr": "It was built by Thomas Posthumous Hoby, in memory of his wife",
     "events": [
       {
@@ -519,6 +536,7 @@ export const buildings = [
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/War_Memorial%2C_Commondale.jpg/1200px-War_Memorial%2C_Commondale.jpg",
     "description": "",
     "occupation": "1921",
+    "excludeFromList": "true",
     "tldr": "'In Honoured Memory of the Men of Commondale, who Gave Their Lives for God, King, and Country, in the Great War. 1914 - 1918'",
     "events": [
       {
@@ -536,6 +554,7 @@ export const buildings = [
     "image": "https://historicengland.org.uk/etl/1436162/260d724f-a5d4-41e4-8910-6b977efd1f8f.jpg?autorotate=true&height=500&mode=max&quality=80",
     "description": "",
     "occupation": "1920",
+    "excludeFromList": "true",
     "tldr": "This memorial commemorates the lives of two shepherds who lived and worked on this spot",
     "events": [
       {
@@ -557,6 +576,7 @@ export const buildings = [
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Dibbles_Bridge_-_geograph.org.uk_-_1757509.jpg/330px-Dibbles_Bridge_-_geograph.org.uk_-_1757509.jpg",
     "description": "",
     "occupation": "",
+    "excludeFromList": "true",
     "tldr": "Dibble Bridge was the scene of the worst-ever road accident in the UK by fatalities in 1975",
     "events": [
       {
@@ -578,6 +598,7 @@ export const buildings = [
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Speeton_Clay_at_Reighton_Sands.JPG/500px-Speeton_Clay_at_Reighton_Sands.JPG",
     "description": "",
     "occupation": " ",
+    "excludeFromList": "true",
     "tldr": "It is a Cretaceous formation, a geological period that lasted from about 143.1 to 66 million years ago.",
     "events": [
       {
@@ -595,6 +616,7 @@ export const buildings = [
     "image": "https://s0.geograph.org.uk/geophotos/04/12/72/4127287_ae2861f4.jpg",
     "description": "",
     "occupation": "1897",
+    "excludeFromList": "true",
     "tldr": "The two boilers and stern post of the ship Laura lay on this spot.",
     "events": [
       {
@@ -616,6 +638,7 @@ export const buildings = [
     "image": "https://s0.geograph.org.uk/geophotos/05/97/07/5970766_d57fe494.jpg",
     "description": "",
     "occupation": "1912",
+    "excludeFromList": "true",
     "tldr": "The Diamond’s stern-post and boiler lay on the beach here to this day.",
     "events": [
       {
@@ -637,6 +660,7 @@ export const buildings = [
     "image": "https://s0.geograph.org.uk/geophotos/03/59/75/3597525_80edbf84_original.jpg",
     "description": "",
     "occupation": "1940",
+    "excludeFromList": "true",
     "tldr": "These coastal defences were built during the Second World War, in case of invasion.",
     "events": []
   },
@@ -649,6 +673,7 @@ export const buildings = [
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Platform_at_Hawsker_Station_-_geograph.org.uk_-_451486.jpg/450px-Platform_at_Hawsker_Station_-_geograph.org.uk_-_451486.jpg",
     "description": "",
     "occupation": "1885",
+    "excludeFromList": "true",
     "tldr": "The station served High Hawsker, Low Hawsker and Stainsacre.",
     "events": [
       {
@@ -674,6 +699,7 @@ export const buildings = [
     "image": "https://cdn.seearoundbritain.com/images/59279/p1910854-1622825875.jpg",
     "description": "",
     "occupation": "1797",
+    "excludeFromList": "true",
     "tldr": "These almshouses were set up by Caroline Duchess of Marlborough, wife of the 4th Duke. Queen Charlotte described her as 'the proudest woman in England'. Almshouses were homes for the poor, on condition they attended church (there is one opposite).",
     "events": []
   },
@@ -686,6 +712,7 @@ export const buildings = [
     "image": "https://www.schoolsmith.co.uk/wp-content/uploads/2018/10/Bladon-CofE-Primary-School-Woodstock-OX20-CC-640x340.jpg",
     "description": "",
     "occupation": "1858",
+    "excludeFromList": "true",
     "tldr": "The Duchess of Marlborough, wife of the 7th Duke, provided this school and owned it until 1937. It changed from Duchess of Marlborough's School to Bladon Church of England Primary School.",
     "events": []
   },
@@ -698,6 +725,7 @@ export const buildings = [
     "image": "https://i0.wp.com/oxfordshiremummies.co.uk/wp-content/uploads/2022/03/IMG_7491.jpg?fit=1024%2C576&ssl=1",
     "description": "",
     "occupation": " ",
+    "excludeFromList": "true",
     "tldr": "Displayed in this garden are megalosaur footprints, found in a limestone quarry near Ardley.",
     "events": []
   },
@@ -710,6 +738,7 @@ export const buildings = [
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/TitusOates-pilloried_300dpi.jpg/800px-TitusOates-pilloried_300dpi.jpg",
     "description": "",
     "occupation": " ",
+    "excludeFromList": "true",
     "tldr": "Right here are the village headstocks, right in the center of town where old food would have been thrown at minor offenders",
     "events": []
   },
@@ -722,6 +751,7 @@ export const buildings = [
     "image": "https://d2s8km3brsjp0y.cloudfront.net/eyJidWNrZXQiOiJ3aGF0cHViIiwia2V5IjoiT1hOXC9PWE4rMzEtMjE2OTUtNjAwLTQ1MC5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjgwMCwiaGVpZ2h0Ijo2MDAsImZpdCI6ImNvdmVyIn19fQ==",
     "description": "",
     "occupation": "1975",
+    "excludeFromList": "true",
     "tldr": "This is the site where Sylvia Kaye was found murdered in the 'Last Bus to Woodstock', the first book in the Inspector Morse novels by Colin Dexter 🕵️‍♂️",
     "events": []
   },
@@ -734,6 +764,7 @@ export const buildings = [
     "image": "https://upload.wikimedia.org/wikipedia/commons/b/bb/Woodstock_Palace.jpg",
     "description": "",
     "occupation": "12th century",
+    "excludeFromList": "true",
     "tldr": "This was the location of the old royal manor, named Woodstock Palace.",
     "events": [
       {
@@ -759,6 +790,7 @@ export const buildings = [
     "image": "https://upload.wikimedia.org/wikipedia/commons/f/f7/The_Italian_Garden%2C_Blenheim_Palace_-_geograph.org.uk_-_3600803.jpg",
     "description": "",
     "occupation": "1890s",
+    "excludeFromList": "true",
     "tldr": "The Italian garden was designed for the 9th Duke by French landscape-architect Achille Duchene in the 1890s. This is the Duke's private garden",
     "events": []
   },
@@ -771,6 +803,7 @@ export const buildings = [
     "image": "https://upload.wikimedia.org/wikipedia/commons/b/b2/Blenheim_Palace_Park_%26_Lake_(6092921111).jpg",
     "description": "",
     "occupation": " ",
+    "excludeFromList": "true",
     "tldr": "From the Palace to the Column, there is a long avenue of elm trees. These were plated in the position of the duke's troops during the Battle of Blenheim.",
     "events": []
   },
@@ -783,6 +816,7 @@ export const buildings = [
     "image": "https://upload.wikimedia.org/wikipedia/commons/0/09/Blenheim_Palace_-_geograph.org.uk_-_7349662.jpg",
     "description": "",
     "occupation": "1722",
+    "excludeFromList": "true",
     "tldr": "Blenheim Palace is the seat of the Duke of Marlborough and is one of the largest houses in England.",
     "events": [
       {
@@ -808,6 +842,7 @@ export const buildings = [
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Woodstock_Town_Hall_(geograph_4363959).jpg/375px-Woodstock_Town_Hall_(geograph_4363959).jpg",
     "description": "",
     "occupation": "1767",
+    "excludeFromList": "true",
     "tldr": "George Spencer, 4th Duke of Marlborough approved plans for a site here and laid the foundation stone in 1766.",
     "events": [
       {
@@ -833,6 +868,7 @@ export const buildings = [
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Vanbrugh's_'Grand_Bridge'_-_geograph.org.uk_-_2334864.jpg/1200px-Vanbrugh's_'Grand_Bridge'_-_geograph.org.uk_-_2334864.jpg?20210715021044",
     "description": "",
     "occupation": "1710",
+    "excludeFromList": "true",
     "tldr": "Before the lake was created, this bridge was over a river and had 31 rooms in it.",
     "events": [
       {
@@ -854,6 +890,7 @@ export const buildings = [
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Blenheim_Palace_Chapel.jpg/255px-Blenheim_Palace_Chapel.jpg",
     "description": "",
     "occupation": "1733",
+    "excludeFromList": "true",
     "tldr": "The 1st Duke of Marlborough's widow, Sarah, completed this chapel in 1733, eleven years after her husbands death. It features the Duke as a Roman leader, with his wife and two sons,",
     "events": [
       {
@@ -875,6 +912,7 @@ export const buildings = [
     "image": "https://www.blenheimpalace.com/assets/components/phpthumbof/cache/maze-close-up.1b805e7b8da22d45a71305f5900eeeda.jpg",
     "description": "",
     "occupation": "1991",
+    "excludeFromList": "true",
     "tldr": "2 miles in length, it is one of the largest symbolic mazes in the world.",
     "events": [
       {
@@ -899,6 +937,7 @@ export const buildings = [
     ],
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Fair_Rosamund's_Well%2C_Blenheim_-_geograph.org.uk_-_1015851.jpg/300px-Fair_Rosamund's_Well%2C_Blenheim_-_geograph.org.uk_-_1015851.jpg",
     "description": "",
+    "excludeFromList": "true",
     "occupation": "12th century",
     "tldr": "This is a royal well built by King Henry II for his mistress, Rosamund Clifford, to bathe in.",
     "events": [
@@ -921,6 +960,7 @@ export const buildings = [
     "image": "https://upload.wikimedia.org/wikipedia/commons/1/15/ENG_Woodstock_Blenheim_Palace_034.jpg",
     "description": "",
     "occupation": "1773",
+    "excludeFromList": "true",
     "tldr": "A small neoclassical temple dedicated to the goddess of hunting",
     "events": [
       {
@@ -942,6 +982,7 @@ export const buildings = [
     "image": "https://upload.wikimedia.org/wikipedia/commons/e/ed/The_Column_of_Victory_-_geograph.org.uk_-_5954542.jpg",
     "description": "",
     "occupation": "1730",
+    "excludeFromList": "true",
     "tldr": "The Column of Victory was built to commemorate the military victories of the 1st Duke of Marlborough. It was built 8 years after his death.",
     "events": [
       {
@@ -963,6 +1004,7 @@ export const buildings = [
     "image": "https://s0.geograph.org.uk/geophotos/03/70/52/3705246_e1d6c141.jpg",
     "description": "",
     "occupation": "1798",
+    "excludeFromList": "true",
     "tldr": "This Corinthian temple was built to celebrate King George III's recovery from illness.",
     "events": []
   },
@@ -974,6 +1016,7 @@ export const buildings = [
     ],
     "image": "https://upload.wikimedia.org/wikipedia/commons/6/66/Snape-tree-Blenheim_Palace_IMG_3687.jpg",
     "description": "",
+    "excludeFromList": "true",
     "occupation": " ",
     "tldr": "This is the only surviving tree that had a major role in the Harry Potter film series.",
     "events": [
@@ -992,6 +1035,7 @@ export const buildings = [
     "image": "https://upload.wikimedia.org/wikipedia/commons/e/ef/Woodstock_Gate%2C_Blenheim_Palace.jpg",
     "description": "",
     "occupation": "1723",
+    "excludeFromList": "true",
     "tldr": "Woodstock Gate is also known as the Triumphal Arch.",
     "events": [
       {
@@ -1009,6 +1053,7 @@ export const buildings = [
     "image": "https://historicengland.org.uk/etl/1052889/6e957e5c-d785-46c9-afa9-60e0bb1b3d2a.jpg?autorotate=true&height=500&mode=max&quality=80",
     "description": "",
     "occupation": "1890s",
+    "excludeFromList": "true",
     "tldr": "This fountain is a scaled copy of the fountain in Piazza Navona, Rome.",
     "events": []
   },
@@ -1021,6 +1066,7 @@ export const buildings = [
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Ruswarp_Hydro_plant.jpg/450px-Ruswarp_Hydro_plant.jpg",
     "description": "",
     "occupation": "2012",
+    "excludeFromList": "true",
     "tldr": "Ruswarp Hydro is a Hydroelectric generation scheme on the River Esk. It uses Archimedes Screw in a reverse direction to generate electricity.",
     "events": [
       {
@@ -1038,6 +1084,7 @@ export const buildings = [
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Ruswarp_railway_station.jpg/500px-Ruswarp_railway_station.jpg",
     "description": "",
     "occupation": "1835",
+    "excludeFromList": "true",
     "tldr": "Opened for the Whitby-Pickering line, the station still serves five trains a day.",
     "events": [
       {
@@ -1055,6 +1102,7 @@ export const buildings = [
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/Larpool_Viaduct%2C_Whitby.jpg/375px-Larpool_Viaduct%2C_Whitby.jpg",
     "description": "",
     "occupation": "1884",
+    "excludeFromList": "true",
     "tldr": "The viaduct was constructed for the Scarborough and Whitby Railway to cross the River Esk.",
     "events": [
       {
@@ -1080,6 +1128,7 @@ export const buildings = [
     "image": "https://s0.geograph.org.uk/geophotos/06/02/84/6028480_d72dff67_original.jpg",
     "description": "",
     "occupation": "1603",
+    "excludeFromList": "true",
     "tldr": "One of the oldest buildings in Whitby.",
     "events": [
       {
@@ -1101,6 +1150,7 @@ export const buildings = [
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Goathland_Railway_Station.jpg/330px-Goathland_Railway_Station.jpg",
     "description": "",
     "occupation": "1865",
+    "excludeFromList": "true",
     "tldr": "It was opened as Goathland Mill, and was so named due to its proximity to the watermill on the Murk Esk river adjacent to the station.",
     "events": [
       {
@@ -1118,6 +1168,7 @@ export const buildings = [
     "image": "https://upload.wikimedia.org/wikipedia/commons/9/9f/Site_of_RAF_radar_station_-_geograph.org.uk_-_129941.jpg",
     "description": "",
     "occupation": "1937",
+    "excludeFromList": "true",
     "tldr": "This site was an early warning radar station for the RAF, until it was demolished in 1957.",
     "events": [
       {
@@ -1135,6 +1186,7 @@ export const buildings = [
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Lilla_Cross_-_geograph.org.uk_-_1704939.jpg/375px-Lilla_Cross_-_geograph.org.uk_-_1704939.jpg",
     "description": "",
     "occupation": "10th century",
+         "excludeFromList": "true",
     "tldr": "The oldest cross on the North York Moors, with royal connections.",
     "events": [
       {
@@ -1160,6 +1212,7 @@ export const buildings = [
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Beckhole_station_site_remains_geograph-3259150-by-Ben-Brooksbank.jpg/500px-Beckhole_station_site_remains_geograph-3259150-by-Ben-Brooksbank.jpg",
     "description": "",
     "occupation": "1836",
+          "excludeFromList": "true",
     "tldr": "It was an old railway station on the Whitby-Pickering line.",
     "events": [
       {
@@ -1181,6 +1234,7 @@ export const buildings = [
     "image": "https://s0.geograph.org.uk/photos/31/67/316723_e4f134a9.jpg",
     "description": "",
     "occupation": "1619",
+          "excludeFromList": "true",
     "tldr": "Erected by Sir Richard Egerton (hence the R E initials) as a boundary marker for his manor. It still acts as a parish marker today.",
     "events": [
       {
@@ -1202,6 +1256,7 @@ export const buildings = [
     "image": "https://s0.geograph.org.uk/geophotos/01/86/63/1866362_04fcc45f.jpg",
     "description": "",
     "occupation": "13th century",
+          "excludeFromList": "true",
     "tldr": "Part of a major medieval packhorse route linking Kirbymoorside to Redcar and Guisborough.",
     "events": [
       {
@@ -1223,6 +1278,7 @@ export const buildings = [
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Westerdale_hall.jpg/330px-Westerdale_hall.jpg",
     "description": "",
     "occupation": "Early 19th",
+          "excludeFromList": "true",
     "tldr": "Built as a shooting lodge for the Duncombe family, mainly for grouse shooting in late summer and autumn.",
     "events": [
       {
@@ -1239,6 +1295,7 @@ export const buildings = [
     ],
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/The_former_Woodlands_Hall%2C_Aislaby_-_geograph.org.uk_-_4083893.jpg/330px-The_former_Woodlands_Hall%2C_Aislaby_-_geograph.org.uk_-_4083893.jpg",
     "description": "",
+          "excludeFromList": "true",
     "occupation": "18th century",
     "tldr": "The house was built for Henry Walker Yeoman, which was then inherited through the family.",
     "events": [
@@ -1260,6 +1317,7 @@ export const buildings = [
     ],
     "image": "https://www.warmemorialsonline.org.uk/public/img/250950/Aislaby_547x410.jpg",
     "description": "",
+          "excludeFromList": "true",
     "occupation": "1918",
     "tldr": "It is in stone, and consists of a Celtic cross with interlaced ornament, on a square tapering plinth, on a round stepped base. On the plinth are panels with the names of those lost in the two World Wars",
     "events": []
@@ -1273,6 +1331,7 @@ export const buildings = [
     "image": "https://s0.geograph.org.uk/geophotos/06/86/71/6867116_bb2a5b9a.jpg",
     "description": "",
     "occupation": "",
+          "excludeFromList": "true",
     "tldr": "One of only two quarries still operating in the North York Moors,",
     "events": [
       {
@@ -1293,6 +1352,7 @@ export const buildings = [
     ],
     "image": "https://upload.wikimedia.org/wikipedia/commons/b/b6/St_Margaret_C_of_E_Church._-_geograph.org.uk_-_1920780.jpg",
     "description": "",
+          "excludeFromList": "true",
     "occupation": "1732",
     "tldr": "There was a Mediaeval chapel in Aislaby, which in 1732 was replaced by a church, a plain, rectangular building. This church was replaced in 1896 by a new church, designed by Edward H. Smales. The church of 1732 survived, and was later converted into a parish hall.",
     "events": []
@@ -1306,6 +1366,7 @@ export const buildings = [
     "image": "https://upload.wikimedia.org/wikipedia/commons/4/4a/Ash_Tree_Cottage.jpg",
     "description": "",
     "occupation": "1836",
+          "excludeFromList": "true"
     "tldr": "This building is all that remains of the Goathland Bank Top Railway Station, that stood here for 30 years. This building was the 'overseers cottage' or ticketing office.",
     "events": []
   },
@@ -1318,6 +1379,7 @@ export const buildings = [
     "image": "https://upload.wikimedia.org/wikipedia/commons/3/3b/Goathland_(Incline_Top)_station_site_today.jpg",
     "description": "",
     "occupation": "1836",
+          "excludeFromList": "true",
     "tldr": "Beckhole Incline was a steep, rope-worked gradient on the Whitby-Pickering railway line that lasted until 1865.",
     "events": [
       {
@@ -1338,6 +1400,7 @@ export const buildings = [
     ],
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Motorcycle_racing_-_Olivers_Mount_-_geograph.org.uk_-_126358.jpg/390px-Motorcycle_racing_-_Olivers_Mount_-_Olivers_Mount_-_geograph.org.uk_-_126358.jpg",
     "description": "",
+          "excludeFromList": "true",
     "occupation": "",
     "tldr": "Oliver’s Mount is an area of high ground, named after Oliver Cromwell as it was said he sited guns here.",
     "events": [
@@ -1360,6 +1423,7 @@ export const buildings = [
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Aerials%2C_Irton_Moor_-_geograph.org.uk_-_1741549.jpg/375px-Aerials%2C_Irton_Moor_-_geograph.org.uk_-_1741549.jpg",
     "description": "",
     "occupation": "1912",
+          "excludeFromList": "true",
     "tldr": "It is the longest continuous serving site for signals intelligence in the world.",
     "events": [
       {
@@ -1385,6 +1449,7 @@ export const buildings = [
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Peasholm_Park_by-DS-Pugh.jpg/300px-Peasholm_Park_by-DS-Pugh.jpg",
     "description": "",
     "occupation": "1912",
+          "excludeFromList": "true",
     "tldr": "The Battle of Peasholm has played out on this artificial lake for half an hour three times a week during summer for the last 80 years.",
     "events": [
       {
@@ -1406,6 +1471,7 @@ export const buildings = [
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/20190219130240_IMG_5600-02.jpg/266px-20190219130240_IMG_5600-02.jpg",
     "description": "",
     "occupation": "1931",
+          "excludeFromList": "true",
     "tldr": "Scarborough North Bay Railway is a ridable miniature railway that attracts hundreds of thousands of riders annually.",
     "events": [
       {
@@ -1427,6 +1493,7 @@ export const buildings = [
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Open_air_theatre_(geograph_4106498).jpg/375px-Open_air_theatre_(geograph_4106498).jpg",
     "description": "",
     "occupation": "1932",
+          "excludeFromList": "true",
     "tldr": "It originally closed in 1986, but re-opened in 2010.",
     "events": [
       {
@@ -1452,6 +1519,7 @@ export const buildings = [
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Scarborough_Town_Hall_(geograph_5691799)_(cropped).jpg/390px-Scarborough_Town_Hall_(geograph_5691799)_(cropped).jpg",
     "description": "",
     "occupation": "1844",
+          "excludeFromList": "true",
     "tldr": "Originally built as the home of John Woodall, his son sold the building to the council in 1898 for £33,575 (£4.7m now)",
     "events": [
       {
@@ -1473,6 +1541,7 @@ export const buildings = [
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Rotunda_Museum_Scarborough_060615.JPG/330px-Rotunda_Museum_Scarborough_060615.JPG",
     "description": "",
     "occupation": "1829",
+          "excludeFromList": "true",
     "tldr": "The Rotunda Museum is described as the finest surviving purpose-built museum of its age in the country, and one of the first.",
     "events": [
       {
@@ -1494,6 +1563,7 @@ export const buildings = [
     "image": "https://upload.wikimedia.org/wikipedia/en/thumb/3/3e/Crown_in_Scarborough.JPG/330px-Crown_in_Scarborough.JPG",
     "description": "",
     "occupation": "1844",
+          "excludeFromList": "true",
     "tldr": "This is the first purpose-built hotel in Scarborough and one of the first in the world.",
     "events": [
       {
@@ -1511,6 +1581,7 @@ export const buildings = [
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/The_Grand_Hotel_-_geograph.org.uk_-_1398434.jpg/375px-The_Grand_Hotel_-_geograph.org.uk_-_1398434.jpg",
     "description": "",
     "occupation": "1867",
+          "excludeFromList": "true",
     "tldr": "At the time of its opening, it was the largest brick structure in Europe. Hitler planned to make this building his personal palace and headquarters of the Third Reich.",
     "events": [
       {
@@ -1536,6 +1607,7 @@ export const buildings = [
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Cliff_Bridge%2C_Scarborough.jpg/330px-Cliff_Bridge%2C_Scarborough.jpg",
     "description": "",
     "occupation": "1827",
+          "excludeFromList": "true",
     "tldr": "A 414-feet-long iron bridge.",
     "events": [
       {
@@ -1561,6 +1633,7 @@ export const buildings = [
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Scarborough_Lighthouse.jpg/330px-Scarborough_Lighthouse.jpg",
     "description": "",
     "occupation": "1806",
+          "excludeFromList": "true",
     "tldr": "Now the HQ of Scarborough Yacht club.",
     "events": [
       {
@@ -1582,6 +1655,7 @@ export const buildings = [
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/The_Stephen_Joseph_Theatre_in_Scarborough.jpg/375px-The_Stephen_Joseph_Theatre_in_Scarborough.jpg",
     "description": "",
     "occupation": "1996",
+          "excludeFromList": "true",
     "tldr": "This was the first theatre-in-the-round founded in Britain",
     "events": [
       {
@@ -1603,6 +1677,7 @@ export const buildings = [
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Scarborough_Spa_Complex.jpg/500px-Scarborough_Spa_Complex.jpg",
     "description": "",
     "occupation": "1858",
+          "excludeFromList": "true",
     "tldr": "Built on the site of Scarborough's historic spas, it is a venue for conferences, exhibitions and live music.",
     "events": [
       {
@@ -1624,6 +1699,7 @@ export const buildings = [
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Central_Tramway_Company%2C_Scarborough.jpg/435px-Central_Tramway_Company%2C_Scarborough.jpg",
     "description": "",
     "occupation": "1881",
+          "excludeFromList": "true",
     "tldr": "The Central Tramway Company is an electric-powered funicular railway - the oldest surviving Tramway company in the UK.",
     "events": [
       {
@@ -1649,6 +1725,7 @@ export const buildings = [
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/ScarboroughRailwayStation.jpg/500px-ScarboroughRailwayStation.jpg",
     "description": "",
     "occupation": "1845",
+          "excludeFromList": "true",
     "tldr": "The railway station was opened following the completion of the line from York.",
     "events": [
       {
@@ -1670,6 +1747,7 @@ export const buildings = [
       "image": "https://upload.wikimedia.org/wikipedia/commons/b/bc/Whitby_Abbey_%28geograph_7249897%29.jpg",
       "description": "",
       "occupation": "7th Century",
+                "excludeFromList": "true",
       "tldr": "Iconic ruins perched on a cliff overlooking the North Sea, steeped in history and legend.",
       "events": [
         {
@@ -1695,6 +1773,7 @@ export const buildings = [
       "image": "https://upload.wikimedia.org/wikipedia/commons/a/a0/Gisborough_priory_snow_portrait.jpg",
       "description": "AI-generated",
       "occupation": "12th Century",
+      "excludeFromList": "true",
       "tldr": "Majestic ruins of an Augustinian priory, showcasing Gothic architecture and a peaceful atmosphere.",
       "events": [
         {
