@@ -128,10 +128,10 @@ document.body.appendChild(openableContainer);
 toggleContainerButton.addEventListener('click', () => {
     if (openableContainer.style.display === 'none' || openableContainer.style.display === '') {
         openableContainer.style.display = 'block';
-        toggleContainerButton.textContent = 'Find people 🔍';
+        toggleContainerButton.textContent = 'Discover places 🔍';
     } else {
         openableContainer.style.display = 'none';
-        toggleContainerButton.textContent = 'Find people 🔍';
+        toggleContainerButton.textContent = 'Discover places 🔍';
     }
 });
 
