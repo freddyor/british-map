@@ -547,19 +547,6 @@ export const locations = [
     ]
   },
   { 
-    coords: [-1.0837224, 53.9553593],
-    name: "Hans Hess",
-    occupation: "1907–1975",
-    description: "Hans Hess lived here in Skeldergate. He once hosted Charlie Chaplin.",
-    image: "https://upload.wikimedia.org/wikipedia/en/6/65/Hans_Hess_%28museologist%29.jpg",
-    tldr: "German-born Jew Hans Hess was a museum curator and art historian, granted an OBE.",
-    events: [
-      { date: "UPBRINGING", description: "His wealthy father won the contract to provide boots for the Soviet Red Army 🥾" },
-      { date: "1935", description: "Moved to London to escape Nazi Germany." },
-      { date: "1948", description: "Hess was appointed Curator at York Art Gallery 🎨" },
-    ]
-  },
-  { 
     coords: [-1.0879721, 53.9612032],
     name: "Thomas Cooke",
     occupation: "1807-1868",
