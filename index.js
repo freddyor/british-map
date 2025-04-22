@@ -143,19 +143,19 @@ function addBuildingsList() {
     list.style.fontSize = '12px';
     list.style.lineHeight = '1.25';
 
-  
     // Adjust the filter to handle "excludeFromList" as a string
     const filteredBuildings = buildings.filter(building => building.excludeFromList !== "true");
 
     const sortedBuildings = [...buildings].sort((a, b) => a.name.localeCompare(b.name));
 
- sortedBuildings.forEach(building => {
+    sortedBuildings.forEach(building => {
         const listItem = document.createElement('li');
         listItem.style.cursor = 'pointer';
         listItem.style.padding = '5px';
         listItem.style.display = 'flex'; // Use flexbox for image and text alignment
-        listItem.style.alignItems = 'center'; // Align image and text vertically
-        listItem.style.gap = '10px'; // Add spacing between image and text
+        listItem.style.flexDirection = 'column'; // Align items vertically
+        listItem.style.alignItems = 'flex-start'; // Align text to the left
+        listItem.style.gap = '10px'; // Add spacing between elements
 
         // Create an image element for the building
         const image = document.createElement('img');
@@ -167,12 +167,20 @@ function addBuildingsList() {
         image.style.borderRadius = '8px'; // Optional: rounded corners
 
         // Create a text element for the building name
-        const text = document.createElement('span');
-        text.textContent = building.name;
+        const nameText = document.createElement('span');
+        nameText.textContent = building.name;
+        nameText.style.fontWeight = 'bold'; // Optional: make the name bold
 
-        // Append the image and text to the list item
+        // Create a text element for the subtitle
+        const subtitleText = document.createElement('span');
+        subtitleText.textContent = building.subtitle || 'No subtitle available'; // Default text if no subtitle provided
+        subtitleText.style.fontSize = '10px'; // Smaller font size for subtitle
+        subtitleText.style.color = '#666'; // Optional: gray color for subtitle
+
+        // Append the image, name, and subtitle to the list item
         listItem.appendChild(image);
-        listItem.appendChild(text);
+        listItem.appendChild(nameText);
+        listItem.appendChild(subtitleText);
 
         // Add click event to fly to the building's location on the map
         listItem.addEventListener('click', () => {
@@ -187,7 +195,6 @@ function addBuildingsList() {
         list.appendChild(listItem);
     });
 
-    
     openableContainer.innerHTML = '';
     openableContainer.style.maxHeight = '150px';
     openableContainer.style.overflowY = 'scroll';
