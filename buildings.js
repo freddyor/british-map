@@ -317,7 +317,7 @@ export const buildings = [
     "description": "",
       "videoUrl": "https://www.britmap.com/videos/copy_70DADB1F-4F3C-4E0C-9042-06EC7BC59F2E.mp4", 
     "occupation": "1068",
-              "subtitle": "The secret secong castle that William the Conqueror built",
+              "subtitle": "William the Conqueror's secret 2nd castle",
     "tldr": " ",
     "events": [
     ]
