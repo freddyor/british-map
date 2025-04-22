@@ -5,7 +5,8 @@ export const buildings = [
     "image": "https://www.britmap.com/videos/IMG_5323.jpeg",
     "description": "",
     "occupation": " ",
-          "videoUrl": "https://www.britmap.com/videos/Captions_1C52DB.mp4",
+    "videoUrl": "https://www.britmap.com/videos/Captions_1C52DB.mp4",
+    "subtitle": "The largest of its king in England",
     "tldr": "",
     "events": [
     ]
@@ -16,8 +17,9 @@ export const buildings = [
     "image": "https://upload.wikimedia.org/wikipedia/commons/f/fe/TheMinsterSchoolYork.jpg",
     "description": "",
     "occupation": "Here 1903-2020",
-          "videoUrl": "https://www.britmap.com/videos/Captions_1FF9B1.mp4",
+    "videoUrl": "https://www.britmap.com/videos/Captions_1FF9B1.mp4",
     "tldr": "",
+    "subtitle": "One of the oldest schools in human history",
     "events": [
     ]
   },
@@ -27,7 +29,8 @@ export const buildings = [
     "image": "https://upload.wikimedia.org/wikipedia/commons/a/ab/%C3%89glise_St_Andrew_York_3.jpg",
     "description": "",
     "occupation": "11th CENTURY",
-            "videoUrl": "https://www.britmap.com/videos/Captions_8118A9.mp4",
+    "videoUrl": "https://www.britmap.com/videos/Captions_8118A9.mp4",
+    "subtitle": "The church that became a brothel",
     "tldr": "",
     "events": [
     ]
@@ -39,6 +42,7 @@ export const buildings = [
     "description": "",
     "occupation": "1086",
      "videoUrl": "https://www.britmap.com/videos/Captions_DBE962.mp4",
+     "subtitle": "One of the most prosperous abbeys in the North",
     "tldr": "",
     "events": []
   },
@@ -49,6 +53,7 @@ export const buildings = [
     "description": "",
     "occupation": "1711",
    "videoUrl": "https://www.britmap.com/videos/Captions_7A894C.mp4",
+   "subtitle": "The residence for the most important judges in England",
     "tldr": "",
     "events": []
   },
@@ -59,6 +64,7 @@ export const buildings = [
     "description": "",
     "occupation": "1460",
     "videoUrl": "https://www.britmap.com/videos/Captions_D8E302.mp4",
+    "subtitle": "The college built for drunk priests",
     "tldr": "",
     "events": [
     ]
@@ -70,6 +76,7 @@ export const buildings = [
     "description": "",
     "occupation": "1720",
     "videoUrl": "https://www.britmap.com/videos/Captions_56B7AF.mp4",
+                "subtitle": "The father of The Judge's Lodging",
     "tldr": "",
     "events": [
      ]
@@ -81,6 +88,7 @@ export const buildings = [
     "description": "",
     "occupation": "1703",
     "videoUrl": "https://www.britmap.com/videos/Captions_D86667.mp4",
+    "subtitle": "Third-oldest pub in York with an interesting history",
     "tldr": "",
     "events": [
     ]
@@ -92,6 +100,7 @@ export const buildings = [
     "occupation": "1907–1975",
     "description": " ",
     "videoUrl": "https://www.britmap.com/videos/Captions_12AA18.mp4",
+    "subtitle": "The Jew who fled Nazi Germany to York",
     "tldr": "",
     "events": [
     ]
@@ -103,6 +112,7 @@ export const buildings = [
     "description": "",
     "occupation": "1154",
     "videoUrl": "https://www.britmap.com/videos/Captions_8F153F.mp4",
+    "subtitle": "The church that experienced all of York's history",
     "tldr": "",
     "events": [
     ]
@@ -114,6 +124,7 @@ export const buildings = [
     "description": "",
     "occupation": "1725",
       "videoUrl": "https://www.britmap.com/videos/Captions_813457.mp4",
+    "subtitle": "This Italian restaurant gives clues to the building's past",
     "tldr": "",
     "events": [
     ]
@@ -125,6 +136,7 @@ export const buildings = [
     "description": "",
     "occupation": "1798",
      "videoUrl": "https://www.britmap.com/videos/Captions_1AB667.mp4",
+                 "subtitle": "The smallest pub in York",
     "tldr": "",
     "events": [
     ]
@@ -136,6 +148,7 @@ export const buildings = [
     "description": "",
     "occupation": "1899",
     "videoUrl": "https://www.britmap.com/videos/Captions_31CDB1.mp4",
+  "subtitle": "That massive chimney you've seen",
     "tldr": "",
     "events": [
     ]
@@ -147,6 +160,7 @@ export const buildings = [
     "description": "",
     "occupation": "1925",
     "videoUrl": "https://www.britmap.com/videos/Captions_194368.mp4",
+    "subtitle": "Controversial war memorial",
     "tldr": "",
     "events": [
     ]
@@ -157,6 +171,7 @@ export const buildings = [
     "image": "https://i.ebayimg.com/00/s/MTYwMFgxMDM2/z/cCQAAOSwFcFj4thG/$_57.PNG?set_id=880000500F",
     "description": "",
     "occupation": " ",
+    "subtitle": "Removed from the Minster for being too inappropriate", 
     "videoUrl": "https://www.britmap.com/videos/Captions_583941.mp4",
     "tldr": "",
     "events": []
@@ -168,6 +183,7 @@ export const buildings = [
     "description": "",
     "occupation": "1911",
     "videoUrl": "https://www.britmap.com/videos/Captions_B9E98C.mp4",
+                  "subtitle": "The first cinema built in York, now a bar!",
     "tldr": "",
     "events": []
   },
@@ -178,6 +194,7 @@ export const buildings = [
     "description": "",
     "occupation": "1878",
     "videoUrl": "https://www.britmap.com/videos/Captions_5443BE.mp4",
+                  "subtitle": "The grand hotel with a heroic name",
     "tldr": "",
     "events": [
     ]
@@ -189,6 +206,7 @@ export const buildings = [
     "description": "",
     "occupation": "1316",
             "videoUrl": "https://www.britmap.com/videos/Captions_FAFF0D.mp4",
+"subtitle": "The oldest row of housing in York",
     "tldr": "",
     "events": [
     ]
@@ -200,6 +218,7 @@ export const buildings = [
     "description": "",
     "image": "https://www.britmap.com/videos/IMG_5241.jpeg",
       "videoUrl": "https://www.britmap.com/videos/Captions_10809A.mp4",
+                  "subtitle": "The first woman to vote in York",
     "tldr": "",
     "events": []
   },
@@ -210,6 +229,7 @@ export const buildings = [
     description: "",
     occupation: "1490",
       "videoUrl": "https://www.britmap.com/videos/Captions_700C01.mp4",
+                  "subtitle": "The brick tower that caused a murder",
     tldr: "",
     events: [   ]
   },
@@ -220,6 +240,7 @@ export const buildings = [
     "description": "",
     "occupation": "12th Century",
     "videoUrl": "https://www.britmap.com/videos/Captions_ED8ABD.mp4",
+                "subtitle": "The oldest house in York",
     "tldr": "",
     "events": [
     ]
@@ -251,6 +272,7 @@ export const buildings = [
     "description": "",
     "occupation": " ",
 "videoUrl": "https://www.britmap.com/videos/Captions_79729E.mp4",
+                          "subtitle": "Once the centre of all politics in Yorkshire",
     "tldr": "",
     "events": [    ]
   },
@@ -261,6 +283,7 @@ export const buildings = [
     "description": "",
     "occupation": "1872",
 "videoUrl": "https://www.britmap.com/videos/Captions_4396D2.mp4",
+                   "subtitle": "A building fit for heroes",
     "tldr": "",
     "events": [    ]
   },
@@ -271,6 +294,7 @@ export const buildings = [
     "description": "",
     "occupation": " ",
      "videoUrl": "https://www.britmap.com/videos/Captions_7195D0.mp4",
+                 "subtitle": "The street name that tells the history of York",
     "tldr": "",
     "events": [    ]
   },
@@ -281,6 +305,7 @@ export const buildings = [
     description: "",
     "videoUrl": "https://www.britmap.com/videos/Captions_8BC5F8.mp4",
     occupation: "1710",
+               "subtitle": "An important house in English history",
     tldr: " ",
     events: [
     ]
@@ -292,6 +317,7 @@ export const buildings = [
     "description": "",
       "videoUrl": "https://www.britmap.com/videos/copy_70DADB1F-4F3C-4E0C-9042-06EC7BC59F2E.mp4", 
     "occupation": "1068",
+              "subtitle": "The secret secong castle that William the Conqueror built",
     "tldr": " ",
     "events": [
     ]
@@ -323,6 +349,7 @@ export const buildings = [
     "description": "",
     "videoUrl": "https://www.britmap.com/videos/copy_80CA9C38-D963-4632-AB3A-DFA00E94E35F.mp4", 
     "occupation": " ",
+                "subtitle": "A symbol secretly dotted around the city",
     "tldr": " ",
     "events": [ ]
   },
@@ -737,15 +764,6 @@ export const buildings = [
         "description": "The house is also home to the Sigismund sword, owned by the Holy Roman Emporer Sigismund when he part of the Order of the Garter of the Knights of St. George with Henry V 🗡️"
       }
     ]
-  },
-  {
-    "name": "St Marys Abbey Remains",
-    "coords": [-1.0878747049737392, 53.96235328206902],
-    "image": "https://upload.wikimedia.org/wikipedia/commons/f/f9/St_Marys_Abbey_Church_York.jpg",
-    "description": "",
-    "occupation": "1086",
-    "tldr": "The Abbey was the wealthiest monastery in the North of England until it was dissovled by Henry VIII in 1539.",
-    "events": []
   },
   {
     "name": "St Leonard's Hospital remains",
