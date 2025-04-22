@@ -1074,6 +1074,7 @@ export const buildings = [
     "coords": [-1.0851951221811063, 53.961238859977904],
     "image": "https://upload.wikimedia.org/wikipedia/commons/8/86/Tourist_Information_building_on_Museum_Street%2C_York_-_geograph.org.uk_-_3751221.jpg",
     "description": "",
+       "subtitle": "test",
     "occupation": "1860",
     "tldr": "Built to be the city's register office, it mostly served as York's Conservative Club, with committee rooms, a bar and a snooker room 🎱",
     "events": []
