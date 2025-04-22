@@ -1,11 +1,55 @@
 export const buildings = [
+     {
+    "name": "St William's College",
+    "coords": [-1.0802937994910167, 53.96232365544075],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/5/5a/St_William%27s_College_York_2023.jpg",
+    "description": "",
+    "occupation": "1460",
+    "videoUrl": "https://www.britmap.com/videos/Captions_D8E302.mp4",
+    "tldr": "",
+    "events": [
+    ]
+  },
+      {
+    "name": "Judges Court",
+    "coords": [-1.0836136853486988, 53.959103592652625],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/6/64/Judges_Court.jpg",
+    "description": "",
+    "occupation": "1720",
+    "videoUrl": "https://www.britmap.com/videos/Captions_56B7AF.mp4",
+    "tldr": "",
+    "events": [
+     ]
+  },
+     {
+    "name": "Old White Swan",
+    "coords": [-1.0803558882668973, 53.960556085456],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/c/c4/Old_White_Swan.jpg",
+    "description": "",
+    "occupation": "1703",
+    "videoUrl": "https://www.britmap.com/videos/Captions_D86667.mp4",
+    "tldr": "",
+    "events": [
+    ]
+  },
+  { 
+    "name": "Hans Hess",
+    "coords": [-1.0837224, 53.9553593],
+    "image": "https://upload.wikimedia.org/wikipedia/en/6/65/Hans_Hess_%28museologist%29.jpg",
+    "occupation": "1907–1975",
+    "description": " ",
+    "videoUrl": "https://www.britmap.com/videos/Captions_12AA18.mp4",
+    "tldr": "",
+    "events": [
+    ]
+  },
     {
     "name": "St Denys Church",
     "coords": [-1.0761695874054933, 53.95668650245543],
     "image": "https://upload.wikimedia.org/wikipedia/commons/0/06/St_Denys_Church_York.JPG",
     "description": "",
     "occupation": "1154",
-       "videoUrl": "https://www.britmap.com/videos/Captions_8F153F.mp4",
+    "videoUrl": "https://www.britmap.com/videos/Captions_8F153F.mp4",
     "tldr": "",
     "events": [
     ]
@@ -511,20 +555,6 @@ export const buildings = [
     ]
   },
   {
-    "name": "St William's College",
-    "coords": [-1.0802937994910167, 53.96232365544075],
-    "image": "https://upload.wikimedia.org/wikipedia/commons/5/5a/St_William%27s_College_York_2023.jpg",
-    "description": "",
-    "occupation": "1460",
-    "tldr": "Founded by the Earl of Warwick to house 23 priests 🔔",
-    "events": [
-      {
-        "date": "HENRY VIII",
-        "description": "Charles Howard, Lord Justice of the Realm, lived here for a period. He was the brother of Katherine Howard (Henry VIII's executed wife)"
-      }
-    ]
-  },
-  {
     "name": "The Wealden Hall",
     "coords": [-1.0797475920280974, 53.961484770887544],
     "image": "https://upload.wikimedia.org/wikipedia/commons/e/ea/Hall_Wealden_York_5.jpg",
@@ -814,17 +844,6 @@ export const buildings = [
     ]
   },
   {
-    "name": "Judges Court",
-    "coords": [-1.0836136853486988, 53.959103592652625],
-    "image": "https://upload.wikimedia.org/wikipedia/commons/6/64/Judges_Court.jpg",
-    "description": "",
-    "occupation": "1720",
-    "tldr": "It served as lodgings for judges presiding over Assize Courts in the city.",
-    "events": [
-      { "date": "1806", "description": "The judges were relocated to The Judges Lodging, this building became a short-stay hotel. This building was effectively the original Judges Lodging ⚖️" }
-    ]
-  },
-  {
     "name": "20 Coney Street",
     "coords": [-1.0839929192233622, 53.95921245695626],
     "image": "https://upload.wikimedia.org/wikipedia/commons/8/8a/Maisons_18-22_Coney_Street_York_1.jpg",
@@ -1012,20 +1031,6 @@ export const buildings = [
     "events": [
       { "date": "PURPOSE", "description": "Mary Wandesford left this building in her will to house ten non-married religious women. The house is still owned by Wandesfords Foundation 🏡" },
       { "date": "WILBERFORCE", "description": "The land was secured from William Wilberforce of Hull, grandfather of anti-slave trade campaigner William Wilberforce." }
-    ]
-  },
-  {
-    "name": "Old White Swan",
-    "coords": [-1.0803558882668973, 53.960556085456],
-    "image": "https://upload.wikimedia.org/wikipedia/commons/c/c4/Old_White_Swan.jpg",
-    "description": "",
-    "occupation": "1703",
-    "tldr": "This is the third-oldest pub in York.",
-    "events": [
-      {
-        "date": "1723",
-        "description": "The local constables decided to watch for possible Catholic activity in the pub, and spent £1 at the business while doing so - the equivalent to £185 now 💸"
-      }
     ]
   },
   {
