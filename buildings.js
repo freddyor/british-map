@@ -339,19 +339,6 @@ export const buildings = [
     ]
   },
     {
-    name: "York Castle Museum",
-    coords: [-1.0785558, 53.9553717],
-    image: "https://upload.wikimedia.org/wikipedia/commons/5/5f/York_Castle_Museum.jpg",
-    description: "",
-    occupation: "1938",
-    tldr: "A museum showcasing York's rich history with exhibits from different eras, including a recreated Victorian street.",
-    events: [
-      { date: "1829", description: "The museum was established in the former prison buildings of York Castle 🏰" },
-      { date: "TURPIN", description: "The infamous highwayman Dick Turpin was held here before his execution, a key event in local lore." }
-    ]
-  },
-
-    {
     name: "York Dispensary",
     coords: [-1.0846377100592663, 53.961304511725615],
     image: "https://upload.wikimedia.org/wikipedia/commons/b/b7/B%C3%A2timent_Grays_Solicitors_York_1.jpg",
