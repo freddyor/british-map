@@ -173,19 +173,10 @@ function addBuildingsList() {
         image.style.objectFit = 'cover';
         image.style.borderRadius = '8px'; // Optional: rounded corners
 
-        // Create a container for the subtitle and name
+        // Create a container for the name and subtitle
         const textContainer = document.createElement('div');
         textContainer.style.display = 'flex';
-        textContainer.style.flexDirection = 'column'; // Stack subtitle and name vertically
-
-        // Add subtitle only if it exists
-        if (building.subtitle) {
-            const subtitleText = document.createElement('span');
-            subtitleText.textContent = building.subtitle;
-            subtitleText.style.fontSize = '10px'; // Smaller font size for subtitle
-            subtitleText.style.color = '#9B4DCA'; // Purple color for subtitle
-            textContainer.appendChild(subtitleText); // Append subtitle above the name
-        }
+        textContainer.style.flexDirection = 'column'; // Stack name and subtitle vertically
 
         // Create a text element for the building name
         const nameText = document.createElement('span');
@@ -194,6 +185,15 @@ function addBuildingsList() {
 
         // Append the name to the text container
         textContainer.appendChild(nameText);
+
+        // Add subtitle only if it exists
+        if (building.subtitle) {
+            const subtitleText = document.createElement('span');
+            subtitleText.textContent = building.subtitle;
+            subtitleText.style.fontSize = '10px'; // Smaller font size for subtitle
+            subtitleText.style.color = '#9B4DCA'; // Purple color for subtitle
+            textContainer.appendChild(subtitleText); // Append subtitle below the name
+        }
 
         // Append the image and text container to the list item
         listItem.appendChild(image);
