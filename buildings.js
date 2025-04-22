@@ -1,4 +1,26 @@
 export const buildings = [
+    {
+    "name": "St Denys Church",
+    "coords": [-1.0761695874054933, 53.95668650245543],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/0/06/St_Denys_Church_York.JPG",
+    "description": "",
+    "occupation": "1154",
+       "videoUrl": "https://www.britmap.com/videos/Captions_8F153F.mp4",
+    "tldr": "",
+    "events": [
+    ]
+  },
+     {
+    "name": "York College for Girls",
+    "coords": [-1.0812830509958493, 53.96098935759324],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/1/12/York_College_for_Girls.jpg",
+    "description": "",
+    "occupation": "1725",
+      "videoUrl": "https://www.britmap.com/videos/Captions_813457.mp4",
+    "tldr": "",
+    "events": [
+    ]
+  },
    {
     "name": "The Blue Bell",
     "coords": [-1.079080001403896, 53.95873610791321],
@@ -441,28 +463,6 @@ export const buildings = [
     "occupation": "12th century",
     "tldr": "The church is said to have the finest collection of medieval glass in York except that of the Minster.",
     "events": []
-  },
-  {
-    "name": "Church of St Denys",
-    "coords": [-1.0761695874054933, 53.95668650245543],
-    "image": "https://upload.wikimedia.org/wikipedia/commons/0/06/St_Denys_Church_York.JPG",
-    "description": "",
-    "occupation": "1154",
-    "tldr": "One of less than 40 churches in England are dedicated to this French saint, St Denys.",
-    "events": [
-      {
-        "date": "HISTORIC",
-        "description": "Built on the site of a Saxon church and a Roman temple ⛪️"
-      },
-      {
-        "date": "YORKISTS",
-        "description": "Henry Percy, leading Lancastrian during War of the Roses, was killed by the Yorkists and buried here 🪦"
-      },
-      {
-        "date": "17TH CENTURY",
-        "description": "The building originally had a spire but it was hit by a cannon ball and by lightning ⚡️"
-      }
-    ]
   },
   {
     "name": "Lendal Tower",
@@ -1084,20 +1084,6 @@ export const buildings = [
       {
         "date": "1868",
         "description": "The Yorkshire club, founded in 1839, outgrew its home round the corner on Regency Street. This building was built for the club who refused to be situated near any of the poor due to 'disease risk' 🧐"
-      }
-    ]
-  },
-  {
-    "name": "York College for Girls",
-    "coords": [-1.0812830509958493, 53.96098935759324],
-    "image": "https://upload.wikimedia.org/wikipedia/commons/1/12/York_College_for_Girls.jpg",
-    "description": "",
-    "occupation": "1725",
-    "tldr": "York College for Girls was a girls school in this building from 1908 until 1997 🏫",
-    "events": [
-      {
-        "date": "PUPILS",
-        "description": "Mary Isolen Fergusson, the first female fellow of the Institute of Civil Engineers, attended here. So did tragic missing person Claudia Lawrence."
       }
     ]
   },
