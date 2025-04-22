@@ -380,7 +380,7 @@ function createCustomMarker(imageUrl, color = '#9b4dca', isLocation = false) {
   markerDiv.style.height = '3em';
   markerDiv.style.position = 'absolute';
   markerDiv.style.borderRadius = '50%';
-  markerDiv.style.border = `0.25em solid ${color}`;
+  markerDiv.style.border = `0.15em solid ${color}`;
   markerDiv.style.boxSizing = 'border-box';
   markerDiv.style.overflow = 'hidden';
 
@@ -505,6 +505,7 @@ locations.forEach(location => {
     });
 });
 
+function addBuildingMarkers() {
     buildings.forEach(building => {
         const { element: markerElement } = createCustomMarker(building.image, '#FFFFFF', false);
         markerElement.className += ' building-marker';
@@ -520,6 +521,7 @@ locations.forEach(location => {
             toggleBottomSheet(contentHTML);
         });
     });
+    }
 // New code for the "Image Attributions" button
 const imageAttributionsButton = document.createElement('button');
 imageAttributionsButton.id = 'image-attributions-button';
