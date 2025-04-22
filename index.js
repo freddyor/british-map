@@ -483,7 +483,7 @@ function createPopupContent(location, isFirebase = false) {
 `;
 }
 locations.forEach(location => {
-    const { element: markerElement } = createCustomMarker(location.image, '#9B4DCA', true);
+    const { element: markerElement } = createCustomMarker(location.image, '#FFFFFF', true);
     markerElement.className += ' location-marker';
     const marker = new mapboxgl.Marker({
         element: markerElement
@@ -499,7 +499,7 @@ locations.forEach(location => {
 });
 
     buildings.forEach(building => {
-        const { element: markerElement } = createCustomMarker(building.image, '#C72481', false);
+        const { element: markerElement } = createCustomMarker(building.image, '#FFFFFF', false);
         markerElement.className += ' building-marker';
         const marker = new mapboxgl.Marker({
             element: markerElement
