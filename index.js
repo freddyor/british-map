@@ -178,7 +178,7 @@ function addBuildingsList() {
         listItem.addEventListener('click', () => {
             map.flyTo({
                 center: building.coords,
-                zoom: 20
+                zoom: 18
             });
             openableContainer.style.display = 'none';
         });
