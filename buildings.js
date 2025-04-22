@@ -1,4 +1,57 @@
 export const buildings = [
+          {
+    "name": "Medieval Jewish Burial Site",
+    "coords": [-1.0755512348222946, 53.961803650730964],
+    "image": "https://www.britmap.com/videos/IMG_5323.jpeg",
+    "description": "",
+    "occupation": " ",
+          "videoUrl": "https://www.britmap.com/videos/Captions_1C52DB.mp4",
+    "tldr": "",
+    "events": [
+    ]
+  },
+     {
+    "name": "The Minster School",
+    "coords": [-1.0806394582981738, 53.961338997265],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/f/fe/TheMinsterSchoolYork.jpg",
+    "description": "",
+    "occupation": "Here 1903-2020",
+          "videoUrl": "https://www.britmap.com/videos/Captions_1FF9B1.mp4",
+    "tldr": "",
+    "events": [
+    ]
+  },
+       {
+    "name": "St Andrew's Church",
+    "coords": [-1.0783811617738115, 53.96086734865589],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/a/ab/%C3%89glise_St_Andrew_York_3.jpg",
+    "description": "",
+    "occupation": "11th CENTURY",
+            "videoUrl": "https://www.britmap.com/videos/Captions_8118A9.mp4",
+    "tldr": "",
+    "events": [
+    ]
+  },
+       {
+    "name": "St Marys Abbey Remains",
+    "coords": [-1.0878747049737392, 53.96235328206902],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/f/f9/St_Marys_Abbey_Church_York.jpg",
+    "description": "",
+    "occupation": "1086",
+     "videoUrl": "https://www.britmap.com/videos/Captions_DBE962.mp4",
+    "tldr": "",
+    "events": []
+  },
+       {
+    "name": "The Judge's Lodging",
+    "coords": [-1.085422730301877, 53.9605969994961],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/3/34/The_Judges_Lodging_-_geograph.org.uk_-_407864.jpg",
+    "description": "",
+    "occupation": "1711",
+   "videoUrl": "https://www.britmap.com/videos/Captions_7A894C.mp4",
+    "tldr": "",
+    "events": []
+  },
      {
     "name": "St William's College",
     "coords": [-1.0802937994910167, 53.96232365544075],
@@ -452,17 +505,6 @@ export const buildings = [
     occupation: "1474",
     tldr: "The building is named after Jacob's Well in Palestine, where Jesus is said to have spoken to a Samaritan woman 🇵🇸",
     events: []
-  },
-  {
-    name: "Judges Lodging",
-    coords: [-1.085422730301877, 53.9605969994961],
-    image: "https://upload.wikimedia.org/wikipedia/commons/3/34/The_Judges_Lodging_-_geograph.org.uk_-_407864.jpg",
-    description: "",
-    occupation: "1711",
-    tldr: "It was used by judges when they attended the sessions of the Assize Courts which were held four times each year in York.",
-    events: [
-   { date: "1736", description: "Author Francis Drake recorded it was one of the 'best built houses in the city' but when the foundations were dug 'several cart loads of human bones were thrown up' 🦴" }
-]
   },
   {
     name: "Micklegate House",
@@ -954,17 +996,6 @@ export const buildings = [
     ]
   },
   {
-    "name": "St Andrews Church",
-    "coords": [-1.0783811617738115, 53.96086734865589],
-    "image": "https://upload.wikimedia.org/wikipedia/commons/a/ab/%C3%89glise_St_Andrew_York_3.jpg",
-    "description": "",
-    "occupation": "11th CENTURY",
-    "tldr": "The church was closed in 1548 and was sold to the city council in 1581 - it then became a brothel.",
-    "events": [
-      { "date": "ST PETERS", "description": "Before the Civil War, the church was home to St Peter's School for a short while ⛪" }
-    ]
-  },
-  {
     "name": "The Bay Horse",
     "coords": [-1.0932737545556503, 53.95418036576363],
     "image": "https://upload.wikimedia.org/wikipedia/commons/6/65/Bay_Horse_Inn.jpg",
@@ -1031,24 +1062,6 @@ export const buildings = [
     "events": [
       { "date": "PURPOSE", "description": "Mary Wandesford left this building in her will to house ten non-married religious women. The house is still owned by Wandesfords Foundation 🏡" },
       { "date": "WILBERFORCE", "description": "The land was secured from William Wilberforce of Hull, grandfather of anti-slave trade campaigner William Wilberforce." }
-    ]
-  },
-  {
-    "name": "The Minster School",
-    "coords": [-1.0806394582981738, 53.961338997265],
-    "image": "https://upload.wikimedia.org/wikipedia/commons/f/fe/TheMinsterSchoolYork.jpg",
-    "description": "",
-    "occupation": "627",
-    "tldr": "The Minster School was built to educate choristers at York Minster.",
-    "events": [
-      {
-        "date": "627",
-        "description": "The school traced its origins to a \"song school\" founded in 627 by Paulinus of York, the first Archbishop ⛪"
-      },
-      {
-        "date": "2018",
-        "description": "The headmaster was suspended when three unsecured air rifles were found on the premises. Parents protested the suspension 🌿"
-      }
     ]
   },
   {
