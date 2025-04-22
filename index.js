@@ -177,6 +177,8 @@ function addBuildingsList() {
         const textContainer = document.createElement('div');
         textContainer.style.display = 'flex';
         textContainer.style.flexDirection = 'column'; // Stack name and subtitle vertically
+        textContainer.style.alignItems = 'flex-start'; // Align text to the left
+        textContainer.style.textAlign = 'left'; // Ensure text is left-aligned
 
         // Create a text element for the building name
         const nameText = document.createElement('span');
