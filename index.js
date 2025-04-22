@@ -426,9 +426,16 @@ function toggleBottomSheet(contentHTML) {
         bottomSheet.style.bottom = '0'; // Show
 
         // Attach event listener to the close button
-        document.getElementById('close-bottom-sheet').addEventListener('click', () => {
-            toggleBottomSheet(); // Close when the button is clicked
-        });
+ document.getElementById('close-bottom-sheet').addEventListener('click', () => {
+    // Stop video playback
+    const videoElement = document.querySelector('video'); // Adjust selector as needed
+    if (videoElement) {
+        videoElement.pause();
+        videoElement.currentTime = 0; // Optional: Reset video to start
+    }
+
+    toggleBottomSheet(); // Close the popup
+});
     }
     isBottomSheetOpen = !isBottomSheetOpen;
 }
