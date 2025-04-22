@@ -798,20 +798,6 @@ export const locations = [
     ]
   },
   {
-    "coords": [-1.0879142387479734, 53.96219607702085],
-    "name": "William II",
-    "occupation": "1060-1100",
-    "description": "William II visited here in 1089 to lay the foundation stone for St. Mary's Abbey",
-    "image": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSfSFHzWFk1doQ2MfETIVnZYOR5S18cUWPJdzWmDZ3fYbLXe5UFYKGaGworPxU4j99Pd1Ar82XVRc_FBY0KkwoWUw",
-    "tldr": "William (Rufus) II was King of England 1087-1100 and son of William the Conqueror",
-    "events": [
-      {
-        "date": "HATED",
-        "description": "It is said that William I was 'hated by almost all his people'. It is likely that he was assassinated by his own brother Henry."
-      }
-    ]
-  },
-  {
     "coords": [-1.0872901902658239, 53.9599545422618],
     "name": "Florence Nightingale",
     "occupation": "1820-1910",
