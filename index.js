@@ -171,16 +171,18 @@ function addBuildingsList() {
         nameText.textContent = building.name;
         nameText.style.fontWeight = 'bold'; // Optional: make the name bold
 
-        // Create a text element for the subtitle
-        const subtitleText = document.createElement('span');
-        subtitleText.textContent = building.subtitle || 'No subtitle available'; // Default text if no subtitle provided
-        subtitleText.style.fontSize = '10px'; // Smaller font size for subtitle
-        subtitleText.style.color = '#666'; // Optional: gray color for subtitle
-
-        // Append the image, name, and subtitle to the list item
+        // Append the image and name to the list item
         listItem.appendChild(image);
         listItem.appendChild(nameText);
-        listItem.appendChild(subtitleText);
+
+        // Add subtitle only if it exists
+        if (building.subtitle) {
+            const subtitleText = document.createElement('span');
+            subtitleText.textContent = building.subtitle;
+            subtitleText.style.fontSize = '10px'; // Smaller font size for subtitle
+            subtitleText.style.color = '#666'; // Optional: gray color for subtitle
+            listItem.appendChild(subtitleText);
+        }
 
         // Add click event to fly to the building's location on the map
         listItem.addEventListener('click', () => {
