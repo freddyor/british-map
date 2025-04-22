@@ -1,4 +1,15 @@
 export const buildings = [
+   {
+    "name": "The Blue Bell",
+    "coords": [-1.079080001403896, 53.95873610791321],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/c/c1/The_Blue_Bell%2C_York.jpg",
+    "description": "",
+    "occupation": "1798",
+     "videoUrl": "https://www.britmap.com/videos/Captions_1AB667.mp4",
+    "tldr": "",
+    "events": [
+    ]
+  },
                         {
     "name": "The Destructor",
     "coords": [-1.0714592650102257, 53.96033310550022],
@@ -1001,20 +1012,6 @@ export const buildings = [
     "events": [
       { "date": "PURPOSE", "description": "Mary Wandesford left this building in her will to house ten non-married religious women. The house is still owned by Wandesfords Foundation 🏡" },
       { "date": "WILBERFORCE", "description": "The land was secured from William Wilberforce of Hull, grandfather of anti-slave trade campaigner William Wilberforce." }
-    ]
-  },
- {
-    "name": "The Blue Bell",
-    "coords": [-1.079080001403896, 53.95873610791321],
-    "image": "https://upload.wikimedia.org/wikipedia/commons/c/c1/The_Blue_Bell%2C_York.jpg",
-    "description": "",
-    "occupation": "17th CENTURY",
-    "tldr": "The Blue Bell is York's smallest pub.",
-    "events": [
-      {
-        "date": "YCFC",
-        "description": "In 1903, George Robinson became the landlord of the pub; he was later the founding director of York City Football Club, and the club initially held its meetings in the pub ⚽"
-      }
     ]
   },
   {
