@@ -152,10 +152,9 @@ function addBuildingsList() {
         const listItem = document.createElement('li');
         listItem.style.cursor = 'pointer';
         listItem.style.padding = '5px';
-        listItem.style.display = 'flex'; // Use flexbox for image and text alignment
-        listItem.style.flexDirection = 'column'; // Align items vertically
-        listItem.style.alignItems = 'flex-start'; // Align text to the left
-        listItem.style.gap = '10px'; // Add spacing between elements
+        listItem.style.display = 'flex'; // Use flexbox for horizontal alignment
+        listItem.style.alignItems = 'center'; // Align items vertically
+        listItem.style.gap = '10px'; // Add spacing between image and text
 
         // Create an image element for the building
         const image = document.createElement('img');
@@ -166,14 +165,15 @@ function addBuildingsList() {
         image.style.objectFit = 'cover';
         image.style.borderRadius = '8px'; // Optional: rounded corners
 
+        // Create a container for the name and subtitle
+        const textContainer = document.createElement('div');
+        textContainer.style.display = 'flex';
+        textContainer.style.flexDirection = 'column'; // Stack name and subtitle vertically
+
         // Create a text element for the building name
         const nameText = document.createElement('span');
         nameText.textContent = building.name;
         nameText.style.fontWeight = 'bold'; // Optional: make the name bold
-
-        // Append the image and name to the list item
-        listItem.appendChild(image);
-        listItem.appendChild(nameText);
 
         // Add subtitle only if it exists
         if (building.subtitle) {
@@ -181,8 +181,15 @@ function addBuildingsList() {
             subtitleText.textContent = building.subtitle;
             subtitleText.style.fontSize = '10px'; // Smaller font size for subtitle
             subtitleText.style.color = '#666'; // Optional: gray color for subtitle
-            listItem.appendChild(subtitleText);
+            textContainer.appendChild(subtitleText); // Append subtitle below the name
         }
+
+        // Append the name to the text container
+        textContainer.appendChild(nameText);
+
+        // Append the image and text container to the list item
+        listItem.appendChild(image);
+        listItem.appendChild(textContainer);
 
         // Add click event to fly to the building's location on the map
         listItem.addEventListener('click', () => {
