@@ -83,6 +83,8 @@ map.on('click', (e) => {
 });
 
 map.on('load', () => {
+    addBuildingMarkers();
+    addBuildingsList();
     loadMarkersFromFirebase();
     geolocate.trigger();
 });
@@ -496,7 +498,6 @@ locations.forEach(location => {
     });
 });
 
-function addBuildingMarkers() {
     buildings.forEach(building => {
         const { element: markerElement } = createCustomMarker(building.image, '#C72481', false);
         markerElement.className += ' building-marker';
@@ -512,7 +513,6 @@ function addBuildingMarkers() {
             toggleBottomSheet(contentHTML);
         });
     });
-}
 // New code for the "Image Attributions" button
 const imageAttributionsButton = document.createElement('button');
 imageAttributionsButton.id = 'image-attributions-button';
