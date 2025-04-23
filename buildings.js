@@ -423,18 +423,6 @@ export const buildings = [
     "tldr": " ",
     "events": [ ]
   },
-  {
-    name: "York Minster",
-    coords: [-1.0831787084457822, 53.96223749484881],
-    image: "https://upload.wikimedia.org/wikipedia/commons/6/6f/York_Minster_from_M%26S.JPG",
-    description: "",
-    occupation: "1220",
-    tldr: "The Minster is the largest Gothic Cathedral in Northern Europe.",
-    events: [
-      { date: "WW2", description: "During World War II, 109 stained glass windows were removed and hidden in secret locations to protect them from bombing." },
-      { date: "2022", description: "King Charles III visited York Minster to unveil a statue of Queen Elizabeth II 👑" },
-    ]
-  },
 {
     name: "Clifford's Tower",
     coords: [-1.07983518896210381, 53.955735358823574],
@@ -817,15 +805,6 @@ export const buildings = [
         "description": "The museum contain the Coppergate Helmet, one of six Anglo-Saxon helmets survived to present day and by the far the best preserved 🪖"
       }
     ]
-  },
-  {
-    "name": "Le Belfrey",
-    "coords": [-1.0829730981909202, 53.961806064609014],
-    "image": "https://upload.wikimedia.org/wikipedia/commons/9/9f/St-Mikes.jpg",
-    "description": "",
-    "occupation": "1525",
-    "tldr": "This is where Guy Fawkes was baptized, before he became a Catholic ⛪️",
-    "events": []
   },
   {
     "name": "York Racecourse",
