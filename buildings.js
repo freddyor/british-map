@@ -1,4 +1,34 @@
 export const buildings = [
+                      {
+    name: "Walmgate Killing Grounds",
+    coords: [-1.0707008249072183, 53.95517595722506], 
+    image: "https://www.britmap.com/videos/IMG_5364.jpeg", 
+    description: "",
+    occupation: " ", 
+    "videoUrl": "https://www.britmap.com/videos/Captions_61B047.mp4",
+    tldr: "",
+    events: [  ]
+  },
+                      {
+    name: "Murage Doors",
+    coords: [-1.0785514627213102, 53.96275261954293], 
+    image: "https://www.britmap.com/videos/IMG_5366.jpeg", 
+    description: "",
+    occupation: "11th Century", 
+    "videoUrl": "https://www.britmap.com/videos/Captions_AC995F.mp4",
+    tldr: "",
+    events: [  ]
+  },
+                      {
+    name: "Little Admiral",
+    coords: [-1.0843086038471415, 53.95941652596521], 
+    image: "https://www.britmap.com/videos/IMG_5362.jpeg", 
+    description: "",
+    occupation: "11th Century", 
+    "videoUrl": "https://www.britmap.com/videos/Captions_8F5743.mp4",
+    tldr: "",
+    events: [  ]
+  },
            {
     name: "King's Manor",
     coords: [-1.0862176206651686, 53.96250673808531], 
