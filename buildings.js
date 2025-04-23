@@ -1,4 +1,44 @@
 export const buildings = [
+           {
+    name: "King's Manor",
+    coords: [-1.0862176206651686, 53.96250673808531], 
+    image: "https://upload.wikimedia.org/wikipedia/commons/f/f4/King%27s_Manor_%2826233677684%29.jpg", 
+    description: "",
+    occupation: "11th Century", 
+    "videoUrl": "https://www.britmap.com/videos/Captions_746FC9.mp4",
+    tldr: "",
+    events: [  ]
+  },
+            {
+    name: "York Dispensary",
+    coords: [-1.0846377100592663, 53.961304511725615],
+    image: "https://upload.wikimedia.org/wikipedia/commons/b/b7/B%C3%A2timent_Grays_Solicitors_York_1.jpg",
+    description: "",
+    occupation: "1899",
+    "videoUrl": "https://www.britmap.com/videos/Captions_E34A23.mp4",
+    tldr: "",
+    events: [    ]
+  },
+           {
+    name: "York Magistrates' Court",
+    coords: [-1.0817351891167126, 53.95632576626781],
+    image: "https://upload.wikimedia.org/wikipedia/commons/9/9c/Cour_Magistrats_York_6.jpg",
+    description: "",
+    occupation: "1892",
+   "videoUrl": "https://www.britmap.com/videos/Captions_4581BD.mp4",
+    tldr: "",
+    events: [     ]
+  },
+            {
+    name: "Jacobs Well",
+    coords: [-1.0884877806115956, 53.9568223082359],
+    image: "https://upload.wikimedia.org/wikipedia/commons/1/1d/Jacob%27s_Well%2C_Trinity_Lane%2C_York_%2815072944989%29.jpg",
+    description: "",
+    occupation: "1474",
+    "videoUrl": "https://www.britmap.com/videos/Captions_3D5670.mp4",
+    tldr: "",
+    events: []
+  },
           {
     "name": "Medieval Jewish Burial Site",
     "coords": [-1.0755512348222946, 53.961803650730964],
@@ -365,18 +405,6 @@ export const buildings = [
       { date: "2022", description: "King Charles III visited York Minster to unveil a statue of Queen Elizabeth II 👑" },
     ]
   },
-    {
-    name: "York Dispensary",
-    coords: [-1.0846377100592663, 53.961304511725615],
-    image: "https://upload.wikimedia.org/wikipedia/commons/b/b7/B%C3%A2timent_Grays_Solicitors_York_1.jpg",
-    description: "",
-    occupation: "1899",
-    tldr: "Built originally for The York Dispensary, who provided treatment to the poor and needed larger premises.",
-    events: [
-      { date: "1948", description: "The dispensary closed following the creation of the National Health Service 👨‍⚕️" },
-      { date: "GRAYS", description: "Iconic local business Grays Solicitors, who occupied the next-door building, moved in here too. Incredibly, they have worked with one client continuously since 1699 🕰️" }
-    ]
-  },
 {
     name: "Clifford's Tower",
     coords: [-1.07983518896210381, 53.955735358823574],
@@ -443,18 +471,6 @@ export const buildings = [
     ]
   },
  {
-    name: "King's Manor",
-    coords: [-1.0862176206651686, 53.96250673808531], 
-    image: "https://upload.wikimedia.org/wikipedia/commons/f/f4/King%27s_Manor_%2826233677684%29.jpg", 
-    description: "",
-    occupation: "11th Century", 
-    tldr: "A historic building, originally built to house the abbots of St Mary's Abbey.",
-    events: [
-      { date: "1688", description: "During the Glorious Revolution, the building was dramatically seized from Sir John Reresby, who remained loyal to James II, by forces loyalists to William of Orange." },
-      { date: "Henry VIII", description: "King Henry VIII stayed at King's Manor when it served as the headquarters of the Council of the North 👑" }
-    ]
-  },
- {
     name: "Castlegate House",
     coords: [-1.0805699292451987, 53.95674650725818],
     image: "https://upload.wikimedia.org/wikipedia/commons/d/d2/Castlegate_House_-_geograph.org.uk_-_857017.jpg",
@@ -510,15 +526,6 @@ export const buildings = [
       { date: "1904", description: "The design won a silver medal at an exhibition in Paris 🥈" },
       { date: "2010", description: "The hotel opened, which now has 207 rooms 🏨" }
     ]
-  },
-  {
-    name: "Jacobs Well",
-    coords: [-1.0884877806115956, 53.9568223082359],
-    image: "https://upload.wikimedia.org/wikipedia/commons/1/1d/Jacob%27s_Well%2C_Trinity_Lane%2C_York_%2815072944989%29.jpg",
-    description: "",
-    occupation: "1474",
-    tldr: "The building is named after Jacob's Well in Palestine, where Jesus is said to have spoken to a Samaritan woman 🇵🇸",
-    events: []
   },
   {
     name: "Micklegate House",
@@ -641,17 +648,6 @@ export const buildings = [
       { date: "1640s", description: "The tower was still being used for deference during the English civil war, hence why there is a cannonball hole 🏰" },
       { date: "ROMANS", description: "There are five Roman coffins sat in the tower." },
     ]
-  },
-  {
-    name: "York Magistrates' Court",
-    coords: [-1.0817351891167126, 53.95632576626781],
-    image: "https://upload.wikimedia.org/wikipedia/commons/9/9c/Cour_Magistrats_York_6.jpg",
-    description: "",
-    occupation: "1892",
-    tldr: "In the apex of the pediment is carved the arms of the city of York and above them a figure of Justice holding the scale.",
-    events: [
-      { date: "COST", description: "The cost of construction was 317,050 (£2,342,000 in 2023) 💸" },
-      ]
   },
   {
     "name": "Treasurer's House",
