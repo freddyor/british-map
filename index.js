@@ -135,44 +135,7 @@ toggleContainerButton.addEventListener('click', () => {
     }
 });
 
-const supportButton = document.createElement('button');
-supportButton.id = 'support-button';
-supportButton.textContent = 'Support';
-supportButton.className = 'custom-button';
 
-// Add the "Support" button above the "Discover places 🔍" button
-buttonGroup.insertBefore(supportButton, toggleContainerButton);
-
-// Create a container for the "Support" button functionality
-const supportContainer = document.createElement('div');
-supportContainer.id = 'support-container';
-supportContainer.style.display = 'none';
-supportContainer.style.position = 'fixed';
-supportContainer.style.left = '50%';
-supportContainer.style.top = '80px';
-supportContainer.style.transform = 'translateX(-50%)';
-supportContainer.style.zIndex = '999';
-supportContainer.style.backgroundColor = '#fff';
-supportContainer.style.border = '2px solid #f0f0f0';
-supportContainer.style.borderRadius = '8px';
-supportContainer.style.boxShadow = '0 6px 15px rgba(0, 0, 0, 0.3)';
-supportContainer.style.padding = '10px';
-supportContainer.style.width = '200px';
-supportContainer.style.textAlign = 'center';
-
-// Append the container to the document
-document.body.appendChild(supportContainer);
-
-// Add toggle functionality to the "Support" button
-supportButton.addEventListener('click', () => {
-    if (supportContainer.style.display === 'none' || supportContainer.style.display === '') {
-        supportContainer.style.display = 'block';
-        supportButton.textContent = 'Support';
-    } else {
-        supportContainer.style.display = 'none';
-        supportButton.textContent = 'Support';
-    }
-});
 
 function addBuildingsList() {
     const list = document.createElement('ul');
