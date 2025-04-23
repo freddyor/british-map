@@ -917,15 +917,6 @@ export const buildings = [
     ]
   },
   {
-    "name": "20 Coney Street",
-    "coords": [-1.0839929192233622, 53.95921245695626],
-    "image": "https://upload.wikimedia.org/wikipedia/commons/8/8a/Maisons_18-22_Coney_Street_York_1.jpg",
-    "description": "",
-    "occupation": "1500",
-    "tldr": "Percy Bysshe Shelley, one of the most famous poets of all time, stayed here with his wife in Autumn 1811.",
-    "events": []
-  },
-  {
     "name": "Henry Sotheran Ltd",
     "coords": [-1.0840508854181263, 53.95925903633209],
     "image": "https://upload.wikimedia.org/wikipedia/commons/8/8a/Maisons_18-22_Coney_Street_York_1.jpg",
