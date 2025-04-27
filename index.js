@@ -83,6 +83,8 @@ map.on('click', (e) => {
 });
 
 map.on('load', () => {
+    addBuildingMarkers();
+    addLocationMarkers();
     addBuildingsList();
     loadMarkersFromFirebase();
     geolocate.trigger();
