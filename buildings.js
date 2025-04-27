@@ -1,4 +1,14 @@
 export const buildings = [
+                        {
+    name: "St Mary's Church",
+    coords: [-1.0872068097255867, 53.95590619549012], 
+    image: "https://www.britmap.com/videos/IMG_5429.jpeg", 
+    description: "",
+    occupation: " ", 
+    "videoUrl": "https://www.britmap.com/videos/Captions_2AAF6B(1).mp4",
+    tldr: "",
+    events: [  ]
+  },
                       {
     name: "Walmgate Killing Grounds",
     coords: [-1.0707008249072183, 53.95517595722506], 
