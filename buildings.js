@@ -733,7 +733,7 @@ export const buildings = [
   },
   {
     "name": "Merchant Adventurers Hall",
-    "coords": [-1.0788504196503679, 53.9575713904461],
+    "coords": [-1.0788027799225808, 53.957872796538865],
     "image": "https://upload.wikimedia.org/wikipedia/commons/e/e8/Merchant_Adventurers%27_Hall.jpg",
     "description": "",
     "occupation": "1357",
