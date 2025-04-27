@@ -84,6 +84,7 @@ map.on('click', (e) => {
 
 map.on('load', () => {
     addBuildingMarkers();
+    addLocationMarkers();
     addBuildingsList();
     loadMarkersFromFirebase();
     geolocate.trigger();
@@ -517,6 +518,8 @@ function createPopupContent(location, isFirebase = false) {
     </div>
 `;
 }
+
+function addLocationMarkers() {
 locations.forEach(location => {
     const { element: markerElement } = createCustomMarker(location.image, '#FFFFFF', true);
     markerElement.className += ' location-marker';
@@ -532,6 +535,7 @@ locations.forEach(location => {
         toggleBottomSheet(contentHTML);
     });
 });
+     }
 
 function addBuildingMarkers() {
     buildings.forEach(building => {
