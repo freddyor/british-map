@@ -34,6 +34,7 @@ var map = new mapboxgl.Map({
     bearing: -17.6
 });
 
+
 // Create a bottom sheet container
 const bottomSheet = document.createElement('div');
 bottomSheet.id = 'bottom-sheet';
@@ -82,9 +83,10 @@ map.on('click', (e) => {
     // You can display this link in a popup or share it with others
 });
 
-map.on('load', () => {
     addBuildingMarkers();
     addLocationMarkers();
+
+map.on('load', () => {
     addBuildingsList();
     loadMarkersFromFirebase();
     geolocate.trigger();
