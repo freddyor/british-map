@@ -552,16 +552,6 @@ export const locations = [
     ]
   },
   {
-    "name": "Second Boer War Memorial",
-    "coords": [-1.083717126021606, 53.961700693395734],
-    "image": "https://upload.wikimedia.org/wikipedia/commons/f/f3/War_memorial_in_York_%288400%29.jpg",
-    "description": "",
-    "occupation": "1905",
-    "videoUrl": "https://www.britmap.com/videos/copy_8250E92B-5789-4C53-9148-68E554C7075E.mp4", 
-    "tldr": "It commemorates the soldiers from Yorkshire who died during the Second Boer War (1899–1902).",
-    "events": []
-  },
-  {
     "name": "Kings Square",
     "coords": [-1.0801333346364728, 53.96007249021722],
     "image": "https://upload.wikimedia.org/wikipedia/en/9/90/Holy_Trinity_Church%2C_King%27s_Square%2C_York%2C_England.jpeg?20230121000252",
