@@ -873,28 +873,6 @@ export const locations = [
     ]
   },
   {
-    "coords": [-1.0876031054901958, 53.964190030373025],
-    "name": "Lord Stuart Rose",
-    "occupation": "1949-",
-    "description": "Lord Stuart Rose studied here",
-    "image": "https://www.scampspeakers.co.uk/wp-content/uploads/2019/02/stuart-rose.jpg",
-    "tldr": "Lord Stuart Rose, Baron Rose of Monewden, is a businessman and MP",
-    "events": [
-      {
-        "date": "1917",
-        "description": "His grandparents fled to China during the 1917 Russian Revolution. Stuart grew up in a caravan in Warickshire 🚐"
-      },
-      {
-        "date": "BREXIT",
-        "description": "He was chair of Britain Stronger in Europe, the official remain party during Brexit."
-      },
-      {
-        "date": "CAREER",
-        "description": "He is currently CEO of Asda and was previously CEO of Argos, Arcadia and M&S."
-      }
-    ]
-  },
-  {
     "coords": [-1.08672850733176, 53.96380196501176],
     "name": "Mary Wandesford",
     "occupation": "1655-1726",
