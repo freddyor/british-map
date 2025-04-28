@@ -83,8 +83,8 @@ map.on('click', (e) => {
     // You can display this link in a popup or share it with others
 });
 
+    addBuildingMarkers();
     addLocationMarkers();
-addBuildingMarkers();
 
 map.on('load', () => {
     addBuildingsList();
@@ -541,7 +541,7 @@ locations.forEach(location => {
 
 function addBuildingMarkers() {
     buildings.forEach(building => {
-        const { element: markerElement } = createCustomMarker(building.image, '#FFD700', false);
+        const { element: markerElement } = createCustomMarker(building.image, '#65FE08', false);
         markerElement.className += ' building-marker';
         const marker = new mapboxgl.Marker({
             element: markerElement
