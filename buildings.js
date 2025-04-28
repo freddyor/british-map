@@ -6,6 +6,7 @@ export const buildings = [
     description: "",
     occupation: " ", 
     "videoUrl": "https://www.britmap.com/videos/Captions_2AAF6B(1).mp4",
+                          "subtitle": "The oldest church in York",
     tldr: "",
     events: [  ]
   },
@@ -16,6 +17,7 @@ export const buildings = [
     description: "",
     occupation: " ", 
     "videoUrl": "https://www.britmap.com/videos/Captions_61B047.mp4",
+                        "subtitle": "The only reminder of the brutal death traps of medieval York",
     tldr: "",
     events: [  ]
   },
@@ -26,6 +28,7 @@ export const buildings = [
     description: "",
     occupation: "11th Century", 
     "videoUrl": "https://www.britmap.com/videos/Captions_AC995F.mp4",
+                        "subtitle": "The site of ancient tax collection",
     tldr: "",
     events: [  ]
   },
@@ -36,6 +39,7 @@ export const buildings = [
     description: "",
     occupation: "11th Century", 
     "videoUrl": "https://www.britmap.com/videos/Captions_8F5743.mp4",
+    "subtitle": "York's old figurine that disappeared",
     tldr: "",
     events: [  ]
   },
@@ -46,6 +50,7 @@ export const buildings = [
     description: "",
     occupation: "11th Century", 
     "videoUrl": "https://www.britmap.com/videos/Captions_746FC9.mp4",
+             "subtitle": "The HQ of Henry VIII's Council of the North",
     tldr: "",
     events: [  ]
   },
@@ -56,6 +61,7 @@ export const buildings = [
     description: "",
     occupation: "1899",
     "videoUrl": "https://www.britmap.com/videos/Captions_E34A23.mp4",
+              "subtitle": "One of York's greatest ever pre-NHS charities",
     tldr: "",
     events: [    ]
   },
@@ -66,6 +72,7 @@ export const buildings = [
     description: "",
     occupation: "1892",
    "videoUrl": "https://www.britmap.com/videos/Captions_4581BD.mp4",
+             "subtitle": "Historic York carvings on an important building",
     tldr: "",
     events: [     ]
   },
@@ -76,6 +83,7 @@ export const buildings = [
     description: "",
     occupation: "1474",
     "videoUrl": "https://www.britmap.com/videos/Captions_3D5670.mp4",
+    "subtitle": "York's ties to a Palestinian city",
     tldr: "",
     events: []
   },
@@ -332,6 +340,7 @@ export const buildings = [
     description: "",
     occupation: "1757",
  "videoUrl": "https://www.britmap.com/videos/Captions_65CE21.mp4",
+        "subtitle": "Stunning Georgian house on Micklegate",
     tldr: "",
     events: []
   },
@@ -342,6 +351,7 @@ export const buildings = [
     "description": "",
       "videoUrl": "https://www.britmap.com/videos/Captions_25D270.mp4",
     "occupation": "1714",
+      "subtitle": "The smaller Red House in York",
     "tldr": "",
     "events": [    ]
   },
@@ -385,7 +395,7 @@ export const buildings = [
     description: "",
     "videoUrl": "https://www.britmap.com/videos/Captions_8BC5F8.mp4",
     occupation: "1710",
-               "subtitle": "An important house in English history",
+    "subtitle": "An important house in English history",
     tldr: " ",
     events: [
     ]
@@ -419,6 +429,7 @@ export const buildings = [
     "description": "",
     "videoUrl": "https://www.britmap.com/videos/copy_1C4F32F7-2469-4054-957C-DFED999308EE.mp4", 
     "occupation": " ",
+              "subtitle": "Markers from two of York's past floods",
     "tldr": " ",
     "events": [ ]
   },
