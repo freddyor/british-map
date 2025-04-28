@@ -61,14 +61,6 @@ bottomSheet.style.padding = '5px'; // Matches popup padding
 bottomSheet.style.overflowY = 'auto'; // Make it scrollable
 document.body.appendChild(bottomSheet);
 
-// Close the bottom sheet when clicking outside of it
-document.addEventListener('click', (event) => {
-    if (isBottomSheetOpen && !bottomSheet.contains(event.target)) {
-        bottomSheet.style.bottom = '-100%'; // Hide the bottom sheet
-        isBottomSheetOpen = false;
-    }
-});
-
 
 // Function to generate a URL with given coordinates and zoom
 function generateMapLink(latitude, longitude, zoomLevel) {
