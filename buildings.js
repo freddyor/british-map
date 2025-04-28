@@ -1,4 +1,14 @@
 export const buildings = [
+    {
+    "name": "Second Boer War Memorial",
+    "coords": [-1.083717126021606, 53.961700693395734],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/f/f3/War_memorial_in_York_%288400%29.jpg",
+    "description": "",
+    "occupation": "1905",
+    "videoUrl": "https://www.britmap.com/videos/copy_8250E92B-5789-4C53-9148-68E554C7075E.mp4", 
+    "tldr": "",
+    "events": []
+  },
                         {
     name: "St Mary's Church",
     coords: [-1.0872068097255867, 53.95590619549012], 
@@ -6,7 +16,7 @@ export const buildings = [
     description: "",
     occupation: " ", 
     "videoUrl": "https://www.britmap.com/videos/Captions_2AAF6B(1).mp4",
-                          "subtitle": "The oldest church in York",
+    "subtitle": "The oldest church in York",
     tldr: "",
     events: [  ]
   },
