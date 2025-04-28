@@ -411,7 +411,7 @@ function createCustomMarker(imageUrl, color = '#9b4dca', isLocation = false) {
   markerDiv.style.height = '3em';
   markerDiv.style.position = 'absolute';
   markerDiv.style.borderRadius = '50%';
-   markerDiv.style.border = `0.15em solid ${hasVideoUrl ? '#9b4dca' : color}`;
+  markerDiv.style.border = `0.15em solid ${color}`;
   markerDiv.style.boxSizing = 'border-box';
   markerDiv.style.overflow = 'hidden';
 
@@ -523,12 +523,7 @@ function createPopupContent(location, isFirebase = false) {
 
 function addLocationMarkers() {
 locations.forEach(location => {
-          const { element: markerElement } = createCustomMarker(
-            location.image,
-            '#FFFFFF',
-            true,
-            !!location.videoUrl // true if videoUrl exists
-        );
+    const { element: markerElement } = createCustomMarker(location.image, '#FFFFFF', true);
     markerElement.className += ' location-marker';
     const marker = new mapboxgl.Marker({
         element: markerElement
@@ -546,12 +541,7 @@ locations.forEach(location => {
 
 function addBuildingMarkers() {
     buildings.forEach(building => {
-                const { element: markerElement } = createCustomMarker(
-            building.image,
-            '#FFFFFF',
-            true,
-            !!location.videoUrl // true if videoUrl exists
-        );
+        const { element: markerElement } = createCustomMarker(building.image, '#FFFFFF', false);
         markerElement.className += ' building-marker';
         const marker = new mapboxgl.Marker({
             element: markerElement
