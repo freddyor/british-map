@@ -119,7 +119,6 @@ toggleContainerButton.textContent = 'Discover places 🔍';
 toggleContainerButton.className = 'custom-button';
 buttonGroup.appendChild(toggleContainerButton);
 
-// Create the openable container
 const openableContainer = document.createElement('div');
 openableContainer.id = 'openable-container';
 openableContainer.style.display = 'none';
@@ -137,13 +136,6 @@ openableContainer.style.width = '200px';
 openableContainer.style.textAlign = 'center';
 document.body.appendChild(openableContainer);
 
-// Toggle button for the container
-const toggleContainerButton = document.createElement('button');
-toggleContainerButton.id = 'toggle-container-button';
-toggleContainerButton.textContent = 'Discover places 🔍';
-toggleContainerButton.className = 'custom-button';
-buttonGroup.appendChild(toggleContainerButton);
-
 toggleContainerButton.addEventListener('click', () => {
     if (openableContainer.style.display === 'none' || openableContainer.style.display === '') {
         openableContainer.style.display = 'block';
@@ -151,16 +143,6 @@ toggleContainerButton.addEventListener('click', () => {
     } else {
         openableContainer.style.display = 'none';
         toggleContainerButton.textContent = 'Discover places 🔍';
-    }
-});
-
-// Close the "Discover places" list when clicking outside of it
-document.addEventListener('click', (event) => {
-    if (openableContainer.style.display === 'block' && 
-        !openableContainer.contains(event.target) && 
-        !toggleContainerButton.contains(event.target)) {
-        openableContainer.style.display = 'none'; // Hide the "Discover places" list
-        toggleContainerButton.textContent = 'Discover places 🔍'; // Reset the button text
     }
 });
 
