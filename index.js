@@ -523,7 +523,12 @@ function createPopupContent(location, isFirebase = false) {
 
 function addLocationMarkers() {
 locations.forEach(location => {
-    const { element: markerElement } = createCustomMarker(location.image, '#FFFFFF', true);
+          const { element: markerElement } = createCustomMarker(
+            location.image,
+            '#FFFFFF',
+            true,
+            !!location.videoUrl // true if videoUrl exists
+        );
     markerElement.className += ' location-marker';
     const marker = new mapboxgl.Marker({
         element: markerElement
@@ -541,7 +546,12 @@ locations.forEach(location => {
 
 function addBuildingMarkers() {
     buildings.forEach(building => {
-        const { element: markerElement } = createCustomMarker(building.image, '#FFFFFF', false);
+                const { element: markerElement } = createCustomMarker(
+            building.image,
+            '#FFFFFF',
+            true,
+            !!location.videoUrl // true if videoUrl exists
+        );
         markerElement.className += ' building-marker';
         const marker = new mapboxgl.Marker({
             element: markerElement
