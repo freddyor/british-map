@@ -43,7 +43,7 @@ bottomSheet.style.bottom = '-100%'; // Initially hidden
 bottomSheet.style.left = '50%'; // Align to the left
 bottomSheet.style.transform = 'translate(-50%)'; // Adjust position to align center both ways
 bottomSheet.style.right = '50%';
-bottomSheet.style.width = '97%';
+bottomSheet.style.width = '95%';
 bottomSheet.style.height = '60%'; // Adjust height as needed
 bottomSheet.style.backgroundColor = '#fff';
 bottomSheet.style.borderTop = '2px solid #ccc';
@@ -541,7 +541,7 @@ locations.forEach(location => {
 
 function addBuildingMarkers() {
     buildings.forEach(building => {
-        const { element: markerElement } = createCustomMarker(building.image, '#65FE08', false);
+        const { element: markerElement } = createCustomMarker(building.image, '#FFD700', false);
         markerElement.className += ' building-marker';
         const marker = new mapboxgl.Marker({
             element: markerElement
