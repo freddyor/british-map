@@ -285,11 +285,11 @@ stylePopup.innerHTML = `
   }
 
   .location-marker {
-    z-index: 2;
+    z-index: 1;
   }
 
   .building-marker {
-    z-index: 1;
+    z-index: 2;
   }
 
   .mapboxgl-popup {
