@@ -411,7 +411,7 @@ function createCustomMarker(imageUrl, color = '#9b4dca', isLocation = false) {
   markerDiv.style.height = '3em';
   markerDiv.style.position = 'absolute';
   markerDiv.style.borderRadius = '50%';
-  markerDiv.style.border = `0.15em solid ${color}`;
+   markerDiv.style.border = `0.15em solid ${hasVideoUrl ? '#9b4dca' : color}`;
   markerDiv.style.boxSizing = 'border-box';
   markerDiv.style.overflow = 'hidden';
 
