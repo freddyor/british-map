@@ -1,5 +1,107 @@
 export const locations = [
     {
+  name: "Aviva Building",
+  coords: [ -1.0872526854377227, 53.9594037184367 ],
+  image: "https://upload.wikimedia.org/wikipedia/commons/0/04/Aviva%2C_York.jpg",
+  description: "",
+  occupation: "1993",
+  tldr: "This building is home to Aviva insurance company. 🏢 The office has been explicitly designed to refer to the traditional architecture of York; it utilises the same local magnesian limestone as the Minster, while the gabled roofline mirrors the medieval Guildhall across the Ouse. This was not the original plan, but York Civic Trust successfully argued for this more traditional design.",
+  events: []
+},
+{
+  name: "Debtors Prison",
+  coords: [ -1.078667333409616, 53.95493534701185 ],
+  image: "https://upload.wikimedia.org/wikipedia/commons/7/7b/Mus%C3%A9e_York_Castle_York_1.jpg",
+  description: "",
+  occupation: "1705",
+  tldr: "Built originally as the County Gael (Prison) and then Debtor’s Prison, it is now part of York Castle Museum",
+  events: [
+    { date: "STONE", description: "Much of the original building stone came from ruined parts of Clifford’s Tower and King’s Manor 🪨" },
+    { date: "1730s", description: "Dick Turpin was held here before his trial, his cell is now part of the museum exhibition 🦹‍♂️" }
+  ]
+},
+{
+  name: "Female Prison",
+  coords: [ -1.078360888796882, 53.95555689500991 ],
+  image: "https://upload.wikimedia.org/wikipedia/commons/5/5f/York_Castle_Museum.jpg",
+  description: "",
+  occupation: "1783",
+  tldr: "Built as the former women’s prison, it became part of York Castle Museum in 1938",
+  events: [
+    { date: "EXECUTION", description: "From 1868 to 1896 executions took place inside the prison walls at the north end of the Female prison ⚰️" },
+    { date: "2023", description: "A 17-year old boy was arrested on suspicion of racially aggravated graffiti 🖍️" }
+  ]
+},
+{
+  name: "York Crown Court",
+  coords: [ -1.0794566604495477, 53.955115665190384 ],
+  image: "https://upload.wikimedia.org/wikipedia/commons/6/69/Crown_Court_And_Railings_Attached_To_Front._York_UK.jpg",
+  description: "",
+  occupation: "1777",
+  tldr: "Designed by John Carr to serve the assizes courts for York, the most serious of cases. They would take place 4 times a year ⚖️",
+  events: []
+},
+{
+  name: "St Mary’s Church",
+  coords: [ -1.08042564311857, 53.95721272615686 ],
+  image: "https://upload.wikimedia.org/wikipedia/commons/f/ff/St_Mary%27s_Church%2C_Castlegate_%281%29.jpg",
+  description: "",
+  occupation: "1020",
+  tldr: "The church itself could date back as far as 1020 and a dedication stone inside bears an inscription saying it was built by ‘Efrard & Grim & Aese’. The bulk of the building dates to the early 13th century, with 14th and 15th century modifications and alterations",
+  events: [
+    { date: "RECORD", description: "It has the tallest steeple in York at 47 metres high 📏" }
+  ]
+},
+{
+  name: "Grand Opera House",
+  coords: [ -1.0819141685379092, 53.957254463122915 ],
+  image: "https://upload.wikimedia.org/wikipedia/commons/c/c6/The_Grand_Opera_House.jpg",
+  description: "",
+  occupation: "1868",
+  tldr: "Now a theatre, The Grand Opera House has been repurposed many times over the years",
+  events: [
+    { date: "1868", description: "The building was first commissioned as a corn exchange, but this declined due to the Great Depression of British Agriculture in the late 19th century 🌾" },
+    { date: "1902", description: "William Peacock acquired the building and the warehouse behind it to make a music hall. It was officially opened with a performance of a pantomime, Little Red Riding Hood, as the Grand Theatre and Opera House on 20th January 1902 🎭" },
+    { date: "1958", description: "Ernest Sheperd, from the Shambles, acquired the theatre and renamed it S. S. Empire. He made it a bingo hall and roller skating rink, but closed in 1985 🎲⛸️" },
+    { date: "1989", description: "The Grand Opera House was re-opened with a performance of Macbeth on 26th September 1989 🎟️" }
+  ]
+},
+{
+  name: "All Saints, Pavement",
+  coords: [ -1.0807571883468556, 53.95820202984573 ],
+  image: "https://upload.wikimedia.org/wikipedia/commons/1/1d/All_Saints%2C_Pavement_%28York%29_%282%29.jpg",
+  description: "",
+  occupation: "14th Century",
+  tldr: "The church is the guild and civic church for the city of York, and the regimental church for the Royal Dragoon Guards (a cavalry regiment of the British Army)",
+  events: [
+    { date: "2015", description: "The Afghanistan Memorial Window was created in memory of men and women from the York area who had served in Afghanistan, particularly Marine David Hart, Lance Bombardier Matthew Hatton, and Trooper Ashley David Smith 🇦🇫🪟" }
+  ]
+},
+{
+  name: "Lady Anne House",
+  coords: [ -1.084147480786428, 53.95534907887705 ],
+  image: "https://upload.wikimedia.org/wikipedia/commons/3/34/Middleton%27s_Hotel%2C_Skeldergate%2C_York_%2815184121201%29.jpg",
+  description: "",
+  occupation: "1827",
+  tldr: "This a former almshouse, now a hotel, built by Lady Anne Middleton wife of the then Sheriff of York. She is the statue of a woman in a Puritan dress at the front of the building",
+  events: [
+    { date: "1659", description: "Middleton’s Hospital was founded on this spot by Anne Middleton. It had 22 apartments, housing 20 widows 👵" },
+    { date: "1827", description: "The building was demolished and moved further back from the street 🏗️" },
+    { date: "1972", description: "The owners of the hotel at Skeldergate House also purchased this building for the hotel 🛎️" }
+  ]
+},
+{
+  name: "Wesley Chapel",
+  coords: [ -1.0890092440635033, 53.95623348369203 ],
+  image: "https://upload.wikimedia.org/wikipedia/commons/e/e2/Rock_Church%2C_Priory_Street%2C_York_%285733430273%29.jpg",
+  description: "",
+  occupation: "1856",
+  tldr: "It was built in 1856 to accommodate 1,500 worshipers, at a cost of £10,936 (£1m in March 2025)",
+  events: [
+    { date: "1993", description: "It was renamed as Rock Church. It offered a more contemporary expression of worship, with rock music and a dance academy 🎸💃" }
+  ]
+},
+    {
     name: "Clifford's Tower",
     coords: [-1.07983518896210381, 53.955735358823574],
     image: "https://upload.wikimedia.org/wikipedia/commons/9/99/Clifford%27s_Tower_%285259021070%29.jpg",
