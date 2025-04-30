@@ -89,7 +89,7 @@ addLocationMarkers();
 // Function to dynamically resize markers based on zoom level
 function scaleMarkersBasedOnZoom() {
     const zoomLevel = map.getZoom(); // Get the current zoom level
-    const markerSize = Math.max(0.5, 1.5 * Math.pow(0.8, (20 - zoomLevel))) + 'em'; // Balanced scaling logic
+    const markerSize = Math.max(2, 3 * Math.pow(0.9, (20 - zoomLevel))) + 'em'; // Bigger scaling logic
 
     // Update the size of location markers
     document.querySelectorAll('.location-marker').forEach(marker => {
