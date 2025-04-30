@@ -432,9 +432,9 @@ geolocate.on('geolocate', (e) => {
 
 function createCustomMarker(imageUrl, color = '#9b4dca', isLocation = false) {
   const markerDiv = document.createElement('div');
-  markerDiv.className = 'custom-marker';
-  markerDiv.style.width = '3em';
-  markerDiv.style.height = '3em';
+  markerDiv.className = isLocation ? 'custom-marker location-marker' : 'custom-marker building-marker'; // Add specific class
+  markerDiv.style.width = '3em'; // Default size
+  markerDiv.style.height = '3em'; // Default size
   markerDiv.style.position = 'absolute';
   markerDiv.style.borderRadius = '50%';
   markerDiv.style.border = `0.15em solid ${color}`;
