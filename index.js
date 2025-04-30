@@ -87,7 +87,7 @@ addBuildingMarkers();
 addLocationMarkers();
 
 // Function to dynamically resize markers based on zoom level
-ffunction scaleMarkersBasedOnZoom() {
+function scaleMarkersBasedOnZoom() {
     const zoomLevel = map.getZoom(); // Get the current zoom level
     const markerSize = (0.5 * zoomLevel) + 'em'; // Linear scaling for smoother transitions
 
