@@ -83,8 +83,26 @@ map.on('click', (e) => {
     // You can display this link in a popup or share it with others
 });
 
-    addBuildingMarkers();
-    addLocationMarkers();
+addBuildingMarkers();
+addLocationMarkers();
+
+// Function to dynamically resize markers based on zoom level
+function scaleMarkersBasedOnZoom() {
+    const zoomLevel = map.getZoom();
+    const markerSize = Math.max(2, zoomLevel) + 'em'; // Adjust scaling logic as needed
+    document.querySelectorAll('.custom-marker').forEach(marker => {
+        marker.style.width = markerSize;
+        marker.style.height = markerSize;
+    });
+}
+
+// Add event listener for zoom to resize markers
+map.on('zoom', () => {
+    scaleMarkersBasedOnZoom();
+});
+
+// Call the function initially to set marker sizes based on the initial zoom level
+scaleMarkersBasedOnZoom();
 
 map.on('load', () => {
     addBuildingsList();
