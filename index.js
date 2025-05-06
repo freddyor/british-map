@@ -61,6 +61,17 @@ bottomSheet.style.padding = '5px'; // Matches popup padding
 bottomSheet.style.overflowY = 'auto'; // Make it scrollable
 document.body.appendChild(bottomSheet);
 
+// Function to stop zooming from affecting anything but the bottom sheet
+function enableBottomSheetZoomOnly() {
+    bottomSheet.addEventListener('wheel', (event) => {
+        if (isBottomSheetOpen) {
+            event.stopPropagation(); // Stop event from propagating to other elements
+            event.preventDefault(); // Prevent default zoom behavior
+            bottomSheet.scrollTop += event.deltaY; // Allow scrolling within the bottom sheet
+        }
+    }, { passive: false }); // Use passive: false to allow preventDefault() to work
+}
+
 
 // Function to generate a URL with given coordinates and zoom
 function generateMapLink(latitude, longitude, zoomLevel) {
@@ -461,7 +472,16 @@ let isBottomSheetOpen = false;
 function toggleBottomSheet(contentHTML) {
     if (isBottomSheetOpen) {
         bottomSheet.style.bottom = '-100%'; // Hide
+        isBottomSheetOpen = false;
     } else {
+        bottomSheet.innerHTML = contentHTML; // Add content
+        bottomSheet.style.bottom = '0'; // Show
+        isBottomSheetOpen = true;
+    }
+}
+
+// Ensure the bottom sheet zoom behavior is enabled
+enableBottomSheetZoomOnly();
         // Add a close button to the top-right corner of the content
         const closeButtonHTML = `
             <button id="close-bottom-sheet" style="
@@ -477,9 +497,6 @@ function toggleBottomSheet(contentHTML) {
                 font-size: 10px;
             ">❌</button>
         `;
-
-        bottomSheet.innerHTML = closeButtonHTML + contentHTML; // Add close button + content
-        bottomSheet.style.bottom = '0'; // Show
 
         // Attach event listener to the close button
  document.getElementById('close-bottom-sheet').addEventListener('click', () => {
