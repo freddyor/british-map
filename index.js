@@ -510,7 +510,6 @@ enableBottomSheetZoomOnly();
     toggleBottomSheet(); // Close the popup
 });
     isBottomSheetOpen = !isBottomSheetOpen;
-}
 
 function createPopupContent(location, isFirebase = false) {
     const data = isFirebase ? location : location;
