@@ -1616,15 +1616,6 @@ export const locations = [
     ]
   },
   {
-    "coords": [-1.0872901902658239, 53.9599545422618],
-    "name": "Florence Nightingale",
-    "occupation": "1820-1910",
-    "description": "Florence Nightingale crossed the river here in 1852.",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Florence_Nightingale_%28H_Hering_NPG_x82368%29.jpg/330px-Florence_Nightingale_%28H_Hering_NPG_x82368%29.jpg",
-    "tldr": "Lendal bridge was built on the site where the old rope-ferry used to operate. In 1852, en route to Castle Howard, Florence Nightingale crossed at this exact point, using the ferry ⛴️",
-    "events": []
-  },
-  {
     "coords": [-1.0855097700040228, 53.96263388135285],
     "name": "Emmeline Pankhurst",
     "occupation": "1858-1928",
