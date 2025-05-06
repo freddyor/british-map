@@ -509,7 +509,6 @@ enableBottomSheetZoomOnly();
 
     toggleBottomSheet(); // Close the popup
 });
-    }
     isBottomSheetOpen = !isBottomSheetOpen;
 }
 
