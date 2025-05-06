@@ -1,4 +1,44 @@
 export const buildings = [
+       {
+    "name": "Lendal Bridge Arch",
+    "coords": [-1.0869891645941883, 53.96018862807536],
+    "image": "https://www.britmap.com/videos/IMG_5565.jpeg",
+    "description": "",
+    "occupation": "1866-?",
+    "videoUrl": "https://www.britmap.com/videos/copy_8250E92B-5789-4C53-9148-68E554C7075E.mp4", 
+    "tldr": "",
+    "events": []
+  },
+       {
+    "name": "Lendal AV Symbols",
+    "coords": [-1.0871930124790716, 53.959968092170136],
+    "image": "https://www.britmap.com/videos/IMG_5564.jpeg",
+    "description": "",
+    "occupation": "1863",
+    "videoUrl": "https://www.britmap.com/videos/copy_8250E92B-5789-4C53-9148-68E554C7075E.mp4", 
+    "tldr": "",
+    "events": []
+  },
+       {
+    "name": "Lendal Bridge",
+    "coords": [-1.0873884839256371, 53.95992558014929],
+    "image": "https://www.britmap.com/videos/IMG_5569.jpeg",
+    "description": "",
+    "occupation": "1863",
+    "videoUrl": "https://www.britmap.com/videos/copy_8250E92B-5789-4C53-9148-68E554C7075E.mp4", 
+    "tldr": "",
+    "events": []
+  },
+       {
+    "name": "Lendal Ferry",
+    "coords": [-1.0877585352552135, 53.95984269725424],
+    "image": "https://www.britmap.com/videos/IMG_5566.jpeg",
+    "description": "",
+    "occupation": " ",
+    "videoUrl": "https://www.britmap.com/videos/copy_8250E92B-5789-4C53-9148-68E554C7075E.mp4", 
+    "tldr": "",
+    "events": []
+  },
     {
     "name": "Second Boer War Memorial",
     "coords": [-1.083717126021606, 53.961700693395734],
