@@ -61,6 +61,17 @@ bottomSheet.style.padding = '5px'; // Matches popup padding
 bottomSheet.style.overflowY = 'auto'; // Make it scrollable
 document.body.appendChild(bottomSheet);
 
+const bottomSheet = document.getElementById('bottom-sheet');
+
+// Prevent zoom gestures on the bottom sheet
+bottomSheet.addEventListener('wheel', (e) => {
+    if (e.ctrlKey) { // Detect pinch-to-zoom gesture
+        e.preventDefault();
+    }
+});
+
+bottomSheet.addEventListener('gesturestart', (e) => e.preventDefault());
+
 
 // Function to generate a URL with given coordinates and zoom
 function generateMapLink(latitude, longitude, zoomLevel) {
@@ -361,6 +372,7 @@ stylePopup.innerHTML = `
     padding: 5px;
     font-size: 14px;
     line-height: 1.05;
+    touch-action: manipulation;
   }
 
   #bottom-sheet img {
