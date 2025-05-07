@@ -575,11 +575,42 @@ function addBuildingMarkers() {
 
         marker.getElement().addEventListener('click', () => {
             map.getCanvas().style.cursor = 'pointer';
-            const contentHTML = createPopupContent(building);
-            toggleBottomSheet(contentHTML);
+
+            // Check for video URL
+            const videoUrl = building.videoUrl; // Assuming videoUrl is part of the building data
+            if (videoUrl) {
+                // Create a video element
+                const videoElement = document.createElement('video');
+                videoElement.src = videoUrl;
+                videoElement.style.display = 'none'; // Hide the video element
+                videoElement.controls = true;
+                videoElement.autoplay = true;
+
+                // Append video to the body
+                document.body.appendChild(videoElement);
+
+                // Play the video and request fullscreen
+                videoElement.play();
+                if (videoElement.requestFullscreen) {
+                    videoElement.requestFullscreen();
+                } else if (videoElement.webkitRequestFullscreen) { // Safari
+                    videoElement.webkitRequestFullscreen();
+                } else if (videoElement.mozRequestFullScreen) { // Firefox
+                    videoElement.mozRequestFullScreen();
+                } else if (videoElement.msRequestFullscreen) { // IE/Edge
+                    videoElement.msRequestFullscreen();
+                }
+
+                // Remove the video element once playback ends
+                videoElement.addEventListener('ended', () => {
+                    document.body.removeChild(videoElement);
+                });
+            } else {
+                console.error('Video URL not available for this building.');
+            }
         });
     });
-    }
+}
 // New code for the "Image Attributions" button
 const imageAttributionsButton = document.createElement('button');
 imageAttributionsButton.id = 'image-attributions-button';
