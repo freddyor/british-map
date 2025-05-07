@@ -582,51 +582,28 @@ function addBuildingMarkers() {
                 // Create a video element
                 const videoElement = document.createElement('video');
                 videoElement.src = videoUrl;
-                videoElement.style.position = 'fixed';
-                videoElement.style.top = '50%';
-                videoElement.style.left = '50%';
-                videoElement.style.transform = 'translate(-50%, -50%)';
-                videoElement.style.zIndex = '10000';
-                videoElement.style.background = 'black';
-                videoElement.style.border = '2px solid #fff';
-                videoElement.style.width = '80%';
-                videoElement.style.height = 'auto';
+                videoElement.style.display = 'none'; // Hide the video element
                 videoElement.controls = true;
                 videoElement.autoplay = true;
 
                 // Append video to the body
                 document.body.appendChild(videoElement);
 
-                // Ensure the video pops up instantly
-                videoElement.addEventListener('canplay', () => {
-                    videoElement.style.display = 'block'; // Make sure it's visible when ready
-                });
+                // Play the video and request fullscreen
+                videoElement.play();
+                if (videoElement.requestFullscreen) {
+                    videoElement.requestFullscreen();
+                } else if (videoElement.webkitRequestFullscreen) { // Safari
+                    videoElement.webkitRequestFullscreen();
+                } else if (videoElement.mozRequestFullScreen) { // Firefox
+                    videoElement.mozRequestFullScreen();
+                } else if (videoElement.msRequestFullscreen) { // IE/Edge
+                    videoElement.msRequestFullscreen();
+                }
 
                 // Remove the video element once playback ends
                 videoElement.addEventListener('ended', () => {
                     document.body.removeChild(videoElement);
-                });
-
-                // Add a close button
-                const closeButton = document.createElement('button');
-                closeButton.textContent = '✖';
-                closeButton.style.position = 'absolute';
-                closeButton.style.top = '5%';
-                closeButton.style.right = '5%';
-                closeButton.style.zIndex = '10001';
-                closeButton.style.background = 'red';
-                closeButton.style.color = 'white';
-                closeButton.style.border = 'none';
-                closeButton.style.borderRadius = '50%';
-                closeButton.style.padding = '10px';
-                closeButton.style.cursor = 'pointer';
-
-                document.body.appendChild(closeButton);
-
-                closeButton.addEventListener('click', () => {
-                    videoElement.pause();
-                    document.body.removeChild(videoElement);
-                    document.body.removeChild(closeButton);
                 });
             } else {
                 console.error('Video URL not available for this building.');
