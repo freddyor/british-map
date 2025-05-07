@@ -522,7 +522,7 @@ function createPopupContent(location, isFirebase = false) {
                 <div style="margin-top: 10px;">
                     ${eventsData.map(event => `
                         <div style="background: #f9f9f9; border: 1px solid #ddd; border-radius: 8px; padding: 10px; margin-bottom: 10px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
-                            <strong style="color: #9b4dca; font-size: 15px;">${event.date || event.label}</strong>: <span style="font-size: 15px;">${event.description}</span>
+                            <strong style="color: #7C6E4D; font-size: 15px;">${event.date || event.label}</strong>: <span style="font-size: 15px;">${event.description}</span>
                         </div>
                     `).join('')}
                 </div>
