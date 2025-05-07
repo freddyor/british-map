@@ -503,9 +503,9 @@ function createPopupContent(location, isFirebase = false) {
     const videoUrl = data.videoUrl ? data.videoUrl : null;
 
     // Exclude the "tldr" and image if the videoUrl is present
-    const tldrContent = !videoUrl
-        ? `<p style="background: #f9f9f9; padding: 10px; margin-top: 10px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); font-size: 15px;">${data.tldr}</p>`
-        : '';
+const tldrContent = !videoUrl
+    ? `<p style="background: #f9f9f9; padding: 10px; margin-top: 10px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); font-size: 15px; color: #7C6E4D;">${data.tldr}</p>`
+    : '';
 
     const imageContent = !videoUrl
         ? `<img src="${data.image || data.imageUrl}" alt="${data.name}" style="width: 80px; height: 80px; object-fit: cover; border-radius: 8px; margin-bottom: 10px;" />`
