@@ -43,8 +43,8 @@ bottomSheet.style.bottom = '-100%'; // Initially hidden
 bottomSheet.style.left = '50%'; // Align to the left
 bottomSheet.style.transform = 'translate(-50%)'; // Adjust position to align center both ways
 bottomSheet.style.right = '50%';
-bottomSheet.style.width = '75%';
-bottomSheet.style.height = '60%'; // Adjust height as needed
+bottomSheet.style.width = '96%';
+bottomSheet.style.height = '70%'; // Adjust height as needed
 bottomSheet.style.backgroundColor = '#fff';
 bottomSheet.style.borderTop = '2px solid #ccc';
 bottomSheet.style.boxShadow = '0 -6px 15px rgba(0, 0, 0, 0.3)';
@@ -530,7 +530,7 @@ const tldrContent = !videoUrl
             ${videoUrl ? `
                 <div style="margin-top: 10px; margin-bottom: 10px; text-align: center;">
                     <video 
-                        width="262" 
+                        width="300" 
                         height="464" 
                         autoplay 
                         controlsList="nodownload nofullscreen noremoteplayback" 
