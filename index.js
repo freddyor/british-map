@@ -115,6 +115,19 @@ dragHandle.addEventListener('touchstart', startDrag);
 document.addEventListener('touchmove', onDrag);
 document.addEventListener('touchend', endDrag);
 
+const toggleButton = document.createElement('button');
+toggleButton.textContent = 'Toggle Bottom Sheet';
+toggleButton.style.position = 'fixed';
+toggleButton.style.bottom = '10px';
+toggleButton.style.right = '10px';
+toggleButton.style.zIndex = '10001';
+
+toggleButton.addEventListener('click', () => {
+  const isHidden = bottomSheet.style.bottom === '-100%';
+  bottomSheet.style.bottom = isHidden ? '0' : '-100%';
+});
+
+document.body.appendChild(toggleButton);
 
 // Function to generate a URL with given coordinates and zoom
 function generateMapLink(latitude, longitude, zoomLevel) {
