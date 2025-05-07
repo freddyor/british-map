@@ -502,48 +502,60 @@ function createPopupContent(location, isFirebase = false) {
     // Check if videoUrl property exists and is not empty
     const videoUrl = data.videoUrl ? data.videoUrl : null;
 
-    // Exclude the "tldr" and image if the videoUrl is present
-const tldrContent = !videoUrl
-    ? `<p style="background: #f9f9f9; padding: 10px; margin-top: 10px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); font-size: 15px; color: #7C6E4D;">${data.tldr}</p>`
-    : '';
-
-    const imageContent = !videoUrl
-        ? `<img src="${data.image || data.imageUrl}" alt="${data.name}" style="width: 80px; height: 80px; object-fit: cover; border-radius: 8px; margin-bottom: 10px;" />`
+    const videoContent = videoUrl
+        ? `<div style="position: relative; text-align: center;">
+             <img src="${data.image || data.imageUrl}" alt="${data.name}" 
+                  style="width: 100%; height: auto; object-fit: cover; border-radius: 8px; cursor: pointer;" 
+                  id="video-thumbnail">
+             <button style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); 
+                            background: rgba(0, 0, 0, 0.5); color: white; border: none; 
+                            padding: 10px 20px; border-radius: 50%; font-size: 20px; cursor: pointer;" 
+                     id="play-button">▶</button>
+          </div>`
         : '';
 
     return `
         <div style="text-align: center; padding: 0; margin: 0;">
             <p style="font-size: 15px; font-weight: bold; margin-bottom: 10px;">${data.description}</p>
-            ${imageContent}
+            ${videoContent}
             <div style="font-size: 20px; font-weight: bold; margin-top: 0;">${data.name}</div>
             <div style="font-size: 15px; color: #666;">${data.occupation || data.dates}</div>
-            ${tldrContent}
             ${eventsData && eventsData.length ? `
                 <div style="margin-top: 10px;">
                     ${eventsData.map(event => `
-                        <div style="background: #f9f9f9; border: 1px solid #ddd; border-radius: 8px; padding: 10px; margin-bottom: 10px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
-                            <strong style="color: #7C6E4D; font-size: 15px;">${event.date || event.label}</strong>: <span style="font-size: 15px;">${event.description}</span>
+                        <div style="background: #f9f9f9; border: 1px solid #ddd; 
+                                    border-radius: 8px; padding: 10px; margin-bottom: 10px; 
+                                    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
+                            <strong style="color: #7C6E4D; font-size: 15px;">${event.date || event.label}</strong>: 
+                            <span style="font-size: 15px;">${event.description}</span>
                         </div>
                     `).join('')}
-                </div>
-            ` : ''}
-            ${videoUrl ? `
-                <div style="margin-top: 10px; margin-bottom: 10px; text-align: center;">
-                    <video 
-                        width="262" 
-                        height="464" 
-                        autoplay 
-                        controlsList="nodownload nofullscreen noremoteplayback" 
-                        controls 
-                        style="display: block; margin: 0 auto;">
-                        <source src="${videoUrl}" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
                 </div>
             ` : ''}
         </div>
     `;
 }
+
+// Add Event Listener for Fullscreen Playback
+document.addEventListener('click', (event) => {
+    if (event.target.id === 'play-button') {
+        const videoUrl = event.target.closest('#video-thumbnail').dataset.videoUrl;
+        const videoElement = document.createElement('video');
+        videoElement.src = videoUrl;
+        videoElement.controls = true;
+        videoElement.style.width = '100%';
+        videoElement.style.height = '100%';
+        videoElement.style.objectFit = 'cover';
+
+        // Open video in fullscreen
+        videoElement.requestFullscreen().catch((err) => {
+            console.error('Error attempting to enable fullscreen mode:', err);
+        });
+
+        // Play video
+        videoElement.play();
+    }
+});
 
 function addLocationMarkers() {
 locations.forEach(location => {
