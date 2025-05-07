@@ -515,9 +515,9 @@ function createPopupContent(location, isFirebase = false) {
         <div style="text-align: center; padding: 0; margin: 0;">
             <p style="font-size: 15px; font-weight: bold; margin-bottom: 10px;">${data.description}</p>
             ${imageContent}
-            <div style="font-size: 22px; font-weight: bold; margin-top: 0;">${data.name}</div>
+            <div style="font-size: 20px; font-weight: bold; margin-top: 0;">${data.name}</div>
             <div style="font-size: 15px; color: #666;">${data.occupation || data.dates}</div>
-            ${tldrContent}
+            <div style="font-size: 15px; font-weight: bold; color: #7C6E4D">${data.tldr}</div>
             ${eventsData && eventsData.length ? `
                 <div style="margin-top: 10px;">
                     ${eventsData.map(event => `
