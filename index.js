@@ -512,7 +512,7 @@ function createPopupContent(location, isFirebase = false) {
         : '';
 
     return `
-        <div style="padding: 0; margin: 0;">
+        <div style="text-align: center; padding: 0; margin: 0;">
             <p style="font-size: 15px; font-weight: bold; margin-bottom: 10px;">${data.description}</p>
             ${imageContent}
             <div style="font-size: 22px; font-weight: bold; margin-top: 0;">${data.name}</div>
