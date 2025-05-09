@@ -7,6 +7,7 @@ export const buildings = [
     "occupation": " ",
     "videoUrl": "https://www.britmap.com/videos/IMG_5648.jpeg",
     "tldr": " ",
+   "colour": "yes",
     "events": [  ]
   },
                      {
