@@ -140,7 +140,6 @@ export const buildings = [
     coords: [-1.0846377100592663, 53.961304511725615],
     image: "https://upload.wikimedia.org/wikipedia/commons/b/b7/B%C3%A2timent_Grays_Solicitors_York_1.jpg",
     description: "",
-                    colour: "yes",
     occupation: "1899",
     "videoUrl": "https://www.britmap.com/videos/Captions_E34A23.mp4",
               "subtitle": "One of York's greatest ever pre-NHS charities",
