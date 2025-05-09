@@ -445,7 +445,7 @@ export const locations = [
     "coords": [-1.086237295101084, 53.96107728457042],
     "description": "",
     "occupation": "1225",
-    "tldr": "This was the largest hospital in England during the Middle Ages. It was also dissolved with the monastery 🏥",
+    "tldr": "Once the largest medieval hospital in the north, founded just after the Norman conquest. It was built on the site of St Peter’s hospital, which was founded by King Aethelstan. St Leonard's Hospital took care of the poor and condemned, even providing meals for prisoners at York Castle, but the sick were not allowed to be treated unless they confessed their sins and had their souls cleansed. The hospital was extremely intertwined with religion so it suffered severely following the Reformation, from which it never recovered. There was then no hospital in York for 200 years until 1740. Museum street was once named Footloose Lane and Finkle Street, likely because of the patients who left here hobbling down the road. 🏥",
     "events": []
   },
   {
