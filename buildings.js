@@ -5,7 +5,7 @@ export const buildings = [
     "image": "https://upload.wikimedia.org/wikipedia/commons/1/16/Tour_Lendal_York_2.jpg",
     "description": "",
     "occupation": " ",
-    "videoUrl": "https://www.britmap.com/videos/IMG_5648.jpeg",
+    "videoUrl": "https://www.britmap.com/videos/Captions_ED3D9E(1).mp4",
     "tldr": " ",
     "events": [  ]
   },
