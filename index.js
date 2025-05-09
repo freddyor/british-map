@@ -565,7 +565,7 @@ locations.forEach(location => {
 
 function addBuildingMarkers() {
     buildings.forEach(building => {
-        const outlineColor = building.colour === "yes" ? '#00FF00' : '#FFD700'; // Green if "colour" is "yes", otherwise gold
+        const outlineColor = building.colour === "yes" ? '#FF69B4' : '#FFFFFF'; // Green if "colour" is "yes", otherwise 
         const { element: markerElement } = createCustomMarker(building.image, outlineColor, false);
         markerElement.className += ' building-marker';
         const marker = new mapboxgl.Marker({
