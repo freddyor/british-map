@@ -5,14 +5,14 @@ export const buildings = [
     "image": "https://upload.wikimedia.org/wikipedia/commons/1/16/Tour_Lendal_York_2.jpg",
     "description": "",
     "occupation": " ",
-    "videoUrl": "https://www.britmap.com/videos/Captions_ED3D9E.mp4",
+    "videoUrl": "https://www.britmap.com/videos/IMG_5648.jpeg",
     "tldr": " ",
     "events": [  ]
   },
                      {
     "name": "St Leonard's Hospital Windows",
     "coords": [-1.0861441746752907, 53.961203974350866],
-    "image": "https://www.britmap.com/videos/IMG_5565.jpeg",
+    "image": "https://www.britmap.com/videos/IMG_5647.jpeg",
     "description": "",
     "occupation": "1866-?",
     "videoUrl": "https://www.britmap.com/videos/Captions_BA8635.mp4", 
@@ -22,7 +22,7 @@ export const buildings = [
               {
     "name": "Lendal Bridge Toll Booths",
     "coords": [-1.087467580549237, 53.9597560230991],
-    "image": "https://www.britmap.com/videos/IMG_5565.jpeg",
+    "image": "https://www.britmap.com/videos/IMG_5646.jpeg",
     "description": "",
     "occupation": "1866-?",
     "videoUrl": "https://www.britmap.com/videos/Captions_2ED448.mp4", 
