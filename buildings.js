@@ -7,7 +7,6 @@ export const buildings = [
     "occupation": " ",
     "videoUrl": "https://www.britmap.com/videos/IMG_5648.jpeg",
     "tldr": " ",
-   "colour": "yes",
     "events": [  ]
   },
                      {
@@ -511,6 +510,7 @@ export const buildings = [
     "videoUrl": "https://www.britmap.com/videos/copy_1C4F32F7-2469-4054-957C-DFED999308EE.mp4", 
     "occupation": " ",
               "subtitle": "Markers from two of York's past floods",
+                    "colour": "yes",
     "tldr": " ",
     "events": [ ]
   },
