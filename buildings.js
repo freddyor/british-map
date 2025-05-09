@@ -1,11 +1,41 @@
 export const buildings = [
+        {
+    "name": "Lendal Tower",
+    "coords": [-1.0871091424158719, 53.9603294803262],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/1/16/Tour_Lendal_York_2.jpg",
+    "description": "",
+    "occupation": " ",
+    "videoUrl": "https://www.britmap.com/videos/Captions_ED3D9E.mp4",
+    "tldr": " ",
+    "events": [  ]
+  },
+                     {
+    "name": "St Leonard's Hospital Windows",
+    "coords": [-1.0861441746752907, 53.961203974350866],
+    "image": "https://www.britmap.com/videos/IMG_5565.jpeg",
+    "description": "",
+    "occupation": "1866-?",
+    "videoUrl": "https://www.britmap.com/videos/Captions_BA8635.mp4", 
+    "tldr": "",
+    "events": []
+  },
+              {
+    "name": "Lendal Bridge Toll Booths",
+    "coords": [-1.087467580549237, 53.9597560230991],
+    "image": "https://www.britmap.com/videos/IMG_5565.jpeg",
+    "description": "",
+    "occupation": "1866-?",
+    "videoUrl": "https://www.britmap.com/videos/Captions_2ED448.mp4", 
+    "tldr": "",
+    "events": []
+  },
        {
     "name": "Lendal Bridge Arch",
     "coords": [-1.0869891645941883, 53.96018862807536],
     "image": "https://www.britmap.com/videos/IMG_5565.jpeg",
     "description": "",
     "occupation": "1866-?",
-    "videoUrl": "https://www.britmap.com/videos/copy_8250E92B-5789-4C53-9148-68E554C7075E.mp4", 
+    "videoUrl": "https://www.britmap.com/videos/Captions_7978BD.mp4", 
     "tldr": "",
     "events": []
   },
@@ -15,7 +45,7 @@ export const buildings = [
     "image": "https://www.britmap.com/videos/IMG_5564.jpeg",
     "description": "",
     "occupation": "1863",
-    "videoUrl": "https://www.britmap.com/videos/copy_8250E92B-5789-4C53-9148-68E554C7075E.mp4", 
+    "videoUrl": "https://www.britmap.com/videos/Captions_8C1281.mp4", 
     "tldr": "",
     "events": []
   },
@@ -25,7 +55,7 @@ export const buildings = [
     "image": "https://www.britmap.com/videos/IMG_5569.jpeg",
     "description": "",
     "occupation": "1863",
-    "videoUrl": "https://www.britmap.com/videos/copy_8250E92B-5789-4C53-9148-68E554C7075E.mp4", 
+    "videoUrl": "https://www.britmap.com/videos/Captions_40E9B5.mp4", 
     "tldr": "",
     "events": []
   },
@@ -35,7 +65,7 @@ export const buildings = [
     "image": "https://www.britmap.com/videos/IMG_5566.jpeg",
     "description": "",
     "occupation": " ",
-    "videoUrl": "https://www.britmap.com/videos/copy_8250E92B-5789-4C53-9148-68E554C7075E.mp4", 
+    "videoUrl": "https://www.britmap.com/videos/Captions_1F175B.mp4", 
     "tldr": "",
     "events": []
   },
