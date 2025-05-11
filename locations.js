@@ -1077,21 +1077,6 @@ export const locations = [
     { "date": "DONOR", "description": "He gave lectures to fundraise to keep St Stephen's Orphanage open during financial stress." },
   ]
 },
-
-{ 
-    coords: [-1.0830932, 53.961744], 
-    name: "Guy Fawkes", 
-    occupation: "1570-1606", 
-    description: "Guy Fawkes grew up in this very location", 
-    tldr: "Guy Fawkes is the most famous figure to come from York.", 
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/The_Gunpowder_Plot_Conspirators%2C_1605_from_NPG_%28cropped%29.jpg/330px-The_Gunpowder_Plot_Conspirators%2C_1605_from_NPG_%28cropped%29.jpg", 
-    events: [
-        { date: "1592", description: "Fawkes sold his property to go and fight Protestants in Netherlands 🇳🇱" },
-        { date: "1606", description: "Fawkes was executed after his failed plot to blow up Protestant Royalty and the Houses of Parliament." },
-        { date: "BONFIRE", description: "His death is celebrated on the 5th November every year with bonfired and fireworks 🧨" },
-    ]
-},
-
 {
   "coords": [-1.0802024, 53.9603617],
   "name": "Lady Sarah Hewley",
