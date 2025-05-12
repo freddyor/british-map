@@ -549,3 +549,35 @@ function toggleImageAttributions() {
 
 // Event listener for the new button
 document.getElementById('image-attributions-button').addEventListener('click', toggleImageAttributions);
+
+document.addEventListener('DOMContentLoaded', () => {
+    // Handle button click to toggle dropdown visibility
+    document.getElementById('custom-bmc-button').addEventListener('click', function(e) {
+        e.preventDefault();
+        var dropdownContent = this.nextElementSibling;
+        dropdownContent.style.display = dropdownContent.style.display === 'block' ? 'none' : 'block';
+    });
+
+    // Close the dropdown when clicking outside
+    document.addEventListener('click', function (event) {
+        const dropdownButton = document.querySelector('.custom-button');
+        const dropdownContent = document.querySelector('.dropdown-content');
+
+        // Check if the click is on the dropdown button or inside the dropdown content
+        if (dropdownButton.contains(event.target)) {
+            dropdownContent.style.display = dropdownContent.style.display === 'block' ? 'none' : 'block';
+        } else if (!dropdownContent.contains(event.target)) {
+            // Close the dropdown if the click is outside
+            dropdownContent.style.display = 'none';
+        }
+    });
+
+    // Set the width of the dropdown content to match the button's width
+    const buttons = document.querySelectorAll('.custom-button');
+    buttons.forEach(button => {
+        const dropdownContent = button.nextElementSibling;
+        if (dropdownContent) {
+            dropdownContent.style.width = `${button.offsetWidth}px`;
+        }
+    });
+});
