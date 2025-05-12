@@ -11,7 +11,7 @@ export const locations = [
 {
   name: "Debtors Prison",
   coords: [ -1.078667333409616, 53.95493534701185 ],
-  image: "https://upload.wikimedia.org/wikipedia/commons/7/7b/Mus%C3%A9e_York_Castle_York_1.jpg",
+  image: "https://www.britmap.com/videos/debtorsprison.webp",
   description: "",
   occupation: "1705",
   tldr: "Built originally as the County Gael (Prison) and then Debtor’s Prison, it is now part of York Castle Museum",
@@ -23,7 +23,7 @@ export const locations = [
 {
   name: "Female Prison",
   coords: [ -1.078360888796882, 53.95555689500991 ],
-  image: "https://upload.wikimedia.org/wikipedia/commons/5/5f/York_Castle_Museum.jpg",
+  image: "https://www.britmap.com/videos/femaleprison.webp",
   description: "",
   occupation: "1783",
   tldr: "Built as the former women’s prison, it became part of York Castle Museum in 1938",
@@ -35,7 +35,7 @@ export const locations = [
 {
   name: "York Crown Court",
   coords: [ -1.0794566604495477, 53.955115665190384 ],
-  image: "https://upload.wikimedia.org/wikipedia/commons/6/69/Crown_Court_And_Railings_Attached_To_Front._York_UK.jpg",
+  image: "https://www.britmap.com/videos/yorkcrowncourt.webp",
   description: "",
   occupation: "1777",
   tldr: "Designed by John Carr to serve the assizes courts for York, the most serious of cases. They would take place 4 times a year ⚖️",
@@ -104,7 +104,7 @@ export const locations = [
     {
     name: "Clifford's Tower",
     coords: [-1.07983518896210381, 53.955735358823574],
-    image: "https://upload.wikimedia.org/wikipedia/commons/9/99/Clifford%27s_Tower_%285259021070%29.jpg",
+    image: "https://www.britmap.com/videos/yorkcastle.webp",
     description: "",
     occupation: "1086",
     tldr: "Originally built by William 1 to dominate the former Viking city.",
@@ -116,7 +116,7 @@ export const locations = [
     {
     name: "Fairfax House",
     coords: [-1.0801100178519096, 53.956747322386256], // Approximate coordinates
-    image: "https://upload.wikimedia.org/wikipedia/commons/2/29/Fairfax_House_-_geograph.org.uk_-_1155772.jpg", // Replace with actual image path
+    image: "https://www.britmap.com/videos/fairfax.webp", // Replace with actual image path
     description: "",
     occupation: "1740s",
     tldr: "A preserved Georgian townhouse, unique in that 99% of the furniture is English made.",
@@ -352,7 +352,7 @@ export const locations = [
   {
     "name": "The Five Sisters Window",
     "coords": [-1.0821311116265098, 53.96259012232547],
-    "image": "https://upload.wikimedia.org/wikipedia/commons/6/62/York_Minster_window_n16_%22The_Five_sisters%22_%2816157008236%29.jpg",
+    "image": "https://www.britmap.com/videos/fivesisterswindow.webp",
     "description": "",
     "occupation": "1270",
     "tldr": "The largest grisaille stained-glass window in the British Isles, it is now a war memorial.",
@@ -788,7 +788,7 @@ export const locations = [
   {
     "name": "York Railway Station",
     "coords": [-1.0927368374514534, 53.95807056397365],
-    "image": "https://upload.wikimedia.org/wikipedia/commons/3/3b/YORK_RAILWAY_STATION_JULY_2013_%289255853199%29.jpg",
+    "image": "https://www.britmap.com/videos/yorkrailwaystation.webp",
     "description": "",
     "occupation": "1877",
     "tldr": "When it opened, its 13 platforms made it the largest railway station in the world 🚂",
