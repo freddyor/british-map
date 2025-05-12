@@ -190,10 +190,14 @@ function getUrlParameter(name) {
     return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
 };
 
-// Get parameters from URL
+const defaultCenter = [-1.0835104081554843, 53.95838745239521]; // Default York coordinates
+
 const lat = getUrlParameter('lat');
 const lng = getUrlParameter('lng');
 const zoom = getUrlParameter('zoom');
+
+const initialCenter = lat && lng ? [parseFloat(lng), parseFloat(lat)] : defaultCenter;
+const initialZoom = zoom ? parseFloat(zoom) : 15; // Adjust defaultZoom as necessary
 
 
 // Use URL parameters if available, otherwise use default values
