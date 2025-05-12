@@ -2,7 +2,7 @@ export const buildings = [
         {
     "name": "Lendal Tower",
     "coords": [-1.0871091424158719, 53.9603294803262],
-    "image": "https://www.britmap.com/videos/lendaltower.webp",
+    "image": "./videos/lendaltower.webp",
     "description": "",
     "occupation": " ",
     "videoUrl": "https://www.britmap.com/videos/Captions_ED3D9E(1).mp4",
@@ -12,7 +12,7 @@ export const buildings = [
                      {
     "name": "St Leonard's Hospital Windows",
     "coords": [-1.0861441746752907, 53.961203974350866],
-    "image": "https://www.britmap.com/videos/leonardwindow.webp",
+    "image": "./videos/leonardwindow.webp",
     "description": "",
     "occupation": "1866-?",
     "videoUrl": "https://www.britmap.com/videos/Captions_BA8635.mp4", 
@@ -126,7 +126,7 @@ export const buildings = [
            {
     name: "King's Manor",
     coords: [-1.0862176206651686, 53.96250673808531], 
-    image: "https://www.britmap.com/videos/kingsmanor.webp", 
+    image: "./videos/kingsmanor.webp", 
     description: "",
     occupation: "11th Century", 
     "videoUrl": "https://www.britmap.com/videos/Captions_746FC9.mp4",
@@ -137,7 +137,7 @@ export const buildings = [
             {
     name: "York Dispensary",
     coords: [-1.0846377100592663, 53.961304511725615],
-    image: "https://www.britmap.com/videos/yorkdispensary.webp",
+    image: "./videos/yorkdispensary.webp",
     description: "",
     occupation: "1899",
     "videoUrl": "https://www.britmap.com/videos/Captions_E34A23.mp4",
