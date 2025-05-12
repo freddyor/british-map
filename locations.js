@@ -116,7 +116,7 @@ export const locations = [
     {
     name: "Fairfax House",
     coords: [-1.0801100178519096, 53.956747322386256], // Approximate coordinates
-    image: "https://www.britmap.com/videos/fairfax.webp", // Replace with actual image path
+    image: "https://www.britmap.com/videos/fairfaxhouse.webp", // Replace with actual image path
     description: "",
     occupation: "1740s",
     tldr: "A preserved Georgian townhouse, unique in that 99% of the furniture is English made.",
