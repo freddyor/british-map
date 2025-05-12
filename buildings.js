@@ -12,7 +12,7 @@ export const buildings = [
                      {
     "name": "St Leonard's Hospital Windows",
     "coords": [-1.0861441746752907, 53.961203974350866],
-    "image": "https://www.britmap.com/videos/IMG_5647.jpeg",
+    "image": "https://www.britmap.com/videos/unnamed.webp",
     "description": "",
     "occupation": "1866-?",
     "videoUrl": "https://www.britmap.com/videos/Captions_BA8635.mp4", 
