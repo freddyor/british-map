@@ -2,7 +2,7 @@ export const buildings = [
         {
     "name": "Lendal Tower",
     "coords": [-1.0871091424158719, 53.9603294803262],
-    "image": "https://upload.wikimedia.org/wikipedia/commons/1/16/Tour_Lendal_York_2.jpg",
+    "image": "https://www.britmap.com/videos/lendaltower.webp",
     "description": "",
     "occupation": " ",
     "videoUrl": "https://www.britmap.com/videos/Captions_ED3D9E(1).mp4",
@@ -126,7 +126,7 @@ export const buildings = [
            {
     name: "King's Manor",
     coords: [-1.0862176206651686, 53.96250673808531], 
-    image: "https://upload.wikimedia.org/wikipedia/commons/f/f4/King%27s_Manor_%2826233677684%29.jpg", 
+    image: "https://www.britmap.com/videos/kingsmanor.webp", 
     description: "",
     occupation: "11th Century", 
     "videoUrl": "https://www.britmap.com/videos/Captions_746FC9.mp4",
@@ -137,7 +137,7 @@ export const buildings = [
             {
     name: "York Dispensary",
     coords: [-1.0846377100592663, 53.961304511725615],
-    image: "https://upload.wikimedia.org/wikipedia/commons/b/b7/B%C3%A2timent_Grays_Solicitors_York_1.jpg",
+    image: "https://www.britmap.com/videos/yorkdispensary.webp",
     description: "",
     occupation: "1899",
     "videoUrl": "https://www.britmap.com/videos/Captions_E34A23.mp4",
@@ -194,7 +194,7 @@ export const buildings = [
        {
     "name": "St Andrew's Church",
     "coords": [-1.0783811617738115, 53.96086734865589],
-    "image": "https://upload.wikimedia.org/wikipedia/commons/a/ab/%C3%89glise_St_Andrew_York_3.jpg",
+    "image": "https://www.britmap.com/videos/standrewschurch.webp",
     "description": "",
     "occupation": "11th CENTURY",
     "videoUrl": "https://www.britmap.com/videos/Captions_8118A9.mp4",
