@@ -198,12 +198,6 @@ const zoom = getUrlParameter('zoom');
 const initialCenter = lat && lng ? [parseFloat(lng), parseFloat(lat)] : defaultCenter;
 const initialZoom = zoom ? parseFloat(zoom) : 15; // Adjust defaultZoom as necessary
 
-
-// Use URL parameters if available, otherwise use default values
-const initialCenter = lat && lng ? [parseFloat(lng), parseFloat(lat)] : defaultCenter;
-const initialZoom = zoom ? parseFloat(zoom) : defaultZoom;
-
-
 // Create a bottom sheet container
 const bottomSheet = document.createElement('div');
 bottomSheet.id = 'bottom-sheet';
