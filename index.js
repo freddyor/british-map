@@ -332,6 +332,10 @@ stylePopup.innerHTML = `
     display: none !important;
   }
 
+#map {
+    width: 100%;
+    height: 100vh; /* Full height of the viewport */
+}
 
   .user-location-marker {
     width: 20px;
