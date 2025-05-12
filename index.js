@@ -1,8 +1,186 @@
+// Import statements
 import { buildings } from './buildings.js';
 import { locations } from './locations.js';
 import { imageAttributions } from './imageAttributions.js';
 
-mapboxgl.accessToken = 'pk.eyJ1IjoiZnJlZGRvbWF0ZSIsImEiOiJjbTc1bm5zYnQwaG1mMmtxeDdteXNmeXZ0In0.PuDNORq4qExIJ_fErdO_8g';
+// Dynamically load Mapbox GL JS CSS
+const mapboxCSS = document.createElement('link');
+mapboxCSS.href = "https://api.mapbox.com/mapbox-gl-js/v3.10.0/mapbox-gl.css";
+mapboxCSS.rel = "stylesheet";
+document.head.appendChild(mapboxCSS);
+
+// Dynamically load Mapbox GL JS JavaScript
+const mapboxScript = document.createElement('script');
+mapboxScript.src = "https://api.mapbox.com/mapbox-gl-js/v3.10.0/mapbox-gl.js";
+mapboxScript.onload = () => {
+    // Initialize Mapbox after the script is loaded
+    mapboxgl.accessToken = 'pk.eyJ1IjoiZnJlZGRvbWF0ZSIsImEiOiJjbTc1bm5zYnQwaG1mMmtxeDdteXNmeXZ0In0.PuDNORq4qExIJ_fErdO_8g';
+    initializeMap(); // Call function to set up your map
+};
+document.body.appendChild(mapboxScript);
+
+// Function to initialize the map
+function initializeMap() {
+    var map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/freddomate/cm8q8wtwx00a801qzdayccnvz',
+        center: [-1.0835104081554843, 53.95838745239521], // Default York coordinates
+        zoom: 15,
+        pitch: 45,
+        bearing: -17.6,
+    });
+
+    // Add other Mapbox-related code here (e.g., markers, controls)
+    addBuildingMarkers();
+addLocationMarkers();
+
+    map.on('load', () => {
+    addBuildingsList();
+    geolocate.trigger();
+});
+
+    map.on('click', (e) => {
+    const currentLat = e.lngLat.lat;
+    const currentLng = e.lngLat.lng;
+    const currentZoom = map.getZoom();
+
+    const mapLink = generateMapLink(currentLat, currentLng, currentZoom);
+    console.log('Map Link:', mapLink);
+    // You can display this link in a popup or share it with others
+});
+
+    // Add a zoom event listener to the map
+map.on('zoom', () => {
+    scaleMarkersBasedOnZoom();
+});
+
+    // Geolocation control
+const geolocate = new mapboxgl.GeolocateControl({
+  positionOptions: {
+    enableHighAccuracy: true
+  },
+  trackUserLocation: true,
+  showUserHeading: true,
+  showAccuracyCircle: false,
+  fitBoundsOptions: {
+    maxZoom: 15
+  },
+  showUserLocation: false
+});
+
+map.addControl(geolocate);
+
+// Create a single marker for user location
+const userLocationEl = document.createElement('div');
+userLocationEl.className = 'user-location-marker';
+
+const textEl = document.createElement('div');
+textEl.style.position = 'absolute';
+textEl.style.top = '50%';
+textEl.style.left = '50%';
+textEl.style.transform = 'translate(-50%, -50%)';
+textEl.style.fontFamily = 'Poppins, sans-serif';
+textEl.style.fontWeight = 'bold';
+textEl.style.fontSize = '10px';
+textEl.style.color = '#87CEFA';
+textEl.textContent = 'me';
+
+userLocationEl.appendChild(textEl);
+
+const userLocationMarker = new mapboxgl.Marker({element: userLocationEl})
+  .setLngLat([0, 0])
+  .addTo(map);
+
+geolocate.on('error', (e) => {
+  if (e.code === 1) {
+    console.log('Location access denied by user');
+  }
+});
+
+geolocate.on('geolocate', (e) => {
+  const lon = e.coords.longitude;
+  const lat = e.coords.latitude;
+  const position = [lon, lat];
+  console.log(position);
+
+  userLocationMarker.setLngLat(position);
+});
+
+    function addLocationMarkers() {
+locations.forEach(location => {
+    const { element: markerElement } = createCustomMarker(location.image, '#FFFFFF', true);
+    markerElement.className += ' location-marker';
+    const marker = new mapboxgl.Marker({
+        element: markerElement
+    })
+    .setLngLat(location.coords)
+    .addTo(map);
+
+    marker.getElement().addEventListener('click', () => {
+        map.getCanvas().style.cursor = 'pointer';
+        const contentHTML = createPopupContent(location); // Use the existing function to create the content
+        toggleBottomSheet(contentHTML);
+    });
+});
+     }
+
+function addBuildingMarkers() {
+    buildings.forEach(building => {
+        const outlineColor = building.colour === "yes" ? '#FF69B4' : '#FFFFFF'; // Pink if "colour" is "yes", otherwise white
+        const { element: markerElement } = createCustomMarker(building.image, outlineColor, false);
+        markerElement.className += ' building-marker';
+
+        // Set z-index for markers with colour: "yes"
+        if (building.colour === "yes") {
+            markerElement.style.zIndex = '3';
+        }
+
+        const marker = new mapboxgl.Marker({
+            element: markerElement
+        })
+        .setLngLat(building.coords)
+        .addTo(map);
+
+        marker.getElement().addEventListener('click', () => {
+            map.getCanvas().style.cursor = 'pointer';
+
+            // Check for video URL
+            const videoUrl = building.videoUrl; // Assuming videoUrl is part of the building data
+            if (videoUrl) {
+                // Create a video element
+                const videoElement = document.createElement('video');
+                videoElement.src = videoUrl;
+                videoElement.style.display = 'none'; // Hide the video element
+                videoElement.controls = true;
+                videoElement.autoplay = true;
+
+                // Append video to the body
+                document.body.appendChild(videoElement);
+
+                // Play the video and request fullscreen
+                videoElement.play();
+                if (videoElement.requestFullscreen) {
+                    videoElement.requestFullscreen();
+                } else if (videoElement.webkitRequestFullscreen) { // Safari
+                    videoElement.webkitRequestFullscreen();
+                } else if (videoElement.mozRequestFullScreen) { // Firefox
+                    videoElement.mozRequestFullScreen();
+                } else if (videoElement.msRequestFullscreen) { // IE/Edge
+                    videoElement.msRequestFullscreen();
+                }
+
+                // Remove the video element once playback ends
+                videoElement.addEventListener('ended', () => {
+                    document.body.removeChild(videoElement);
+                });
+            } else {
+                console.error('Video URL not available for this building.');
+            }
+        });
+    });
+}
+    
+}
 
 // Function to parse URL parameters
 function getUrlParameter(name) {
@@ -17,22 +195,10 @@ const lat = getUrlParameter('lat');
 const lng = getUrlParameter('lng');
 const zoom = getUrlParameter('zoom');
 
-// Default York coordinates and zoom
-const defaultCenter = [-1.0835104081554843, 53.95838745239521];
-const defaultZoom = 15;
 
 // Use URL parameters if available, otherwise use default values
 const initialCenter = lat && lng ? [parseFloat(lng), parseFloat(lat)] : defaultCenter;
 const initialZoom = zoom ? parseFloat(zoom) : defaultZoom;
-
-var map = new mapboxgl.Map({
-    container: 'map',
-    style: 'mapbox://styles/freddomate/cm8q8wtwx00a801qzdayccnvz',
-    center: initialCenter,
-    zoom: initialZoom,
-    pitch: 45,
-    bearing: -17.6
-});
 
 
 // Create a bottom sheet container
@@ -72,18 +238,7 @@ function generateMapLink(latitude, longitude, zoomLevel) {
 // You can call this function when a user clicks on a marker or interacts with the map
 // to generate a link for the current view.
 // For example:
-map.on('click', (e) => {
-    const currentLat = e.lngLat.lat;
-    const currentLng = e.lngLat.lng;
-    const currentZoom = map.getZoom();
 
-    const mapLink = generateMapLink(currentLat, currentLng, currentZoom);
-    console.log('Map Link:', mapLink);
-    // You can display this link in a popup or share it with others
-});
-
-addBuildingMarkers();
-addLocationMarkers();
 
 // Function to dynamically resize markers based on zoom level
 function scaleMarkersBasedOnZoom() {
@@ -102,18 +257,10 @@ function scaleMarkersBasedOnZoom() {
         marker.style.height = markerSize;
     });
 }
-// Add a zoom event listener to the map
-map.on('zoom', () => {
-    scaleMarkersBasedOnZoom();
-});
+
 
 // Call the function initially to set marker sizes based on the initial zoom level
 scaleMarkersBasedOnZoom();
-
-map.on('load', () => {
-    addBuildingsList();
-    geolocate.trigger();
-});
 
 // Container for both buttons
 const buttonGroup = document.createElement('div');
@@ -250,57 +397,6 @@ stylePopup.innerHTML = `
 // Append the style to the document
 document.head.appendChild(stylePopup);
 
-// Geolocation control
-const geolocate = new mapboxgl.GeolocateControl({
-  positionOptions: {
-    enableHighAccuracy: true
-  },
-  trackUserLocation: true,
-  showUserHeading: true,
-  showAccuracyCircle: false,
-  fitBoundsOptions: {
-    maxZoom: 15
-  },
-  showUserLocation: false
-});
-
-map.addControl(geolocate);
-
-// Create a single marker for user location
-const userLocationEl = document.createElement('div');
-userLocationEl.className = 'user-location-marker';
-
-const textEl = document.createElement('div');
-textEl.style.position = 'absolute';
-textEl.style.top = '50%';
-textEl.style.left = '50%';
-textEl.style.transform = 'translate(-50%, -50%)';
-textEl.style.fontFamily = 'Poppins, sans-serif';
-textEl.style.fontWeight = 'bold';
-textEl.style.fontSize = '10px';
-textEl.style.color = '#87CEFA';
-textEl.textContent = 'me';
-
-userLocationEl.appendChild(textEl);
-
-const userLocationMarker = new mapboxgl.Marker({element: userLocationEl})
-  .setLngLat([0, 0])
-  .addTo(map);
-
-geolocate.on('error', (e) => {
-  if (e.code === 1) {
-    console.log('Location access denied by user');
-  }
-});
-
-geolocate.on('geolocate', (e) => {
-  const lon = e.coords.longitude;
-  const lat = e.coords.latitude;
-  const position = [lon, lat];
-  console.log(position);
-
-  userLocationMarker.setLngLat(position);
-});
 
 function createCustomMarker(imageUrl, color = '#9b4dca', isLocation = false) {
   const markerDiv = document.createElement('div');
@@ -419,79 +515,7 @@ const tldrContent = !videoUrl
     `;
 }
 
-function addLocationMarkers() {
-locations.forEach(location => {
-    const { element: markerElement } = createCustomMarker(location.image, '#FFFFFF', true);
-    markerElement.className += ' location-marker';
-    const marker = new mapboxgl.Marker({
-        element: markerElement
-    })
-    .setLngLat(location.coords)
-    .addTo(map);
 
-    marker.getElement().addEventListener('click', () => {
-        map.getCanvas().style.cursor = 'pointer';
-        const contentHTML = createPopupContent(location); // Use the existing function to create the content
-        toggleBottomSheet(contentHTML);
-    });
-});
-     }
-
-function addBuildingMarkers() {
-    buildings.forEach(building => {
-        const outlineColor = building.colour === "yes" ? '#FF69B4' : '#FFFFFF'; // Pink if "colour" is "yes", otherwise white
-        const { element: markerElement } = createCustomMarker(building.image, outlineColor, false);
-        markerElement.className += ' building-marker';
-
-        // Set z-index for markers with colour: "yes"
-        if (building.colour === "yes") {
-            markerElement.style.zIndex = '3';
-        }
-
-        const marker = new mapboxgl.Marker({
-            element: markerElement
-        })
-        .setLngLat(building.coords)
-        .addTo(map);
-
-        marker.getElement().addEventListener('click', () => {
-            map.getCanvas().style.cursor = 'pointer';
-
-            // Check for video URL
-            const videoUrl = building.videoUrl; // Assuming videoUrl is part of the building data
-            if (videoUrl) {
-                // Create a video element
-                const videoElement = document.createElement('video');
-                videoElement.src = videoUrl;
-                videoElement.style.display = 'none'; // Hide the video element
-                videoElement.controls = true;
-                videoElement.autoplay = true;
-
-                // Append video to the body
-                document.body.appendChild(videoElement);
-
-                // Play the video and request fullscreen
-                videoElement.play();
-                if (videoElement.requestFullscreen) {
-                    videoElement.requestFullscreen();
-                } else if (videoElement.webkitRequestFullscreen) { // Safari
-                    videoElement.webkitRequestFullscreen();
-                } else if (videoElement.mozRequestFullScreen) { // Firefox
-                    videoElement.mozRequestFullScreen();
-                } else if (videoElement.msRequestFullscreen) { // IE/Edge
-                    videoElement.msRequestFullscreen();
-                }
-
-                // Remove the video element once playback ends
-                videoElement.addEventListener('ended', () => {
-                    document.body.removeChild(videoElement);
-                });
-            } else {
-                console.error('Video URL not available for this building.');
-            }
-        });
-    });
-}
 // New code for the "Image Attributions" button
 const imageAttributionsButton = document.createElement('button');
 imageAttributionsButton.id = 'image-attributions-button';
