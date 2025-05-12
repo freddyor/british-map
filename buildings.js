@@ -22,7 +22,7 @@ export const buildings = [
               {
     "name": "Lendal Bridge Toll Booths",
     "coords": [-1.087467580549237, 53.9597560230991],
-    "image": "https://www.britmap.com/videos/IMG_5646.jpeg",
+    "image": "./videos/IMG_5646.jpeg",
     "description": "",
     "occupation": "1866-?",
     "videoUrl": "https://www.britmap.com/videos/Captions_2ED448.mp4", 
@@ -32,17 +32,17 @@ export const buildings = [
        {
     "name": "Lendal Bridge Arch",
     "coords": [-1.0869891645941883, 53.96018862807536],
-    "image": "https://www.britmap.com/videos/IMG_5565.jpeg",
+    "image": "./videos/IMG_5565.jpeg",
     "description": "",
     "occupation": "1866-?",
-    "videoUrl": "https://www.britmap.com/videos/Captions_7978BD.mp4", 
+    "videoUrl": "./videos/Captions_7978BD.mp4", 
     "tldr": "",
     "events": []
   },
        {
     "name": "Lendal AV Symbols",
     "coords": [-1.0871930124790716, 53.959968092170136],
-    "image": "https://www.britmap.com/videos/IMG_5564.jpeg",
+    "image": "./videos/IMG_5564.jpeg",
     "description": "",
     "occupation": "1863",
     "videoUrl": "https://www.britmap.com/videos/Captions_8C1281.mp4", 
