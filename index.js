@@ -112,7 +112,6 @@ scaleMarkersBasedOnZoom();
 
 map.on('load', () => {
     addBuildingsList();
-    loadMarkersFromFirebase();
     geolocate.trigger();
 });
 
@@ -675,71 +674,3 @@ function toggleImageAttributions() {
 
 // Event listener for the new button
 document.getElementById('image-attributions-button').addEventListener('click', toggleImageAttributions);
-
-function loadMarkersFromFirebase() {
-  getDocs(collection(db, 'markers')).then((querySnapshot) => {
-    querySnapshot.forEach((doc) => {
-      const data = doc.data();
-      console.log('Fetched marker data:', data); // Add this line
-      const { element: markerElement } = createCustomMarker(data.imageUrl, '#E9E8E0', false);
-      const marker = new mapboxgl.Marker({
-        element: markerElement
-      })
-        .setLngLat([data.longitude, data.latitude])
-        .addTo(map);
-
-      const popupHTML = `
-        <div style="padding-top: 10px; padding-bottom: 10px;">
-          <div style="display: flex; align-items: center; gap: 10px;">
-            <img src="${data.imageUrl}" alt="${data.name}" style="width: 40px; height: 40px; object-fit: cover; border-radius: 50%;" />
-            <div>
-              <div style="font-size: 15px; font-weight: bold;">${data.name}</div>
-              <div style="font-size: 15px; color: #666;">${data.dates}</div>
-            </div>
-          </div>
-          <div style="text-align: center; margin-top: 5px; cursor: pointer;" id="expand-text">â–¼ Discover â–¼</div>
-          <div id="additional-content" style="display: none;">
-            <p style="background: #f9f9f9; padding: 10px; margin-top: 10px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); font-size: 15px; font-weight: bold;">${data.tldr}</p>
-            ${data.events.map(event => `
-              <div style="background: #f9f9f9; padding: 10px; margin-top: 10px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); font-size: 15px;">
-                <strong style="color: #9b4dca; font-size: 15px; display: block; margin-bottom: 2px;">${event.label}</strong>
-                ${event.description}
-              </div>
-            `).join('')}
-            <div style="text-align: center; cursor: pointer; margin-top: 10px;" id="collapse-text">â–² Hide â–²</div>
-          </div>
-        </div>
-      `;
-      const popup = new mapboxgl.Popup({
-        closeButton: true,
-        closeOnClick: true,
-        className: 'custom-popup'
-      }).setHTML(popupHTML);
-
-      marker.setPopup(popup);
-
-      marker.getElement().addEventListener('click', () => {
-        map.getCanvas().style.cursor = 'pointer';
-        popup.addTo(map);
-
-        popup.on('open', () => {
-          const expandText = popup.getElement().querySelector('#expand-text');
-          const additionalContent = popup.getElement().querySelector('#additional-content');
-          const collapseText = popup.getElement().querySelector('#collapse-text');
-
-          expandText.addEventListener('click', () => {
-            additionalContent.style.display = 'block';
-            expandText.style.display = 'none';
-          });
-
-          collapseText.addEventListener('click', () => {
-            additionalContent.style.display = 'none';
-            expandText.style.display = 'block';
-          });
-        });
-      });
-    });
-  }).catch(error => {
-    console.error('Error loading markers: ', error);
-  });
-}
