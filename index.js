@@ -551,33 +551,58 @@ function toggleImageAttributions() {
 document.getElementById('image-attributions-button').addEventListener('click', toggleImageAttributions);
 
 document.addEventListener('DOMContentLoaded', () => {
-    // Handle button click to toggle dropdown visibility
-    document.getElementById('custom-bmc-button').addEventListener('click', function(e) {
+    // Create the button
+    const button = document.createElement('button');
+    button.id = 'custom-bmc-button';
+    button.className = 'custom-button';
+    button.textContent = '❤️ Monthly donors will keep this site running ❤️';
+
+    // Create the dropdown content
+    const dropdownContent = document.createElement('div');
+    dropdownContent.className = 'dropdown-content';
+    dropdownContent.style.display = 'none'; // Initially hidden
+    dropdownContent.innerHTML = `
+        <div class="project-info">
+            Every time the map is loaded, it costs me money. This project has also taken more hours than you could possibly imagine.
+        </div>
+        <div class="project-info">
+            I am independent and 22 years old, I want to keep the site free-for-use. Ultimately, the project will rely on generous monthly donors to keep it running for our beloved city ❤️
+        </div>
+        <div class="project-info">
+            Make sure to click “Make this monthly” after your name and comment (or don’t, if you’re only wanting to give a one-time donation). Thank you all so much!
+        </div>
+        <a href="https://www.buymeacoffee.com/britmap" class="support-button" target="_blank">
+            <span>Support</span>
+        </a>
+    `;
+
+    // Wrap the button and dropdown in a container
+    const dropdownContainer = document.createElement('div');
+    dropdownContainer.className = 'dropdown';
+    dropdownContainer.style.position = 'fixed';
+    dropdownContainer.style.left = '50%';
+    dropdownContainer.style.top = '10px';
+    dropdownContainer.style.transform = 'translateX(-50%)';
+    dropdownContainer.style.zIndex = '1001';
+    dropdownContainer.appendChild(button);
+    dropdownContainer.appendChild(dropdownContent);
+
+    // Add the dropdown container to the body
+    document.body.appendChild(dropdownContainer);
+
+    // Button click event to toggle dropdown visibility
+    button.addEventListener('click', (e) => {
         e.preventDefault();
-        var dropdownContent = this.nextElementSibling;
         dropdownContent.style.display = dropdownContent.style.display === 'block' ? 'none' : 'block';
     });
 
-    // Close the dropdown when clicking outside
-    document.addEventListener('click', function (event) {
-        const dropdownButton = document.querySelector('.custom-button');
-        const dropdownContent = document.querySelector('.dropdown-content');
-
-        // Check if the click is on the dropdown button or inside the dropdown content
-        if (dropdownButton.contains(event.target)) {
-            dropdownContent.style.display = dropdownContent.style.display === 'block' ? 'none' : 'block';
-        } else if (!dropdownContent.contains(event.target)) {
-            // Close the dropdown if the click is outside
+    // Close dropdown when clicking outside
+    document.addEventListener('click', (event) => {
+        if (!dropdownContainer.contains(event.target)) {
             dropdownContent.style.display = 'none';
         }
     });
 
-    // Set the width of the dropdown content to match the button's width
-    const buttons = document.querySelectorAll('.custom-button');
-    buttons.forEach(button => {
-        const dropdownContent = button.nextElementSibling;
-        if (dropdownContent) {
-            dropdownContent.style.width = `${button.offsetWidth}px`;
-        }
-    });
+    // Set the dropdown width to match the button width
+    dropdownContent.style.width = `${button.offsetWidth}px`;
 });
