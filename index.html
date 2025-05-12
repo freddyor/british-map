@@ -27,58 +27,6 @@
             flex-direction: column;
         }
 
-        .tab {
-            background-color: #f1f1f1;
-            border-bottom: 1px solid #ccc;
-            display: none;
-            width: 100%;
-        }
-
-        .tab button {
-            background-color: inherit;
-            border: none;
-            outline: none;
-            cursor: pointer;
-            padding: 6px 6px;
-            transition: 0.3s;
-            font-size: 16px; /* Changed from 17px to 12px */
-            flex: 1;
-            color: black; /* Added to make text black */
-            font-weight: bold; /* Added to make text bold */
-        }
-
-        .tab button:hover {
-            background-color: #ddd;
-        }
-
-        .tab button.active {
-            background-color: #ccc;
-        }
-
-        .tab-content {
-            display: none;
-            flex: 1;
-            width: 100%;
-            flex-direction: column;
-            font-size: 20px;
-            line-height: 1.05; /* Reduced line spacing */
-            font-weight: bold;
-            margin-left: 0px; /* Added margin */
-            margin-right: 22px; /* Added margin */
-            overflow-y: scroll; /* Enables vertical scrolling */
-            -webkit-overflow-scrolling: touch; /* For smoother scrolling on iOS */
-            height: auto; /* Ensures content fits and scrolling works */
-        }
-
-        .tab-content.active {
-            display: flex;
-        }
-
-        #BritOnThisDay, #Support ❤️ {
-            margin-left: 10px; /* Adjust the value as needed */
-            margin-right: 10px; /* Adjust the value as needed */
-
-        }
         #map {
             flex: 1;
             width: 100%;
@@ -91,16 +39,6 @@
             left: 50%;
             top: 10px;
             transform: translateX(-50%);
-            z-index: 1001;
-        }
-
-        .button-group {
-            position: fixed;
-            left: 50%;
-            bottom: 10px;
-            transform: translateX(-50%);
-            display: flex;
-            gap: 10px;
             z-index: 1001;
         }
 
@@ -161,51 +99,6 @@
             font-weight: bold;
         }
 
-        .top-supporters {
-            padding: 8px 10px;
-            font-weight: bold;
-            font-size: 16px;
-        }
-
-        .top-supporters h4 {
-            margin: 0 0 8px 0;
-            font-weight: bold;
-            font-size: 16px;
-            text-decoration: underline;
-        }
-
-        .top-supporters ul {
-            margin: 0;
-            padding-left: 0;
-            list-style-type: none;
-            font-weight: bold;
-            font-size: 16px;
-        }
-
-        .top-supporters li {
-            margin-bottom: 10px;
-            font-weight: bold;
-            font-size: 16px;
-        }
-
-        .donation-amount {
-            color: #9b4dca;
-            font-weight: bold;
-        }
-
-        .contribution-count {
-            color: #9b4dca;
-            font-weight: bold;
-        }
-
-        .donation-comment {
-            font-size: 12px;
-            color: #666;
-            margin-top: 2px;
-            margin-left: 20px;
-            line-height: 1.05; /* Reduced line spacing */
-        }
-
         .project-info {
             padding: 8px 10px;
             font-size: 12px;
@@ -213,29 +106,6 @@
             font-weight: bold;
             margin-left: 5px; /* Added margin */
             margin-right: 5px; /* Added margin */
-        }
-
-        @media (max-width: 750px) {
-            .custom-button {
-                font-size: 14px;
-                padding: 4px 10px;
-            }
-        }
-
-        @media (max-width: 400px) {
-            .custom-button {
-                font-size: 12px;
-                padding: 2px 6px;
-            }
-        }
-
-        @media (prefers-contrast: more) {
-            .custom-button {
-                background-color: #000000;
-                color: #FFFFFF;
-                border-color: #FFFFFF;
-                box-shadow: none;
-            }
         }
     </style>
 </head>
@@ -248,94 +118,51 @@
             <div class="project-info">
                 Every time the map is loaded, it costs me money. This project has also taken more hours than you could possibly imagine. 
             </div>
-                                   <div class="project-info">
-             I am independent and 22 years old, I want to keep the site free-for-use. Ultimately, the project will rely on generous monthly donors to keep it running for our beloved city ❤️
+            <div class="project-info">
+                I am independent and 22 years old, I want to keep the site free-for-use. Ultimately, the project will rely on generous monthly donors to keep it running for our beloved city ❤️
             </div>
-                        <div class="project-info">
-             Make sure to click “Make this monthly” after your name and comment (or don’t, if you’re only wanting to give a one-time donation). Thank you all so much!
+            <div class="project-info">
+                Make sure to click “Make this monthly” after your name and comment (or don’t, if you’re only wanting to give a one-time donation). Thank you all so much!
             </div>
             <a href="https://www.buymeacoffee.com/britmap" class="support-button" target="_blank">
                 <span>Support</span>
             </a>
-            <div class="top-supporters">
-                <h4>Monthly donors:</h4>
-                <ul>
-                    <li>
-                        nobody yet :( <span class="donation-amount"> </span>
-                        <div class="donation-comment"> </div>
-                    </li>
-                </ul>
-            </div>
         </div>
     </div>
 
-<!-- Tab navigation -->
-<div class="tab">
-    <button class="tablinks" onclick="openTab(event, 'Map 🗺️')">Map 🗺️</button>
-</div>
-
-<!-- Tab content -->
-<div id="Map 🗺️" class="tab-content active">
     <div id="map"></div>
-</div>
 
+    <script>
+        document.getElementById('custom-bmc-button').addEventListener('click', function(e) {
+            e.preventDefault();
+            var dropdownContent = this.nextElementSibling;
+            dropdownContent.style.display = dropdownContent.style.display === 'block' ? 'none' : 'block';
+        });
 
-<script>
-    function openTab(evt, tabName) {
-        var i, tabcontent, tablinks;
-        tabcontent = document.getElementsByClassName("tab-content");
-        for (i = 0; i < tabcontent.length; i++) {
-            tabcontent[i].style.display = "none";
-        }
-        tablinks = document.getElementsByClassName("tablinks");
-        for (i = 0; i < tablinks.length; i++) {
-            tablinks[i].className = tablinks[i].className.replace(" active", "");
-        }
-        document.getElementById(tabName).style.display = "flex";
-        evt.currentTarget.className += " active";
-    }
+        document.addEventListener('click', function (event) {
+            const dropdownButton = document.querySelector('.custom-button');
+            const dropdownContent = document.querySelector('.dropdown-content');
 
-    document.getElementById('custom-bmc-button').addEventListener('click', function(e) {
-        e.preventDefault();
-        var dropdownContent = this.nextElementSibling;
-        dropdownContent.style.display = dropdownContent.style.display === 'block' ? 'none' : 'block';
-    });
+            // Check if the click is on the dropdown button or inside the dropdown content
+            if (dropdownButton.contains(event.target)) {
+                dropdownContent.style.display = dropdownContent.style.display === 'block' ? 'none' : 'block';
+            } else if (!dropdownContent.contains(event.target)) {
+                // Close the dropdown if the click is outside
+                dropdownContent.style.display = 'none';
+            }
+        });
 
-    document.getElementById('custom-guide-button').addEventListener('click', function(e) {
-        e.preventDefault();
-        var dropdownContent = this.nextElementSibling;
-        dropdownContent.style.display = dropdownContent.style.display === 'block' ? 'none' : 'block';
-    });
+        // Set the width of the dropdown content to match the button's width
+        const buttons = document.querySelectorAll('.custom-button');
+        buttons.forEach(button => {
+            const dropdownContent = button.nextElementSibling;
+            if (dropdownContent) {
+                dropdownContent.style.width = `${button.offsetWidth}px`;
+            }
+        });
+    </script>
 
- document.addEventListener('click', function (event) {
-    const dropdownButton = document.querySelector('.custom-button');
-    const dropdownContent = document.querySelector('.dropdown-content');
-
-    // Check if the click is on the dropdown button or inside the dropdown content
-    if (dropdownButton.contains(event.target)) {
-        dropdownContent.style.display = dropdownContent.style.display === 'block' ? 'none' : 'block';
-    } else if (!dropdownContent.contains(event.target)) {
-        // Close the dropdown if the click is outside
-        dropdownContent.style.display = 'none';
-    }
-});
-
-    // Set the width of the dropdown content to match the button's width
-    const buttons = document.querySelectorAll('.custom-button');
-    buttons.forEach(button => {
-        const dropdownContent = button.nextElementSibling;
-        if (dropdownContent) {
-            dropdownContent.style.width = `${button.offsetWidth}px`;
-        }
-    });
-
-    // Set default active tab
-    document.addEventListener('DOMContentLoaded', function() {
-        document.querySelector('.tablinks').click();
-    });
-</script>
-
-<!-- Your custom script -->
-<script type="module" src="index.js"></script>
+    <!-- Your custom script -->
+    <script type="module" src="index.js"></script>
 </body>
 </html>
