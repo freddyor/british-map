@@ -35,7 +35,6 @@ function initializeMap() {
 addLocationMarkers();
 
     map.on('load', () => {
-    addBuildingsList();
     geolocate.trigger();
 });
 
