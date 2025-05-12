@@ -333,8 +333,8 @@ stylePopup.innerHTML = `
   }
 
 #map {
-    width: 100%;
-    height: 100vh; /* Full height of the viewport */
+    width: 100vh;
+    height: 90vh; /* Full height of the viewport */
 }
 
   .user-location-marker {
