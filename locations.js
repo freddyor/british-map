@@ -128,7 +128,7 @@ export const locations = [
    {
     "name": "The Great East Window",
     "coords": [-1.080890388012341, 53.962249250659674],
-    "image": "https://upload.wikimedia.org/wikipedia/commons/a/a7/Great_East_Window_York_Minster.jpg",
+    "image": "https://www.britmap.com/videos/IMG_5697.webp",
     "description": "",
     "occupation": "1408",
     "tldr": "The window is the largest expanse of medieval stained glass in Britain.",
