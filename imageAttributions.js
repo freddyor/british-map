@@ -88,11 +88,6 @@ const imageAttributions = [
     "license": "CC BY-SA 2.0"
   },
       {
-    "name": "<a href='https://www.flickr.com/photos/15181848@N02/51980817502/'>The Great East Window</a>",
-    "author": "amandabhslater",
-    "license": "CC BY-SA 2.0"
-  },
-      {
     "name": "<a href='https://www.geograph.org.uk/photo/92044'>Bootham Park Hospital</a>",
     "author": "Gordon Kneale Brooke",
     "license": "CC BY-SA 2.0"
