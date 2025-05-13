@@ -552,7 +552,6 @@ document.addEventListener('DOMContentLoaded', () => {
     dropdownContent.style.zIndex = '10000'; // Ensure it goes above everything else
     dropdownContent.style.maxWidth = '300px'; // Reduce width
     dropdownContent.style.textAlign = 'center'; // Center align all content
-    dropdownContent.style.maxHeight = `${window.innerHeight / 2}px`; // Set max height to half of page height
     dropdownContent.style.overflowY = 'auto'; // Make it scrollable
 
     dropdownContent.innerHTML = `
