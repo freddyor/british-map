@@ -599,33 +599,49 @@ document.addEventListener('DOMContentLoaded', () => {
     dropdownContent.className = 'dropdown-content';
     dropdownContent.style.display = 'none'; // Initially hidden
     dropdownContent.style.position = 'fixed';
-    dropdownContent.style.bottom = '70px'; // Adjust position for visibility
+    dropdownContent.style.top = '50px'; // At the top of the page
     dropdownContent.style.left = '50%';
     dropdownContent.style.transform = 'translateX(-50%)';
     dropdownContent.style.backgroundColor = 'white';
-    dropdownContent.style.padding = '10px';
+    dropdownContent.style.padding = '20px';
     dropdownContent.style.border = '1px solid #ccc';
     dropdownContent.style.borderRadius = '8px';
     dropdownContent.style.boxShadow = '0 6px 15px rgba(0, 0, 0, 0.3)';
-    dropdownContent.style.fontSize = '12px';
-    dropdownContent.style.lineHeight = '1.05';
+    dropdownContent.style.fontSize = '14px';
+    dropdownContent.style.lineHeight = '1.5'; // Increase line height
     dropdownContent.style.zIndex = '10000'; // Ensure it goes above everything else
-    dropdownContent.style.maxHeight = '200px'; // Set a max height
-    dropdownContent.style.overflowY = 'scroll'; // Make it scrollable
+    dropdownContent.style.maxWidth = '300px'; // Set a max width for better layout
+    dropdownContent.style.textAlign = 'center'; // Center align all content
+    dropdownContent.style.gap = '20px'; // Add spacing between sections
 
     dropdownContent.innerHTML = `
-        <div class="project-info">
+        <div class="project-info" style="margin-bottom: 20px;">
             Every time the map is loaded, it costs me money. This project has also taken more hours than you could possibly imagine.
         </div>
-        <div class="project-info">
+        <div class="project-info" style="margin-bottom: 20px;">
             I am independent and 22 years old, I want to keep the site free-for-use. Ultimately, the project will rely on generous monthly donors to keep it running for our beloved city ❤️
         </div>
-        <div class="project-info">
+        <div class="project-info" style="margin-bottom: 20px;">
             Make sure to click “Make this monthly” after your name and comment (or don’t, if you’re only wanting to give a one-time donation). Thank you all so much!
         </div>
-        <a href="https://www.buymeacoffee.com/britmap" class="support-button" target="_blank">
-            <span>Support</span>
-        </a>
+        <button 
+            class="support-button" 
+            style="
+                background-color: #9b4dca; 
+                color: white; 
+                padding: 10px 20px; 
+                font-size: 16px; 
+                font-weight: bold; 
+                border: none; 
+                border-radius: 8px; 
+                cursor: pointer; 
+                text-align: center;
+                box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+            "
+            onclick="window.open('https://www.buymeacoffee.com/britmap', '_blank')"
+        >
+            Support
+        </button>
     `;
 
     // Wrap the button and dropdown in a container
@@ -633,7 +649,7 @@ document.addEventListener('DOMContentLoaded', () => {
     dropdownContainer.className = 'dropdown';
     dropdownContainer.style.position = 'fixed';
     dropdownContainer.style.left = '50%';
-    dropdownContainer.style.bottom = '10px'; // Place at the bottom like image attributions
+    dropdownContainer.style.top = '10px'; // Place at the top
     dropdownContainer.style.transform = 'translateX(-50%)';
     dropdownContainer.style.zIndex = '1001';
     dropdownContainer.appendChild(button);
