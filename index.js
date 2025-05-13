@@ -616,9 +616,9 @@ document.addEventListener('DOMContentLoaded', () => {
         donorDiv.innerHTML = `
             <span class="donor-name" style="font-weight: bold;">${name}</span>
             <span class="donor-amount" style="color: #9b4dca; margin-left: 10px; font-weight: bold;">£${amount}</span>
-            <div class="donor-subtext" style="font-size: 12px; color: #666; margin-top: 2px;">${subtext}</div>
+            <div class="donor-subtext" style="font-size: 12px; color: #666; margin-top: 1px;">${subtext}</div>
         `;
-        donorDiv.style.marginBottom = '20px'; // Maintain gap between donors
+        donorDiv.style.marginBottom = '12px'; // Maintain gap between donors
         donorList.appendChild(donorDiv);
     }
 
