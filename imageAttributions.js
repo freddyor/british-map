@@ -63,31 +63,6 @@ const imageAttributions = [
     "license": "CC BY-SA 3.0"
   },
       {
-    "name": "<a href='https://commons.wikimedia.org/wiki/File:York_Minster_from_M%26S.JPG'>York Minster</a>",
-    "author": "MatzeTrier",
-    "license": "CC BY-SA 3.0"
-  },
-      {
-    "name": "<a href='https://commons.wikimedia.org/wiki/File:York_Castle_Museum.jpg'>York Castle Museum</a>",
-    "author": "Jitka Erbenová",
-    "license": "CC BY-SA 3.0"
-  },
-      {
-    "name": "<a href='https://commons.wikimedia.org/wiki/File:B%C3%A2timent_Grays_Solicitors_York_1.jpg'>York Dispensary</a>",
-    "author": "Chabe01",
-    "license": "CC BY-SA 4.0"
-  },
-      {
-    "name": "<a href='https://www.flickr.com/photos/atoach/5259021070/'>Clifford's Tower</a>",
-    "author": "Tim Green",
-    "license": "CC BY-SA 2.0"
-  },
-      {
-    "name": "<a href='https://www.geograph.org.uk/photo/1155772'>Fairfax House</a>",
-    "author": "Gordon Hatton",
-    "license": "CC BY-SA 2.0"
-  },
-      {
     "name": "<a href='https://www.geograph.org.uk/photo/92044'>Bootham Park Hospital</a>",
     "author": "Gordon Kneale Brooke",
     "license": "CC BY-SA 2.0"
@@ -95,11 +70,6 @@ const imageAttributions = [
       {
     "name": "<a href='https://www.geograph.org.uk/photo/7493097'>York Guildhall</a>",
     "author": "Stephen Craven",
-    "license": "CC BY-SA 2.0"
-  },
-      {
-    "name": "<a href='https://www.flickr.com/photos/atoach/26233677684/'>King's Manor</a>",
-    "author": "Tim Green",
     "license": "CC BY-SA 2.0"
   },
       {
@@ -183,11 +153,6 @@ const imageAttributions = [
     "license": "CC BY-SA 2.0"
   },
       {
-    "name": "<a href='https://commons.wikimedia.org/wiki/File:Tour_Lendal_York_2.jpg'>Lendal Tower</a>",
-    "author": "Chabe01",
-    "license": "CC BY-SA 4.0"
-  },
-      {
     "name": "<a href='https://commons.wikimedia.org/wiki/File:Merchant_Taylors%27_Hall_York.jpg'>Merchant Taylors' Hall</a>",
     "author": "Kaly99",
     "license": "CC BY-SA 3.0"
@@ -238,11 +203,6 @@ const imageAttributions = [
     "license": "CC BY-SA 3.0"
   },
       {
-    "name": "<a href='https://www.flickr.com/photos/jpguffogg/16157008236/'>Five Sisters window, York Minster </a>",
-    "author": "Jules & Jenny",
-    "license": "CC BY-SA 2.0"
-  },
-      {
     "name": "<a href='https://www.geograph.org.uk/photo/676048'>York Minster Library</a>",
     "author": "Gordon Hatton",
     "license": "CC BY-SA 2.0"
@@ -261,11 +221,6 @@ const imageAttributions = [
     "name": "<a href='https://commons.wikimedia.org/wiki/File:Mansion_House_York.jpg'>Mansion House</a>",
     "author": "Malcolmxl5",
     "license": "CC BY-SA 4.0"
-  },
-    {
-    "name": "<a href='https://commons.wikimedia.org/wiki/File:St_Marys_Abbey_Church_York.jpg'>St Marys Abbey</a>",
-    "author": "Kaly99",
-    "license": "CC BY-SA 3.0"
   },
       {
     "name": "<a href='https://commons.wikimedia.org/wiki/File:St._Leonard_Hospital_Undercroft_York.jpg'>St. Leonard's Hospital</a>",
@@ -343,19 +298,9 @@ const imageAttributions = [
     "license": "CC BY-SA 4.0"
   },
         {
-    "name": "<a href='https://commons.wikimedia.org/wiki/File:%C3%89glise_St_Andrew_York_3.jpg'>St Andrew's Church</a>",
-    "author": "Chabe01",
-    "license": "CC BY-SA 4.0"
-  },
-        {
     "name": "<a href='https://commons.wikimedia.org/wiki/File:Red_House_Antiques_Centre.jpg'>Red House</a>",
     "author": "Jhsteel",
     "license": "CC BY-SA 3.0"
-  },
-        {
-    "name": "<a href='https://commons.wikimedia.org/wiki/File:War_memorial_in_York_(8400).jpg'>Boer War Memorial</a>",
-    "author": "Nilfanion",
-    "license": "CC BY-SA 4.0"
   },
         {
     "name": "<a href='https://commons.wikimedia.org/wiki/File:Masonic_Hall,_Duncombe_Place.jpg'>Masonic Hall</a>",
@@ -416,11 +361,6 @@ const imageAttributions = [
     "name": "<a href='https://web.archive.org/web/20161101190946/http://www.panoramio.com/photo/90671700'>Ye Olde Starre Inne</a>",
     "author": "Paul Lakin",
     "license": "CC BY-SA 3.0"
-  },
-         {
-    "name": "<a href='https://www.flickr.com/photos/calflier001/9255853199/'>York Railway Station</a>",
-    "author": "calflier001",
-    "license": "CC BY-SA 2.0"
   },
          {
     "name": "<a href='https://www.geograph.org.uk/photo/1110782'>York County Hospital</a>",
