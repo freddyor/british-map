@@ -583,13 +583,7 @@ document.addEventListener('DOMContentLoaded', () => {
         >
             Support
         </button>
-        <div 
-            style="
-                height: 1px; 
-                width: 80%; 
-                margin: 0 auto 15px auto; 
-                background-color: #ccc;"
-<div style="display: flex; align-items: center; justify-content: center; margin-top: 15px; font-size: 16px; font-weight: bold;">
+ <div style="display: flex; align-items: center; justify-content: center; margin-top: 15px; font-size: 16px; font-weight: bold;">
     <hr style="flex: 1; border: 1px solid #ccc; margin: 0 10px;">
     Our Donors ❤️
     <hr style="flex: 1; border: 1px solid #ccc; margin: 0 10px;">
