@@ -12,6 +12,7 @@ document.head.appendChild(mapboxCSS);
 // Dynamically load Mapbox GL JS JavaScript
 const mapboxScript = document.createElement('script');
 mapboxScript.src = "https://api.mapbox.com/mapbox-gl-js/v3.10.0/mapbox-gl.js";
+mapboxScript.defer = true;
 mapboxScript.onload = () => {
     // Initialize Mapbox after the script is loaded
     mapboxgl.accessToken = 'pk.eyJ1IjoiZnJlZGRvbWF0ZSIsImEiOiJjbTc1bm5zYnQwaG1mMmtxeDdteXNmeXZ0In0.PuDNORq4qExIJ_fErdO_8g';
