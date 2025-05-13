@@ -148,7 +148,7 @@ export const buildings = [
            {
     name: "York Magistrates' Court",
     coords: [-1.0817351891167126, 53.95632576626781],
-    image: "https://upload.wikimedia.org/wikipedia/commons/9/9c/Cour_Magistrats_York_6.jpg",
+    image: "https://www.britmap.com/videos/IMG_5744.webp",
     description: "",
     occupation: "1892",
    "videoUrl": "https://www.britmap.com/videos/Captions_4581BD.mp4",
@@ -159,7 +159,7 @@ export const buildings = [
             {
     name: "Jacobs Well",
     coords: [-1.0884877806115956, 53.9568223082359],
-    image: "https://upload.wikimedia.org/wikipedia/commons/1/1d/Jacob%27s_Well%2C_Trinity_Lane%2C_York_%2815072944989%29.jpg",
+    image: "https://www.britmap.com/videos/IMG_5717.webp",
     description: "",
     occupation: "1474",
     "videoUrl": "https://www.britmap.com/videos/Captions_3D5670.mp4",
@@ -182,7 +182,7 @@ export const buildings = [
      {
     "name": "The Minster School",
     "coords": [-1.0806394582981738, 53.961338997265],
-    "image": "https://upload.wikimedia.org/wikipedia/commons/f/fe/TheMinsterSchoolYork.jpg",
+    "image": "https://www.britmap.com/videos/IMG_5738.webp",
     "description": "",
     "occupation": "Here 1903-2020",
     "videoUrl": "https://www.britmap.com/videos/Captions_1FF9B1.mp4",
@@ -206,7 +206,7 @@ export const buildings = [
        {
     "name": "St Marys Abbey Remains",
     "coords": [-1.0878747049737392, 53.96235328206902],
-    "image": "https://upload.wikimedia.org/wikipedia/commons/f/f9/St_Marys_Abbey_Church_York.jpg",
+    "image": "https://www.britmap.com/videos/IMG_5735.webp",
     "description": "",
     "occupation": "1086",
      "videoUrl": "https://www.britmap.com/videos/Captions_DBE962.mp4",
@@ -217,7 +217,7 @@ export const buildings = [
        {
     "name": "The Judge's Lodging",
     "coords": [-1.085422730301877, 53.9605969994961],
-    "image": "https://upload.wikimedia.org/wikipedia/commons/3/34/The_Judges_Lodging_-_geograph.org.uk_-_407864.jpg",
+    "image": "https://www.britmap.com/videos/IMG_5755.webp",
     "description": "",
     "occupation": "1711",
    "videoUrl": "https://www.britmap.com/videos/Captions_7A894C.mp4",
@@ -228,7 +228,7 @@ export const buildings = [
      {
     "name": "St William's College",
     "coords": [-1.0802937994910167, 53.96232365544075],
-    "image": "https://upload.wikimedia.org/wikipedia/commons/5/5a/St_William%27s_College_York_2023.jpg",
+    "image": "https://www.britmap.com/videos/IMG_5739.webp",
     "description": "",
     "occupation": "1460",
     "videoUrl": "https://www.britmap.com/videos/Captions_D8E302.mp4",
@@ -240,7 +240,7 @@ export const buildings = [
       {
     "name": "Judges Court",
     "coords": [-1.0836136853486988, 53.959103592652625],
-    "image": "https://upload.wikimedia.org/wikipedia/commons/6/64/Judges_Court.jpg",
+    "image": "https://www.britmap.com/videos/IMG_5752.webp",
     "description": "",
     "occupation": "1720",
     "videoUrl": "https://www.britmap.com/videos/Captions_56B7AF.mp4",
@@ -252,7 +252,7 @@ export const buildings = [
      {
     "name": "Old White Swan",
     "coords": [-1.0803558882668973, 53.960556085456],
-    "image": "https://upload.wikimedia.org/wikipedia/commons/c/c4/Old_White_Swan.jpg",
+    "image": "https://www.britmap.com/videos/IMG_5740.webp",
     "description": "",
     "occupation": "1703",
     "videoUrl": "https://www.britmap.com/videos/Captions_D86667.mp4",
@@ -276,7 +276,7 @@ export const buildings = [
     {
     "name": "St Denys Church",
     "coords": [-1.0761695874054933, 53.95668650245543],
-    "image": "https://upload.wikimedia.org/wikipedia/commons/0/06/St_Denys_Church_York.JPG",
+    "image": "https://www.britmap.com/videos/IMG_5743.webp",
     "description": "",
     "occupation": "1154",
     "videoUrl": "https://www.britmap.com/videos/Captions_8F153F.mp4",
@@ -288,7 +288,7 @@ export const buildings = [
      {
     "name": "York College for Girls",
     "coords": [-1.0812830509958493, 53.96098935759324],
-    "image": "https://upload.wikimedia.org/wikipedia/commons/1/12/York_College_for_Girls.jpg",
+    "image": "https://www.britmap.com/videos/IMG_5756.webp",
     "description": "",
     "occupation": "1725",
       "videoUrl": "https://www.britmap.com/videos/Captions_813457.mp4",
@@ -300,7 +300,7 @@ export const buildings = [
    {
     "name": "The Blue Bell",
     "coords": [-1.079080001403896, 53.95873610791321],
-    "image": "https://upload.wikimedia.org/wikipedia/commons/c/c1/The_Blue_Bell%2C_York.jpg",
+    "image": "https://www.britmap.com/videos/IMG_5741.webp",
     "description": "",
     "occupation": "1798",
      "videoUrl": "https://www.britmap.com/videos/Captions_1AB667.mp4",
@@ -312,7 +312,7 @@ export const buildings = [
                         {
     "name": "The Destructor",
     "coords": [-1.0714592650102257, 53.96033310550022],
-    "image": "https://upload.wikimedia.org/wikipedia/commons/4/42/Foss_Islands_chimney_-_geograph.org.uk_-_766094.jpg",
+    "image": "https://www.britmap.com/videos/IMG_5721.webp",
     "description": "",
     "occupation": "1899",
     "videoUrl": "https://www.britmap.com/videos/Captions_31CDB1.mp4",
@@ -324,7 +324,7 @@ export const buildings = [
             {
     "name": "Memorial Gardens",
     "coords": [-1.0895344308173005, 53.95991546490111],
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/War_memorial%2C_York_-_DSC07862.JPG/960px-War_memorial%2C_York_-_DSC07862.JPG",
+    "image": "https://www.britmap.com/videos/IMG_5729.webp",
     "description": "",
     "occupation": "1925",
     "videoUrl": "https://www.britmap.com/videos/Captions_194368.mp4",
@@ -336,7 +336,7 @@ export const buildings = [
               {
     "name": "York Fiddler",
     "coords": [-1.0820912596212449, 53.961976155693264],
-    "image": "https://i.ebayimg.com/00/s/MTYwMFgxMDM2/z/cCQAAOSwFcFj4thG/$_57.PNG?set_id=880000500F",
+    "image": "https://www.britmap.com/videos/IMG_5714.webp",
     "description": "",
     "occupation": " ",
     "subtitle": "Removed from the Minster for being too inappropriate", 
@@ -347,7 +347,7 @@ export const buildings = [
         {
     "name": "Electric Cinema",
     "coords": [-1.0785844693813007, 53.95843522950068],
-    "image": "https://upload.wikimedia.org/wikipedia/commons/c/c2/Cosy_Club_Fossgate_York_01.jpg",
+    "image": "https://www.britmap.com/videos/IMG_5742.webp",
     "description": "",
     "occupation": "1911",
     "videoUrl": "https://www.britmap.com/videos/Captions_B9E98C.mp4",
@@ -370,7 +370,7 @@ export const buildings = [
         {
     "name": "Lady Row",
     "coords": [-1.0800538837309381, 53.96089531337014],
-    "image": "https://upload.wikimedia.org/wikipedia/commons/8/80/Lady_Row%2C_Goodramgate_-_geograph.org.uk_-_676090.jpg",
+    "image": "https://www.britmap.com/videos/IMG_5757.webp",
     "description": "",
     "occupation": "1316",
             "videoUrl": "https://www.britmap.com/videos/Captions_FAFF0D.mp4",
@@ -393,7 +393,7 @@ export const buildings = [
         {
     name: "Red Tower",
     coords: [-1.0713779227295128, 53.95795987409401],
-    image: "https://upload.wikimedia.org/wikipedia/commons/d/d5/The_Red_Tower_on_York_city_walls_%285%29.JPG",
+    image: "https://www.britmap.com/videos/IMG_5720.webp",
     description: "",
     occupation: "1490",
       "videoUrl": "https://www.britmap.com/videos/Captions_700C01.mp4",
@@ -404,7 +404,7 @@ export const buildings = [
       {
     "name": "The Norman House",
     "coords": [-1.0832804552932895, 53.96153403928001],
-    "image": "https://upload.wikimedia.org/wikipedia/commons/f/fa/NormanHouseYork.jpg",
+    "image": "https://www.britmap.com/videos/IMG_5725.webp",
     "description": "",
     "occupation": "12th Century",
     "videoUrl": "https://www.britmap.com/videos/Captions_ED8ABD.mp4",
@@ -416,7 +416,7 @@ export const buildings = [
       {
     name: "Garforth House",
     coords: [-1.0872525932033406, 53.95744218582411],
-    image: "https://upload.wikimedia.org/wikipedia/commons/4/4c/Garforth_House%2C_Micklegate_-_geograph.org.uk_-_673504.jpg",
+    image: "https://www.britmap.com/videos/IMG_5751.webp",
     description: "",
     occupation: "1757",
  "videoUrl": "https://www.britmap.com/videos/Captions_65CE21.mp4",
@@ -427,7 +427,7 @@ export const buildings = [
     {
     "name": "The Red House",
     "coords": [-1.0850877895635525, 53.96151482928061],
-    "image": "https://upload.wikimedia.org/wikipedia/commons/1/13/Red_House_Antiques_Centre.jpg",
+    "image": "https://www.britmap.com/videos/IMG_5726.webp",
     "description": "",
       "videoUrl": "https://www.britmap.com/videos/Captions_25D270.mp4",
     "occupation": "1714",
@@ -460,7 +460,7 @@ export const buildings = [
        {
     "name": "Jubbergate",
     "coords": [-1.08116092937947, 53.95928389428395],
-    "image": "https://upload.wikimedia.org/wikipedia/commons/8/87/Jubbergate_entrance_to_Shambles_Market%2C_York_%28geograph_5435307%29.jpg",
+    "image": "https://www.britmap.com/videos/IMG_5759.webp",
     "description": "",
     "occupation": " ",
      "videoUrl": "https://www.britmap.com/videos/Captions_7195D0.mp4",
@@ -471,7 +471,7 @@ export const buildings = [
      {
     name: "Cumberland House",
     coords: [-1.0828489169782274, 53.956814504153286],
-    image: "https://upload.wikimedia.org/wikipedia/commons/f/f0/Cumberland_House%2C_York_%284198379598%29.jpg",
+    image: "https://www.britmap.com/videos/IMG_5746.webp",
     description: "",
     "videoUrl": "https://www.britmap.com/videos/Captions_8BC5F8.mp4",
     occupation: "1710",
