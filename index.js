@@ -140,16 +140,16 @@ function addBuildingMarkers() {
       .addTo(map);
 
     // Add click event for animation
-    marker.getElement().addEventListener('click', () => {
-      map.getCanvas().style.cursor = 'pointer';
+marker.getElement().addEventListener('click', () => {
+  map.getCanvas().style.cursor = 'pointer';
 
-      // Add animation class
-      markerElement.classList.add('shrink-animation');
+  // Add animation class
+  markerElement.classList.add('shrink-animation');
 
-      // Remove animation class after animation ends
-      markerElement.addEventListener('animationend', () => {
-        markerElement.classList.remove('shrink-animation');
-      }, { once: true });
+  // Remove animation class after animation ends
+  markerElement.addEventListener('animationend', () => {
+    markerElement.classList.remove('shrink-animation');
+  }, { once: true });
 
       // Check for video URL (existing functionality)
       const videoUrl = building.videoUrl;
@@ -410,12 +410,15 @@ stylePopup.innerHTML = `
 @keyframes shrink {
   0% {
     transform: scale(1);
+    transform-origin: center;
   }
   50% {
     transform: scale(0.8);
+    transform-origin: center;
   }
   100% {
     transform: scale(1);
+    transform-origin: center;
   }
 }
 
