@@ -115,7 +115,7 @@ export const buildings = [
                       {
     name: "Little Admiral",
     coords: [-1.0843086038471415, 53.95941652596521], 
-    image: "https://www.britmap.com/videos/IMG_5362.jpeg", 
+    image: "https://www.britmap.com/videos/IMG_5754.jpeg", 
     description: "",
     occupation: "11th Century", 
     "videoUrl": "https://www.britmap.com/videos/Captions_8F5743.mp4",
