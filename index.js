@@ -623,9 +623,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Add example donors
-    addDonor('John Doe', '5', 'Monthly donor - Thank you for your support!');
-    addDonor('Jane Smith', '10', 'One-time donor - Your generosity is appreciated!');
-    addDonor('Anonymous', '20', 'Monthly donor - You’re amazing!');
+       addDonor('Anonymous', '15', ' ');
+    addDonor('Chip Pedro', '5', 'Will be very useful on our upcoming trip - really nice work!');
+    addDonor('buffsteve24', '5', 'Amazing work!');
+    addDonor('marksaw20', '5', 'Lovely map. Really interesting.');
 
     // Button click event to toggle dropdown visibility
     button.addEventListener('click', (e) => {
