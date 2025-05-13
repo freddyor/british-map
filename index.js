@@ -550,20 +550,20 @@ document.addEventListener('DOMContentLoaded', () => {
     dropdownContent.style.borderRadius = '8px';
     dropdownContent.style.boxShadow = '0 6px 15px rgba(0, 0, 0, 0.3)';
     dropdownContent.style.fontSize = '14px';
-    dropdownContent.style.lineHeight = '1.5'; // Increase line height
+    dropdownContent.style.lineHeight = '1.25'; // Slightly reduce line spacing
     dropdownContent.style.zIndex = '10000'; // Ensure it goes above everything else
-    dropdownContent.style.maxWidth = '300px'; // Set a max width for better layout
+    dropdownContent.style.maxWidth = '400px'; // Increase the dropdown width
     dropdownContent.style.textAlign = 'center'; // Center align all content
     dropdownContent.style.gap = '20px'; // Add spacing between sections
 
     dropdownContent.innerHTML = `
-        <div class="project-info" style="margin-bottom: 20px;">
+        <div class="project-info" style="margin-bottom: 15px;">
             Every time the map is loaded, it costs me money. This project has also taken more hours than you could possibly imagine.
         </div>
-        <div class="project-info" style="margin-bottom: 20px;">
+        <div class="project-info" style="margin-bottom: 15px;">
             I am independent and 22 years old, I want to keep the site free-for-use. Ultimately, the project will rely on generous monthly donors to keep it running for our beloved city ❤️
         </div>
-        <div class="project-info" style="margin-bottom: 20px;">
+        <div class="project-info" style="margin-bottom: 15px;">
             Make sure to click “Make this monthly” after your name and comment (or don’t, if you’re only wanting to give a one-time donation). Thank you all so much!
         </div>
         <button 
@@ -579,11 +579,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 cursor: pointer; 
                 text-align: center;
                 box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+                margin-bottom: 15px; /* Add spacing below the button */
             "
             onclick="window.open('https://www.buymeacoffee.com/britmap', '_blank')"
         >
             Support
         </button>
+        <div style="font-weight: bold; margin-top: 15px;">Donor List:</div>
     `;
 
     // Wrap the button and dropdown in a container
@@ -614,5 +616,5 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Set the dropdown width to match the button width
-    dropdownContent.style.width = `${button.offsetWidth}px`;
+    dropdownContent.style.width = `${Math.max(button.offsetWidth, 400)}px`;
 });
