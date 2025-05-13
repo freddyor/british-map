@@ -157,7 +157,7 @@ export const locations = [
 {
     name: "York Guildhall",
     coords: [-1.085562497555408, 53.95955051105805], // Approximate coordinates
-    image: "https://upload.wikimedia.org/wikipedia/commons/7/74/Boats_outside_the_Guildhall_%28geograph_7493097%29.jpg", // Replace with actual image path
+    image: "https://www.britmap.com/videos/IMG_5748.webp", // Replace with actual image path
     description: "",
     occupation: "1459",
     tldr: "A historic civic originally built as a meeting place for the City's guilds (merchants).",
@@ -261,7 +261,7 @@ export const locations = [
 {
     "name": "Church of All Saints",
     "coords": [-1.0862106605831179, 53.958459482618274],
-    "image": "https://upload.wikimedia.org/wikipedia/commons/a/ac/All_Saints_North_Street_-_geograph.org.uk_-_1691691.jpg",
+    "image": "https://www.britmap.com/videos/IMG_5747.webp",
     "description": "",
     "occupation": "12th century",
     "tldr": "The church is said to have the finest collection of medieval glass in York except that of the Minster.",
@@ -402,7 +402,7 @@ export const locations = [
   {
     "name": "York Art Gallery",
     "coords": [-1.0860314377071778, 53.96288376514518],
-    "image": "https://www.britmap.com/videos/IMG_5723(1).webp",
+    "image": "https://www.britmap.com/videos/IMG_5724.webp",
     "description": "",
     "occupation": "1882",
     "tldr": "This building was only meant for temporary exhibitions, but became York Art Gallery.",
