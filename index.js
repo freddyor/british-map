@@ -617,9 +617,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const dropdownContainer = document.createElement('div');
     dropdownContainer.className = 'dropdown';
     dropdownContainer.style.position = 'fixed';
-    dropdownContainer.style.left = '50%';
+    dropdownContainer.style.left = '40%';
     dropdownContainer.style.top = '10px';
-    dropdownContainer.style.transform = 'translateX(-50%)';
+    dropdownContainer.style.transform = 'translateX(-40%)';
     dropdownContainer.style.zIndex = '1001';
     dropdownContainer.appendChild(button);
     dropdownContainer.appendChild(dropdownContent);
