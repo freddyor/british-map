@@ -424,6 +424,7 @@ stylePopup.innerHTML = `
 
 .shrink-animation {
   animation: shrink 0.3s ease-out;
+  position: absolute; /* Ensure the marker stays in its original position */
 }
 `;
 
