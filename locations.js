@@ -146,7 +146,7 @@ export const locations = [
 {
     name: "Bootham Park Hospital",
     coords: [-1.0854450823370998, 53.9675999686222],
-    image: "https://upload.wikimedia.org/wikipedia/commons/3/3c/Bootham_Park_Psychiatric_Hospital_York_-_geograph.org.uk_-_92044.jpg",
+    image: "https://www.britmap.com/videos/IMG_5719.webp",
     description: "",
     occupation: "1777",
     tldr: "Originally known as 'County Lunatic Asylum, York'. Criticism about the handling of inmates at the asylum and the death of Hannah Mills, who was a Quaker, led the local Quaker community to found a new asylum known as The Retreat in 1790, effectively replacing this asylum.",
@@ -169,7 +169,7 @@ export const locations = [
  {
     name: "Castlegate House",
     coords: [-1.0805699292451987, 53.95674650725818],
-    image: "https://upload.wikimedia.org/wikipedia/commons/d/d2/Castlegate_House_-_geograph.org.uk_-_857017.jpg",
+    image: "https://www.britmap.com/videos/IMG_.webp",
     description: "",
     occupation: "1763",
     tldr: "The house is currently used as a Masonic temple.",
@@ -191,7 +191,7 @@ export const locations = [
   {
     name: "Grays Court",
     coords: [-1.0803656155532937, 53.96293921598464],
-    image: "https://upload.wikimedia.org/wikipedia/commons/b/b6/Grays_Court_York.jpg",
+    image: "https://www.britmap.com/videos/IMG_5713.webp",
     description: "",
     occupation: "1080",
     tldr: "Now a hotel, it is one of the oldest continuously occupied dwellings in the UK.",
@@ -226,7 +226,7 @@ export const locations = [
   {
     name: "Micklegate House",
     coords: [-1.0891909200470318, 53.95703137954276],
-    image: "https://upload.wikimedia.org/wikipedia/commons/9/9a/Micklegate_House%2C_from_Holy_Trinity_Priory_%284200761860%29.jpg",
+    image: "https://www.britmap.com/videos/IMG_5718.webp",
     description: "",
     occupation: "1752",
     tldr: "Now a hotel, it was built to be a town house for John Bourchier, owner of Beningborough House",
@@ -248,7 +248,7 @@ export const locations = [
   {
     name: "The Bar Convent",
     coords: [-1.0913957008761188, 53.9552023778525],
-    image: "https://upload.wikimedia.org/wikipedia/commons/1/1c/Bar_Convent_Exterior.jpg",
+    image: "https://www.britmap.com/videos/IMG_5749.webp",
     description: "",
     occupation: "1686",
     tldr: "It is the oldest surviving Catholic covenant on the British isles.",
@@ -284,7 +284,7 @@ export const locations = [
   {
     "name": "The Assembly Rooms",
     "coords": [-1.0848699826058827, 53.961106870895996],
-    "image": "https://upload.wikimedia.org/wikipedia/commons/c/cb/Ask_at_the_Assembly_Rooms%2C_Blake_Street%2C_York_%2821st_October_2010%29.jpg",
+    "image": "https://www.britmap.com/videos/IMG_5730.webp",
     "description": "",
     "occupation": "1735",
     "tldr": "Originally built for high class social gatherings, but is now an Italian restaurant.",
@@ -318,7 +318,7 @@ export const locations = [
   {
     name: "Multangular Tower",
     coords: [-1.0869876618159724, 53.96134725163458],
-    image: "https://upload.wikimedia.org/wikipedia/commons/d/df/Roman_Fortifications_in_Museum_Gardens_York.jpg",
+    image: "https://www.britmap.com/videos/IMG_5728.webp",
     description: "",
     occupation: "71-74AD",
     tldr: "The original defenses on this site were built by the Roman Ninth Legion.",
@@ -370,7 +370,7 @@ export const locations = [
   {
     "name": "Minster Library",
     "coords": [-1.0825304416262571, 53.96356910961066],
-    "image": "https://upload.wikimedia.org/wikipedia/commons/8/89/York_Minster_Library_-_geograph.org.uk_-_676048.jpg",
+    "image": "https://www.britmap.com/videos/IMG_5716.webp",
     "description": "",
     "occupation": "1230",
     "tldr": "The building is home to numerous notable items, including cathedral records dating back to 1150 📖",
@@ -402,7 +402,7 @@ export const locations = [
   {
     "name": "York Art Gallery",
     "coords": [-1.0860314377071778, 53.96288376514518],
-    "image": "https://upload.wikimedia.org/wikipedia/commons/2/2d/York_City_Art_Gallery.JPG",
+    "image": "https://www.britmap.com/videos/IMG_5723(1).webp",
     "description": "",
     "occupation": "1882",
     "tldr": "This building was only meant for temporary exhibitions, but became York Art Gallery.",
@@ -451,7 +451,7 @@ export const locations = [
   {
     "name": "Yorkshire Museum",
     "coords": [-1.0876926493525807, 53.96171044482128],
-    "image": "https://upload.wikimedia.org/wikipedia/commons/1/11/Yorkshire_Museum.jpg",
+    "image": "https://www.britmap.com/videos/IMG_5733.webp",
     "description": "",
     "occupation": "1830",
     "tldr": "The Yorkshire Museum was built by the Yorkshire Philosophical Society, one of the first purpose-built museums in Britain ",
@@ -492,7 +492,7 @@ export const locations = [
   {
     "name": "Micklegate Bar",
     "coords": [-1.090917692536728, 53.95583630365481],
-    "image": "https://upload.wikimedia.org/wikipedia/commons/7/74/Micklegate_Bar.jpg",
+    "image": "https://www.britmap.com/videos/IMG_5750.webp",
     "description": "",
     "occupation": "12th CENTURY",
     "tldr": "At least six reigning monarchs passed through this gate 👑",
@@ -503,7 +503,7 @@ export const locations = [
   {
     "name": "York Institute of Art, Science and Literature",
     "coords": [-1.0818792916585918, 53.95690100278569],
-    "image": "https://upload.wikimedia.org/wikipedia/commons/9/92/12_Clifford_Street_York.jpg",
+    "image": "https://www.britmap.com/videos/IMG_5745.webp",
     "description": "",
     "occupation": "1885",
     "tldr": "Now Kuda nightclub and York Dungeons, this magnificent building is steeped in history.",
@@ -535,7 +535,7 @@ export const locations = [
   {
     "name": "Roots",
     "coords": [-1.0905273634412826, 53.961781626628245],
-    "image": "https://upload.wikimedia.org/wikipedia/commons/5/5e/Roots_restaurant.jpg",
+    "image": "https://www.britmap.com/videos/IMG_5732.webp",
     "description": "",
     "occupation": "1894",
     "tldr": "It was a pub all the way up until 2018, when chef Tommy Banks turned the building into Roots restaurant.",
@@ -569,7 +569,7 @@ export const locations = [
   {
     "name": "St Helen's Square",
     "coords": [-1.0844389540252952, 53.960155934644228],
-    "image": "https://upload.wikimedia.org/wikipedia/commons/3/3d/St_Helen%27s_Square%2C_York_-_DSC07915.JPG",
+    "image": "https://www.britmap.com/videos/IMG_5736.webp",
     "description": "",
     "occupation": "1745",
     "tldr": "The name comes from the Church that stands on the edge of the square.",
@@ -615,7 +615,7 @@ export const locations = [
   {
     "name": "De Grey Rooms",
     "coords": [-1.0853403171638432, 53.96233937601278],
-    "image": "https://upload.wikimedia.org/wikipedia/commons/7/71/De_Grey_Rooms_%2811313553473%29.jpg",
+    "image": "https://www.britmap.com/videos/IMG_5722.webp",
     "description": "",
     "occupation": "1842",
     "tldr": "The building was commissioned by Thomas de Grey, Commanding Officer of the Yorkshire Hussars, for the regiments Annual Mess",
@@ -718,7 +718,7 @@ export const locations = [
   {
     "name": "Roman Column",
     "coords": [-1.08177873855273, 53.96162524798148],
-    "image": "https://upload.wikimedia.org/wikipedia/commons/7/77/Roman_column%2C_York%2C_2023.jpg",
+    "image": "https://www.britmap.com/videos/IMG_5738.webp",
     "description": "",
     "occupation": "1st CENTURY",
     "tldr": "It was part of a group of sixteen freestanding columns supporting the walls of a basilica on the site.",
