@@ -550,8 +550,10 @@ document.addEventListener('DOMContentLoaded', () => {
     dropdownContent.style.fontSize = '14px';
     dropdownContent.style.lineHeight = '1.25'; // Slightly reduce line spacing
     dropdownContent.style.zIndex = '10000'; // Ensure it goes above everything else
-    dropdownContent.style.maxWidth = '350px'; // Reduce the dropdown width
+    dropdownContent.style.maxWidth = '300px'; // Reduce the dropdown width to make it less wide
     dropdownContent.style.textAlign = 'center'; // Center align all content
+    dropdownContent.style.maxHeight = '400px'; // Add a maximum height
+    dropdownContent.style.overflowY = 'auto'; // Make it scrollable
 
     dropdownContent.innerHTML = `
         <div class="project-info" style="margin-bottom: 15px;">
@@ -608,16 +610,17 @@ document.addEventListener('DOMContentLoaded', () => {
         donorDiv.innerHTML = `
             <span class="donor-name" style="font-weight: bold;">${name}</span>
             <span class="donor-amount" style="color: #9b4dca; margin-left: 10px; font-weight: bold;">£${amount}</span>
-            <div class="donor-subtext" style="font-size: 12px; color: #666; margin-top: 5px;">${subtext}</div>
+            <div class="donor-subtext" style="font-size: 12px; color: #666; margin-top: 2px;">${subtext}</div>
         `;
-        donorDiv.style.marginBottom = '15px'; // Increase gap between donors
+        donorDiv.style.marginBottom = '20px'; // Maintain gap between donors
         donorList.appendChild(donorDiv);
     }
 
     // Add example donors
-    addDonor('John Doe', '5', 'Monthly donor - Thank you for your support!');
-    addDonor('Jane Smith', '10', 'One-time donor - Your generosity is appreciated!');
-    addDonor('Anonymous', '20', 'Monthly donor - You’re amazing!');
+    addDonor('Anonymous', '15', ' ');
+    addDonor('Chip Pedro', '5', 'Will be very useful on our upcoming trip - really nice work!');
+    addDonor('buffsteve24', '5', 'Amazing work!');
+    addDonor('marksaw20', '5', 'Lovely map. Really interesting.');
 
     // Button click event to toggle dropdown visibility
     button.addEventListener('click', (e) => {
@@ -633,5 +636,5 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Set the dropdown width to match the button width
-    dropdownContent.style.width = `${Math.max(button.offsetWidth, 350)}px`; // Match width with maxWidth
+    dropdownContent.style.width = `${Math.max(button.offsetWidth, 300)}px`; // Match width with maxWidth
 });
