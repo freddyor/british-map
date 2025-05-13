@@ -527,8 +527,6 @@ const tldrContent = !videoUrl
     `;
 }
 
-
-
 document.addEventListener('DOMContentLoaded', () => {
     // Create the button
     const button = document.createElement('button');
@@ -585,7 +583,8 @@ document.addEventListener('DOMContentLoaded', () => {
         >
             Support
         </button>
-        <div style="font-weight: bold; margin-top: 15px;">Donor List:</div>
+        <div style="font-weight: bold; margin-top: 15px; font-size: 16px;">Our Donors ❤️</div>
+        <div id="donor-list" style="margin-top: 10px;"></div>
     `;
 
     // Wrap the button and dropdown in a container
@@ -601,6 +600,24 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Add the dropdown container to the body
     document.body.appendChild(dropdownContainer);
+
+    // Function to add donors
+    function addDonor(name, amount, subtext) {
+        const donorList = document.getElementById('donor-list');
+        const donorDiv = document.createElement('div');
+        donorDiv.className = 'donor';
+        donorDiv.innerHTML = `
+            <span class="donor-name">${name}</span>
+            <span class="donor-amount">£${amount}</span>
+            <div class="donor-subtext">${subtext}</div>
+        `;
+        donorList.appendChild(donorDiv);
+    }
+
+    // Add example donors
+    addDonor('John Doe', '£5', 'Monthly donor - Thank you for your support!');
+    addDonor('Jane Smith', '10', 'One-time donor - Your generosity is appreciated!');
+    addDonor('Anonymous', '20', 'Monthly donor - You’re amazing!');
 
     // Button click event to toggle dropdown visibility
     button.addEventListener('click', (e) => {
