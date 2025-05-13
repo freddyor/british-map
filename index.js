@@ -598,6 +598,21 @@ document.addEventListener('DOMContentLoaded', () => {
     const dropdownContent = document.createElement('div');
     dropdownContent.className = 'dropdown-content';
     dropdownContent.style.display = 'none'; // Initially hidden
+    dropdownContent.style.position = 'fixed';
+    dropdownContent.style.bottom = '70px'; // Adjust position for visibility
+    dropdownContent.style.left = '50%';
+    dropdownContent.style.transform = 'translateX(-50%)';
+    dropdownContent.style.backgroundColor = 'white';
+    dropdownContent.style.padding = '10px';
+    dropdownContent.style.border = '1px solid #ccc';
+    dropdownContent.style.borderRadius = '8px';
+    dropdownContent.style.boxShadow = '0 6px 15px rgba(0, 0, 0, 0.3)';
+    dropdownContent.style.fontSize = '12px';
+    dropdownContent.style.lineHeight = '1.05';
+    dropdownContent.style.zIndex = '10000'; // Ensure it goes above everything else
+    dropdownContent.style.maxHeight = '200px'; // Set a max height
+    dropdownContent.style.overflowY = 'scroll'; // Make it scrollable
+
     dropdownContent.innerHTML = `
         <div class="project-info">
             Every time the map is loaded, it costs me money. This project has also taken more hours than you could possibly imagine.
@@ -617,9 +632,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const dropdownContainer = document.createElement('div');
     dropdownContainer.className = 'dropdown';
     dropdownContainer.style.position = 'fixed';
-    dropdownContainer.style.left = '40%';
-    dropdownContainer.style.top = '10px';
-    dropdownContainer.style.transform = 'translateX(-40%)';
+    dropdownContainer.style.left = '50%';
+    dropdownContainer.style.bottom = '10px'; // Place at the bottom like image attributions
+    dropdownContainer.style.transform = 'translateX(-50%)';
     dropdownContainer.style.zIndex = '1001';
     dropdownContainer.appendChild(button);
     dropdownContainer.appendChild(dropdownContent);
