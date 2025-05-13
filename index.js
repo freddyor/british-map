@@ -124,62 +124,59 @@ locations.forEach(location => {
      }
 
 function addBuildingMarkers() {
-  buildings.forEach(building => {
-    const outlineColor = building.colour === "yes" ? '#FF69B4' : '#FFFFFF';
-    const { element: markerElement } = createCustomMarker(building.image, outlineColor, false);
-    markerElement.className += ' building-marker';
+    buildings.forEach(building => {
+        const outlineColor = building.colour === "yes" ? '#FF69B4' : '#FFFFFF'; // Pink if "colour" is "yes", otherwise white
+        const { element: markerElement } = createCustomMarker(building.image, outlineColor, false);
+        markerElement.className += ' building-marker';
 
-    if (building.colour === "yes") {
-      markerElement.style.zIndex = '3';
-    }
-
-    const marker = new mapboxgl.Marker({
-      element: markerElement
-    })
-      .setLngLat(building.coords)
-      .addTo(map);
-
-    // Add click event for animation
-marker.getElement().addEventListener('click', () => {
-  map.getCanvas().style.cursor = 'pointer';
-
-  // Add animation class
-  markerElement.classList.add('shrink-animation');
-
-  // Remove animation class after animation ends
-  markerElement.addEventListener('animationend', () => {
-    markerElement.classList.remove('shrink-animation');
-  }, { once: true });
-
-      // Check for video URL (existing functionality)
-      const videoUrl = building.videoUrl;
-      if (videoUrl) {
-        const videoElement = document.createElement('video');
-        videoElement.src = videoUrl;
-        videoElement.style.display = 'none';
-        videoElement.controls = true;
-        videoElement.autoplay = true;
-
-        document.body.appendChild(videoElement);
-        videoElement.play();
-        if (videoElement.requestFullscreen) {
-          videoElement.requestFullscreen();
-        } else if (videoElement.webkitRequestFullscreen) {
-          videoElement.webkitRequestFullscreen();
-        } else if (videoElement.mozRequestFullScreen) {
-          videoElement.mozRequestFullScreen();
-        } else if (videoElement.msRequestFullscreen) {
-          videoElement.msRequestFullscreen();
+        // Set z-index for markers with colour: "yes"
+        if (building.colour === "yes") {
+            markerElement.style.zIndex = '3';
         }
 
-        videoElement.addEventListener('ended', () => {
-          document.body.removeChild(videoElement);
+        const marker = new mapboxgl.Marker({
+            element: markerElement
+        })
+        .setLngLat(building.coords)
+        .addTo(map);
+
+        marker.getElement().addEventListener('click', () => {
+            map.getCanvas().style.cursor = 'pointer';
+
+            // Check for video URL
+            const videoUrl = building.videoUrl; // Assuming videoUrl is part of the building data
+            if (videoUrl) {
+                // Create a video element
+                const videoElement = document.createElement('video');
+                videoElement.src = videoUrl;
+                videoElement.style.display = 'none'; // Hide the video element
+                videoElement.controls = true;
+                videoElement.autoplay = true;
+
+                // Append video to the body
+                document.body.appendChild(videoElement);
+
+                // Play the video and request fullscreen
+                videoElement.play();
+                if (videoElement.requestFullscreen) {
+                    videoElement.requestFullscreen();
+                } else if (videoElement.webkitRequestFullscreen) { // Safari
+                    videoElement.webkitRequestFullscreen();
+                } else if (videoElement.mozRequestFullScreen) { // Firefox
+                    videoElement.mozRequestFullScreen();
+                } else if (videoElement.msRequestFullscreen) { // IE/Edge
+                    videoElement.msRequestFullscreen();
+                }
+
+                // Remove the video element once playback ends
+                videoElement.addEventListener('ended', () => {
+                    document.body.removeChild(videoElement);
+                });
+            } else {
+                console.error('Video URL not available for this building.');
+            }
         });
-      } else {
-        console.error('Video URL not available for this building.');
-      }
     });
-  });
 }
     function scaleMarkersBasedOnZoom() {
     const zoomLevel = map.getZoom(); // Get the current zoom level
@@ -406,26 +403,7 @@ stylePopup.innerHTML = `
 
   #bottom-sheet p {
     margin-bottom: 10px;
-}
-@keyframes shrink {
-  0% {
-    transform: scale(1);
-    transform-origin: center;
   }
-  50% {
-    transform: scale(0.8);
-    transform-origin: center;
-  }
-  100% {
-    transform: scale(1);
-    transform-origin: center;
-  }
-}
-
-.shrink-animation {
-  animation: shrink 0.3s ease-out;
-  position: absolute; /* Ensure the marker stays in its original position */
-}
 `;
 
 // Append the style to the document
