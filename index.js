@@ -550,9 +550,9 @@ document.addEventListener('DOMContentLoaded', () => {
     dropdownContent.style.fontSize = '14px';
     dropdownContent.style.lineHeight = '1.25'; // Slightly reduce line spacing
     dropdownContent.style.zIndex = '10000'; // Ensure it goes above everything else
-    dropdownContent.style.maxWidth = '300px'; // Reduce the dropdown width to make it less wide
+    dropdownContent.style.maxWidth = '300px'; // Reduce width
     dropdownContent.style.textAlign = 'center'; // Center align all content
-    dropdownContent.style.maxHeight = '400px'; // Add a maximum height
+    dropdownContent.style.maxHeight = `${window.innerHeight / 2}px`; // Set max height to half of page height
     dropdownContent.style.overflowY = 'auto'; // Make it scrollable
 
     dropdownContent.innerHTML = `
@@ -584,6 +584,13 @@ document.addEventListener('DOMContentLoaded', () => {
         >
             Support
         </button>
+        <div 
+            style="
+                height: 1px; 
+                width: 80%; 
+                margin: 0 auto 15px auto; 
+                background-color: #ccc;"
+        ></div> <!-- Divider -->
         <div style="font-weight: bold; margin-top: 15px; font-size: 16px;">Our Donors ❤️</div>
         <div id="donor-list" style="margin-top: 10px;"></div>
     `;
@@ -593,7 +600,7 @@ document.addEventListener('DOMContentLoaded', () => {
     dropdownContainer.className = 'dropdown';
     dropdownContainer.style.position = 'fixed';
     dropdownContainer.style.left = '50%';
-    dropdownContainer.style.top = '10px'; // Place at the top
+    dropdownContainer.style.top = '10px'; // Position at the top
     dropdownContainer.style.transform = 'translateX(-50%)';
     dropdownContainer.style.zIndex = '1001';
     dropdownContainer.appendChild(button);
@@ -617,10 +624,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Add example donors
-    addDonor('Anonymous', '15', ' ');
-    addDonor('Chip Pedro', '5', 'Will be very useful on our upcoming trip - really nice work!');
-    addDonor('buffsteve24', '5', 'Amazing work!');
-    addDonor('marksaw20', '5', 'Lovely map. Really interesting.');
+    addDonor('John Doe', '5', 'Monthly donor - Thank you for your support!');
+    addDonor('Jane Smith', '10', 'One-time donor - Your generosity is appreciated!');
+    addDonor('Anonymous', '20', 'Monthly donor - You’re amazing!');
 
     // Button click event to toggle dropdown visibility
     button.addEventListener('click', (e) => {
