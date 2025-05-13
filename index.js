@@ -106,21 +106,25 @@ geolocate.on('geolocate', (e) => {
   userLocationMarker.setLngLat(position);
 });
 
-function addLocationMarkers() {
-    const fragment = document.createDocumentFragment(); // Use a Document Fragment
-    locations.forEach(location => {
-        const { element: markerElement } = createCustomMarker(location.image, '#FFFFFF', true);
-        markerElement.className += ' location-marker';
-        const marker = new mapboxgl.Marker({
-            element: markerElement
-        }).setLngLat(location.coords);
-        fragment.appendChild(marker.getElement()); // Append marker to fragment
+    function addLocationMarkers() {
+locations.forEach(location => {
+    const { element: markerElement } = createCustomMarker(location.image, '#FFFFFF', true);
+    markerElement.className += ' location-marker';
+    const marker = new mapboxgl.Marker({
+        element: markerElement
+    })
+    .setLngLat(location.coords)
+    .addTo(map);
+
+    marker.getElement().addEventListener('click', () => {
+        map.getCanvas().style.cursor = 'pointer';
+        const contentHTML = createPopupContent(location); // Use the existing function to create the content
+        toggleBottomSheet(contentHTML);
     });
-    document.body.appendChild(fragment); // Append all markers at once
-}
+});
+     }
 
 function addBuildingMarkers() {
-    const fragment = document.createDocumentFragment(); // Create a Document Fragment
     buildings.forEach(building => {
         const outlineColor = building.colour === "yes" ? '#FF69B4' : '#FFFFFF'; // Pink if "colour" is "yes", otherwise white
         const { element: markerElement } = createCustomMarker(building.image, outlineColor, false);
@@ -133,10 +137,14 @@ function addBuildingMarkers() {
 
         const marker = new mapboxgl.Marker({
             element: markerElement
-        }).setLngLat(building.coords);
+        })
+        .setLngLat(building.coords)
+        .addTo(map);
 
-        // Add click event listener for video playback
         marker.getElement().addEventListener('click', () => {
+            map.getCanvas().style.cursor = 'pointer';
+
+            // Check for video URL
             const videoUrl = building.videoUrl; // Assuming videoUrl is part of the building data
             if (videoUrl) {
                 // Create a video element
@@ -146,7 +154,7 @@ function addBuildingMarkers() {
                 videoElement.controls = true;
                 videoElement.autoplay = true;
 
-                // Append the video to the body
+                // Append video to the body
                 document.body.appendChild(videoElement);
 
                 // Play the video and request fullscreen
@@ -169,11 +177,7 @@ function addBuildingMarkers() {
                 console.error('Video URL not available for this building.');
             }
         });
-
-        fragment.appendChild(marker.getElement()); // Add marker element to the fragment
     });
-
-    document.body.appendChild(fragment); // Append all markers to the DOM at once
 }
     function scaleMarkersBasedOnZoom() {
     const zoomLevel = map.getZoom(); // Get the current zoom level
