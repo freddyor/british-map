@@ -589,9 +589,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 width: 80%; 
                 margin: 0 auto 15px auto; 
                 background-color: #ccc;"
-        ></div> <!-- Divider -->
-        <div style="font-weight: bold; margin-top: 15px; font-size: 16px;">Our Donors ❤️</div>
-        <div id="donor-list" style="margin-top: 10px;"></div>
+<div style="display: flex; align-items: center; justify-content: center; margin-top: 15px; font-size: 16px; font-weight: bold;">
+    <hr style="flex: 1; border: 1px solid #ccc; margin: 0 10px;">
+    Our Donors ❤️
+    <hr style="flex: 1; border: 1px solid #ccc; margin: 0 10px;">
+</div>
+
     `;
 
     // Wrap the button and dropdown in a container
