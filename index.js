@@ -12,12 +12,14 @@ document.head.appendChild(mapboxCSS);
 const mapboxScript = document.createElement('script');
 mapboxScript.src = "./assets/mapbox-gl/mapbox-gl.js";
 mapboxScript.defer = true;
+
+// When the script is loaded, initialize the map
 mapboxScript.onload = () => {
-    // Initialize Mapbox after the script is loaded
     mapboxgl.accessToken = 'pk.eyJ1IjoiZnJlZGRvbWF0ZSIsImEiOiJjbTc1bm5zYnQwaG1mMmtxeDdteXNmeXZ0In0.PuDNORq4qExIJ_fErdO_8g';
-    initializeMap(); // Call function to set up your map
+
+    // Load the map
+    const map = initializeMap();
 };
-document.body.appendChild(mapboxScript);
 
 // Function to initialize the map
 function initializeMap() {
@@ -30,9 +32,30 @@ function initializeMap() {
         bearing: -17.6,
     });
 
-    // Add other Mapbox-related code here (e.g., markers, controls)
-    addBuildingMarkers();
-addLocationMarkers();
+    // Trigger deferred loading of additional features
+    map.on('load', () => {
+        console.log('Map has been loaded.');
+        
+        // Once the map is fully loaded, load additional features
+        loadAdditionalFeatures(map);
+    });
+
+    return map;
+}
+
+function loadAdditionalFeatures(map) {
+    // Add Geolocation control
+    addGeolocationControl(map);
+
+    // Add building and location markers
+    addBuildingMarkers(map);
+    addLocationMarkers(map);
+
+    // Attach event listeners
+    attachMapEventListeners(map);
+
+    console.log('Additional features loaded.');
+}
 
     map.on('load', () => {
     geolocate.trigger();
@@ -49,9 +72,20 @@ addLocationMarkers();
 });
 
     // Add a zoom event listener to the map
-map.on('zoom', () => {
-    scaleMarkersBasedOnZoom();
-});
+function attachMapEventListeners(map) {
+    map.on('click', (e) => {
+        const currentLat = e.lngLat.lat;
+        const currentLng = e.lngLat.lng;
+        const currentZoom = map.getZoom();
+
+        const mapLink = generateMapLink(currentLat, currentLng, currentZoom);
+        console.log('Map Link:', mapLink);
+    });
+
+    map.on('zoom', () => {
+        scaleMarkersBasedOnZoom();
+    });
+}
 
     // Geolocation control
 const geolocate = new mapboxgl.GeolocateControl({
@@ -105,7 +139,7 @@ geolocate.on('geolocate', (e) => {
   userLocationMarker.setLngLat(position);
 });
 
-    function addLocationMarkers() {
+    function addLocationMarkers(map) {
 locations.forEach(location => {
     const { element: markerElement } = createCustomMarker(location.image, '#FFFFFF', true);
     markerElement.className += ' location-marker';
@@ -123,7 +157,7 @@ locations.forEach(location => {
 });
      }
 
-function addBuildingMarkers() {
+function addBuildingMarkers(map) {
     buildings.forEach(building => {
         const outlineColor = building.colour === "yes" ? '#FF69B4' : '#FFFFFF'; // Pink if "colour" is "yes", otherwise white
         const { element: markerElement } = createCustomMarker(building.image, outlineColor, false);
