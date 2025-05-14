@@ -2,9 +2,6 @@
 import { buildings } from './buildings.js';
 import { locations } from './locations.js';
 
-mapboxgl.accessToken = 'pk.eyJ1IjoiZnJlZGRvbWF0ZSIsImEiOiJjbTc1bm5zYnQwaG1mMmtxeDdteXNmeXZ0In0.PuDNORq4qExIJ_fErdO_8g';
-initializeMap();
-
 
 // Function to parse URL parameters
 function getUrlParameter(name) {
@@ -450,3 +447,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Set the dropdown width to match the button width
     dropdownContent.style.width = `${Math.max(button.offsetWidth, 300)}px`; // Match width with maxWidth
 });
+
+mapboxgl.accessToken = 'pk.eyJ1IjoiZnJlZGRvbWF0ZSIsImEiOiJjbTc1bm5zYnQwaG1mMmtxeDdteXNmeXZ0In0.PuDNORq4qExIJ_fErdO_8g';
+initializeMap();
+
