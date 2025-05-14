@@ -2,6 +2,23 @@
 import { buildings } from './buildings.js';
 import { locations } from './locations.js';
 
+// Dynamically load Mapbox GL JS CSS
+const mapboxCSS = document.createElement('link');
+mapboxCSS.href = "./assets/mapbox-gl/mapbox-gl.css";
+mapboxCSS.rel = "stylesheet";
+document.head.appendChild(mapboxCSS);
+
+// Dynamically load Mapbox GL JS JavaScript
+const mapboxScript = document.createElement('script');
+mapboxScript.src = "./assets/mapbox-gl/mapbox-gl.js";
+mapboxScript.defer = true;
+mapboxScript.onload = () => {
+    // Initialize Mapbox after the script is loaded
+    mapboxgl.accessToken = 'pk.eyJ1IjoiZnJlZGRvbWF0ZSIsImEiOiJjbTc1bm5zYnQwaG1mMmtxeDdteXNmeXZ0In0.PuDNORq4qExIJ_fErdO_8g';
+    initializeMap(); // Call function to set up your map
+};
+document.body.appendChild(mapboxScript);
+
 // Function to initialize the map
 function initializeMap() {
     var map = new mapboxgl.Map({
@@ -625,6 +642,3 @@ document.addEventListener('DOMContentLoaded', () => {
     // Set the dropdown width to match the button width
     dropdownContent.style.width = `${Math.max(button.offsetWidth, 300)}px`; // Match width with maxWidth
 });
-
- mapboxgl.accessToken = 'pk.eyJ1IjoiZnJlZGRvbWF0ZSIsImEiOiJjbTc1bm5zYnQwaG1mMmtxeDdteXNmeXZ0In0.PuDNORq4qExIJ_fErdO_8g';
-    initializeMap();
