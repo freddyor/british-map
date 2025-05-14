@@ -1,6 +1,7 @@
 // Import statements
 import { buildings } from './buildings.js';
 import { locations } from './locations.js';
+import 'https://api.mapbox.com/mapbox-gl-js/v3.12.0/mapbox-gl.css';
 import mapboxgl from 'https://cdn.skypack.dev/mapbox-gl'; // or another ESM CDN
 
 mapboxgl.accessToken = 'pk.eyJ1IjoiZnJlZGRvbWF0ZSIsImEiOiJjbTc1bm5zYnQwaG1mMmtxeDdteXNmeXZ0In0.PuDNORq4qExIJ_fErdO_8g';
