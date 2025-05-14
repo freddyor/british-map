@@ -16,7 +16,6 @@ function initializeMap() {
         pitch: 45,
         bearing: -17.6,
     });
-}
 
     map.on('load', () => {
     geolocate.trigger();
