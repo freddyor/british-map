@@ -2,21 +2,9 @@
 import { buildings } from './buildings.js';
 import { locations } from './locations.js';
 
-// Dynamically load Mapbox GL JS CSS
-const mapboxCSS = document.createElement('link');
-mapboxCSS.href = "./assets/mapbox-gl/mapbox-gl.css";
-mapboxCSS.rel = "stylesheet";
-document.head.appendChild(mapboxCSS);
+mapboxgl.accessToken = 'pk.eyJ1IjoiZnJlZGRvbWF0ZSIsImEiOiJjbTc1bm5zYnQwaG1mMmtxeDdteXNmeXZ0In0.PuDNORq4qExIJ_fErdO_8g';
+initializeMap();
 
-// Dynamically load Mapbox GL JS JavaScript
-const mapboxScript = document.createElement('script');
-mapboxScript.src = "./assets/mapbox-gl/mapbox-gl.js";
-mapboxScript.defer = true;
-mapboxScript.onload = () => {
-    mapboxgl.accessToken = 'pk.eyJ1IjoiZnJlZGRvbWF0ZSIsImEiOiJjbTc1bm5zYnQwaG1mMmtxeDdteXNmeXZ0In0.PuDNORq4qExIJ_fErdO_8g';
-    initializeMap();
-};
-document.body.appendChild(mapboxScript);
 
 // Function to parse URL parameters
 function getUrlParameter(name) {
