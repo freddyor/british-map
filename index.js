@@ -181,10 +181,9 @@ function addBuildingMarkers() {
     });
 }
 
-}
 // Call the function initially to set marker sizes based on the initial zoom level
 scaleMarkersBasedOnZoom();
-    
+}
 
 
 // Function to parse URL parameters
