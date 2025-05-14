@@ -2,9 +2,12 @@
 import { buildings } from './buildings.js';
 import { locations } from './locations.js';
 
-mapboxgl.accessToken = 'pk.eyJ1IjoiZnJlZGRvbWF0ZSIsImEiOiJjbTc1bm5zYnQwaG1mMmtxeDdteXNmeXZ0In0.PuDNORq4qExIJ_fErdO_8g';
-mapboxgl.prewarm(); // Pre-initialize Mapbox workers for faster map load
-initializeMap();
+mapboxScript.onload = () => {
+    // Initialize Mapbox after the script is loaded
+    mapboxgl.accessToken = 'pk.eyJ1IjoiZnJlZGRvbWF0ZSIsImEiOiJjbTc1bm5zYnQwaG1mMmtxeDdteXNmeXZ0In0.PuDNORq4qExIJ_fErdO_8g';
+    initializeMap(); // Call function to set up your map
+};
+document.body.appendChild(mapboxScript);
 
 // Function to initialize the map
 function initializeMap() {
