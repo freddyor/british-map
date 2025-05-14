@@ -1,24 +1,19 @@
 // Import statements
 import { buildings } from './buildings.js';
 import { locations } from './locations.js';
+import mapboxgl from 'https://cdn.skypack.dev/mapbox-gl'; // or another ESM CDN
 
-mapboxScript.onload = () => {
-    // Initialize Mapbox after the script is loaded
-    mapboxgl.accessToken = 'pk.eyJ1IjoiZnJlZGRvbWF0ZSIsImEiOiJjbTc1bm5zYnQwaG1mMmtxeDdteXNmeXZ0In0.PuDNORq4qExIJ_fErdO_8g';
-    initializeMap(); // Call function to set up your map
-};
-document.body.appendChild(mapboxScript);
+mapboxgl.accessToken = 'pk.eyJ1IjoiZnJlZGRvbWF0ZSIsImEiOiJjbTc1bm5zYnQwaG1mMmtxeDdteXNmeXZ0In0.PuDNORq4qExIJ_fErdO_8g';
+mapboxgl.prewarm();
 
-// Function to initialize the map
-function initializeMap() {
-    var map = new mapboxgl.Map({
-        container: 'map',
-        style: 'mapbox://styles/freddomate/cm8q8wtwx00a801qzdayccnvz?optimize=true',
-        center: [-1.0835104081554843, 53.95838745239521], // Default York coordinates
-        zoom: 15,
-        pitch: 45,
-        bearing: -17.6,
-    });
+const map = new mapboxgl.Map({
+  container: 'map',
+  style: 'mapbox://styles/freddomate/cm8q8wtwx00a801qzdayccnvz?optimize=true',
+  center: [-1.0835104081554843, 53.95838745239521],
+  zoom: 15,
+  pitch: 45,
+  bearing: -17.6,
+});
 
 
     map.on('load', () => {
