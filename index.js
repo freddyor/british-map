@@ -2,40 +2,26 @@
 import { buildings } from './buildings.js';
 import { locations } from './locations.js';
 
-// Dynamically load Mapbox GL JS CSS
-const mapboxCSS = document.createElement('link');
-mapboxCSS.href = "./assets/mapbox-gl/mapbox-gl.css";
-mapboxCSS.rel = "stylesheet";
-document.head.appendChild(mapboxCSS);
-
-// Dynamically load Mapbox GL JS JavaScript
-const mapboxScript = document.createElement('script');
-mapboxScript.src = "./assets/mapbox-gl/mapbox-gl.js";
-mapboxScript.defer = true;
-mapboxScript.onload = () => {
-    // Initialize Mapbox after the script is loaded
-    mapboxgl.accessToken = 'pk.eyJ1IjoiZnJlZGRvbWF0ZSIsImEiOiJjbTc1bm5zYnQwaG1mMmtxeDdteXNmeXZ0In0.PuDNORq4qExIJ_fErdO_8g';
-    initializeMap(); // Call function to set up your map
-};
-document.body.appendChild(mapboxScript);
+mapboxgl.accessToken = 'pk.eyJ1IjoiZnJlZGRvbWF0ZSIsImEiOiJjbTc1bm5zYnQwaG1mMmtxeDdteXNmeXZ0In0.PuDNORq4qExIJ_fErdO_8g';
+mapboxgl.prewarm(); // Pre-initialize Mapbox workers for faster map load
+initializeMap();
 
 // Function to initialize the map
 function initializeMap() {
     var map = new mapboxgl.Map({
         container: 'map',
-        style: 'mapbox://styles/freddomate/cm8q8wtwx00a801qzdayccnvz',
+        style: 'mapbox://styles/freddomate/cm8q8wtwx00a801qzdayccnvz?optimize=true',
         center: [-1.0835104081554843, 53.95838745239521], // Default York coordinates
         zoom: 15,
         pitch: 45,
         bearing: -17.6,
     });
 
-    // Add other Mapbox-related code here (e.g., markers, controls)
-    addBuildingMarkers();
-addLocationMarkers();
 
     map.on('load', () => {
     geolocate.trigger();
+            addBuildingMarkers();
+addLocationMarkers();
 });
 
     map.on('click', (e) => {
