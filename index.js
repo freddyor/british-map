@@ -13,204 +13,322 @@ const mapboxScript = document.createElement('script');
 mapboxScript.src = "./assets/mapbox-gl/mapbox-gl.js";
 mapboxScript.defer = true;
 mapboxScript.onload = () => {
-    // Initialize Mapbox after the script is loaded
     mapboxgl.accessToken = 'pk.eyJ1IjoiZnJlZGRvbWF0ZSIsImEiOiJjbTc1bm5zYnQwaG1mMmtxeDdteXNmeXZ0In0.PuDNORq4qExIJ_fErdO_8g';
-    initializeMap(); // Call function to set up your map
+    initializeMap();
 };
 document.body.appendChild(mapboxScript);
 
-// Function to initialize the map
+// Function to parse URL parameters
+function getUrlParameter(name) {
+    name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+    var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+    var results = regex.exec(location.search);
+    return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+}
+
+const defaultCenter = [-1.0835104081554843, 53.95838745239521]; // Default York coordinates
+const lat = getUrlParameter('lat');
+const lng = getUrlParameter('lng');
+const zoom = getUrlParameter('zoom');
+const initialCenter = lat && lng ? [parseFloat(lng), parseFloat(lat)] : defaultCenter;
+const initialZoom = zoom ? parseFloat(zoom) : 15;
+
+// Create a bottom sheet container
+const bottomSheet = document.createElement('div');
+bottomSheet.id = 'bottom-sheet';
+Object.assign(bottomSheet.style, {
+    position: 'fixed',
+    bottom: '-100%',
+    left: '50%',
+    transform: 'translate(-50%)',
+    width: '96%',
+    height: '40%',
+    backgroundColor: '#E9E8E0',
+    borderTop: '2px solid #ccc',
+    boxShadow: '0 -6px 15px rgba(0, 0, 0, 0.3)',
+    zIndex: '10000',
+    transition: 'bottom 0.3s ease',
+    borderRadius: '12px 12px 0 0',
+    border: '2px solid #f0f0f0',
+    fontFamily: "'Poppins', sans-serif",
+    fontSize: '14px',
+    lineHeight: '1.05',
+    padding: '5px',
+    overflowY: 'auto'
+});
+document.body.appendChild(bottomSheet);
+
+// Container for both buttons
+const buttonGroup = document.createElement('div');
+buttonGroup.id = 'button-group';
+Object.assign(buttonGroup.style, {
+    position: 'fixed',
+    left: '50%',
+    top: '50px',
+    transform: 'translateX(-50%)',
+    zIndex: '1000',
+    display: 'flex',
+    gap: '10px'
+});
+document.body.appendChild(buttonGroup);
+
+// Google Fonts for Poppins
+const link = document.createElement('link');
+link.href = "https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap";
+link.rel = "stylesheet";
+document.head.appendChild(link);
+
+// Custom styles
+const stylePopup = document.createElement('style');
+stylePopup.innerHTML = `
+  .mapboxgl-popup-content {
+    border-radius: 12px !important;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3) !important;
+    padding: 10px !important;
+    font-family: 'Poppins', sans-serif !important;
+    background: #E9E8E0;
+    border: 2px solid #f0f0f0 !important;
+    line-height: 1.05;
+    margin-left: 3px;
+    margin-right: 5px;
+    margin-bottom: 10px;
+  }
+  .mapboxgl-popup-content img {
+    border: 2px solid #f0f0f0 !important;
+    border-radius: 8px;
+  }
+  .mapboxgl-popup-content p {
+    font-weight: bold !important;
+    text-align: center;
+    letter-spacing: -0.5px;
+    font-size: 13px !important;
+    margin-bottom: 10px !important;
+  }
+  .mapboxgl-popup-close-button { display: none !important; }
+  .user-location-marker {
+    width: 20px; height: 20px; background-color: white;
+    border: 3px solid #87CEFA; border-radius: 100%; position: relative;
+  }
+  .location-marker { z-index: 1; }
+  .building-marker { z-index: 2; }
+  .mapboxgl-popup { z-index: 9999 !important; }
+  .hide-scrollbar::-webkit-scrollbar { display: none; }
+  .custom-button {
+    background-color: #e9e8e0; color: black; border: 2px solid #f0f0f0;
+    padding: 3px 8px; font-size: 12px; font-weight: bold; border-radius: 8px;
+    cursor: pointer; text-decoration: none; display: inline-block;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); white-space: nowrap; text-align: center;
+  }
+  #button-group { position: fixed; top: 50px; left: 50%; transform: translateX(-50%);
+    display: flex; gap: 10px; z-index: 1000; }
+  #bottom-sheet img { max-width: 100%; border-radius: 8px; margin-bottom: 10px; }
+  #bottom-sheet p { margin-bottom: 10px; }
+`;
+document.head.appendChild(stylePopup);
+
+// --- Marker and Popup Utilities ---
+function createCustomMarker(imageUrl, color = '#9b4dca', isLocation = false) {
+  const markerDiv = document.createElement('div');
+  markerDiv.className = 'custom-marker';
+  markerDiv.style.width = '3em';
+  markerDiv.style.height = '3em';
+  markerDiv.style.position = 'absolute';
+  markerDiv.style.borderRadius = '50%';
+  markerDiv.style.border = `0.15em solid ${color}`;
+  markerDiv.style.boxSizing = 'border-box';
+  markerDiv.style.overflow = 'hidden';
+
+  const imageElement = document.createElement('img');
+  imageElement.src = imageUrl;
+  imageElement.style.width = '100%';
+  imageElement.style.height = '100%';
+  imageElement.style.objectFit = 'cover';
+  imageElement.style.borderRadius = '50%';
+
+  markerDiv.appendChild(imageElement);
+
+  return {
+    element: markerDiv,
+    id: `marker-${Date.now()}-${Math.random()}`
+  };
+}
+
+// --- Bottom Sheet Logic ---
+let isBottomSheetOpen = false;
+function toggleBottomSheet(contentHTML) {
+    if (isBottomSheetOpen) {
+        bottomSheet.style.bottom = '-100%';
+    } else {
+        const closeButtonHTML = `
+            <button id="close-bottom-sheet" style="
+                position: absolute; top: 5px; right: 5px; padding: 3px 3px;
+                background: none; color: #fff; border: none; border-radius: 5px;
+                cursor: pointer; font-size: 10px;">❌</button>
+        `;
+        bottomSheet.innerHTML = closeButtonHTML + contentHTML;
+        bottomSheet.style.bottom = '0';
+        document.getElementById('close-bottom-sheet').addEventListener('click', () => {
+            const videoElement = document.querySelector('video');
+            if (videoElement) {
+                videoElement.pause();
+                videoElement.currentTime = 0;
+            }
+            toggleBottomSheet();
+        });
+    }
+    isBottomSheetOpen = !isBottomSheetOpen;
+}
+
+// --- Popup Content Generator ---
+function createPopupContent(data) {
+    let html = `<h3>${data.name || ''}</h3>`;
+    if (data.image) html += `<img src="${data.image}" alt="${data.name || ''}" />`;
+    if (data.tldr) html += `<p>${data.tldr}</p>`;
+    if (data.videoUrl) html += `<p><a href="${data.videoUrl}" target="_blank">Watch Video</a></p>`;
+    return html;
+}
+
+// --- Map Link Generator ---
+function generateMapLink(latitude, longitude, zoomLevel) {
+    const baseUrl = window.location.origin + window.location.pathname;
+    const params = `?lat=${latitude}&lng=${longitude}&zoom=${zoomLevel}`;
+    return baseUrl + params;
+}
+
+// --- Map Initialization ---
 function initializeMap() {
-    var map = new mapboxgl.Map({
+    const map = new mapboxgl.Map({
         container: 'map',
         style: 'mapbox://styles/freddomate/cm8q8wtwx00a801qzdayccnvz',
-        center: [-1.0835104081554843, 53.95838745239521], // Default York coordinates
-        zoom: 15,
+        center: initialCenter,
+        zoom: initialZoom,
         pitch: 45,
-        bearing: -17.6,
+        bearing: -17.6
     });
 
-    // Add other Mapbox-related code here (e.g., markers, controls)
-    addBuildingMarkers();
-addLocationMarkers();
-
-    map.on('load', () => {
-    geolocate.trigger();
-});
-
-    map.on('click', (e) => {
-    const currentLat = e.lngLat.lat;
-    const currentLng = e.lngLat.lng;
-    const currentZoom = map.getZoom();
-
-    const mapLink = generateMapLink(currentLat, currentLng, currentZoom);
-    console.log('Map Link:', mapLink);
-    // You can display this link in a popup or share it with others
-});
-
-    // Add a zoom event listener to the map
-map.on('zoom', () => {
-    scaleMarkersBasedOnZoom();
-});
-
-    // Geolocation control
-const geolocate = new mapboxgl.GeolocateControl({
-  positionOptions: {
-    enableHighAccuracy: true
-  },
-  trackUserLocation: true,
-  showUserHeading: true,
-  showAccuracyCircle: false,
-  fitBoundsOptions: {
-    maxZoom: 15
-  },
-  showUserLocation: false
-});
-
-map.addControl(geolocate);
-
-// Create a single marker for user location
-const userLocationEl = document.createElement('div');
-userLocationEl.className = 'user-location-marker';
-
-const textEl = document.createElement('div');
-textEl.style.position = 'absolute';
-textEl.style.top = '50%';
-textEl.style.left = '50%';
-textEl.style.transform = 'translate(-50%, -50%)';
-textEl.style.fontFamily = 'Poppins, sans-serif';
-textEl.style.fontWeight = 'bold';
-textEl.style.fontSize = '10px';
-textEl.style.color = '#87CEFA';
-textEl.textContent = 'me';
-
-userLocationEl.appendChild(textEl);
-
-const userLocationMarker = new mapboxgl.Marker({element: userLocationEl})
-  .setLngLat([0, 0])
-  .addTo(map);
-
-geolocate.on('error', (e) => {
-  if (e.code === 1) {
-    console.log('Location access denied by user');
-  }
-});
-
-geolocate.on('geolocate', (e) => {
-  const lon = e.coords.longitude;
-  const lat = e.coords.latitude;
-  const position = [lon, lat];
-  console.log(position);
-
-  userLocationMarker.setLngLat(position);
-});
-
-    function addLocationMarkers() {
-locations.forEach(location => {
-    const { element: markerElement } = createCustomMarker(location.image, '#FFFFFF', true);
-    markerElement.className += ' location-marker';
-    const marker = new mapboxgl.Marker({
-        element: markerElement
-    })
-    .setLngLat(location.coords)
-    .addTo(map);
-
-    marker.getElement().addEventListener('click', () => {
-        map.getCanvas().style.cursor = 'pointer';
-        const contentHTML = createPopupContent(location); // Use the existing function to create the content
-        toggleBottomSheet(contentHTML);
+    // Add geolocate control
+    const geolocate = new mapboxgl.GeolocateControl({
+      positionOptions: { enableHighAccuracy: true },
+      trackUserLocation: true,
+      showUserHeading: true,
+      showAccuracyCircle: false,
+      fitBoundsOptions: { maxZoom: 15 },
+      showUserLocation: false
     });
-});
-     }
+    map.addControl(geolocate);
 
-function addBuildingMarkers() {
-    buildings.forEach(building => {
-        const outlineColor = building.colour === "yes" ? '#FF69B4' : '#FFFFFF'; // Pink if "colour" is "yes", otherwise white
-        const { element: markerElement } = createCustomMarker(building.image, outlineColor, false);
-        markerElement.className += ' building-marker';
+    // Create a single marker for user location
+    const userLocationEl = document.createElement('div');
+    userLocationEl.className = 'user-location-marker';
+    const textEl = document.createElement('div');
+    Object.assign(textEl.style, {
+        position: 'absolute',
+        top: '50%',
+        left: '50%',
+        transform: 'translate(-50%, -50%)',
+        fontFamily: 'Poppins, sans-serif',
+        fontWeight: 'bold',
+        fontSize: '10px',
+        color: '#87CEFA'
+    });
+    textEl.textContent = 'me';
+    userLocationEl.appendChild(textEl);
 
-        // Set z-index for markers with colour: "yes"
-        if (building.colour === "yes") {
-            markerElement.style.zIndex = '3';
-        }
-
-        const marker = new mapboxgl.Marker({
-            element: markerElement
-        })
-        .setLngLat(building.coords)
+    const userLocationMarker = new mapboxgl.Marker({ element: userLocationEl })
+        .setLngLat([0, 0])
         .addTo(map);
 
-        marker.getElement().addEventListener('click', () => {
-            map.getCanvas().style.cursor = 'pointer';
+    geolocate.on('geolocate', (e) => {
+        const lon = e.coords.longitude;
+        const lat = e.coords.latitude;
+        const position = [lon, lat];
+        userLocationMarker.setLngLat(position);
+    });
 
-            // Check for video URL
-            const videoUrl = building.videoUrl; // Assuming videoUrl is part of the building data
-            if (videoUrl) {
-                // Create a video element
-                const videoElement = document.createElement('video');
-                videoElement.src = videoUrl;
-                videoElement.style.display = 'none'; // Hide the video element
-                videoElement.controls = true;
-                videoElement.autoplay = true;
+    geolocate.on('error', (e) => {
+        if (e.code === 1) {
+            console.log('Location access denied by user');
+        }
+    });
 
-                // Append video to the body
-                document.body.appendChild(videoElement);
+    map.on('load', () => {
+        addBuildingMarkers(map);
+        addLocationMarkers(map);
+        geolocate.trigger();
+        scaleMarkersBasedOnZoom(map);
+    });
 
-                // Play the video and request fullscreen
-                videoElement.play();
-                if (videoElement.requestFullscreen) {
-                    videoElement.requestFullscreen();
-                } else if (videoElement.webkitRequestFullscreen) { // Safari
-                    videoElement.webkitRequestFullscreen();
-                } else if (videoElement.mozRequestFullScreen) { // Firefox
-                    videoElement.mozRequestFullScreen();
-                } else if (videoElement.msRequestFullscreen) { // IE/Edge
-                    videoElement.msRequestFullscreen();
-                }
+    map.on('zoom', () => {
+        scaleMarkersBasedOnZoom(map);
+    });
 
-                // Remove the video element once playback ends
-                videoElement.addEventListener('ended', () => {
-                    document.body.removeChild(videoElement);
-                });
-            } else {
-                console.error('Video URL not available for this building.');
-            }
+    map.on('click', (e) => {
+        const currentLat = e.lngLat.lat;
+        const currentLng = e.lngLat.lng;
+        const currentZoom = map.getZoom();
+        const mapLink = generateMapLink(currentLat, currentLng, currentZoom);
+        console.log('Map Link:', mapLink);
+    });
+
+    // --- Marker Logic ---
+    function addLocationMarkers(map) {
+        locations.forEach(location => {
+            const { element: markerElement } = createCustomMarker(location.image, '#FFFFFF', true);
+            markerElement.className += ' location-marker';
+            const marker = new mapboxgl.Marker({ element: markerElement })
+                .setLngLat(location.coords)
+                .addTo(map);
+
+            marker.getElement().addEventListener('click', () => {
+                map.getCanvas().style.cursor = 'pointer';
+                const contentHTML = createPopupContent(location);
+                toggleBottomSheet(contentHTML);
+            });
         });
-    });
-}
-    function scaleMarkersBasedOnZoom() {
-    const zoomLevel = map.getZoom(); // Get the current zoom level
-    const markerSize = (zoomLevel - 13) + 'em'; // Linear scaling formula
+    }
 
-    // Update the size of location markers
-    document.querySelectorAll('.location-marker').forEach(marker => {
-        marker.style.width = markerSize;
-        marker.style.height = markerSize;
-    });
+    function addBuildingMarkers(map) {
+        buildings.forEach(building => {
+            const outlineColor = building.colour === "yes" ? '#FF69B4' : '#FFFFFF';
+            const { element: markerElement } = createCustomMarker(building.image, outlineColor, false);
+            markerElement.className += ' building-marker';
+            if (building.colour === "yes") markerElement.style.zIndex = '3';
 
-    // Update the size of building markers
-    document.querySelectorAll('.building-marker').forEach(marker => {
-        marker.style.width = markerSize;
-        marker.style.height = markerSize;
-    });
-}
+            const marker = new mapboxgl.Marker({ element: markerElement })
+                .setLngLat(building.coords)
+                .addTo(map);
 
-    // Function to dynamically resize markers based on zoom level
-function scaleMarkersBasedOnZoom() {
-    const zoomLevel = map.getZoom(); // Get the current zoom level
-    const markerSize = (zoomLevel - 13) + 'em'; // Linear scaling formula
+            marker.getElement().addEventListener('click', () => {
+                map.getCanvas().style.cursor = 'pointer';
+                const videoUrl = building.videoUrl;
+                if (videoUrl) {
+                    const videoElement = document.createElement('video');
+                    videoElement.src = videoUrl;
+                    videoElement.style.display = 'none';
+                    videoElement.controls = true;
+                    videoElement.autoplay = true;
+                    document.body.appendChild(videoElement);
+                    videoElement.play();
+                    if (videoElement.requestFullscreen) videoElement.requestFullscreen();
+                    videoElement.addEventListener('ended', () => {
+                        document.body.removeChild(videoElement);
+                    });
+                } else {
+                    const contentHTML = createPopupContent(building);
+                    toggleBottomSheet(contentHTML);
+                }
+            });
+        });
+    }
 
-    // Update the size of location markers
-    document.querySelectorAll('.location-marker').forEach(marker => {
-        marker.style.width = markerSize;
-        marker.style.height = markerSize;
-    });
-
-    // Update the size of building markers
-    document.querySelectorAll('.building-marker').forEach(marker => {
-        marker.style.width = markerSize;
-        marker.style.height = markerSize;
-    });
+    function scaleMarkersBasedOnZoom(map) {
+        const zoomLevel = map.getZoom();
+        const markerSize = (zoomLevel - 13) + 'em';
+        document.querySelectorAll('.location-marker, .building-marker').forEach(marker => {
+            marker.style.width = markerSize;
+            marker.style.height = markerSize;
+        });
+    }
 }
 
 
