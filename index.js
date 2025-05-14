@@ -195,53 +195,11 @@ function toggleBottomSheet(contentHTML) {
 
 // --- Popup Content Generator ---
 function createPopupContent(data) {
-    const data = isFirebase ? location : location;
-    const eventsData = isFirebase ? data.events : data.events;
-
-    // Check if videoUrl property exists and is not empty
-    const videoUrl = data.videoUrl ? data.videoUrl : null;
-
-    // Exclude the "tldr" and image if the videoUrl is present
-const tldrContent = !videoUrl
-    ? `<p style="background: #f9f9f9; padding: 10px; margin-top: 10px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); font-size: 15px; color: #7C6E4D;">${data.tldr}</p>`
-    : '';
-
-    const imageContent = !videoUrl
-        ? `<img src="${data.image || data.imageUrl}" alt="${data.name}" style="width: 80px; height: 80px; object-fit: cover; border-radius: 8px; margin-bottom: 10px;" />`
-        : '';
-
-    return `
-        <div style="text-align: center; padding: 0; margin: 0;">
-            <p style="font-size: 15px; font-weight: bold; margin-bottom: 10px;">${data.description}</p>
-            ${imageContent}
-            <div style="font-size: 20px; font-weight: bold; margin-top: 0;">${data.name}</div>
-            <div style="font-size: 15px; color: #666;">${data.occupation || data.dates}</div>
-            ${tldrContent}
-            ${eventsData && eventsData.length ? `
-                <div style="margin-top: 10px;">
-                    ${eventsData.map(event => `
-                        <div style="background: #f9f9f9; border: 1px solid #ddd; border-radius: 8px; padding: 10px; margin-bottom: 10px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
-                            <strong style="color: #7C6E4D; font-size: 15px;">${event.date || event.label}</strong>: <span style="font-size: 15px;">${event.description}</span>
-                        </div>
-                    `).join('')}
-                </div>
-            ` : ''}
-            ${videoUrl ? `
-                <div style="margin-top: 10px; margin-bottom: 10px; text-align: center;">
-                    <video 
-                        width="300" 
-                        height="464" 
-                        autoplay 
-                        controlsList="nodownload nofullscreen noremoteplayback" 
-                        controls 
-                        style="display: block; margin: 0 auto;">
-                        <source src="${videoUrl}" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                </div>
-            ` : ''}
-        </div>
-    `;
+    let html = `<h3>${data.name || ''}</h3>`;
+    if (data.image) html += `<img src="${data.image}" alt="${data.name || ''}" />`;
+    if (data.tldr) html += `<p>${data.tldr}</p>`;
+    if (data.videoUrl) html += `<p><a href="${data.videoUrl}" target="_blank">Watch Video</a></p>`;
+    return html;
 }
 
 
