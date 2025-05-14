@@ -347,14 +347,6 @@ function initializeMap() {
 }
 
 
-// Call the function initially to set marker sizes based on the initial zoom level
-scaleMarkersBasedOnZoom();
-    
-}
-
-// Toggle functionality for the bottom sheet
-
-
 document.addEventListener('DOMContentLoaded', () => {
     // Create the button
     const button = document.createElement('button');
