@@ -1,16 +1,16 @@
 // Import statements
-import { buildings } from './buildings.js';
-import { locations } from './locations.js';
+import { buildings } from '/buildings.js';
+import { locations } from '/locations.js';
 
 // Dynamically load Mapbox GL JS CSS
 const mapboxCSS = document.createElement('link');
-mapboxCSS.href = "./assets/mapbox-gl/mapbox-gl.css";
+mapboxCSS.href = "/assets/mapbox-gl/mapbox-gl.css";
 mapboxCSS.rel = "stylesheet";
 document.head.appendChild(mapboxCSS);
 
 // Dynamically load Mapbox GL JS JavaScript
 const mapboxScript = document.createElement('script');
-mapboxScript.src = "./assets/mapbox-gl/mapbox-gl.js";
+mapboxScript.src = "/assets/mapbox-gl/mapbox-gl.js";
 mapboxScript.defer = true;
 mapboxScript.onload = () => {
     // Initialize Mapbox after the script is loaded
