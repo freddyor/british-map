@@ -29,7 +29,7 @@ const yorkBounds = [
 function initializeMap() {
     var map = new mapboxgl.Map({
         container: 'map',
-        style: 'mapbox://styles/freddomate/cm8q8wtwx00a801qzdayccnvz',
+        style: 'mapbox://styles/freddomate/cm8q8wtwx00a801qzdayccnvz?optimize=true',
         center: [-1.0835, 53.9584],
         zoom: 15,
         pitch: 45,
