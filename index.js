@@ -2,6 +2,44 @@
 import { buildings } from './buildings.js';
 import { locations } from './locations.js';
 
+// Dynamically load Mapbox GL JS CSS
+const mapboxCSS = document.createElement('link');
+mapboxCSS.href = "https://api.mapbox.com/mapbox-gl-js/v3.12.0/mapbox-gl.css";
+mapboxCSS.rel = "stylesheet";
+document.head.appendChild(mapboxCSS);
+
+// Dynamically load Mapbox GL JS JavaScript
+const mapboxScript = document.createElement('script');
+mapboxScript.src = "https://api.mapbox.com/mapbox-gl-js/v3.12.0/mapbox-gl.js";
+mapboxScript.defer = true;
+mapboxScript.onload = () => {
+    // Initialize Mapbox after the script is loaded
+    mapboxgl.accessToken = 'pk.eyJ1IjoiZnJlZGRvbWF0ZSIsImEiOiJjbTc1bm5zYnQwaG1mMmtxeDdteXNmeXZ0In0.PuDNORq4qExIJ_fErdO_8g';
+    initializeMap(); // Call function to set up your map
+};
+document.body.appendChild(mapboxScript);
+
+const yorkBounds = [
+  [-1.170, 53.930], // Southwest corner (lng, lat)
+  [-1.010, 54.010]  // Northeast corner (lng, lat)
+];
+
+
+// Function to initialize the map
+function initializeMap() {
+    var map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/freddomate/cm8q8wtwx00a801qzdayccnvz?optimize=true',
+        center: [-1.0835, 53.9584],
+        zoom: 15,
+        pitch: 45,
+        bearing: -17.6,
+        maxBounds: yorkBounds,
+        minZoom: 11,
+        maxZoom: 17
+    });
+
+    // Add other Mapbox-related code here (e.g., markers, controls)
 
     map.on('load', () => {
         geolocate.trigger();
