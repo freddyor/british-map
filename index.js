@@ -46,11 +46,10 @@ addLocationMarkers();
     map.on('load', () => {
         geolocate.trigger();
 
-        // Add York ward boundaries
-        map.addSource('york-wards', {
-            type: 'geojson',
-            data: '/data/ward_boundaries.geojson'
-        });
+    map.addSource('Ward_boundaries-8vvo78', {
+    type: 'vector',
+    url: 'mapbox://freddomate.345l7u6c' // Replace with your actual tileset ID
+});
 
 
     });
