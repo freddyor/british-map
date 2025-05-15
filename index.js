@@ -37,7 +37,7 @@ function initializeMap() {
         bearing: -17.6,
         maxBounds: yorkBounds,
         minZoom: 11,
-        maxZoom: 17
+        maxZoom: 20
     });
 
     // Add other Mapbox-related code here (e.g., markers, controls)
