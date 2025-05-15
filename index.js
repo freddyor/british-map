@@ -42,19 +42,25 @@ function initializeMap() {
 
     // Add other Mapbox-related code here (e.g., markers, controls)
 
-    map.on('load', () => {
-        geolocate.trigger();
+ map.on('load', () => {
+    // Remove the loading screen
+    const loadingScreen = document.getElementById("loading-screen");
+    if (loadingScreen) {
+        loadingScreen.style.display = "none";
+    }
+
+    // Trigger geolocation and continue with existing logic
+    geolocate.trigger();
 
     map.addSource('Ward_boundaries-8vvo78', {
-    type: 'vector',
-    url: 'mapbox://freddomate.345l7u6c' // Replace with your actual tileset ID
-});
-
-            // Add other Mapbox-related code here (e.g., markers, controls)
-    addBuildingMarkers();
-addLocationMarkers();
-
+        type: 'vector',
+        url: 'mapbox://freddomate.345l7u6c' // Replace with your actual tileset ID
     });
+
+    // Add other Mapbox-related code here (e.g., markers, controls)
+    addBuildingMarkers();
+    addLocationMarkers();
+});
 
     map.on('click', (e) => {
     const currentLat = e.lngLat.lat;
@@ -237,21 +243,7 @@ scaleMarkersBasedOnZoom();
     
 }
 
-document.addEventListener("DOMContentLoaded", function () {
-    const loadingScreen = document.getElementById("loading-screen");
 
-    // Remove the loading screen when the map is fully loaded
-    map.on('load', () => {
-        loadingScreen.style.display = "none";
-    });
-
-    // Fallback: If the map fails to load, remove the loading screen after 5 seconds
-    setTimeout(() => {
-        if (loadingScreen.style.display !== "none") {
-            loadingScreen.style.display = "none";
-        }
-    }, 5000);
-});
 
 // Function to parse URL parameters
 function getUrlParameter(name) {
