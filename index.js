@@ -15,7 +15,6 @@ function initializeMap() {
     addBuildingMarkers();
 addLocationMarkers();
 
-    });
 
     map.on('click', (e) => {
     const currentLat = e.lngLat.lat;
