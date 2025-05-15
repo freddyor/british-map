@@ -10,11 +10,11 @@ import { locations } from './locations.js';
     type: 'vector',
     url: 'mapbox://freddomate.345l7u6c' // Replace with your actual tileset ID
 });
-function initializeMap() {
-            // Add other Mapbox-related code here (e.g., markers, controls)
-    addBuildingMarkers();
-addLocationMarkers();
 
+           addBuildingMarkers();
+addLocationMarkers();
+        
+function initializeMap() {
 
     map.on('click', (e) => {
     const currentLat = e.lngLat.lat;
