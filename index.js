@@ -52,25 +52,7 @@ addLocationMarkers();
             data: '/data/ward_boundaries.geojson'
         });
 
-        map.addLayer({
-            id: 'york-wards-fill',
-            type: 'fill',
-            source: 'york-wards',
-            paint: {
-                'fill-color': '#088',
-                'fill-opacity': 0.2
-            }
-        });
 
-        map.addLayer({
-            id: 'york-wards-outline',
-            type: 'line',
-            source: 'york-wards',
-            paint: {
-                'line-color': '#000',
-                'line-width': 1.5
-            }
-        });
     });
 
     map.on('click', (e) => {
