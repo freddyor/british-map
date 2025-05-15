@@ -40,8 +40,6 @@ function initializeMap() {
     });
 
     // Add other Mapbox-related code here (e.g., markers, controls)
-    addBuildingMarkers();
-addLocationMarkers();
 
     map.on('load', () => {
         geolocate.trigger();
@@ -51,6 +49,9 @@ addLocationMarkers();
     url: 'mapbox://freddomate.345l7u6c' // Replace with your actual tileset ID
 });
 
+            // Add other Mapbox-related code here (e.g., markers, controls)
+    addBuildingMarkers();
+addLocationMarkers();
 
     });
 
