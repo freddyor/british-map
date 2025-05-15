@@ -2,21 +2,6 @@
 import { buildings } from './buildings.js';
 import { locations } from './locations.js';
 
-document.addEventListener("DOMContentLoaded", function () {
-    const loadingScreen = document.getElementById("loading-screen");
-
-    // Remove the loading screen when the map is fully loaded
-    map.on('load', () => {
-        loadingScreen.style.display = "none";
-    });
-
-    // Fallback: If the map fails to load, remove the loading screen after 5 seconds
-    setTimeout(() => {
-        if (loadingScreen.style.display !== "none") {
-            loadingScreen.style.display = "none";
-        }
-    }, 5000);
-});
 
 // Dynamically load Mapbox GL JS CSS
 const mapboxCSS = document.createElement('link');
@@ -251,6 +236,22 @@ function scaleMarkersBasedOnZoom() {
 scaleMarkersBasedOnZoom();
     
 }
+
+document.addEventListener("DOMContentLoaded", function () {
+    const loadingScreen = document.getElementById("loading-screen");
+
+    // Remove the loading screen when the map is fully loaded
+    map.on('load', () => {
+        loadingScreen.style.display = "none";
+    });
+
+    // Fallback: If the map fails to load, remove the loading screen after 5 seconds
+    setTimeout(() => {
+        if (loadingScreen.style.display !== "none") {
+            loadingScreen.style.display = "none";
+        }
+    }, 5000);
+});
 
 // Function to parse URL parameters
 function getUrlParameter(name) {
