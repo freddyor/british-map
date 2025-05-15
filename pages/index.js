@@ -1,7 +1,7 @@
 // pages/index.js
 import { useEffect } from 'react';
-import { buildings } from '../buildings.js';
-import { locations } from '../locations.js';
+import { buildings } from '/buildings.js';
+import { locations } from '/locations.js';
 
 export default function Home() {
   useEffect(() => {
