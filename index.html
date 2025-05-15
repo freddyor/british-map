@@ -9,9 +9,6 @@
     <!-- Optional: Remove if not necessary -->
     <link rel="icon" href="videos/favicon.png" type="image/png" sizes="32x32">
 
-    <link href="https://api.mapbox.com/mapbox-gl-js/v3.12.0/mapbox-gl.css" rel="stylesheet">
-<script src="https://api.mapbox.com/mapbox-gl-js/v3.12.0/mapbox-gl.js" defer></script>
-
         <style>
         body, html {
             margin: 0;
@@ -34,32 +31,6 @@
 </head>
 <body>
     <div id="map"></div>
-
-    <script>
-    document.addEventListener('DOMContentLoaded', () => {
-        mapboxgl.accessToken = 'pk.eyJ1IjoiZnJlZGRvbWF0ZSIsImEiOiJjbTc1bm5zYnQwaG1mMmtxeDdteXNmeXZ0In0.PuDNORq4qExIJ_fErdO_8g';
-        const yorkBounds = [
-            [-1.170, 53.930], // Southwest corner (lng, lat)
-            [-1.010, 54.010]  // Northeast corner (lng, lat)
-        ];
-
-        const map = new mapboxgl.Map({
-            container: 'map',
-            style: 'mapbox://styles/freddomate/cm8q8wtwx00a801qzdayccnvz?optimize=true',
-            center: [-1.0835, 53.9584],
-            zoom: 15,
-            pitch: 45,
-            bearing: -17.6,
-            maxBounds: yorkBounds,
-            minZoom: 11,
-            maxZoom: 17
-        });
-
-        map.on('load', () => {
-            console.log("Map is loaded.");
-        });
-    });
-</script>
 
     <!-- Your custom script -->
     <script type="module" src="index.js"></script>
