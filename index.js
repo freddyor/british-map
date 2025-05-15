@@ -19,15 +19,24 @@ mapboxScript.onload = () => {
 };
 document.body.appendChild(mapboxScript);
 
+const yorkBounds = [
+  [-1.170, 53.930], // Southwest corner (lng, lat)
+  [-1.010, 54.010]  // Northeast corner (lng, lat)
+];
+
+
 // Function to initialize the map
 function initializeMap() {
     var map = new mapboxgl.Map({
         container: 'map',
         style: 'mapbox://styles/freddomate/cm8q8wtwx00a801qzdayccnvz',
-        center: [-1.0835104081554843, 53.95838745239521], // Default York coordinates
+        center: [-1.0835, 53.9584],
         zoom: 15,
         pitch: 45,
         bearing: -17.6,
+        maxBounds: yorkBounds,
+        minZoom: 11,
+        maxZoom: 17
     });
 
     // Add other Mapbox-related code here (e.g., markers, controls)
@@ -35,8 +44,34 @@ function initializeMap() {
 addLocationMarkers();
 
     map.on('load', () => {
-    geolocate.trigger();
-});
+        geolocate.trigger();
+
+        // Add York ward boundaries
+        map.addSource('york-wards', {
+            type: 'geojson',
+            data: '/data/ward_boundaries.geojson'
+        });
+
+        map.addLayer({
+            id: 'york-wards-fill',
+            type: 'fill',
+            source: 'york-wards',
+            paint: {
+                'fill-color': '#088',
+                'fill-opacity': 0.2
+            }
+        });
+
+        map.addLayer({
+            id: 'york-wards-outline',
+            type: 'line',
+            source: 'york-wards',
+            paint: {
+                'line-color': '#000',
+                'line-width': 1.5
+            }
+        });
+    });
 
     map.on('click', (e) => {
     const currentLat = e.lngLat.lat;
