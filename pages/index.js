@@ -16,7 +16,7 @@ export default function Home() {
     mapboxScript.src = "/assets/mapbox-gl/mapbox-gl.js";
     mapboxScript.defer = true;
     mapboxScript.onload = () => {
-      mapboxgl.accessToken = 'your-access-token-here';
+      mapboxgl.accessToken = 'pk.eyJ1IjoiZnJlZGRvbWF0ZSIsImEiOiJjbTc1bm5zYnQwaG1mMmtxeDdteXNmeXZ0In0.PuDNORq4qExIJ_fErdO_8g';
       initializeMap(); // Call function to set up your map
     };
     document.body.appendChild(mapboxScript);
