@@ -556,17 +556,6 @@ export const locations = [
     ]
   },
   {
-    "name": "Henry Sotheran Ltd",
-    "coords": [-1.0840508854181263, 53.95925903633209],
-    "image": "https://upload.wikimedia.org/wikipedia/commons/8/8a/Maisons_18-22_Coney_Street_York_1.jpg",
-    "description": "",
-    "occupation": "1500",
-    "tldr": "In the 19th century, numbers 16 and 18 were ran by well-know bookshop Henry Sotheran.",
-    "events": [
-      { "date": "LEGACY", "description": "Founded in these buildings, Henry Sotheran Ltd is a bookshop in London that claims to be the oldest continuously operating bookshop in the UK and oldest antiquarian bookshop in the world 📚" }
-    ]
-  },
-  {
     "name": "St Helen's Square",
     "coords": [-1.0844389540252952, 53.960155934644228],
     "image": "https://www.britmap.com/videos/IMG_5736.webp",
