@@ -25,8 +25,6 @@ const yorkBounds = [
   [-1.010, 54.010]  // Northeast corner (lng, lat)
 ];
 
- addBuildingMarkers();
-    addLocationMarkers();
 // Function to initialize the map
 function initializeMap() {
     var map = new mapboxgl.Map({
@@ -56,7 +54,8 @@ function initializeMap() {
         type: 'vector',
         url: 'mapbox://freddomate.345l7u6c' // Replace with your actual tileset ID
     });
-
+addBuildingMarkers();
+    addLocationMarkers();
     // Add other Mapbox-related code here (e.g., markers, controls)
 });
 
