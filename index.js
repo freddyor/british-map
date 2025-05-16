@@ -178,6 +178,7 @@ function addBuildingMarkers() {
                 videoElement.src = videoUrl;
                 videoElement.style.display = 'none'; // Hide the video element
                 videoElement.controls = true;
+                videoElement.preload = 'auto';
                 videoElement.autoplay = true;
 
                 // Append video to the body
