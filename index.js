@@ -167,6 +167,9 @@ function addBuildingMarkers() {
         marker.getElement().addEventListener('click', () => {
             map.getCanvas().style.cursor = 'pointer';
 
+             // Add spinning animation
+    const markerElement = marker.getElement();
+    markerElement.classList.add('spinning');
             // Check for video URL
             const videoUrl = building.videoUrl; // Assuming videoUrl is part of the building data
             if (videoUrl) {
@@ -179,6 +182,11 @@ function addBuildingMarkers() {
 
                 // Append video to the body
                 document.body.appendChild(videoElement);
+
+                  // Remove spinning class when video starts playing
+        videoElement.addEventListener('play', () => {
+            markerElement.classList.remove('spinning');
+        });
 
                 // Play the video and request fullscreen
                 videoElement.play();
@@ -411,6 +419,14 @@ stylePopup.innerHTML = `
   #bottom-sheet p {
     margin-bottom: 10px;
   }
+
+  @keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+.spinning {
+  animation: spin 1s linear infinite;
+}
 `;
 
 // Append the style to the document
