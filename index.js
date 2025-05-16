@@ -25,7 +25,8 @@ const yorkBounds = [
   [-1.010, 54.010]  // Northeast corner (lng, lat)
 ];
 
-
+ addBuildingMarkers();
+    addLocationMarkers();
 // Function to initialize the map
 function initializeMap() {
     var map = new mapboxgl.Map({
@@ -39,7 +40,6 @@ function initializeMap() {
         minZoom: 11,
         maxZoom: 19,
     });
-
     // Add other Mapbox-related code here (e.g., markers, controls)
 
  map.on('load', () => {
@@ -58,8 +58,6 @@ function initializeMap() {
     });
 
     // Add other Mapbox-related code here (e.g., markers, controls)
-    addBuildingMarkers();
-    addLocationMarkers();
 });
 
     map.on('click', (e) => {
