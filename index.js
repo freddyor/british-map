@@ -37,7 +37,7 @@ function initializeMap() {
         bearing: -17.6,
         maxBounds: yorkBounds,
         minZoom: 11,
-        maxZoom: 20
+        maxZoom: 19,
     });
 
     // Add other Mapbox-related code here (e.g., markers, controls)
@@ -218,25 +218,6 @@ function addBuildingMarkers() {
         marker.style.height = markerSize;
     });
 }
-
-    // Function to dynamically resize markers based on zoom level
-function scaleMarkersBasedOnZoom() {
-    const zoomLevel = map.getZoom(); // Get the current zoom level
-    const markerSize = (zoomLevel - 13) + 'em'; // Linear scaling formula
-
-    // Update the size of location markers
-    document.querySelectorAll('.location-marker').forEach(marker => {
-        marker.style.width = markerSize;
-        marker.style.height = markerSize;
-    });
-
-    // Update the size of building markers
-    document.querySelectorAll('.building-marker').forEach(marker => {
-        marker.style.width = markerSize;
-        marker.style.height = markerSize;
-    });
-}
-
 
 // Call the function initially to set marker sizes based on the initial zoom level
 scaleMarkersBasedOnZoom();
