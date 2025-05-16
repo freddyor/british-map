@@ -168,8 +168,9 @@ function addBuildingMarkers() {
             map.getCanvas().style.cursor = 'pointer';
 
              // Add spinning animation
-    const markerElement = marker.getElement();
-    markerElement.classList.add('spinning');
+  const markerElement = marker.getElement();
+    markerElement.classList.add('spinning-outline');
+
             // Check for video URL
             const videoUrl = building.videoUrl; // Assuming videoUrl is part of the building data
             if (videoUrl) {
@@ -185,8 +186,8 @@ function addBuildingMarkers() {
                 document.body.appendChild(videoElement);
 
                   // Remove spinning class when video starts playing
-        videoElement.addEventListener('play', () => {
-            markerElement.classList.remove('spinning');
+              videoElement.addEventListener('play', () => {
+            markerElement.classList.remove('spinning-outline');
         });
 
                 // Play the video and request fullscreen
@@ -202,12 +203,14 @@ function addBuildingMarkers() {
                 }
 
                 // Remove the video element once playback ends
-                videoElement.addEventListener('ended', () => {
-                    document.body.removeChild(videoElement);
-                });
-            } else {
-                console.error('Video URL not available for this building.');
-            }
+        // Remove the video element once playback ends
+        videoElement.addEventListener('ended', () => {
+            document.body.removeChild(videoElement);
+        });
+    } else {
+        console.error('Video URL not available for this building.');
+        markerElement.classList.remove('spinning-outline');
+    }
         });
     });
 }
@@ -421,12 +424,31 @@ stylePopup.innerHTML = `
     margin-bottom: 10px;
   }
 
-  @keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+.spinning-outline {
+    position: relative; /* Ensure the pseudo-element is positioned relative to the marker */
 }
-.spinning {
-  animation: spin 1s linear infinite;
+
+.spinning-outline::before {
+    content: ''; /* Required for the pseudo-element to appear */
+    position: absolute;
+    top: -4px; /* Adjust based on the spacing desired */
+    left: -4px;
+    right: -4px;
+    bottom: -4px;
+    border: 4px dashed #FF69B4; /* Dashed border with your chosen color */
+    border-radius: 50%; /* Ensures it's a circle */
+    animation: spinOutline 1s linear infinite; /* Adds the spinning animation */
+    z-index: -1; /* Ensures the spinning border is behind the marker content */
+}
+
+/* Keyframe animation for spinning */
+@keyframes spinOutline {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
 }
 `;
 
