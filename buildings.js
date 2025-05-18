@@ -7,7 +7,6 @@ export const buildings = [
     "occupation": " ",
     "videoUrl": "https://www.britmap.com/videos/Captions_ED3D9E(1).mp4",
     "tldr": " ",
-    "posterUrl": "https://msg317.com/wp-content/uploads/2024/02/instagram-sizes-b-2024-576x1024.png",
     "events": [  ]
   },
                      {
@@ -38,6 +37,7 @@ export const buildings = [
     "occupation": "1866-?",
     "videoUrl": "https://www.britmap.com/videos/Captions_7978BD.mp4", 
     "tldr": "",
+    "posterUrl": "https://www.britmap.com/videosIMG_5996.png",
     "events": []
   },
        {
