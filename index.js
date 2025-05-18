@@ -712,10 +712,13 @@ document.addEventListener('DOMContentLoaded', () => {
     dropdownContent.style.fontSize = '14px';
     dropdownContent.style.lineHeight = '1.25'; // Slightly reduce line spacing
     dropdownContent.style.zIndex = '10000'; // Ensure it goes above everything else
-    dropdownContent.style.maxWidth = '300px'; // Reduce width
-    dropdownContent.style.textAlign = 'center'; // Center align all content
-    dropdownContent.style.overflowY = 'auto';
-    dropdownContent.style.bottom = '50px'; // New line
+dropdownContent.style.maxWidth = '300px';
+dropdownContent.style.textAlign = 'center';
+dropdownContent.style.minHeight = '300px'; // add this
+dropdownContent.style.height = '400px'; // add this (adjust as needed)
+dropdownContent.style.maxHeight = '600px'; // to allow for more if needed
+dropdownContent.style.overflowY = 'auto';
+dropdownContent.style.bottom = '50px';
 
     dropdownContent.innerHTML = `
             <button 
@@ -726,7 +729,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 padding: 10px 20px; 
                 font-size: 14px; 
                 font-weight: bold; 
-                border: none; 
+                border: none;
+                line-height: 1.25
                 border-radius: 8px; 
                 cursor: pointer; 
                 text-align: center;
