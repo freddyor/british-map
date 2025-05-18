@@ -250,16 +250,18 @@ marker.getElement().addEventListener('click', () => {
     // Close button
     const closeBtn = document.createElement('button');
     closeBtn.textContent = '❌';
-    closeBtn.style.position = 'absolute';
-    closeBtn.style.top = '30px';
-    closeBtn.style.right = '20px';
-    closeBtn.style.fontSize = '2rem';
-    closeBtn.style.background = '#000';
-    closeBtn.style.color = '#fff';
-    closeBtn.style.border = 'none';
-    closeBtn.style.borderRadius = '50%';
-    closeBtn.style.cursor = 'pointer';
-    closeBtn.style.zIndex = '100001';
+closeBtn.style.position = 'absolute';
+closeBtn.style.top = '-18px';         // Negative to overlap edge
+closeBtn.style.right = '-18px';       // Negative to overlap edge
+closeBtn.style.width = '36px';
+closeBtn.style.height = '36px';
+closeBtn.style.background = '#000';
+closeBtn.style.color = '#fff';
+closeBtn.style.border = 'none';
+closeBtn.style.borderRadius = '50%';
+closeBtn.style.cursor = 'pointer';
+closeBtn.style.fontSize = '1.5rem';
+closeBtn.style.zIndex = '100001';
     closeBtn.onclick = () => overlay.remove();
 
     // Swipe down to close (touch devices)
@@ -282,8 +284,8 @@ marker.getElement().addEventListener('click', () => {
     posterContainer.appendChild(posterImg);
     posterContainer.appendChild(playBtn);
     posterContainer.appendChild(spinner);
-    overlay.appendChild(posterContainer);
-    overlay.appendChild(closeBtn);
+    posterContainer.appendChild(closeBtn);
+overlay.appendChild(posterContainer);
     document.body.appendChild(overlay);
 
     // Play button logic (iOS/Android/desktop compatible)
