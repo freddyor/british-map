@@ -161,12 +161,12 @@ function addBuildingMarkers() {
         .setLngLat(building.coords)
         .addTo(map);
 
-  marker.getElement().addEventListener('click', () => {
+ marker.getElement().addEventListener('click', () => {
     map.getCanvas().style.cursor = 'pointer';
 
     const videoUrl = building.videoUrl;
     if (videoUrl) {
-        // Remove any existing video overlays if present
+        // Remove any existing video elements
         document.querySelectorAll('.fullscreen-video').forEach(el => el.remove());
 
         // Create the video element
@@ -185,30 +185,29 @@ function addBuildingMarkers() {
         videoElement.controls = true;
         videoElement.preload = 'auto';
 
-        // Append to DOM immediately, before playback
+        // Append to DOM immediately
         document.body.appendChild(videoElement);
 
-        // Try to play and request fullscreen as soon as possible
-        videoElement.play().catch(() => {}); // Some browsers require user gesture
+        // Play and request fullscreen ASAP
+        videoElement.play().catch(() => {}); // Ignore autoplay errors
         if (videoElement.requestFullscreen) {
             videoElement.requestFullscreen();
         } else if (videoElement.webkitRequestFullscreen) {
             videoElement.webkitRequestFullscreen();
-        } else if (videoElement.mozRequestFullScreen) {
-            videoElement.mozRequestFullScreen();
-        } else if (videoElement.msRequestFullscreen) {
-            videoElement.msRequestFullscreen();
         }
 
-        // Remove video element after playback ends or on fullscreen exit
-        videoElement.addEventListener('ended', () => {
+        // Remove video when playback ends or fullscreen is exited (swipe down)
+        function cleanup() {
+            videoElement.pause();
             videoElement.remove();
-            if (document.fullscreenElement) document.exitFullscreen();
-        });
-        document.addEventListener('fullscreenchange', () => {
+        }
+
+        videoElement.addEventListener('ended', cleanup);
+
+        document.addEventListener('fullscreenchange', function handler() {
             if (!document.fullscreenElement) {
-                videoElement.pause();
-                videoElement.remove();
+                cleanup();
+                document.removeEventListener('fullscreenchange', handler);
             }
         });
     } else {
