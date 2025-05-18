@@ -296,7 +296,7 @@ playBtn.onclick = () => {
     if (posterUrl) videoElement.poster = posterUrl;
     videoElement.style.maxWidth = '90vw';
     videoElement.style.maxHeight = '80vh';
-    posterContainer.style.marginTop = '10px'; // Adjust the value as needed
+    posterContainer.style.marginTop = '30px'; // Adjust the value as needed
     videoElement.style.borderRadius = '14px';
     videoElement.controls = true;
     videoElement.preload = 'auto';
