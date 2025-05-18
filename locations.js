@@ -169,7 +169,7 @@ export const locations = [
  {
     name: "Castlegate House",
     coords: [-1.0805699292451987, 53.95674650725818],
-    image: "https://www.britmap.com/videos/IMG_.webp",
+    image: "https://www.britmap.com/videos/IMG_6051.jpeg",
     description: "",
     occupation: "1763",
     tldr: "The house is currently used as a Masonic temple.",
