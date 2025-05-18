@@ -681,7 +681,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const button = document.createElement('button');
     button.id = 'custom-bmc-button';
     button.className = 'custom-button';
-    button.textContent = '❤️ Monthly donors will keep this site running ❤️';
+    button.textContent = '❤️ PLEASE READ ❤️';
 
     // Create the dropdown content
     const dropdownContent = document.createElement('div');
