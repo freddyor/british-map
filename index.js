@@ -202,7 +202,7 @@ marker.getElement().addEventListener('click', () => {
 
     // Play button
     const playBtn = document.createElement('button');
-    playBtn.innerHTML = '►';
+    playBtn.innerHTML = '▶';
     playBtn.style.position = 'absolute';
     playBtn.style.top = '50%';
     playBtn.style.left = '50%';
@@ -247,7 +247,7 @@ marker.getElement().addEventListener('click', () => {
 
     // Close button
     const closeBtn = document.createElement('button');
-    closeBtn.textContent = '✖';
+    closeBtn.textContent = '❌';
     closeBtn.style.position = 'absolute';
     closeBtn.style.top = '30px';
     closeBtn.style.right = '40px';
