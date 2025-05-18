@@ -532,7 +532,7 @@ export const buildings = [
     "occupation": "1068",
               "subtitle": "William the Conqueror's secret 2nd castle",
     "tldr": " ",
-            "posterUrl": "https://www.britmap.com/videos/IMG_5998.jpeg",
+            "posterUrl": "https://www.britmap.com/videos/IMG_6010.jpeg",
     "events": [
     ]
   },
