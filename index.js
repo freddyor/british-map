@@ -195,8 +195,8 @@ marker.getElement().addEventListener('click', () => {
     const posterImg = document.createElement('img');
     posterImg.src = posterUrl || '';
     posterImg.alt = 'Video cover';
-    posterImg.style.maxWidth = '90vw';
-    posterImg.style.maxHeight = '80vh';
+    posterImg.style.maxWidth = '95vw';
+    posterImg.style.maxHeight = '90vh';
     posterImg.style.borderRadius = '14px';
     posterImg.style.display = 'block';
 
@@ -293,8 +293,8 @@ playBtn.onclick = () => {
     const videoElement = document.createElement('video');
     videoElement.src = videoUrl;
     if (posterUrl) videoElement.poster = posterUrl;
-    videoElement.style.maxWidth = '90vw';
-    videoElement.style.maxHeight = '80vh';
+    videoElement.style.maxWidth = '95vw';
+    videoElement.style.maxHeight = '90vh';
     videoElement.style.borderRadius = '14px';
     videoElement.controls = true;
     videoElement.preload = 'auto';
