@@ -161,54 +161,60 @@ function addBuildingMarkers() {
         .setLngLat(building.coords)
         .addTo(map);
 
-        marker.getElement().addEventListener('click', () => {
-            map.getCanvas().style.cursor = 'pointer';
+  marker.getElement().addEventListener('click', () => {
+    map.getCanvas().style.cursor = 'pointer';
 
-             // Add spinning animation
-  const markerElement = marker.getElement();
-    markerElement.classList.add('spinning-outline');
+    const videoUrl = building.videoUrl;
+    if (videoUrl) {
+        // Remove any existing video overlays if present
+        document.querySelectorAll('.fullscreen-video').forEach(el => el.remove());
 
-            // Check for video URL
-            const videoUrl = building.videoUrl; // Assuming videoUrl is part of the building data
-            if (videoUrl) {
-                // Create a video element
-                const videoElement = document.createElement('video');
-                videoElement.src = videoUrl;
-                videoElement.style.display = 'none'; // Hide the video element
-                videoElement.controls = true;
-                videoElement.preload = 'auto';
-                videoElement.autoplay = true;
+        // Create the video element
+        const videoElement = document.createElement('video');
+        videoElement.src = videoUrl;
+        videoElement.className = 'fullscreen-video';
+        videoElement.style.position = 'fixed';
+        videoElement.style.top = '0';
+        videoElement.style.left = '0';
+        videoElement.style.width = '100vw';
+        videoElement.style.height = '100vh';
+        videoElement.style.objectFit = 'contain';
+        videoElement.style.background = 'black';
+        videoElement.style.zIndex = '100000';
+        videoElement.autoplay = true;
+        videoElement.controls = true;
+        videoElement.preload = 'auto';
 
-                // Append video to the body
-                document.body.appendChild(videoElement);
+        // Append to DOM immediately, before playback
+        document.body.appendChild(videoElement);
 
-                  // Remove spinning class when video starts playing
-              videoElement.addEventListener('play', () => {
-            markerElement.classList.remove('spinning-outline');
-        });
+        // Try to play and request fullscreen as soon as possible
+        videoElement.play().catch(() => {}); // Some browsers require user gesture
+        if (videoElement.requestFullscreen) {
+            videoElement.requestFullscreen();
+        } else if (videoElement.webkitRequestFullscreen) {
+            videoElement.webkitRequestFullscreen();
+        } else if (videoElement.mozRequestFullScreen) {
+            videoElement.mozRequestFullScreen();
+        } else if (videoElement.msRequestFullscreen) {
+            videoElement.msRequestFullscreen();
+        }
 
-                // Play the video and request fullscreen
-                videoElement.play();
-                if (videoElement.requestFullscreen) {
-                    videoElement.requestFullscreen();
-                } else if (videoElement.webkitRequestFullscreen) { // Safari
-                    videoElement.webkitRequestFullscreen();
-                } else if (videoElement.mozRequestFullScreen) { // Firefox
-                    videoElement.mozRequestFullScreen();
-                } else if (videoElement.msRequestFullscreen) { // IE/Edge
-                    videoElement.msRequestFullscreen();
-                }
-
-                // Remove the video element once playback ends
-        // Remove the video element once playback ends
+        // Remove video element after playback ends or on fullscreen exit
         videoElement.addEventListener('ended', () => {
-            document.body.removeChild(videoElement);
+            videoElement.remove();
+            if (document.fullscreenElement) document.exitFullscreen();
+        });
+        document.addEventListener('fullscreenchange', () => {
+            if (!document.fullscreenElement) {
+                videoElement.pause();
+                videoElement.remove();
+            }
         });
     } else {
         console.error('Video URL not available for this building.');
-        markerElement.classList.remove('spinning-outline');
     }
-        });
+});
     });
 }
     function scaleMarkersBasedOnZoom() {
@@ -420,33 +426,6 @@ stylePopup.innerHTML = `
   #bottom-sheet p {
     margin-bottom: 10px;
   }
-
-.spinning-outline {
-    position: relative; /* Ensure the pseudo-element is positioned relative to the marker */
-}
-
-.spinning-outline::before {
-    content: ''; /* Required for the pseudo-element to appear */
-    position: absolute;
-    top: -4px; /* Adjust based on the spacing desired */
-    left: -4px;
-    right: -4px;
-    bottom: -4px;
-    border: 4px dashed #FF69B4; /* Dashed border with your chosen color */
-    border-radius: 50%; /* Ensures it's a circle */
-    animation: spinOutline 1s linear infinite; /* Adds the spinning animation */
-    z-index: -1; /* Ensures the spinning border is behind the marker content */
-}
-
-/* Keyframe animation for spinning */
-@keyframes spinOutline {
-    0% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(360deg);
-    }
-}
 `;
 
 // Append the style to the document
