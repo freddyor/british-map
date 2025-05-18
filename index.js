@@ -161,11 +161,12 @@ function addBuildingMarkers() {
         .setLngLat(building.coords)
         .addTo(map);
 
- marker.getElement().addEventListener('click', () => {
+marker.getElement().addEventListener('click', () => {
     map.getCanvas().style.cursor = 'pointer';
 
     const videoUrl = building.videoUrl;
     const posterUrl = building.posterUrl;
+
     if (!videoUrl) {
         console.error('Video URL not available for this building.');
         return;
@@ -259,7 +260,7 @@ function addBuildingMarkers() {
     closeBtn.style.zIndex = '100001';
     closeBtn.onclick = () => overlay.remove();
 
-    // Swipe down to close
+    // Swipe down to close (touch devices)
     let startY;
     overlay.addEventListener('touchstart', e => {
         if (e.touches.length === 1) startY = e.touches[0].clientY;
@@ -283,12 +284,12 @@ function addBuildingMarkers() {
     overlay.appendChild(closeBtn);
     document.body.appendChild(overlay);
 
-    // Play button logic
+    // Play button logic (iOS/Android/desktop compatible)
     playBtn.onclick = () => {
         playBtn.style.display = 'none';
         spinner.style.display = 'block';
 
-        // Create and load video
+        // Create and insert video immediately
         const videoElement = document.createElement('video');
         videoElement.src = videoUrl;
         if (posterUrl) videoElement.poster = posterUrl;
@@ -297,16 +298,31 @@ function addBuildingMarkers() {
         videoElement.style.borderRadius = '14px';
         videoElement.controls = true;
         videoElement.preload = 'auto';
-        videoElement.autoplay = true;
 
-        // Remove poster and add video when ready
-        videoElement.addEventListener('canplay', () => {
+        // Replace poster with video immediately
+        posterContainer.replaceChild(videoElement, posterImg);
+
+        // Call play right away (user gesture)
+        videoElement.play().catch(() => {
             spinner.style.display = 'none';
-            posterContainer.replaceChild(videoElement, posterImg);
+            playBtn.style.display = 'block';
+            alert('Playback failed. Try again.');
         });
 
-        // Also remove overlay when video ends
+        // Hide spinner when video is playing
+        videoElement.addEventListener('playing', () => {
+            spinner.style.display = 'none';
+        });
+
+        // Remove overlay when video ends
         videoElement.addEventListener('ended', () => overlay.remove());
+
+        // Handle loading errors
+        videoElement.addEventListener('error', () => {
+            spinner.style.display = 'none';
+            playBtn.style.display = 'block';
+            alert('Video failed to load.');
+        });
     };
 });
     });
