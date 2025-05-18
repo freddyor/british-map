@@ -703,7 +703,6 @@ document.addEventListener('DOMContentLoaded', () => {
     dropdownContent.style.textAlign = 'center'; // Center align all content
     dropdownContent.style.overflowY = 'auto';
     dropdownContent.style.bottom = '50px'; // New line
-dropdownContent.style.maxHeight = 'calc(100vh - 100px)// Make it scrollable
 
     dropdownContent.innerHTML = `
             <button 
