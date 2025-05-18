@@ -7,7 +7,7 @@ export const buildings = [
     "occupation": " ",
     "videoUrl": "https://www.britmap.com/videos/Captions_ED3D9E(1).mp4",
     "tldr": " ",
-    "posterUrl": "https://msg317.com/wp-content/uploads/2024/02/instagram-sizes-b-2024-576x1024.png"
+    "posterUrl": "https://msg317.com/wp-content/uploads/2024/02/instagram-sizes-b-2024-576x1024.png",
     "events": [  ]
   },
                      {
