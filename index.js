@@ -165,11 +165,12 @@ function addBuildingMarkers() {
     map.getCanvas().style.cursor = 'pointer';
 
     const videoUrl = building.videoUrl;
+    const posterUrl = building.posterUrl; // Make sure this exists!
     if (videoUrl) {
-        // Clean up previous overlays
+        // Remove any existing video overlays
         document.querySelectorAll('.video-modal-overlay').forEach(el => el.remove());
 
-        // Overlay (not added yet)
+        // Overlay
         const overlay = document.createElement('div');
         overlay.className = 'video-modal-overlay';
         overlay.style.position = 'fixed';
@@ -183,9 +184,10 @@ function addBuildingMarkers() {
         overlay.style.justifyContent = 'center';
         overlay.style.zIndex = 100000;
 
-        // Video
+        // Video element
         const videoElement = document.createElement('video');
         videoElement.src = videoUrl;
+        if (posterUrl) videoElement.poster = posterUrl;
         videoElement.style.maxWidth = '90vw';
         videoElement.style.maxHeight = '70vh';
         videoElement.style.background = '#111';
@@ -193,8 +195,6 @@ function addBuildingMarkers() {
         videoElement.autoplay = true;
         videoElement.controls = true;
         videoElement.preload = 'auto';
-        // Optional: Set poster image if you have one
-        // videoElement.poster = building.posterUrl || '';
 
         // Close button
         const closeBtn = document.createElement('button');
@@ -227,22 +227,11 @@ function addBuildingMarkers() {
         });
         overlay.addEventListener('touchend', () => { startY = undefined; });
 
-        // Remove overlay on video end
         videoElement.addEventListener('ended', () => overlay.remove());
 
-        // Append elements but not to DOM yet
         overlay.appendChild(videoElement);
         overlay.appendChild(closeBtn);
-
-        // Only show overlay/video when first frame is loaded
-        videoElement.addEventListener('loadeddata', () => {
-            // Now the first frame is ready, show overlay
-            document.body.appendChild(overlay);
-            videoElement.play(); // Ensure it starts if needed
-        });
-
-        // Start loading the video (by setting src it's already loading)
-        // If you want to show a spinner, you can do so here before loadeddata fires
+        document.body.appendChild(overlay);
     } else {
         console.error('Video URL not available for this building.');
     }
