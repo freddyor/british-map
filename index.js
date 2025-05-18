@@ -165,76 +165,149 @@ function addBuildingMarkers() {
     map.getCanvas().style.cursor = 'pointer';
 
     const videoUrl = building.videoUrl;
-    const posterUrl = building.posterUrl; // Make sure this exists!
-    if (videoUrl) {
-        // Remove any existing video overlays
-        document.querySelectorAll('.video-modal-overlay').forEach(el => el.remove());
+    const posterUrl = building.posterUrl;
+    if (!videoUrl) {
+        console.error('Video URL not available for this building.');
+        return;
+    }
+    document.querySelectorAll('.video-modal-overlay').forEach(el => el.remove());
 
-        // Overlay
-        const overlay = document.createElement('div');
-        overlay.className = 'video-modal-overlay';
-        overlay.style.position = 'fixed';
-        overlay.style.top = 0;
-        overlay.style.left = 0;
-        overlay.style.width = '100vw';
-        overlay.style.height = '100vh';
-        overlay.style.background = 'rgba(0,0,0,0.7)';
-        overlay.style.display = 'flex';
-        overlay.style.alignItems = 'center';
-        overlay.style.justifyContent = 'center';
-        overlay.style.zIndex = 100000;
+    // Modal overlay
+    const overlay = document.createElement('div');
+    overlay.className = 'video-modal-overlay';
+    overlay.style.position = 'fixed';
+    overlay.style.top = 0;
+    overlay.style.left = 0;
+    overlay.style.width = '100vw';
+    overlay.style.height = '100vh';
+    overlay.style.background = 'rgba(0,0,0,0.7)';
+    overlay.style.display = 'flex';
+    overlay.style.alignItems = 'center';
+    overlay.style.justifyContent = 'center';
+    overlay.style.zIndex = 100000;
 
-        // Video element
+    // Poster container
+    const posterContainer = document.createElement('div');
+    posterContainer.style.position = 'relative';
+
+    // Poster image
+    const posterImg = document.createElement('img');
+    posterImg.src = posterUrl || '';
+    posterImg.alt = 'Video cover';
+    posterImg.style.maxWidth = '90vw';
+    posterImg.style.maxHeight = '70vh';
+    posterImg.style.borderRadius = '14px';
+    posterImg.style.display = 'block';
+
+    // Play button
+    const playBtn = document.createElement('button');
+    playBtn.innerHTML = '►';
+    playBtn.style.position = 'absolute';
+    playBtn.style.top = '50%';
+    playBtn.style.left = '50%';
+    playBtn.style.transform = 'translate(-50%, -50%)';
+    playBtn.style.background = 'rgba(0,0,0,0.6)';
+    playBtn.style.border = 'none';
+    playBtn.style.borderRadius = '50%';
+    playBtn.style.width = '64px';
+    playBtn.style.height = '64px';
+    playBtn.style.color = '#fff';
+    playBtn.style.fontSize = '2.5rem';
+    playBtn.style.cursor = 'pointer';
+    playBtn.style.display = 'flex';
+    playBtn.style.alignItems = 'center';
+    playBtn.style.justifyContent = 'center';
+    playBtn.style.zIndex = 2;
+
+    // Spinner (hidden by default)
+    const spinner = document.createElement('div');
+    spinner.style.position = 'absolute';
+    spinner.style.top = '50%';
+    spinner.style.left = '50%';
+    spinner.style.transform = 'translate(-50%, -50%)';
+    spinner.style.width = '48px';
+    spinner.style.height = '48px';
+    spinner.style.border = '6px solid #eee';
+    spinner.style.borderTop = '6px solid #9b4dca';
+    spinner.style.borderRadius = '50%';
+    spinner.style.animation = 'spin 1s linear infinite';
+    spinner.style.display = 'none';
+    spinner.style.zIndex = 3;
+
+    // Add keyframes for spinner
+    const spinnerStyle = document.createElement('style');
+    spinnerStyle.innerHTML = `
+      @keyframes spin {
+        0% { transform: translate(-50%, -50%) rotate(0deg);}
+        100% { transform: translate(-50%, -50%) rotate(360deg);}
+      }
+    `;
+    document.head.appendChild(spinnerStyle);
+
+    // Close button
+    const closeBtn = document.createElement('button');
+    closeBtn.textContent = '✖';
+    closeBtn.style.position = 'absolute';
+    closeBtn.style.top = '30px';
+    closeBtn.style.right = '40px';
+    closeBtn.style.fontSize = '2rem';
+    closeBtn.style.background = 'rgba(0,0,0,0.5)';
+    closeBtn.style.color = '#fff';
+    closeBtn.style.border = 'none';
+    closeBtn.style.borderRadius = '50%';
+    closeBtn.style.cursor = 'pointer';
+    closeBtn.style.zIndex = '100001';
+    closeBtn.onclick = () => overlay.remove();
+
+    // Swipe down to close
+    let startY;
+    overlay.addEventListener('touchstart', e => {
+        if (e.touches.length === 1) startY = e.touches[0].clientY;
+    });
+    overlay.addEventListener('touchmove', e => {
+        if (startY !== undefined && e.touches.length === 1) {
+            const dy = e.touches[0].clientY - startY;
+            if (dy > 70) {
+                overlay.remove();
+                startY = undefined;
+            }
+        }
+    });
+    overlay.addEventListener('touchend', () => { startY = undefined; });
+
+    // Assemble the poster
+    posterContainer.appendChild(posterImg);
+    posterContainer.appendChild(playBtn);
+    posterContainer.appendChild(spinner);
+    overlay.appendChild(posterContainer);
+    overlay.appendChild(closeBtn);
+    document.body.appendChild(overlay);
+
+    // Play button logic
+    playBtn.onclick = () => {
+        playBtn.style.display = 'none';
+        spinner.style.display = 'block';
+
+        // Create and load video
         const videoElement = document.createElement('video');
         videoElement.src = videoUrl;
         if (posterUrl) videoElement.poster = posterUrl;
         videoElement.style.maxWidth = '90vw';
         videoElement.style.maxHeight = '70vh';
-        videoElement.style.background = '#111';
         videoElement.style.borderRadius = '14px';
-        videoElement.autoplay = true;
         videoElement.controls = true;
         videoElement.preload = 'auto';
+        videoElement.autoplay = true;
 
-        // Close button
-        const closeBtn = document.createElement('button');
-        closeBtn.textContent = '✖';
-        closeBtn.style.position = 'absolute';
-        closeBtn.style.top = '30px';
-        closeBtn.style.right = '40px';
-        closeBtn.style.fontSize = '2rem';
-        closeBtn.style.background = 'rgba(0,0,0,0.5)';
-        closeBtn.style.color = '#fff';
-        closeBtn.style.border = 'none';
-        closeBtn.style.borderRadius = '50%';
-        closeBtn.style.cursor = 'pointer';
-        closeBtn.style.zIndex = '100001';
-        closeBtn.onclick = () => overlay.remove();
-
-        // Swipe down to close (touch devices)
-        let startY;
-        overlay.addEventListener('touchstart', e => {
-            if (e.touches.length === 1) startY = e.touches[0].clientY;
+        // Remove poster and add video when ready
+        videoElement.addEventListener('canplay', () => {
+            spinner.style.display = 'none';
+            posterContainer.replaceChild(videoElement, posterImg);
         });
-        overlay.addEventListener('touchmove', e => {
-            if (startY !== undefined && e.touches.length === 1) {
-                const dy = e.touches[0].clientY - startY;
-                if (dy > 70) {
-                    overlay.remove();
-                    startY = undefined;
-                }
-            }
-        });
-        overlay.addEventListener('touchend', () => { startY = undefined; });
 
+        // Also remove overlay when video ends
         videoElement.addEventListener('ended', () => overlay.remove());
-
-        overlay.appendChild(videoElement);
-        overlay.appendChild(closeBtn);
-        document.body.appendChild(overlay);
-    } else {
-        console.error('Video URL not available for this building.');
-    }
+    };
 });
     });
 }
