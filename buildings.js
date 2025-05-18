@@ -37,7 +37,7 @@ export const buildings = [
     "occupation": "1866-?",
     "videoUrl": "https://www.britmap.com/videos/Captions_7978BD.mp4", 
     "tldr": "",
-    "posterUrl": "https://www.britmap.com/videos/IMG_5996.png",
+    "posterUrl": "https://www.britmap.com/videos/IMG_5998.jpeg",
     "events": []
   },
        {
@@ -58,6 +58,7 @@ export const buildings = [
     "occupation": "1863",
     "videoUrl": "https://www.britmap.com/videos/Captions_40E9B5.mp4", 
     "tldr": "",
+    "posterUrl": "https://www.britmap.com/videos/IMG_5998.jpeg",
     "events": []
   },
        {
