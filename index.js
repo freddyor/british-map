@@ -251,8 +251,8 @@ marker.getElement().addEventListener('click', () => {
     const closeBtn = document.createElement('button');
     closeBtn.textContent = '❌';
 closeBtn.style.position = 'absolute';
-closeBtn.style.top = '-18px';         // Negative to overlap edge
-closeBtn.style.right = '-18px';       // Negative to overlap edge
+closeBtn.style.top = '-18px';         // Or whatever negative value you want
+closeBtn.style.right = '-18px';       // Or whatever negative value you want
 closeBtn.style.width = '36px';
 closeBtn.style.height = '36px';
 closeBtn.style.background = '#000';
@@ -262,6 +262,10 @@ closeBtn.style.borderRadius = '50%';
 closeBtn.style.cursor = 'pointer';
 closeBtn.style.fontSize = '1.5rem';
 closeBtn.style.zIndex = '100001';
+// Center the text/icon
+closeBtn.style.display = 'flex';
+closeBtn.style.alignItems = 'center';
+closeBtn.style.justifyContent = 'center';
     closeBtn.onclick = () => overlay.remove();
 
     // Swipe down to close (touch devices)
@@ -287,6 +291,13 @@ closeBtn.style.zIndex = '100001';
     posterContainer.appendChild(closeBtn);
 overlay.appendChild(posterContainer);
     document.body.appendChild(overlay);
+
+    overlay.addEventListener('mousedown', function(e) {
+    // Only close if they click directly on the overlay (not on the poster/video)
+    if (e.target === overlay) {
+        overlay.remove();
+    }
+});
 
     // Play button logic (iOS/Android/desktop compatible)
 playBtn.onclick = () => {
