@@ -335,11 +335,11 @@ playBtn.onclick = () => {
     videoElement.playsInline = true;
 
     // Smoothly swap poster for video
-    videoElement.addEventListener('canplay', () => {
-        posterContainer.replaceChild(videoElement, posterImg);
-        spinner.style.display = 'none';
-        videoElement.play();
-    });
+videoElement.addEventListener('canplaythrough', () => {
+    posterContainer.replaceChild(videoElement, posterImg);
+    spinner.style.display = 'none';
+    videoElement.play();
+});
 
     // Show controls if user clicks video (optional)
     videoElement.addEventListener('click', () => {
