@@ -300,6 +300,10 @@ playBtn.onclick = () => {
     videoElement.preload = 'auto';
     videoElement.autoplay = true;
 
+    videoElement.setAttribute('playsinline', '');
+videoElement.setAttribute('webkit-playsinline', '');
+videoElement.playsInline = true; // Also set the DOM property (for broad compatibility)
+
     // Wait for video to be ready before swapping
     videoElement.addEventListener('canplay', () => {
         // Swap the poster for the video (inline, not modal)
