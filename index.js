@@ -183,21 +183,20 @@ marker.getElement().addEventListener('click', () => {
     overlay.style.height = '100vh';
     overlay.style.background = 'rgba(0,0,0,0.7)';
     overlay.style.display = 'flex';
-    overlay.style.alignItems = 'flex-start';
+    overlay.style.alignItems = 'center';
     overlay.style.justifyContent = 'center';
     overlay.style.zIndex = 100000;
 
     // Poster container
     const posterContainer = document.createElement('div');
     posterContainer.style.position = 'relative';
-    posterContainer.style.marginTop = '10px'; // Adjust the value as needed
 
     // Poster image
     const posterImg = document.createElement('img');
     posterImg.src = posterUrl || '';
     posterImg.alt = 'Video cover';
-    posterImg.style.maxWidth = '90vw';
-    posterImg.style.maxHeight = '80vh';
+    posterImg.style.maxWidth = '85vw';
+    posterImg.style.maxHeight = '75vh';
     posterImg.style.borderRadius = '14px';
     posterImg.style.display = 'block';
 
@@ -294,9 +293,8 @@ playBtn.onclick = () => {
     const videoElement = document.createElement('video');
     videoElement.src = videoUrl;
     if (posterUrl) videoElement.poster = posterUrl;
-    videoElement.style.maxWidth = '90vw';
-    videoElement.style.maxHeight = '80vh';
-    posterContainer.style.marginTop = '30px'; // Adjust the value as needed
+    videoElement.style.maxWidth = '85vw';
+    videoElement.style.maxHeight = '75vh';
     videoElement.style.borderRadius = '14px';
     videoElement.controls = true;
     videoElement.preload = 'auto';
