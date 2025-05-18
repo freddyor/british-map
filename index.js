@@ -285,45 +285,45 @@ marker.getElement().addEventListener('click', () => {
     document.body.appendChild(overlay);
 
     // Play button logic (iOS/Android/desktop compatible)
-    playBtn.onclick = () => {
-        playBtn.style.display = 'none';
-        spinner.style.display = 'block';
+playBtn.onclick = () => {
+    playBtn.style.display = 'none';
+    spinner.style.display = 'block';
 
-        // Create and insert video immediately
-        const videoElement = document.createElement('video');
-        videoElement.src = videoUrl;
-        if (posterUrl) videoElement.poster = posterUrl;
-        videoElement.style.maxWidth = '90vw';
-        videoElement.style.maxHeight = '70vh';
-        videoElement.style.borderRadius = '14px';
-        videoElement.controls = true;
-        videoElement.preload = 'auto';
+    // Create video but DON'T insert it yet
+    const videoElement = document.createElement('video');
+    videoElement.src = videoUrl;
+    if (posterUrl) videoElement.poster = posterUrl;
+    videoElement.style.maxWidth = '90vw';
+    videoElement.style.maxHeight = '70vh';
+    videoElement.style.borderRadius = '14px';
+    videoElement.controls = true;
+    videoElement.preload = 'auto';
 
-        // Replace poster with video immediately
+    // Start loading and attempt to play
+    videoElement.play().catch(() => {
+        spinner.style.display = 'none';
+        playBtn.style.display = 'block';
+        alert('Playback failed. Try again.');
+    });
+
+    // Wait for video to be ready before swapping
+    videoElement.addEventListener('canplay', () => {
+        // Swap the poster for the video
         posterContainer.replaceChild(videoElement, posterImg);
+        spinner.style.display = 'none';
+        videoElement.play(); // Make sure playback resumes if needed
+    });
 
-        // Call play right away (user gesture)
-        videoElement.play().catch(() => {
-            spinner.style.display = 'none';
-            playBtn.style.display = 'block';
-            alert('Playback failed. Try again.');
-        });
+    // Remove overlay when video ends
+    videoElement.addEventListener('ended', () => overlay.remove());
 
-        // Hide spinner when video is playing
-        videoElement.addEventListener('playing', () => {
-            spinner.style.display = 'none';
-        });
-
-        // Remove overlay when video ends
-        videoElement.addEventListener('ended', () => overlay.remove());
-
-        // Handle loading errors
-        videoElement.addEventListener('error', () => {
-            spinner.style.display = 'none';
-            playBtn.style.display = 'block';
-            alert('Video failed to load.');
-        });
-    };
+    // Handle loading errors
+    videoElement.addEventListener('error', () => {
+        spinner.style.display = 'none';
+        playBtn.style.display = 'block';
+        alert('Video failed to load.');
+    });
+};
 });
     });
 }
