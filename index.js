@@ -343,6 +343,7 @@ posterImg.onload = function() {
     };
 };
     });
+    });
 }
     function scaleMarkersBasedOnZoom() {
     const zoomLevel = map.getZoom(); // Get the current zoom level
