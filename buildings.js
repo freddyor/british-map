@@ -18,7 +18,7 @@ export const buildings = [
     "occupation": "1866-?",
     "videoUrl": "https://www.britmap.com/videos/Captions_BA8635.mp4", 
     "tldr": "",
-                             "posterUrl": "https://www.britmap.com/videos/IMG_6002.jpeg",
+                             "posterUrl": "https://www.britmap.com/videos/IMG_6002.webp",
     "events": []
   },
               {
@@ -40,7 +40,7 @@ export const buildings = [
     "occupation": "1866-?",
     "videoUrl": "https://www.britmap.com/videos/Captions_7978BD.mp4", 
     "tldr": "",
-    "posterUrl": "https://www.britmap.com/videos/IMG_6001.jpeg",
+    "posterUrl": "https://www.britmap.com/videos/IMG_6001.webp",
     "events": []
   },
        {
@@ -51,7 +51,7 @@ export const buildings = [
     "occupation": "1863",
     "videoUrl": "https://www.britmap.com/videos/Captions_8C1281.mp4", 
     "tldr": "",
-               "posterUrl": "https://www.britmap.com/videos/IMG_6049.jpeg",
+               "posterUrl": "https://www.britmap.com/videos/IMG_6049.webp",
     "events": []
   },
        {
@@ -62,7 +62,7 @@ export const buildings = [
     "occupation": "1863",
     "videoUrl": "https://www.britmap.com/videos/Captions_40E9B5.mp4", 
     "tldr": "",
-    "posterUrl": "https://www.britmap.com/videos/IMG_5998.jpeg",
+    "posterUrl": "https://www.britmap.com/videos/IMG_5998.webp",
     "events": []
   },
        {
@@ -73,7 +73,7 @@ export const buildings = [
     "occupation": " ",
     "videoUrl": "https://www.britmap.com/videos/Captions_1F175B.mp4", 
     "tldr": "",
-               "posterUrl": "https://www.britmap.com/videos/IMG_6005.jpeg",
+               "posterUrl": "https://www.britmap.com/videos/IMG_6005.webp",
     "events": []
   },
     {
@@ -84,7 +84,7 @@ export const buildings = [
     "occupation": "1905",
     "videoUrl": "https://www.britmap.com/videos/copy_8250E92B-5789-4C53-9148-68E554C7075E.mp4", 
     "tldr": "",
-            "posterUrl": "https://www.britmap.com/videos/IMG_6007.jpeg",
+            "posterUrl": "https://www.britmap.com/videos/IMG_6007.webp",
     "events": []
   },
                         {
@@ -96,7 +96,7 @@ export const buildings = [
     "videoUrl": "https://www.britmap.com/videos/Captions_2AAF6B(1).mp4",
     "subtitle": "The oldest church in York",
     tldr: "",
-                                "posterUrl": "https://www.britmap.com/videos/IMG_6042.jpeg",
+                                "posterUrl": "https://www.britmap.com/videos/IMG_6042.webp",
     events: [  ]
   },
                       {
@@ -108,7 +108,7 @@ export const buildings = [
     "videoUrl": "https://www.britmap.com/videos/Captions_61B047.mp4",
                         "subtitle": "The only reminder of the brutal death traps of medieval York",
     tldr: "",
-                              "posterUrl": "https://www.britmap.com/videos/IMG_6046.jpeg",
+                              "posterUrl": "https://www.britmap.com/videos/IMG_6046.webp",
     events: [  ]
   },
                       {
@@ -120,7 +120,7 @@ export const buildings = [
     "videoUrl": "https://www.britmap.com/videos/Captions_AC995F.mp4",
                         "subtitle": "The site of ancient tax collection",
     tldr: "",
-                              "posterUrl": "https://www.britmap.com/videos/IMG_6048.jpeg",
+                              "posterUrl": "https://www.britmap.com/videos/IMG_6048.webp",
     events: [  ]
   },
                       {
@@ -132,7 +132,7 @@ export const buildings = [
     "videoUrl": "https://www.britmap.com/videos/Captions_8F5743.mp4",
     "subtitle": "York's old figurine that disappeared",
     tldr: "",
-                              "posterUrl": "https://www.britmap.com/videos/IMG_6041.jpeg",
+                              "posterUrl": "https://www.britmap.com/videos/IMG_6041.webp",
     events: [  ]
   },
            {
@@ -144,7 +144,7 @@ export const buildings = [
     "videoUrl": "https://www.britmap.com/videos/Captions_746FC9.mp4",
              "subtitle": "The HQ of Henry VIII's Council of the North",
     tldr: "",
-                   "posterUrl": "https://www.britmap.com/videos/IMG_6047.jpeg",
+                   "posterUrl": "https://www.britmap.com/videos/IMG_6047.webp",
     events: [  ]
   },
             {
@@ -156,7 +156,7 @@ export const buildings = [
     "videoUrl": "https://www.britmap.com/videos/Captions_E34A23.mp4",
               "subtitle": "One of York's greatest ever pre-NHS charities",
     tldr: "",
-                    "posterUrl": "https://www.britmap.com/videos/IMG_6045.jpeg",
+                    "posterUrl": "https://www.britmap.com/videos/IMG_6045.webp",
     events: [    ]
   },
            {
@@ -168,7 +168,7 @@ export const buildings = [
    "videoUrl": "https://www.britmap.com/videos/Captions_4581BD.mp4",
              "subtitle": "Historic York carvings on an important building",
     tldr: "",
-                   "posterUrl": "https://www.britmap.com/videos/IMG_6043.jpeg",
+                   "posterUrl": "https://www.britmap.com/videos/IMG_6043.webp",
     events: [     ]
   },
             {
@@ -180,7 +180,7 @@ export const buildings = [
     "videoUrl": "https://www.britmap.com/videos/Captions_3D5670.mp4",
     "subtitle": "York's ties to a Palestinian city",
     tldr: "",
-                    "posterUrl": "https://www.britmap.com/videos/IMG_6040.jpeg",
+                    "posterUrl": "https://www.britmap.com/videos/IMG_6040.webp",
     events: []
   },
           {
@@ -192,7 +192,7 @@ export const buildings = [
     "videoUrl": "https://www.britmap.com/videos/Captions_1C52DB.mp4",
     "subtitle": "The largest of its kind in England",
     "tldr": "",
-                  "posterUrl": "https://www.britmap.com/videos/IMG_6035.jpeg",
+                  "posterUrl": "https://www.britmap.com/videos/IMG_6035.webp",
     "events": [
     ]
   },
@@ -204,7 +204,7 @@ export const buildings = [
     "occupation": "Here 1903-2020",
     "videoUrl": "https://www.britmap.com/videos/Captions_1FF9B1.mp4",
     "tldr": "",
-             "posterUrl": "https://www.britmap.com/videos/IMG_6036.jpeg",
+             "posterUrl": "https://www.britmap.com/videos/IMG_6036.webp",
     "subtitle": "One of the oldest schools in human history",
     "events": [
     ]
@@ -218,7 +218,7 @@ export const buildings = [
     "videoUrl": "https://www.britmap.com/videos/Captions_8118A9.mp4",
     "subtitle": "The church that became a brothel",
     "tldr": "",
-               "posterUrl": "https://www.britmap.com/videos/IMG_6037.jpeg",
+               "posterUrl": "https://www.britmap.com/videos/IMG_6037.webp",
     "events": [
     ]
   },
@@ -231,7 +231,7 @@ export const buildings = [
      "videoUrl": "https://www.britmap.com/videos/Captions_DBE962.mp4",
      "subtitle": "One of the most prosperous abbeys in the North",
     "tldr": "",
-               "posterUrl": "https://www.britmap.com/videos/IMG_6038.jpeg",
+               "posterUrl": "https://www.britmap.com/videos/IMG_6038.webp",
     "events": []
   },
        {
@@ -243,7 +243,7 @@ export const buildings = [
    "videoUrl": "https://www.britmap.com/videos/Captions_7A894C.mp4",
    "subtitle": "The residence for the most important judges in England",
     "tldr": "",
-               "posterUrl": "https://www.britmap.com/videos/IMG_6039.jpeg",
+               "posterUrl": "https://www.britmap.com/videos/IMG_6039.webp",
     "events": []
   },
      {
@@ -255,7 +255,7 @@ export const buildings = [
     "videoUrl": "https://www.britmap.com/videos/Captions_D8E302.mp4",
     "subtitle": "The college built for drunk priests",
     "tldr": "",
-             "posterUrl": "https://www.britmap.com/videos/IMG_6031.jpeg",
+             "posterUrl": "https://www.britmap.com/videos/IMG_6031.webp",
     "events": [
     ]
   },
@@ -268,7 +268,7 @@ export const buildings = [
     "videoUrl": "https://www.britmap.com/videos/Captions_56B7AF.mp4",
                 "subtitle": "The father of The Judge's Lodging",
     "tldr": "",
-              "posterUrl": "https://www.britmap.com/videos/IMG_6032.jpeg",
+              "posterUrl": "https://www.britmap.com/videos/IMG_6032.webp",
     "events": [
      ]
   },
@@ -281,7 +281,7 @@ export const buildings = [
     "videoUrl": "https://www.britmap.com/videos/Captions_D86667.mp4",
     "subtitle": "Third-oldest pub in York with an interesting history",
     "tldr": "",
-             "posterUrl": "https://www.britmap.com/videos/IMG_6033.jpeg",
+             "posterUrl": "https://www.britmap.com/videos/IMG_6033.webp",
     "events": [
     ]
   },
@@ -294,7 +294,7 @@ export const buildings = [
     "videoUrl": "https://www.britmap.com/videos/Captions_12AA18.mp4",
     "subtitle": "The Jew who fled Nazi Germany to York",
     "tldr": "",
-          "posterUrl": "https://www.britmap.com/videos/IMG_6034.jpeg",
+          "posterUrl": "https://www.britmap.com/videos/IMG_6034.webp",
     "events": [
     ]
   },
@@ -307,7 +307,7 @@ export const buildings = [
     "videoUrl": "https://www.britmap.com/videos/Captions_8F153F.mp4",
     "subtitle": "The church that experienced all of York's history",
     "tldr": "",
-            "posterUrl": "https://www.britmap.com/videos/IMG_6030.jpeg",
+            "posterUrl": "https://www.britmap.com/videos/IMG_6030.webp",
     "events": [
     ]
   },
@@ -320,7 +320,7 @@ export const buildings = [
       "videoUrl": "https://www.britmap.com/videos/Captions_813457.mp4",
     "subtitle": "This Italian restaurant gives clues to the building's past",
     "tldr": "",
-             "posterUrl": "https://www.britmap.com/videos/IMG_6029.jpeg",
+             "posterUrl": "https://www.britmap.com/videos/IMG_6029.webp",
     "events": [
     ]
   },
@@ -332,7 +332,7 @@ export const buildings = [
     "occupation": "1798",
      "videoUrl": "https://www.britmap.com/videos/Captions_1AB667.mp4",
                  "subtitle": "The smallest pub in York",
-           "posterUrl": "https://www.britmap.com/videos/IMG_6028.jpeg",
+           "posterUrl": "https://www.britmap.com/videos/IMG_6028.webp",
     "tldr": "",
     "events": [
     ]
@@ -343,7 +343,7 @@ export const buildings = [
     "image": "https://www.britmap.com/videos/IMG_5721.webp",
     "description": "",
     "occupation": "1899",
-                                "posterUrl": "https://www.britmap.com/videos/IMG_6022.jpeg",
+                                "posterUrl": "https://www.britmap.com/videos/IMG_6022.webp",
     "videoUrl": "https://www.britmap.com/videos/Captions_31CDB1.mp4",
   "subtitle": "That massive chimney you've seen",
     "tldr": "",
@@ -359,7 +359,7 @@ export const buildings = [
     "videoUrl": "https://www.britmap.com/videos/Captions_194368.mp4",
     "subtitle": "Controversial war memorial",
     "tldr": "",
-                    "posterUrl": "https://www.britmap.com/videos/IMG_6021.jpeg",
+                    "posterUrl": "https://www.britmap.com/videos/IMG_6021.webp",
     "events": [
     ]
   },
@@ -372,7 +372,7 @@ export const buildings = [
     "subtitle": "Removed from the Minster for being too inappropriate", 
     "videoUrl": "https://www.britmap.com/videos/Captions_583941.mp4",
     "tldr": "",
-                      "posterUrl": "https://www.britmap.com/videos/IMG_6020.jpeg",
+                      "posterUrl": "https://www.britmap.com/videos/IMG_6020.webp",
     "events": []
   },
         {
@@ -384,7 +384,7 @@ export const buildings = [
     "videoUrl": "https://www.britmap.com/videos/Captions_B9E98C.mp4",
                   "subtitle": "The first cinema built in York, now a bar!",
     "tldr": "",
-                "posterUrl": "https://www.britmap.com/videos/IMG_6023.jpeg",
+                "posterUrl": "https://www.britmap.com/videos/IMG_6023.webp",
     "events": []
   },
         {
@@ -396,7 +396,7 @@ export const buildings = [
     "videoUrl": "https://www.britmap.com/videos/Captions_5443BE.mp4",
                   "subtitle": "The grand hotel with a heroic name",
     "tldr": "",
-                "posterUrl": "https://www.britmap.com/videos/IMG_6024.jpeg",
+                "posterUrl": "https://www.britmap.com/videos/IMG_6024.webp",
     "events": [
     ]
   },
@@ -409,7 +409,7 @@ export const buildings = [
             "videoUrl": "https://www.britmap.com/videos/Captions_FAFF0D.mp4",
 "subtitle": "The oldest row of housing in York",
     "tldr": "",
-                "posterUrl": "https://www.britmap.com/videos/IMG_6025.jpeg",
+                "posterUrl": "https://www.britmap.com/videos/IMG_6025.webp",
     "events": [
     ]
   },
@@ -422,7 +422,7 @@ export const buildings = [
       "videoUrl": "https://www.britmap.com/videos/Captions_10809A.mp4",
                   "subtitle": "The first woman to vote in York",
     "tldr": "",
-                "posterUrl": "https://www.britmap.com/videos/IMG_6026.jpeg",
+                "posterUrl": "https://www.britmap.com/videos/IMG_6026.webp",
     "events": []
   },
         {
@@ -434,7 +434,7 @@ export const buildings = [
       "videoUrl": "https://www.britmap.com/videos/Captions_700C01.mp4",
                   "subtitle": "The brick tower that caused a murder",
     tldr: "",
-                "posterUrl": "https://www.britmap.com/videos/IMG_6027.jpeg",
+                "posterUrl": "https://www.britmap.com/videos/IMG_6027.webp",
     events: [   ]
   },
       {
@@ -446,7 +446,7 @@ export const buildings = [
     "videoUrl": "https://www.britmap.com/videos/Captions_ED8ABD.mp4",
                 "subtitle": "The oldest house in York",
     "tldr": "",
-              "posterUrl": "https://www.britmap.com/videos/IMG_6018.jpeg",
+              "posterUrl": "https://www.britmap.com/videos/IMG_6018.webp",
     "events": [
     ]
   },
@@ -459,7 +459,7 @@ export const buildings = [
  "videoUrl": "https://www.britmap.com/videos/Captions_65CE21.mp4",
         "subtitle": "Stunning Georgian house on Micklegate",
     tldr: "",
-              "posterUrl": "https://www.britmap.com/videos/IMG_6017.jpeg",
+              "posterUrl": "https://www.britmap.com/videos/IMG_6017.webp",
     events: []
   },
     {
@@ -471,7 +471,7 @@ export const buildings = [
     "occupation": "1714",
       "subtitle": "The smaller Red House in York",
     "tldr": "",
-            "posterUrl": "https://www.britmap.com/videos/IMG_6016.jpeg",
+            "posterUrl": "https://www.britmap.com/videos/IMG_6016.webp",
     "events": [    ]
   },
                 {
@@ -483,7 +483,7 @@ export const buildings = [
 "videoUrl": "https://www.britmap.com/videos/Captions_79729E.mp4",
                           "subtitle": "Once the centre of all politics in Yorkshire",
     "tldr": "",
-                        "posterUrl": "https://www.britmap.com/videos/IMG_6015.jpeg",
+                        "posterUrl": "https://www.britmap.com/videos/IMG_6015.webp",
     "events": [    ]
   },
          {
@@ -495,7 +495,7 @@ export const buildings = [
 "videoUrl": "https://www.britmap.com/videos/Captions_4396D2.mp4",
                    "subtitle": "A building fit for heroes",
     "tldr": "",
-                 "posterUrl": "https://www.britmap.com/videos/IMG_6014.jpeg",
+                 "posterUrl": "https://www.britmap.com/videos/IMG_6014.webp",
     "events": [    ]
   },
        {
@@ -507,7 +507,7 @@ export const buildings = [
      "videoUrl": "https://www.britmap.com/videos/Captions_7195D0.mp4",
                  "subtitle": "The street name that tells the history of York",
     "tldr": "",
-               "posterUrl": "https://www.britmap.com/videos/IMG_6013.jpeg",
+               "posterUrl": "https://www.britmap.com/videos/IMG_6013.webp",
     "events": [    ]
   },
      {
@@ -519,7 +519,7 @@ export const buildings = [
     occupation: "1710",
     "subtitle": "An important house in English history",
     tldr: " ",
-             "posterUrl": "https://www.britmap.com/videos/IMG_6011.jpeg",
+             "posterUrl": "https://www.britmap.com/videos/IMG_6011.webp",
     events: [
     ]
   },
@@ -532,7 +532,7 @@ export const buildings = [
     "occupation": "1068",
               "subtitle": "William the Conqueror's secret 2nd castle",
     "tldr": " ",
-            "posterUrl": "https://www.britmap.com/videos/IMG_6010.jpeg",
+            "posterUrl": "https://www.britmap.com/videos/IMG_6010.webp",
     "events": [
     ]
   },
@@ -544,7 +544,7 @@ export const buildings = [
     "videoUrl": "https://www.britmap.com/videos/copy_5B52503E-1CA1-4E8C-AEA0-2DCA7A3CCEDD.mp4", 
     "occupation": " ",
     "tldr": " ",
-                                "posterUrl": "https://www.britmap.com/videos/IMG_6009.jpeg",
+                                "posterUrl": "https://www.britmap.com/videos/IMG_6009[1].webp",
     "events": [ ]
   },
             {
@@ -557,7 +557,7 @@ export const buildings = [
               "subtitle": "Markers from two of York's past floods",
                     "colour": "yes",
     "tldr": " ",
-                    "posterUrl": "https://www.britmap.com/videos/IMG_6008.jpeg",
+                    "posterUrl": "https://www.britmap.com/videos/IMG_6008.webp",
     "events": [ ]
   },
       {
@@ -569,7 +569,7 @@ export const buildings = [
     "occupation": " ",
                 "subtitle": "A symbol secretly dotted around the city",
     "tldr": " ",
-              "posterUrl": "https://www.britmap.com/videos/IMG_6006.jpeg",
+              "posterUrl": "https://www.britmap.com/videos/IMG_6006.webp",
     "events": [ ]
   },
 ];
