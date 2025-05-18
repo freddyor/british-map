@@ -245,20 +245,25 @@ marker.getElement().addEventListener('click', () => {
     `;
     document.head.appendChild(spinnerStyle);
 
-    // Close button
-    const closeBtn = document.createElement('button');
-    closeBtn.textContent = '❌';
-    closeBtn.style.position = 'absolute';
-    closeBtn.style.top = '30px';
-    closeBtn.style.right = '40px';
-    closeBtn.style.fontSize = '2rem';
-    closeBtn.style.background = 'rgba(0,0,0,0.5)';
-    closeBtn.style.color = '#fff';
-    closeBtn.style.border = 'none';
-    closeBtn.style.borderRadius = '50%';
-    closeBtn.style.cursor = 'pointer';
-    closeBtn.style.zIndex = '100001';
-    closeBtn.onclick = () => overlay.remove();
+const closeBtn = document.createElement('button');
+closeBtn.textContent = '✖'; // Simpler & matches black background
+closeBtn.style.position = 'absolute';
+closeBtn.style.top = '-18px'; // Negative values to overlap the poster/video
+closeBtn.style.right = '-18px';
+closeBtn.style.width = '36px';
+closeBtn.style.height = '36px';
+closeBtn.style.display = 'flex';
+closeBtn.style.alignItems = 'center';
+closeBtn.style.justifyContent = 'center';
+closeBtn.style.background = '#000'; // Solid black
+closeBtn.style.color = '#fff';
+closeBtn.style.border = '2px solid #fff';
+closeBtn.style.borderRadius = '50%';
+closeBtn.style.boxShadow = '0 2px 8px rgba(0,0,0,0.5)';
+closeBtn.style.fontSize = '1.5rem';
+closeBtn.style.cursor = 'pointer';
+closeBtn.style.zIndex = '100001';
+closeBtn.onclick = () => overlay.remove();
 
     // Swipe down to close (touch devices)
     let startY;
