@@ -187,18 +187,24 @@ marker.getElement().addEventListener('click', () => {
     overlay.style.justifyContent = 'center';
     overlay.style.zIndex = 100000;
 
-    // Poster container
-    const posterContainer = document.createElement('div');
-    posterContainer.style.position = 'relative';
+// Poster container
+posterContainer.style.position = 'fixed';
+posterContainer.style.top = '0';
+posterContainer.style.left = '0';
+posterContainer.style.width = '100vw';
+posterContainer.style.height = '100vh';
+posterContainer.style.display = 'flex';
+posterContainer.style.alignItems = 'center';
+posterContainer.style.justifyContent = 'center';
+posterContainer.style.background = 'rgba(0,0,0,0.85)';
+posterContainer.style.zIndex = '100001';
 
-    // Poster image
-    const posterImg = document.createElement('img');
-    posterImg.src = posterUrl || '';
-    posterImg.alt = 'Video cover';
-    posterImg.style.maxWidth = '90vw';
-    posterImg.style.maxHeight = '70vh';
-    posterImg.style.borderRadius = '14px';
-    posterImg.style.display = 'block';
+// Poster image
+posterImg.style.width = '100vw';
+posterImg.style.height = '100vh';
+posterImg.style.objectFit = 'contain';
+posterImg.style.borderRadius = '0';
+posterImg.style.display = 'block';
 
     // Play button
     const playBtn = document.createElement('button');
@@ -260,6 +266,10 @@ marker.getElement().addEventListener('click', () => {
     closeBtn.style.zIndex = '100001';
     closeBtn.onclick = () => overlay.remove();
 
+    closeBtn.onclick = () => {
+    overlay.remove();
+};
+
     // Swipe down to close (touch devices)
     let startY;
     overlay.addEventListener('touchstart', e => {
@@ -315,8 +325,9 @@ playBtn.onclick = () => {
     });
 
     // Remove overlay when video ends
-    videoElement.addEventListener('ended', () => overlay.remove());
-
+    videoElement.addEventListener('ended', () => {
+    overlay.remove();
+});
     // Handle loading errors
     videoElement.addEventListener('error', () => {
         spinner.style.display = 'none';
