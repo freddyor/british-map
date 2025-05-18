@@ -704,6 +704,25 @@ document.addEventListener('DOMContentLoaded', () => {
     dropdownContent.style.overflowY = 'auto'; // Make it scrollable
 
     dropdownContent.innerHTML = `
+            <button 
+            class="support-button" 
+            style="
+                background-color: #25D366; 
+                color: white; 
+                padding: 10px 20px; 
+                font-size: 16px; 
+                font-weight: bold; 
+                border: none; 
+                border-radius: 8px; 
+                cursor: pointer; 
+                text-align: center;
+                box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+                margin-bottom: 15px; /* Add spacing below the button */
+            "
+            onclick="window.open('https://chat.whatsapp.com/CmVoiTXQd6r70yxXY4XpDJ')"
+        >
+            Join my WhatsApp group to chat, volunteer info and recommend changes!
+        </button>
         <div class="project-info" style="margin-bottom: 15px;">
             Every time the map is loaded, it costs me money. This project has also taken more hours than you could possibly imagine.
         </div>
