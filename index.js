@@ -289,7 +289,7 @@ playBtn.onclick = () => {
     playBtn.style.display = 'none';
     spinner.style.display = 'block';
 
-    // Create video but DON'T insert it yet
+    // Create a video element
     const videoElement = document.createElement('video');
     videoElement.src = videoUrl;
     if (posterUrl) videoElement.poster = posterUrl;
@@ -298,20 +298,14 @@ playBtn.onclick = () => {
     videoElement.style.borderRadius = '14px';
     videoElement.controls = true;
     videoElement.preload = 'auto';
-
-    // Start loading and attempt to play
-    videoElement.play().catch(() => {
-        spinner.style.display = 'none';
-        playBtn.style.display = 'block';
-        alert('Playback failed. Try again.');
-    });
+    videoElement.autoplay = true;
 
     // Wait for video to be ready before swapping
     videoElement.addEventListener('canplay', () => {
-        // Swap the poster for the video
+        // Swap the poster for the video (inline, not modal)
         posterContainer.replaceChild(videoElement, posterImg);
         spinner.style.display = 'none';
-        videoElement.play(); // Make sure playback resumes if needed
+        videoElement.play();
     });
 
     // Remove overlay when video ends
@@ -323,6 +317,9 @@ playBtn.onclick = () => {
         playBtn.style.display = 'block';
         alert('Video failed to load.');
     });
+
+    // Start loading and attempt to play
+    videoElement.load();
 };
 });
     });
