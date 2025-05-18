@@ -321,20 +321,24 @@ playBtn.onclick = () => {
     videoElement.style.maxWidth = '85vw';
     videoElement.style.maxHeight = '75vh';
     videoElement.style.borderRadius = '14px';
-    videoElement.controls = true;
+    videoElement.controls = false; // HIDE CONTROLS INITIALLY
     videoElement.preload = 'auto';
     videoElement.autoplay = true;
 
     videoElement.setAttribute('playsinline', '');
-videoElement.setAttribute('webkit-playsinline', '');
-videoElement.playsInline = true; // Also set the DOM property (for broad compatibility)
+    videoElement.setAttribute('webkit-playsinline', '');
+    videoElement.playsInline = true;
 
-    // Wait for video to be ready before swapping
+    // Smoothly swap poster for video
     videoElement.addEventListener('canplay', () => {
-        // Swap the poster for the video (inline, not modal)
         posterContainer.replaceChild(videoElement, posterImg);
         spinner.style.display = 'none';
         videoElement.play();
+    });
+
+    // Show controls if user clicks video (optional)
+    videoElement.addEventListener('click', () => {
+        videoElement.controls = true;
     });
 
     // Remove overlay when video ends
@@ -347,7 +351,7 @@ videoElement.playsInline = true; // Also set the DOM property (for broad compati
         alert('Video failed to load.');
     });
 
-    // Start loading and attempt to play
+    // Start loading
     videoElement.load();
 };
 });
