@@ -730,7 +730,7 @@ dropdownContent.style.bottom = '50px';
             style="
                 background-color: #25D366; 
                 color: black; 
-                padding: 10px 20px; 
+                padding: 10px 10px; 
                 font-size: 14px; 
                 font-weight: bold; 
                 border: none;
