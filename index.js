@@ -183,13 +183,14 @@ marker.getElement().addEventListener('click', () => {
     overlay.style.height = '100vh';
     overlay.style.background = 'rgba(0,0,0,0.7)';
     overlay.style.display = 'flex';
-    overlay.style.alignItems = 'center';
+    overlay.style.alignItems = 'flex-start';
     overlay.style.justifyContent = 'center';
     overlay.style.zIndex = 100000;
 
     // Poster container
     const posterContainer = document.createElement('div');
     posterContainer.style.position = 'relative';
+    posterContainer.style.marginTop = '10px'; // Adjust the value as needed
 
     // Poster image
     const posterImg = document.createElement('img');
@@ -295,6 +296,7 @@ playBtn.onclick = () => {
     if (posterUrl) videoElement.poster = posterUrl;
     videoElement.style.maxWidth = '90vw';
     videoElement.style.maxHeight = '80vh';
+    posterContainer.style.marginTop = '10px'; // Adjust the value as needed
     videoElement.style.borderRadius = '14px';
     videoElement.controls = true;
     videoElement.preload = 'auto';
