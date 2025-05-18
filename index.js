@@ -190,6 +190,7 @@ marker.getElement().addEventListener('click', () => {
     // Poster container
     const posterContainer = document.createElement('div');
     posterContainer.style.position = 'relative';
+    posterContainer.style.marginTop = '-60px'; // Try different negative values for more lift
 
     // Poster image
     const posterImg = document.createElement('img');
