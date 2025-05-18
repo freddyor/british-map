@@ -29,7 +29,7 @@ export const buildings = [
     "occupation": "1866-?",
     "videoUrl": "https://www.britmap.com/videos/Captions_2ED448.mp4", 
     "tldr": "",
-                      "posterUrl": "https://www.britmap.com/videos/IMG_6004.jpeg",
+                      "posterUrl": "https://www.britmap.com/videos/-RYS5WY2.webp",
     "events": []
   },
        {
@@ -73,7 +73,7 @@ export const buildings = [
     "occupation": " ",
     "videoUrl": "https://www.britmap.com/videos/Captions_1F175B.mp4", 
     "tldr": "",
-               "posterUrl": "https://www.britmap.com/videos/IMG_6005.jpeg",
+               "posterUrl": "https://www.britmap.com/videos/-RKTYAQ1.webp",
     "events": []
   },
     {
