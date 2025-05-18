@@ -284,6 +284,15 @@ closeBtn.style.justifyContent = 'center';
     });
     overlay.addEventListener('touchend', () => { startY = undefined; });
 
+    playBtn.style.display = 'none';
+closeBtn.style.display = 'none';
+
+// When main content is loaded, show buttons
+posterImg.onload = function() {
+  playBtn.style.display = 'flex';
+  closeBtn.style.display = 'flex';
+};
+
     // Assemble the poster
     posterContainer.appendChild(posterImg);
     posterContainer.appendChild(playBtn);
