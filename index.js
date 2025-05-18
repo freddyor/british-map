@@ -173,6 +173,13 @@ marker.getElement().addEventListener('click', () => {
     }
     document.querySelectorAll('.video-modal-overlay').forEach(el => el.remove());
 
+    // 1. Create posterImg first, but DO NOT add anything to the DOM yet.
+const posterImg = document.createElement('img');
+posterImg.src = posterUrl || '';
+posterImg.alt = 'Video cover';
+
+// 2. When the poster image loads, THEN create and show the overlay and its content
+posterImg.onload = function() {
     // Modal overlay
     const overlay = document.createElement('div');
     overlay.className = 'video-modal-overlay';
@@ -193,12 +200,9 @@ marker.getElement().addEventListener('click', () => {
     posterContainer.style.marginTop = '-60px'; // Try different negative values for more lift
 
     // Poster image
-    const posterImg = document.createElement('img');
-    posterImg.src = posterUrl || '';
-    posterImg.alt = 'Video cover';
     posterImg.style.border = '1.5px solid #E9E8E0';
-    posterImg.style.maxWidth = '90vw';
-    posterImg.style.maxHeight = '80vh';
+    posterImg.style.maxWidth = '85vw';
+    posterImg.style.maxHeight = '75vh';
     posterImg.style.borderRadius = '14px';
     posterImg.style.display = 'block';
 
@@ -307,7 +311,7 @@ overlay.appendChild(posterContainer);
         overlay.remove();
     }
 });
-
+};
     // Play button logic (iOS/Android/desktop compatible)
 playBtn.onclick = () => {
     playBtn.style.display = 'none';
