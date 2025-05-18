@@ -166,10 +166,10 @@ function addBuildingMarkers() {
 
     const videoUrl = building.videoUrl;
     if (videoUrl) {
-        // Remove any existing video overlays if present
+        // Clean up previous overlays
         document.querySelectorAll('.video-modal-overlay').forEach(el => el.remove());
 
-        // Overlay
+        // Overlay (not added yet)
         const overlay = document.createElement('div');
         overlay.className = 'video-modal-overlay';
         overlay.style.position = 'fixed';
@@ -193,6 +193,8 @@ function addBuildingMarkers() {
         videoElement.autoplay = true;
         videoElement.controls = true;
         videoElement.preload = 'auto';
+        // Optional: Set poster image if you have one
+        // videoElement.poster = building.posterUrl || '';
 
         // Close button
         const closeBtn = document.createElement('button');
@@ -207,11 +209,9 @@ function addBuildingMarkers() {
         closeBtn.style.borderRadius = '50%';
         closeBtn.style.cursor = 'pointer';
         closeBtn.style.zIndex = '100001';
-
-        // Close on button click
         closeBtn.onclick = () => overlay.remove();
 
-        // Optional: Swipe down to close (touch devices)
+        // Swipe down to close (touch devices)
         let startY;
         overlay.addEventListener('touchstart', e => {
             if (e.touches.length === 1) startY = e.touches[0].clientY;
@@ -219,7 +219,7 @@ function addBuildingMarkers() {
         overlay.addEventListener('touchmove', e => {
             if (startY !== undefined && e.touches.length === 1) {
                 const dy = e.touches[0].clientY - startY;
-                if (dy > 70) { // Swiped down 70px
+                if (dy > 70) {
                     overlay.remove();
                     startY = undefined;
                 }
@@ -227,13 +227,22 @@ function addBuildingMarkers() {
         });
         overlay.addEventListener('touchend', () => { startY = undefined; });
 
-        // Remove overlay on video end (optional)
+        // Remove overlay on video end
         videoElement.addEventListener('ended', () => overlay.remove());
 
-        // Add elements
+        // Append elements but not to DOM yet
         overlay.appendChild(videoElement);
         overlay.appendChild(closeBtn);
-        document.body.appendChild(overlay);
+
+        // Only show overlay/video when first frame is loaded
+        videoElement.addEventListener('loadeddata', () => {
+            // Now the first frame is ready, show overlay
+            document.body.appendChild(overlay);
+            videoElement.play(); // Ensure it starts if needed
+        });
+
+        // Start loading the video (by setting src it's already loading)
+        // If you want to show a spinner, you can do so here before loadeddata fires
     } else {
         console.error('Video URL not available for this building.');
     }
