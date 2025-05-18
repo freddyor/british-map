@@ -734,7 +734,7 @@ dropdownContent.style.bottom = '50px';
                 font-size: 14px; 
                 font-weight: bold; 
                 border: none;
-                line-height: 1.25
+                line-height: 1.25;
                 border-radius: 8px; 
                 cursor: pointer; 
                 text-align: center;
