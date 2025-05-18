@@ -15,7 +15,7 @@ mapboxScript.src = "https://api.mapbox.com/mapbox-gl-js/v3.12.0/mapbox-gl.js";
 mapboxScript.defer = true;
 mapboxScript.onload = () => {
     // Initialize Mapbox after the script is loaded
-    mapboxgl.accessToken = 'pk.eyJ1IjoiZnJlZGRvbWF0ZSIsImEiOiJjbTc1bm5zYnQwaG1mMmtxeDdteXNmeXZ0In0.PuDNORq4qExIJ_fErdO_8g';
+    mapboxgl.accessToken = ' ';
     initializeMap(); // Call function to set up your map
 };
 document.body.appendChild(mapboxScript);
