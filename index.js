@@ -173,12 +173,6 @@ marker.getElement().addEventListener('click', () => {
     }
     document.querySelectorAll('.video-modal-overlay').forEach(el => el.remove());
 
-    // 1. Create posterImg first, but DO NOT add anything to the DOM yet.
-const posterImg = document.createElement('img');
-posterImg.src = posterUrl || '';
-posterImg.alt = 'Video cover';
-
-posterImg.onload = function() {
     // Modal overlay
     const overlay = document.createElement('div');
     overlay.className = 'video-modal-overlay';
@@ -196,12 +190,15 @@ posterImg.onload = function() {
     // Poster container
     const posterContainer = document.createElement('div');
     posterContainer.style.position = 'relative';
-    posterContainer.style.marginTop = '-60px';
+    posterContainer.style.marginTop = '-60px'; // Try different negative values for more lift
 
-    // Style posterImg
+    // Poster image
+    const posterImg = document.createElement('img');
+    posterImg.src = posterUrl || '';
+    posterImg.alt = 'Video cover';
     posterImg.style.border = '1.5px solid #E9E8E0';
-    posterImg.style.maxWidth = '85vw';
-    posterImg.style.maxHeight = '75vh';
+    posterImg.style.maxWidth = '90vw';
+    posterImg.style.maxHeight = '80vh';
     posterImg.style.borderRadius = '14px';
     posterImg.style.display = 'block';
 
@@ -253,21 +250,22 @@ posterImg.onload = function() {
     // Close button
     const closeBtn = document.createElement('button');
     closeBtn.textContent = '❌';
-    closeBtn.style.position = 'absolute';
-    closeBtn.style.top = '-8px';
-    closeBtn.style.right = '-8px';
-    closeBtn.style.width = '40px';
-    closeBtn.style.height = '40px';
-    closeBtn.style.background = '#000';
-    closeBtn.style.color = '#fff';
-    closeBtn.style.border = '1.5px solid #E9E8E0';
-    closeBtn.style.borderRadius = '50%';
-    closeBtn.style.cursor = 'pointer';
-    closeBtn.style.fontSize = '1.5rem';
-    closeBtn.style.zIndex = '100001';
-    closeBtn.style.display = 'flex';
-    closeBtn.style.alignItems = 'center';
-    closeBtn.style.justifyContent = 'center';
+closeBtn.style.position = 'absolute';
+closeBtn.style.top = '-8px';         // Or whatever negative value you want
+closeBtn.style.right = '-8px';       // Or whatever negative value you want
+closeBtn.style.width = '40px';
+closeBtn.style.height = '40px';
+closeBtn.style.background = '#000';
+closeBtn.style.color = '#fff';
+closeBtn.style.border = '1.5px solid #E9E8E0';
+closeBtn.style.borderRadius = '50%';
+closeBtn.style.cursor = 'pointer';
+closeBtn.style.fontSize = '1.5rem';
+closeBtn.style.zIndex = '100001';
+// Center the text/icon
+closeBtn.style.display = 'flex';
+closeBtn.style.alignItems = 'center';
+closeBtn.style.justifyContent = 'center';
     closeBtn.onclick = () => overlay.remove();
 
     // Swipe down to close (touch devices)
@@ -286,63 +284,77 @@ posterImg.onload = function() {
     });
     overlay.addEventListener('touchend', () => { startY = undefined; });
 
+    playBtn.style.display = 'none';
+closeBtn.style.display = 'none';
+
+// When main content is loaded, show buttons
+posterImg.onload = function() {
+  playBtn.style.display = 'flex';
+  closeBtn.style.display = 'flex';
+};
+
     // Assemble the poster
     posterContainer.appendChild(posterImg);
     posterContainer.appendChild(playBtn);
     posterContainer.appendChild(spinner);
     posterContainer.appendChild(closeBtn);
-    overlay.appendChild(posterContainer);
+overlay.appendChild(posterContainer);
     document.body.appendChild(overlay);
 
-    // Close if clicking overlay background
     overlay.addEventListener('mousedown', function(e) {
-        if (e.target === overlay) {
-            overlay.remove();
-        }
+    // Only close if they click directly on the overlay (not on the poster/video)
+    if (e.target === overlay) {
+        overlay.remove();
+    }
+});
+
+    // Play button logic (iOS/Android/desktop compatible)
+playBtn.onclick = () => {
+    playBtn.style.display = 'none';
+    spinner.style.display = 'block';
+
+    // Create a video element
+    const videoElement = document.createElement('video');
+    videoElement.src = videoUrl;
+    if (posterUrl) videoElement.poster = posterUrl;
+    videoElement.style.border = '1.5px solid #E9E8E0';
+    videoElement.style.maxWidth = '85vw';
+    videoElement.style.maxHeight = '75vh';
+    videoElement.style.borderRadius = '14px';
+    videoElement.controls = false; // HIDE CONTROLS INITIALLY
+    videoElement.preload = 'auto';
+    videoElement.autoplay = true;
+
+    videoElement.setAttribute('playsinline', '');
+    videoElement.setAttribute('webkit-playsinline', '');
+    videoElement.playsInline = true;
+
+    // Smoothly swap poster for video
+    videoElement.addEventListener('canplay', () => {
+        posterContainer.replaceChild(videoElement, posterImg);
+        spinner.style.display = 'none';
+        videoElement.play();
     });
 
-    // Play button logic (INSIDE posterImg.onload so all variables are in scope)
-    playBtn.onclick = () => {
-        playBtn.style.display = 'none';
-        spinner.style.display = 'block';
+    // Show controls if user clicks video (optional)
+    videoElement.addEventListener('click', () => {
+        videoElement.controls = true;
+    });
 
-        // Create a video element
-        const videoElement = document.createElement('video');
-        videoElement.src = videoUrl;
-        if (posterUrl) videoElement.poster = posterUrl;
-        videoElement.style.border = '1.5px solid #E9E8E0';
-        videoElement.style.maxWidth = '85vw';
-        videoElement.style.maxHeight = '75vh';
-        videoElement.style.borderRadius = '14px';
-        videoElement.controls = false;
-        videoElement.preload = 'auto';
-        videoElement.autoplay = true;
-        videoElement.setAttribute('playsinline', '');
-        videoElement.setAttribute('webkit-playsinline', '');
-        videoElement.playsInline = true;
+    // Remove overlay when video ends
+    videoElement.addEventListener('ended', () => overlay.remove());
 
-        videoElement.addEventListener('canplay', () => {
-            posterContainer.replaceChild(videoElement, posterImg);
-            spinner.style.display = 'none';
-            videoElement.play();
-        });
+    // Handle loading errors
+    videoElement.addEventListener('error', () => {
+        spinner.style.display = 'none';
+        playBtn.style.display = 'block';
+        alert('Video failed to load.');
+    });
 
-        videoElement.addEventListener('click', () => {
-            videoElement.controls = true;
-        });
-
-        videoElement.addEventListener('ended', () => overlay.remove());
-
-        videoElement.addEventListener('error', () => {
-            spinner.style.display = 'none';
-            playBtn.style.display = 'block';
-            alert('Video failed to load.');
-        });
-
-        videoElement.load();
-    };
+    // Start loading
+    videoElement.load();
 };
-    });
+});
     });
 }
     function scaleMarkersBasedOnZoom() {
