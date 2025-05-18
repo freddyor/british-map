@@ -198,8 +198,6 @@ marker.getElement().addEventListener('click', () => {
     posterImg.style.maxWidth = '85vw';
     posterImg.style.maxHeight = '75vh';
     posterImg.style.borderRadius = '14px';
-    posterImg.style.marginTop = '20px';
-    posterImg.style.marginBottom = '40px';
     posterImg.style.display = 'block';
 
     // Play button
@@ -298,8 +296,6 @@ playBtn.onclick = () => {
     videoElement.style.maxWidth = '85vw';
     videoElement.style.maxHeight = '75vh';
     videoElement.style.borderRadius = '14px';
-    videoElement.style.marginTop = '20px';
-    videoElement.style.marginBottom = '40px';
     videoElement.controls = true;
     videoElement.preload = 'auto';
     videoElement.autoplay = true;
