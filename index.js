@@ -5,13 +5,13 @@ import { locations } from './locations.js';
 
 // Dynamically load Mapbox GL JS CSS
 const mapboxCSS = document.createElement('link');
-mapboxCSS.href = " ";
+mapboxCSS.href = "https://api.mapbox.com/mapbox-gl-js/v3.12.0/mapbox-gl.css";
 mapboxCSS.rel = "stylesheet";
 document.head.appendChild(mapboxCSS);
 
 // Dynamically load Mapbox GL JS JavaScript
 const mapboxScript = document.createElement('script');
-mapboxScript.src = " ";
+mapboxScript.src = "https://api.mapbox.com/mapbox-gl-js/v3.12.0/mapbox-gl.js";
 mapboxScript.defer = true;
 mapboxScript.onload = () => {
     // Initialize Mapbox after the script is loaded
