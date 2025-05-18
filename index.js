@@ -196,7 +196,7 @@ marker.getElement().addEventListener('click', () => {
     posterImg.src = posterUrl || '';
     posterImg.alt = 'Video cover';
     posterImg.style.maxWidth = '90vw';
-    posterImg.style.maxHeight = '70vh';
+    posterImg.style.maxHeight = '80vh';
     posterImg.style.borderRadius = '14px';
     posterImg.style.display = 'block';
 
@@ -294,7 +294,7 @@ playBtn.onclick = () => {
     videoElement.src = videoUrl;
     if (posterUrl) videoElement.poster = posterUrl;
     videoElement.style.maxWidth = '90vw';
-    videoElement.style.maxHeight = '70vh';
+    videoElement.style.maxHeight = '80vh';
     videoElement.style.borderRadius = '14px';
     videoElement.controls = true;
     videoElement.preload = 'auto';
