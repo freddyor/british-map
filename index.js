@@ -166,50 +166,74 @@ function addBuildingMarkers() {
 
     const videoUrl = building.videoUrl;
     if (videoUrl) {
-        // Remove any existing video elements
-        document.querySelectorAll('.fullscreen-video').forEach(el => el.remove());
+        // Remove any existing video overlays if present
+        document.querySelectorAll('.video-modal-overlay').forEach(el => el.remove());
 
-        // Create the video element
+        // Overlay
+        const overlay = document.createElement('div');
+        overlay.className = 'video-modal-overlay';
+        overlay.style.position = 'fixed';
+        overlay.style.top = 0;
+        overlay.style.left = 0;
+        overlay.style.width = '100vw';
+        overlay.style.height = '100vh';
+        overlay.style.background = 'rgba(0,0,0,0.7)';
+        overlay.style.display = 'flex';
+        overlay.style.alignItems = 'center';
+        overlay.style.justifyContent = 'center';
+        overlay.style.zIndex = 100000;
+
+        // Video
         const videoElement = document.createElement('video');
         videoElement.src = videoUrl;
-        videoElement.className = 'fullscreen-video';
-        videoElement.style.position = 'fixed';
-        videoElement.style.top = '0';
-        videoElement.style.left = '0';
-        videoElement.style.width = '100vw';
-        videoElement.style.height = '100vh';
-        videoElement.style.objectFit = 'contain';
-        videoElement.style.background = 'black';
-        videoElement.style.zIndex = '100000';
+        videoElement.style.maxWidth = '90vw';
+        videoElement.style.maxHeight = '70vh';
+        videoElement.style.background = '#111';
+        videoElement.style.borderRadius = '14px';
         videoElement.autoplay = true;
         videoElement.controls = true;
         videoElement.preload = 'auto';
 
-        // Append to DOM immediately
-        document.body.appendChild(videoElement);
+        // Close button
+        const closeBtn = document.createElement('button');
+        closeBtn.textContent = '✖';
+        closeBtn.style.position = 'absolute';
+        closeBtn.style.top = '30px';
+        closeBtn.style.right = '40px';
+        closeBtn.style.fontSize = '2rem';
+        closeBtn.style.background = 'rgba(0,0,0,0.5)';
+        closeBtn.style.color = '#fff';
+        closeBtn.style.border = 'none';
+        closeBtn.style.borderRadius = '50%';
+        closeBtn.style.cursor = 'pointer';
+        closeBtn.style.zIndex = '100001';
 
-        // Play and request fullscreen ASAP
-        videoElement.play().catch(() => {}); // Ignore autoplay errors
-        if (videoElement.requestFullscreen) {
-            videoElement.requestFullscreen();
-        } else if (videoElement.webkitRequestFullscreen) {
-            videoElement.webkitRequestFullscreen();
-        }
+        // Close on button click
+        closeBtn.onclick = () => overlay.remove();
 
-        // Remove video when playback ends or fullscreen is exited (swipe down)
-        function cleanup() {
-            videoElement.pause();
-            videoElement.remove();
-        }
-
-        videoElement.addEventListener('ended', cleanup);
-
-        document.addEventListener('fullscreenchange', function handler() {
-            if (!document.fullscreenElement) {
-                cleanup();
-                document.removeEventListener('fullscreenchange', handler);
+        // Optional: Swipe down to close (touch devices)
+        let startY;
+        overlay.addEventListener('touchstart', e => {
+            if (e.touches.length === 1) startY = e.touches[0].clientY;
+        });
+        overlay.addEventListener('touchmove', e => {
+            if (startY !== undefined && e.touches.length === 1) {
+                const dy = e.touches[0].clientY - startY;
+                if (dy > 70) { // Swiped down 70px
+                    overlay.remove();
+                    startY = undefined;
+                }
             }
         });
+        overlay.addEventListener('touchend', () => { startY = undefined; });
+
+        // Remove overlay on video end (optional)
+        videoElement.addEventListener('ended', () => overlay.remove());
+
+        // Add elements
+        overlay.appendChild(videoElement);
+        overlay.appendChild(closeBtn);
+        document.body.appendChild(overlay);
     } else {
         console.error('Video URL not available for this building.');
     }
