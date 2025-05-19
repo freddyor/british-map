@@ -61,22 +61,7 @@ function showFirstVideoWaitMessage(videoElement) {
 
     document.body.appendChild(overlay);
 }
-// --- First Video Popup additions END ---
-// Example: Place this when you want to hide the loading screen (e.g., after mapbox loads, or after your main data is ready)
-// Replace your old loading screen hiding logic with this block:
-const loadingScreen = document.getElementById("loading-screen");
-const elapsed = Date.now() - loadingScreenStart;
-const minDuration = 5000; // 5 seconds
 
-if (loadingScreen) {
-    if (elapsed >= minDuration) {
-        loadingScreen.style.display = "none";
-    } else {
-        setTimeout(() => {
-            loadingScreen.style.display = "none";
-        }, minDuration - elapsed);
-    }
-}
 
 // Dynamically load Mapbox GL JS CSS
 const mapboxCSS = document.createElement('link');
@@ -365,14 +350,28 @@ mapboxScript.onload = () => {
     map.on('zoom', () => scaleMarkersBasedOnZoom());
 
     // Only what requires style load
-    map.on('load', () => {
-        geolocate.trigger();
-        map.addSource('Ward_boundaries-8vvo78', {
-            type: 'vector',
-            url: 'mapbox://freddomate.345l7u6c'
-        });
+map.on('load', () => {
+    geolocate.trigger();
+    map.addSource('Ward_boundaries-8vvo78', {
+        type: 'vector',
+        url: 'mapbox://freddomate.345l7u6c'
     });
-};
+
+    // Hide the loading screen after at least 5 seconds
+    const loadingScreen = document.getElementById('loading-screen');
+    const elapsed = Date.now() - loadingScreenStart;
+    const minDuration = 5000; // 5 seconds
+
+    if (loadingScreen) {
+        if (elapsed >= minDuration) {
+            loadingScreen.style.display = 'none';
+        } else {
+            setTimeout(() => {
+                loadingScreen.style.display = 'none';
+            }, minDuration - elapsed);
+        }
+    }
+});
 // Function to parse URL parameters
 function getUrlParameter(name) {
     name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
