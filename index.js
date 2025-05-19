@@ -3,6 +3,63 @@ import { buildings } from './buildings.js';
 import { locations } from './locations.js';
 
 
+// --- First Video Popup additions START ---
+let firstVideoLoadedThisSession = false;
+function showFirstVideoWaitMessage(videoElement) {
+    if (firstVideoLoadedThisSession) return;
+    firstVideoLoadedThisSession = true;
+
+    // Create overlay
+    const overlay = document.createElement('div');
+    overlay.style.position = 'fixed';
+    overlay.style.top = 0;
+    overlay.style.left = 0;
+    overlay.style.width = '100vw';
+    overlay.style.height = '100vh';
+    overlay.style.background = 'rgba(0,0,0,0.15)';
+    overlay.style.zIndex = 200000;
+    overlay.id = 'first-video-overlay';
+
+    // Create the message container
+    const msg = document.createElement('div');
+    msg.style.background = '#E9E8E0';
+    msg.style.border = '2px solid #f0f0f0';
+    msg.style.borderRadius = '14px';
+    msg.style.boxShadow = '0 6px 15px rgba(0,0,0,0.3)';
+    msg.style.fontFamily = "'Poppins', sans-serif";
+    msg.style.fontSize = '17px';
+    msg.style.fontWeight = 'bold';
+    msg.style.padding = '32px 26px';
+    msg.style.textAlign = 'center';
+    msg.style.position = 'absolute';
+    msg.style.top = '50%';
+    msg.style.left = '50%';
+    msg.style.transform = 'translate(-50%, -50%)';
+    msg.innerText = "Please give 30 seconds to load for the first video of the session. All other vids will work smoothly after. Thanks for your patience :)";
+
+    overlay.appendChild(msg);
+
+    // Remove overlay when clicking outside the message
+    overlay.addEventListener('mousedown', (e) => {
+        if (e.target === overlay) overlay.remove();
+    });
+
+    // Remove overlay after 30 seconds (timeout)
+    const timeout = setTimeout(() => overlay.remove(), 30000);
+
+    // Remove overlay when video starts playing
+    if (videoElement) {
+        videoElement.addEventListener('playing', () => {
+            clearTimeout(timeout);
+            overlay.remove();
+        });
+    }
+
+    document.body.appendChild(overlay);
+}
+// --- First Video Popup additions END ---
+
+
 // Preload all marker images (as much as browsers allow)
 function preloadImages() {
     // Collect all image URLs from both arrays
@@ -198,205 +255,209 @@ function addBuildingMarkers() {
         .setLngLat(building.coords)
         .addTo(map);
 
-marker.getElement().addEventListener('click', () => {
-    map.getCanvas().style.cursor = 'pointer';
+        marker.getElement().addEventListener('click', () => {
+            map.getCanvas().style.cursor = 'pointer';
 
-    const videoUrl = building.videoUrl;
-    const posterUrl = building.posterUrl;
+            const videoUrl = building.videoUrl;
+            const posterUrl = building.posterUrl;
 
-    if (!videoUrl) {
-        console.error('Video URL not available for this building.');
-        return;
-    }
-    document.querySelectorAll('.video-modal-overlay').forEach(el => el.remove());
-
-    // Modal overlay
-    const overlay = document.createElement('div');
-    overlay.className = 'video-modal-overlay';
-    overlay.style.position = 'fixed';
-    overlay.style.top = 0;
-    overlay.style.left = 0;
-    overlay.style.width = '100vw';
-    overlay.style.height = '100vh';
-    overlay.style.background = 'rgba(0,0,0,0.85)';
-    overlay.style.display = 'flex';
-    overlay.style.alignItems = 'center';
-    overlay.style.justifyContent = 'center';
-    overlay.style.zIndex = 100000;
-
-    // Poster container
-    const posterContainer = document.createElement('div');
-    posterContainer.style.position = 'relative';
-    posterContainer.style.marginTop = '-60px'; // Try different negative values for more lift
-
-    // Poster image
-    const posterImg = document.createElement('img');
-    posterImg.src = posterUrl || '';
-    posterImg.alt = 'Video cover';
-    posterImg.style.maxWidth = '85vw';
-    posterImg.style.maxHeight = '75vh';
-    posterImg.style.borderRadius = '14px';
-    posterImg.style.display = 'block';
-
-    posterImg.addEventListener('load', () => {
-  // Only add the outline/border after the image is fully loaded
-  posterImg.style.border = '1.5px solid #E9E8E0';
-  // Place any other logic for "buildingmarkers" outline here.
-});
-
-    // Play button
-    const playBtn = document.createElement('button');
-    playBtn.innerHTML = '▶';
-    playBtn.style.position = 'absolute';
-    playBtn.style.top = '50%';
-    playBtn.style.left = '50%';
-    playBtn.style.transform = 'translate(-50%, -50%)';
-    playBtn.style.background = 'rgba(0,0,0,0.6)';
-    playBtn.style.border = 'none';
-    playBtn.style.borderRadius = '50%';
-    playBtn.style.width = '64px';
-    playBtn.style.height = '64px';
-    playBtn.style.color = '#fff';
-    playBtn.style.fontSize = '2.5rem';
-    playBtn.style.cursor = 'pointer';
-    playBtn.style.display = 'flex';
-    playBtn.style.alignItems = 'center';
-    playBtn.style.justifyContent = 'center';
-    playBtn.style.zIndex = 2;
-
-    // Spinner (hidden by default)
-    const spinner = document.createElement('div');
-    spinner.style.position = 'absolute';
-    spinner.style.top = '50%';
-    spinner.style.left = '50%';
-    spinner.style.transform = 'translate(-50%, -50%)';
-    spinner.style.width = '48px';
-    spinner.style.height = '48px';
-    spinner.style.border = '6px solid #eee';
-    spinner.style.borderTop = '6px solid #9b4dca';
-    spinner.style.borderRadius = '50%';
-    spinner.style.animation = 'spin 1s linear infinite';
-    spinner.style.display = 'none';
-    spinner.style.zIndex = 3;
-
-    // Add keyframes for spinner
-    const spinnerStyle = document.createElement('style');
-    spinnerStyle.innerHTML = `
-      @keyframes spin {
-        0% { transform: translate(-50%, -50%) rotate(0deg);}
-        100% { transform: translate(-50%, -50%) rotate(360deg);}
-      }
-    `;
-    document.head.appendChild(spinnerStyle);
-
-    // Close button
-    const closeBtn = document.createElement('button');
-    closeBtn.textContent = '❌';
-closeBtn.style.position = 'absolute';
-closeBtn.style.top = '-8px';         // Or whatever negative value you want
-closeBtn.style.right = '-8px';       // Or whatever negative value you want
-closeBtn.style.width = '40px';
-closeBtn.style.height = '40px';
-closeBtn.style.background = '#000';
-closeBtn.style.color = '#fff';
-closeBtn.style.border = '1.5px solid #E9E8E0';
-closeBtn.style.borderRadius = '50%';
-closeBtn.style.cursor = 'pointer';
-closeBtn.style.fontSize = '1.5rem';
-closeBtn.style.zIndex = '100001';
-// Center the text/icon
-closeBtn.style.display = 'flex';
-closeBtn.style.alignItems = 'center';
-closeBtn.style.justifyContent = 'center';
-    closeBtn.onclick = () => overlay.remove();
-
-    // Swipe down to close (touch devices)
-    let startY;
-    overlay.addEventListener('touchstart', e => {
-        if (e.touches.length === 1) startY = e.touches[0].clientY;
-    });
-    overlay.addEventListener('touchmove', e => {
-        if (startY !== undefined && e.touches.length === 1) {
-            const dy = e.touches[0].clientY - startY;
-            if (dy > 70) {
-                overlay.remove();
-                startY = undefined;
+            if (!videoUrl) {
+                console.error('Video URL not available for this building.');
+                return;
             }
-        }
-    });
-    overlay.addEventListener('touchend', () => { startY = undefined; });
+            document.querySelectorAll('.video-modal-overlay').forEach(el => el.remove());
 
-    playBtn.style.display = 'none';
-closeBtn.style.display = 'none';
+            // Modal overlay
+            const overlay = document.createElement('div');
+            overlay.className = 'video-modal-overlay';
+            overlay.style.position = 'fixed';
+            overlay.style.top = 0;
+            overlay.style.left = 0;
+            overlay.style.width = '100vw';
+            overlay.style.height = '100vh';
+            overlay.style.background = 'rgba(0,0,0,0.85)';
+            overlay.style.display = 'flex';
+            overlay.style.alignItems = 'center';
+            overlay.style.justifyContent = 'center';
+            overlay.style.zIndex = 100000;
 
-// When main content is loaded, show buttons
-posterImg.onload = function() {
-  playBtn.style.display = 'flex';
-  closeBtn.style.display = 'flex';
-};
+            // Poster container
+            const posterContainer = document.createElement('div');
+            posterContainer.style.position = 'relative';
+            posterContainer.style.marginTop = '-60px'; // Try different negative values for more lift
 
-    // Assemble the poster
-    posterContainer.appendChild(posterImg);
-    posterContainer.appendChild(playBtn);
-    posterContainer.appendChild(spinner);
-    posterContainer.appendChild(closeBtn);
-overlay.appendChild(posterContainer);
-    document.body.appendChild(overlay);
+            // Poster image
+            const posterImg = document.createElement('img');
+            posterImg.src = posterUrl || '';
+            posterImg.alt = 'Video cover';
+            posterImg.style.maxWidth = '85vw';
+            posterImg.style.maxHeight = '75vh';
+            posterImg.style.borderRadius = '14px';
+            posterImg.style.display = 'block';
 
-    overlay.addEventListener('mousedown', function(e) {
-    // Only close if they click directly on the overlay (not on the poster/video)
-    if (e.target === overlay) {
-        overlay.remove();
-    }
-});
+            posterImg.addEventListener('load', () => {
+                // Only add the outline/border after the image is fully loaded
+                posterImg.style.border = '1.5px solid #E9E8E0';
+                // Place any other logic for "buildingmarkers" outline here.
+            });
 
-    // Play button logic (iOS/Android/desktop compatible)
-playBtn.onclick = () => {
-    playBtn.style.display = 'none';
-    spinner.style.display = 'block';
+            // Play button
+            const playBtn = document.createElement('button');
+            playBtn.innerHTML = '▶';
+            playBtn.style.position = 'absolute';
+            playBtn.style.top = '50%';
+            playBtn.style.left = '50%';
+            playBtn.style.transform = 'translate(-50%, -50%)';
+            playBtn.style.background = 'rgba(0,0,0,0.6)';
+            playBtn.style.border = 'none';
+            playBtn.style.borderRadius = '50%';
+            playBtn.style.width = '64px';
+            playBtn.style.height = '64px';
+            playBtn.style.color = '#fff';
+            playBtn.style.fontSize = '2.5rem';
+            playBtn.style.cursor = 'pointer';
+            playBtn.style.display = 'flex';
+            playBtn.style.alignItems = 'center';
+            playBtn.style.justifyContent = 'center';
+            playBtn.style.zIndex = 2;
 
-    // Create a video element
-    const videoElement = document.createElement('video');
-    videoElement.src = videoUrl;
-    if (posterUrl) videoElement.poster = posterUrl;
-    videoElement.style.border = '1.5px solid #E9E8E0';
-    videoElement.style.maxWidth = '85vw';
-    videoElement.style.maxHeight = '75vh';
-    videoElement.style.borderRadius = '14px';
-    videoElement.controls = false; // HIDE CONTROLS INITIALLY
-    videoElement.preload = 'auto';
-    videoElement.autoplay = true;
+            // Spinner (hidden by default)
+            const spinner = document.createElement('div');
+            spinner.style.position = 'absolute';
+            spinner.style.top = '50%';
+            spinner.style.left = '50%';
+            spinner.style.transform = 'translate(-50%, -50%)';
+            spinner.style.width = '48px';
+            spinner.style.height = '48px';
+            spinner.style.border = '6px solid #eee';
+            spinner.style.borderTop = '6px solid #9b4dca';
+            spinner.style.borderRadius = '50%';
+            spinner.style.animation = 'spin 1s linear infinite';
+            spinner.style.display = 'none';
+            spinner.style.zIndex = 3;
 
-    videoElement.setAttribute('playsinline', '');
-    videoElement.setAttribute('webkit-playsinline', '');
-    videoElement.playsInline = true;
+            // Add keyframes for spinner
+            const spinnerStyle = document.createElement('style');
+            spinnerStyle.innerHTML = `
+              @keyframes spin {
+                0% { transform: translate(-50%, -50%) rotate(0deg);}
+                100% { transform: translate(-50%, -50%) rotate(360deg);}
+              }
+            `;
+            document.head.appendChild(spinnerStyle);
 
-    // Smoothly swap poster for video
-videoElement.addEventListener('canplaythrough', () => {
-    posterContainer.replaceChild(videoElement, posterImg);
-    spinner.style.display = 'none';
-    videoElement.play();
-});
+            // Close button
+            const closeBtn = document.createElement('button');
+            closeBtn.textContent = '❌';
+            closeBtn.style.position = 'absolute';
+            closeBtn.style.top = '-8px';         // Or whatever negative value you want
+            closeBtn.style.right = '-8px';       // Or whatever negative value you want
+            closeBtn.style.width = '40px';
+            closeBtn.style.height = '40px';
+            closeBtn.style.background = '#000';
+            closeBtn.style.color = '#fff';
+            closeBtn.style.border = '1.5px solid #E9E8E0';
+            closeBtn.style.borderRadius = '50%';
+            closeBtn.style.cursor = 'pointer';
+            closeBtn.style.fontSize = '1.5rem';
+            closeBtn.style.zIndex = '100001';
+            // Center the text/icon
+            closeBtn.style.display = 'flex';
+            closeBtn.style.alignItems = 'center';
+            closeBtn.style.justifyContent = 'center';
+            closeBtn.onclick = () => overlay.remove();
 
-    // Show controls if user clicks video (optional)
-    videoElement.addEventListener('click', () => {
-        videoElement.controls = true;
-    });
+            // Swipe down to close (touch devices)
+            let startY;
+            overlay.addEventListener('touchstart', e => {
+                if (e.touches.length === 1) startY = e.touches[0].clientY;
+            });
+            overlay.addEventListener('touchmove', e => {
+                if (startY !== undefined && e.touches.length === 1) {
+                    const dy = e.touches[0].clientY - startY;
+                    if (dy > 70) {
+                        overlay.remove();
+                        startY = undefined;
+                    }
+                }
+            });
+            overlay.addEventListener('touchend', () => { startY = undefined; });
 
-    // Remove overlay when video ends
-    videoElement.addEventListener('ended', () => overlay.remove());
+            playBtn.style.display = 'none';
+            closeBtn.style.display = 'none';
 
-    // Handle loading errors
-    videoElement.addEventListener('error', () => {
-        spinner.style.display = 'none';
-        playBtn.style.display = 'block';
-        alert('Video failed to load.');
-    });
+            // When main content is loaded, show buttons
+            posterImg.onload = function() {
+                playBtn.style.display = 'flex';
+                closeBtn.style.display = 'flex';
+            };
 
-    // Start loading
-    videoElement.load();
-};
-});
+            // Assemble the poster
+            posterContainer.appendChild(posterImg);
+            posterContainer.appendChild(playBtn);
+            posterContainer.appendChild(spinner);
+            posterContainer.appendChild(closeBtn);
+            overlay.appendChild(posterContainer);
+            document.body.appendChild(overlay);
+
+            overlay.addEventListener('mousedown', function(e) {
+                // Only close if they click directly on the overlay (not on the poster/video)
+                if (e.target === overlay) {
+                    overlay.remove();
+                }
+            });
+
+            // Play button logic (iOS/Android/desktop compatible)
+            playBtn.onclick = () => {
+                playBtn.style.display = 'none';
+                spinner.style.display = 'block';
+
+                // Create a video element
+                const videoElement = document.createElement('video');
+                videoElement.src = videoUrl;
+                if (posterUrl) videoElement.poster = posterUrl;
+                videoElement.style.border = '1.5px solid #E9E8E0';
+                videoElement.style.maxWidth = '85vw';
+                videoElement.style.maxHeight = '75vh';
+                videoElement.style.borderRadius = '14px';
+                videoElement.controls = false; // HIDE CONTROLS INITIALLY
+                videoElement.preload = 'auto';
+                videoElement.autoplay = true;
+
+                videoElement.setAttribute('playsinline', '');
+                videoElement.setAttribute('webkit-playsinline', '');
+                videoElement.playsInline = true;
+
+                // --- First Video Popup additions: show the popup now ---
+                showFirstVideoWaitMessage(videoElement);
+                // --- End First Video Popup additions ---
+
+                // Smoothly swap poster for video
+                videoElement.addEventListener('canplaythrough', () => {
+                    posterContainer.replaceChild(videoElement, posterImg);
+                    spinner.style.display = 'none';
+                    videoElement.play();
+                });
+
+                // Show controls if user clicks video (optional)
+                videoElement.addEventListener('click', () => {
+                    videoElement.controls = true;
+                });
+
+                // Remove overlay when video ends
+                videoElement.addEventListener('ended', () => overlay.remove());
+
+                // Handle loading errors
+                videoElement.addEventListener('error', () => {
+                    spinner.style.display = 'none';
+                    playBtn.style.display = 'block';
+                    alert('Video failed to load.');
+                });
+
+                // Start loading
+                videoElement.load();
+            };
+        });
     });
 }
     function scaleMarkersBasedOnZoom() {
