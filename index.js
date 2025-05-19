@@ -194,7 +194,7 @@ mapboxScript.onload = () => {
                 const posterImg = document.createElement('img');
                 posterImg.src = posterUrl || '';
                 posterImg.alt = 'Video cover';
-                posterImg.style.maxWidth = '90vw';
+                posterImg.style.maxWidth = '88vw';
                 posterImg.style.maxHeight = '80vh';
                 posterImg.style.borderRadius = '14px';
                 posterImg.style.display = 'block';
@@ -289,7 +289,7 @@ mapboxScript.onload = () => {
                     videoElement.src = videoUrl;
                     if (posterUrl) videoElement.poster = posterUrl;
                     videoElement.style.border = '1.5px solid #E9E8E0';
-                    videoElement.style.maxWidth = '90vw';
+                    videoElement.style.maxWidth = '88vw';
                     videoElement.style.maxHeight = '80vh';
                     videoElement.style.borderRadius = '14px';
                     videoElement.controls = false;
