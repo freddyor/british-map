@@ -2,12 +2,25 @@
 import { buildings } from './buildings.js';
 import { locations } from './locations.js';
 
-t img = new window.Image();
-            img.src = url;
+
+// Preload all marker images (as much as browsers allow)
+function preloadImages() {
+    // Collect all image URLs from both arrays
+    const imageUrls = [
+        ...locations.map(l => l.imageUrl),
+        ...buildings.map(b => b.imageUrl)
+    ];
+
+    imageUrls.forEach(url => {
+        if (url) {
+            const link = document.createElement('link');
+            link.rel = 'preload';
+            link.as = 'image';
+            link.href = url;
+            document.head.appendChild(link);
         }
     });
 }
-
 // Preload all marker videos (as much as browsers allow)
 function preloadVideos() {
     // Collect all video URLs from both arrays
