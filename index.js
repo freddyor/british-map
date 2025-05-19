@@ -299,21 +299,31 @@ mapboxScript.onload = () => {
                     videoElement.setAttribute('webkit-playsinline', '');
                     videoElement.playsInline = true;
                     showFirstVideoWaitMessage(videoElement);
-                    videoElement.addEventListener('canplaythrough', () => {
-                        posterContainer.replaceChild(videoElement, posterImg);
-                        spinner.style.display = 'none';
-                        videoElement.play();
-                    });
-                    videoElement.addEventListener('click', () => {
-                        videoElement.controls = true;
-                    });
-                    videoElement.addEventListener('ended', () => overlay.remove());
-                    videoElement.addEventListener('error', () => {
-                        spinner.style.display = 'none';
-                        playBtn.style.display = 'block';
-                        alert('Video failed to load.');
-                    });
-                    videoElement.load();
+let hasPlayed = false;
+function onProgress() {
+    if (videoElement.duration && videoElement.buffered.length) {
+        const bufferedEnd = videoElement.buffered.end(videoElement.buffered.length - 1);
+        const percentBuffered = bufferedEnd / videoElement.duration;
+        if (percentBuffered >= 0.25 && !hasPlayed) {
+            hasPlayed = true;
+            posterContainer.replaceChild(videoElement, posterImg);
+            spinner.style.display = 'none';
+            videoElement.play();
+            videoElement.removeEventListener('progress', onProgress);
+        }
+    }
+}
+videoElement.addEventListener('progress', onProgress);
+videoElement.addEventListener('click', () => {
+    videoElement.controls = true;
+});
+videoElement.addEventListener('ended', () => overlay.remove());
+videoElement.addEventListener('error', () => {
+    spinner.style.display = 'none';
+    playBtn.style.display = 'block';
+    alert('Video failed to load.');
+});
+videoElement.load();
                 };
             });
         });
