@@ -2,6 +2,9 @@
 import { buildings } from './buildings.js';
 import { locations } from './locations.js';
 
+// Track when the loading screen is first shown
+const loadingScreenStart = Date.now();
+
 // --- First Video Popup additions START ---
 let firstVideoLoadedThisSession = false;
 function showFirstVideoWaitMessage(videoElement) {
@@ -46,7 +49,7 @@ function showFirstVideoWaitMessage(videoElement) {
     });
 
     // Remove overlay after 30 seconds (timeout)
-    const timeout = setTimeout(() => overlay.remove(), 30000);
+    const timeout = setTimeout(() => overlay.remove(), 10000);
 
     // Remove overlay when video starts playing
     if (videoElement) {
@@ -59,38 +62,20 @@ function showFirstVideoWaitMessage(videoElement) {
     document.body.appendChild(overlay);
 }
 // --- First Video Popup additions END ---
+// Example: Place this when you want to hide the loading screen (e.g., after mapbox loads, or after your main data is ready)
+// Replace your old loading screen hiding logic with this block:
+const loadingScreen = document.getElementById("loading-screen");
+const elapsed = Date.now() - loadingScreenStart;
+const minDuration = 5000; // 5 seconds
 
-// Preload all marker images (as much as browsers allow)
-function preloadImages() {
-    const imageUrls = [
-        ...locations.map(l => l.imageUrl),
-        ...buildings.map(b => b.imageUrl)
-    ];
-    imageUrls.forEach(url => {
-        if (url) {
-            const link = document.createElement('link');
-            link.rel = 'preload';
-            link.as = 'image';
-            link.href = url;
-            document.head.appendChild(link);
-        }
-    });
-}
-// Preload all marker videos (as much as browsers allow)
-function preloadVideos() {
-    const videoUrls = [
-        ...locations.map(l => l.videoUrl),
-        ...buildings.map(b => b.videoUrl)
-    ];
-    videoUrls.forEach(url => {
-        if (url) {
-            const link = document.createElement('link');
-            link.rel = 'preload';
-            link.as = 'video';
-            link.href = url;
-            document.head.appendChild(link);
-        }
-    });
+if (loadingScreen) {
+    if (elapsed >= minDuration) {
+        loadingScreen.style.display = "none";
+    } else {
+        setTimeout(() => {
+            loadingScreen.style.display = "none";
+        }, minDuration - elapsed);
+    }
 }
 
 // Dynamically load Mapbox GL JS CSS
