@@ -2,10 +2,6 @@
 import { buildings } from './buildings.js';
 import { locations } from './locations.js';
 
-// If you want to process/filter data up front, do it here (optional):
-const processedBuildings = buildings; // Or .map(b => ...) if processing/filtering is needed
-const processedLocations = locations; // Same as above
-
 
 // Dynamically load Mapbox GL JS CSS
 const mapboxCSS = document.createElement('link');
@@ -30,7 +26,7 @@ const yorkBounds = [
 ];
 
     function addLocationMarkers(map) {
-processedLocations.forEach(location => {
+Locations.forEach(location => {
     const { element: markerElement } = createCustomMarker(location.image, '#FFFFFF', true);
     markerElement.className += ' location-marker';
     const marker = new mapboxgl.Marker({
@@ -48,7 +44,7 @@ processedLocations.forEach(location => {
      }
 
 function addBuildingMarkers() {
-processedBuildings.forEach(building => {
+Buildings.forEach(building => {
         const outlineColor = building.colour === "yes" ? '#FF69B4' : '#FFFFFF'; // Pink if "colour" is "yes", otherwise white
         const { element: markerElement } = createCustomMarker(building.image, outlineColor, false);
         markerElement.className += ' building-marker';
