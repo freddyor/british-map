@@ -26,9 +26,9 @@ function showFirstVideoWaitMessage(videoElement) {
     msg.style.borderRadius = '14px';
     msg.style.boxShadow = '0 6px 15px rgba(0,0,0,0.3)';
     msg.style.fontFamily = "'Poppins', sans-serif";
-    msg.style.fontSize = '17px';
+    msg.style.fontSize = '14px';
     msg.style.fontWeight = 'bold';
-    msg.style.padding = '32px 26px';
+    msg.style.padding = '20px 20px';
     msg.style.textAlign = 'center';
     msg.style.position = 'absolute';
     msg.style.top = '50%';
@@ -214,7 +214,7 @@ mapboxScript.onload = () => {
                 overlay.style.left = 0;
                 overlay.style.width = '100vw';
                 overlay.style.height = '100vh';
-                overlay.style.background = 'rgba(0,0,0,0.85)';
+                overlay.style.background = 'rgba(0,0,0,0.75)';
                 overlay.style.display = 'flex';
                 overlay.style.alignItems = 'center';
                 overlay.style.justifyContent = 'center';
