@@ -15,12 +15,12 @@ mapboxScript.defer = true;
 mapboxScript.onload = () => {
     // Initialize Mapbox after the script is loaded
     mapboxgl.accessToken = 'pk.eyJ1IjoiZnJlZGRvbWF0ZSIsImEiOiJjbTc1bm5zYnQwaG1mMmtxeDdteXNmeXZ0In0.PuDNORq4qExIJ_fErdO_8g';
-    initializeMap(); // Call function to set up your map
+    initializeMap(); 
+    addBuildingMarkers();
+    addLocationMarkers();// Call function to set up your map
 };
 document.body.appendChild(mapboxScript);
 
-addBuildingMarkers();
-    addLocationMarkers();
 
 const yorkBounds = [
   [-1.170, 53.930], // Southwest corner (lng, lat)
@@ -39,7 +39,6 @@ function initializeMap() {
         maxBounds: yorkBounds,
         minZoom: 11,
         maxZoom: 19,
-    });
     });
     // Add other Mapbox-related code here (e.g., markers, controls)
 
