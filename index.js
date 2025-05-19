@@ -39,7 +39,7 @@ function showFirstVideoWaitMessage(videoElement) {
     msg.style.width = '250px';
     msg.style.left = '50%';
     msg.style.transform = 'translate(-50%, -50%)';
-    msg.innerText = "Please give 30 seconds to load for the first video of the session. All other vids will work smoothly after. Thanks for your patience 😃";
+    msg.innerText = "Please give 15-30 seconds to load for the first video of the session. All other vids will work smoothly after. Thanks for your patience 😃";
 
     overlay.appendChild(msg);
 
