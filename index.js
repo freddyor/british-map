@@ -2,6 +2,31 @@
 import { buildings } from './buildings.js';
 import { locations } from './locations.js';
 
+t img = new window.Image();
+            img.src = url;
+        }
+    });
+}
+
+// Preload all marker videos (as much as browsers allow)
+function preloadVideos() {
+    // Collect all video URLs from both arrays
+    const videoUrls = [
+        ...locations.map(l => l.videoUrl),
+        ...buildings.map(b => b.videoUrl)
+    ];
+
+    videoUrls.forEach(url => {
+        if (url) {
+            const link = document.createElement('link');
+            link.rel = 'preload';
+            link.as = 'video';
+            link.href = url;
+            document.head.appendChild(link);
+        }
+    });
+}
+
 
 // Dynamically load Mapbox GL JS CSS
 const mapboxCSS = document.createElement('link');
