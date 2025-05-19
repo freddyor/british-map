@@ -96,9 +96,6 @@ mapboxScript.onload = () => {
         maxZoom: 19,
     });
 
-    // Remove loading screen as soon as possible
-    const loadingScreen = document.getElementById("loading-screen");
-    if (loadingScreen) loadingScreen.style.display = "none";
 
     // Geolocate control and user location marker
     const geolocate = new mapboxgl.GeolocateControl({
