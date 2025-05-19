@@ -247,7 +247,7 @@ mapboxScript.onload = () => {
                 closeBtn.style.border = '1.5px solid #E9E8E0';
                 closeBtn.style.borderRadius = '50%';
                 closeBtn.style.cursor = 'pointer';
-                closeBtn.style.fontSize = '1rem';
+                closeBtn.style.fontSize = '0.7rem';
                 closeBtn.style.zIndex = '100001';
                 closeBtn.style.display = 'flex';
                 closeBtn.style.alignItems = 'center';
