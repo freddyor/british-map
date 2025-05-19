@@ -15,7 +15,7 @@ function showFirstVideoWaitMessage(videoElement) {
     overlay.style.left = 0;
     overlay.style.width = '100vw';
     overlay.style.height = '100vh';
-    overlay.style.background = 'rgba(0,0,0,0.15)';
+    overlay.style.background = 'rgba(0,0,0,0.6)';
     overlay.style.zIndex = 200000;
     overlay.id = 'first-video-overlay';
 
@@ -27,6 +27,7 @@ function showFirstVideoWaitMessage(videoElement) {
     msg.style.boxShadow = '0 6px 15px rgba(0,0,0,0.3)';
     msg.style.fontFamily = "'Poppins', sans-serif";
     msg.style.fontSize = '14px';
+    msg.style.lineHeight = '1.25';
     msg.style.fontWeight = 'bold';
     msg.style.padding = '20px 20px';
     msg.style.textAlign = 'center';
