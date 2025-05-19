@@ -240,8 +240,8 @@ mapboxScript.onload = () => {
                 closeBtn.style.position = 'absolute';
                 closeBtn.style.top = '-8px';
                 closeBtn.style.right = '-8px';
-                closeBtn.style.width = '40px';
-                closeBtn.style.height = '40px';
+                closeBtn.style.width = '25px';
+                closeBtn.style.height = '25px';
                 closeBtn.style.background = '#000';
                 closeBtn.style.color = '#fff';
                 closeBtn.style.border = '1.5px solid #E9E8E0';
@@ -299,20 +299,28 @@ mapboxScript.onload = () => {
                     videoElement.setAttribute('webkit-playsinline', '');
                     videoElement.playsInline = true;
                     showFirstVideoWaitMessage(videoElement);
-let hasPlayed = false;
+let hasStarted = false;
+
+function showVideo() {
+    if (!hasStarted) {
+        hasStarted = true;
+        posterContainer.replaceChild(videoElement, posterImg);
+        spinner.style.display = 'none';
+    }
+}
+
+// Play video when at least 25% is buffered
 function onProgress() {
     if (videoElement.duration && videoElement.buffered.length) {
         const bufferedEnd = videoElement.buffered.end(videoElement.buffered.length - 1);
         const percentBuffered = bufferedEnd / videoElement.duration;
-        if (percentBuffered >= 0.25 && !hasPlayed) {
-            hasPlayed = true;
-            posterContainer.replaceChild(videoElement, posterImg);
-            spinner.style.display = 'none';
-            videoElement.play();
-            videoElement.removeEventListener('progress', onProgress);
+        if (percentBuffered >= 0.25 && !hasStarted) {
+            videoElement.play(); // Start playback as soon as 25% is buffered
         }
     }
 }
+
+videoElement.addEventListener('play', showVideo);
 videoElement.addEventListener('progress', onProgress);
 videoElement.addEventListener('click', () => {
     videoElement.controls = true;
