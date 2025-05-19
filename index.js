@@ -25,8 +25,109 @@ const yorkBounds = [
   [-1.010, 54.010]  // Northeast corner (lng, lat)
 ];
 
-    function addLocationMarkers(map) {
-Locations.forEach(location => {
+// Function to initialize the map
+function initializeMap() {
+    var map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/freddomate/cm8q8wtwx00a801qzdayccnvz?optimize=true',
+        center: [-1.0835, 53.9584],
+        zoom: 15,
+        pitch: 45,
+        bearing: -17.6,
+        maxBounds: yorkBounds,
+        minZoom: 11,
+        maxZoom: 19,
+    });
+    // Add other Mapbox-related code here (e.g., markers, controls)
+
+ map.on('load', () => {
+    // Remove the loading screen
+    const loadingScreen = document.getElementById("loading-screen");
+    if (loadingScreen) {
+        loadingScreen.style.display = "none";
+    }
+
+    // Trigger geolocation and continue with existing logic
+    geolocate.trigger();
+
+    map.addSource('Ward_boundaries-8vvo78', {
+        type: 'vector',
+        url: 'mapbox://freddomate.345l7u6c' // Replace with your actual tileset ID
+    });
+addBuildingMarkers();
+    addLocationMarkers();
+    // Add other Mapbox-related code here (e.g., markers, controls)
+});
+
+    map.on('click', (e) => {
+    const currentLat = e.lngLat.lat;
+    const currentLng = e.lngLat.lng;
+    const currentZoom = map.getZoom();
+
+    const mapLink = generateMapLink(currentLat, currentLng, currentZoom);
+    console.log('Map Link:', mapLink);
+    // You can display this link in a popup or share it with others
+});
+
+    // Add a zoom event listener to the map
+map.on('zoom', () => {
+    scaleMarkersBasedOnZoom();
+});
+
+    // Geolocation control
+const geolocate = new mapboxgl.GeolocateControl({
+  positionOptions: {
+    enableHighAccuracy: true
+  },
+  trackUserLocation: true,
+  showUserHeading: true,
+  showAccuracyCircle: false,
+  fitBoundsOptions: {
+    maxZoom: 15
+  },
+  showUserLocation: false
+});
+
+map.addControl(geolocate);
+
+// Create a single marker for user location
+const userLocationEl = document.createElement('div');
+userLocationEl.className = 'user-location-marker';
+
+const textEl = document.createElement('div');
+textEl.style.position = 'absolute';
+textEl.style.top = '50%';
+textEl.style.left = '50%';
+textEl.style.transform = 'translate(-50%, -50%)';
+textEl.style.fontFamily = 'Poppins, sans-serif';
+textEl.style.fontWeight = 'bold';
+textEl.style.fontSize = '10px';
+textEl.style.color = '#87CEFA';
+textEl.textContent = 'me';
+
+userLocationEl.appendChild(textEl);
+
+const userLocationMarker = new mapboxgl.Marker({element: userLocationEl})
+  .setLngLat([0, 0])
+  .addTo(map);
+
+geolocate.on('error', (e) => {
+  if (e.code === 1) {
+    console.log('Location access denied by user');
+  }
+});
+
+geolocate.on('geolocate', (e) => {
+  const lon = e.coords.longitude;
+  const lat = e.coords.latitude;
+  const position = [lon, lat];
+  console.log(position);
+
+  userLocationMarker.setLngLat(position);
+});
+
+    function addLocationMarkers() {
+locations.forEach(location => {
     const { element: markerElement } = createCustomMarker(location.image, '#FFFFFF', true);
     markerElement.className += ' location-marker';
     const marker = new mapboxgl.Marker({
@@ -44,7 +145,7 @@ Locations.forEach(location => {
      }
 
 function addBuildingMarkers() {
-Buildings.forEach(building => {
+    buildings.forEach(building => {
         const outlineColor = building.colour === "yes" ? '#FF69B4' : '#FFFFFF'; // Pink if "colour" is "yes", otherwise white
         const { element: markerElement } = createCustomMarker(building.image, outlineColor, false);
         markerElement.className += ' building-marker';
@@ -80,7 +181,7 @@ marker.getElement().addEventListener('click', () => {
     overlay.style.left = 0;
     overlay.style.width = '100vw';
     overlay.style.height = '100vh';
-    overlay.style.background = 'rgba(0,0,0,0.75)';
+    overlay.style.background = 'rgba(0,0,0,0.85)';
     overlay.style.display = 'flex';
     overlay.style.alignItems = 'center';
     overlay.style.justifyContent = 'center';
@@ -261,108 +362,6 @@ videoElement.addEventListener('canplaythrough', () => {
 });
     });
 }
-
-// Function to initialize the map
-function initializeMap() {
-    var map = new mapboxgl.Map({
-        container: 'map',
-        style: 'mapbox://styles/freddomate/cm8q8wtwx00a801qzdayccnvz?optimize=true',
-        center: [-1.0835, 53.9584],
-        zoom: 15,
-        pitch: 45,
-        bearing: -17.6,
-        maxBounds: yorkBounds,
-        minZoom: 11,
-        maxZoom: 19,
-    });
-    // Add other Mapbox-related code here (e.g., markers, controls)
-
- map.on('load', () => {
-     addBuildingMarkers(map);
-    addLocationMarkers(map);
-    // Remove the loading screen
-    const loadingScreen = document.getElementById("loading-screen");
-    if (loadingScreen) {
-        loadingScreen.style.display = "none";
-    }
-
-    // Trigger geolocation and continue with existing logic
-    geolocate.trigger();
-
-    map.addSource('Ward_boundaries-8vvo78', {
-        type: 'vector',
-        url: 'mapbox://freddomate.345l7u6c' // Replace with your actual tileset ID
-    });
-    // Add other Mapbox-related code here (e.g., markers, controls)
-});
-
-    map.on('click', (e) => {
-    const currentLat = e.lngLat.lat;
-    const currentLng = e.lngLat.lng;
-    const currentZoom = map.getZoom();
-
-    const mapLink = generateMapLink(currentLat, currentLng, currentZoom);
-    console.log('Map Link:', mapLink);
-    // You can display this link in a popup or share it with others
-});
-
-    // Add a zoom event listener to the map
-map.on('zoom', () => {
-    scaleMarkersBasedOnZoom();
-});
-
-    // Geolocation control
-const geolocate = new mapboxgl.GeolocateControl({
-  positionOptions: {
-    enableHighAccuracy: true
-  },
-  trackUserLocation: true,
-  showUserHeading: true,
-  showAccuracyCircle: false,
-  fitBoundsOptions: {
-    maxZoom: 15
-  },
-  showUserLocation: false
-});
-
-map.addControl(geolocate);
-
-// Create a single marker for user location
-const userLocationEl = document.createElement('div');
-userLocationEl.className = 'user-location-marker';
-
-const textEl = document.createElement('div');
-textEl.style.position = 'absolute';
-textEl.style.top = '50%';
-textEl.style.left = '50%';
-textEl.style.transform = 'translate(-50%, -50%)';
-textEl.style.fontFamily = 'Poppins, sans-serif';
-textEl.style.fontWeight = 'bold';
-textEl.style.fontSize = '10px';
-textEl.style.color = '#87CEFA';
-textEl.textContent = 'me';
-
-userLocationEl.appendChild(textEl);
-
-const userLocationMarker = new mapboxgl.Marker({element: userLocationEl})
-  .setLngLat([0, 0])
-  .addTo(map);
-
-geolocate.on('error', (e) => {
-  if (e.code === 1) {
-    console.log('Location access denied by user');
-  }
-});
-
-geolocate.on('geolocate', (e) => {
-  const lon = e.coords.longitude;
-  const lat = e.coords.latitude;
-  const position = [lon, lat];
-  console.log(position);
-
-  userLocationMarker.setLngLat(position);
-});
-
     function scaleMarkersBasedOnZoom() {
     const zoomLevel = map.getZoom(); // Get the current zoom level
     const markerSize = (zoomLevel - 13) + 'em'; // Linear scaling formula
