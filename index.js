@@ -18,7 +18,7 @@ function showFirstVideoWaitMessage(videoElement) {
     overlay.style.left = 0;
     overlay.style.width = '100vw';
     overlay.style.height = '100vh';
-    overlay.style.background = 'rgba(0,0,0,0.6)';
+    overlay.style.background = 'rgba(0,0,0,0.75)';
     overlay.style.zIndex = 200000;
     overlay.id = 'first-video-overlay';
 
@@ -32,11 +32,11 @@ function showFirstVideoWaitMessage(videoElement) {
     msg.style.fontSize = '14px';
     msg.style.lineHeight = '1.25';
     msg.style.fontWeight = 'bold';
-    msg.style.padding = '20px 20px';
+    msg.style.padding = '10px 10px';
     msg.style.textAlign = 'center';
     msg.style.position = 'absolute';
     msg.style.top = '50%';
-    msg.style.width = '300px';
+    msg.style.width = '250px';
     msg.style.left = '50%';
     msg.style.transform = 'translate(-50%, -50%)';
     msg.innerText = "Please give 30 seconds to load for the first video of the session. All other vids will work smoothly after. Thanks for your patience 😃";
@@ -49,7 +49,7 @@ function showFirstVideoWaitMessage(videoElement) {
     });
 
     // Remove overlay after 30 seconds (timeout)
-    const timeout = setTimeout(() => overlay.remove(), 10000);
+    const timeout = setTimeout(() => overlay.remove(), 15000);
 
     // Remove overlay when video starts playing
     if (videoElement) {
