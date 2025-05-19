@@ -38,6 +38,7 @@ function initializeMap() {
         minZoom: 11,
         maxZoom: 19,
     });
+    });
     // Add other Mapbox-related code here (e.g., markers, controls)
 
  map.on('load', () => {
@@ -360,7 +361,6 @@ videoElement.addEventListener('canplaythrough', () => {
     videoElement.load();
 };
 });
-    });
 }
     function scaleMarkersBasedOnZoom() {
     const zoomLevel = map.getZoom(); // Get the current zoom level
