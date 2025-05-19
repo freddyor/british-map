@@ -33,9 +33,10 @@ function showFirstVideoWaitMessage(videoElement) {
     msg.style.textAlign = 'center';
     msg.style.position = 'absolute';
     msg.style.top = '50%';
+    msg.style.width = '300px';
     msg.style.left = '50%';
     msg.style.transform = 'translate(-50%, -50%)';
-    msg.innerText = "Please give 30 seconds to load for the first video of the session. All other vids will work smoothly after. Thanks for your patience :)";
+    msg.innerText = "Please give 30 seconds to load for the first video of the session. All other vids will work smoothly after. Thanks for your patience 😃";
 
     overlay.appendChild(msg);
 
@@ -690,8 +691,8 @@ document.addEventListener('DOMContentLoaded', () => {
     dropdownContent.style.maxWidth = '300px';
     dropdownContent.style.textAlign = 'center';
     dropdownContent.style.minHeight = '300px';
-    dropdownContent.style.height = '550px';
-    dropdownContent.style.maxHeight = '600px';
+    dropdownContent.style.height = '450px';
+    dropdownContent.style.maxHeight = '450px';
     dropdownContent.style.overflowY = 'auto';
     dropdownContent.style.bottom = '50px';
 
