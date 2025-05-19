@@ -40,7 +40,6 @@ function preloadVideos() {
     });
 }
 
-
 // Dynamically load Mapbox GL JS CSS
 const mapboxCSS = document.createElement('link');
 mapboxCSS.href = "https://api.mapbox.com/mapbox-gl-js/v3.12.0/mapbox-gl.css";
@@ -159,6 +158,8 @@ geolocate.on('geolocate', (e) => {
   const lon = e.coords.longitude;
   const lat = e.coords.latitude;
   const position = [lon, lat];
+  console.log(position);
+
   userLocationMarker.setLngLat(position);
 });
 
@@ -185,9 +186,12 @@ function addBuildingMarkers() {
         const outlineColor = building.colour === "yes" ? '#FF69B4' : '#FFFFFF'; // Pink if "colour" is "yes", otherwise white
         const { element: markerElement } = createCustomMarker(building.image, outlineColor, false);
         markerElement.className += ' building-marker';
+
+        // Set z-index for markers with colour: "yes"
         if (building.colour === "yes") {
             markerElement.style.zIndex = '3';
         }
+
         const marker = new mapboxgl.Marker({
             element: markerElement
         })
@@ -225,19 +229,20 @@ marker.getElement().addEventListener('click', () => {
     posterContainer.style.position = 'relative';
     posterContainer.style.marginTop = '-60px'; // Try different negative values for more lift
 
-    // Poster image with lazy loading
+    // Poster image
     const posterImg = document.createElement('img');
     posterImg.src = posterUrl || '';
     posterImg.alt = 'Video cover';
-    posterImg.loading = 'lazy';
     posterImg.style.maxWidth = '85vw';
     posterImg.style.maxHeight = '75vh';
     posterImg.style.borderRadius = '14px';
     posterImg.style.display = 'block';
 
     posterImg.addEventListener('load', () => {
-        posterImg.style.border = '1.5px solid #E9E8E0';
-    });
+  // Only add the outline/border after the image is fully loaded
+  posterImg.style.border = '1.5px solid #E9E8E0';
+  // Place any other logic for "buildingmarkers" outline here.
+});
 
     // Play button
     const playBtn = document.createElement('button');
@@ -287,21 +292,22 @@ marker.getElement().addEventListener('click', () => {
     // Close button
     const closeBtn = document.createElement('button');
     closeBtn.textContent = '❌';
-    closeBtn.style.position = 'absolute';
-    closeBtn.style.top = '-8px';
-    closeBtn.style.right = '-8px';
-    closeBtn.style.width = '40px';
-    closeBtn.style.height = '40px';
-    closeBtn.style.background = '#000';
-    closeBtn.style.color = '#fff';
-    closeBtn.style.border = '1.5px solid #E9E8E0';
-    closeBtn.style.borderRadius = '50%';
-    closeBtn.style.cursor = 'pointer';
-    closeBtn.style.fontSize = '1.5rem';
-    closeBtn.style.zIndex = '100001';
-    closeBtn.style.display = 'flex';
-    closeBtn.style.alignItems = 'center';
-    closeBtn.style.justifyContent = 'center';
+closeBtn.style.position = 'absolute';
+closeBtn.style.top = '-8px';         // Or whatever negative value you want
+closeBtn.style.right = '-8px';       // Or whatever negative value you want
+closeBtn.style.width = '40px';
+closeBtn.style.height = '40px';
+closeBtn.style.background = '#000';
+closeBtn.style.color = '#fff';
+closeBtn.style.border = '1.5px solid #E9E8E0';
+closeBtn.style.borderRadius = '50%';
+closeBtn.style.cursor = 'pointer';
+closeBtn.style.fontSize = '1.5rem';
+closeBtn.style.zIndex = '100001';
+// Center the text/icon
+closeBtn.style.display = 'flex';
+closeBtn.style.alignItems = 'center';
+closeBtn.style.justifyContent = 'center';
     closeBtn.onclick = () => overlay.remove();
 
     // Swipe down to close (touch devices)
@@ -321,73 +327,75 @@ marker.getElement().addEventListener('click', () => {
     overlay.addEventListener('touchend', () => { startY = undefined; });
 
     playBtn.style.display = 'none';
-    closeBtn.style.display = 'none';
+closeBtn.style.display = 'none';
 
-    // When main content is loaded, show buttons
-    posterImg.onload = function() {
-        playBtn.style.display = 'flex';
-        closeBtn.style.display = 'flex';
-    };
+// When main content is loaded, show buttons
+posterImg.onload = function() {
+  playBtn.style.display = 'flex';
+  closeBtn.style.display = 'flex';
+};
 
     // Assemble the poster
     posterContainer.appendChild(posterImg);
     posterContainer.appendChild(playBtn);
     posterContainer.appendChild(spinner);
     posterContainer.appendChild(closeBtn);
-    overlay.appendChild(posterContainer);
+overlay.appendChild(posterContainer);
     document.body.appendChild(overlay);
 
     overlay.addEventListener('mousedown', function(e) {
-        if (e.target === overlay) {
-            overlay.remove();
-        }
+    // Only close if they click directly on the overlay (not on the poster/video)
+    if (e.target === overlay) {
+        overlay.remove();
+    }
+});
+
+    // Play button logic (iOS/Android/desktop compatible)
+playBtn.onclick = () => {
+    playBtn.style.display = 'none';
+    spinner.style.display = 'block';
+
+    // Create a video element
+    const videoElement = document.createElement('video');
+    videoElement.src = videoUrl;
+    if (posterUrl) videoElement.poster = posterUrl;
+    videoElement.style.border = '1.5px solid #E9E8E0';
+    videoElement.style.maxWidth = '85vw';
+    videoElement.style.maxHeight = '75vh';
+    videoElement.style.borderRadius = '14px';
+    videoElement.controls = false; // HIDE CONTROLS INITIALLY
+    videoElement.preload = 'auto';
+    videoElement.autoplay = true;
+
+    videoElement.setAttribute('playsinline', '');
+    videoElement.setAttribute('webkit-playsinline', '');
+    videoElement.playsInline = true;
+
+    // Smoothly swap poster for video
+videoElement.addEventListener('canplaythrough', () => {
+    posterContainer.replaceChild(videoElement, posterImg);
+    spinner.style.display = 'none';
+    videoElement.play();
+});
+
+    // Show controls if user clicks video (optional)
+    videoElement.addEventListener('click', () => {
+        videoElement.controls = true;
     });
 
-    // Play button logic: Only create/load the video on-demand
-    playBtn.onclick = () => {
-        playBtn.style.display = 'none';
-        spinner.style.display = 'block';
+    // Remove overlay when video ends
+    videoElement.addEventListener('ended', () => overlay.remove());
 
-        // Create the video element only now
-        const videoElement = document.createElement('video');
-        videoElement.src = videoUrl;
-        if (posterUrl) videoElement.poster = posterUrl;
-        videoElement.style.border = '1.5px solid #E9E8E0';
-        videoElement.style.maxWidth = '85vw';
-        videoElement.style.maxHeight = '75vh';
-        videoElement.style.borderRadius = '14px';
-        videoElement.controls = false; // HIDE CONTROLS INITIALLY
-        videoElement.preload = 'auto';
-        videoElement.autoplay = true;
-        videoElement.setAttribute('playsinline', '');
-        videoElement.setAttribute('webkit-playsinline', '');
-        videoElement.playsInline = true;
+    // Handle loading errors
+    videoElement.addEventListener('error', () => {
+        spinner.style.display = 'none';
+        playBtn.style.display = 'block';
+        alert('Video failed to load.');
+    });
 
-        // When video can play, swap poster for video & play
-        videoElement.addEventListener('canplaythrough', () => {
-            posterContainer.replaceChild(videoElement, posterImg);
-            spinner.style.display = 'none';
-            videoElement.play();
-        });
-
-        // Show controls if user clicks video (optional)
-        videoElement.addEventListener('click', () => {
-            videoElement.controls = true;
-        });
-
-        // Remove overlay when video ends
-        videoElement.addEventListener('ended', () => overlay.remove());
-
-        // Handle loading errors
-        videoElement.addEventListener('error', () => {
-            spinner.style.display = 'none';
-            playBtn.style.display = 'block';
-            alert('Video failed to load.');
-        });
-
-        // Start loading
-        videoElement.load();
-    };
+    // Start loading
+    videoElement.load();
+};
 });
     });
 }
@@ -410,8 +418,10 @@ marker.getElement().addEventListener('click', () => {
 
 // Call the function initially to set marker sizes based on the initial zoom level
 scaleMarkersBasedOnZoom();
-
+    
 }
+
+
 
 // Function to parse URL parameters
 function getUrlParameter(name) {
@@ -468,6 +478,7 @@ function generateMapLink(latitude, longitude, zoomLevel) {
 // to generate a link for the current view.
 // For example:
 
+
 // Container for both buttons
 const buttonGroup = document.createElement('div');
 buttonGroup.id = 'button-group';
@@ -480,6 +491,7 @@ buttonGroup.style.display = 'flex';
 buttonGroup.style.gap = '10px';
 document.body.appendChild(buttonGroup);
 
+
 // Create a <style> element to add the CSS
 const stylePopup = document.createElement('style');
 
@@ -489,6 +501,7 @@ link.href = "https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&displ
 link.rel = "stylesheet";
 document.head.appendChild(link);
 
+// Style for the popup and markers
 // Style for the popup and markers
 stylePopup.innerHTML = `
   .mapboxgl-popup-content {
@@ -503,12 +516,14 @@ stylePopup.innerHTML = `
     padding-bottom: 0 !important;
     margin-left: 3px;
     margin-right: 5px;
-    margin-bottom: 10px;
+    margin-bottom: 10px; /* Add this line */
   }
+
   .mapboxgl-popup-content img {
     border: 2px solid #f0f0f0 !important;
     border-radius: 8px;
   }
+
   .mapboxgl-popup-content p {
     font-weight: bold !important;
     text-align: center;
@@ -516,9 +531,11 @@ stylePopup.innerHTML = `
     font-size: 13px !important;
     margin-bottom: 10px !important;
   }
+
   .mapboxgl-popup-close-button {
     display: none !important;
   }
+
   .user-location-marker {
     width: 20px;
     height: 20px;
@@ -527,18 +544,23 @@ stylePopup.innerHTML = `
     border-radius: 100%;
     position: relative;
   }
+
   .location-marker {
     z-index: 1;
   }
+
   .building-marker {
     z-index: 2;
   }
+
   .mapboxgl-popup {
     z-index: 9999 !important;
   }
+
   .hide-scrollbar::-webkit-scrollbar {
     display: none;
   }
+
   .custom-button {
     background-color: #e9e8e0;
     color: black;
@@ -554,6 +576,7 @@ stylePopup.innerHTML = `
     white-space: nowrap;
     text-align: center;
   }
+
   #button-group {
     position: fixed;
     top: 50px;
@@ -563,26 +586,33 @@ stylePopup.innerHTML = `
     gap: 10px;
     z-index: 1000;
   }
-  .dropdown-content {
-    line-height: 1.05;
-    font-size: 12px;
+    .dropdown-content {
+    line-height: 1.05; /* Added line-height */
+    font-size: 12px; /* Added font-size */
   }
+
+// Add styles for the bottom sheet
   #bottom-sheet {
     font-family: 'Poppins', sans-serif !important;
     padding: 5px;
     font-size: 14px;
     line-height: 1.05;
   }
+
   #bottom-sheet img {
     max-width: 100%;
     border-radius: 8px;
     margin-bottom: 10px;
   }
+
   #bottom-sheet p {
     margin-bottom: 10px;
   }
 `;
+
+// Append the style to the document
 document.head.appendChild(stylePopup);
+
 
 function createCustomMarker(imageUrl, color = '#9b4dca', isLocation = false) {
   const markerDiv = document.createElement('div');
@@ -597,7 +627,6 @@ function createCustomMarker(imageUrl, color = '#9b4dca', isLocation = false) {
 
   const imageElement = document.createElement('img');
   imageElement.src = imageUrl;
-  imageElement.loading = 'lazy';
   imageElement.style.width = '100%';
   imageElement.style.height = '100%';
   imageElement.style.objectFit = 'cover';
@@ -609,6 +638,47 @@ function createCustomMarker(imageUrl, color = '#9b4dca', isLocation = false) {
     element: markerDiv,
     id: `marker-${Date.now()}-${Math.random()}`
   };
+}
+
+// Toggle functionality for the bottom sheet
+let isBottomSheetOpen = false;
+
+function toggleBottomSheet(contentHTML) {
+    if (isBottomSheetOpen) {
+        bottomSheet.style.bottom = '-100%'; // Hide
+    } else {
+        // Add a close button to the top-right corner of the content
+        const closeButtonHTML = `
+            <button id="close-bottom-sheet" style="
+                position: absolute;
+                top: 5px;
+                right: 5px;
+                padding: 3px 3px;
+                background: none;
+                color: #fff;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                font-size: 10px;
+            ">❌</button>
+        `;
+
+        bottomSheet.innerHTML = closeButtonHTML + contentHTML; // Add close button + content
+        bottomSheet.style.bottom = '0'; // Show
+
+        // Attach event listener to the close button
+ document.getElementById('close-bottom-sheet').addEventListener('click', () => {
+    // Stop video playback
+    const videoElement = document.querySelector('video'); // Adjust selector as needed
+    if (videoElement) {
+        videoElement.pause();
+        videoElement.currentTime = 0; // Optional: Reset video to start
+    }
+
+    toggleBottomSheet(); // Close the popup
+});
+    }
+    isBottomSheetOpen = !isBottomSheetOpen;
 }
 
 function createPopupContent(location, isFirebase = false) {
