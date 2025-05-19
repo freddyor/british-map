@@ -2,7 +2,6 @@
 import { buildings } from './buildings.js';
 import { locations } from './locations.js';
 
-
 // --- First Video Popup additions START ---
 let firstVideoLoadedThisSession = false;
 function showFirstVideoWaitMessage(videoElement) {
@@ -59,15 +58,12 @@ function showFirstVideoWaitMessage(videoElement) {
 }
 // --- First Video Popup additions END ---
 
-
 // Preload all marker images (as much as browsers allow)
 function preloadImages() {
-    // Collect all image URLs from both arrays
     const imageUrls = [
         ...locations.map(l => l.imageUrl),
         ...buildings.map(b => b.imageUrl)
     ];
-
     imageUrls.forEach(url => {
         if (url) {
             const link = document.createElement('link');
@@ -80,12 +76,10 @@ function preloadImages() {
 }
 // Preload all marker videos (as much as browsers allow)
 function preloadVideos() {
-    // Collect all video URLs from both arrays
     const videoUrls = [
         ...locations.map(l => l.videoUrl),
         ...buildings.map(b => b.videoUrl)
     ];
-
     videoUrls.forEach(url => {
         if (url) {
             const link = document.createElement('link');
@@ -107,11 +101,6 @@ document.head.appendChild(mapboxCSS);
 const mapboxScript = document.createElement('script');
 mapboxScript.src = "https://api.mapbox.com/mapbox-gl-js/v3.12.0/mapbox-gl.js";
 mapboxScript.defer = true;
-mapboxScript.onload = () => {
-    // Initialize Mapbox after the script is loaded
-    mapboxgl.accessToken = 'pk.eyJ1IjoiZnJlZGRvbWF0ZSIsImEiOiJjbTc1bm5zYnQwaG1mMmtxeDdteXNmeXZ0In0.PuDNORq4qExIJ_fErdO_8g';
-    initializeMap(); // Call function to set up your map
-};
 document.body.appendChild(mapboxScript);
 
 const yorkBounds = [
@@ -119,8 +108,10 @@ const yorkBounds = [
   [-1.010, 54.010]  // Northeast corner (lng, lat)
 ];
 
-// Function to initialize the map
-function initializeMap() {
+// Map initialization after script loads
+mapboxScript.onload = () => {
+    mapboxgl.accessToken = 'pk.eyJ1IjoiZnJlZGRvbWF0ZSIsImEiOiJjbTc1bm5zYnQwaG1mMmtxeDdteXNmeXZ0In0.PuDNORq4qExIJ_fErdO_8g';
+
     var map = new mapboxgl.Map({
         container: 'map',
         style: 'mapbox://styles/freddomate/cm8q8wtwx00a801qzdayccnvz?optimize=true',
@@ -132,358 +123,269 @@ function initializeMap() {
         minZoom: 11,
         maxZoom: 19,
     });
-    // Add other Mapbox-related code here (e.g., markers, controls)
 
- map.on('load', () => {
-    // Remove the loading screen
+    // Remove loading screen as soon as possible
     const loadingScreen = document.getElementById("loading-screen");
-    if (loadingScreen) {
-        loadingScreen.style.display = "none";
+    if (loadingScreen) loadingScreen.style.display = "none";
+
+    // Geolocate control and user location marker
+    const geolocate = new mapboxgl.GeolocateControl({
+        positionOptions: {
+            enableHighAccuracy: true
+        },
+        trackUserLocation: true,
+        showUserHeading: true,
+        showAccuracyCircle: false,
+        fitBoundsOptions: {
+            maxZoom: 15
+        },
+        showUserLocation: false
+    });
+    map.addControl(geolocate);
+
+    const userLocationEl = document.createElement('div');
+    userLocationEl.className = 'user-location-marker';
+    const textEl = document.createElement('div');
+    textEl.style.position = 'absolute';
+    textEl.style.top = '50%';
+    textEl.style.left = '50%';
+    textEl.style.transform = 'translate(-50%, -50%)';
+    textEl.style.fontFamily = 'Poppins, sans-serif';
+    textEl.style.fontWeight = 'bold';
+    textEl.style.fontSize = '10px';
+    textEl.style.color = '#87CEFA';
+    textEl.textContent = 'me';
+    userLocationEl.appendChild(textEl);
+
+    const userLocationMarker = new mapboxgl.Marker({element: userLocationEl})
+      .setLngLat([0, 0])
+      .addTo(map);
+
+    geolocate.on('error', (e) => {
+      if (e.code === 1) console.log('Location access denied by user');
+    });
+    geolocate.on('geolocate', (e) => {
+      userLocationMarker.setLngLat([e.coords.longitude, e.coords.latitude]);
+    });
+
+    // --- Marker and helper functions ---
+    function addLocationMarkers() {
+        locations.forEach(location => {
+            const { element: markerElement } = createCustomMarker(location.image, '#FFFFFF', true);
+            markerElement.className += ' location-marker';
+            const marker = new mapboxgl.Marker({
+                element: markerElement
+            })
+            .setLngLat(location.coords)
+            .addTo(map);
+
+            marker.getElement().addEventListener('click', () => {
+                map.getCanvas().style.cursor = 'pointer';
+                const contentHTML = createPopupContent(location);
+                toggleBottomSheet(contentHTML);
+            });
+        });
     }
 
-    // Trigger geolocation and continue with existing logic
-    geolocate.trigger();
+    function addBuildingMarkers() {
+        buildings.forEach(building => {
+            const outlineColor = building.colour === "yes" ? '#FF69B4' : '#FFFFFF';
+            const { element: markerElement } = createCustomMarker(building.image, outlineColor, false);
+            markerElement.className += ' building-marker';
 
-    map.addSource('Ward_boundaries-8vvo78', {
-        type: 'vector',
-        url: 'mapbox://freddomate.345l7u6c' // Replace with your actual tileset ID
-    });
-addBuildingMarkers();
-    addLocationMarkers();
-    // Add other Mapbox-related code here (e.g., markers, controls)
-});
+            if (building.colour === "yes") markerElement.style.zIndex = '3';
 
-    map.on('click', (e) => {
-    const currentLat = e.lngLat.lat;
-    const currentLng = e.lngLat.lng;
-    const currentZoom = map.getZoom();
+            const marker = new mapboxgl.Marker({element: markerElement})
+                .setLngLat(building.coords)
+                .addTo(map);
 
-    const mapLink = generateMapLink(currentLat, currentLng, currentZoom);
-    console.log('Map Link:', mapLink);
-    // You can display this link in a popup or share it with others
-});
-
-    // Add a zoom event listener to the map
-map.on('zoom', () => {
-    scaleMarkersBasedOnZoom();
-});
-
-    // Geolocation control
-const geolocate = new mapboxgl.GeolocateControl({
-  positionOptions: {
-    enableHighAccuracy: true
-  },
-  trackUserLocation: true,
-  showUserHeading: true,
-  showAccuracyCircle: false,
-  fitBoundsOptions: {
-    maxZoom: 15
-  },
-  showUserLocation: false
-});
-
-map.addControl(geolocate);
-
-// Create a single marker for user location
-const userLocationEl = document.createElement('div');
-userLocationEl.className = 'user-location-marker';
-
-const textEl = document.createElement('div');
-textEl.style.position = 'absolute';
-textEl.style.top = '50%';
-textEl.style.left = '50%';
-textEl.style.transform = 'translate(-50%, -50%)';
-textEl.style.fontFamily = 'Poppins, sans-serif';
-textEl.style.fontWeight = 'bold';
-textEl.style.fontSize = '10px';
-textEl.style.color = '#87CEFA';
-textEl.textContent = 'me';
-
-userLocationEl.appendChild(textEl);
-
-const userLocationMarker = new mapboxgl.Marker({element: userLocationEl})
-  .setLngLat([0, 0])
-  .addTo(map);
-
-geolocate.on('error', (e) => {
-  if (e.code === 1) {
-    console.log('Location access denied by user');
-  }
-});
-
-geolocate.on('geolocate', (e) => {
-  const lon = e.coords.longitude;
-  const lat = e.coords.latitude;
-  const position = [lon, lat];
-  console.log(position);
-
-  userLocationMarker.setLngLat(position);
-});
-
-    function addLocationMarkers() {
-locations.forEach(location => {
-    const { element: markerElement } = createCustomMarker(location.image, '#FFFFFF', true);
-    markerElement.className += ' location-marker';
-    const marker = new mapboxgl.Marker({
-        element: markerElement
-    })
-    .setLngLat(location.coords)
-    .addTo(map);
-
-    marker.getElement().addEventListener('click', () => {
-        map.getCanvas().style.cursor = 'pointer';
-        const contentHTML = createPopupContent(location); // Use the existing function to create the content
-        toggleBottomSheet(contentHTML);
-    });
-});
-     }
-
-function addBuildingMarkers() {
-    buildings.forEach(building => {
-        const outlineColor = building.colour === "yes" ? '#FF69B4' : '#FFFFFF'; // Pink if "colour" is "yes", otherwise white
-        const { element: markerElement } = createCustomMarker(building.image, outlineColor, false);
-        markerElement.className += ' building-marker';
-
-        // Set z-index for markers with colour: "yes"
-        if (building.colour === "yes") {
-            markerElement.style.zIndex = '3';
-        }
-
-        const marker = new mapboxgl.Marker({
-            element: markerElement
-        })
-        .setLngLat(building.coords)
-        .addTo(map);
-
-        marker.getElement().addEventListener('click', () => {
-            map.getCanvas().style.cursor = 'pointer';
-
-            const videoUrl = building.videoUrl;
-            const posterUrl = building.posterUrl;
-
-            if (!videoUrl) {
-                console.error('Video URL not available for this building.');
-                return;
-            }
-            document.querySelectorAll('.video-modal-overlay').forEach(el => el.remove());
-
-            // Modal overlay
-            const overlay = document.createElement('div');
-            overlay.className = 'video-modal-overlay';
-            overlay.style.position = 'fixed';
-            overlay.style.top = 0;
-            overlay.style.left = 0;
-            overlay.style.width = '100vw';
-            overlay.style.height = '100vh';
-            overlay.style.background = 'rgba(0,0,0,0.85)';
-            overlay.style.display = 'flex';
-            overlay.style.alignItems = 'center';
-            overlay.style.justifyContent = 'center';
-            overlay.style.zIndex = 100000;
-
-            // Poster container
-            const posterContainer = document.createElement('div');
-            posterContainer.style.position = 'relative';
-            posterContainer.style.marginTop = '-60px'; // Try different negative values for more lift
-
-            // Poster image
-            const posterImg = document.createElement('img');
-            posterImg.src = posterUrl || '';
-            posterImg.alt = 'Video cover';
-            posterImg.style.maxWidth = '85vw';
-            posterImg.style.maxHeight = '75vh';
-            posterImg.style.borderRadius = '14px';
-            posterImg.style.display = 'block';
-
-            posterImg.addEventListener('load', () => {
-                // Only add the outline/border after the image is fully loaded
-                posterImg.style.border = '1.5px solid #E9E8E0';
-                // Place any other logic for "buildingmarkers" outline here.
-            });
-
-            // Play button
-            const playBtn = document.createElement('button');
-            playBtn.innerHTML = '▶';
-            playBtn.style.position = 'absolute';
-            playBtn.style.top = '50%';
-            playBtn.style.left = '50%';
-            playBtn.style.transform = 'translate(-50%, -50%)';
-            playBtn.style.background = 'rgba(0,0,0,0.6)';
-            playBtn.style.border = 'none';
-            playBtn.style.borderRadius = '50%';
-            playBtn.style.width = '64px';
-            playBtn.style.height = '64px';
-            playBtn.style.color = '#fff';
-            playBtn.style.fontSize = '2.5rem';
-            playBtn.style.cursor = 'pointer';
-            playBtn.style.display = 'flex';
-            playBtn.style.alignItems = 'center';
-            playBtn.style.justifyContent = 'center';
-            playBtn.style.zIndex = 2;
-
-            // Spinner (hidden by default)
-            const spinner = document.createElement('div');
-            spinner.style.position = 'absolute';
-            spinner.style.top = '50%';
-            spinner.style.left = '50%';
-            spinner.style.transform = 'translate(-50%, -50%)';
-            spinner.style.width = '48px';
-            spinner.style.height = '48px';
-            spinner.style.border = '6px solid #eee';
-            spinner.style.borderTop = '6px solid #9b4dca';
-            spinner.style.borderRadius = '50%';
-            spinner.style.animation = 'spin 1s linear infinite';
-            spinner.style.display = 'none';
-            spinner.style.zIndex = 3;
-
-            // Add keyframes for spinner
-            const spinnerStyle = document.createElement('style');
-            spinnerStyle.innerHTML = `
-              @keyframes spin {
-                0% { transform: translate(-50%, -50%) rotate(0deg);}
-                100% { transform: translate(-50%, -50%) rotate(360deg);}
-              }
-            `;
-            document.head.appendChild(spinnerStyle);
-
-            // Close button
-            const closeBtn = document.createElement('button');
-            closeBtn.textContent = '❌';
-            closeBtn.style.position = 'absolute';
-            closeBtn.style.top = '-8px';         // Or whatever negative value you want
-            closeBtn.style.right = '-8px';       // Or whatever negative value you want
-            closeBtn.style.width = '40px';
-            closeBtn.style.height = '40px';
-            closeBtn.style.background = '#000';
-            closeBtn.style.color = '#fff';
-            closeBtn.style.border = '1.5px solid #E9E8E0';
-            closeBtn.style.borderRadius = '50%';
-            closeBtn.style.cursor = 'pointer';
-            closeBtn.style.fontSize = '1.5rem';
-            closeBtn.style.zIndex = '100001';
-            // Center the text/icon
-            closeBtn.style.display = 'flex';
-            closeBtn.style.alignItems = 'center';
-            closeBtn.style.justifyContent = 'center';
-            closeBtn.onclick = () => overlay.remove();
-
-            // Swipe down to close (touch devices)
-            let startY;
-            overlay.addEventListener('touchstart', e => {
-                if (e.touches.length === 1) startY = e.touches[0].clientY;
-            });
-            overlay.addEventListener('touchmove', e => {
-                if (startY !== undefined && e.touches.length === 1) {
-                    const dy = e.touches[0].clientY - startY;
-                    if (dy > 70) {
-                        overlay.remove();
-                        startY = undefined;
-                    }
+            marker.getElement().addEventListener('click', () => {
+                map.getCanvas().style.cursor = 'pointer';
+                const videoUrl = building.videoUrl;
+                const posterUrl = building.posterUrl;
+                if (!videoUrl) {
+                    console.error('Video URL not available for this building.'); return;
                 }
-            });
-            overlay.addEventListener('touchend', () => { startY = undefined; });
-
-            playBtn.style.display = 'none';
-            closeBtn.style.display = 'none';
-
-            // When main content is loaded, show buttons
-            posterImg.onload = function() {
+                document.querySelectorAll('.video-modal-overlay').forEach(el => el.remove());
+                const overlay = document.createElement('div');
+                overlay.className = 'video-modal-overlay';
+                overlay.style.position = 'fixed';
+                overlay.style.top = 0;
+                overlay.style.left = 0;
+                overlay.style.width = '100vw';
+                overlay.style.height = '100vh';
+                overlay.style.background = 'rgba(0,0,0,0.85)';
+                overlay.style.display = 'flex';
+                overlay.style.alignItems = 'center';
+                overlay.style.justifyContent = 'center';
+                overlay.style.zIndex = 100000;
+                const posterContainer = document.createElement('div');
+                posterContainer.style.position = 'relative';
+                posterContainer.style.marginTop = '-60px';
+                const posterImg = document.createElement('img');
+                posterImg.src = posterUrl || '';
+                posterImg.alt = 'Video cover';
+                posterImg.style.maxWidth = '85vw';
+                posterImg.style.maxHeight = '75vh';
+                posterImg.style.borderRadius = '14px';
+                posterImg.style.display = 'block';
+                posterImg.addEventListener('load', () => {
+                    posterImg.style.border = '1.5px solid #E9E8E0';
+                });
+                const playBtn = document.createElement('button');
+                playBtn.innerHTML = '▶';
+                playBtn.style.position = 'absolute';
+                playBtn.style.top = '50%';
+                playBtn.style.left = '50%';
+                playBtn.style.transform = 'translate(-50%, -50%)';
+                playBtn.style.background = 'rgba(0,0,0,0.6)';
+                playBtn.style.border = 'none';
+                playBtn.style.borderRadius = '50%';
+                playBtn.style.width = '64px';
+                playBtn.style.height = '64px';
+                playBtn.style.color = '#fff';
+                playBtn.style.fontSize = '2.5rem';
+                playBtn.style.cursor = 'pointer';
                 playBtn.style.display = 'flex';
+                playBtn.style.alignItems = 'center';
+                playBtn.style.justifyContent = 'center';
+                playBtn.style.zIndex = 2;
+                const spinner = document.createElement('div');
+                spinner.style.position = 'absolute';
+                spinner.style.top = '50%';
+                spinner.style.left = '50%';
+                spinner.style.transform = 'translate(-50%, -50%)';
+                spinner.style.width = '48px';
+                spinner.style.height = '48px';
+                spinner.style.border = '6px solid #eee';
+                spinner.style.borderTop = '6px solid #9b4dca';
+                spinner.style.borderRadius = '50%';
+                spinner.style.animation = 'spin 1s linear infinite';
+                spinner.style.display = 'none';
+                spinner.style.zIndex = 3;
+                const spinnerStyle = document.createElement('style');
+                spinnerStyle.innerHTML = `@keyframes spin {0% { transform: translate(-50%, -50%) rotate(0deg);}100% { transform: translate(-50%, -50%) rotate(360deg);}}`;
+                document.head.appendChild(spinnerStyle);
+                const closeBtn = document.createElement('button');
+                closeBtn.textContent = '❌';
+                closeBtn.style.position = 'absolute';
+                closeBtn.style.top = '-8px';
+                closeBtn.style.right = '-8px';
+                closeBtn.style.width = '40px';
+                closeBtn.style.height = '40px';
+                closeBtn.style.background = '#000';
+                closeBtn.style.color = '#fff';
+                closeBtn.style.border = '1.5px solid #E9E8E0';
+                closeBtn.style.borderRadius = '50%';
+                closeBtn.style.cursor = 'pointer';
+                closeBtn.style.fontSize = '1.5rem';
+                closeBtn.style.zIndex = '100001';
                 closeBtn.style.display = 'flex';
-            };
-
-            // Assemble the poster
-            posterContainer.appendChild(posterImg);
-            posterContainer.appendChild(playBtn);
-            posterContainer.appendChild(spinner);
-            posterContainer.appendChild(closeBtn);
-            overlay.appendChild(posterContainer);
-            document.body.appendChild(overlay);
-
-            overlay.addEventListener('mousedown', function(e) {
-                // Only close if they click directly on the overlay (not on the poster/video)
-                if (e.target === overlay) {
-                    overlay.remove();
-                }
-            });
-
-            // Play button logic (iOS/Android/desktop compatible)
-            playBtn.onclick = () => {
+                closeBtn.style.alignItems = 'center';
+                closeBtn.style.justifyContent = 'center';
+                closeBtn.onclick = () => overlay.remove();
+                let startY;
+                overlay.addEventListener('touchstart', e => {
+                    if (e.touches.length === 1) startY = e.touches[0].clientY;
+                });
+                overlay.addEventListener('touchmove', e => {
+                    if (startY !== undefined && e.touches.length === 1) {
+                        const dy = e.touches[0].clientY - startY;
+                        if (dy > 70) {
+                            overlay.remove();
+                            startY = undefined;
+                        }
+                    }
+                });
+                overlay.addEventListener('touchend', () => { startY = undefined; });
                 playBtn.style.display = 'none';
-                spinner.style.display = 'block';
-
-                // Create a video element
-                const videoElement = document.createElement('video');
-                videoElement.src = videoUrl;
-                if (posterUrl) videoElement.poster = posterUrl;
-                videoElement.style.border = '1.5px solid #E9E8E0';
-                videoElement.style.maxWidth = '85vw';
-                videoElement.style.maxHeight = '75vh';
-                videoElement.style.borderRadius = '14px';
-                videoElement.controls = false; // HIDE CONTROLS INITIALLY
-                videoElement.preload = 'auto';
-                videoElement.autoplay = true;
-
-                videoElement.setAttribute('playsinline', '');
-                videoElement.setAttribute('webkit-playsinline', '');
-                videoElement.playsInline = true;
-
-                // --- First Video Popup additions: show the popup now ---
-                showFirstVideoWaitMessage(videoElement);
-                // --- End First Video Popup additions ---
-
-                // Smoothly swap poster for video
-                videoElement.addEventListener('canplaythrough', () => {
-                    posterContainer.replaceChild(videoElement, posterImg);
-                    spinner.style.display = 'none';
-                    videoElement.play();
+                closeBtn.style.display = 'none';
+                posterImg.onload = function() {
+                    playBtn.style.display = 'flex';
+                    closeBtn.style.display = 'flex';
+                };
+                posterContainer.appendChild(posterImg);
+                posterContainer.appendChild(playBtn);
+                posterContainer.appendChild(spinner);
+                posterContainer.appendChild(closeBtn);
+                overlay.appendChild(posterContainer);
+                document.body.appendChild(overlay);
+                overlay.addEventListener('mousedown', function(e) {
+                    if (e.target === overlay) overlay.remove();
                 });
+                playBtn.onclick = () => {
+                    playBtn.style.display = 'none';
+                    spinner.style.display = 'block';
+                    const videoElement = document.createElement('video');
+                    videoElement.src = videoUrl;
+                    if (posterUrl) videoElement.poster = posterUrl;
+                    videoElement.style.border = '1.5px solid #E9E8E0';
+                    videoElement.style.maxWidth = '85vw';
+                    videoElement.style.maxHeight = '75vh';
+                    videoElement.style.borderRadius = '14px';
+                    videoElement.controls = false;
+                    videoElement.preload = 'auto';
+                    videoElement.autoplay = true;
+                    videoElement.setAttribute('playsinline', '');
+                    videoElement.setAttribute('webkit-playsinline', '');
+                    videoElement.playsInline = true;
+                    showFirstVideoWaitMessage(videoElement);
+                    videoElement.addEventListener('canplaythrough', () => {
+                        posterContainer.replaceChild(videoElement, posterImg);
+                        spinner.style.display = 'none';
+                        videoElement.play();
+                    });
+                    videoElement.addEventListener('click', () => {
+                        videoElement.controls = true;
+                    });
+                    videoElement.addEventListener('ended', () => overlay.remove());
+                    videoElement.addEventListener('error', () => {
+                        spinner.style.display = 'none';
+                        playBtn.style.display = 'block';
+                        alert('Video failed to load.');
+                    });
+                    videoElement.load();
+                };
+            });
+        });
+    }
+    function scaleMarkersBasedOnZoom() {
+        const zoomLevel = map.getZoom();
+        const markerSize = (zoomLevel - 13) + 'em';
+        document.querySelectorAll('.location-marker').forEach(marker => {
+            marker.style.width = markerSize;
+            marker.style.height = markerSize;
+        });
+        document.querySelectorAll('.building-marker').forEach(marker => {
+            marker.style.width = markerSize;
+            marker.style.height = markerSize;
+        });
+    }
 
-                // Show controls if user clicks video (optional)
-                videoElement.addEventListener('click', () => {
-                    videoElement.controls = true;
-                });
+    // Add markers and scale immediately
+    addBuildingMarkers();
+    addLocationMarkers();
+    scaleMarkersBasedOnZoom();
 
-                // Remove overlay when video ends
-                videoElement.addEventListener('ended', () => overlay.remove());
+    // Map event listeners immediately
+    map.on('click', (e) => {
+        const currentLat = e.lngLat.lat;
+        const currentLng = e.lngLat.lng;
+        const currentZoom = map.getZoom();
+        const mapLink = generateMapLink(currentLat, currentLng, currentZoom);
+        console.log('Map Link:', mapLink);
+    });
+    map.on('zoom', () => scaleMarkersBasedOnZoom());
 
-                // Handle loading errors
-                videoElement.addEventListener('error', () => {
-                    spinner.style.display = 'none';
-                    playBtn.style.display = 'block';
-                    alert('Video failed to load.');
-                });
-
-                // Start loading
-                videoElement.load();
-            };
+    // Only what requires style load
+    map.on('load', () => {
+        geolocate.trigger();
+        map.addSource('Ward_boundaries-8vvo78', {
+            type: 'vector',
+            url: 'mapbox://freddomate.345l7u6c'
         });
     });
-}
-    function scaleMarkersBasedOnZoom() {
-    const zoomLevel = map.getZoom(); // Get the current zoom level
-    const markerSize = (zoomLevel - 13) + 'em'; // Linear scaling formula
-
-    // Update the size of location markers
-    document.querySelectorAll('.location-marker').forEach(marker => {
-        marker.style.width = markerSize;
-        marker.style.height = markerSize;
-    });
-
-    // Update the size of building markers
-    document.querySelectorAll('.building-marker').forEach(marker => {
-        marker.style.width = markerSize;
-        marker.style.height = markerSize;
-    });
-}
-
-// Call the function initially to set marker sizes based on the initial zoom level
-scaleMarkersBasedOnZoom();
-    
-}
-
-
-
+};
 // Function to parse URL parameters
 function getUrlParameter(name) {
     name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
@@ -534,12 +436,6 @@ function generateMapLink(latitude, longitude, zoomLevel) {
     return baseUrl + params;
 }
 
-// Example usage:
-// You can call this function when a user clicks on a marker or interacts with the map
-// to generate a link for the current view.
-// For example:
-
-
 // Container for both buttons
 const buttonGroup = document.createElement('div');
 buttonGroup.id = 'button-group';
@@ -552,7 +448,6 @@ buttonGroup.style.display = 'flex';
 buttonGroup.style.gap = '10px';
 document.body.appendChild(buttonGroup);
 
-
 // Create a <style> element to add the CSS
 const stylePopup = document.createElement('style');
 
@@ -562,7 +457,6 @@ link.href = "https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&displ
 link.rel = "stylesheet";
 document.head.appendChild(link);
 
-// Style for the popup and markers
 // Style for the popup and markers
 stylePopup.innerHTML = `
   .mapboxgl-popup-content {
@@ -579,12 +473,10 @@ stylePopup.innerHTML = `
     margin-right: 5px;
     margin-bottom: 10px; /* Add this line */
   }
-
   .mapboxgl-popup-content img {
     border: 2px solid #f0f0f0 !important;
     border-radius: 8px;
   }
-
   .mapboxgl-popup-content p {
     font-weight: bold !important;
     text-align: center;
@@ -592,11 +484,9 @@ stylePopup.innerHTML = `
     font-size: 13px !important;
     margin-bottom: 10px !important;
   }
-
   .mapboxgl-popup-close-button {
     display: none !important;
   }
-
   .user-location-marker {
     width: 20px;
     height: 20px;
@@ -605,23 +495,18 @@ stylePopup.innerHTML = `
     border-radius: 100%;
     position: relative;
   }
-
   .location-marker {
     z-index: 1;
   }
-
   .building-marker {
     z-index: 2;
   }
-
   .mapboxgl-popup {
     z-index: 9999 !important;
   }
-
   .hide-scrollbar::-webkit-scrollbar {
     display: none;
   }
-
   .custom-button {
     background-color: #e9e8e0;
     color: black;
@@ -637,7 +522,6 @@ stylePopup.innerHTML = `
     white-space: nowrap;
     text-align: center;
   }
-
   #button-group {
     position: fixed;
     top: 50px;
@@ -647,33 +531,27 @@ stylePopup.innerHTML = `
     gap: 10px;
     z-index: 1000;
   }
-    .dropdown-content {
-    line-height: 1.05; /* Added line-height */
-    font-size: 12px; /* Added font-size */
+  .dropdown-content {
+    line-height: 1.05;
+    font-size: 12px;
   }
-
-// Add styles for the bottom sheet
   #bottom-sheet {
     font-family: 'Poppins', sans-serif !important;
     padding: 5px;
     font-size: 14px;
     line-height: 1.05;
   }
-
   #bottom-sheet img {
     max-width: 100%;
     border-radius: 8px;
     margin-bottom: 10px;
   }
-
   #bottom-sheet p {
     margin-bottom: 10px;
   }
 `;
 
-// Append the style to the document
 document.head.appendChild(stylePopup);
-
 
 function createCustomMarker(imageUrl, color = '#9b4dca', isLocation = false) {
   const markerDiv = document.createElement('div');
@@ -728,16 +606,15 @@ function toggleBottomSheet(contentHTML) {
         bottomSheet.style.bottom = '0'; // Show
 
         // Attach event listener to the close button
- document.getElementById('close-bottom-sheet').addEventListener('click', () => {
-    // Stop video playback
-    const videoElement = document.querySelector('video'); // Adjust selector as needed
-    if (videoElement) {
-        videoElement.pause();
-        videoElement.currentTime = 0; // Optional: Reset video to start
-    }
-
-    toggleBottomSheet(); // Close the popup
-});
+        document.getElementById('close-bottom-sheet').addEventListener('click', () => {
+            // Stop video playback
+            const videoElement = document.querySelector('video'); // Adjust selector as needed
+            if (videoElement) {
+                videoElement.pause();
+                videoElement.currentTime = 0; // Optional: Reset video to start
+            }
+            toggleBottomSheet(); // Close the popup
+        });
     }
     isBottomSheetOpen = !isBottomSheetOpen;
 }
@@ -745,15 +622,10 @@ function toggleBottomSheet(contentHTML) {
 function createPopupContent(location, isFirebase = false) {
     const data = isFirebase ? location : location;
     const eventsData = isFirebase ? data.events : data.events;
-
-    // Check if videoUrl property exists and is not empty
     const videoUrl = data.videoUrl ? data.videoUrl : null;
-
-    // Exclude the "tldr" and image if the videoUrl is present
-const tldrContent = !videoUrl
-    ? `<p style="background: #f9f9f9; padding: 10px; margin-top: 10px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); font-size: 15px; color: #7C6E4D;">${data.tldr}</p>`
-    : '';
-
+    const tldrContent = !videoUrl
+        ? `<p style="background: #f9f9f9; padding: 10px; margin-top: 10px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); font-size: 15px; color: #7C6E4D;">${data.tldr}</p>`
+        : '';
     const imageContent = !videoUrl
         ? `<img src="${data.image || data.imageUrl}" alt="${data.name}" style="width: 80px; height: 80px; object-fit: cover; border-radius: 8px; margin-bottom: 10px;" />`
         : '';
@@ -791,7 +663,6 @@ const tldrContent = !videoUrl
         </div>
     `;
 }
-
 document.addEventListener('DOMContentLoaded', () => {
     // Create the button
     const button = document.createElement('button');
@@ -813,15 +684,15 @@ document.addEventListener('DOMContentLoaded', () => {
     dropdownContent.style.borderRadius = '8px';
     dropdownContent.style.boxShadow = '0 6px 15px rgba(0, 0, 0, 0.3)';
     dropdownContent.style.fontSize = '14px';
-    dropdownContent.style.lineHeight = '1.25'; // Slightly reduce line spacing
-    dropdownContent.style.zIndex = '10000'; // Ensure it goes above everything else
-dropdownContent.style.maxWidth = '300px';
-dropdownContent.style.textAlign = 'center';
-dropdownContent.style.minHeight = '300px'; // add this
-dropdownContent.style.height = '550px'; // add this (adjust as needed)
-dropdownContent.style.maxHeight = '600px'; // to allow for more if needed
-dropdownContent.style.overflowY = 'auto';
-dropdownContent.style.bottom = '50px';
+    dropdownContent.style.lineHeight = '1.25';
+    dropdownContent.style.zIndex = '10000';
+    dropdownContent.style.maxWidth = '300px';
+    dropdownContent.style.textAlign = 'center';
+    dropdownContent.style.minHeight = '300px';
+    dropdownContent.style.height = '550px';
+    dropdownContent.style.maxHeight = '600px';
+    dropdownContent.style.overflowY = 'auto';
+    dropdownContent.style.bottom = '50px';
 
     dropdownContent.innerHTML = `
             <button 
@@ -838,7 +709,7 @@ dropdownContent.style.bottom = '50px';
                 cursor: pointer; 
                 text-align: center;
                 box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
-                margin-bottom: 15px; /* Add spacing below the button */
+                margin-bottom: 15px;
             "
             onclick="window.open('https://chat.whatsapp.com/CmVoiTXQd6r70yxXY4XpDJ')"
         >
@@ -866,7 +737,7 @@ dropdownContent.style.bottom = '50px';
                 cursor: pointer; 
                 text-align: center;
                 box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
-                margin-bottom: 15px; /* Add spacing below the button */
+                margin-bottom: 15px;
             "
             onclick="window.open('https://www.buymeacoffee.com/britmap', '_blank')"
         >
@@ -878,7 +749,6 @@ dropdownContent.style.bottom = '50px';
     <hr style="flex: 1; border: 1px solid #ccc; margin: 0 10px;">
 </div>
 <div id="donor-list" style="margin-top: 10px;"></div>
-
     `;
 
     // Wrap the button and dropdown in a container
@@ -886,7 +756,7 @@ dropdownContent.style.bottom = '50px';
     dropdownContainer.className = 'dropdown';
     dropdownContainer.style.position = 'fixed';
     dropdownContainer.style.left = '50%';
-    dropdownContainer.style.top = '10px'; // Position at the top
+    dropdownContainer.style.top = '10px';
     dropdownContainer.style.transform = 'translateX(-50%)';
     dropdownContainer.style.zIndex = '1001';
     dropdownContainer.appendChild(button);
@@ -905,12 +775,12 @@ dropdownContent.style.bottom = '50px';
             <span class="donor-amount" style="color: #9b4dca; margin-left: 10px; font-weight: bold;">£${amount}</span>
             <div class="donor-subtext" style="font-size: 12px; color: #666; margin-top: 1px;">${subtext}</div>
         `;
-        donorDiv.style.marginBottom = '12px'; // Maintain gap between donors
+        donorDiv.style.marginBottom = '12px';
         donorList.appendChild(donorDiv);
     }
 
     // Add example donors
-       addDonor('Anonymous', '15', ' ');
+    addDonor('Anonymous', '15', ' ');
     addDonor('Chip Pedro', '5', 'Will be very useful on our upcoming trip - really nice work!');
     addDonor('buffsteve24', '5', 'Amazing work!');
     addDonor('marksaw20', '5', 'Lovely map. Really interesting.');
@@ -929,5 +799,5 @@ dropdownContent.style.bottom = '50px';
     });
 
     // Set the dropdown width to match the button width
-    dropdownContent.style.width = `${Math.max(button.offsetWidth, 300)}px`; // Match width with maxWidth
+    dropdownContent.style.width = `${Math.max(button.offsetWidth, 300)}px`;
 });
