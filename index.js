@@ -8,6 +8,9 @@ const loadingScreenStart = Date.now();
 // --- First Video Popup additions START ---
 let firstVideoLoadedThisSession = false;
 function showFirstVideoWaitMessage(videoElement) {
+    // Only show on mobile devices
+    if (window.innerWidth > 768) return;
+
     if (firstVideoLoadedThisSession) return;
     firstVideoLoadedThisSession = true;
 
