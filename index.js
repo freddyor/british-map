@@ -90,8 +90,8 @@ mapboxScript.onload = () => {
     var map = new mapboxgl.Map({
         container: 'map',
         style: 'mapbox://styles/freddomate/cm8q8wtwx00a801qzdayccnvz?optimize=true',
-        center: [-1.0835, 53.9584],
-        zoom: 15,
+        center: [-1.083559397442549, 53.960174691332824],
+        zoom: 16,
         pitch: 45,
         bearing: -17.6,
         maxBounds: yorkBounds,
