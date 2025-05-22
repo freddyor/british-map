@@ -1,4 +1,58 @@
 export const locations = [
+            {
+  name: "Lendal Post Office",
+  coords: [ -1.0851210008094179, 53.96010660170534 ],
+  image: "https://victorianweb.org/art/architecture/tanner/1b.jpg",
+  description: "",
+  occupation: "1884",
+  tldr: "This was the site of York’s main post office for 135 years, from 1884 to 2019. It also opened the city’s second telephone exchange in 1892. Local MP Rachael Maskell led a campaign to keep the post office open in 2018, gaining over 3000 petition signatures.",
+  events: []
+},
+        {
+  name: "Banks Music",
+  coords: [ -1.0854091504660313, 53.96026517542551 ],
+  image: "https://yorkmix.com/wp-content/uploads/2023/02/banks-music-room-york.jpg",
+  description: "",
+  occupation: "1756",
+  tldr: "Until March 17 2023 , this building was home to the oldest music shop in Britain. It was founded in 1756, the same year Mozart was born,  on neighbouring Blake Street. The business lived on Stonegate for most of its life, but moved here in 1985.",
+  events: []
+},
+        {
+  name: "14 Lendal",
+  coords: [ -1.0855682679566072, 53.9603486821128 ],
+  image: "https://www.yorkconservationtrust.org/media/lljjxd4h/14-lendal-0803.jpg",
+  description: "",
+  occupation: "1714",
+  tldr: "Built as a Georgian townhouse, after the Great Fire of London when government regulation then insisted road-facing houses must be built in brock or stone. For 170 years the saddlers Robson and Cooper were housed here, supplying their wares globally. Notable figures who visited here include Prince Arthur (son of Queen Victoria), Barons Edward and Robert Rothschild and John Paul Getty.",
+  events: []
+},
+        {
+  name: "Lendal Roman Tower",
+  coords: [ -1.086034752941269, 53.960766676959466 ],
+  image: "https://www.collections.yorkarchaeologicaltrust.co.uk/files/original/34143/744839.jpg",
+  description: "",
+  occupation: " ",
+   tldr: "In 1974 an archaeological dig discovered a Roman ‘interval tower’, part of the old Roman fortress wall. This was one of six interval towers than ran from The Multangular Tower in Museum Gardens to the far end of Coney Street.",
+  events: []
+},
+        {
+  name: "Lendal Chapel",
+  coords: [ -1.0860336573132434, 53.96054428949082 ],
+  image: "https://victorianweb.org/art/architecture/pritchett/4.jpg",
+  description: "",
+  occupation: "1816",
+  tldr: "This building was the first chapel in York to be lighted by gas. The Chapel was opened in 1816 after the Congregation grew out of their previous chapel on Jubbergate. It could accommodate 950 people and contained a Sunday school. By the 1950s the building was used as a shop, it is now home to two restuarants and most recently went on the market in 2022 with a guide price over £1 million.",
+  events: []
+},
+        {
+  name: "Lendal Cellars",
+  coords: [ -1.085229467793008, 53.959975745703005 ],
+  image: "https://gkbr-p-001.sitecorecontenthub.cloud/api/public/content/51d3fa256c484e02a8bc4c2feda2459c?v=72642a88&t=galleryMobileS",
+  description: "",
+  occupation: " ",
+  tldr: "Lendal Cellars was originally part of the Augustinian Friary that lay here. It was then used as a cellar for the great Mansion House next door, now being used as a private bar.",
+  events: []
+},
     {
   name: "Aviva Building",
   coords: [ -1.0872526854377227, 53.9594037184367 ],
