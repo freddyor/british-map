@@ -1423,7 +1423,7 @@ export const locations = [
     ]
   },
   {
-    "coords": [-1.0856458395165403, 53.96034199750734],
+    "coords": [-1.086017121579387, 53.96000736967786],
     "name": "Richard III",
     "occupation": "1452-1485",
     "description": "Richard III would stay here when he visited York, where the Augustin Friary used to lay...",
