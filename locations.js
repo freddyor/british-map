@@ -1,4 +1,40 @@
 export const locations = [
+                                    {
+  name: "St Sampson’s Square",
+  coords: [ -1.0820857546658986, 53.95964878951261 ],
+  image: "https://stevegalloway.mycouncillor.org.uk/files/2018/03/St-Sampsons-Square-toilets.jpg",
+  description: "",
+  occupation: " ",
+  tldr: "If you look at the street sign for St Sampson’s Square, you will see it has another name. By 1250, the square was known as Thursday Market, where only traders from outside the city would come to sell meat. By the 16th-century, markets were held on Tuesday, Thursday, and Saturday, and in 1593, a Friday market was added for linen and other cloths. It switched to selling fish in 1888. In 1955, the market stalls were moved to Shambles Marker and the square became a car park.",
+  events: []
+},
+                                    {
+  name: "Davy Hall",
+  coords: [ -1.083387702283965, 53.95981233594202 ],
+  image: "https://www.yorkpress.co.uk/resources/images/13933405.jpg?type=mds-article-620",
+  description: "",
+  occupation: "1130s-1745",
+  tldr: "Davygate gets its name from Davy Hall. Demolished in the 1890s, the hall was apparently once the ancestral home of the Lardiner family of the Forest of Galtres, who traced their descent all the way back to one John le Lardiner, who came to England following the Norman Conquest as the steward of the king’s larder. The hall was also used as a prison for the Forest of Galtres, a royal forest settlement established by the Norman Kings of England.",
+  events: []
+},
+                                    {
+  name: "Parliament Street",
+  coords: [ -1.0816640032826579, 53.959265067277606 ],
+  image: "https://upload.wikimedia.org/wikipedia/commons/a/a8/Parliament_Street_(geograph_6440787).jpg",
+  description: "",
+  occupation: " ",
+  tldr: "For centuries, the main two markets in York were in St Sampson’s Square and Pavement. By the 1800s, the markets had grown considerably and struggled to cater for all the traders coming to the city. In 1827, in an attempt to resolve the problem, the York Corporation sought an Act of Parliament to enable “the linking of Pavement and Thursday Market by a broad, new street, and the extensive demolition of old property.”  The Act of Parliament was granted in 1833, old buildings were demolished and the new street opened in 1834. It was known as Parliament Street because of the Act of Parliament that had been required to build it. The market continued to be held in Parliament Street right up until 1964, when Newgate (now Shambles) Market opened.",
+  events: []
+},
+                        {
+  name: "St Helen’s Burial Ground",
+  coords: [ -1.0830780227993537, 53.95966607784507 ],
+  image: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/22/bd/cc/f2/cool.jpg?w=900&h=500&s=1",
+  description: "",
+  occupation: "",
+  tldr: "St Helen’s original cemetery was located under what is today St Helens Square, before the church sold the land to the City of York. In 1745, this replacement burial ground became available when Davy Hall was demolished. At some point, the cemetery was bricked over and the few remaining gravestones were placed along the walls.",
+  events: []
+},
             {
   name: "Lendal Post Office",
   coords: [ -1.0851210008094179, 53.96010660170534 ],
@@ -618,18 +654,6 @@ export const locations = [
     "tldr": "In the 19th century, numbers 16 and 18 were ran by well-know bookshop Henry Sotheran.",
     "events": [
       { "date": "LEGACY", "description": "Founded in these buildings, Henry Sotheran Ltd is a bookshop in London that claims to be the oldest continuously operating bookshop in the UK and oldest antiquarian bookshop in the world 📚" }
-    ]
-  },
-  {
-    "name": "St Helen's Square",
-    "coords": [-1.0844389540252952, 53.960155934644228],
-    "image": "https://www.britmap.com/videos/IMG_5736.webp",
-    "description": "",
-    "occupation": "1745",
-    "tldr": "The name comes from the Church that stands on the edge of the square.",
-    "events": [
-      { "date": "ROMAN", "description": "During the Roman era, a south-western gate, lay in this exact spot." },
-      { "date": "GRAVEYARD", "description": "Until 1745 this square was just a graveyard for St Helen's church ⛪" }
     ]
   },
   {
