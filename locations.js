@@ -5,7 +5,7 @@ export const locations = [
   image: "https://stevegalloway.mycouncillor.org.uk/files/2018/03/St-Sampsons-Square-toilets.jpg",
   description: "",
   occupation: " ",
-  tldr: "If you look at the street sign for St Sampson’s Square, you will see it has another name. By 1250, the square was known as Thursday Market, where only traders from outside the city would come to sell meat. By the 16th-century, markets were held on Tuesday, Thursday, and Saturday, and in 1593, a Friday market was added for linen and other cloths. It switched to selling fish in 1888. In 1955, the market stalls were moved to Shambles Marker and the square became a car park.",
+  tldr: "If you look at the street sign for St Sampson’s Square, you will see it has another name. By 1250, the square was known as Thursday Market, where only traders from outside the city would come to sell meat. By the 16th-century, markets were held on Tuesday, Thursday, and Saturday, and in 1593, a Friday market was added for linen and other cloths. It switched to selling fish in 1888. In 1955, the market stalls were moved to Shambles Market and the square became a car park.",
   events: []
 },
                                     {
