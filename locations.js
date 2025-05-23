@@ -14,7 +14,7 @@ export const locations = [
   image: "https://www.yorkpress.co.uk/resources/images/13933405.jpg?type=mds-article-620",
   description: "",
   occupation: "1130s-1745",
-  tldr: "Davygate gets its name from Davy Hall. Demolished in the 1890s, the hall was apparently once the ancestral home of the Lardiner family of the Forest of Galtres, who traced their descent all the way back to one John le Lardiner, who came to England following the Norman Conquest as the steward of the king’s larder. The hall was also used as a prison for the Forest of Galtres, a royal forest settlement established by the Norman Kings of England.",
+  tldr: "Davygate gets its name from Davy Hall. Demolished in the 1890s, the hall was once the ancestral home of the Lardiner family of the Forest of Galtres, who traced their descent all the way back to one John le Lardiner, who came to England following the Norman Conquest as the steward of the king’s larder. The hall was also used as a prison for the Forest of Galtres, a royal forest settlement established by the Norman Kings of England.",
   events: []
 },
                                     {
