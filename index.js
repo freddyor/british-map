@@ -89,7 +89,7 @@ mapboxScript.onload = () => {
 
     var map = new mapboxgl.Map({
         container: 'map',
-        style: 'mapbox://styles/freddomate/cm8q8wtwx00a801qzdayccnvz?optimize=true',
+        style: 'mmapbox://styles/mapbox/satellite-v9',
         center: [-1.08643774070107, 53.95996305984138],
         zoom: 16,
         pitch: 45,
