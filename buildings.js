@@ -1,4 +1,37 @@
 export const buildings = [
+                {
+    "name": "Etty Statue Hand",
+    "coords": [-1.0858983757252028, 53.96278755058766],
+    "image": "https://www.britmap.com/videos/IMG_6180.jpeg",
+    "description": "",
+    "occupation": " ",
+    "videoUrl": "https://www.britmap.com/videos/Captions_99AA7F.mp4",
+    "tldr": " ",
+                "posterUrl": "https://www.britmap.com/videos/IMG_6176.jpeg",
+    "events": [  ]
+  },
+                {
+    "name": "St Maurice Street",
+    "coords": [-1.0779773485377184, 53.96301889037769],
+    "image": "https://www.britmap.com/videos/IMG_6191.jpeg",
+    "description": "",
+    "occupation": " ",
+    "videoUrl": "https://www.britmap.com/videos/Captions_B7547E.mp4",
+    "tldr": " ",
+                "posterUrl": "https://www.britmap.com/videos/IMG_6189.jpeg",
+    "events": [  ]
+  },
+                {
+    "name": "St Maurice Church",
+    "coords": [-1.0782164820427336, 53.96339048321918],
+    "image": "https://www.britmap.com/videos/IMG_6181.jpeg",
+    "description": "",
+    "occupation": " ",
+    "videoUrl": "https://www.britmap.com/videos/Captions_EF707F.mp4",
+    "tldr": " ",
+                "posterUrl": "https://www.britmap.com/videos/IMG_6179.jpeg",
+    "events": [  ]
+  },
         {
     "name": "Lendal Tower",
     "coords": [-1.0871091424158719, 53.9603294803262],
