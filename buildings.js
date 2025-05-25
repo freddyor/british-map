@@ -7,6 +7,7 @@ export const buildings = [
     "occupation": " ",
     "videoUrl": "https://www.britmap.com/videos/Captions_99AA7F.mp4",
     "tldr": " ",
+                  "colour": "yes",
                 "posterUrl": "https://www.britmap.com/videos/IMG_6176.jpeg",
     "events": [  ]
   },
@@ -29,6 +30,7 @@ export const buildings = [
     "occupation": " ",
     "videoUrl": "https://www.britmap.com/videos/Captions_EF707F.mp4",
     "tldr": " ",
+                  "colour": "yes",
                 "posterUrl": "https://www.britmap.com/videos/IMG_6179.jpeg",
     "events": [  ]
   },
@@ -73,6 +75,7 @@ export const buildings = [
     "occupation": "1866-?",
     "videoUrl": "https://www.britmap.com/videos/Captions_7978BD.mp4", 
     "tldr": "",
+         "colour": "yes",
     "posterUrl": "https://www.britmap.com/videos/IMG_6001.jpeg",
     "events": []
   },
@@ -153,6 +156,7 @@ export const buildings = [
     "videoUrl": "https://www.britmap.com/videos/Captions_AC995F.mp4",
                         "subtitle": "The site of ancient tax collection",
     tldr: "",
+                        "colour": "yes",
                               "posterUrl": "https://www.britmap.com/videos/IMG_6048.jpeg",
     events: [  ]
   },
@@ -165,6 +169,7 @@ export const buildings = [
     "videoUrl": "https://www.britmap.com/videos/Captions_8F5743.mp4",
     "subtitle": "York's old figurine that disappeared",
     tldr: "",
+                        "colour": "yes",
                               "posterUrl": "https://www.britmap.com/videos/IMG_6041.jpeg",
     events: [  ]
   },
@@ -405,6 +410,7 @@ export const buildings = [
     "subtitle": "Removed from the Minster for being too inappropriate", 
     "videoUrl": "https://www.britmap.com/videos/Captions_583941.mp4",
     "tldr": "",
+                "colour": "yes",
                       "posterUrl": "https://www.britmap.com/videos/IMG_6020.jpeg",
     "events": []
   },
@@ -455,6 +461,7 @@ export const buildings = [
       "videoUrl": "https://www.britmap.com/videos/Captions_10809A.mp4",
                   "subtitle": "The first woman to vote in York",
     "tldr": "",
+          "colour": "yes",
                 "posterUrl": "https://www.britmap.com/videos/IMG_6026.jpeg",
     "events": []
   },
@@ -602,6 +609,7 @@ export const buildings = [
     "occupation": " ",
                 "subtitle": "A symbol secretly dotted around the city",
     "tldr": " ",
+        "colour": "yes",
               "posterUrl": "https://www.britmap.com/videos/IMG_6006.jpeg",
     "events": [ ]
   },
