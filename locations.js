@@ -1,4 +1,13 @@
 export const locations = [
+                                      {
+  name: "Salem Chapel",
+  coords: [  ],
+  image: "https://www.jppritchett.org.uk/sites/default/files/2023-08/salem_from_SAVE_Fall_of_Zion.jpg",
+  description: "Is this the largest architectural downgrade in York’s history?",
+  occupation: "1839",
+  tldr: "From 1839 to 1963, Salem Chapel sat here on the end of St Saviourgate. The majority of the congregation of Lendal Chapel transferred to this building as it seated 1,700. As at Lendal, there was a schoolroom below. The chapel closed in 1943, and the building was demolished in 1963, replaced by the monstrous Biba House.",
+  events: []
+},
                                     {
   name: "St Sampson’s Square",
   coords: [ -1.0820857546658986, 53.95964878951261 ],
