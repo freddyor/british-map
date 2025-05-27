@@ -1,4 +1,15 @@
 export const buildings = [
+    {
+    "name": "Ingram House",
+    "coords": [-1.0902817392673825, 53.965384792879576],
+    "image": "https://www.britmap.com/videos/IMG_6215.jpeg",
+    "description": "",
+    "occupation": "",
+    "tldr": "",
+      "videoUrl": "https://www.britmap.com/videos/Captions_040E35.mp4",
+      "posterUrl": "https://www.britmap.com/videos/IMG_6214.jpeg",
+    "events": [ ]
+  },
                 {
     "name": "Etty Statue Hand",
     "coords": [-1.0858983757252028, 53.96278755058766],
