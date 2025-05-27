@@ -912,18 +912,6 @@ export const locations = [
     ]
   },
   {
-    "name": "Ingram House",
-    "coords": [-1.0902817392673825, 53.965384792879576],
-    "image": "https://upload.wikimedia.org/wikipedia/commons/d/d5/Ingram%27s_Hospital%2C_Bootham_-_geograph.org.uk_-_673252.jpg",
-    "description": "",
-    "occupation": "1640",
-    "tldr": "It was built as an almshouse for ten poor widows by Sir Arthur Ingram MP.",
-    "events": [
-      { "date": "1642", "description": "Charles I stayed in the building" },
-      { "date": "HISTORIC", "description": "The middle doorway dates back to the Norman Period and was once a doorway to the Holy Trinity Priory ⛪" }
-    ]
-  },
-  {
     "name": "Wandesford House",
     "coords": [-1.0866278691728737, 53.96388611595972],
     "image": "https://upload.wikimedia.org/wikipedia/commons/7/78/Wandesford_House%2C_Bootham_-_geograph.org.uk_-_681005.jpg",
