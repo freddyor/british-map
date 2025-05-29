@@ -809,7 +809,7 @@ export const locations = [
   },
   {
     "name": "Roman Bath",
-    "coords": [-1.08194029561872668, 53.96015993464105],
+    "coords": [-1.0819117738965545, 53.959925186277594],
     "image": "https://upload.wikimedia.org/wikipedia/commons/e/ee/Roman_Bath_York.jpg",
     "description": "",
     "occupation": "1st CENTURY",
