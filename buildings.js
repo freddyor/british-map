@@ -1,4 +1,14 @@
 export const buildings = [
+    {'name': 'Salem Chapel',
+     'coords': [-1.0769951340621942, 53.96046077025504],
+     'image': 'https://www.jppritchett.org.uk/sites/default/files/2023-08/salem_from_SAVE_Fall_of_Zion.jpg',
+     'description': '',
+     'occupation': '1839',
+     'tldr': '',
+           "videoUrl": "https://www.britmap.com/videos/Captions_A08F33.mp4",
+      "posterUrl": "https://www.britmap.com/videos/IMG_6475.jpeg",
+     'events': []
+   },
     {
     "name": "Ingram House",
     "coords": [-1.0902817392673825, 53.965384792879576],
