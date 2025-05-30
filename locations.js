@@ -154,15 +154,6 @@ export const locations = [
   tldr: "For centuries, the main two markets in York were in St Sampson’s Square and Pavement. By the 1800s, the markets had grown considerably and struggled to cater for all the traders coming to the city. In 1827, in an attempt to resolve the problem, the York Corporation sought an Act of Parliament to enable “the linking of Pavement and Thursday Market by a broad, new street, and the extensive demolition of old property.”  The Act of Parliament was granted in 1833, old buildings were demolished and the new street opened in 1834. It was known as Parliament Street because of the Act of Parliament that had been required to build it. The market continued to be held in Parliament Street right up until 1964, when Newgate (now Shambles) Market opened.",
   events: []
 },
-                        {
-  name: "St Helen’s Burial Ground",
-  coords: [ -1.0830780227993537, 53.95966607784507 ],
-  image: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/22/bd/cc/f2/cool.jpg?w=900&h=500&s=1",
-  description: "",
-  occupation: "",
-  tldr: "St Helen’s original cemetery was located under what is today St Helens Square, before the church sold the land to the City of York. In 1745, this replacement burial ground became available when Davy Hall was demolished. At some point, the cemetery was bricked over and the few remaining gravestones were placed along the walls.",
-  events: []
-},
             {
   name: "Lendal Post Office",
   coords: [ -1.0851210008094179, 53.96010660170534 ],
