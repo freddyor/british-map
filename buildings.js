@@ -1,4 +1,37 @@
 export const buildings = [
+                                {
+ 'name': 'St William',
+ 'coords': [-1.0814491294017095, 53.9624467151365],
+  image: "https://anastpaul.com/wp-content/uploads/2021/06/st-william-of-york-header.jpg?w=540",
+  description: "",
+  occupation: "",
+  tldr: "",
+  "videoUrl": "https://www.britmap.com/videos/Captions_5022D2.mp4",
+   "posterUrl": "https://www.britmap.com/videos/IMG_6522.jpeg",
+  events: []
+},
+                                {
+ 'name': 'St William',
+ 'coords': [-1.084117684084615, 53.957460834182356],
+  image: "https://anastpaul.com/wp-content/uploads/2021/06/st-william-of-york-header.jpg?w=540",
+  description: "",
+  occupation: "",
+  tldr: "",
+  "videoUrl": "https://www.britmap.com/videos/Captions_5022D2.mp4",
+   "posterUrl": "https://www.britmap.com/videos/IMG_6522.jpeg",
+  events: []
+},
+                            {
+  name: "St Helen’s Burial Ground",
+  coords: [ -1.0830780227993537, 53.95966607784507 ],
+  image: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/22/bd/cc/f2/cool.jpg?w=900&h=500&s=1",
+  description: "",
+  occupation: "",
+  tldr: "",
+  "videoUrl": "https://www.britmap.com/videos/Captions_07F51B.mp4",
+   "posterUrl": "https://www.britmap.com/videos/IMG_6518.jpeg",
+  events: []
+},
     {'name': 'Salem Chapel',
      'coords': [-1.0769951340621942, 53.96046077025504],
      'image': 'https://www.jppritchett.org.uk/sites/default/files/2023-08/salem_from_SAVE_Fall_of_Zion.jpg',
