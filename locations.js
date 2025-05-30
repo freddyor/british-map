@@ -47,14 +47,6 @@ export const locations = [
  'tldr': 'Stuart Feather, from Acomb, met John Chesterman, from Dringhouses, in a public toilet in this alleyway in 1956. It was lvoe at first sight. They moved to London and were founding members of the Gay Liberation Front and, in 1970, these two men from York organised the first Gay Pride March at Highbury Fields in London. 200 people turned up to an event which now attracts millions every year. ',
  'events': []},
 
-{'name': 'St William',
- 'coords': [-1.084117684084615, 53.957460834182356],
- 'image': 'https://stainedglass-navigator.yorkglazierstrust.org/assets/Uploads/St-William-Window/9c-ym-n7-Large__FitWzYwMCw2MDBd.jpg',
- 'description': '',
- 'occupation': 'Died 1154',
- 'tldr': 'In 1154, when a crowd gathered on the bridge to see the return of Archbishop William Fitzherbert, the bridge collapsed but not a single person died. This was considered a miracle by William, so the chapel that once stood here was named St William’s Chapel. He was canonised by the Pope in 1226 and a part of St Williams Window on York Minster depicts this event, as shown above. ',
- 'events': []},
-
 {'name': 'Boyes',
  'coords': [-1.084555730379377, 53.957575516586516],
  'image': 'https://www.yorkpress.co.uk/resources/images/13460780/?type=responsive-gallery-fullscreen',
