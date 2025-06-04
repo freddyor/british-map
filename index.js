@@ -74,7 +74,7 @@ document.head.appendChild(mapboxCSS);
 
 // Dynamically load Mapbox GL JS JavaScript
 const mapboxScript = document.createElement('script');
-mapboxScript.src = "https://api.mapbox.com/mapbox-gl-js/v3.12.0/mapbox-gl.js";
+mapboxScript.src = "https://api.mapbox.com/mapbox-gl-";
 mapboxScript.defer = true;
 document.body.appendChild(mapboxScript);
 
