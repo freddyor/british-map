@@ -74,7 +74,7 @@ document.head.appendChild(mapboxCSS);
 
 // Dynamically load Mapbox GL JS JavaScript
 const mapboxScript = document.createElement('script');
-mapboxScript.src = "https://api.mapbox.com/mapbox-gl-";
+mapboxScript.src = "https://api.mapbox.com/mapbox-gl-js/v3.12.0/mapbox-gl.js";
 mapboxScript.defer = true;
 document.body.appendChild(mapboxScript);
 
@@ -89,7 +89,7 @@ mapboxScript.onload = () => {
 
     var map = new mapboxgl.Map({
         container: 'map',
-        style: 'mapbox://styles/freddomate/cm8q8wtwx00a801qzdayccnvz?optimize=true',
+        style: ' ',
         center: [-1.08643774070107, 53.95996305984138],
         zoom: 16,
         pitch: 45,
