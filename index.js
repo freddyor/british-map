@@ -370,7 +370,6 @@ videoElement.load();
     // Only what requires style load
 map.on('load', () => {
     geolocate.trigger();
-    });
 
     // Hide the loading screen after at least 5 seconds
     const loadingScreen = document.getElementById('loading-screen');
