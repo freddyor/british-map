@@ -66,17 +66,17 @@ function showFirstVideoWaitMessage(videoElement) {
 }
 
 
-// Dynamically load Mapbox GL JS CSS
-const mapboxCSS = document.createElement('link');
-mapboxCSS.href = "https://api.mapbox.com/mapbox-gl-js/v3.12.0/mapbox-gl.css";
-mapboxCSS.rel = "stylesheet";
-document.head.appendChild(mapboxCSS);
+// Dynamically load MapLibre GL JS CSS
+const maplibreCSS = document.createElement('link');
+maplibreCSS.href = "https://unpkg.com/maplibre-gl@5.0.1/dist/maplibre-gl.css";
+maplibreCSS.rel = "stylesheet";
+document.head.appendChild(maplibreCSS);
 
-// Dynamically load Mapbox GL JS JavaScript
-const mapboxScript = document.createElement('script');
-mapboxScript.src = "https://api.mapbox.com/mapbox-gl-js/v3.12.0/mapbox-gl.js";
-mapboxScript.defer = true;
-document.body.appendChild(mapboxScript);
+// Dynamically load MapLibre GL JS JavaScript
+const maplibreScript = document.createElement('script');
+maplibreScript.src = "https://unpkg.com/maplibre-gl@5.0.1/dist/maplibre-gl.js";
+maplibreScript.defer = true;
+document.body.appendChild(maplibreScript);
 
 const yorkBounds = [
   [-1.170, 53.930], // Southwest corner (lng, lat)
@@ -84,12 +84,10 @@ const yorkBounds = [
 ];
 
 // Map initialization after script loads
-mapboxScript.onload = () => {
-    mapboxgl.accessToken = 'pk.eyJ1IjoiZnJlZGRvbWF0ZSIsImEiOiJjbTc1bm5zYnQwaG1mMmtxeDdteXNmeXZ0In0.PuDNORq4qExIJ_fErdO_8g';
-
-    var map = new mapboxgl.Map({
+maplibreScript.onload = () => {
+    var map = new maplibregl.Map({
         container: 'map',
-        style: 'mapbox://styles/freddomate/cm8q8wtwx00a801qzdayccnvz?optimize=true',
+        style: 'https://openmaptiles.github.io/positron-gl-style/style-cdn.json', // Free, open style
         center: [-1.08643774070107, 53.95996305984138],
         zoom: 16,
         pitch: 45,
@@ -98,10 +96,12 @@ mapboxScript.onload = () => {
         minZoom: 11,
         maxZoom: 19,
     });
+};
+
 
 
     // Geolocate control and user location marker
-    const geolocate = new mapboxgl.GeolocateControl({
+    const geolocate = new maplibregl.GeolocateControl({
         positionOptions: {
             enableHighAccuracy: true
         },
@@ -129,7 +129,7 @@ mapboxScript.onload = () => {
     textEl.textContent = 'me';
     userLocationEl.appendChild(textEl);
 
-    const userLocationMarker = new mapboxgl.Marker({element: userLocationEl})
+    const userLocationMarker = new maplibregl.Marker({element: userLocationEl})
       .setLngLat([0, 0])
       .addTo(map);
 
@@ -145,7 +145,7 @@ mapboxScript.onload = () => {
         locations.forEach(location => {
             const { element: markerElement } = createCustomMarker(location.image, '#FFFFFF', true);
             markerElement.className += ' location-marker';
-            const marker = new mapboxgl.Marker({
+            const marker = new maplibregl.Marker({
                 element: markerElement
             })
             .setLngLat(location.coords)
@@ -167,7 +167,7 @@ mapboxScript.onload = () => {
 
             if (building.colour === "yes") markerElement.style.zIndex = '3';
 
-            const marker = new mapboxgl.Marker({element: markerElement})
+            const marker = new maplibregl.Marker({element: markerElement})
                 .setLngLat(building.coords)
                 .addTo(map);
 
@@ -370,9 +370,6 @@ videoElement.load();
     // Only what requires style load
 map.on('load', () => {
     geolocate.trigger();
-    map.addSource('Ward_boundaries-8vvo78', {
-        type: 'vector',
-        url: 'mapbox://freddomate.345l7u6c'
     });
 
     // Hide the loading screen after at least 5 seconds
@@ -464,7 +461,7 @@ document.head.appendChild(link);
 
 // Style for the popup and markers
 stylePopup.innerHTML = `
-  .mapboxgl-popup-content {
+  .maplibregl-popup-content {
     border-radius: 12px !important;
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3) !important;
     padding: 10px !important;
@@ -478,18 +475,18 @@ stylePopup.innerHTML = `
     margin-right: 5px;
     margin-bottom: 10px; /* Add this line */
   }
-  .mapboxgl-popup-content img {
+  .maplibregl-popup-content img {
     border: 2px solid #f0f0f0 !important;
     border-radius: 8px;
   }
-  .mapboxgl-popup-content p {
+  .maplibregl-popup-content p {
     font-weight: bold !important;
     text-align: center;
     letter-spacing: -0.5px;
     font-size: 13px !important;
     margin-bottom: 10px !important;
   }
-  .mapboxgl-popup-close-button {
+  .maplibregl-popup-close-button {
     display: none !important;
   }
   .user-location-marker {
@@ -506,7 +503,7 @@ stylePopup.innerHTML = `
   .building-marker {
     z-index: 2;
   }
-  .mapboxgl-popup {
+  .maplibregl-popup {
     z-index: 9999 !important;
   }
   .hide-scrollbar::-webkit-scrollbar {
