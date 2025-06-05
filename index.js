@@ -386,7 +386,7 @@ map.on('load', () => {
         }
     }
 });
-};
+
 // Function to parse URL parameters
 function getUrlParameter(name) {
     name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
