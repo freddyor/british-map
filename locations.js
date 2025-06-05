@@ -39,14 +39,6 @@ export const locations = [
  'tldr': 'At the end of the old Ouse Bridge, a damp prison once stood.  Margaret Clitherow, a Catholic convert, was imprisoned here in 1856 for hiding Catholic priests at her home on the Shambles. On Good Friday Margaret was taken from the prison to the Ouse bridge toll booth that also stood here (only seven yards from the jail), where the sentence was carried out. She was stripped naked and laid upon the floor of the toll booth, with a sharp stone under her back. A quantity of seven or eight hundred-weight stones were placed upon her which broke her ribs, causing them to burst through her skin. She was reported to have died after fifteen minutes.',
  'events': []},
 
-{'name': 'Stuart Feather',
- 'coords': [-1.0828678455724547, 53.9578982808366],
- 'image': 'https://i.ytimg.com/vi/6-FkYmeHmN8/maxresdefault.jpg',
- 'description': '',
- 'occupation': ' ',
- 'tldr': 'Stuart Feather, from Acomb, met John Chesterman, from Dringhouses, in a public toilet in this alleyway in 1956. It was lvoe at first sight. They moved to London and were founding members of the Gay Liberation Front and, in 1970, these two men from York organised the first Gay Pride March at Highbury Fields in London. 200 people turned up to an event which now attracts millions every year. ',
- 'events': []},
-
 {'name': 'Boyes',
  'coords': [-1.084555730379377, 53.957575516586516],
  'image': 'https://www.yorkpress.co.uk/resources/images/13460780/?type=responsive-gallery-fullscreen',
