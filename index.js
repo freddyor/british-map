@@ -2,28 +2,6 @@
 import { buildings } from './buildings.js';
 import { locations } from './locations.js';
 
-// Preload building/location images, poster images, and video URLs
-[...buildings, ...locations].forEach(item => {
-  // Preload marker images
-  if (item.image) {
-    const img = new window.Image();
-    img.src = item.image;
-  }
-  // Preload poster images
-  if (item.posterUrl) {
-    const poster = new window.Image();
-    poster.src = item.posterUrl;
-  }
-  // Preload video files (if any)
-  if (item.videoUrl) {
-    const link = document.createElement('link');
-    link.rel = 'preload';
-    link.as = 'video';
-    link.href = item.videoUrl;
-    document.head.appendChild(link);
-  }
-});
-
 // Track when the loading screen is first shown
 const loadingScreenStart = Date.now();
 
