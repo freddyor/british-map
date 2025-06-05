@@ -66,23 +66,6 @@ function showFirstVideoWaitMessage(videoElement) {
 }
 
 
-// Dynamically load MapLibre GL JS CSS
-const maplibreCSS = document.createElement('link');
-maplibreCSS.href = "https://unpkg.com/maplibre-gl@5.0.1/dist/maplibre-gl.css";
-maplibreCSS.rel = "stylesheet";
-document.head.appendChild(maplibreCSS);
-
-// Dynamically load MapLibre GL JS JavaScript
-const maplibreScript = document.createElement('script');
-maplibreScript.src = "https://unpkg.com/maplibre-gl@5.0.1/dist/maplibre-gl.js";
-maplibreScript.defer = true;
-document.body.appendChild(maplibreScript);
-
-const yorkBounds = [
-  [-1.170, 53.930], // Southwest corner (lng, lat)
-  [-1.010, 54.010]  // Northeast corner (lng, lat)
-];
-
 // Map initialization after script loads
 maplibreScript.onload = () => {
     var map = new maplibregl.Map({
