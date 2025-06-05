@@ -2,6 +2,18 @@
 import { buildings } from './buildings.js';
 import { locations } from './locations.js';
 
+// Preload building and location images and posters
+[...buildings, ...locations].forEach(item => {
+  if (item.image) {
+    const img = new window.Image();
+    img.src = item.image;
+  }
+  if (item.posterUrl) {
+    const poster = new window.Image();
+    poster.src = item.posterUrl;
+  }
+});
+
 // Track when the loading screen is first shown
 const loadingScreenStart = Date.now();
 
