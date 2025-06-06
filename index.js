@@ -125,23 +125,21 @@ var map = new maplibregl.Map({
     });
 
     // --- Marker and helper functions ---
-    function addLocationMarkers() {
-        locations.forEach(location => {
-            const { element: markerElement } = createCustomMarker(location.image, '#FFFFFF', true);
-            markerElement.className += ' location-marker';
-            const marker = new maplibregl.Marker({
-                element: markerElement
-            })
-            .setLngLat(location.coords)
-            .addTo(map);
+locations.forEach(location => {
+    const { element: markerElement } = createCustomMarker(location.image, '#9B4DCA', true);
+    markerElement.className += ' location-marker';
+    const marker = new mapboxgl.Marker({
+        element: markerElement
+    })
+    .setLngLat(location.coords)
+    .addTo(map);
 
-            marker.getElement().addEventListener('click', () => {
-                map.getCanvas().style.cursor = 'pointer';
-                const contentHTML = createPopupContent(location);
-                toggleBottomSheet(contentHTML);
-            });
-        });
-    }
+    marker.getElement().addEventListener('click', () => {
+        map.getCanvas().style.cursor = 'pointer';
+        const contentHTML = createPopupContent(location); // Use the existing function to create the content
+        toggleBottomSheet(contentHTML);
+    });
+});
 
     function addBuildingMarkers() {
         buildings.forEach(building => {
@@ -338,7 +336,6 @@ videoElement.load();
 
     // Add markers and scale immediately
     addBuildingMarkers();
-    addLocationMarkers();
     scaleMarkersBasedOnZoom();
 
     // Map event listeners immediately
