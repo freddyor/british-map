@@ -73,7 +73,7 @@ const yorkBounds = [
 
 var map = new maplibregl.Map({
     container: 'map',
-    style: 'https://basemaps.cartocdn.com/gl/positron-gl-style/style.json', // Consider switching from mapbox:// to a public/open style if desired
+    style: 'https://api.maptiler.com/maps/01974344-ac31-75b6-aa10-14c399d5b6d5/?key=gYFEdggSAlArkAt4iOei', 
     center: [-1.08643774070107, 53.95996305984138],
     zoom: 16,
     pitch: 45,
