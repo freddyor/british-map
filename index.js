@@ -66,25 +66,8 @@ function showFirstVideoWaitMessage(videoElement) {
 }
 
 
-// Dynamically load Mapbox GL JS CSS
-const mapboxCSS = document.createElement('link');
-mapboxCSS.href = "https://api.mapbox.com/mapbox-gl-js/v3.12.0/mapbox-gl.css";
-mapboxCSS.rel = "stylesheet";
-document.head.appendChild(mapboxCSS);
-
-// Dynamically load Mapbox GL JS JavaScript
-const mapboxScript = document.createElement('script');
-mapboxScript.src = "https://api.mapbox.com/mapbox-gl-js/v3.12.0/mapbox-gl.js";
-mapboxScript.defer = true;
-document.body.appendChild(mapboxScript);
-
-const yorkBounds = [
-  [-1.170, 53.930], // Southwest corner (lng, lat)
-  [-1.010, 54.010]  // Northeast corner (lng, lat)
-];
 
 // Map initialization after script loads
-mapboxScript.onload = () => {
     mapboxgl.accessToken = 'pk.eyJ1IjoiZnJlZGRvbWF0ZSIsImEiOiJjbTc1bm5zYnQwaG1mMmtxeDdteXNmeXZ0In0.PuDNORq4qExIJ_fErdO_8g';
 
     var map = new mapboxgl.Map({
@@ -390,7 +373,6 @@ map.on('load', () => {
         }
     }
 });
-};
 // Function to parse URL parameters
 function getUrlParameter(name) {
     name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
