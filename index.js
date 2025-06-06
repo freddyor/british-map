@@ -83,8 +83,6 @@ const yorkBounds = [
   [-1.010, 54.010]  // Northeast corner (lng, lat)
 ];
 
-// Map initialization after script loads
-mapboxScript.onload = () => {
     mapboxgl.accessToken = 'pk.eyJ1IjoiZnJlZGRvbWF0ZSIsImEiOiJjbTc1bm5zYnQwaG1mMmtxeDdteXNmeXZ0In0.PuDNORq4qExIJ_fErdO_8g';
 
     var map = new mapboxgl.Map({
@@ -390,7 +388,6 @@ map.on('load', () => {
         }
     }
 });
-};
 // Function to parse URL parameters
 function getUrlParameter(name) {
     name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
