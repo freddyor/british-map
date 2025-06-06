@@ -73,7 +73,7 @@ const yorkBounds = [
 
 var map = new maplibregl.Map({
     container: 'map',
-    style: 'mapbox://styles/freddomate/cm8q8wtwx00a801qzdayccnvz?optimize=true', // Consider switching from mapbox:// to a public/open style if desired
+    style: 'https://basemaps.cartocdn.com/gl/positron-gl-style/style.json', // Consider switching from mapbox:// to a public/open style if desired
     center: [-1.08643774070107, 53.95996305984138],
     zoom: 16,
     pitch: 45,
@@ -354,10 +354,6 @@ videoElement.load();
     // Only what requires style load
 map.on('load', () => {
     geolocate.trigger();
-    map.addSource('Ward_boundaries-8vvo78', {
-        type: 'vector',
-        url: 'mapbox://freddomate.345l7u6c'
-    });
 
     // Hide the loading screen after at least 5 seconds
     const loadingScreen = document.getElementById('loading-screen');
