@@ -128,7 +128,7 @@ var map = new maplibregl.Map({
 locations.forEach(location => {
     const { element: markerElement } = createCustomMarker(location.image, '#9B4DCA', true);
     markerElement.className += ' location-marker';
-    const marker = new mapboxgl.Marker({
+    const marker = new maplibregl.Marker({
         element: markerElement
     })
     .setLngLat(location.coords)
