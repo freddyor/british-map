@@ -70,6 +70,11 @@ function showFirstVideoWaitMessage(videoElement) {
 // Map initialization after script loads
     mapboxgl.accessToken = 'pk.eyJ1IjoiZnJlZGRvbWF0ZSIsImEiOiJjbTc1bm5zYnQwaG1mMmtxeDdteXNmeXZ0In0.PuDNORq4qExIJ_fErdO_8g';
 
+const yorkBounds = [
+  [-1.170, 53.930], // Southwest corner (lng, lat)
+  [-1.010, 54.010]  // Northeast corner (lng, lat)
+];
+
     var map = new mapboxgl.Map({
         container: 'map',
         style: 'mapbox://styles/freddomate/cm8q8wtwx00a801qzdayccnvz?optimize=true',
