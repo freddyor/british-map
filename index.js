@@ -66,30 +66,26 @@ function showFirstVideoWaitMessage(videoElement) {
 }
 
 
-
-// Map initialization after script loads
-    mapboxgl.accessToken = 'pk.eyJ1IjoiZnJlZGRvbWF0ZSIsImEiOiJjbTc1bm5zYnQwaG1mMmtxeDdteXNmeXZ0In0.PuDNORq4qExIJ_fErdO_8g';
-
 const yorkBounds = [
   [-1.170, 53.930], // Southwest corner (lng, lat)
   [-1.010, 54.010]  // Northeast corner (lng, lat)
 ];
 
-    var map = new mapboxgl.Map({
-        container: 'map',
-        style: 'mapbox://styles/freddomate/cm8q8wtwx00a801qzdayccnvz?optimize=true',
-        center: [-1.08643774070107, 53.95996305984138],
-        zoom: 16,
-        pitch: 45,
-        bearing: -17.6,
-        maxBounds: yorkBounds,
-        minZoom: 11,
-        maxZoom: 19,
-    });
+var map = new maplibregl.Map({
+    container: 'map',
+    style: 'mapbox://styles/freddomate/cm8q8wtwx00a801qzdayccnvz?optimize=true', // Consider switching from mapbox:// to a public/open style if desired
+    center: [-1.08643774070107, 53.95996305984138],
+    zoom: 16,
+    pitch: 45,
+    bearing: -17.6,
+    maxBounds: yorkBounds,
+    minZoom: 11,
+    maxZoom: 19,
+});
 
 
     // Geolocate control and user location marker
-    const geolocate = new mapboxgl.GeolocateControl({
+    const geolocate = new maplibregl.GeolocateControl({
         positionOptions: {
             enableHighAccuracy: true
         },
@@ -117,7 +113,7 @@ const yorkBounds = [
     textEl.textContent = 'me';
     userLocationEl.appendChild(textEl);
 
-    const userLocationMarker = new mapboxgl.Marker({element: userLocationEl})
+    const userLocationMarker = new maplibregl.Marker({element: userLocationEl})
       .setLngLat([0, 0])
       .addTo(map);
 
@@ -133,7 +129,7 @@ const yorkBounds = [
         locations.forEach(location => {
             const { element: markerElement } = createCustomMarker(location.image, '#FFFFFF', true);
             markerElement.className += ' location-marker';
-            const marker = new mapboxgl.Marker({
+            const marker = new maplibregl.Marker({
                 element: markerElement
             })
             .setLngLat(location.coords)
@@ -155,7 +151,7 @@ const yorkBounds = [
 
             if (building.colour === "yes") markerElement.style.zIndex = '3';
 
-            const marker = new mapboxgl.Marker({element: markerElement})
+            const marker = new maplibregl.Marker({element: markerElement})
                 .setLngLat(building.coords)
                 .addTo(map);
 
@@ -451,7 +447,7 @@ document.head.appendChild(link);
 
 // Style for the popup and markers
 stylePopup.innerHTML = `
-  .mapboxgl-popup-content {
+  .maplibregl-popup-content {
     border-radius: 12px !important;
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3) !important;
     padding: 10px !important;
@@ -465,18 +461,18 @@ stylePopup.innerHTML = `
     margin-right: 5px;
     margin-bottom: 10px; /* Add this line */
   }
-  .mapboxgl-popup-content img {
+  .maplibregl-popup-content img {
     border: 2px solid #f0f0f0 !important;
     border-radius: 8px;
   }
-  .mapboxgl-popup-content p {
+  .maplibregl-popup-content p {
     font-weight: bold !important;
     text-align: center;
     letter-spacing: -0.5px;
     font-size: 13px !important;
     margin-bottom: 10px !important;
   }
-  .mapboxgl-popup-close-button {
+  .maplibregl-popup-close-button {
     display: none !important;
   }
   .user-location-marker {
@@ -493,7 +489,7 @@ stylePopup.innerHTML = `
   .building-marker {
     z-index: 2;
   }
-  .mapboxgl-popup {
+  .maplibregl-popup {
     z-index: 9999 !important;
   }
   .hide-scrollbar::-webkit-scrollbar {
