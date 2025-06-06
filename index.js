@@ -83,6 +83,8 @@ const yorkBounds = [
   [-1.010, 54.010]  // Northeast corner (lng, lat)
 ];
 
+// Map initialization after script loads
+mapboxScript.onload = () => {
     mapboxgl.accessToken = 'pk.eyJ1IjoiZnJlZGRvbWF0ZSIsImEiOiJjbTc1bm5zYnQwaG1mMmtxeDdteXNmeXZ0In0.PuDNORq4qExIJ_fErdO_8g';
 
     var map = new mapboxgl.Map({
@@ -97,11 +99,6 @@ const yorkBounds = [
         maxZoom: 19,
     });
 
-addBuildingMarkers();
-addLocationMarkers();
-
-// Map initialization after script loads
-mapboxScript.onload = () => {
 
     // Geolocate control and user location marker
     const geolocate = new mapboxgl.GeolocateControl({
@@ -356,6 +353,8 @@ videoElement.load();
     }
 
     // Add markers and scale immediately
+    addBuildingMarkers();
+    addLocationMarkers();
     scaleMarkersBasedOnZoom();
 
     // Map event listeners immediately
