@@ -141,7 +141,6 @@ locations.forEach(location => {
     });
 });
 
-    function addBuildingMarkers() {
         buildings.forEach(building => {
             const outlineColor = building.colour === "yes" ? '#FF69B4' : '#FFFFFF';
             const { element: markerElement } = createCustomMarker(building.image, outlineColor, false);
@@ -320,7 +319,7 @@ videoElement.load();
                 };
             });
         });
-    }
+
     function scaleMarkersBasedOnZoom() {
         const zoomLevel = map.getZoom();
         const markerSize = (zoomLevel - 13) + 'em';
@@ -334,8 +333,7 @@ videoElement.load();
         });
     }
 
-    // Add markers and scale immediately
-    addBuildingMarkers();
+    
     scaleMarkersBasedOnZoom();
 
     // Map event listeners immediately
