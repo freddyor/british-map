@@ -2,13 +2,6 @@
 import { buildings } from './buildings.js';
 import { locations } from './locations.js';
 
-buildings.forEach(building => {
-    if (building.posterUrl) {
-        const img = new Image();
-        img.src = building.posterUrl;
-    }
-});
-
 // Track when the loading screen is first shown
 const loadingScreenStart = Date.now();
 
