@@ -126,7 +126,7 @@ var map = new maplibregl.Map({
 
     // --- Marker and helper functions ---
 locations.forEach(location => {
-    const { element: markerElement } = createCustomMarker(location.image, '#9B4DCA', true);
+    const { element: markerElement } = createCustomMarker(location.image, '#FFFFFF', true);
     markerElement.className += ' location-marker';
     const marker = new maplibregl.Marker({
         element: markerElement
