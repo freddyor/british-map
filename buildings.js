@@ -1,11 +1,11 @@
 export const buildings = [
   {'name': 'Stuart Feather',
  'coords': [-1.0828678455724547, 53.9578982808366],
- 'image': '/videos/IMG_6675.jpeg',
+ 'image': './videos/IMG_6675.jpeg',
  'description': '',
  'occupation': ' ',
-     "videoUrl": "videos/Captions_49652B.mp4",
-   "posterUrl": "/videos/IMG_6673.jpeg",
+     "videoUrl": "./videos/Captions_49652B.mp4",
+   "posterUrl": "./videos/IMG_6673.jpeg",
  'tldr': ' ',
  'events': []},
                                 {
