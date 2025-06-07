@@ -100,7 +100,7 @@ export const buildings = [
         {
     "name": "Lendal Tower",
     "coords": [-1.0871091424158719, 53.9603294803262],
-    "image": "https://www.britmap.com/videos/lendaltower.webp",
+    "image": "https://www.britmap.com/videos/lendaltower-1.webp",
     "description": "",
     "occupation": " ",
     "videoUrl": "https://www.britmap.com/videos/Captions_ED3D9E(1).mp4",
