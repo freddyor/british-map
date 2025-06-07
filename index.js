@@ -2,6 +2,16 @@
 import { buildings } from './buildings.js';
 import { locations } from './locations.js';
 
+// Preload building poster images
+const posterCache = {};
+buildings.forEach(building => {
+  if (building.posterUrl) {
+    const img = new Image();
+    img.src = building.posterUrl;
+    posterCache[building.posterUrl] = img;
+  }
+});
+
 // Track when the loading screen is first shown
 const loadingScreenStart = Date.now();
 
@@ -175,8 +185,13 @@ locations.forEach(location => {
                 const posterContainer = document.createElement('div');
                 posterContainer.style.position = 'relative';
                 posterContainer.style.marginTop = '-60px';
-                const posterImg = document.createElement('img');
-                posterImg.src = posterUrl || '';
+                let posterImg;
+if (posterCache[posterUrl]) {
+  posterImg = posterCache[posterUrl].cloneNode();
+} else {
+  posterImg = document.createElement('img');
+  posterImg.src = posterUrl || '';
+}
                 posterImg.alt = 'Video cover';
                 posterImg.style.maxWidth = '88vw';
                 posterImg.style.maxHeight = '80vh';
