@@ -442,6 +442,44 @@ buttonGroup.style.display = 'flex';
 buttonGroup.style.gap = '10px';
 document.body.appendChild(buttonGroup);
 
+// --- Dropdown Button Addition ---
+const dropdownWrapper = document.createElement('div');
+dropdownWrapper.style.position = 'relative';
+
+const dropdownBtn = document.createElement('button');
+dropdownBtn.className = 'custom-button';
+dropdownBtn.textContent = 'Dropdown';
+
+const dropdownContent = document.createElement('div');
+dropdownContent.className = 'dropdown-content';
+dropdownContent.textContent = 'text';
+dropdownContent.style.position = 'absolute';
+dropdownContent.style.top = '110%';
+dropdownContent.style.left = '50%';
+dropdownContent.style.transform = 'translateX(-50%)';
+dropdownContent.style.background = '#E9E8E0';
+dropdownContent.style.border = '2px solid #f0f0f0';
+dropdownContent.style.borderRadius = '12px';
+dropdownContent.style.boxShadow = '0 6px 15px rgba(0,0,0,0.3)';
+dropdownContent.style.fontFamily = "'Poppins', sans-serif";
+dropdownContent.style.fontSize = '14px';
+dropdownContent.style.padding = '10px 20px';
+dropdownContent.style.display = 'none';
+dropdownContent.style.zIndex = '10001';
+
+dropdownBtn.onclick = function(e) {
+  e.stopPropagation();
+  dropdownContent.style.display = dropdownContent.style.display === 'none' ? 'block' : 'none';
+};
+// Hide dropdown when clicking elsewhere
+document.body.addEventListener('click', () => {
+  dropdownContent.style.display = 'none';
+});
+
+dropdownWrapper.appendChild(dropdownBtn);
+dropdownWrapper.appendChild(dropdownContent);
+buttonGroup.appendChild(dropdownWrapper);
+
 // Create a <style> element to add the CSS
 const stylePopup = document.createElement('style');
 
