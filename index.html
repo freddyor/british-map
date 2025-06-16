@@ -97,8 +97,20 @@
     <script type="module" src="index.js"></script>
 
     <!-- Donor Button and Dropdown Script -->
-    <script>
-    document.addEventListener('DOMContentLoaded', function () {
+<script>
+(function () {
+    // Wait until DOM content is loaded to ensure all elements are present
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', createDonorDropdown);
+    } else {
+        createDonorDropdown();
+    }
+
+    function createDonorDropdown() {
+        // Remove any duplicate existing button/dropdown
+        var oldDropdown = document.getElementById('custom-bmc-dropdown-container');
+        if (oldDropdown) oldDropdown.remove();
+
         // Create the button
         const button = document.createElement('button');
         button.id = 'custom-bmc-button';
@@ -164,6 +176,7 @@
 
         // Wrap the button and dropdown in a container
         const dropdownContainer = document.createElement('div');
+        dropdownContainer.id = 'custom-bmc-dropdown-container';
         dropdownContainer.className = 'dropdown';
         dropdownContainer.style.position = 'fixed';
         dropdownContainer.style.left = '50%';
@@ -173,7 +186,6 @@
         dropdownContainer.appendChild(button);
         dropdownContainer.appendChild(dropdownContent);
 
-        // Add the dropdown container to the body
         document.body.appendChild(dropdownContainer);
 
         // Function to add donors
@@ -213,7 +225,8 @@
         setTimeout(() => {
             dropdownContent.style.width = `${Math.max(button.offsetWidth, 300)}px`;
         }, 0);
-    });
-    </script>
+    }
+})();
+</script>
 </body>
 </html>
