@@ -453,7 +453,7 @@ document.head.appendChild(link);
 
 // Style for the popup and markers
 stylePopup.innerHTML = `
-  .maplibregl-popup-content {
+  .mapboxgl-popup-content {
     border-radius: 12px !important;
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3) !important;
     padding: 10px !important;
@@ -465,22 +465,26 @@ stylePopup.innerHTML = `
     padding-bottom: 0 !important;
     margin-left: 3px;
     margin-right: 5px;
-    margin-bottom: 10px; /* Add this line */
+    margin-bottom: 10px;
   }
-  .maplibregl-popup-content img {
+
+  .mapboxgl-popup-content img {
     border: 2px solid #f0f0f0 !important;
     border-radius: 8px;
   }
-  .maplibregl-popup-content p {
+
+  .mapboxgl-popup-content p {
     font-weight: bold !important;
     text-align: center;
     letter-spacing: -0.5px;
     font-size: 13px !important;
     margin-bottom: 10px !important;
   }
-  .maplibregl-popup-close-button {
+
+  .mapboxgl-popup-close-button {
     display: none !important;
   }
+
   .user-location-marker {
     width: 20px;
     height: 20px;
@@ -489,18 +493,23 @@ stylePopup.innerHTML = `
     border-radius: 100%;
     position: relative;
   }
+
   .location-marker {
     z-index: 1;
   }
+
   .building-marker {
     z-index: 2;
   }
-  .maplibregl-popup {
+
+  .mapboxgl-popup {
     z-index: 9999 !important;
   }
+
   .hide-scrollbar::-webkit-scrollbar {
     display: none;
   }
+
   .custom-button {
     background-color: #e9e8e0;
     color: black;
@@ -516,6 +525,7 @@ stylePopup.innerHTML = `
     white-space: nowrap;
     text-align: center;
   }
+
   #button-group {
     position: fixed;
     top: 50px;
@@ -525,21 +535,25 @@ stylePopup.innerHTML = `
     gap: 10px;
     z-index: 1000;
   }
+
   .dropdown-content {
     line-height: 1.05;
     font-size: 12px;
   }
+
   #bottom-sheet {
     font-family: 'Poppins', sans-serif !important;
     padding: 5px;
     font-size: 14px;
     line-height: 1.05;
   }
+
   #bottom-sheet img {
     max-width: 100%;
     border-radius: 8px;
     margin-bottom: 10px;
   }
+
   #bottom-sheet p {
     margin-bottom: 10px;
   }
