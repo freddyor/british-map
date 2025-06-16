@@ -440,46 +440,7 @@ buttonGroup.style.transform = 'translateX(-50%)';
 buttonGroup.style.zIndex = '1000';
 buttonGroup.style.display = 'flex';
 buttonGroup.style.gap = '10px';
-buttonGroup.style.zIndex = '999999';
 document.body.appendChild(buttonGroup);
-
-// --- Dropdown Button Addition ---
-const dropdownWrapper = document.createElement('div');
-dropdownWrapper.style.position = 'relative';
-
-const dropdownBtn = document.createElement('button');
-dropdownBtn.className = 'custom-button';
-dropdownBtn.textContent = 'Dropdown';
-
-const dropdownContent = document.createElement('div');
-dropdownContent.className = 'dropdown-content';
-dropdownContent.textContent = 'text';
-dropdownContent.style.position = 'absolute';
-dropdownContent.style.top = '110%';
-dropdownContent.style.left = '50%';
-dropdownContent.style.transform = 'translateX(-50%)';
-dropdownContent.style.background = '#E9E8E0';
-dropdownContent.style.border = '2px solid #f0f0f0';
-dropdownContent.style.borderRadius = '12px';
-dropdownContent.style.boxShadow = '0 6px 15px rgba(0,0,0,0.3)';
-dropdownContent.style.fontFamily = "'Poppins', sans-serif";
-dropdownContent.style.fontSize = '14px';
-dropdownContent.style.padding = '10px 20px';
-dropdownContent.style.display = 'none';
-dropdownContent.style.zIndex = '10001';
-
-dropdownBtn.onclick = function(e) {
-  e.stopPropagation();
-  dropdownContent.style.display = dropdownContent.style.display === 'none' ? 'block' : 'none';
-};
-// Hide dropdown when clicking elsewhere
-document.body.addEventListener('click', () => {
-  dropdownContent.style.display = 'none';
-});
-
-dropdownWrapper.appendChild(dropdownBtn);
-dropdownWrapper.appendChild(dropdownContent);
-buttonGroup.appendChild(dropdownWrapper);
 
 // Create a <style> element to add the CSS
 const stylePopup = document.createElement('style');
@@ -504,14 +465,12 @@ stylePopup.innerHTML = `
     padding-bottom: 0 !important;
     margin-left: 3px;
     margin-right: 5px;
-    margin-bottom: 10px;
+    margin-bottom: 10px; /* Add this line */
   }
-
   .maplibregl-popup-content img {
     border: 2px solid #f0f0f0 !important;
     border-radius: 8px;
   }
-
   .maplibregl-popup-content p {
     font-weight: bold !important;
     text-align: center;
@@ -519,11 +478,9 @@ stylePopup.innerHTML = `
     font-size: 13px !important;
     margin-bottom: 10px !important;
   }
-
   .maplibregl-popup-close-button {
     display: none !important;
   }
-
   .user-location-marker {
     width: 20px;
     height: 20px;
@@ -532,23 +489,18 @@ stylePopup.innerHTML = `
     border-radius: 100%;
     position: relative;
   }
-
   .location-marker {
     z-index: 1;
   }
-
   .building-marker {
     z-index: 2;
   }
-
   .maplibregl-popup {
     z-index: 9999 !important;
   }
-
   .hide-scrollbar::-webkit-scrollbar {
     display: none;
   }
-
   .custom-button {
     background-color: #e9e8e0;
     color: black;
@@ -564,7 +516,6 @@ stylePopup.innerHTML = `
     white-space: nowrap;
     text-align: center;
   }
-
   #button-group {
     position: fixed;
     top: 50px;
@@ -574,25 +525,21 @@ stylePopup.innerHTML = `
     gap: 10px;
     z-index: 1000;
   }
-
   .dropdown-content {
     line-height: 1.05;
     font-size: 12px;
   }
-
   #bottom-sheet {
     font-family: 'Poppins', sans-serif !important;
     padding: 5px;
     font-size: 14px;
     line-height: 1.05;
   }
-
   #bottom-sheet img {
     max-width: 100%;
     border-radius: 8px;
     margin-bottom: 10px;
   }
-
   #bottom-sheet p {
     margin-bottom: 10px;
   }
@@ -711,3 +658,4 @@ function createPopupContent(location, isFirebase = false) {
     `;
 }
 
+   
