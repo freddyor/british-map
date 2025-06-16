@@ -440,6 +440,7 @@ buttonGroup.style.transform = 'translateX(-50%)';
 buttonGroup.style.zIndex = '1000';
 buttonGroup.style.display = 'flex';
 buttonGroup.style.gap = '10px';
+buttonGroup.style.zIndex = '999999';
 document.body.appendChild(buttonGroup);
 
 // --- Dropdown Button Addition ---
