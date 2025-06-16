@@ -453,7 +453,7 @@ document.head.appendChild(link);
 
 // Style for the popup and markers
 stylePopup.innerHTML = `
-  .mapboxgl-popup-content {
+  .maplibregl-popup-content {
     border-radius: 12px !important;
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3) !important;
     padding: 10px !important;
@@ -468,12 +468,12 @@ stylePopup.innerHTML = `
     margin-bottom: 10px;
   }
 
-  .mapboxgl-popup-content img {
+  .maplibregl-popup-content img {
     border: 2px solid #f0f0f0 !important;
     border-radius: 8px;
   }
 
-  .mapboxgl-popup-content p {
+  .maplibregl-popup-content p {
     font-weight: bold !important;
     text-align: center;
     letter-spacing: -0.5px;
@@ -481,7 +481,7 @@ stylePopup.innerHTML = `
     margin-bottom: 10px !important;
   }
 
-  .mapboxgl-popup-close-button {
+  .maplibregl-popup-close-button {
     display: none !important;
   }
 
@@ -502,7 +502,7 @@ stylePopup.innerHTML = `
     z-index: 2;
   }
 
-  .mapboxgl-popup {
+  .maplibregl-popup {
     z-index: 9999 !important;
   }
 
