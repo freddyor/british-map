@@ -657,7 +657,7 @@ function createPopupContent(location, isFirebase = false) {
         </div>
     `;
 }
-
+document.addEventListener('DOMContentLoaded', () => {
   // Create the button
     const button = document.createElement('button');
     button.id = 'custom-bmc-button';
