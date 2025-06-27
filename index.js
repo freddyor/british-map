@@ -557,6 +557,10 @@ function createCustomMarker(imageUrl, color = '#9b4dca', isLocation = false) {
   markerDiv.style.border = `0.15em solid ${color}`;
   markerDiv.style.boxSizing = 'border-box';
   markerDiv.style.overflow = 'hidden';
+  markerDiv.style.background = '#fff';
+  markerDiv.style.display = 'flex';
+  markerDiv.style.flexDirection = 'column';
+  markerDiv.style.alignItems = 'center';
 
   const imageElement = document.createElement('img');
   imageElement.src = imageUrl;
@@ -565,7 +569,25 @@ function createCustomMarker(imageUrl, color = '#9b4dca', isLocation = false) {
   imageElement.style.objectFit = 'cover';
   imageElement.style.borderRadius = '50%';
 
+  // Create the rounded bottom (ellipse)
+  const bottomDiv = document.createElement('div');
+  bottomDiv.className = 'custom-marker-bottom';
+  // This will create a rounded semi-ellipse under the circle
+  bottomDiv.style.width = '1.6em';
+  bottomDiv.style.height = '1em';
+  bottomDiv.style.background = '#fff';
+  bottomDiv.style.border = `0.15em solid ${color}`;
+  bottomDiv.style.borderTop = 'none';
+  bottomDiv.style.borderBottomLeftRadius = '1em 1em';
+  bottomDiv.style.borderBottomRightRadius = '1em 1em';
+  bottomDiv.style.position = 'absolute';
+  bottomDiv.style.left = '50%';
+  bottomDiv.style.transform = 'translateX(-50%)';
+  bottomDiv.style.top = '2.8em'; // Just under the main circle
+  bottomDiv.style.zIndex = '-1';
+
   markerDiv.appendChild(imageElement);
+  markerDiv.appendChild(bottomDiv);
 
   return {
     element: markerDiv,
