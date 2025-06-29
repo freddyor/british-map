@@ -281,8 +281,8 @@ function scaleMarkersBasedOnZoom() {
     const zoomLevel = map.getZoom();
     // Exponent 40 for extremely aggressive shrinking
     const scale = Math.max(0.001, Math.pow(zoomLevel / 15, 40));
-    const baseWidth = 80; // px
-    const baseHeight = 110; // px
+    const baseWidth = 15; // px
+    const baseHeight = 20; // px
 
     document.querySelectorAll('.location-marker, .building-marker').forEach(marker => {
         marker.style.width = (baseWidth * scale) + 'px';
