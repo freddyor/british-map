@@ -279,8 +279,12 @@ videoElement.load();
 });
 function scaleMarkersBasedOnZoom() {
     const zoomLevel = map.getZoom();
-    // Exponent 40 for extremely aggressive shrinking
-    const scale = Math.max(0.001, Math.pow(zoomLevel / 15, 40));
+    // Hyper-aggressive shrinking
+    let scale = Math.pow(zoomLevel / 15, 40);
+
+    // Clamp scale between 0.02 and 0.25 (adjust as needed)
+    scale = Math.max(0.02, Math.min(0.25, scale));
+
     const baseWidth = 80; // px
     const baseHeight = 110; // px
 
