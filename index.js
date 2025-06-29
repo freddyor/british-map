@@ -279,21 +279,25 @@ videoElement.load();
 });
 function scaleMarkersBasedOnZoom() {
     const zoomLevel = map.getZoom();
-    // Exponent 40 for extremely aggressive shrinking
-    const scale = Math.max(0.001, Math.pow(zoomLevel / 15, 40));
-    const baseWidth = 30; // px
-    const baseHeight = 40; // px
+    const markerSize = (zoomLevel - 13);
+    const markerWidth = markerSize + 'em';
+    const markerHeight = markerSize + 'em';
+    const borderWidth = (markerSize * 0.075) + 'em';
 
     document.querySelectorAll('.location-marker, .building-marker').forEach(marker => {
-        marker.style.width = (baseWidth * scale) + 'px';
-        marker.style.height = (baseHeight * scale) + 'px';
-        marker.style.borderWidth = (baseWidth * 0.075 * scale) + 'px';
+        marker.style.width = markerWidth;
+        marker.style.height = markerHeight;
+        marker.style.borderWidth = borderWidth;
 
-        const bump = marker.querySelector('.marker-bump');
-        if (bump) {
-            bump.style.width = (baseWidth * 0.4 * scale) + 'px';
-            bump.style.height = (baseWidth * 0.25 * scale) + 'px';
-        }
+        // Scale the bump if present
+const bump = marker.querySelector('.marker-bump');
+if (bump) {
+    const bumpWidth = (markerSize * 0.4) + 'em';
+    const bumpHeight = (markerSize * 0.25) + 'em';
+    bump.style.width = bumpWidth;
+    bump.style.height = bumpHeight;
+    // No border scaling needed for solid color
+}
     });
 }
 scaleMarkersBasedOnZoom();
@@ -518,14 +522,14 @@ function createCustomMarker(imageUrl, color = '#9b4dca', isLocation = false) {
   imageElement.style.width = '100%';
   imageElement.style.height = '100%';
   imageElement.style.objectFit = 'cover';
-  imageElement.style.borderRadius = '12px';
+  imageElement.style.borderRadius = '50%';
 
   // Create the "bump" at the bottom as a smooth upside-down triangle (teardrop)
 const bump = document.createElement('div');
 bump.className = 'marker-bump';
 bump.style.position = 'absolute';
 bump.style.left = '50%';
-bump.style.top = '100%';
+bump.style.top = '98%';
 bump.style.transform = 'translateX(-50%)';
 bump.style.width = '5em';
 bump.style.height = '0.5em';
