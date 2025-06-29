@@ -5,6 +5,7 @@ export const buildings = [
     "image": "https://yorkmapped.s3.eu-north-1.amazonaws.com/IMG_8160.webp",
     "videoUrl": "https://yorkmapped.s3.eu-north-1.amazonaws.com/d92f8db8749748caafe9a83fbb25b558.mp4", 
     "posterUrl": "https://yorkmapped.s3.eu-north-1.amazonaws.com/IMG_8160.webp",
+    "category": "Italian",
   },
         {
     "name": "Savvy Baker",
@@ -12,6 +13,7 @@ export const buildings = [
     "image": "https://yorkmapped.s3.eu-north-1.amazonaws.com/IMG_8159.webp",
     "videoUrl": "https://yorkmapped.s3.eu-north-1.amazonaws.com/bc5f9f60b85c408ebd68bc875c1653b5.mp4", 
     "posterUrl": "https://yorkmapped.s3.eu-north-1.amazonaws.com/IMG_8159.webp",
+              "category": "Italian",
   },
         {
     "name": "Hole in the wand",
@@ -19,6 +21,7 @@ export const buildings = [
     "image": "https://yorkmapped.s3.eu-north-1.amazonaws.com/IMG_8158.webp",
     "videoUrl": "https://yorkmapped.s3.eu-north-1.amazonaws.com/d0c0514972804de2b8c4cb0c8ab78c5b.mp4", 
     "posterUrl": "https://yorkmapped.s3.eu-north-1.amazonaws.com/IMG_8158.webp",
+              "category": "Cocktails",
   },
         {
     "name": "Cafe next door",
@@ -26,6 +29,7 @@ export const buildings = [
     "image": "https://yorkmapped.s3.eu-north-1.amazonaws.com/IMG_8157.webp",
     "videoUrl": "https://yorkmapped.s3.eu-north-1.amazonaws.com/4e8ed0ec84464b50b9f605300ae12135.mp4", 
     "posterUrl": "https://yorkmapped.s3.eu-north-1.amazonaws.com/IMG_8157.webp",
+              "category": "Cocktails",
   },
         {
     "name": "Speakcheesy",
