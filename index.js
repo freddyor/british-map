@@ -595,7 +595,7 @@ function createCustomMarker(imageUrl, color = '#9b4dca', isLocation = false) {
   imageElement.style.width = '100%';
   imageElement.style.height = '100%';
   imageElement.style.objectFit = 'cover';
-  imageElement.style.borderRadius = '50%';
+  imageElement.style.borderRadius = '25%';
 
   // Create the "bump" at the bottom as a smooth upside-down triangle (teardrop)
   const bump = document.createElement('div');
@@ -703,128 +703,5 @@ function createPopupContent(location, isFirebase = false) {
         </div>
     `;
 }
-document.addEventListener('DOMContentLoaded', () => {
-  // Create the button
-    const button = document.createElement('button');
-    button.id = 'custom-bmc-button';
-    button.className = 'custom-button';
-    button.textContent = '❤️ Support this project ❤️';
 
-    // Create the dropdown content
-    const dropdownContent = document.createElement('div');
-dropdownContent.style.display = 'none'; // Initially hidden
-dropdownContent.style.position = 'fixed';
-dropdownContent.style.top = '50px'; // At the top of the page
-dropdownContent.style.left = '50%';
-dropdownContent.style.transform = 'translateX(-50%)';
-dropdownContent.style.backgroundColor = '#f9f9f9';
-dropdownContent.style.padding = '20px';
-dropdownContent.style.border = '1px solid #ccc';
-dropdownContent.style.borderRadius = '8px';
-dropdownContent.style.boxShadow = '0 6px 15px rgba(0, 0, 0, 0.3)';
-dropdownContent.style.fontSize = '14px';
-dropdownContent.style.lineHeight = '1.25';
-dropdownContent.style.zIndex = '10000';
-dropdownContent.style.maxWidth = '300px';
-dropdownContent.style.textAlign = 'center';
-dropdownContent.style.maxHeight = 'calc(100vh - 200px)'; // 50px from top, 150px from bottom // 50px from top, 40px from bottom
-dropdownContent.style.overflowY = 'auto';
-
-    dropdownContent.innerHTML = `
-      <div style="display: flex; flex-direction: column; align-items: center;">
-    <img src="https://freddyor.github.io/british-map/videos/IMG_7251.jpeg" 
-         alt="Profile Photo" 
-         style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover; margin-bottom: 15px;"/>
-  </div>
-        <div class="project-info" style="margin-bottom: 15px;">
-            <b>This page needs donors.</b>
-        </div>
-           <div class="project-info" style="margin-bottom: 15px;">
-            My name is Freddy, I’m a 22 year old local to the city. I am building this project completely independently. Feel free to email me on freddy@britmap.com 📧
-        </div>
-        <div class="project-info" style="margin-bottom: 15px;">
-            In full transparency, here is why I will need donors:
-        </div>
-            <ul style="margin-bottom: 15px; text-align: left;">
-      <li>the map server in the background costs me money based on usage</li>
-      <li>I want to add old pictures of York locations to make the map even better for users - but York Archives charges a significant amount to use them commercially</li>
-      <li>lots of people actually asked to me to put a donation link. Considering this project has consumed A LOT of my time - it is nice to receive some love back ❤️</li>
-    </ul>
-        <button 
-            class="support-button" 
-            style="
-                background-color: #9b4dca; 
-                color: white; 
-                padding: 10px 20px; 
-                font-size: 16px; 
-                font-weight: bold; 
-                border: none; 
-                border-radius: 8px; 
-                cursor: pointer; 
-                text-align: center;
-                box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
-                margin-bottom: 15px; /* Add spacing below the button */
-            "
-            onclick="window.open('https://www.buymeacoffee.com/britmap', '_blank')"
-        >
-            Support
-        </button>
- <div style="display: flex; align-items: center; justify-content: center; margin-top: 15px; font-size: 16px; font-weight: bold;">
-    <hr style="flex: 1; border: 1px solid #ccc; margin: 0 10px;">
-    Our Donors ❤️
-    <hr style="flex: 1; border: 1px solid #ccc; margin: 0 10px;">
-</div>
-<div id="donor-list" style="margin-top: 10px;"></div>
-
-    `;
-
-    // Wrap the button and dropdown in a container
-    const dropdownContainer = document.createElement('div');
-    dropdownContainer.className = 'dropdown';
-    dropdownContainer.style.position = 'fixed';
-    dropdownContainer.style.left = '50%';
-    dropdownContainer.style.top = '10px'; // Position at the top
-    dropdownContainer.style.transform = 'translateX(-50%)';
-    dropdownContainer.style.zIndex = '1001';
-    dropdownContainer.appendChild(button);
-    dropdownContainer.appendChild(dropdownContent);
-
-    // Add the dropdown container to the body
-    document.body.appendChild(dropdownContainer);
-
-    // Function to add donors
-    function addDonor(name, amount, subtext) {
-        const donorList = document.getElementById('donor-list');
-        const donorDiv = document.createElement('div');
-        donorDiv.className = 'donor';
-        donorDiv.innerHTML = `
-            <span class="donor-name" style="font-weight: bold;">${name}</span>
-            <span class="donor-amount" style="color: #9b4dca; margin-left: 10px; font-weight: bold;">£${amount}</span>
-            <div class="donor-subtext" style="font-size: 12px; color: #666; margin-top: 1px;">${subtext}</div>
-        `;
-        donorDiv.style.marginBottom = '12px'; // Maintain gap between donors
-        donorList.appendChild(donorDiv);
-    }
-
-    // Add example donors
-       addDonor('Anonymous', '15', ' ');
-    addDonor('Chip Pedro', '5', 'Will be very useful on our upcoming trip - really nice work!');
-    addDonor('buffsteve24', '5', 'Amazing work!');
-    addDonor('marksaw20', '5', 'Lovely map. Really interesting.');
-
-    // Button click event to toggle dropdown visibility
-    button.addEventListener('click', (e) => {
-        e.preventDefault();
-        dropdownContent.style.display = dropdownContent.style.display === 'block' ? 'none' : 'block';
-    });
-
-    // Close dropdown when clicking outside
-    document.addEventListener('click', (event) => {
-        if (!dropdownContainer.contains(event.target)) {
-            dropdownContent.style.display = 'none';
-        }
-    });
-
-    // Set the dropdown width to match the button width
-    dropdownContent.style.width = `${Math.max(button.offsetWidth, 300)}px`; // Match width with maxWidth
-});
+             
