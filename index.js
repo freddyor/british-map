@@ -356,7 +356,7 @@ function scaleMarkersBasedOnZoom() {
     const zoomLevel = map.getZoom();
     const markerSize = (zoomLevel - 13);
     const markerWidth = markerSize + 'em';
-    const markerHeight = markerSize + 'em';
+const markerHeight = (markerSize * (4/3)) + 'em'; // keep 3:4 ratio
     const borderWidth = (markerSize * 0.075) + 'em';
 
     document.querySelectorAll('.location-marker, .building-marker').forEach(marker => {
