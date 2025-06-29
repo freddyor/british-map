@@ -279,26 +279,21 @@ videoElement.load();
 });
 function scaleMarkersBasedOnZoom() {
     const zoomLevel = map.getZoom();
-    const baseWidth = 3; // base width in em
-    const baseHeight = 4; // base height in em
+    const baseWidth = 3; // em
+    const baseHeight = 4; // em
     const scale = Math.max(0.5, zoomLevel / 15);
 
-    const markerWidth = (baseWidth * scale) + 'em';
-    const markerHeight = (baseHeight * scale) + 'em';
-    const borderWidth = (baseWidth * 0.075) + 'em';
+    console.log('Zoom:', zoomLevel, 'Scale:', scale);
 
     document.querySelectorAll('.location-marker, .building-marker').forEach(marker => {
-        marker.style.width = markerWidth;
-        marker.style.height = markerHeight;
-        marker.style.borderWidth = borderWidth;
+        marker.style.width = (baseWidth * scale) + 'em';
+        marker.style.height = (baseHeight * scale) + 'em';
+        marker.style.borderWidth = (baseWidth * 0.075 * scale) + 'em';
 
-        // Scale the bump if present
         const bump = marker.querySelector('.marker-bump');
         if (bump) {
-            const bumpWidth = (baseWidth * 0.4) + 'em';
-            const bumpHeight = (baseWidth * 0.25) + 'em';
-            bump.style.width = bumpWidth;
-            bump.style.height = bumpHeight;
+            bump.style.width = (baseWidth * 0.4 * scale) + 'em';
+            bump.style.height = (baseWidth * 0.25 * scale) + 'em';
         }
     });
 }
