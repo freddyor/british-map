@@ -277,23 +277,22 @@ videoElement.load();
         };
     });
 });
+
 function scaleMarkersBasedOnZoom() {
     const zoomLevel = map.getZoom();
-    const baseWidth = 3; // em
-    const baseHeight = 4; // em
+    const baseWidth = 48; // px
+    const baseHeight = 64; // px
     const scale = Math.max(0.5, zoomLevel / 15);
 
-    console.log('Zoom:', zoomLevel, 'Scale:', scale);
-
     document.querySelectorAll('.location-marker, .building-marker').forEach(marker => {
-        marker.style.width = (baseWidth * scale) + 'em';
-        marker.style.height = (baseHeight * scale) + 'em';
-        marker.style.borderWidth = (baseWidth * 0.075 * scale) + 'em';
+        marker.style.width = (baseWidth * scale) + 'px';
+        marker.style.height = (baseHeight * scale) + 'px';
+        marker.style.borderWidth = (baseWidth * 0.075 * scale) + 'px';
 
         const bump = marker.querySelector('.marker-bump');
         if (bump) {
-            bump.style.width = (baseWidth * 0.4 * scale) + 'em';
-            bump.style.height = (baseWidth * 0.25 * scale) + 'em';
+            bump.style.width = (baseWidth * 0.4 * scale) + 'px';
+            bump.style.height = (baseWidth * 0.25 * scale) + 'px';
         }
     });
 }
@@ -328,6 +327,7 @@ map.on('load', () => {
         }
     }
 });
+
 // Function to parse URL parameters
 function getUrlParameter(name) {
     name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
@@ -502,11 +502,11 @@ document.head.appendChild(stylePopup);
 function createCustomMarker(imageUrl, color = '#9b4dca', isLocation = false) {
   const markerDiv = document.createElement('div');
   markerDiv.className = 'custom-marker';
-  markerDiv.style.width = '3em';
-  markerDiv.style.height = '4em';
+  markerDiv.style.width = '48px';
+  markerDiv.style.height = '64px';
   markerDiv.style.position = 'absolute';
   markerDiv.style.borderRadius = '12px';
-  markerDiv.style.border = `0.05em solid ${color}`;
+  markerDiv.style.border = `3.6px solid ${color}`;
   markerDiv.style.boxSizing = 'border-box';
   markerDiv.style.overflow = 'visible'; // allow the bump to overflow
   markerDiv.style.background = 'white';
@@ -522,17 +522,17 @@ function createCustomMarker(imageUrl, color = '#9b4dca', isLocation = false) {
   imageElement.style.borderRadius = '12px';
 
   // Create the "bump" at the bottom as a smooth upside-down triangle (teardrop)
-const bump = document.createElement('div');
-bump.className = 'marker-bump';
-bump.style.position = 'absolute';
-bump.style.left = '50%';
-bump.style.top = '100%';
-bump.style.transform = 'translateX(-50%)';
-bump.style.width = '5em';
-bump.style.height = '0.5em';
-bump.style.background = color; // Or 'white' for a hollow pyramid with border
-bump.style.clipPath = 'polygon(0% 0%, 100% 0%, 55% 96%, 56% 100%, 44% 100%, 45% 96%)';
-bump.style.zIndex = '1';
+  const bump = document.createElement('div');
+  bump.className = 'marker-bump';
+  bump.style.position = 'absolute';
+  bump.style.left = '50%';
+  bump.style.top = '100%';
+  bump.style.transform = 'translateX(-50%)';
+  bump.style.width = '19px';
+  bump.style.height = '12px';
+  bump.style.background = color; // Or 'white' for a hollow pyramid with border
+  bump.style.clipPath = 'polygon(0% 0%, 100% 0%, 55% 96%, 56% 100%, 44% 100%, 45% 96%)';
+  bump.style.zIndex = '1';
 
   markerDiv.appendChild(imageElement);
   markerDiv.appendChild(bump);
@@ -751,4 +751,4 @@ dropdownContent.style.overflowY = 'auto';
 
     // Set the dropdown width to match the button width
     dropdownContent.style.width = `${Math.max(button.offsetWidth, 300)}px`; // Match width with maxWidth
-});  
+});
