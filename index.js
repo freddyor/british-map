@@ -279,9 +279,8 @@ videoElement.load();
 });
 function scaleMarkersBasedOnZoom() {
     const zoomLevel = map.getZoom();
-    // Super aggressive cubic scaling
-    const scale = Math.max(0.02, Math.pow(zoomLevel / 15, 10));
-    // These are just example base sizes - adjust as needed!
+    // Exponent 20 for hyper-aggressive shrinking. Min 0.005 (almost invisible)
+    const scale = Math.max(0.005, Math.pow(zoomLevel / 15, 20));
     const baseWidth = 80; // px
     const baseHeight = 110; // px
 
