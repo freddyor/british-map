@@ -279,13 +279,13 @@ videoElement.load();
 });
 function scaleMarkersBasedOnZoom() {
     const zoomLevel = map.getZoom();
-const baseWidth = 3; // base width in em
-const baseHeight = 4; // base height in em
-const scale = Math.max(0.5, zoomLevel / 15); // adjust as needed for scaling behavior
+    const baseWidth = 3; // base width in em
+    const baseHeight = 4; // base height in em
+    const scale = Math.max(0.5, zoomLevel / 15);
 
-const markerWidth = (baseWidth * scale) + 'em';
-const markerHeight = (baseHeight * scale) + 'em';
-    const borderWidth = (markerSize * 0.075) + 'em';
+    const markerWidth = (baseWidth * scale) + 'em';
+    const markerHeight = (baseHeight * scale) + 'em';
+    const borderWidth = (baseWidth * 0.075) + 'em';
 
     document.querySelectorAll('.location-marker, .building-marker').forEach(marker => {
         marker.style.width = markerWidth;
@@ -293,14 +293,13 @@ const markerHeight = (baseHeight * scale) + 'em';
         marker.style.borderWidth = borderWidth;
 
         // Scale the bump if present
-const bump = marker.querySelector('.marker-bump');
-if (bump) {
-    const bumpWidth = (markerSize * 0.4) + 'em';
-    const bumpHeight = (markerSize * 0.25) + 'em';
-    bump.style.width = bumpWidth;
-    bump.style.height = bumpHeight;
-    // No border scaling needed for solid color
-}
+        const bump = marker.querySelector('.marker-bump');
+        if (bump) {
+            const bumpWidth = (baseWidth * 0.4) + 'em';
+            const bumpHeight = (baseWidth * 0.25) + 'em';
+            bump.style.width = bumpWidth;
+            bump.style.height = bumpHeight;
+        }
     });
 }
 scaleMarkersBasedOnZoom();
