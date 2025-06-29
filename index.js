@@ -86,197 +86,272 @@ locations.forEach(location => {
     });
 });
 
-buildings.forEach(building => {
-    const outlineColor = building.colour === "yes" ? '#FF69B4' : '#FFFFFF';
-    const { element: markerElement } = createCustomMarker(building.image, outlineColor, false);
-    markerElement.className += ' building-marker';
+// =================== BUILDING MARKER FILTER DROPDOWN ===================
 
-    if (building.colour === "yes") markerElement.style.zIndex = '3';
+// Get unique categories from buildings array
+const categories = Array.from(new Set(buildings.map(b => b.category))).sort();
+categories.unshift('All'); // Add 'All' as the first option
 
-    const marker = new mapboxgl.Marker({element: markerElement})
-        .setLngLat(building.coords)
-        .addTo(map);
+let allBuildingMarkers = []; // Store all marker objects for buildings
 
-    marker.getElement().addEventListener('click', () => {
-        map.getCanvas().style.cursor = 'pointer';
-        const videoUrl = building.videoUrl;
-        const posterUrl = building.posterUrl;
-        if (!videoUrl) {
-            console.error('Video URL not available for this building.'); return;
-        }
-        document.querySelectorAll('.video-modal-overlay').forEach(el => el.remove());
-        const overlay = document.createElement('div');
-        overlay.className = 'video-modal-overlay';
-        overlay.style.position = 'fixed';
-        overlay.style.top = 0;
-        overlay.style.left = 0;
-        overlay.style.width = '100vw';
-        overlay.style.height = '100vh';
-        overlay.style.background = 'rgba(0,0,0,0.75)';
-        overlay.style.display = 'flex';
-        overlay.style.alignItems = 'center';
-        overlay.style.justifyContent = 'center';
-        overlay.style.zIndex = 100000;
-        const posterContainer = document.createElement('div');
-        posterContainer.style.position = 'relative';
-        posterContainer.style.marginTop = '-60px';
-        const posterImg = document.createElement('img');
-        posterImg.src = posterUrl || '';
-        posterImg.alt = 'Video cover';
-        posterImg.style.maxWidth = '88vw';
-        posterImg.style.maxHeight = '80vh';
-        posterImg.style.borderRadius = '14px';
-        posterImg.style.display = 'block';
-        posterImg.addEventListener('load', () => {
-            posterImg.style.border = '1.5px solid #E9E8E0';
-        });
-        const playBtn = document.createElement('button');
-        playBtn.innerHTML = '▶';
-        playBtn.style.position = 'absolute';
-        playBtn.style.top = '50%';
-        playBtn.style.left = '50%';
-        playBtn.style.transform = 'translate(-50%, -50%)';
-        playBtn.style.background = 'rgba(0,0,0,0.6)';
-        playBtn.style.border = 'none';
-        playBtn.style.borderRadius = '50%';
-        playBtn.style.width = '64px';
-        playBtn.style.height = '64px';
-        playBtn.style.color = '#fff';
-        playBtn.style.fontSize = '2.5rem';
-        playBtn.style.cursor = 'pointer';
-        playBtn.style.display = 'flex';
-        playBtn.style.alignItems = 'center';
-        playBtn.style.justifyContent = 'center';
-        playBtn.style.zIndex = 2;
-        const spinner = document.createElement('div');
-        spinner.style.position = 'absolute';
-        spinner.style.top = '50%';
-        spinner.style.left = '50%';
-        spinner.style.transform = 'translate(-50%, -50%)';
-        spinner.style.width = '48px';
-        spinner.style.height = '48px';
-        spinner.style.border = '6px solid #eee';
-        spinner.style.borderTop = '6px solid #9b4dca';
-        spinner.style.borderRadius = '50%';
-        spinner.style.animation = 'spin 1s linear infinite';
-        spinner.style.display = 'none';
-        spinner.style.zIndex = 3;
-        const spinnerStyle = document.createElement('style');
-        spinnerStyle.innerHTML = `@keyframes spin {0% { transform: translate(-50%, -50%) rotate(0deg);}100% { transform: translate(-50%, -50%) rotate(360deg);}}`;
-        document.head.appendChild(spinnerStyle);
-        const closeBtn = document.createElement('button');
-        closeBtn.textContent = '❌';
-        closeBtn.style.position = 'absolute';
-        closeBtn.style.top = '-8px';
-        closeBtn.style.right = '-8px';
-        closeBtn.style.width = '25px';
-        closeBtn.style.height = '25px';
-        closeBtn.style.background = '#000';
-        closeBtn.style.color = '#fff';
-        closeBtn.style.border = '1.5px solid #E9E8E0';
-        closeBtn.style.borderRadius = '50%';
-        closeBtn.style.cursor = 'pointer';
-        closeBtn.style.fontSize = '0.7rem';
-        closeBtn.style.zIndex = '100001';
-        closeBtn.style.display = 'flex';
-        closeBtn.style.alignItems = 'center';
-        closeBtn.style.justifyContent = 'center';
+function addBuildingMarkers(buildingsToShow) {
+    // Remove previous markers
+    allBuildingMarkers.forEach(obj => obj.marker.remove());
+    allBuildingMarkers = [];
+    buildingsToShow.forEach(building => {
+        const outlineColor = building.colour === "yes" ? '#FF69B4' : '#FFFFFF';
+        const { element: markerElement } = createCustomMarker(building.image, outlineColor, false);
+        markerElement.className += ' building-marker';
 
-        // New: Keep reference to the video element for pausing
-        let videoElement = null;
+        if (building.colour === "yes") markerElement.style.zIndex = '3';
 
-        // Helper function to pause and remove overlay
-        function removeOverlayAndPauseVideo() {
-            if (videoElement) {
-                videoElement.pause();
-                videoElement.currentTime = 0;
+        const marker = new mapboxgl.Marker({element: markerElement})
+            .setLngLat(building.coords)
+            .addTo(map);
+
+        marker.getElement().addEventListener('click', () => {
+            map.getCanvas().style.cursor = 'pointer';
+            const videoUrl = building.videoUrl;
+            const posterUrl = building.posterUrl;
+            if (!videoUrl) {
+                console.error('Video URL not available for this building.'); return;
             }
-            overlay.remove();
-        }
-
-        closeBtn.onclick = () => removeOverlayAndPauseVideo();
-        let startY;
-        overlay.addEventListener('touchstart', e => {
-            if (e.touches.length === 1) startY = e.touches[0].clientY;
-        });
-        overlay.addEventListener('touchmove', e => {
-            if (startY !== undefined && e.touches.length === 1) {
-                const dy = e.touches[0].clientY - startY;
-                if (dy > 70) {
-                    removeOverlayAndPauseVideo();
-                    startY = undefined;
-                }
-            }
-        });
-        overlay.addEventListener('touchend', () => { startY = undefined; });
-        playBtn.style.display = 'none';
-        closeBtn.style.display = 'none';
-        posterImg.onload = function() {
+            document.querySelectorAll('.video-modal-overlay').forEach(el => el.remove());
+            const overlay = document.createElement('div');
+            overlay.className = 'video-modal-overlay';
+            overlay.style.position = 'fixed';
+            overlay.style.top = 0;
+            overlay.style.left = 0;
+            overlay.style.width = '100vw';
+            overlay.style.height = '100vh';
+            overlay.style.background = 'rgba(0,0,0,0.75)';
+            overlay.style.display = 'flex';
+            overlay.style.alignItems = 'center';
+            overlay.style.justifyContent = 'center';
+            overlay.style.zIndex = 100000;
+            const posterContainer = document.createElement('div');
+            posterContainer.style.position = 'relative';
+            posterContainer.style.marginTop = '-60px';
+            const posterImg = document.createElement('img');
+            posterImg.src = posterUrl || '';
+            posterImg.alt = 'Video cover';
+            posterImg.style.maxWidth = '88vw';
+            posterImg.style.maxHeight = '80vh';
+            posterImg.style.borderRadius = '14px';
+            posterImg.style.display = 'block';
+            posterImg.addEventListener('load', () => {
+                posterImg.style.border = '1.5px solid #E9E8E0';
+            });
+            const playBtn = document.createElement('button');
+            playBtn.innerHTML = '▶';
+            playBtn.style.position = 'absolute';
+            playBtn.style.top = '50%';
+            playBtn.style.left = '50%';
+            playBtn.style.transform = 'translate(-50%, -50%)';
+            playBtn.style.background = 'rgba(0,0,0,0.6)';
+            playBtn.style.border = 'none';
+            playBtn.style.borderRadius = '50%';
+            playBtn.style.width = '64px';
+            playBtn.style.height = '64px';
+            playBtn.style.color = '#fff';
+            playBtn.style.fontSize = '2.5rem';
+            playBtn.style.cursor = 'pointer';
             playBtn.style.display = 'flex';
+            playBtn.style.alignItems = 'center';
+            playBtn.style.justifyContent = 'center';
+            playBtn.style.zIndex = 2;
+            const spinner = document.createElement('div');
+            spinner.style.position = 'absolute';
+            spinner.style.top = '50%';
+            spinner.style.left = '50%';
+            spinner.style.transform = 'translate(-50%, -50%)';
+            spinner.style.width = '48px';
+            spinner.style.height = '48px';
+            spinner.style.border = '6px solid #eee';
+            spinner.style.borderTop = '6px solid #9b4dca';
+            spinner.style.borderRadius = '50%';
+            spinner.style.animation = 'spin 1s linear infinite';
+            spinner.style.display = 'none';
+            spinner.style.zIndex = 3;
+            const spinnerStyle = document.createElement('style');
+            spinnerStyle.innerHTML = `@keyframes spin {0% { transform: translate(-50%, -50%) rotate(0deg);}100% { transform: translate(-50%, -50%) rotate(360deg);}}`;
+            document.head.appendChild(spinnerStyle);
+            const closeBtn = document.createElement('button');
+            closeBtn.textContent = '❌';
+            closeBtn.style.position = 'absolute';
+            closeBtn.style.top = '-8px';
+            closeBtn.style.right = '-8px';
+            closeBtn.style.width = '25px';
+            closeBtn.style.height = '25px';
+            closeBtn.style.background = '#000';
+            closeBtn.style.color = '#fff';
+            closeBtn.style.border = '1.5px solid #E9E8E0';
+            closeBtn.style.borderRadius = '50%';
+            closeBtn.style.cursor = 'pointer';
+            closeBtn.style.fontSize = '0.7rem';
+            closeBtn.style.zIndex = '100001';
             closeBtn.style.display = 'flex';
-        };
-        posterContainer.appendChild(posterImg);
-        posterContainer.appendChild(playBtn);
-        posterContainer.appendChild(spinner);
-        posterContainer.appendChild(closeBtn);
-        overlay.appendChild(posterContainer);
-        document.body.appendChild(overlay);
-        overlay.addEventListener('mousedown', function(e) {
-            if (e.target === overlay) removeOverlayAndPauseVideo();
-        });
-        playBtn.onclick = () => {
+            closeBtn.style.alignItems = 'center';
+            closeBtn.style.justifyContent = 'center';
+
+            // New: Keep reference to the video element for pausing
+            let videoElement = null;
+
+            // Helper function to pause and remove overlay
+            function removeOverlayAndPauseVideo() {
+                if (videoElement) {
+                    videoElement.pause();
+                    videoElement.currentTime = 0;
+                }
+                overlay.remove();
+            }
+
+            closeBtn.onclick = () => removeOverlayAndPauseVideo();
+            let startY;
+            overlay.addEventListener('touchstart', e => {
+                if (e.touches.length === 1) startY = e.touches[0].clientY;
+            });
+            overlay.addEventListener('touchmove', e => {
+                if (startY !== undefined && e.touches.length === 1) {
+                    const dy = e.touches[0].clientY - startY;
+                    if (dy > 70) {
+                        removeOverlayAndPauseVideo();
+                        startY = undefined;
+                    }
+                }
+            });
+            overlay.addEventListener('touchend', () => { startY = undefined; });
             playBtn.style.display = 'none';
-            spinner.style.display = 'block';
-            videoElement = document.createElement('video');
-            videoElement.src = videoUrl;
-            if (posterUrl) videoElement.poster = posterUrl;
-            videoElement.style.border = '1.5px solid #E9E8E0';
-            videoElement.style.maxWidth = '88vw';
-            videoElement.style.maxHeight = '80vh';
-            videoElement.style.borderRadius = '14px';
-            videoElement.controls = false;
-            videoElement.preload = 'auto';
-            videoElement.autoplay = true;
-            videoElement.setAttribute('playsinline', '');
-            videoElement.setAttribute('webkit-playsinline', '');
-            videoElement.playsInline = true;
-            showFirstVideoWaitMessage(videoElement);
-let hasStarted = false;
+            closeBtn.style.display = 'none';
+            posterImg.onload = function() {
+                playBtn.style.display = 'flex';
+                closeBtn.style.display = 'flex';
+            };
+            posterContainer.appendChild(posterImg);
+            posterContainer.appendChild(playBtn);
+            posterContainer.appendChild(spinner);
+            posterContainer.appendChild(closeBtn);
+            overlay.appendChild(posterContainer);
+            document.body.appendChild(overlay);
+            overlay.addEventListener('mousedown', function(e) {
+                if (e.target === overlay) removeOverlayAndPauseVideo();
+            });
+            playBtn.onclick = () => {
+                playBtn.style.display = 'none';
+                spinner.style.display = 'block';
+                videoElement = document.createElement('video');
+                videoElement.src = videoUrl;
+                if (posterUrl) videoElement.poster = posterUrl;
+                videoElement.style.border = '1.5px solid #E9E8E0';
+                videoElement.style.maxWidth = '88vw';
+                videoElement.style.maxHeight = '80vh';
+                videoElement.style.borderRadius = '14px';
+                videoElement.controls = false;
+                videoElement.preload = 'auto';
+                videoElement.autoplay = true;
+                videoElement.setAttribute('playsinline', '');
+                videoElement.setAttribute('webkit-playsinline', '');
+                videoElement.playsInline = true;
+                showFirstVideoWaitMessage(videoElement);
+                let hasStarted = false;
 
-function showVideo() {
-    if (!hasStarted) {
-        hasStarted = true;
-        posterContainer.replaceChild(videoElement, posterImg);
-        spinner.style.display = 'none';
+                function showVideo() {
+                    if (!hasStarted) {
+                        hasStarted = true;
+                        posterContainer.replaceChild(videoElement, posterImg);
+                        spinner.style.display = 'none';
+                    }
+                }
+
+                function onProgress() {
+                    if (videoElement.duration && videoElement.buffered.length) {
+                        const bufferedEnd = videoElement.buffered.end(videoElement.buffered.length - 1);
+                        const percentBuffered = bufferedEnd / videoElement.duration;
+                        if (percentBuffered >= 0.25 && !hasStarted) {
+                            videoElement.play();
+                        }
+                    }
+                }
+
+                videoElement.addEventListener('play', showVideo);
+                videoElement.addEventListener('progress', onProgress);
+                videoElement.addEventListener('click', () => {
+                    videoElement.controls = true;
+                });
+                videoElement.addEventListener('ended', () => removeOverlayAndPauseVideo());
+                videoElement.addEventListener('error', () => {
+                    spinner.style.display = 'none';
+                    playBtn.style.display = 'block';
+                    alert('Video failed to load.');
+                });
+                videoElement.load();
+            };
+        });
+        allBuildingMarkers.push({ marker, category: building.category });
+    });
+}
+
+// Initial marker population
+addBuildingMarkers(buildings);
+
+function filterBuildingMarkers(category) {
+    if (category === 'All') {
+        addBuildingMarkers(buildings);
+    } else {
+        addBuildingMarkers(buildings.filter(b => b.category === category));
     }
 }
 
-// Play video when at least 25% is buffered
-function onProgress() {
-    if (videoElement.duration && videoElement.buffered.length) {
-        const bufferedEnd = videoElement.buffered.end(videoElement.buffered.length - 1);
-        const percentBuffered = bufferedEnd / videoElement.duration;
-        if (percentBuffered >= 0.25 && !hasStarted) {
-            videoElement.play(); // Start playback as soon as 25% is buffered
-        }
-    }
-}
+// ============= DOM: Add the filter button and dropdown to button group =============
 
-videoElement.addEventListener('play', showVideo);
-videoElement.addEventListener('progress', onProgress);
-videoElement.addEventListener('click', () => {
-    videoElement.controls = true;
-});
-videoElement.addEventListener('ended', () => removeOverlayAndPauseVideo());
-videoElement.addEventListener('error', () => {
-    spinner.style.display = 'none';
-    playBtn.style.display = 'block';
-    alert('Video failed to load.');
-});
-videoElement.load();
-        };
+document.addEventListener('DOMContentLoaded', () => {
+    const buttonGroup = document.getElementById('button-group') || (() => {
+      const bg = document.createElement('div');
+      bg.id = 'button-group';
+      bg.style.position = 'fixed';
+      bg.style.left = '50%';
+      bg.style.top = '50px';
+      bg.style.transform = 'translateX(-50%)';
+      bg.style.zIndex = '1000';
+      bg.style.display = 'flex';
+      bg.style.gap = '10px';
+      document.body.appendChild(bg);
+      return bg;
+    })();
+
+    // 1. Filter Button
+    const filterButton = document.createElement('button');
+    filterButton.textContent = 'Filter Buildings';
+    filterButton.className = 'custom-button';
+
+    // 2. Dropdown
+    const filterDropdown = document.createElement('select');
+    filterDropdown.className = 'custom-button';
+    filterDropdown.style.display = 'none';
+    categories.forEach(cat => {
+        const opt = document.createElement('option');
+        opt.value = cat;
+        opt.textContent = cat;
+        filterDropdown.appendChild(opt);
+    });
+
+    buttonGroup.appendChild(filterButton);
+    buttonGroup.appendChild(filterDropdown);
+
+    filterButton.addEventListener('click', () => {
+        filterDropdown.style.display = filterDropdown.style.display === 'none' ? 'inline-block' : 'none';
+    });
+
+    filterDropdown.addEventListener('change', (e) => {
+        filterBuildingMarkers(e.target.value);
+        filterDropdown.style.display = 'none';
     });
 });
+
+// =================== END: BUILDING MARKER FILTER DROPDOWN ===================
+
+// (All your other code continues - styles, bottom sheet, marker scaling, donation, etc.)
+
 function scaleMarkersBasedOnZoom() {
     const zoomLevel = map.getZoom();
     const markerSize = (zoomLevel - 13);
@@ -290,19 +365,17 @@ function scaleMarkersBasedOnZoom() {
         marker.style.borderWidth = borderWidth;
 
         // Scale the bump if present
-const bump = marker.querySelector('.marker-bump');
-if (bump) {
-    const bumpWidth = (markerSize * 0.4) + 'em';
-    const bumpHeight = (markerSize * 0.25) + 'em';
-    bump.style.width = bumpWidth;
-    bump.style.height = bumpHeight;
-    // No border scaling needed for solid color
-}
+        const bump = marker.querySelector('.marker-bump');
+        if (bump) {
+            const bumpWidth = (markerSize * 0.4) + 'em';
+            const bumpHeight = (markerSize * 0.25) + 'em';
+            bump.style.width = bumpWidth;
+            bump.style.height = bumpHeight;
+        }
     });
 }
 scaleMarkersBasedOnZoom();
 
-// Map event listeners immediately
 map.on('click', (e) => {
     const currentLat = e.lngLat.lat;
     const currentLng = e.lngLat.lng;
@@ -312,14 +385,13 @@ map.on('click', (e) => {
 });
 map.on('zoom', () => scaleMarkersBasedOnZoom());
 
-// Only what requires style load
 map.on('load', () => {
     geolocate.trigger();
 
     // Hide the loading screen after at least 5 seconds
     const loadingScreen = document.getElementById('loading-screen');
     const elapsed = Date.now() - loadingScreenStart;
-    const minDuration = 5000; // 5 seconds
+    const minDuration = 5000;
 
     if (loadingScreen) {
         if (elapsed >= minDuration) {
@@ -331,6 +403,7 @@ map.on('load', () => {
         }
     }
 });
+
 // Function to parse URL parameters
 function getUrlParameter(name) {
     name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
@@ -525,17 +598,17 @@ function createCustomMarker(imageUrl, color = '#9b4dca', isLocation = false) {
   imageElement.style.borderRadius = '50%';
 
   // Create the "bump" at the bottom as a smooth upside-down triangle (teardrop)
-const bump = document.createElement('div');
-bump.className = 'marker-bump';
-bump.style.position = 'absolute';
-bump.style.left = '50%';
-bump.style.top = '98%';
-bump.style.transform = 'translateX(-50%)';
-bump.style.width = '5em';
-bump.style.height = '0.5em';
-bump.style.background = color; // Or 'white' for a hollow pyramid with border
-bump.style.clipPath = 'polygon(0% 0%, 100% 0%, 55% 96%, 56% 100%, 44% 100%, 45% 96%)';
-bump.style.zIndex = '1';
+  const bump = document.createElement('div');
+  bump.className = 'marker-bump';
+  bump.style.position = 'absolute';
+  bump.style.left = '50%';
+  bump.style.top = '98%';
+  bump.style.transform = 'translateX(-50%)';
+  bump.style.width = '5em';
+  bump.style.height = '0.5em';
+  bump.style.background = color; // Or 'white' for a hollow pyramid with border
+  bump.style.clipPath = 'polygon(0% 0%, 100% 0%, 55% 96%, 56% 100%, 44% 100%, 45% 96%)';
+  bump.style.zIndex = '1';
 
   markerDiv.appendChild(imageElement);
   markerDiv.appendChild(bump);
@@ -754,4 +827,4 @@ dropdownContent.style.overflowY = 'auto';
 
     // Set the dropdown width to match the button width
     dropdownContent.style.width = `${Math.max(button.offsetWidth, 300)}px`; // Match width with maxWidth
-});  
+});
