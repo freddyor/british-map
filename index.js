@@ -281,7 +281,7 @@ function scaleMarkersBasedOnZoom() {
     const zoomLevel = map.getZoom();
     const baseWidth = 3; // em
     const baseHeight = 4; // em
-    const scale = Math.max(0.5, zoomLevel / 15);
+    const scale = Math.max(0.1, (zoomLevel - 11) / 4); // Linearly drops from 1 at 15 to 0 at 11
 
     console.log('Zoom:', zoomLevel, 'Scale:', scale);
 
