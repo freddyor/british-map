@@ -578,11 +578,11 @@ document.head.appendChild(stylePopup);
 function createCustomMarker(imageUrl, color = '#9b4dca', isLocation = false) {
   const markerDiv = document.createElement('div');
   markerDiv.className = 'custom-marker';
-  markerDiv.style.width = '3em';
-  markerDiv.style.height = '4em';
+  markerDiv.style.width = '2em';
+  markerDiv.style.height = '2em';
   markerDiv.style.position = 'absolute';
   markerDiv.style.borderRadius = '25%';
-  markerDiv.style.border = `0.05em solid ${color}`;
+  markerDiv.style.border = `0.3em solid ${color}`;
   markerDiv.style.boxSizing = 'border-box';
   markerDiv.style.overflow = 'visible'; // allow the bump to overflow
   markerDiv.style.background = 'white';
@@ -602,9 +602,9 @@ function createCustomMarker(imageUrl, color = '#9b4dca', isLocation = false) {
   bump.className = 'marker-bump';
   bump.style.position = 'absolute';
   bump.style.left = '50%';
-  bump.style.top = '98%';
+  bump.style.top = '100%';
   bump.style.transform = 'translateX(-50%)';
-  bump.style.width = '5em';
+  bump.style.width = '2em';
   bump.style.height = '0.5em';
   bump.style.background = color; // Or 'white' for a hollow pyramid with border
   bump.style.clipPath = 'polygon(0% 0%, 100% 0%, 55% 96%, 56% 100%, 44% 100%, 45% 96%)';
