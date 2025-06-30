@@ -302,7 +302,7 @@ function filterBuildingMarkers(category) {
     }
 }
 
-// ============= DOM: Add the filter button and dropdown to button group =============
+// ============= DOM: Add the filter button and custom popup =============
 
 document.addEventListener('DOMContentLoaded', () => {
     const buttonGroup = document.getElementById('button-group') || (() => {
@@ -310,7 +310,7 @@ document.addEventListener('DOMContentLoaded', () => {
       bg.id = 'button-group';
       bg.style.position = 'fixed';
       bg.style.left = '50%';
-      bg.style.top = '50px';
+      bg.style.top = '20px';
       bg.style.transform = 'translateX(-50%)';
       bg.style.zIndex = '1000';
       bg.style.display = 'flex';
@@ -324,27 +324,75 @@ document.addEventListener('DOMContentLoaded', () => {
     filterButton.textContent = 'Filter Buildings';
     filterButton.className = 'custom-button';
 
-    // 2. Dropdown
-    const filterDropdown = document.createElement('select');
-    filterDropdown.className = 'custom-button';
-    filterDropdown.style.display = 'none';
-    categories.forEach(cat => {
-        const opt = document.createElement('option');
-        opt.value = cat;
-        opt.textContent = cat;
-        filterDropdown.appendChild(opt);
-    });
-
     buttonGroup.appendChild(filterButton);
-    buttonGroup.appendChild(filterDropdown);
+
+    // Modal overlay for category selection
+    let modal = null;
 
     filterButton.addEventListener('click', () => {
-        filterDropdown.style.display = filterDropdown.style.display === 'none' ? 'inline-block' : 'none';
-    });
+        if (modal) return; // Don't show multiple
 
-    filterDropdown.addEventListener('change', (e) => {
-        filterBuildingMarkers(e.target.value);
-        filterDropdown.style.display = 'none';
+        modal = document.createElement('div');
+        modal.style.position = 'fixed';
+        modal.style.top = '0';
+        modal.style.left = '0';
+        modal.style.width = '100vw';
+        modal.style.height = '100vh';
+        modal.style.background = 'rgba(0,0,0,0.3)';
+        modal.style.display = 'flex';
+        modal.style.alignItems = 'center';
+        modal.style.justifyContent = 'center';
+        modal.style.zIndex = '12000';
+
+        const popup = document.createElement('div');
+        popup.style.background = '#fff';
+        popup.style.padding = '20px 24px';
+        popup.style.borderRadius = '12px';
+        popup.style.boxShadow = '0 8px 32px rgba(0,0,0,0.19)';
+        popup.style.display = 'flex';
+        popup.style.flexDirection = 'column';
+        popup.style.gap = '10px';
+        popup.style.minWidth = '180px';
+        popup.style.fontFamily = "'Poppins', sans-serif";
+        popup.style.fontSize = '15px';
+
+        const closeBtn = document.createElement('button');
+        closeBtn.textContent = '×';
+        closeBtn.style.alignSelf = 'flex-end';
+        closeBtn.style.fontSize = '18px';
+        closeBtn.style.background = 'none';
+        closeBtn.style.border = 'none';
+        closeBtn.style.cursor = 'pointer';
+        closeBtn.style.marginBottom = '4px';
+        closeBtn.onclick = () => {
+            document.body.removeChild(modal);
+            modal = null;
+        };
+        popup.appendChild(closeBtn);
+
+        categories.forEach(cat => {
+            const catBtn = document.createElement('button');
+            catBtn.textContent = cat;
+            catBtn.className = 'custom-button';
+            catBtn.style.fontSize = '15px';
+            catBtn.onclick = () => {
+                filterBuildingMarkers(cat);
+                document.body.removeChild(modal);
+                modal = null;
+            };
+            popup.appendChild(catBtn);
+        });
+
+        modal.appendChild(popup);
+        document.body.appendChild(modal);
+
+        // Click outside to close
+        modal.addEventListener('mousedown', (e) => {
+            if (e.target === modal) {
+                document.body.removeChild(modal);
+                modal = null;
+            }
+        });
     });
 });
 
@@ -458,21 +506,6 @@ function generateMapLink(latitude, longitude, zoomLevel) {
     return baseUrl + params;
 }
 
-// Container for both buttons
-const buttonGroup = document.createElement('div');
-buttonGroup.id = 'button-group';
-buttonGroup.style.position = 'fixed';
-buttonGroup.style.left = '50%';
-buttonGroup.style.top = '50px';
-buttonGroup.style.transform = 'translateX(-50%)';
-buttonGroup.style.zIndex = '1000';
-buttonGroup.style.display = 'flex';
-buttonGroup.style.gap = '10px';
-document.body.appendChild(buttonGroup);
-
-// Create a <style> element to add the CSS
-const stylePopup = document.createElement('style');
-
 // Add the link to Google Fonts for Poppins
 const link = document.createElement('link');
 link.href = "https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap";
@@ -480,6 +513,7 @@ link.rel = "stylesheet";
 document.head.appendChild(link);
 
 // Style for the popup and markers
+const stylePopup = document.createElement('style');
 stylePopup.innerHTML = `
   .mapboxgl-popup-content {
     border-radius: 12px !important;
@@ -546,7 +580,7 @@ stylePopup.innerHTML = `
   }
   #button-group {
     position: fixed;
-    top: 50px;
+    top: 20px;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
@@ -572,7 +606,6 @@ stylePopup.innerHTML = `
     margin-bottom: 10px;
   }
  `;
-
 document.head.appendChild(stylePopup);
 
 function createCustomMarker(imageUrl, color = '#9b4dca', isLocation = false) {
@@ -703,5 +736,3 @@ function createPopupContent(location, isFirebase = false) {
         </div>
     `;
 }
-
-             
