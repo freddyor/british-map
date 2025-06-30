@@ -578,11 +578,11 @@ document.head.appendChild(stylePopup);
 function createCustomMarker(imageUrl, color = '#9b4dca', isLocation = false) {
   const markerDiv = document.createElement('div');
   markerDiv.className = 'custom-marker';
-  markerDiv.style.width = '2em';
-  markerDiv.style.height = '2em';
+  markerDiv.style.width = '3em';
+  markerDiv.style.height = '3em';
   markerDiv.style.position = 'absolute';
   markerDiv.style.borderRadius = '25%';
-  markerDiv.style.border = `0.3em solid ${color}`;
+  markerDiv.style.border = `0.2em solid ${color}`;
   markerDiv.style.boxSizing = 'border-box';
   markerDiv.style.overflow = 'visible'; // allow the bump to overflow
   markerDiv.style.background = 'white';
