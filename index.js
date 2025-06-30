@@ -302,7 +302,7 @@ function filterBuildingMarkers(category) {
     }
 }
 
-// ============= DOM: Add the filter button and custom popup =============
+// ============= DOM: Add the filter button and dropdown as a styled dropdown =============
 
 document.addEventListener('DOMContentLoaded', () => {
     const buttonGroup = document.getElementById('button-group') || (() => {
@@ -323,76 +323,60 @@ document.addEventListener('DOMContentLoaded', () => {
     const filterButton = document.createElement('button');
     filterButton.textContent = 'Filter Buildings';
     filterButton.className = 'custom-button';
+    filterButton.style.position = 'relative';
 
-    buttonGroup.appendChild(filterButton);
+    // 2. Dropdown (custom)
+    const dropdown = document.createElement('div');
+    dropdown.style.display = 'none';
+    dropdown.style.position = 'absolute';
+    dropdown.style.left = '0';
+    dropdown.style.top = '100%';
+    dropdown.style.background = '#fff';
+    dropdown.style.boxShadow = '0 6px 15px rgba(0, 0, 0, 0.15)';
+    dropdown.style.border = '2px solid #f0f0f0';
+    dropdown.style.borderRadius = '8px';
+    dropdown.style.padding = '6px 0';
+    dropdown.style.zIndex = '10000';
+    dropdown.style.fontFamily = "'Poppins', sans-serif";
+    dropdown.style.minWidth = '120px';
 
-    // Modal overlay for category selection
-    let modal = null;
+    // Populate dropdown
+    categories.forEach(cat => {
+        const catBtn = document.createElement('button');
+        catBtn.textContent = cat;
+        catBtn.className = 'custom-button';
+        catBtn.style.width = '100%';
+        catBtn.style.textAlign = 'left';
+        catBtn.style.margin = '0';
+        catBtn.style.borderRadius = '0';
+        catBtn.style.boxShadow = 'none';
+        catBtn.style.fontSize = '15px';
+        catBtn.style.display = 'block';
+        catBtn.onclick = () => {
+            filterBuildingMarkers(cat);
+            dropdown.style.display = 'none';
+        };
+        dropdown.appendChild(catBtn);
+    });
+
+    // Wrap button and dropdown together for absolute positioning
+    const wrapper = document.createElement('div');
+    wrapper.style.position = 'relative';
+    wrapper.appendChild(filterButton);
+    wrapper.appendChild(dropdown);
+    buttonGroup.appendChild(wrapper);
 
     filterButton.addEventListener('click', () => {
-        if (modal) return; // Don't show multiple
+        // Match dropdown width to button
+        dropdown.style.minWidth = filterButton.offsetWidth + 'px';
+        dropdown.style.display = dropdown.style.display === 'none' ? 'block' : 'none';
+    });
 
-        modal = document.createElement('div');
-        modal.style.position = 'fixed';
-        modal.style.top = '0';
-        modal.style.left = '0';
-        modal.style.width = '100vw';
-        modal.style.height = '100vh';
-        modal.style.background = 'rgba(0,0,0,0.3)';
-        modal.style.display = 'flex';
-        modal.style.alignItems = 'center';
-        modal.style.justifyContent = 'center';
-        modal.style.zIndex = '12000';
-
-        const popup = document.createElement('div');
-        popup.style.background = '#fff';
-        popup.style.padding = '20px 24px';
-        popup.style.borderRadius = '12px';
-        popup.style.boxShadow = '0 8px 32px rgba(0,0,0,0.19)';
-        popup.style.display = 'flex';
-        popup.style.flexDirection = 'column';
-        popup.style.gap = '10px';
-        popup.style.minWidth = '180px';
-        popup.style.fontFamily = "'Poppins', sans-serif";
-        popup.style.fontSize = '15px';
-
-        const closeBtn = document.createElement('button');
-        closeBtn.textContent = '×';
-        closeBtn.style.alignSelf = 'flex-end';
-        closeBtn.style.fontSize = '18px';
-        closeBtn.style.background = 'none';
-        closeBtn.style.border = 'none';
-        closeBtn.style.cursor = 'pointer';
-        closeBtn.style.marginBottom = '4px';
-        closeBtn.onclick = () => {
-            document.body.removeChild(modal);
-            modal = null;
-        };
-        popup.appendChild(closeBtn);
-
-        categories.forEach(cat => {
-            const catBtn = document.createElement('button');
-            catBtn.textContent = cat;
-            catBtn.className = 'custom-button';
-            catBtn.style.fontSize = '15px';
-            catBtn.onclick = () => {
-                filterBuildingMarkers(cat);
-                document.body.removeChild(modal);
-                modal = null;
-            };
-            popup.appendChild(catBtn);
-        });
-
-        modal.appendChild(popup);
-        document.body.appendChild(modal);
-
-        // Click outside to close
-        modal.addEventListener('mousedown', (e) => {
-            if (e.target === modal) {
-                document.body.removeChild(modal);
-                modal = null;
-            }
-        });
+    // Hide dropdown when clicking outside
+    document.addEventListener('mousedown', (e) => {
+        if (!wrapper.contains(e.target)) {
+            dropdown.style.display = 'none';
+        }
     });
 });
 
