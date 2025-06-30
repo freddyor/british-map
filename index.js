@@ -321,7 +321,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 1. Filter Button
     const filterButton = document.createElement('button');
-    filterButton.textContent = 'Filter Buildings';
+    filterButton.textContent = 'Find your taste 🔍';
     filterButton.className = 'custom-button';
     filterButton.style.position = 'relative';
 
