@@ -304,95 +304,34 @@ function filterBuildingMarkers(category) {
 
 // ====== DOMContentLoaded Handler: Button Group and Mode Toggle as Separate Visual Controls ======
 document.addEventListener('DOMContentLoaded', () => {
-  // ===== BUTTON GROUP (Filter Button + Dropdown) =====
-  const buttonGroup = document.getElementById('button-group') || (() => {
-    const bg = document.createElement('div');
-    bg.id = 'button-group';
-    bg.style.position = 'fixed';
-    bg.style.left = '50%';
-    bg.style.top = '20px';
-    bg.style.transform = 'translateX(-50%)';
-    bg.style.zIndex = '1000';
-    bg.style.display = 'flex';
-    bg.style.gap = '10px';
-    document.body.appendChild(bg);
-    return bg;
-  })();
+  // ===== BUTTON GROUP & MODE TOGGLE ROW =====
+  // Create container for both controls
+  const controlsRow = document.createElement('div');
+  controlsRow.id = 'controls-row';
+  controlsRow.style.position = 'fixed';
+  controlsRow.style.top = '20px';
+  controlsRow.style.left = '50%';
+  controlsRow.style.transform = 'translateX(-50%)';
+  controlsRow.style.zIndex = '1000';
+  controlsRow.style.display = 'flex';
+  controlsRow.style.gap = '10px';
 
-  // 1. Filter Button
-  const filterButton = document.createElement('button');
-  filterButton.textContent = 'Find your taste 🔍';
-  filterButton.className = 'custom-button';
-  filterButton.style.position = 'relative';
-
-  // 2. Dropdown (custom)
-  const dropdown = document.createElement('div');
-  dropdown.style.display = 'none';
-  dropdown.style.position = 'absolute';
-  dropdown.style.left = '0';
-  dropdown.style.top = '100%';
-  dropdown.style.background = '#fff';
-  dropdown.style.boxShadow = '0 6px 15px rgba(0, 0, 0, 0.15)';
-  dropdown.style.border = '2px solid #f0f0f0';
-  dropdown.style.borderRadius = '8px';
-  dropdown.style.padding = '6px 0';
-  dropdown.style.zIndex = '10000';
-  dropdown.style.fontFamily = "'Poppins', sans-serif";
-  dropdown.style.minWidth = '120px';
-
-  categories.forEach(cat => {
-    const catBtn = document.createElement('button');
-    catBtn.textContent = cat;
-    catBtn.className = 'custom-button';
-    catBtn.style.width = '100%';
-    catBtn.style.textAlign = 'left';
-    catBtn.style.margin = '0';
-    catBtn.style.borderRadius = '0';
-    catBtn.style.boxShadow = 'none';
-    catBtn.style.fontSize = '15px';
-    catBtn.style.display = 'block';
-    catBtn.onclick = () => {
-      filterBuildingMarkers(cat);
-      dropdown.style.display = 'none';
-    };
-    dropdown.appendChild(catBtn);
-  });
-
-  const wrapper = document.createElement('div');
-  wrapper.style.position = 'relative';
-  wrapper.appendChild(filterButton);
-  wrapper.appendChild(dropdown);
-  buttonGroup.appendChild(wrapper);
-
-  filterButton.addEventListener('click', () => {
-    dropdown.style.minWidth = filterButton.offsetWidth + 'px';
-    dropdown.style.display = dropdown.style.display === 'none' ? 'block' : 'none';
-  });
-
-  document.addEventListener('mousedown', (e) => {
-    if (!wrapper.contains(e.target)) {
-      dropdown.style.display = 'none';
-    }
-  });
-
-  // ====== MODE TOGGLE (Visually Modern, Sliding Style) ======
+  // ====== MODE TOGGLE (SAME SIZE AS BUTTON) ======
   const modeToggleContainer = document.createElement('div');
   modeToggleContainer.id = 'mode-toggle-container';
-  modeToggleContainer.style.position = 'fixed';
-  modeToggleContainer.style.left = '50%';
-  modeToggleContainer.style.top = '65px';
-  modeToggleContainer.style.transform = 'translateX(-50%)';
-  modeToggleContainer.style.zIndex = '1000';
   modeToggleContainer.style.display = 'flex';
   modeToggleContainer.style.alignItems = 'center';
+  modeToggleContainer.style.justifyContent = 'center';
   modeToggleContainer.style.background = '#e9e8e0';
   modeToggleContainer.style.border = '2px solid #f0f0f0';
-  modeToggleContainer.style.borderRadius = '20px';
+  modeToggleContainer.style.borderRadius = '8px';
   modeToggleContainer.style.boxShadow = '0 6px 15px rgba(0, 0, 0, 0.15)';
-  modeToggleContainer.style.padding = '7px 16px';
   modeToggleContainer.style.fontFamily = "'Poppins', sans-serif";
   modeToggleContainer.style.userSelect = 'none';
   modeToggleContainer.style.gap = '12px';
+  modeToggleContainer.style.height = '38px';
+  modeToggleContainer.style.minWidth = '170px'; // Match button width
+  modeToggleContainer.style.padding = '0 16px';
 
   const normalLabel = document.createElement('span');
   normalLabel.textContent = 'Normal';
@@ -469,7 +408,80 @@ document.addEventListener('DOMContentLoaded', () => {
   modeToggleContainer.appendChild(toggleSwitch);
   modeToggleContainer.appendChild(historyLabel);
 
-  document.body.appendChild(modeToggleContainer);
+  // ===== BUTTON GROUP (Filter Button + Dropdown) =====
+  const buttonGroup = (() => {
+    const bg = document.createElement('div');
+    bg.id = 'button-group';
+    bg.style.position = 'relative';
+    bg.style.display = 'flex';
+    bg.style.alignItems = 'center';
+    return bg;
+  })();
+
+  // 1. Filter Button
+  const filterButton = document.createElement('button');
+  filterButton.textContent = 'Find your taste 🔍';
+  filterButton.className = 'custom-button';
+  filterButton.style.position = 'relative';
+  filterButton.style.height = '38px';
+  filterButton.style.minWidth = '170px'; // Match mode toggle
+  filterButton.style.fontSize = '15px';
+
+  // 2. Dropdown (custom)
+  const dropdown = document.createElement('div');
+  dropdown.style.display = 'none';
+  dropdown.style.position = 'absolute';
+  dropdown.style.left = '0';
+  dropdown.style.top = '100%';
+  dropdown.style.background = '#fff';
+  dropdown.style.boxShadow = '0 6px 15px rgba(0, 0, 0, 0.15)';
+  dropdown.style.border = '2px solid #f0f0f0';
+  dropdown.style.borderRadius = '8px';
+  dropdown.style.padding = '6px 0';
+  dropdown.style.zIndex = '10000';
+  dropdown.style.fontFamily = "'Poppins', sans-serif";
+  dropdown.style.minWidth = '120px';
+
+  categories.forEach(cat => {
+    const catBtn = document.createElement('button');
+    catBtn.textContent = cat;
+    catBtn.className = 'custom-button';
+    catBtn.style.width = '100%';
+    catBtn.style.textAlign = 'left';
+    catBtn.style.margin = '0';
+    catBtn.style.borderRadius = '0';
+    catBtn.style.boxShadow = 'none';
+    catBtn.style.fontSize = '15px';
+    catBtn.style.display = 'block';
+    catBtn.onclick = () => {
+      filterBuildingMarkers(cat);
+      dropdown.style.display = 'none';
+    };
+    dropdown.appendChild(catBtn);
+  });
+
+  const wrapper = document.createElement('div');
+  wrapper.style.position = 'relative';
+  wrapper.appendChild(filterButton);
+  wrapper.appendChild(dropdown);
+  buttonGroup.appendChild(wrapper);
+
+  filterButton.addEventListener('click', () => {
+    dropdown.style.minWidth = filterButton.offsetWidth + 'px';
+    dropdown.style.display = dropdown.style.display === 'none' ? 'block' : 'none';
+  });
+
+  document.addEventListener('mousedown', (e) => {
+    if (!wrapper.contains(e.target)) {
+      dropdown.style.display = 'none';
+    }
+  });
+
+  // Add mode toggle and button group to the controls row
+  controlsRow.appendChild(modeToggleContainer);
+  controlsRow.appendChild(buttonGroup);
+
+  document.body.appendChild(controlsRow);
 
   filterBuildingMarkersByModeAndCategory(currentMode, currentCategory);
 });
@@ -634,7 +646,7 @@ stylePopup.innerHTML = `
     color: black;
     border: 2px solid #f0f0f0;
     padding: 3px 8px;
-    font-size: 12px;
+    font-size: 15px;
     font-weight: bold;
     border-radius: 8px;
     cursor: pointer;
@@ -643,17 +655,21 @@ stylePopup.innerHTML = `
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
     white-space: nowrap;
     text-align: center;
+    height: 38px;
+    min-width: 170px;
   }
   #button-group {
-    position: fixed;
-    top: 20px;
-    left: 50%;
-    transform: translateX(-50%);
+    position: relative;
     display: flex;
-    gap: 10px;
-    z-index: 1000;
+    align-items: center;
   }
   #mode-toggle-container {
+    min-width: 170px;
+    height: 38px;
+    padding: 0 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   .dropdown-content {
     line-height: 1.05;
