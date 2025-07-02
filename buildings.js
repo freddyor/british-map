@@ -107,6 +107,7 @@ export const buildings = [
     "posterUrl": "https://yorkmapped.s3.eu-north-1.amazonaws.com/IMG_8163.webp",
                 "mode": "normal",
   },
+      {
        'name': 'Stonegate',
      'coords': [-1.0842237012704465, 53.960388075649625],
     "image": "https://freddyor.github.io/british-map/videos/IMG_8122.webp",
