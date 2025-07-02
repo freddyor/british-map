@@ -313,19 +313,21 @@ function filterBuildingMarkers(category) {
 
 // ============= DOM: Add the filter button, dropdown, and mode toggle =============
 
+// ====== DOMContentLoaded Handler: Button Group and Mode Toggle as Separate Visual Controls ======
 document.addEventListener('DOMContentLoaded', () => {
+    // ===== BUTTON GROUP (Filter Button + Dropdown) =====
     const buttonGroup = document.getElementById('button-group') || (() => {
-      const bg = document.createElement('div');
-      bg.id = 'button-group';
-      bg.style.position = 'fixed';
-      bg.style.left = '50%';
-      bg.style.top = '20px';
-      bg.style.transform = 'translateX(-50%)';
-      bg.style.zIndex = '1000';
-      bg.style.display = 'flex';
-      bg.style.gap = '10px';
-      document.body.appendChild(bg);
-      return bg;
+        const bg = document.createElement('div');
+        bg.id = 'button-group';
+        bg.style.position = 'fixed';
+        bg.style.left = '50%';
+        bg.style.top = '20px';
+        bg.style.transform = 'translateX(-50%)';
+        bg.style.zIndex = '1000';
+        bg.style.display = 'flex';
+        bg.style.gap = '10px';
+        document.body.appendChild(bg);
+        return bg;
     })();
 
     // 1. Filter Button
@@ -388,17 +390,25 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // 3. MODE TOGGLE (just below filter button)
-    const modeToggleWrapper = document.createElement('div');
-    modeToggleWrapper.style.display = 'flex';
-    modeToggleWrapper.style.alignItems = 'center';
-    modeToggleWrapper.style.justifyContent = 'center';
-    modeToggleWrapper.style.marginTop = '10px';
-    modeToggleWrapper.style.width = '100%';
+    // ====== MODE TOGGLE (VISIBLY BELOW) ======
+    const modeToggleContainer = document.createElement('div');
+    modeToggleContainer.id = 'mode-toggle-container';
+    modeToggleContainer.style.position = 'fixed';
+    modeToggleContainer.style.left = '50%';
+    modeToggleContainer.style.top = '65px'; // 20px (button-group) + ~45px (button height + gap)
+    modeToggleContainer.style.transform = 'translateX(-50%)';
+    modeToggleContainer.style.zIndex = '1000';
+    modeToggleContainer.style.display = 'flex';
+    modeToggleContainer.style.alignItems = 'center';
+    modeToggleContainer.style.background = '#e9e8e0';
+    modeToggleContainer.style.border = '2px solid #f0f0f0';
+    modeToggleContainer.style.borderRadius = '8px';
+    modeToggleContainer.style.boxShadow = '0 6px 15px rgba(0, 0, 0, 0.15)';
+    modeToggleContainer.style.padding = '6px 16px';
+    modeToggleContainer.style.fontFamily = "'Poppins', sans-serif";
 
     const toggleLabel = document.createElement('span');
     toggleLabel.textContent = 'Mode:';
-    toggleLabel.style.fontFamily = "'Poppins', sans-serif";
     toggleLabel.style.fontWeight = 'bold';
     toggleLabel.style.fontSize = '14px';
     toggleLabel.style.marginRight = '8px';
@@ -406,8 +416,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const toggleInput = document.createElement('input');
     toggleInput.type = 'checkbox';
     toggleInput.id = 'mode-toggle';
-    toggleInput.style.marginLeft = '0';
-    toggleInput.style.verticalAlign = 'middle';
 
     const toggleText = document.createElement('span');
     toggleText.textContent = 'Normal';
@@ -415,21 +423,18 @@ document.addEventListener('DOMContentLoaded', () => {
     toggleText.style.fontSize = '14px';
     toggleText.style.fontWeight = 'bold';
 
-    modeToggleWrapper.appendChild(toggleLabel);
-    modeToggleWrapper.appendChild(toggleInput);
-    modeToggleWrapper.appendChild(toggleText);
+    modeToggleContainer.appendChild(toggleLabel);
+    modeToggleContainer.appendChild(toggleInput);
+    modeToggleContainer.appendChild(toggleText);
+    document.body.appendChild(modeToggleContainer);
 
-    // Insert the toggle just after the filter dropdown
-    wrapper.appendChild(modeToggleWrapper);
-
-    // Listen for toggle changes
     toggleInput.addEventListener('change', () => {
-      currentMode = toggleInput.checked ? 'history' : 'normal';
-      toggleText.textContent = toggleInput.checked ? 'History' : 'Normal';
-      filterBuildingMarkersByModeAndCategory(currentMode, currentCategory);
+        currentMode = toggleInput.checked ? 'history' : 'normal';
+        toggleText.textContent = toggleInput.checked ? 'History' : 'Normal';
+        filterBuildingMarkersByModeAndCategory(currentMode, currentCategory);
     });
 
-    // Initial marker population (after DOM is ready)
+    // Populate markers on initial load
     filterBuildingMarkersByModeAndCategory(currentMode, currentCategory);
 });
 
@@ -623,6 +628,9 @@ stylePopup.innerHTML = `
     display: flex;
     gap: 10px;
     z-index: 1000;
+  }
+  #mode-toggle-container {
+    /* Additional styling if needed */
   }
   .dropdown-content {
     line-height: 1.05;
