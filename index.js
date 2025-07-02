@@ -86,13 +86,18 @@ locations.forEach(location => {
     });
 });
 
-// =================== BUILDING MARKER FILTER DROPDOWN ===================
+// =================== BUILDING MARKER FILTER DROPDOWN AND MODE TOGGLE ===================
 
 // Get unique categories from buildings array
 const categories = Array.from(new Set(buildings.map(b => b.category))).sort();
 categories.unshift('All'); // Add 'All' as the first option
 
 let allBuildingMarkers = []; // Store all marker objects for buildings
+
+// ============= Mode + Category Filtering Logic =============
+// Track current filter state:
+let currentMode = 'normal';
+let currentCategory = 'All';
 
 function addBuildingMarkers(buildingsToShow) {
     // Remove previous markers
@@ -291,18 +296,22 @@ function addBuildingMarkers(buildingsToShow) {
     });
 }
 
-// Initial marker population
-addBuildingMarkers(buildings);
-
-function filterBuildingMarkers(category) {
-    if (category === 'All') {
-        addBuildingMarkers(buildings);
-    } else {
-        addBuildingMarkers(buildings.filter(b => b.category === category));
+// New: filter buildings by mode and category
+function filterBuildingMarkersByModeAndCategory(mode, category) {
+    let filtered = buildings.filter(b => b.mode === mode);
+    if (category !== 'All') {
+        filtered = filtered.filter(b => b.category === category);
     }
+    addBuildingMarkers(filtered);
 }
 
-// ============= DOM: Add the filter button and dropdown as a styled dropdown =============
+// Update your category filter button logic:
+function filterBuildingMarkers(category) {
+    currentCategory = category;
+    filterBuildingMarkersByModeAndCategory(currentMode, currentCategory);
+}
+
+// ============= DOM: Add the filter button, dropdown, and mode toggle =============
 
 document.addEventListener('DOMContentLoaded', () => {
     const buttonGroup = document.getElementById('button-group') || (() => {
@@ -378,9 +387,53 @@ document.addEventListener('DOMContentLoaded', () => {
             dropdown.style.display = 'none';
         }
     });
+
+    // 3. MODE TOGGLE (just below filter button)
+    const modeToggleWrapper = document.createElement('div');
+    modeToggleWrapper.style.display = 'flex';
+    modeToggleWrapper.style.alignItems = 'center';
+    modeToggleWrapper.style.justifyContent = 'center';
+    modeToggleWrapper.style.marginTop = '10px';
+    modeToggleWrapper.style.width = '100%';
+
+    const toggleLabel = document.createElement('span');
+    toggleLabel.textContent = 'Mode:';
+    toggleLabel.style.fontFamily = "'Poppins', sans-serif";
+    toggleLabel.style.fontWeight = 'bold';
+    toggleLabel.style.fontSize = '14px';
+    toggleLabel.style.marginRight = '8px';
+
+    const toggleInput = document.createElement('input');
+    toggleInput.type = 'checkbox';
+    toggleInput.id = 'mode-toggle';
+    toggleInput.style.marginLeft = '0';
+    toggleInput.style.verticalAlign = 'middle';
+
+    const toggleText = document.createElement('span');
+    toggleText.textContent = 'Normal';
+    toggleText.style.marginLeft = '8px';
+    toggleText.style.fontSize = '14px';
+    toggleText.style.fontWeight = 'bold';
+
+    modeToggleWrapper.appendChild(toggleLabel);
+    modeToggleWrapper.appendChild(toggleInput);
+    modeToggleWrapper.appendChild(toggleText);
+
+    // Insert the toggle just after the filter dropdown
+    wrapper.appendChild(modeToggleWrapper);
+
+    // Listen for toggle changes
+    toggleInput.addEventListener('change', () => {
+      currentMode = toggleInput.checked ? 'history' : 'normal';
+      toggleText.textContent = toggleInput.checked ? 'History' : 'Normal';
+      filterBuildingMarkersByModeAndCategory(currentMode, currentCategory);
+    });
+
+    // Initial marker population (after DOM is ready)
+    filterBuildingMarkersByModeAndCategory(currentMode, currentCategory);
 });
 
-// =================== END: BUILDING MARKER FILTER DROPDOWN ===================
+// =================== END: BUILDING MARKER FILTER DROPDOWN AND MODE TOGGLE ===================
 
 // (All your other code continues - styles, bottom sheet, marker scaling, donation, etc.)
 
