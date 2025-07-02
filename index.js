@@ -6,41 +6,40 @@ const loadingScreenStart = Date.now();
 
 // --- First Video Popup additions START ---
 let firstVideoLoadedThisSession = false;
-function showFirstVideoWaitMessage(videoElement) {
-}
+function showFirstVideoWaitMessage(videoElement) {}
 
 const yorkBounds = [
-  [-1.170, 53.930], // Southwest corner (lng, lat)
-  [-1.010, 54.010]  // Northeast corner (lng, lat)
+  [-1.170, 53.930],
+  [-1.010, 54.010]
 ];
 
 // Set Mapbox access token
 mapboxgl.accessToken = 'pk.eyJ1IjoiZnJlZGRvbWF0ZSIsImEiOiJjbTc1bm5zYnQwaG1mMmtxeDdteXNmeXZ0In0.PuDNORq4qExIJ_fErdO_8g';
 
 var map = new mapboxgl.Map({
-    container: 'map',
-    style: 'mapbox://styles/freddomate/cm8q8wtwx00a801qzdayccnvz',
-    center: [-1.0812025894431188, 53.958916884514004],
-    zoom: 15,
-    pitch: 45,
-    bearing: -17.6,
-    maxBounds: yorkBounds,
-    minZoom: 11,
-    maxZoom: 19,
+  container: 'map',
+  style: 'mapbox://styles/freddomate/cm8q8wtwx00a801qzdayccnvz',
+  center: [-1.0812025894431188, 53.958916884514004],
+  zoom: 15,
+  pitch: 45,
+  bearing: -17.6,
+  maxBounds: yorkBounds,
+  minZoom: 11,
+  maxZoom: 19,
 });
 
 // Geolocate control and user location marker
 const geolocate = new mapboxgl.GeolocateControl({
-    positionOptions: {
-        enableHighAccuracy: true
-    },
-    trackUserLocation: true,
-    showUserHeading: true,
-    showAccuracyCircle: false,
-    fitBoundsOptions: {
-        maxZoom: 15
-    },
-    showUserLocation: false
+  positionOptions: {
+    enableHighAccuracy: true
+  },
+  trackUserLocation: true,
+  showUserHeading: true,
+  showAccuracyCircle: false,
+  fitBoundsOptions: {
+    maxZoom: 15
+  },
+  showUserLocation: false
 });
 map.addControl(geolocate);
 
@@ -58,7 +57,7 @@ textEl.style.color = '#87CEFA';
 textEl.textContent = 'me';
 userLocationEl.appendChild(textEl);
 
-const userLocationMarker = new mapboxgl.Marker({element: userLocationEl})
+const userLocationMarker = new mapboxgl.Marker({ element: userLocationEl })
   .setLngLat([0, 0])
   .addTo(map);
 
@@ -71,490 +70,515 @@ geolocate.on('geolocate', (e) => {
 
 // --- Marker and helper functions ---
 locations.forEach(location => {
-    const { element: markerElement } = createCustomMarker(location.image, '#FFFFFF', true);
-    markerElement.className += ' location-marker';
-    const marker = new mapboxgl.Marker({
-        element: markerElement
-    })
+  const { element: markerElement } = createCustomMarker(location.image, '#FFFFFF', true);
+  markerElement.className += ' location-marker';
+  const marker = new mapboxgl.Marker({
+    element: markerElement
+  })
     .setLngLat(location.coords)
     .addTo(map);
 
-    marker.getElement().addEventListener('click', () => {
-        map.getCanvas().style.cursor = 'pointer';
-        const contentHTML = createPopupContent(location); // Use the existing function to create the content
-        toggleBottomSheet(contentHTML);
-    });
+  marker.getElement().addEventListener('click', () => {
+    map.getCanvas().style.cursor = 'pointer';
+    const contentHTML = createPopupContent(location);
+    toggleBottomSheet(contentHTML);
+  });
 });
 
 // =================== BUILDING MARKER FILTER DROPDOWN AND MODE TOGGLE ===================
 
-// Get unique categories from buildings array
 const categories = Array.from(new Set(buildings.map(b => b.category))).sort();
-categories.unshift('All'); // Add 'All' as the first option
+categories.unshift('All');
 
-let allBuildingMarkers = []; // Store all marker objects for buildings
-
-// ============= Mode + Category Filtering Logic =============
-// Track current filter state:
+let allBuildingMarkers = [];
 let currentMode = 'normal';
 let currentCategory = 'All';
 
 function addBuildingMarkers(buildingsToShow) {
-    // Remove previous markers
-    allBuildingMarkers.forEach(obj => obj.marker.remove());
-    allBuildingMarkers = [];
-    buildingsToShow.forEach(building => {
-        const outlineColor = building.colour === "yes" ? '#FF69B4' : '#FFFFFF';
-        const { element: markerElement } = createCustomMarker(building.image, outlineColor, false);
-        markerElement.className += ' building-marker';
+  allBuildingMarkers.forEach(obj => obj.marker.remove());
+  allBuildingMarkers = [];
+  buildingsToShow.forEach(building => {
+    const outlineColor = building.colour === "yes" ? '#FF69B4' : '#FFFFFF';
+    const { element: markerElement } = createCustomMarker(building.image, outlineColor, false);
+    markerElement.className += ' building-marker';
 
-        if (building.colour === "yes") markerElement.style.zIndex = '3';
+    if (building.colour === "yes") markerElement.style.zIndex = '3';
 
-        const marker = new mapboxgl.Marker({element: markerElement})
-            .setLngLat(building.coords)
-            .addTo(map);
+    const marker = new mapboxgl.Marker({ element: markerElement })
+      .setLngLat(building.coords)
+      .addTo(map);
 
-        marker.getElement().addEventListener('click', () => {
-            map.getCanvas().style.cursor = 'pointer';
-            const videoUrl = building.videoUrl;
-            const posterUrl = building.posterUrl;
-            if (!videoUrl) {
-                console.error('Video URL not available for this building.'); return;
-            }
-            document.querySelectorAll('.video-modal-overlay').forEach(el => el.remove());
-            const overlay = document.createElement('div');
-            overlay.className = 'video-modal-overlay';
-            overlay.style.position = 'fixed';
-            overlay.style.top = 0;
-            overlay.style.left = 0;
-            overlay.style.width = '100vw';
-            overlay.style.height = '100vh';
-            overlay.style.background = 'rgba(0,0,0,0.75)';
-            overlay.style.display = 'flex';
-            overlay.style.alignItems = 'center';
-            overlay.style.justifyContent = 'center';
-            overlay.style.zIndex = 100000;
-            const posterContainer = document.createElement('div');
-            posterContainer.style.position = 'relative';
-            posterContainer.style.marginTop = '-60px';
-            const posterImg = document.createElement('img');
-            posterImg.src = posterUrl || '';
-            posterImg.alt = 'Video cover';
-            posterImg.style.maxWidth = '88vw';
-            posterImg.style.maxHeight = '80vh';
-            posterImg.style.borderRadius = '14px';
-            posterImg.style.display = 'block';
-            posterImg.addEventListener('load', () => {
-                posterImg.style.border = '1.5px solid #E9E8E0';
-            });
-            const playBtn = document.createElement('button');
-            playBtn.innerHTML = '▶';
-            playBtn.style.position = 'absolute';
-            playBtn.style.top = '50%';
-            playBtn.style.left = '50%';
-            playBtn.style.transform = 'translate(-50%, -50%)';
-            playBtn.style.background = 'rgba(0,0,0,0.6)';
-            playBtn.style.border = 'none';
-            playBtn.style.borderRadius = '50%';
-            playBtn.style.width = '64px';
-            playBtn.style.height = '64px';
-            playBtn.style.color = '#fff';
-            playBtn.style.fontSize = '2.5rem';
-            playBtn.style.cursor = 'pointer';
-            playBtn.style.display = 'flex';
-            playBtn.style.alignItems = 'center';
-            playBtn.style.justifyContent = 'center';
-            playBtn.style.zIndex = 2;
-            const spinner = document.createElement('div');
-            spinner.style.position = 'absolute';
-            spinner.style.top = '50%';
-            spinner.style.left = '50%';
-            spinner.style.transform = 'translate(-50%, -50%)';
-            spinner.style.width = '48px';
-            spinner.style.height = '48px';
-            spinner.style.border = '6px solid #eee';
-            spinner.style.borderTop = '6px solid #9b4dca';
-            spinner.style.borderRadius = '50%';
-            spinner.style.animation = 'spin 1s linear infinite';
+    marker.getElement().addEventListener('click', () => {
+      map.getCanvas().style.cursor = 'pointer';
+      const videoUrl = building.videoUrl;
+      const posterUrl = building.posterUrl;
+      if (!videoUrl) {
+        console.error('Video URL not available for this building.');
+        return;
+      }
+      document.querySelectorAll('.video-modal-overlay').forEach(el => el.remove());
+      const overlay = document.createElement('div');
+      overlay.className = 'video-modal-overlay';
+      overlay.style.position = 'fixed';
+      overlay.style.top = 0;
+      overlay.style.left = 0;
+      overlay.style.width = '100vw';
+      overlay.style.height = '100vh';
+      overlay.style.background = 'rgba(0,0,0,0.75)';
+      overlay.style.display = 'flex';
+      overlay.style.alignItems = 'center';
+      overlay.style.justifyContent = 'center';
+      overlay.style.zIndex = 100000;
+      const posterContainer = document.createElement('div');
+      posterContainer.style.position = 'relative';
+      posterContainer.style.marginTop = '-60px';
+      const posterImg = document.createElement('img');
+      posterImg.src = posterUrl || '';
+      posterImg.alt = 'Video cover';
+      posterImg.style.maxWidth = '88vw';
+      posterImg.style.maxHeight = '80vh';
+      posterImg.style.borderRadius = '14px';
+      posterImg.style.display = 'block';
+      posterImg.addEventListener('load', () => {
+        posterImg.style.border = '1.5px solid #E9E8E0';
+      });
+      const playBtn = document.createElement('button');
+      playBtn.innerHTML = '▶';
+      playBtn.style.position = 'absolute';
+      playBtn.style.top = '50%';
+      playBtn.style.left = '50%';
+      playBtn.style.transform = 'translate(-50%, -50%)';
+      playBtn.style.background = 'rgba(0,0,0,0.6)';
+      playBtn.style.border = 'none';
+      playBtn.style.borderRadius = '50%';
+      playBtn.style.width = '64px';
+      playBtn.style.height = '64px';
+      playBtn.style.color = '#fff';
+      playBtn.style.fontSize = '2.5rem';
+      playBtn.style.cursor = 'pointer';
+      playBtn.style.display = 'flex';
+      playBtn.style.alignItems = 'center';
+      playBtn.style.justifyContent = 'center';
+      playBtn.style.zIndex = 2;
+      const spinner = document.createElement('div');
+      spinner.style.position = 'absolute';
+      spinner.style.top = '50%';
+      spinner.style.left = '50%';
+      spinner.style.transform = 'translate(-50%, -50%)';
+      spinner.style.width = '48px';
+      spinner.style.height = '48px';
+      spinner.style.border = '6px solid #eee';
+      spinner.style.borderTop = '6px solid #9b4dca';
+      spinner.style.borderRadius = '50%';
+      spinner.style.animation = 'spin 1s linear infinite';
+      spinner.style.display = 'none';
+      spinner.style.zIndex = 3;
+      const spinnerStyle = document.createElement('style');
+      spinnerStyle.innerHTML = `@keyframes spin {0% { transform: translate(-50%, -50%) rotate(0deg);}100% { transform: translate(-50%, -50%) rotate(360deg);}}`;
+      document.head.appendChild(spinnerStyle);
+      const closeBtn = document.createElement('button');
+      closeBtn.textContent = '❌';
+      closeBtn.style.position = 'absolute';
+      closeBtn.style.top = '-8px';
+      closeBtn.style.right = '-8px';
+      closeBtn.style.width = '25px';
+      closeBtn.style.height = '25px';
+      closeBtn.style.background = '#000';
+      closeBtn.style.color = '#fff';
+      closeBtn.style.border = '1.5px solid #E9E8E0';
+      closeBtn.style.borderRadius = '50%';
+      closeBtn.style.cursor = 'pointer';
+      closeBtn.style.fontSize = '0.7rem';
+      closeBtn.style.zIndex = '100001';
+      closeBtn.style.display = 'flex';
+      closeBtn.style.alignItems = 'center';
+      closeBtn.style.justifyContent = 'center';
+
+      let videoElement = null;
+
+      function removeOverlayAndPauseVideo() {
+        if (videoElement) {
+          videoElement.pause();
+          videoElement.currentTime = 0;
+        }
+        overlay.remove();
+      }
+
+      closeBtn.onclick = () => removeOverlayAndPauseVideo();
+      let startY;
+      overlay.addEventListener('touchstart', e => {
+        if (e.touches.length === 1) startY = e.touches[0].clientY;
+      });
+      overlay.addEventListener('touchmove', e => {
+        if (startY !== undefined && e.touches.length === 1) {
+          const dy = e.touches[0].clientY - startY;
+          if (dy > 70) {
+            removeOverlayAndPauseVideo();
+            startY = undefined;
+          }
+        }
+      });
+      overlay.addEventListener('touchend', () => { startY = undefined; });
+      playBtn.style.display = 'none';
+      closeBtn.style.display = 'none';
+      posterImg.onload = function () {
+        playBtn.style.display = 'flex';
+        closeBtn.style.display = 'flex';
+      };
+      posterContainer.appendChild(posterImg);
+      posterContainer.appendChild(playBtn);
+      posterContainer.appendChild(spinner);
+      posterContainer.appendChild(closeBtn);
+      overlay.appendChild(posterContainer);
+      document.body.appendChild(overlay);
+      overlay.addEventListener('mousedown', function (e) {
+        if (e.target === overlay) removeOverlayAndPauseVideo();
+      });
+      playBtn.onclick = () => {
+        playBtn.style.display = 'none';
+        spinner.style.display = 'block';
+        videoElement = document.createElement('video');
+        videoElement.src = videoUrl;
+        if (posterUrl) videoElement.poster = posterUrl;
+        videoElement.style.border = '1.5px solid #E9E8E0';
+        videoElement.style.maxWidth = '88vw';
+        videoElement.style.maxHeight = '80vh';
+        videoElement.style.borderRadius = '14px';
+        videoElement.controls = false;
+        videoElement.preload = 'auto';
+        videoElement.autoplay = true;
+        videoElement.setAttribute('playsinline', '');
+        videoElement.setAttribute('webkit-playsinline', '');
+        videoElement.playsInline = true;
+        showFirstVideoWaitMessage(videoElement);
+        let hasStarted = false;
+
+        function showVideo() {
+          if (!hasStarted) {
+            hasStarted = true;
+            posterContainer.replaceChild(videoElement, posterImg);
             spinner.style.display = 'none';
-            spinner.style.zIndex = 3;
-            const spinnerStyle = document.createElement('style');
-            spinnerStyle.innerHTML = `@keyframes spin {0% { transform: translate(-50%, -50%) rotate(0deg);}100% { transform: translate(-50%, -50%) rotate(360deg);}}`;
-            document.head.appendChild(spinnerStyle);
-            const closeBtn = document.createElement('button');
-            closeBtn.textContent = '❌';
-            closeBtn.style.position = 'absolute';
-            closeBtn.style.top = '-8px';
-            closeBtn.style.right = '-8px';
-            closeBtn.style.width = '25px';
-            closeBtn.style.height = '25px';
-            closeBtn.style.background = '#000';
-            closeBtn.style.color = '#fff';
-            closeBtn.style.border = '1.5px solid #E9E8E0';
-            closeBtn.style.borderRadius = '50%';
-            closeBtn.style.cursor = 'pointer';
-            closeBtn.style.fontSize = '0.7rem';
-            closeBtn.style.zIndex = '100001';
-            closeBtn.style.display = 'flex';
-            closeBtn.style.alignItems = 'center';
-            closeBtn.style.justifyContent = 'center';
+          }
+        }
 
-            // New: Keep reference to the video element for pausing
-            let videoElement = null;
-
-            // Helper function to pause and remove overlay
-            function removeOverlayAndPauseVideo() {
-                if (videoElement) {
-                    videoElement.pause();
-                    videoElement.currentTime = 0;
-                }
-                overlay.remove();
+        function onProgress() {
+          if (videoElement.duration && videoElement.buffered.length) {
+            const bufferedEnd = videoElement.buffered.end(videoElement.buffered.length - 1);
+            const percentBuffered = bufferedEnd / videoElement.duration;
+            if (percentBuffered >= 0.25 && !hasStarted) {
+              videoElement.play();
             }
+          }
+        }
 
-            closeBtn.onclick = () => removeOverlayAndPauseVideo();
-            let startY;
-            overlay.addEventListener('touchstart', e => {
-                if (e.touches.length === 1) startY = e.touches[0].clientY;
-            });
-            overlay.addEventListener('touchmove', e => {
-                if (startY !== undefined && e.touches.length === 1) {
-                    const dy = e.touches[0].clientY - startY;
-                    if (dy > 70) {
-                        removeOverlayAndPauseVideo();
-                        startY = undefined;
-                    }
-                }
-            });
-            overlay.addEventListener('touchend', () => { startY = undefined; });
-            playBtn.style.display = 'none';
-            closeBtn.style.display = 'none';
-            posterImg.onload = function() {
-                playBtn.style.display = 'flex';
-                closeBtn.style.display = 'flex';
-            };
-            posterContainer.appendChild(posterImg);
-            posterContainer.appendChild(playBtn);
-            posterContainer.appendChild(spinner);
-            posterContainer.appendChild(closeBtn);
-            overlay.appendChild(posterContainer);
-            document.body.appendChild(overlay);
-            overlay.addEventListener('mousedown', function(e) {
-                if (e.target === overlay) removeOverlayAndPauseVideo();
-            });
-            playBtn.onclick = () => {
-                playBtn.style.display = 'none';
-                spinner.style.display = 'block';
-                videoElement = document.createElement('video');
-                videoElement.src = videoUrl;
-                if (posterUrl) videoElement.poster = posterUrl;
-                videoElement.style.border = '1.5px solid #E9E8E0';
-                videoElement.style.maxWidth = '88vw';
-                videoElement.style.maxHeight = '80vh';
-                videoElement.style.borderRadius = '14px';
-                videoElement.controls = false;
-                videoElement.preload = 'auto';
-                videoElement.autoplay = true;
-                videoElement.setAttribute('playsinline', '');
-                videoElement.setAttribute('webkit-playsinline', '');
-                videoElement.playsInline = true;
-                showFirstVideoWaitMessage(videoElement);
-                let hasStarted = false;
-
-                function showVideo() {
-                    if (!hasStarted) {
-                        hasStarted = true;
-                        posterContainer.replaceChild(videoElement, posterImg);
-                        spinner.style.display = 'none';
-                    }
-                }
-
-                function onProgress() {
-                    if (videoElement.duration && videoElement.buffered.length) {
-                        const bufferedEnd = videoElement.buffered.end(videoElement.buffered.length - 1);
-                        const percentBuffered = bufferedEnd / videoElement.duration;
-                        if (percentBuffered >= 0.25 && !hasStarted) {
-                            videoElement.play();
-                        }
-                    }
-                }
-
-                videoElement.addEventListener('play', showVideo);
-                videoElement.addEventListener('progress', onProgress);
-                videoElement.addEventListener('click', () => {
-                    videoElement.controls = true;
-                });
-                videoElement.addEventListener('ended', () => removeOverlayAndPauseVideo());
-                videoElement.addEventListener('error', () => {
-                    spinner.style.display = 'none';
-                    playBtn.style.display = 'block';
-                    alert('Video failed to load.');
-                });
-                videoElement.load();
-            };
+        videoElement.addEventListener('play', showVideo);
+        videoElement.addEventListener('progress', onProgress);
+        videoElement.addEventListener('click', () => {
+          videoElement.controls = true;
         });
-        allBuildingMarkers.push({ marker, category: building.category });
+        videoElement.addEventListener('ended', () => removeOverlayAndPauseVideo());
+        videoElement.addEventListener('error', () => {
+          spinner.style.display = 'none';
+          playBtn.style.display = 'block';
+          alert('Video failed to load.');
+        });
+        videoElement.load();
+      };
     });
+    allBuildingMarkers.push({ marker, category: building.category });
+  });
 }
 
-// New: filter buildings by mode and category
 function filterBuildingMarkersByModeAndCategory(mode, category) {
-    let filtered = buildings.filter(b => b.mode === mode);
-    if (category !== 'All') {
-        filtered = filtered.filter(b => b.category === category);
-    }
-    addBuildingMarkers(filtered);
+  let filtered = buildings.filter(b => b.mode === mode);
+  if (category !== 'All') {
+    filtered = filtered.filter(b => b.category === category);
+  }
+  addBuildingMarkers(filtered);
 }
 
-// Update your category filter button logic:
 function filterBuildingMarkers(category) {
-    currentCategory = category;
-    filterBuildingMarkersByModeAndCategory(currentMode, currentCategory);
+  currentCategory = category;
+  filterBuildingMarkersByModeAndCategory(currentMode, currentCategory);
 }
-
-// ============= DOM: Add the filter button, dropdown, and mode toggle =============
 
 // ====== DOMContentLoaded Handler: Button Group and Mode Toggle as Separate Visual Controls ======
 document.addEventListener('DOMContentLoaded', () => {
-    // ===== BUTTON GROUP (Filter Button + Dropdown) =====
-    const buttonGroup = document.getElementById('button-group') || (() => {
-        const bg = document.createElement('div');
-        bg.id = 'button-group';
-        bg.style.position = 'fixed';
-        bg.style.left = '50%';
-        bg.style.top = '20px';
-        bg.style.transform = 'translateX(-50%)';
-        bg.style.zIndex = '1000';
-        bg.style.display = 'flex';
-        bg.style.gap = '10px';
-        document.body.appendChild(bg);
-        return bg;
-    })();
+  // ===== BUTTON GROUP (Filter Button + Dropdown) =====
+  const buttonGroup = document.getElementById('button-group') || (() => {
+    const bg = document.createElement('div');
+    bg.id = 'button-group';
+    bg.style.position = 'fixed';
+    bg.style.left = '50%';
+    bg.style.top = '20px';
+    bg.style.transform = 'translateX(-50%)';
+    bg.style.zIndex = '1000';
+    bg.style.display = 'flex';
+    bg.style.gap = '10px';
+    document.body.appendChild(bg);
+    return bg;
+  })();
 
-    // 1. Filter Button
-    const filterButton = document.createElement('button');
-    filterButton.textContent = 'Find your taste 🔍';
-    filterButton.className = 'custom-button';
-    filterButton.style.position = 'relative';
+  // 1. Filter Button
+  const filterButton = document.createElement('button');
+  filterButton.textContent = 'Find your taste 🔍';
+  filterButton.className = 'custom-button';
+  filterButton.style.position = 'relative';
 
-    // 2. Dropdown (custom)
-    const dropdown = document.createElement('div');
-    dropdown.style.display = 'none';
-    dropdown.style.position = 'absolute';
-    dropdown.style.left = '0';
-    dropdown.style.top = '100%';
-    dropdown.style.background = '#fff';
-    dropdown.style.boxShadow = '0 6px 15px rgba(0, 0, 0, 0.15)';
-    dropdown.style.border = '2px solid #f0f0f0';
-    dropdown.style.borderRadius = '8px';
-    dropdown.style.padding = '6px 0';
-    dropdown.style.zIndex = '10000';
-    dropdown.style.fontFamily = "'Poppins', sans-serif";
-    dropdown.style.minWidth = '120px';
+  // 2. Dropdown (custom)
+  const dropdown = document.createElement('div');
+  dropdown.style.display = 'none';
+  dropdown.style.position = 'absolute';
+  dropdown.style.left = '0';
+  dropdown.style.top = '100%';
+  dropdown.style.background = '#fff';
+  dropdown.style.boxShadow = '0 6px 15px rgba(0, 0, 0, 0.15)';
+  dropdown.style.border = '2px solid #f0f0f0';
+  dropdown.style.borderRadius = '8px';
+  dropdown.style.padding = '6px 0';
+  dropdown.style.zIndex = '10000';
+  dropdown.style.fontFamily = "'Poppins', sans-serif";
+  dropdown.style.minWidth = '120px';
 
-    // Populate dropdown
-    categories.forEach(cat => {
-        const catBtn = document.createElement('button');
-        catBtn.textContent = cat;
-        catBtn.className = 'custom-button';
-        catBtn.style.width = '100%';
-        catBtn.style.textAlign = 'left';
-        catBtn.style.margin = '0';
-        catBtn.style.borderRadius = '0';
-        catBtn.style.boxShadow = 'none';
-        catBtn.style.fontSize = '15px';
-        catBtn.style.display = 'block';
-        catBtn.onclick = () => {
-            filterBuildingMarkers(cat);
-            dropdown.style.display = 'none';
-        };
-        dropdown.appendChild(catBtn);
-    });
+  categories.forEach(cat => {
+    const catBtn = document.createElement('button');
+    catBtn.textContent = cat;
+    catBtn.className = 'custom-button';
+    catBtn.style.width = '100%';
+    catBtn.style.textAlign = 'left';
+    catBtn.style.margin = '0';
+    catBtn.style.borderRadius = '0';
+    catBtn.style.boxShadow = 'none';
+    catBtn.style.fontSize = '15px';
+    catBtn.style.display = 'block';
+    catBtn.onclick = () => {
+      filterBuildingMarkers(cat);
+      dropdown.style.display = 'none';
+    };
+    dropdown.appendChild(catBtn);
+  });
 
-    // Wrap button and dropdown together for absolute positioning
-    const wrapper = document.createElement('div');
-    wrapper.style.position = 'relative';
-    wrapper.appendChild(filterButton);
-    wrapper.appendChild(dropdown);
-    buttonGroup.appendChild(wrapper);
+  const wrapper = document.createElement('div');
+  wrapper.style.position = 'relative';
+  wrapper.appendChild(filterButton);
+  wrapper.appendChild(dropdown);
+  buttonGroup.appendChild(wrapper);
 
-    filterButton.addEventListener('click', () => {
-        // Match dropdown width to button
-        dropdown.style.minWidth = filterButton.offsetWidth + 'px';
-        dropdown.style.display = dropdown.style.display === 'none' ? 'block' : 'none';
-    });
+  filterButton.addEventListener('click', () => {
+    dropdown.style.minWidth = filterButton.offsetWidth + 'px';
+    dropdown.style.display = dropdown.style.display === 'none' ? 'block' : 'none';
+  });
 
-    // Hide dropdown when clicking outside
-    document.addEventListener('mousedown', (e) => {
-        if (!wrapper.contains(e.target)) {
-            dropdown.style.display = 'none';
-        }
-    });
+  document.addEventListener('mousedown', (e) => {
+    if (!wrapper.contains(e.target)) {
+      dropdown.style.display = 'none';
+    }
+  });
 
-    // ====== MODE TOGGLE (VISIBLY BELOW) ======
-    const modeToggleContainer = document.createElement('div');
-    modeToggleContainer.id = 'mode-toggle-container';
-    modeToggleContainer.style.position = 'fixed';
-    modeToggleContainer.style.left = '50%';
-    modeToggleContainer.style.top = '65px'; // 20px (button-group) + ~45px (button height + gap)
-    modeToggleContainer.style.transform = 'translateX(-50%)';
-    modeToggleContainer.style.zIndex = '1000';
-    modeToggleContainer.style.display = 'flex';
-    modeToggleContainer.style.alignItems = 'center';
-    modeToggleContainer.style.background = '#e9e8e0';
-    modeToggleContainer.style.border = '2px solid #f0f0f0';
-    modeToggleContainer.style.borderRadius = '8px';
-    modeToggleContainer.style.boxShadow = '0 6px 15px rgba(0, 0, 0, 0.15)';
-    modeToggleContainer.style.padding = '6px 16px';
-    modeToggleContainer.style.fontFamily = "'Poppins', sans-serif";
+  // ====== MODE TOGGLE (Visually Modern, Sliding Style) ======
+  const modeToggleContainer = document.createElement('div');
+  modeToggleContainer.id = 'mode-toggle-container';
+  modeToggleContainer.style.position = 'fixed';
+  modeToggleContainer.style.left = '50%';
+  modeToggleContainer.style.top = '65px';
+  modeToggleContainer.style.transform = 'translateX(-50%)';
+  modeToggleContainer.style.zIndex = '1000';
+  modeToggleContainer.style.display = 'flex';
+  modeToggleContainer.style.alignItems = 'center';
+  modeToggleContainer.style.background = '#e9e8e0';
+  modeToggleContainer.style.border = '2px solid #f0f0f0';
+  modeToggleContainer.style.borderRadius = '20px';
+  modeToggleContainer.style.boxShadow = '0 6px 15px rgba(0, 0, 0, 0.15)';
+  modeToggleContainer.style.padding = '7px 16px';
+  modeToggleContainer.style.fontFamily = "'Poppins', sans-serif";
+  modeToggleContainer.style.userSelect = 'none';
+  modeToggleContainer.style.gap = '12px';
 
-    const toggleLabel = document.createElement('span');
-    toggleLabel.textContent = 'Mode:';
-    toggleLabel.style.fontWeight = 'bold';
-    toggleLabel.style.fontSize = '14px';
-    toggleLabel.style.marginRight = '8px';
+  const normalLabel = document.createElement('span');
+  normalLabel.textContent = 'Normal';
+  normalLabel.style.fontSize = '15px';
+  normalLabel.style.fontWeight = 'bold';
+  normalLabel.style.transition = 'color 0.2s';
+  normalLabel.style.cursor = 'pointer';
+  normalLabel.style.color = '#000';
 
-    const toggleInput = document.createElement('input');
-    toggleInput.type = 'checkbox';
-    toggleInput.id = 'mode-toggle';
+  const toggleSwitch = document.createElement('div');
+  toggleSwitch.style.width = '48px';
+  toggleSwitch.style.height = '24px';
+  toggleSwitch.style.background = '#ccc';
+  toggleSwitch.style.borderRadius = '14px';
+  toggleSwitch.style.position = 'relative';
+  toggleSwitch.style.display = 'flex';
+  toggleSwitch.style.alignItems = 'center';
+  toggleSwitch.style.cursor = 'pointer';
+  toggleSwitch.style.transition = 'background 0.2s';
 
-    const toggleText = document.createElement('span');
-    toggleText.textContent = 'Normal';
-    toggleText.style.marginLeft = '8px';
-    toggleText.style.fontSize = '14px';
-    toggleText.style.fontWeight = 'bold';
+  const toggleCircle = document.createElement('div');
+  toggleCircle.style.position = 'absolute';
+  toggleCircle.style.top = '2px';
+  toggleCircle.style.left = '2px';
+  toggleCircle.style.width = '20px';
+  toggleCircle.style.height = '20px';
+  toggleCircle.style.background = '#fff';
+  toggleCircle.style.borderRadius = '50%';
+  toggleCircle.style.boxShadow = '0 1px 5px rgba(0,0,0,0.15)';
+  toggleCircle.style.transition = 'left 0.2s, background 0.2s';
 
-    modeToggleContainer.appendChild(toggleLabel);
-    modeToggleContainer.appendChild(toggleInput);
-    modeToggleContainer.appendChild(toggleText);
-    document.body.appendChild(modeToggleContainer);
+  toggleSwitch.appendChild(toggleCircle);
 
-    toggleInput.addEventListener('change', () => {
-        currentMode = toggleInput.checked ? 'history' : 'normal';
-        toggleText.textContent = toggleInput.checked ? 'History' : 'Normal';
-        filterBuildingMarkersByModeAndCategory(currentMode, currentCategory);
-    });
+  const historyLabel = document.createElement('span');
+  historyLabel.textContent = 'History';
+  historyLabel.style.fontSize = '15px';
+  historyLabel.style.fontWeight = 'normal';
+  historyLabel.style.transition = 'color 0.2s';
+  historyLabel.style.cursor = 'pointer';
+  historyLabel.style.color = '#888';
 
-    // Populate markers on initial load
+  let modeChecked = false;
+  function updateToggleVisual() {
+    if (modeChecked) {
+      toggleCircle.style.left = '26px';
+      toggleSwitch.style.background = '#9b4dca';
+      normalLabel.style.color = '#888';
+      normalLabel.style.fontWeight = 'normal';
+      historyLabel.style.color = '#000';
+      historyLabel.style.fontWeight = 'bold';
+    } else {
+      toggleCircle.style.left = '2px';
+      toggleSwitch.style.background = '#ccc';
+      normalLabel.style.color = '#000';
+      normalLabel.style.fontWeight = 'bold';
+      historyLabel.style.color = '#888';
+      historyLabel.style.fontWeight = 'normal';
+    }
+  }
+  updateToggleVisual();
+
+  function setMode(isHistory) {
+    modeChecked = isHistory;
+    updateToggleVisual();
+    currentMode = isHistory ? 'history' : 'normal';
     filterBuildingMarkersByModeAndCategory(currentMode, currentCategory);
+  }
+
+  normalLabel.onclick = () => setMode(false);
+  historyLabel.onclick = () => setMode(true);
+  toggleSwitch.onclick = () => setMode(!modeChecked);
+
+  modeToggleContainer.appendChild(normalLabel);
+  modeToggleContainer.appendChild(toggleSwitch);
+  modeToggleContainer.appendChild(historyLabel);
+
+  document.body.appendChild(modeToggleContainer);
+
+  filterBuildingMarkersByModeAndCategory(currentMode, currentCategory);
 });
 
 // =================== END: BUILDING MARKER FILTER DROPDOWN AND MODE TOGGLE ===================
 
-// (All your other code continues - styles, bottom sheet, marker scaling, donation, etc.)
-
 function scaleMarkersBasedOnZoom() {
-    const zoomLevel = map.getZoom();
-    const markerSize = (zoomLevel - 13);
-    const markerWidth = markerSize + 'em';
-    const markerHeight = markerSize + 'em';
-    const borderWidth = (markerSize * 0.075) + 'em';
+  const zoomLevel = map.getZoom();
+  const markerSize = (zoomLevel - 13);
+  const markerWidth = markerSize + 'em';
+  const markerHeight = markerSize + 'em';
+  const borderWidth = (markerSize * 0.075) + 'em';
 
-    document.querySelectorAll('.location-marker, .building-marker').forEach(marker => {
-        marker.style.width = markerWidth;
-        marker.style.height = markerHeight;
-        marker.style.borderWidth = borderWidth;
+  document.querySelectorAll('.location-marker, .building-marker').forEach(marker => {
+    marker.style.width = markerWidth;
+    marker.style.height = markerHeight;
+    marker.style.borderWidth = borderWidth;
 
-        // Scale the bump if present
-        const bump = marker.querySelector('.marker-bump');
-        if (bump) {
-            const bumpWidth = (markerSize * 0.4) + 'em';
-            const bumpHeight = (markerSize * 0.25) + 'em';
-            bump.style.width = bumpWidth;
-            bump.style.height = bumpHeight;
-        }
-    });
+    const bump = marker.querySelector('.marker-bump');
+    if (bump) {
+      const bumpWidth = (markerSize * 0.4) + 'em';
+      const bumpHeight = (markerSize * 0.25) + 'em';
+      bump.style.width = bumpWidth;
+      bump.style.height = bumpHeight;
+    }
+  });
 }
 scaleMarkersBasedOnZoom();
 
 map.on('click', (e) => {
-    const currentLat = e.lngLat.lat;
-    const currentLng = e.lngLat.lng;
-    const currentZoom = map.getZoom();
-    const mapLink = generateMapLink(currentLat, currentLng, currentZoom);
-    console.log('Map Link:', mapLink);
+  const currentLat = e.lngLat.lat;
+  const currentLng = e.lngLat.lng;
+  const currentZoom = map.getZoom();
+  const mapLink = generateMapLink(currentLat, currentLng, currentZoom);
+  console.log('Map Link:', mapLink);
 });
 map.on('zoom', () => scaleMarkersBasedOnZoom());
 
 map.on('load', () => {
-    geolocate.trigger();
+  geolocate.trigger();
 
-    // Hide the loading screen after at least 5 seconds
-    const loadingScreen = document.getElementById('loading-screen');
-    const elapsed = Date.now() - loadingScreenStart;
-    const minDuration = 5000;
+  const loadingScreen = document.getElementById('loading-screen');
+  const elapsed = Date.now() - loadingScreenStart;
+  const minDuration = 5000;
 
-    if (loadingScreen) {
-        if (elapsed >= minDuration) {
-            loadingScreen.style.display = 'none';
-        } else {
-            setTimeout(() => {
-                loadingScreen.style.display = 'none';
-            }, minDuration - elapsed);
-        }
+  if (loadingScreen) {
+    if (elapsed >= minDuration) {
+      loadingScreen.style.display = 'none';
+    } else {
+      setTimeout(() => {
+        loadingScreen.style.display = 'none';
+      }, minDuration - elapsed);
     }
+  }
 });
 
-// Function to parse URL parameters
 function getUrlParameter(name) {
-    name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
-    var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
-    var results = regex.exec(location.search);
-    return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+  name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+  var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+  var results = regex.exec(location.search);
+  return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
 };
 
-// Get parameters from URL
 const lat = getUrlParameter('lat');
 const lng = getUrlParameter('lng');
 const zoom = getUrlParameter('zoom');
 
-// Default York coordinates and zoom
 const defaultCenter = [-1.0835104081554843, 53.95838745239521];
 const defaultZoom = 15;
 
-// Use URL parameters if available, otherwise use default values
 const initialCenter = lat && lng ? [parseFloat(lng), parseFloat(lat)] : defaultCenter;
 const initialZoom = zoom ? parseFloat(zoom) : defaultZoom;
 
-// Create a bottom sheet container
 const bottomSheet = document.createElement('div');
 bottomSheet.id = 'bottom-sheet';
 bottomSheet.style.position = 'fixed';
-bottomSheet.style.bottom = '-100%'; // Initially hidden
-bottomSheet.style.left = '50%'; // Align to the left
-bottomSheet.style.transform = 'translate(-50%)'; // Adjust position to align center both ways
+bottomSheet.style.bottom = '-100%';
+bottomSheet.style.left = '50%';
+bottomSheet.style.transform = 'translate(-50%)';
 bottomSheet.style.right = '50%';
 bottomSheet.style.width = '96%';
-bottomSheet.style.height = '40%'; // Adjust height as needed
+bottomSheet.style.height = '40%';
 bottomSheet.style.backgroundColor = '#fff';
 bottomSheet.style.borderTop = '2px solid #ccc';
 bottomSheet.style.boxShadow = '0 -6px 15px rgba(0, 0, 0, 0.3)';
 bottomSheet.style.zIndex = '10000';
 bottomSheet.style.transition = 'bottom 0.3s ease';
-bottomSheet.style.borderRadius = '12px 12px 0 0'; // Matches the popup's border-radius
-bottomSheet.style.boxShadow = '0 6px 15px rgba(0, 0, 0, 0.3)'; // Matches the popup's shadow
-bottomSheet.style.backgroundColor = '#E9E8E0'; // Matches popup background color
-bottomSheet.style.border = '2px solid #f0f0f0'; // Matches popup border
-bottomSheet.style.fontFamily = "'Poppins', sans-serif"; // Matches popup font-family
-bottomSheet.style.fontSize = '14px'; // Matches popup font size
-bottomSheet.style.lineHeight = '1.05'; // Matches popup line height
-bottomSheet.style.padding = '5px'; // Matches popup padding
-bottomSheet.style.overflowY = 'auto'; // Make it scrollable
+bottomSheet.style.borderRadius = '12px 12px 0 0';
+bottomSheet.style.boxShadow = '0 6px 15px rgba(0, 0, 0, 0.3)';
+bottomSheet.style.backgroundColor = '#E9E8E0';
+bottomSheet.style.border = '2px solid #f0f0f0';
+bottomSheet.style.fontFamily = "'Poppins', sans-serif";
+bottomSheet.style.fontSize = '14px';
+bottomSheet.style.lineHeight = '1.05';
+bottomSheet.style.padding = '5px';
+bottomSheet.style.overflowY = 'auto';
 document.body.appendChild(bottomSheet);
 
-// Function to generate a URL with given coordinates and zoom
 function generateMapLink(latitude, longitude, zoomLevel) {
-    const baseUrl = window.location.origin + window.location.pathname;
-    const params = `?lat=${latitude}&lng=${longitude}&zoom=${zoomLevel}`;
-    return baseUrl + params;
+  const baseUrl = window.location.origin + window.location.pathname;
+  const params = `?lat=${latitude}&lng=${longitude}&zoom=${zoomLevel}`;
+  return baseUrl + params;
 }
 
-// Add the link to Google Fonts for Poppins
 const link = document.createElement('link');
 link.href = "https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap";
 link.rel = "stylesheet";
 document.head.appendChild(link);
 
-// Style for the popup and markers
 const stylePopup = document.createElement('style');
 stylePopup.innerHTML = `
   .mapboxgl-popup-content {
@@ -569,7 +593,7 @@ stylePopup.innerHTML = `
     padding-bottom: 0 !important;
     margin-left: 3px;
     margin-right: 5px;
-    margin-bottom: 10px; /* Add this line */
+    margin-bottom: 10px;
   }
   .mapboxgl-popup-content img {
     border: 2px solid #f0f0f0 !important;
@@ -630,7 +654,6 @@ stylePopup.innerHTML = `
     z-index: 1000;
   }
   #mode-toggle-container {
-    /* Additional styling if needed */
   }
   .dropdown-content {
     line-height: 1.05;
@@ -662,7 +685,7 @@ function createCustomMarker(imageUrl, color = '#9b4dca', isLocation = false) {
   markerDiv.style.borderRadius = '25%';
   markerDiv.style.border = `0.2em solid ${color}`;
   markerDiv.style.boxSizing = 'border-box';
-  markerDiv.style.overflow = 'visible'; // allow the bump to overflow
+  markerDiv.style.overflow = 'visible';
   markerDiv.style.background = 'white';
   markerDiv.style.display = 'flex';
   markerDiv.style.alignItems = 'center';
@@ -675,7 +698,6 @@ function createCustomMarker(imageUrl, color = '#9b4dca', isLocation = false) {
   imageElement.style.objectFit = 'cover';
   imageElement.style.borderRadius = '25%';
 
-  // Create the "bump" at the bottom as a smooth upside-down triangle (teardrop)
   const bump = document.createElement('div');
   bump.className = 'marker-bump';
   bump.style.position = 'absolute';
@@ -684,7 +706,7 @@ function createCustomMarker(imageUrl, color = '#9b4dca', isLocation = false) {
   bump.style.transform = 'translateX(-50%)';
   bump.style.width = '2em';
   bump.style.height = '0.5em';
-  bump.style.background = color; // Or 'white' for a hollow pyramid with border
+  bump.style.background = color;
   bump.style.clipPath = 'polygon(0% 0%, 100% 0%, 55% 96%, 56% 100%, 44% 100%, 45% 96%)';
   bump.style.zIndex = '1';
 
@@ -697,15 +719,13 @@ function createCustomMarker(imageUrl, color = '#9b4dca', isLocation = false) {
   };
 }
 
-// Toggle functionality for the bottom sheet
 let isBottomSheetOpen = false;
 
 function toggleBottomSheet(contentHTML) {
-    if (isBottomSheetOpen) {
-        bottomSheet.style.bottom = '-100%'; // Hide
-    } else {
-        // Add a close button to the top-right corner of the content
-        const closeButtonHTML = `
+  if (isBottomSheetOpen) {
+    bottomSheet.style.bottom = '-100%';
+  } else {
+    const closeButtonHTML = `
             <button id="close-bottom-sheet" style="
                 position: absolute;
                 top: 5px;
@@ -720,35 +740,33 @@ function toggleBottomSheet(contentHTML) {
             ">❌</button>
         `;
 
-        bottomSheet.innerHTML = closeButtonHTML + contentHTML; // Add close button + content
-        bottomSheet.style.bottom = '0'; // Show
+    bottomSheet.innerHTML = closeButtonHTML + contentHTML;
+    bottomSheet.style.bottom = '0';
 
-        // Attach event listener to the close button
-        document.getElementById('close-bottom-sheet').addEventListener('click', () => {
-            // Stop video playback
-            const videoElement = document.querySelector('video'); // Adjust selector as needed
-            if (videoElement) {
-                videoElement.pause();
-                videoElement.currentTime = 0; // Optional: Reset video to start
-            }
-            toggleBottomSheet(); // Close the popup
-        });
-    }
-    isBottomSheetOpen = !isBottomSheetOpen;
+    document.getElementById('close-bottom-sheet').addEventListener('click', () => {
+      const videoElement = document.querySelector('video');
+      if (videoElement) {
+        videoElement.pause();
+        videoElement.currentTime = 0;
+      }
+      toggleBottomSheet();
+    });
+  }
+  isBottomSheetOpen = !isBottomSheetOpen;
 }
 
 function createPopupContent(location, isFirebase = false) {
-    const data = isFirebase ? location : location;
-    const eventsData = isFirebase ? data.events : data.events;
-    const videoUrl = data.videoUrl ? data.videoUrl : null;
-    const tldrContent = !videoUrl
-        ? `<p style="background: #f9f9f9; padding: 10px; margin-top: 10px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); font-size: 15px; color: #000000;">${data.tldr}</p>`
-        : '';
-    const imageContent = !videoUrl
-        ? `<img src="${data.image || data.imageUrl}" alt="${data.name}" style="width: 80px; height: 80px; object-fit: cover; border-radius: 8px; margin-bottom: 10px;" />`
-        : '';
+  const data = isFirebase ? location : location;
+  const eventsData = isFirebase ? data.events : data.events;
+  const videoUrl = data.videoUrl ? data.videoUrl : null;
+  const tldrContent = !videoUrl
+    ? `<p style="background: #f9f9f9; padding: 10px; margin-top: 10px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); font-size: 15px; color: #000000;">${data.tldr}</p>`
+    : '';
+  const imageContent = !videoUrl
+    ? `<img src="${data.image || data.imageUrl}" alt="${data.name}" style="width: 80px; height: 80px; object-fit: cover; border-radius: 8px; margin-bottom: 10px;" />`
+    : '';
 
-    return `
+  return `
         <div style="text-align: center; padding: 0; margin: 0;">
             <p style="font-size: 15px; font-weight: bold; margin-bottom: 10px;">${data.description}</p>
             ${imageContent}
