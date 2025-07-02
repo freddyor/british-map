@@ -151,10 +151,10 @@ function addBuildingMarkers(buildingsToShow) {
       playBtn.style.background = 'rgba(0,0,0,0.6)';
       playBtn.style.border = 'none';
       playBtn.style.borderRadius = '50%';
-      playBtn.style.width = '32px';
-      playBtn.style.height = '32px';
+      playBtn.style.width = '48px';
+      playBtn.style.height = '48px';
       playBtn.style.color = '#fff';
-      playBtn.style.fontSize = '1.25rem';
+      playBtn.style.fontSize = '1.7rem';
       playBtn.style.cursor = 'pointer';
       playBtn.style.display = 'flex';
       playBtn.style.alignItems = 'center';
@@ -165,10 +165,10 @@ function addBuildingMarkers(buildingsToShow) {
       spinner.style.top = '50%';
       spinner.style.left = '50%';
       spinner.style.transform = 'translate(-50%, -50%)';
-      spinner.style.width = '24px';
-      spinner.style.height = '24px';
-      spinner.style.border = '3px solid #eee';
-      spinner.style.borderTop = '3px solid #9b4dca';
+      spinner.style.width = '36px';
+      spinner.style.height = '36px';
+      spinner.style.border = '4px solid #eee';
+      spinner.style.borderTop = '4px solid #9b4dca';
       spinner.style.borderRadius = '50%';
       spinner.style.animation = 'spin 1s linear infinite';
       spinner.style.display = 'none';
@@ -179,16 +179,16 @@ function addBuildingMarkers(buildingsToShow) {
       const closeBtn = document.createElement('button');
       closeBtn.textContent = '❌';
       closeBtn.style.position = 'absolute';
-      closeBtn.style.top = '-4px';
-      closeBtn.style.right = '-4px';
-      closeBtn.style.width = '13px';
-      closeBtn.style.height = '13px';
+      closeBtn.style.top = '-6px';
+      closeBtn.style.right = '-6px';
+      closeBtn.style.width = '18px';
+      closeBtn.style.height = '18px';
       closeBtn.style.background = '#000';
       closeBtn.style.color = '#fff';
-      closeBtn.style.border = '0.75px solid #E9E8E0';
+      closeBtn.style.border = '1.5px solid #E9E8E0';
       closeBtn.style.borderRadius = '50%';
       closeBtn.style.cursor = 'pointer';
-      closeBtn.style.fontSize = '0.35rem';
+      closeBtn.style.fontSize = '0.6rem';
       closeBtn.style.zIndex = '100001';
       closeBtn.style.display = 'flex';
       closeBtn.style.alignItems = 'center';
@@ -212,7 +212,7 @@ function addBuildingMarkers(buildingsToShow) {
       overlay.addEventListener('touchmove', e => {
         if (startY !== undefined && e.touches.length === 1) {
           const dy = e.touches[0].clientY - startY;
-          if (dy > 35) {
+          if (dy > 50) {
             removeOverlayAndPauseVideo();
             startY = undefined;
           }
@@ -240,10 +240,10 @@ function addBuildingMarkers(buildingsToShow) {
         videoElement = document.createElement('video');
         videoElement.src = videoUrl;
         if (posterUrl) videoElement.poster = posterUrl;
-        videoElement.style.border = '0.75px solid #E9E8E0';
-        videoElement.style.maxWidth = '44vw';
-        videoElement.style.maxHeight = '40vh';
-        videoElement.style.borderRadius = '7px';
+        videoElement.style.border = '2px solid #E9E8E0';
+        videoElement.style.maxWidth = '66vw';
+        videoElement.style.maxHeight = '60vh';
+        videoElement.style.borderRadius = '10px';
         videoElement.controls = false;
         videoElement.preload = 'auto';
         videoElement.autoplay = true;
@@ -302,49 +302,50 @@ function filterBuildingMarkers(category) {
   filterBuildingMarkersByModeAndCategory(currentMode, currentCategory);
 }
 
-// ====== DOMContentLoaded Handler: Tiny Sized Controls ======
+// ====== DOMContentLoaded Handler: Controls 50% Bigger & Aligned ======
 document.addEventListener('DOMContentLoaded', () => {
   // Controls row
   const controlsRow = document.createElement('div');
   controlsRow.id = 'controls-row';
   controlsRow.style.position = 'fixed';
-  controlsRow.style.top = '10px';
+  controlsRow.style.top = '20px';
   controlsRow.style.left = '50%';
   controlsRow.style.transform = 'translateX(-50%)';
   controlsRow.style.zIndex = '1000';
   controlsRow.style.display = 'flex';
-  controlsRow.style.gap = '6px';
+  controlsRow.style.gap = '9px';
+  controlsRow.style.alignItems = 'center';
 
-  // ====== MODE TOGGLE (SMALL) ======
+  // ====== MODE TOGGLE (50% bigger) ======
   const modeToggleContainer = document.createElement('div');
   modeToggleContainer.id = 'mode-toggle-container';
   modeToggleContainer.style.display = 'flex';
   modeToggleContainer.style.alignItems = 'center';
   modeToggleContainer.style.justifyContent = 'center';
   modeToggleContainer.style.background = '#e9e8e0';
-  modeToggleContainer.style.border = '1px solid #f0f0f0';
-  modeToggleContainer.style.borderRadius = '6px';
-  modeToggleContainer.style.boxShadow = '0 3px 8px rgba(0,0,0,0.10)';
+  modeToggleContainer.style.border = '1.5px solid #f0f0f0';
+  modeToggleContainer.style.borderRadius = '9px';
+  modeToggleContainer.style.boxShadow = '0 6px 15px rgba(0,0,0,0.16)';
   modeToggleContainer.style.fontFamily = "'Poppins', sans-serif";
   modeToggleContainer.style.userSelect = 'none';
-  modeToggleContainer.style.gap = '4px';
-  modeToggleContainer.style.height = '19px';
-  modeToggleContainer.style.minWidth = '85px';
-  modeToggleContainer.style.padding = '0 8px';
+  modeToggleContainer.style.gap = '6px';
+  modeToggleContainer.style.height = '28.5px';
+  modeToggleContainer.style.minWidth = '128px';
+  modeToggleContainer.style.padding = '0 12px';
 
   const normalLabel = document.createElement('span');
   normalLabel.textContent = 'Normal';
-  normalLabel.style.fontSize = '7.5px';
+  normalLabel.style.fontSize = '11.25px';
   normalLabel.style.fontWeight = 'bold';
   normalLabel.style.transition = 'color 0.2s';
   normalLabel.style.cursor = 'pointer';
   normalLabel.style.color = '#000';
 
   const toggleSwitch = document.createElement('div');
-  toggleSwitch.style.width = '24px';
-  toggleSwitch.style.height = '12px';
+  toggleSwitch.style.width = '36px';
+  toggleSwitch.style.height = '18px';
   toggleSwitch.style.background = '#ccc';
-  toggleSwitch.style.borderRadius = '7px';
+  toggleSwitch.style.borderRadius = '10.5px';
   toggleSwitch.style.position = 'relative';
   toggleSwitch.style.display = 'flex';
   toggleSwitch.style.alignItems = 'center';
@@ -353,20 +354,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const toggleCircle = document.createElement('div');
   toggleCircle.style.position = 'absolute';
-  toggleCircle.style.top = '1px';
-  toggleCircle.style.left = '1px';
-  toggleCircle.style.width = '10px';
-  toggleCircle.style.height = '10px';
+  toggleCircle.style.top = '1.5px';
+  toggleCircle.style.left = '1.5px';
+  toggleCircle.style.width = '15px';
+  toggleCircle.style.height = '15px';
   toggleCircle.style.background = '#fff';
   toggleCircle.style.borderRadius = '50%';
-  toggleCircle.style.boxShadow = '0 1px 3px rgba(0,0,0,0.12)';
+  toggleCircle.style.boxShadow = '0 1px 4px rgba(0,0,0,0.13)';
   toggleCircle.style.transition = 'left 0.2s, background 0.2s';
 
   toggleSwitch.appendChild(toggleCircle);
 
   const historyLabel = document.createElement('span');
   historyLabel.textContent = 'History';
-  historyLabel.style.fontSize = '7.5px';
+  historyLabel.style.fontSize = '11.25px';
   historyLabel.style.fontWeight = 'normal';
   historyLabel.style.transition = 'color 0.2s';
   historyLabel.style.cursor = 'pointer';
@@ -375,14 +376,14 @@ document.addEventListener('DOMContentLoaded', () => {
   let modeChecked = false;
   function updateToggleVisual() {
     if (modeChecked) {
-      toggleCircle.style.left = '13px';
+      toggleCircle.style.left = '19.5px';
       toggleSwitch.style.background = '#9b4dca';
       normalLabel.style.color = '#888';
       normalLabel.style.fontWeight = 'normal';
       historyLabel.style.color = '#000';
       historyLabel.style.fontWeight = 'bold';
     } else {
-      toggleCircle.style.left = '1px';
+      toggleCircle.style.left = '1.5px';
       toggleSwitch.style.background = '#ccc';
       normalLabel.style.color = '#000';
       normalLabel.style.fontWeight = 'bold';
@@ -422,10 +423,12 @@ document.addEventListener('DOMContentLoaded', () => {
   filterButton.textContent = 'Find your taste 🔍';
   filterButton.className = 'custom-button';
   filterButton.style.position = 'relative';
-  filterButton.style.height = '19px';
-  filterButton.style.minWidth = '85px';
-  filterButton.style.fontSize = '8px';
-  filterButton.style.padding = '2px 8px';
+  filterButton.style.height = '28.5px';
+  filterButton.style.minWidth = '128px';
+  filterButton.style.fontSize = '12px';
+  filterButton.style.padding = '3px 12px';
+  filterButton.style.display = 'flex';
+  filterButton.style.alignItems = 'center';
 
   // 2. Dropdown (custom)
   const dropdown = document.createElement('div');
@@ -434,13 +437,13 @@ document.addEventListener('DOMContentLoaded', () => {
   dropdown.style.left = '0';
   dropdown.style.top = '100%';
   dropdown.style.background = '#fff';
-  dropdown.style.boxShadow = '0 3px 8px rgba(0, 0, 0, 0.10)';
-  dropdown.style.border = '1px solid #f0f0f0';
-  dropdown.style.borderRadius = '6px';
-  dropdown.style.padding = '3px 0';
+  dropdown.style.boxShadow = '0 6px 15px rgba(0, 0, 0, 0.16)';
+  dropdown.style.border = '1.5px solid #f0f0f0';
+  dropdown.style.borderRadius = '9px';
+  dropdown.style.padding = '4.5px 0';
   dropdown.style.zIndex = '10000';
   dropdown.style.fontFamily = "'Poppins', sans-serif";
-  dropdown.style.minWidth = '60px';
+  dropdown.style.minWidth = '90px';
 
   categories.forEach(cat => {
     const catBtn = document.createElement('button');
@@ -451,7 +454,7 @@ document.addEventListener('DOMContentLoaded', () => {
     catBtn.style.margin = '0';
     catBtn.style.borderRadius = '0';
     catBtn.style.boxShadow = 'none';
-    catBtn.style.fontSize = '8px';
+    catBtn.style.fontSize = '12px';
     catBtn.style.display = 'block';
     catBtn.onclick = () => {
       filterBuildingMarkers(cat);
@@ -462,6 +465,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const wrapper = document.createElement('div');
   wrapper.style.position = 'relative';
+  wrapper.style.display = 'flex';
+  wrapper.style.alignItems = 'center';
   wrapper.appendChild(filterButton);
   wrapper.appendChild(dropdown);
   buttonGroup.appendChild(wrapper);
@@ -477,7 +482,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // Add mode toggle and button group to the controls row
   controlsRow.appendChild(modeToggleContainer);
   controlsRow.appendChild(buttonGroup);
 
@@ -644,19 +648,21 @@ stylePopup.innerHTML = `
   .custom-button {
     background-color: #e9e8e0;
     color: black;
-    border: 1px solid #f0f0f0;
-    padding: 2px 8px;
-    font-size: 8px;
+    border: 1.5px solid #f0f0f0;
+    padding: 3px 12px;
+    font-size: 12px;
     font-weight: bold;
-    border-radius: 6px;
+    border-radius: 9px;
     cursor: pointer;
     text-decoration: none;
-    display: inline-block;
-    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.10);
+    display: inline-flex;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.16);
     white-space: nowrap;
     text-align: center;
-    height: 19px;
-    min-width: 85px;
+    height: 28.5px;
+    min-width: 128px;
+    align-items: center;
+    justify-content: center;
   }
   #button-group {
     position: relative;
@@ -664,16 +670,16 @@ stylePopup.innerHTML = `
     align-items: center;
   }
   #mode-toggle-container {
-    min-width: 85px;
-    height: 19px;
-    padding: 0 8px;
+    min-width: 128px;
+    height: 28.5px;
+    padding: 0 12px;
     display: flex;
     align-items: center;
     justify-content: center;
   }
   .dropdown-content {
     line-height: 1.05;
-    font-size: 8px;
+    font-size: 12px;
   }
   #bottom-sheet {
     font-family: 'Poppins', sans-serif !important;
