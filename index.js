@@ -302,7 +302,6 @@ function filterBuildingMarkers(category) {
   filterBuildingMarkersByModeAndCategory(currentMode, currentCategory);
 }
 
-// =================== TOP BAR: MODE TOGGLE & SUPPORT (all as clickable text) ===================
 document.addEventListener('DOMContentLoaded', () => {
   const topBar = document.createElement('div');
   topBar.id = 'top-bar';
@@ -319,63 +318,91 @@ document.addEventListener('DOMContentLoaded', () => {
   topBar.style.boxShadow = '0 2px 12px rgba(0,0,0,0.12)';
   topBar.style.fontFamily = "'Poppins', sans-serif";
 
-  // Mode Toggle - as clickable text (not a button)
+  // Mode Toggle - as clickable text with pill background
   const modeToggleContainer = document.createElement('div');
   modeToggleContainer.style.display = 'flex';
   modeToggleContainer.style.alignItems = 'center';
   modeToggleContainer.style.background = '#e9e8e0';
   modeToggleContainer.style.border = '1.5px solid #f0f0f0';
-  modeToggleContainer.style.borderRadius = '9px';
+  modeToggleContainer.style.borderRadius = '24px';
   modeToggleContainer.style.boxShadow = '0 6px 15px rgba(0,0,0,0.16)';
   modeToggleContainer.style.userSelect = 'none';
-  modeToggleContainer.style.gap = '8px';
-  modeToggleContainer.style.height = '28.5px';
-  modeToggleContainer.style.minWidth = '128px';
-  modeToggleContainer.style.padding = '0 18px';
+  modeToggleContainer.style.gap = '0';
+  modeToggleContainer.style.height = '26px';
+  modeToggleContainer.style.minWidth = '110px';
+  modeToggleContainer.style.padding = '0 5px';
+  modeToggleContainer.style.position = 'relative';
 
+  // The toggle pill element
+  const togglePill = document.createElement('div');
+  togglePill.style.position = 'absolute';
+  togglePill.style.top = '2px';
+  togglePill.style.left = '2px';
+  togglePill.style.width = '53px'; // Adjust for pill size
+  togglePill.style.height = '22px';
+  togglePill.style.background = '#fff';
+  togglePill.style.borderRadius = '22px';
+  togglePill.style.boxShadow = '0 2px 6px rgba(0,0,0,0.08)';
+  togglePill.style.transition = 'left 0.18s cubic-bezier(.4,0,.2,1)';
+  togglePill.style.zIndex = '1';
+
+  // Toggle text
   const normalLabel = document.createElement('span');
   normalLabel.textContent = 'Normal';
-  normalLabel.style.fontSize = '14px';
+  normalLabel.style.fontSize = '11px';
   normalLabel.style.fontWeight = 'bold';
   normalLabel.style.cursor = 'pointer';
   normalLabel.style.color = '#000';
-
-  const dividerVert = document.createElement('span');
-  dividerVert.textContent = '|';
-  dividerVert.style.margin = '0 10px';
-  dividerVert.style.color = '#ccc';
-  dividerVert.style.fontWeight = 'normal';
+  normalLabel.style.zIndex = '2';
+  normalLabel.style.display = 'inline-flex';
+  normalLabel.style.alignItems = 'center';
+  normalLabel.style.justifyContent = 'center';
+  normalLabel.style.width = '53px';
+  normalLabel.style.height = '26px';
+  normalLabel.style.textAlign = 'center';
+  normalLabel.style.borderRadius = '22px';
 
   const historyLabel = document.createElement('span');
   historyLabel.textContent = 'History';
-  historyLabel.style.fontSize = '14px';
+  historyLabel.style.fontSize = '11px';
   historyLabel.style.fontWeight = 'normal';
   historyLabel.style.cursor = 'pointer';
   historyLabel.style.color = '#888';
+  historyLabel.style.zIndex = '2';
+  historyLabel.style.display = 'inline-flex';
+  historyLabel.style.alignItems = 'center';
+  historyLabel.style.justifyContent = 'center';
+  historyLabel.style.width = '53px';
+  historyLabel.style.height = '26px';
+  historyLabel.style.textAlign = 'center';
+  historyLabel.style.borderRadius = '22px';
 
-  function setMode(isHistory) {
-    currentMode = isHistory ? 'history' : 'normal';
-    currentCategory = 'All'; // Reset filter!
-    filterBuildingMarkersByModeAndCategory(currentMode, currentCategory);
-    // Visual feedback
+  let isHistory = false;
+  function setMode(history) {
+    isHistory = history;
     if (isHistory) {
+      togglePill.style.left = '55px';
       normalLabel.style.color = '#888';
       normalLabel.style.fontWeight = 'normal';
       historyLabel.style.color = '#000';
       historyLabel.style.fontWeight = 'bold';
     } else {
+      togglePill.style.left = '2px';
       normalLabel.style.color = '#000';
       normalLabel.style.fontWeight = 'bold';
       historyLabel.style.color = '#888';
       historyLabel.style.fontWeight = 'normal';
     }
+    currentMode = isHistory ? 'history' : 'normal';
+    currentCategory = 'All';
+    filterBuildingMarkersByModeAndCategory(currentMode, currentCategory);
   }
 
   normalLabel.onclick = () => setMode(false);
   historyLabel.onclick = () => setMode(true);
 
+  modeToggleContainer.appendChild(togglePill);
   modeToggleContainer.appendChild(normalLabel);
-  modeToggleContainer.appendChild(dividerVert);
   modeToggleContainer.appendChild(historyLabel);
 
   // Divider between controls
@@ -390,7 +417,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const supportLink = document.createElement('span');
   supportLink.textContent = '❤️ Support this project ❤️';
   supportLink.style.fontWeight = 'bold';
-  supportLink.style.fontSize = '14px';
+  supportLink.style.fontSize = '12px';
   supportLink.style.color = '#9b4dca';
   supportLink.style.cursor = 'pointer';
   supportLink.style.marginLeft = '10px';
@@ -407,7 +434,7 @@ document.addEventListener('DOMContentLoaded', () => {
   dropdownContent.style.border = '1px solid #ccc';
   dropdownContent.style.borderRadius = '8px';
   dropdownContent.style.boxShadow = '0 6px 15px rgba(0, 0, 0, 0.3)';
-  dropdownContent.style.fontSize = '14px';
+  dropdownContent.style.fontSize = '13px';
   dropdownContent.style.lineHeight = '1.25';
   dropdownContent.style.zIndex = '10000';
   dropdownContent.style.maxWidth = '450px';
