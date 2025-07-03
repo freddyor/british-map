@@ -318,92 +318,86 @@ document.addEventListener('DOMContentLoaded', () => {
   topBar.style.boxShadow = '0 2px 12px rgba(0,0,0,0.12)';
   topBar.style.fontFamily = "'Poppins', sans-serif";
 
-  // Mode Toggle - as clickable text with pill background
-  const modeToggleContainer = document.createElement('div');
-  modeToggleContainer.style.display = 'flex';
-  modeToggleContainer.style.alignItems = 'center';
-  modeToggleContainer.style.background = '#e9e8e0';
-  modeToggleContainer.style.border = '1.5px solid #f0f0f0';
-  modeToggleContainer.style.borderRadius = '24px';
-  modeToggleContainer.style.boxShadow = '0 6px 15px rgba(0,0,0,0.16)';
-  modeToggleContainer.style.userSelect = 'none';
-  modeToggleContainer.style.gap = '0';
-  modeToggleContainer.style.height = '26px';
-  modeToggleContainer.style.minWidth = '110px';
-  modeToggleContainer.style.padding = '0 5px';
-  modeToggleContainer.style.position = 'relative';
+  // --- Mode Toggle ---
+  const toggleWrapper = document.createElement('div');
+  toggleWrapper.style.display = 'flex';
+  toggleWrapper.style.alignItems = 'center';
+  toggleWrapper.style.gap = '9px';
+  toggleWrapper.style.userSelect = 'none';
 
-  // The toggle pill element
-  const togglePill = document.createElement('div');
-  togglePill.style.position = 'absolute';
-  togglePill.style.top = '2px';
-  togglePill.style.left = '2px';
-  togglePill.style.width = '53px'; // Adjust for pill size
-  togglePill.style.height = '22px';
-  togglePill.style.background = '#fff';
-  togglePill.style.borderRadius = '22px';
-  togglePill.style.boxShadow = '0 2px 6px rgba(0,0,0,0.08)';
-  togglePill.style.transition = 'left 0.18s cubic-bezier(.4,0,.2,1)';
-  togglePill.style.zIndex = '1';
-
-  // Toggle text
+  // Labels
   const normalLabel = document.createElement('span');
   normalLabel.textContent = 'Normal';
-  normalLabel.style.fontSize = '11px';
+  normalLabel.style.fontSize = '12px';
   normalLabel.style.fontWeight = 'bold';
   normalLabel.style.cursor = 'pointer';
-  normalLabel.style.color = '#000';
-  normalLabel.style.zIndex = '2';
-  normalLabel.style.display = 'inline-flex';
-  normalLabel.style.alignItems = 'center';
-  normalLabel.style.justifyContent = 'center';
-  normalLabel.style.width = '53px';
-  normalLabel.style.height = '26px';
-  normalLabel.style.textAlign = 'center';
-  normalLabel.style.borderRadius = '22px';
+  normalLabel.style.transition = 'color 0.18s, font-weight 0.18s';
 
   const historyLabel = document.createElement('span');
   historyLabel.textContent = 'History';
-  historyLabel.style.fontSize = '11px';
+  historyLabel.style.fontSize = '12px';
   historyLabel.style.fontWeight = 'normal';
   historyLabel.style.cursor = 'pointer';
-  historyLabel.style.color = '#888';
-  historyLabel.style.zIndex = '2';
-  historyLabel.style.display = 'inline-flex';
-  historyLabel.style.alignItems = 'center';
-  historyLabel.style.justifyContent = 'center';
-  historyLabel.style.width = '53px';
-  historyLabel.style.height = '26px';
-  historyLabel.style.textAlign = 'center';
-  historyLabel.style.borderRadius = '22px';
+  historyLabel.style.transition = 'color 0.18s, font-weight 0.18s';
+
+  // Toggle switch container
+  const toggleContainer = document.createElement('div');
+  toggleContainer.style.width = '38px';
+  toggleContainer.style.height = '20px';
+  toggleContainer.style.background = '#ccc';
+  toggleContainer.style.borderRadius = '12px';
+  toggleContainer.style.position = 'relative';
+  toggleContainer.style.display = 'inline-block';
+  toggleContainer.style.cursor = 'pointer';
+  toggleContainer.style.transition = 'background 0.2s';
+
+  // Toggle circle (thumb)
+  const toggleCircle = document.createElement('div');
+  toggleCircle.style.position = 'absolute';
+  toggleCircle.style.top = '2px';
+  toggleCircle.style.left = '2px';
+  toggleCircle.style.width = '16px';
+  toggleCircle.style.height = '16px';
+  toggleCircle.style.background = '#fff';
+  toggleCircle.style.borderRadius = '50%';
+  toggleCircle.style.boxShadow = '0 1px 4px rgba(0,0,0,0.13)';
+  toggleCircle.style.transition = 'left 0.2s';
+
+  toggleContainer.appendChild(toggleCircle);
 
   let isHistory = false;
-  function setMode(history) {
-    isHistory = history;
+  function updateToggleVisual() {
     if (isHistory) {
-      togglePill.style.left = '55px';
+      toggleCircle.style.left = '20px';
+      toggleContainer.style.background = '#9b4dca';
       normalLabel.style.color = '#888';
       normalLabel.style.fontWeight = 'normal';
       historyLabel.style.color = '#000';
       historyLabel.style.fontWeight = 'bold';
     } else {
-      togglePill.style.left = '2px';
+      toggleCircle.style.left = '2px';
+      toggleContainer.style.background = '#ccc';
       normalLabel.style.color = '#000';
       normalLabel.style.fontWeight = 'bold';
       historyLabel.style.color = '#888';
       historyLabel.style.fontWeight = 'normal';
     }
+  }
+  function setMode(history) {
+    isHistory = history;
     currentMode = isHistory ? 'history' : 'normal';
     currentCategory = 'All';
+    updateToggleVisual();
     filterBuildingMarkersByModeAndCategory(currentMode, currentCategory);
   }
 
   normalLabel.onclick = () => setMode(false);
   historyLabel.onclick = () => setMode(true);
+  toggleContainer.onclick = () => setMode(!isHistory);
 
-  modeToggleContainer.appendChild(togglePill);
-  modeToggleContainer.appendChild(normalLabel);
-  modeToggleContainer.appendChild(historyLabel);
+  toggleWrapper.appendChild(normalLabel);
+  toggleWrapper.appendChild(toggleContainer);
+  toggleWrapper.appendChild(historyLabel);
 
   // Divider between controls
   const divider = document.createElement('div');
@@ -517,7 +511,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  topBar.appendChild(modeToggleContainer);
+  topBar.appendChild(toggleWrapper);
   topBar.appendChild(divider);
   topBar.appendChild(supportLink);
   document.body.appendChild(topBar);
