@@ -418,7 +418,7 @@ document.addEventListener('DOMContentLoaded', () => {
   supportLink.textContent = '❤️ Support this project ❤️';
   supportLink.style.fontWeight = 'bold';
   supportLink.style.fontSize = '12px';
-  supportLink.style.color = '#9b4dca';
+  supportLink.style.color = '#000000';
   supportLink.style.cursor = 'pointer';
   supportLink.style.marginLeft = '10px';
 
