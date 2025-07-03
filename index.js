@@ -358,7 +358,7 @@ document.addEventListener('DOMContentLoaded', () => {
   toggleCircle.style.left = '2px';
   toggleCircle.style.width = '16px';
   toggleCircle.style.height = '16px';
-  toggleCircle.style.background = '#fff';
+  toggleCircle.style.background = '#9b4dca';
   toggleCircle.style.borderRadius = '50%';
   toggleCircle.style.boxShadow = '0 1px 4px rgba(0,0,0,0.13)';
   toggleCircle.style.transition = 'left 0.2s';
@@ -376,7 +376,7 @@ document.addEventListener('DOMContentLoaded', () => {
       historyLabel.style.fontWeight = 'bold';
     } else {
       toggleCircle.style.left = '2px';
-      toggleContainer.style.background = '#ccc';
+      toggleContainer.style.background = '#9b4dca';
       normalLabel.style.color = '#000';
       normalLabel.style.fontWeight = 'bold';
       historyLabel.style.color = '#888';
