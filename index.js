@@ -369,14 +369,14 @@ document.addEventListener('DOMContentLoaded', () => {
   function updateToggleVisual() {
     if (isHistory) {
       toggleCircle.style.left = '20px';
-      toggleContainer.style.background = '#9b4dca';
+      toggleContainer.style.background = '#e0b0ff';
       normalLabel.style.color = '#888';
       normalLabel.style.fontWeight = 'normal';
       historyLabel.style.color = '#000';
       historyLabel.style.fontWeight = 'bold';
     } else {
       toggleCircle.style.left = '2px';
-      toggleContainer.style.background = '#9b4dca';
+      toggleContainer.style.background = '#e0b0ff';
       normalLabel.style.color = '#000';
       normalLabel.style.fontWeight = 'bold';
       historyLabel.style.color = '#888';
