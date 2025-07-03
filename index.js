@@ -302,21 +302,21 @@ function filterBuildingMarkers(category) {
   filterBuildingMarkersByModeAndCategory(currentMode, currentCategory);
 }
 
-// =================== MODE TOGGLE & BUTTON SWAP ===================
+// =================== MODE TOGGLE & NAV LINKS ===================
 document.addEventListener('DOMContentLoaded', () => {
-const topBar = document.createElement('div');
-topBar.id = 'top-bar';
-topBar.style.position = 'fixed';
-topBar.style.top = '0';
-topBar.style.left = '0';
-topBar.style.width = '100vw';
-topBar.style.height = '48px';
-topBar.style.background = '#e9e8e0';
-topBar.style.zIndex = '1000';
-topBar.style.display = 'flex';
-topBar.style.alignItems = 'center';
-topBar.style.justifyContent = 'center';
-topBar.style.boxShadow = '0 2px 12px rgba(0,0,0,0.12)';
+  const topBar = document.createElement('div');
+  topBar.id = 'top-bar';
+  topBar.style.position = 'fixed';
+  topBar.style.top = '0';
+  topBar.style.left = '0';
+  topBar.style.width = '100vw';
+  topBar.style.height = '48px';
+  topBar.style.background = '#e9e8e0';
+  topBar.style.zIndex = '1000';
+  topBar.style.display = 'flex';
+  topBar.style.alignItems = 'center';
+  topBar.style.justifyContent = 'center';
+  topBar.style.boxShadow = '0 2px 12px rgba(0,0,0,0.12)';
 
   // Mode Toggle
   const modeToggleContainer = document.createElement('div');
@@ -394,206 +394,11 @@ topBar.style.boxShadow = '0 2px 12px rgba(0,0,0,0.12)';
   }
   updateToggleVisual();
 
-  // --- DYNAMIC BUTTON AREA ---
-  const dynamicControlContainer = document.createElement('div');
-  dynamicControlContainer.style.display = 'flex';
-  dynamicControlContainer.style.alignItems = 'center';
-  dynamicControlContainer.style.height = '28.5px';
-  dynamicControlContainer.style.minWidth = '128px';
-
-  function createFilterButton() {
-    const buttonGroup = document.createElement('div');
-    buttonGroup.style.position = 'relative';
-    buttonGroup.style.display = 'flex';
-    buttonGroup.style.alignItems = 'center';
-
-    const filterButton = document.createElement('button');
-    filterButton.textContent = 'Find your taste 🔍';
-    filterButton.className = 'custom-button';
-    filterButton.style.height = '28.5px';
-    filterButton.style.minWidth = '128px';
-
-    const dropdown = document.createElement('div');
-    dropdown.style.display = 'none';
-    dropdown.style.position = 'absolute';
-    dropdown.style.left = '0';
-    dropdown.style.top = '100%';
-    dropdown.style.background = '#fff';
-    dropdown.style.boxShadow = '0 6px 15px rgba(0, 0, 0, 0.16)';
-    dropdown.style.border = '1.5px solid #f0f0f0';
-    dropdown.style.borderRadius = '9px';
-    dropdown.style.padding = '4.5px 0';
-    dropdown.style.zIndex = '10000';
-    dropdown.style.fontFamily = "'Poppins', sans-serif";
-    dropdown.style.minWidth = '90px';
-
-    categories.forEach(cat => {
-      const catBtn = document.createElement('button');
-      catBtn.textContent = cat;
-      catBtn.className = 'custom-button';
-      catBtn.style.width = '100%';
-      catBtn.style.textAlign = 'left';
-      catBtn.style.margin = '0';
-      catBtn.style.borderRadius = '0';
-      catBtn.style.boxShadow = 'none';
-      catBtn.style.fontSize = '12px';
-      catBtn.style.display = 'block';
-      catBtn.onclick = () => {
-        filterBuildingMarkers(cat);
-        dropdown.style.display = 'none';
-      };
-      dropdown.appendChild(catBtn);
-    });
-
-    const wrapper = document.createElement('div');
-    wrapper.style.position = 'relative';
-    wrapper.style.display = 'flex';
-    wrapper.style.alignItems = 'center';
-    wrapper.appendChild(filterButton);
-    wrapper.appendChild(dropdown);
-    buttonGroup.appendChild(wrapper);
-
-    filterButton.addEventListener('click', () => {
-      dropdown.style.minWidth = filterButton.offsetWidth + 'px';
-      dropdown.style.display = dropdown.style.display === 'none' ? 'block' : 'none';
-    });
-
-    document.addEventListener('mousedown', (e) => {
-      if (!wrapper.contains(e.target)) {
-        dropdown.style.display = 'none';
-      }
-    });
-
-    return buttonGroup;
-  }
-
-  function createSupportButton() {
-    const button = document.createElement('button');
-    button.id = 'custom-bmc-button';
-    button.className = 'custom-button';
-    button.textContent = '❤️ Support this project ❤️';
-    button.style.height = '28.5px';
-    button.style.minWidth = '128px';
-
-    const dropdownContent = document.createElement('div');
-    dropdownContent.style.display = 'none';
-    dropdownContent.style.position = 'fixed';
-    dropdownContent.style.top = '50px';
-    dropdownContent.style.left = '50%';
-    dropdownContent.style.transform = 'translateX(-50%)';
-    dropdownContent.style.backgroundColor = '#f9f9f9';
-    dropdownContent.style.padding = '20px';
-    dropdownContent.style.border = '1px solid #ccc';
-    dropdownContent.style.borderRadius = '8px';
-    dropdownContent.style.boxShadow = '0 6px 15px rgba(0, 0, 0, 0.3)';
-    dropdownContent.style.fontSize = '14px';
-    dropdownContent.style.lineHeight = '1.25';
-    dropdownContent.style.zIndex = '10000';
-    dropdownContent.style.maxWidth = '450px';
-    dropdownContent.style.textAlign = 'center';
-    dropdownContent.style.maxHeight = 'calc(100vh - 200px)';
-    dropdownContent.style.overflowY = 'auto';
-
-    dropdownContent.innerHTML = `
-      <div style="display: flex; flex-direction: column; align-items: center;">
-        <img src="https://freddyor.github.io/british-map/videos/IMG_7251.jpeg" 
-             alt="Profile Photo" 
-             style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover; margin-bottom: 15px;"/>
-      </div>
-      <div class="project-info" style="margin-bottom: 15px;">
-        <b>This page needs donors.</b>
-      </div>
-      <div class="project-info" style="margin-bottom: 15px;">
-        My name is Freddy, I’m a 22 year old local to the city. I am building this project completely independently. Feel free to email me on freddy@britmap.com 📧
-      </div>
-      <div class="project-info" style="margin-bottom: 15px;">
-        In full transparency, here is why I will need donors:
-      </div>
-      <ul style="margin-bottom: 15px; text-align: left;">
-        <li>the map server in the background costs me money based on usage</li>
-        <li>I want to add old pictures of York locations to make the map even better for users - but York Archives charges a significant amount to use them commercially</li>
-        <li>lots of people actually asked to me to put a donation link. Considering this project has consumed A LOT of my time - it is nice to receive some love back ❤️</li>
-      </ul>
-      <button 
-          class="support-button" 
-          style="
-              background-color: #9b4dca; 
-              color: white; 
-              padding: 10px 20px; 
-              font-size: 16px; 
-              font-weight: bold; 
-              border: none; 
-              border-radius: 8px; 
-              cursor: pointer; 
-              text-align: center;
-              box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
-              margin-bottom: 15px;
-          "
-          onclick="window.open('https://www.buymeacoffee.com/britmap', '_blank')"
-      >
-          Support
-      </button>
-      <div style="display: flex; align-items: center; justify-content: center; margin-top: 15px; font-size: 16px; font-weight: bold;">
-        <hr style="flex: 1; border: 1px solid #ccc; margin: 0 10px;">
-        Our Donors ❤️
-        <hr style="flex: 1; border: 1px solid #ccc; margin: 0 10px;">
-      </div>
-      <div id="donor-list" style="margin-top: 10px;"></div>
-    `;
-
-    const dropdownContainer = document.createElement('div');
-    dropdownContainer.style.position = 'relative';
-    dropdownContainer.style.display = 'flex';
-    dropdownContainer.style.alignItems = 'center';
-    dropdownContainer.appendChild(button);
-    dropdownContainer.appendChild(dropdownContent);
-
-    function addDonor(name, amount, subtext) {
-      const donorList = dropdownContent.querySelector('#donor-list');
-      const donorDiv = document.createElement('div');
-      donorDiv.className = 'donor';
-      donorDiv.innerHTML = `
-        <span class="donor-name" style="font-weight: bold;">${name}</span>
-        <span class="donor-amount" style="color: #9b4dca; margin-left: 10px; font-weight: bold;">£${amount}</span>
-        <div class="donor-subtext" style="font-size: 12px; color: #666; margin-top: 1px;">${subtext}</div>
-      `;
-      donorDiv.style.marginBottom = '12px';
-      donorList.appendChild(donorDiv);
-    }
-    addDonor('Anonymous', '15', ' ');
-    addDonor('Chip Pedro', '5', 'Will be very useful on our upcoming trip - really nice work!');
-    addDonor('buffsteve24', '5', 'Amazing work!');
-    addDonor('marksaw20', '5', 'Lovely map. Really interesting.');
-
-    button.addEventListener('click', (e) => {
-      e.preventDefault();
-      dropdownContent.style.display = dropdownContent.style.display === 'block' ? 'none' : 'block';
-    });
-
-    document.addEventListener('click', (event) => {
-      if (!dropdownContainer.contains(event.target)) {
-        dropdownContent.style.display = 'none';
-      }
-    });
-
-    return dropdownContainer;
-  }
-
-  function renderDynamicControl() {
-    dynamicControlContainer.innerHTML = '';
-    if (modeChecked) {
-      dynamicControlContainer.appendChild(createSupportButton());
-    } else {
-      dynamicControlContainer.appendChild(createFilterButton());
-    }
-  }
-
   function setMode(isHistory) {
     modeChecked = isHistory;
     updateToggleVisual();
     currentMode = isHistory ? 'history' : 'normal';
     currentCategory = 'All'; // Reset filter!
-    renderDynamicControl();
     filterBuildingMarkersByModeAndCategory(currentMode, currentCategory);
   }
 
@@ -606,18 +411,121 @@ topBar.style.boxShadow = '0 2px 12px rgba(0,0,0,0.12)';
   modeToggleContainer.appendChild(historyLabel);
 
   const divider = document.createElement('div');
-divider.style.height = '28px';
-divider.style.width = '1.5px';
-divider.style.background = '#ccc';
-divider.style.margin = '0 18px';
-divider.style.borderRadius = '3px';
+  divider.style.height = '28px';
+  divider.style.width = '1.5px';
+  divider.style.background = '#ccc';
+  divider.style.margin = '0 18px';
+  divider.style.borderRadius = '3px';
 
-topBar.appendChild(modeToggleContainer);
-topBar.appendChild(divider);
-topBar.appendChild(dynamicControlContainer);
-document.body.appendChild(topBar);
+  topBar.appendChild(modeToggleContainer);
+  topBar.appendChild(divider);
 
-  renderDynamicControl();
+  // --- BEGIN: Add clickable nav text on the bar ---
+  const navLinks = document.createElement('div');
+  navLinks.style.display = 'flex';
+  navLinks.style.alignItems = 'center';
+  navLinks.style.gap = '22px';
+
+  // "Find Your Taste" link acts as filter
+  const tasteLink = document.createElement('span');
+  tasteLink.textContent = 'Find Your Taste 🔍';
+  tasteLink.style.fontWeight = 'bold';
+  tasteLink.style.fontSize = '13px';
+  tasteLink.style.color = '#9b4dca';
+  tasteLink.style.cursor = 'pointer';
+
+  // Dropdown for categories
+  const tasteDropdown = document.createElement('div');
+  tasteDropdown.style.display = 'none';
+  tasteDropdown.style.position = 'absolute';
+  tasteDropdown.style.left = '0';
+  tasteDropdown.style.top = '100%';
+  tasteDropdown.style.background = '#fff';
+  tasteDropdown.style.boxShadow = '0 6px 15px rgba(0, 0, 0, 0.16)';
+  tasteDropdown.style.border = '1.5px solid #f0f0f0';
+  tasteDropdown.style.borderRadius = '9px';
+  tasteDropdown.style.padding = '4.5px 0';
+  tasteDropdown.style.zIndex = '10000';
+  tasteDropdown.style.fontFamily = "'Poppins', sans-serif";
+  tasteDropdown.style.minWidth = '90px';
+
+  categories.forEach(cat => {
+    const catBtn = document.createElement('span');
+    catBtn.textContent = cat;
+    catBtn.style.display = 'block';
+    catBtn.style.padding = '6px 14px';
+    catBtn.style.cursor = 'pointer';
+    catBtn.style.fontSize = '13px';
+    catBtn.style.color = '#333';
+    catBtn.onmouseover = () => catBtn.style.background = '#e9e8e0';
+    catBtn.onmouseout = () => catBtn.style.background = '';
+    catBtn.onclick = () => {
+      filterBuildingMarkers(cat);
+      tasteDropdown.style.display = 'none';
+    };
+    tasteDropdown.appendChild(catBtn);
+  });
+
+  // Dropdown logic
+  tasteLink.onclick = (e) => {
+    e.stopPropagation();
+    tasteDropdown.style.display = tasteDropdown.style.display === 'block' ? 'none' : 'block';
+    tasteDropdown.style.minWidth = tasteLink.offsetWidth + 'px';
+    const rect = tasteLink.getBoundingClientRect();
+    tasteDropdown.style.left = rect.left + 'px';
+    tasteDropdown.style.top = (rect.bottom + window.scrollY) + 'px';
+  };
+  document.addEventListener('mousedown', (e) => {
+    if (!tasteDropdown.contains(e.target) && e.target !== tasteLink) {
+      tasteDropdown.style.display = 'none';
+    }
+  });
+
+  // "Support this project" link
+  const supportLink = document.createElement('span');
+  supportLink.textContent = '❤️ Support this project ❤️';
+  supportLink.style.fontWeight = 'bold';
+  supportLink.style.fontSize = '13px';
+  supportLink.style.color = '#9b4dca';
+  supportLink.style.cursor = 'pointer';
+
+  supportLink.onclick = () => {
+    window.open('https://www.buymeacoffee.com/britmap', '_blank');
+  };
+
+  // "About" link
+  const aboutLink = document.createElement('span');
+  aboutLink.textContent = 'About';
+  aboutLink.style.fontWeight = 'bold';
+  aboutLink.style.fontSize = '13px';
+  aboutLink.style.color = '#9b4dca';
+  aboutLink.style.cursor = 'pointer';
+  aboutLink.onclick = () => {
+    alert('About this project: An independent interactive map of York by Freddy (freddy@britmap.com)');
+  };
+
+  // "Contact" link
+  const contactLink = document.createElement('span');
+  contactLink.textContent = 'Contact';
+  contactLink.style.fontWeight = 'bold';
+  contactLink.style.fontSize = '13px';
+  contactLink.style.color = '#9b4dca';
+  contactLink.style.cursor = 'pointer';
+  contactLink.onclick = () => {
+    window.open('mailto:freddy@britmap.com');
+  };
+
+  // Add links to navLinks
+  navLinks.appendChild(tasteLink);
+  navLinks.appendChild(supportLink);
+  navLinks.appendChild(aboutLink);
+  navLinks.appendChild(contactLink);
+  // Add dropdown to body so it can be absolutely positioned
+  document.body.appendChild(tasteDropdown);
+
+  topBar.appendChild(navLinks);
+  document.body.appendChild(topBar);
+
   filterBuildingMarkersByModeAndCategory(currentMode, currentCategory);
 });
 
