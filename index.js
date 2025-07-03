@@ -304,16 +304,19 @@ function filterBuildingMarkers(category) {
 
 // =================== MODE TOGGLE & BUTTON SWAP ===================
 document.addEventListener('DOMContentLoaded', () => {
-  const controlsRow = document.createElement('div');
-  controlsRow.id = 'controls-row';
-  controlsRow.style.position = 'fixed';
-  controlsRow.style.top = '10px';
-  controlsRow.style.left = '50%';
-  controlsRow.style.transform = 'translateX(-50%)';
-  controlsRow.style.zIndex = '1000';
-  controlsRow.style.display = 'flex';
-  controlsRow.style.gap = '9px';
-  controlsRow.style.alignItems = 'center';
+const topBar = document.createElement('div');
+topBar.id = 'top-bar';
+topBar.style.position = 'fixed';
+topBar.style.top = '0';
+topBar.style.left = '0';
+topBar.style.width = '100vw';
+topBar.style.height = '48px';
+topBar.style.background = '#e9e8e0';
+topBar.style.zIndex = '1000';
+topBar.style.display = 'flex';
+topBar.style.alignItems = 'center';
+topBar.style.justifyContent = 'center';
+topBar.style.boxShadow = '0 2px 12px rgba(0,0,0,0.12)';
 
   // Mode Toggle
   const modeToggleContainer = document.createElement('div');
@@ -602,10 +605,17 @@ document.addEventListener('DOMContentLoaded', () => {
   modeToggleContainer.appendChild(toggleSwitch);
   modeToggleContainer.appendChild(historyLabel);
 
-  controlsRow.appendChild(modeToggleContainer);
-  controlsRow.appendChild(dynamicControlContainer);
+  const divider = document.createElement('div');
+divider.style.height = '28px';
+divider.style.width = '1.5px';
+divider.style.background = '#ccc';
+divider.style.margin = '0 18px';
+divider.style.borderRadius = '3px';
 
-  document.body.appendChild(controlsRow);
+topBar.appendChild(modeToggleContainer);
+topBar.appendChild(divider);
+topBar.appendChild(dynamicControlContainer);
+document.body.appendChild(topBar);
 
   renderDynamicControl();
   filterBuildingMarkersByModeAndCategory(currentMode, currentCategory);
