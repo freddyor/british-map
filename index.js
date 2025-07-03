@@ -302,7 +302,7 @@ function filterBuildingMarkers(category) {
   filterBuildingMarkersByModeAndCategory(currentMode, currentCategory);
 }
 
-// =================== MODE TOGGLE & NAV LINKS ===================
+// =================== TOP BAR: MODE TOGGLE & SUPPORT (all as clickable text) ===================
 document.addEventListener('DOMContentLoaded', () => {
   const topBar = document.createElement('div');
   topBar.id = 'top-bar';
@@ -317,99 +317,68 @@ document.addEventListener('DOMContentLoaded', () => {
   topBar.style.alignItems = 'center';
   topBar.style.justifyContent = 'center';
   topBar.style.boxShadow = '0 2px 12px rgba(0,0,0,0.12)';
+  topBar.style.fontFamily = "'Poppins', sans-serif";
 
-  // Mode Toggle
+  // Mode Toggle - as clickable text (not a button)
   const modeToggleContainer = document.createElement('div');
-  modeToggleContainer.id = 'mode-toggle-container';
   modeToggleContainer.style.display = 'flex';
   modeToggleContainer.style.alignItems = 'center';
   modeToggleContainer.style.background = '#e9e8e0';
   modeToggleContainer.style.border = '1.5px solid #f0f0f0';
   modeToggleContainer.style.borderRadius = '9px';
   modeToggleContainer.style.boxShadow = '0 6px 15px rgba(0,0,0,0.16)';
-  modeToggleContainer.style.fontFamily = "'Poppins', sans-serif";
   modeToggleContainer.style.userSelect = 'none';
-  modeToggleContainer.style.gap = '6px';
+  modeToggleContainer.style.gap = '8px';
   modeToggleContainer.style.height = '28.5px';
   modeToggleContainer.style.minWidth = '128px';
-  modeToggleContainer.style.padding = '0 12px';
+  modeToggleContainer.style.padding = '0 18px';
 
   const normalLabel = document.createElement('span');
   normalLabel.textContent = 'Normal';
-  normalLabel.style.fontSize = '11.25px';
+  normalLabel.style.fontSize = '14px';
   normalLabel.style.fontWeight = 'bold';
-  normalLabel.style.transition = 'color 0.2s';
   normalLabel.style.cursor = 'pointer';
   normalLabel.style.color = '#000';
 
-  const toggleSwitch = document.createElement('div');
-  toggleSwitch.style.width = '36px';
-  toggleSwitch.style.height = '18px';
-  toggleSwitch.style.background = '#ccc';
-  toggleSwitch.style.borderRadius = '10.5px';
-  toggleSwitch.style.position = 'relative';
-  toggleSwitch.style.display = 'flex';
-  toggleSwitch.style.alignItems = 'center';
-  toggleSwitch.style.cursor = 'pointer';
-  toggleSwitch.style.transition = 'background 0.2s';
-
-  const toggleCircle = document.createElement('div');
-  toggleCircle.style.position = 'absolute';
-  toggleCircle.style.top = '1.5px';
-  toggleCircle.style.left = '1.5px';
-  toggleCircle.style.width = '15px';
-  toggleCircle.style.height = '15px';
-  toggleCircle.style.background = '#fff';
-  toggleCircle.style.borderRadius = '50%';
-  toggleCircle.style.boxShadow = '0 1px 4px rgba(0,0,0,0.13)';
-  toggleCircle.style.transition = 'left 0.2s, background 0.2s';
-
-  toggleSwitch.appendChild(toggleCircle);
+  const dividerVert = document.createElement('span');
+  dividerVert.textContent = '|';
+  dividerVert.style.margin = '0 10px';
+  dividerVert.style.color = '#ccc';
+  dividerVert.style.fontWeight = 'normal';
 
   const historyLabel = document.createElement('span');
   historyLabel.textContent = 'History';
-  historyLabel.style.fontSize = '11.25px';
+  historyLabel.style.fontSize = '14px';
   historyLabel.style.fontWeight = 'normal';
-  historyLabel.style.transition = 'color 0.2s';
   historyLabel.style.cursor = 'pointer';
   historyLabel.style.color = '#888';
 
-  let modeChecked = false;
-  function updateToggleVisual() {
-    if (modeChecked) {
-      toggleCircle.style.left = '19.5px';
-      toggleSwitch.style.background = '#9b4dca';
+  function setMode(isHistory) {
+    currentMode = isHistory ? 'history' : 'normal';
+    currentCategory = 'All'; // Reset filter!
+    filterBuildingMarkersByModeAndCategory(currentMode, currentCategory);
+    // Visual feedback
+    if (isHistory) {
       normalLabel.style.color = '#888';
       normalLabel.style.fontWeight = 'normal';
       historyLabel.style.color = '#000';
       historyLabel.style.fontWeight = 'bold';
     } else {
-      toggleCircle.style.left = '1.5px';
-      toggleSwitch.style.background = '#ccc';
       normalLabel.style.color = '#000';
       normalLabel.style.fontWeight = 'bold';
       historyLabel.style.color = '#888';
       historyLabel.style.fontWeight = 'normal';
     }
   }
-  updateToggleVisual();
-
-  function setMode(isHistory) {
-    modeChecked = isHistory;
-    updateToggleVisual();
-    currentMode = isHistory ? 'history' : 'normal';
-    currentCategory = 'All'; // Reset filter!
-    filterBuildingMarkersByModeAndCategory(currentMode, currentCategory);
-  }
 
   normalLabel.onclick = () => setMode(false);
   historyLabel.onclick = () => setMode(true);
-  toggleSwitch.onclick = () => setMode(!modeChecked);
 
   modeToggleContainer.appendChild(normalLabel);
-  modeToggleContainer.appendChild(toggleSwitch);
+  modeToggleContainer.appendChild(dividerVert);
   modeToggleContainer.appendChild(historyLabel);
 
+  // Divider between controls
   const divider = document.createElement('div');
   divider.style.height = '28px';
   divider.style.width = '1.5px';
@@ -417,116 +386,118 @@ document.addEventListener('DOMContentLoaded', () => {
   divider.style.margin = '0 18px';
   divider.style.borderRadius = '3px';
 
-  topBar.appendChild(modeToggleContainer);
-  topBar.appendChild(divider);
-
-  // --- BEGIN: Add clickable nav text on the bar ---
-  const navLinks = document.createElement('div');
-  navLinks.style.display = 'flex';
-  navLinks.style.alignItems = 'center';
-  navLinks.style.gap = '22px';
-
-  // "Find Your Taste" link acts as filter
-  const tasteLink = document.createElement('span');
-  tasteLink.textContent = 'Find Your Taste 🔍';
-  tasteLink.style.fontWeight = 'bold';
-  tasteLink.style.fontSize = '13px';
-  tasteLink.style.color = '#9b4dca';
-  tasteLink.style.cursor = 'pointer';
-
-  // Dropdown for categories
-  const tasteDropdown = document.createElement('div');
-  tasteDropdown.style.display = 'none';
-  tasteDropdown.style.position = 'absolute';
-  tasteDropdown.style.left = '0';
-  tasteDropdown.style.top = '100%';
-  tasteDropdown.style.background = '#fff';
-  tasteDropdown.style.boxShadow = '0 6px 15px rgba(0, 0, 0, 0.16)';
-  tasteDropdown.style.border = '1.5px solid #f0f0f0';
-  tasteDropdown.style.borderRadius = '9px';
-  tasteDropdown.style.padding = '4.5px 0';
-  tasteDropdown.style.zIndex = '10000';
-  tasteDropdown.style.fontFamily = "'Poppins', sans-serif";
-  tasteDropdown.style.minWidth = '90px';
-
-  categories.forEach(cat => {
-    const catBtn = document.createElement('span');
-    catBtn.textContent = cat;
-    catBtn.style.display = 'block';
-    catBtn.style.padding = '6px 14px';
-    catBtn.style.cursor = 'pointer';
-    catBtn.style.fontSize = '13px';
-    catBtn.style.color = '#333';
-    catBtn.onmouseover = () => catBtn.style.background = '#e9e8e0';
-    catBtn.onmouseout = () => catBtn.style.background = '';
-    catBtn.onclick = () => {
-      filterBuildingMarkers(cat);
-      tasteDropdown.style.display = 'none';
-    };
-    tasteDropdown.appendChild(catBtn);
-  });
-
-  // Dropdown logic
-  tasteLink.onclick = (e) => {
-    e.stopPropagation();
-    tasteDropdown.style.display = tasteDropdown.style.display === 'block' ? 'none' : 'block';
-    tasteDropdown.style.minWidth = tasteLink.offsetWidth + 'px';
-    const rect = tasteLink.getBoundingClientRect();
-    tasteDropdown.style.left = rect.left + 'px';
-    tasteDropdown.style.top = (rect.bottom + window.scrollY) + 'px';
-  };
-  document.addEventListener('mousedown', (e) => {
-    if (!tasteDropdown.contains(e.target) && e.target !== tasteLink) {
-      tasteDropdown.style.display = 'none';
-    }
-  });
-
-  // "Support this project" link
+  // Support link (plain clickable text)
   const supportLink = document.createElement('span');
   supportLink.textContent = '❤️ Support this project ❤️';
   supportLink.style.fontWeight = 'bold';
-  supportLink.style.fontSize = '13px';
+  supportLink.style.fontSize = '14px';
   supportLink.style.color = '#9b4dca';
   supportLink.style.cursor = 'pointer';
+  supportLink.style.marginLeft = '10px';
 
-  supportLink.onclick = () => {
-    window.open('https://www.buymeacoffee.com/britmap', '_blank');
-  };
+  // Dropdown logic
+  const dropdownContent = document.createElement('div');
+  dropdownContent.style.display = 'none';
+  dropdownContent.style.position = 'fixed';
+  dropdownContent.style.top = '50px';
+  dropdownContent.style.left = '50%';
+  dropdownContent.style.transform = 'translateX(-50%)';
+  dropdownContent.style.backgroundColor = '#f9f9f9';
+  dropdownContent.style.padding = '20px';
+  dropdownContent.style.border = '1px solid #ccc';
+  dropdownContent.style.borderRadius = '8px';
+  dropdownContent.style.boxShadow = '0 6px 15px rgba(0, 0, 0, 0.3)';
+  dropdownContent.style.fontSize = '14px';
+  dropdownContent.style.lineHeight = '1.25';
+  dropdownContent.style.zIndex = '10000';
+  dropdownContent.style.maxWidth = '450px';
+  dropdownContent.style.textAlign = 'center';
+  dropdownContent.style.maxHeight = 'calc(100vh - 200px)';
+  dropdownContent.style.overflowY = 'auto';
 
-  // "About" link
-  const aboutLink = document.createElement('span');
-  aboutLink.textContent = 'About';
-  aboutLink.style.fontWeight = 'bold';
-  aboutLink.style.fontSize = '13px';
-  aboutLink.style.color = '#9b4dca';
-  aboutLink.style.cursor = 'pointer';
-  aboutLink.onclick = () => {
-    alert('About this project: An independent interactive map of York by Freddy (freddy@britmap.com)');
-  };
+  dropdownContent.innerHTML = `
+    <div style="display: flex; flex-direction: column; align-items: center;">
+      <img src="https://freddyor.github.io/british-map/videos/IMG_7251.jpeg" 
+           alt="Profile Photo" 
+           style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover; margin-bottom: 15px;"/>
+    </div>
+    <div class="project-info" style="margin-bottom: 15px;">
+      <b>This page needs donors.</b>
+    </div>
+    <div class="project-info" style="margin-bottom: 15px;">
+      My name is Freddy, I’m a 22 year old local to the city. I am building this project completely independently. Feel free to email me on freddy@britmap.com 📧
+    </div>
+    <div class="project-info" style="margin-bottom: 15px;">
+      In full transparency, here is why I will need donors:
+    </div>
+    <ul style="margin-bottom: 15px; text-align: left;">
+      <li>the map server in the background costs me money based on usage</li>
+      <li>I want to add old pictures of York locations to make the map even better for users - but York Archives charges a significant amount to use them commercially</li>
+      <li>lots of people actually asked to me to put a donation link. Considering this project has consumed A LOT of my time - it is nice to receive some love back ❤️</li>
+    </ul>
+    <button 
+        class="support-button" 
+        style="
+            background-color: #9b4dca; 
+            color: white; 
+            padding: 10px 20px; 
+            font-size: 16px; 
+            font-weight: bold; 
+            border: none; 
+            border-radius: 8px; 
+            cursor: pointer; 
+            text-align: center;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+            margin-bottom: 15px;
+        "
+        onclick="window.open('https://www.buymeacoffee.com/britmap', '_blank')"
+    >
+        Support
+    </button>
+    <div style="display: flex; align-items: center; justify-content: center; margin-top: 15px; font-size: 16px; font-weight: bold;">
+      <hr style="flex: 1; border: 1px solid #ccc; margin: 0 10px;">
+      Our Donors ❤️
+      <hr style="flex: 1; border: 1px solid #ccc; margin: 0 10px;">
+    </div>
+    <div id="donor-list" style="margin-top: 10px;"></div>
+  `;
 
-  // "Contact" link
-  const contactLink = document.createElement('span');
-  contactLink.textContent = 'Contact';
-  contactLink.style.fontWeight = 'bold';
-  contactLink.style.fontSize = '13px';
-  contactLink.style.color = '#9b4dca';
-  contactLink.style.cursor = 'pointer';
-  contactLink.onclick = () => {
-    window.open('mailto:freddy@britmap.com');
-  };
+  function addDonor(name, amount, subtext) {
+    const donorList = dropdownContent.querySelector('#donor-list');
+    const donorDiv = document.createElement('div');
+    donorDiv.className = 'donor';
+    donorDiv.innerHTML = `
+      <span class="donor-name" style="font-weight: bold;">${name}</span>
+      <span class="donor-amount" style="color: #9b4dca; margin-left: 10px; font-weight: bold;">£${amount}</span>
+      <div class="donor-subtext" style="font-size: 12px; color: #666; margin-top: 1px;">${subtext}</div>
+    `;
+    donorDiv.style.marginBottom = '12px';
+    donorList.appendChild(donorDiv);
+  }
+  addDonor('Anonymous', '15', ' ');
+  addDonor('Chip Pedro', '5', 'Will be very useful on our upcoming trip - really nice work!');
+  addDonor('buffsteve24', '5', 'Amazing work!');
+  addDonor('marksaw20', '5', 'Lovely map. Really interesting.');
 
-  // Add links to navLinks
-  navLinks.appendChild(tasteLink);
-  navLinks.appendChild(supportLink);
-  navLinks.appendChild(aboutLink);
-  navLinks.appendChild(contactLink);
-  // Add dropdown to body so it can be absolutely positioned
-  document.body.appendChild(tasteDropdown);
+  supportLink.addEventListener('click', (e) => {
+    e.preventDefault();
+    dropdownContent.style.display = dropdownContent.style.display === 'block' ? 'none' : 'block';
+  });
 
-  topBar.appendChild(navLinks);
+  document.addEventListener('click', (event) => {
+    if (!supportLink.contains(event.target) && !dropdownContent.contains(event.target)) {
+      dropdownContent.style.display = 'none';
+    }
+  });
+
+  topBar.appendChild(modeToggleContainer);
+  topBar.appendChild(divider);
+  topBar.appendChild(supportLink);
   document.body.appendChild(topBar);
+  document.body.appendChild(dropdownContent);
 
-  filterBuildingMarkersByModeAndCategory(currentMode, currentCategory);
+  // Set initial visual feedback for mode
+  setMode(false);
 });
 
 // =================== MARKER ZOOM SCALING ===================
