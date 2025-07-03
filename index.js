@@ -383,20 +383,23 @@ document.addEventListener('DOMContentLoaded', () => {
       historyLabel.style.fontWeight = 'normal';
     }
   }
-  function setMode(history) {
-    isHistory = history;
-    currentMode = isHistory ? 'history' : 'normal';
-    currentCategory = 'All';
-    updateToggleVisual();
-    filterBuildingMarkersByModeAndCategory(currentMode, currentCategory);
-  }
+function setMode(history) {
+  isHistory = history;
+  currentMode = isHistory ? 'history' : 'normal';
+  currentCategory = 'All';
+  updateToggleVisual();
+  filterBuildingMarkersByModeAndCategory(currentMode, currentCategory);
+}
 
-    const path = window.location.pathname;
-  if (path.endsWith('/history')) {
-    setMode(true);
-  } else if (path.endsWith('/normal')) {
-    setMode(false);
-  }
+// Place this right after setMode:
+const path = window.location.pathname;
+if (path.endsWith('/history')) {
+  setMode(true);
+} else if (path.endsWith('/normal')) {
+  setMode(false);
+} else {
+  setMode(false);
+}
 
   normalLabel.onclick = () => setMode(false);
   historyLabel.onclick = () => setMode(true);
