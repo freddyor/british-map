@@ -391,6 +391,13 @@ document.addEventListener('DOMContentLoaded', () => {
     filterBuildingMarkersByModeAndCategory(currentMode, currentCategory);
   }
 
+    const path = window.location.pathname;
+  if (path.endsWith('/history')) {
+    setMode(true);
+  } else if (path.endsWith('/normal')) {
+    setMode(false);
+  }
+
   normalLabel.onclick = () => setMode(false);
   historyLabel.onclick = () => setMode(true);
   toggleContainer.onclick = () => setMode(!isHistory);
