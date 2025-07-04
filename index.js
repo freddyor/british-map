@@ -212,20 +212,20 @@ marker.getElement().addEventListener('click', () => {
 
   // Find out more button (always at the bottom)
   let moreBtn = null;
- if (building.link) {
-  moreBtn = document.createElement('a');
+if (building.link) {
+  let moreBtn = document.createElement('a');
   moreBtn.textContent = 'find out more...';
   moreBtn.href = building.link;
   moreBtn.target = '_blank';
   moreBtn.style.position = 'absolute';
   moreBtn.style.left = '50%';
   moreBtn.style.transform = 'translateX(-50%)';
-  moreBtn.style.bottom = '-11px'; // half of the button's height, so 11px out of 22px is below the edge
+  moreBtn.style.bottom = '-11px'; // half of height (22px)
   moreBtn.style.height = '22px';
   moreBtn.style.lineHeight = '22px';
   moreBtn.style.width = '70%';
-  moreBtn.style.background = '#9b4dca';
-  moreBtn.style.color = '#fff';
+  moreBtn.style.background = '#fff';
+  moreBtn.style.color = '#111'; // black text
   moreBtn.style.border = 'none';
   moreBtn.style.borderRadius = '8px';
   moreBtn.style.fontWeight = 'bold';
@@ -234,6 +234,8 @@ marker.getElement().addEventListener('click', () => {
   moreBtn.style.textDecoration = 'none';
   moreBtn.style.cursor = 'pointer';
   moreBtn.style.zIndex = '10';
+  moreBtn.style.boxShadow = '0 3px 12px rgba(0,0,0,0.11)'; // subtle shadow
+  posterContainer.appendChild(moreBtn);
 }
 
   // Video element (created later)
