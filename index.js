@@ -241,9 +241,9 @@ function addBuildingMarkers(buildingsToShow) {
         videoElement.src = videoUrl;
         if (posterUrl) videoElement.poster = posterUrl;
         videoElement.style.border = '2px solid #E9E8E0';
-        videoElement.style.maxWidth = '66vw';
-        videoElement.style.maxHeight = '60vh';
-        videoElement.style.borderRadius = '10px';
+        videoElement.style.maxWidth = '88vw';
+        videoElement.style.maxHeight = '80vh';
+        videoElement.style.borderRadius = '14px';
         videoElement.controls = false;
         videoElement.preload = 'auto';
         videoElement.autoplay = true;
