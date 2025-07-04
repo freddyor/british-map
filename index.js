@@ -194,6 +194,28 @@ function addBuildingMarkers(buildingsToShow) {
       closeBtn.style.alignItems = 'center';
       closeBtn.style.justifyContent = 'center';
 
+      let moreBtn = null;
+if (building.link) {
+  moreBtn = document.createElement('a');
+  moreBtn.textContent = 'find out more...';
+  moreBtn.href = building.link;
+  moreBtn.target = '_blank';
+  moreBtn.style.display = 'block';
+  moreBtn.style.width = '80%';
+  moreBtn.style.margin = '14px auto 0 auto';
+  moreBtn.style.background = '#9b4dca';
+  moreBtn.style.color = '#fff';
+  moreBtn.style.border = 'none';
+  moreBtn.style.borderRadius = '8px';
+  moreBtn.style.padding = '11px 0';
+  moreBtn.style.fontWeight = 'bold';
+  moreBtn.style.fontSize = '1.1rem';
+  moreBtn.style.textAlign = 'center';
+  moreBtn.style.textDecoration = 'none';
+  moreBtn.style.cursor = 'pointer';
+  posterContainer.appendChild(moreBtn);
+}
+
       let videoElement = null;
 
       function removeOverlayAndPauseVideo() {
