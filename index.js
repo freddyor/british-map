@@ -212,27 +212,29 @@ marker.getElement().addEventListener('click', () => {
 
   // Find out more button (always at the bottom)
   let moreBtn = null;
-  if (building.link) {
-    moreBtn = document.createElement('a');
-    moreBtn.textContent = 'find out more...';
-    moreBtn.href = building.link;
-    moreBtn.target = '_blank';
-    moreBtn.style.display = 'block';
-    moreBtn.style.width = '80%';
-    moreBtn.style.margin = '18px auto 0 auto';
-    moreBtn.style.background = '#9b4dca';
-    moreBtn.style.color = '#fff';
-    moreBtn.style.border = 'none';
-    moreBtn.style.borderRadius = '8px';
-    moreBtn.style.padding = '11px 0';
-    moreBtn.style.fontWeight = 'bold';
-    moreBtn.style.fontSize = '1.1rem';
-    moreBtn.style.textAlign = 'center';
-    moreBtn.style.textDecoration = 'none';
-    moreBtn.style.cursor = 'pointer';
-    // Make sure zIndex is lower than floating buttons, if any
-    moreBtn.style.position = 'static';
-  }
+ if (building.link) {
+  moreBtn = document.createElement('a');
+  moreBtn.textContent = 'find out more...';
+  moreBtn.href = building.link;
+  moreBtn.target = '_blank';
+  moreBtn.style.position = 'absolute';
+  moreBtn.style.left = '50%';
+  moreBtn.style.transform = 'translateX(-50%)';
+  moreBtn.style.bottom = '-11px'; // half of the button's height, so 11px out of 22px is below the edge
+  moreBtn.style.height = '22px';
+  moreBtn.style.lineHeight = '22px';
+  moreBtn.style.width = '70%';
+  moreBtn.style.background = '#9b4dca';
+  moreBtn.style.color = '#fff';
+  moreBtn.style.border = 'none';
+  moreBtn.style.borderRadius = '8px';
+  moreBtn.style.fontWeight = 'bold';
+  moreBtn.style.fontSize = '1.05rem';
+  moreBtn.style.textAlign = 'center';
+  moreBtn.style.textDecoration = 'none';
+  moreBtn.style.cursor = 'pointer';
+  moreBtn.style.zIndex = '10';
+}
 
   // Video element (created later)
   let videoElement = null;
