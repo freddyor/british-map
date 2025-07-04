@@ -7,6 +7,7 @@ export const buildings = [
     "posterUrl": "https://yorkmapped.s3.eu-north-1.amazonaws.com/IMG_8160.webp",
     "category": "Italian 🇮🇹",
             "mode": "normal",
+            "link": "https://york.independentlife.co.uk/areas/york/le-specialty",
   },
         {
     "name": "Savvy Baker",
@@ -16,6 +17,7 @@ export const buildings = [
     "posterUrl": "https://yorkmapped.s3.eu-north-1.amazonaws.com/IMG_8159.webp",
               "category": "Italian 🇮🇹",
               "mode": "normal",
+              "link": "https://york.independentlife.co.uk/areas/york/the-savvy-baker",
   },
         {
     "name": "Hole in the wand",
@@ -25,7 +27,7 @@ export const buildings = [
     "posterUrl": "https://yorkmapped.s3.eu-north-1.amazonaws.com/IMG_8158.webp",
               "category": "Cocktails 🍹",
               "mode": "normal",
-              "link": "https://freddyor.github.io/british-map",
+              "link": "https://york.independentlife.co.uk/areas/york/the-hole-in-wand",
   },
         {
     "name": "Cafe next door",
@@ -35,6 +37,7 @@ export const buildings = [
     "posterUrl": "https://yorkmapped.s3.eu-north-1.amazonaws.com/IMG_8157.webp",
               "category": "Cocktails 🍹",
               "mode": "normal",
+              "link": "",
   },
         {
     "name": "Speakcheesy",
@@ -43,6 +46,7 @@ export const buildings = [
     "videoUrl": "https://yorkmapped.s3.eu-north-1.amazonaws.com/d42c3a3ef9b64b87830bd14216689b1a.mp4", 
     "posterUrl": "https://yorkmapped.s3.eu-north-1.amazonaws.com/IMG_8156.webp",
               "mode": "normal",
+              "link": "",
   },
         {
     "name": "La bottega",
@@ -51,6 +55,7 @@ export const buildings = [
     "videoUrl": "https://yorkmapped.s3.eu-north-1.amazonaws.com/8d9d8651e2aa4494b66797e3e3319402.mp4", 
     "posterUrl": "https://yorkmapped.s3.eu-north-1.amazonaws.com/IMG_8155.webp",
               "mode": "normal",
+              "link": "https://york.independentlife.co.uk/areas/york/la-bottega-milanese",
   },
         {
     "name": "Pearly Cow",
@@ -59,6 +64,7 @@ export const buildings = [
     "videoUrl": "https://yorkmapped.s3.eu-north-1.amazonaws.com/32d7778e6af9499c87d239b93cbc14b1.mp4", 
     "posterUrl": "https://yorkmapped.s3.eu-north-1.amazonaws.com/IMG_8154.webp",
               "mode": "normal",
+              "link": "",
   },
         {
     "name": "Yo-yo wings",
@@ -67,6 +73,7 @@ export const buildings = [
     "videoUrl": "https://yorkmapped.s3.eu-north-1.amazonaws.com/c5b234124b8c406fa7750e709ff5cf2a.mp4", 
     "posterUrl": "https://yorkmapped.s3.eu-north-1.amazonaws.com/IMG_8153.webp",
               "mode": "normal",
+              "link": "https://york.independentlife.co.uk/areas/york/yo-yo-wings",
   },
           {
     "name": "Kawa House",
@@ -75,6 +82,7 @@ export const buildings = [
     "videoUrl": "https://yorkmapped.s3.eu-north-1.amazonaws.com/27e80e3c59854a4482830ea340f6bb43.mp4", 
     "posterUrl": "https://yorkmapped.s3.eu-north-1.amazonaws.com/IMG_8152.webp",
                 "mode": "normal",
+                "link": "https://york.independentlife.co.uk/areas/york/kawa-house",
   },
           {
     "name": "Rosa's Thai",
@@ -83,6 +91,7 @@ export const buildings = [
     "videoUrl": "https://yorkmapped.s3.eu-north-1.amazonaws.com/2a1e0fa5a49d4c90997220ae4c01bf7f.mp4", 
     "posterUrl": "https://yorkmapped.s3.eu-north-1.amazonaws.com/IMG_8151.webp",
                 "mode": "normal",
+                "link": "",
   },
           {
     "name": "Art Gallery Gardens",
@@ -91,6 +100,7 @@ export const buildings = [
     "videoUrl": "https://yorkmapped.s3.eu-north-1.amazonaws.com/618b9b58e0814cae8bff55599da3a5a0.mp4", 
     "posterUrl": "https://yorkmapped.s3.eu-north-1.amazonaws.com/IMG_8150.webp",
                 "mode": "normal",
+                "link": "",
   },
           {
     "name": "The potions cauldron",
@@ -99,6 +109,7 @@ export const buildings = [
     "videoUrl": "https://yorkmapped.s3.eu-north-1.amazonaws.com/82fd00803a654424acfdda4a9ff1a20d.mp4", 
     "posterUrl": "https://yorkmapped.s3.eu-north-1.amazonaws.com/IMG_8161.webp",
                 "mode": "normal",
+                "link": "https://york.independentlife.co.uk/areas/york/the-potions-cauldron",
   },
           {
     "name": "Black Wheat",
@@ -107,6 +118,7 @@ export const buildings = [
     "videoUrl": "https://yorkmapped.s3.eu-north-1.amazonaws.com/e345edd55a1e4ed3a6f3f64423d77df7.mp4", 
     "posterUrl": "https://yorkmapped.s3.eu-north-1.amazonaws.com/IMG_8163.webp",
                 "mode": "normal",
+                "link": "https://york.independentlife.co.uk/food-and-drink/black-wheat-club",
   },
       {
        'name': 'Stonegate',
@@ -170,7 +182,7 @@ export const buildings = [
     image: "https://freddyor.github.io/british-map/videos/IMG_8121.webp",
     "videoUrl": "https://freddyor.github.io/british-map/videos/Captions_638178.mp4",
     "posterUrl": "https://freddyor.github.io/british-map/videos/IMG_8112.webp",
-                                            "mode": "history",
+                                            "mode": "history",                             
   },
                                     {
    'name': 'Rear Admiral Hugh Robinson',
