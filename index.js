@@ -220,12 +220,12 @@ if (building.link) {
   moreBtn.style.position = 'absolute';
   moreBtn.style.left = '50%';
   moreBtn.style.transform = 'translateX(-50%)';
-  moreBtn.style.bottom = '-11px'; // half of height (22px)
+  moreBtn.style.bottom = '-11px';
   moreBtn.style.height = '22px';
   moreBtn.style.lineHeight = '22px';
   moreBtn.style.width = '70%';
   moreBtn.style.background = '#fff';
-  moreBtn.style.color = '#111'; // black text
+  moreBtn.style.color = '#111';
   moreBtn.style.border = 'none';
   moreBtn.style.borderRadius = '8px';
   moreBtn.style.fontWeight = 'bold';
@@ -234,7 +234,8 @@ if (building.link) {
   moreBtn.style.textDecoration = 'none';
   moreBtn.style.cursor = 'pointer';
   moreBtn.style.zIndex = '10';
-  moreBtn.style.boxShadow = '0 3px 12px rgba(0,0,0,0.11)'; // subtle shadow
+  // Much stronger shadow, but still soft-edged:
+  moreBtn.style.boxShadow = '0 8px 32px 0 rgba(0,0,0,0.37), 0 2px 8px 0 rgba(0,0,0,0.19)';
   posterContainer.appendChild(moreBtn);
 }
 
@@ -498,7 +499,8 @@ if (path.endsWith('/history')) {
   dropdownContent.style.fontSize = '13px';
   dropdownContent.style.lineHeight = '1.25';
   dropdownContent.style.zIndex = '10000';
-  dropdownContent.style.maxWidth = '450px';
+  dropdownContent.style.width = '80vw';     // Popup now takes 80% of the viewport width
+dropdownContent.style.maxWidth = '96vw'; 
   dropdownContent.style.textAlign = 'center';
   dropdownContent.style.maxHeight = 'calc(100vh - 200px)';
   dropdownContent.style.overflowY = 'auto';
