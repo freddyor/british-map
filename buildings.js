@@ -25,6 +25,7 @@ export const buildings = [
     "posterUrl": "https://yorkmapped.s3.eu-north-1.amazonaws.com/IMG_8158.webp",
               "category": "Cocktails 🍹",
               "mode": "normal",
+              "link": "https://freddyor.github.io/british-map",
   },
         {
     "name": "Cafe next door",
