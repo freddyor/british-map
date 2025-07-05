@@ -348,7 +348,12 @@ if (building.link) {
 }
 
 function filterBuildingMarkersByModeAndCategory(mode, category) {
-  let filtered = buildings.filter(b => b.mode === mode);
+  let filtered;
+  if (mode === "normal") {
+    filtered = buildings.filter(b => b.mode === "normal");
+  } else if (mode === "history") {
+    filtered = buildings.filter(b => !b.mode || b.mode === "history");
+  }
   if (category !== 'All') {
     filtered = filtered.filter(b => b.category === category);
   }
