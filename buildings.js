@@ -110,7 +110,7 @@ export const buildings = [
       {
     "name": "La Specialitie",
     "coords": [-1.0785419901740931, 53.958345848351975],
-    "image": "https://yorkmapped.s3.eu-north-1.amazonaws.com/IMG_81601.webp",
+    "image": "https://freddyor.github.io/british-map/videos/IMG_81601.webp",
     "videoUrl": "https://yorkmapped.s3.eu-north-1.amazonaws.com/d92f8db8749748caafe9a83fbb25b558.mp4", 
     "posterUrl": "https://yorkmapped.s3.eu-north-1.amazonaws.com/IMG_8160.webp",
             "mode": "normal",
@@ -119,7 +119,7 @@ export const buildings = [
         {
     "name": "Savvy Baker",
     "coords": [-1.0817899850050583, 53.96044987933306],
-    "image": "https://yorkmapped.s3.eu-north-1.amazonaws.com/IMG_81591.webp",
+    "image": "https://freddyor.github.io/british-map/videos/IMG_81591.webp",
     "videoUrl": "https://yorkmapped.s3.eu-north-1.amazonaws.com/bc5f9f60b85c408ebd68bc875c1653b5.mp4", 
     "posterUrl": "https://yorkmapped.s3.eu-north-1.amazonaws.com/IMG_8159.webp",
               "mode": "normal",
@@ -128,7 +128,7 @@ export const buildings = [
         {
     "name": "Hole in the wand",
     "coords": [-1.0801084713585758, 53.957527525011535],
-    "image": "https://yorkmapped.s3.eu-north-1.amazonaws.com/IMG_81581.webp",
+    "image": "https://freddyor.github.io/british-map/videos/IMG_81581.webp",
     "videoUrl": "https://yorkmapped.s3.eu-north-1.amazonaws.com/d0c0514972804de2b8c4cb0c8ab78c5b.mp4", 
     "posterUrl": "https://yorkmapped.s3.eu-north-1.amazonaws.com/IMG_8158.webp",
               "mode": "normal",
@@ -137,7 +137,7 @@ export const buildings = [
         {
     "name": "Cafe next door",
     "coords": [-1.0714762307613124, 53.93526206687627],
-    "image": "https://yorkmapped.s3.eu-north-1.amazonaws.com/IMG_81571.webp",
+    "image": "https://freddyor.github.io/british-map/videos/IMG_81571.webp",
     "videoUrl": "https://yorkmapped.s3.eu-north-1.amazonaws.com/4e8ed0ec84464b50b9f605300ae12135.mp4", 
     "posterUrl": "https://yorkmapped.s3.eu-north-1.amazonaws.com/IMG_8157.webp",
 
@@ -147,7 +147,7 @@ export const buildings = [
         {
     "name": "Speakcheesy",
     "coords": [-1.084811128455602, 53.96342554959311],
-    "image": "https://yorkmapped.s3.eu-north-1.amazonaws.com/IMG_81561.webp",
+    "image": "https://freddyor.github.io/british-map/videos/IMG_81561.webp",
     "videoUrl": "https://yorkmapped.s3.eu-north-1.amazonaws.com/d42c3a3ef9b64b87830bd14216689b1a.mp4", 
     "posterUrl": "https://yorkmapped.s3.eu-north-1.amazonaws.com/IMG_8156.webp",
               "mode": "normal",
@@ -156,7 +156,7 @@ export const buildings = [
         {
     "name": "La bottega",
     "coords": [-1.0792686235476736, 53.96204575252662],
-    "image": "https://yorkmapped.s3.eu-north-1.amazonaws.com/IMG_81551.webp",
+    "image": "https://freddyor.github.io/british-map/videos/IMG_81551.webp",
     "videoUrl": "https://yorkmapped.s3.eu-north-1.amazonaws.com/8d9d8651e2aa4494b66797e3e3319402.mp4", 
     "posterUrl": "https://yorkmapped.s3.eu-north-1.amazonaws.com/IMG_8155.webp",
               "mode": "normal",
@@ -165,7 +165,7 @@ export const buildings = [
         {
     "name": "Pearly Cow",
     "coords": [-1.0908920360364882, 53.965717610304665],
-    "image": "https://yorkmapped.s3.eu-north-1.amazonaws.com/IMG_81541.webp",
+    "image": "https://freddyor.github.io/british-map/videos/IMG_81541.webp",
     "videoUrl": "https://yorkmapped.s3.eu-north-1.amazonaws.com/32d7778e6af9499c87d239b93cbc14b1.mp4", 
     "posterUrl": "https://yorkmapped.s3.eu-north-1.amazonaws.com/IMG_8154.webp",
               "mode": "normal",
@@ -174,7 +174,7 @@ export const buildings = [
         {
     "name": "Yo-yo wings",
     "coords": [-1.0824160150695383, 53.96066839328574],
-    "image": "https://yorkmapped.s3.eu-north-1.amazonaws.com/IMG_81531.webp",
+    "image": "https://freddyor.github.io/british-map/videos/IMG_81531.webp",
     "videoUrl": "https://yorkmapped.s3.eu-north-1.amazonaws.com/c5b234124b8c406fa7750e709ff5cf2a.mp4", 
     "posterUrl": "https://yorkmapped.s3.eu-north-1.amazonaws.com/IMG_8153.webp",
               "mode": "normal",
@@ -183,7 +183,7 @@ export const buildings = [
           {
     "name": "Kawa House",
     "coords": [-1.0740487735478794, 53.94634170201295],
-    "image": "https://yorkmapped.s3.eu-north-1.amazonaws.com/IMG_81521.webp",
+    "image": "https://freddyor.github.io/british-map/videos/IMG_81521.webp",
     "videoUrl": "https://yorkmapped.s3.eu-north-1.amazonaws.com/27e80e3c59854a4482830ea340f6bb43.mp4", 
     "posterUrl": "https://yorkmapped.s3.eu-north-1.amazonaws.com/IMG_8152.webp",
                 "mode": "normal",
@@ -192,7 +192,7 @@ export const buildings = [
           {
     "name": "Rosa's Thai",
     "coords": [-1.0846462816307776, 53.959868194637345],
-    "image": "https://yorkmapped.s3.eu-north-1.amazonaws.com/IMG_81511.webp",
+    "image": "https://freddyor.github.io/british-map/videos/IMG_81511.webp",
     "videoUrl": "https://yorkmapped.s3.eu-north-1.amazonaws.com/2a1e0fa5a49d4c90997220ae4c01bf7f.mp4", 
     "posterUrl": "https://yorkmapped.s3.eu-north-1.amazonaws.com/IMG_8151.webp",
                 "mode": "normal",
@@ -201,7 +201,7 @@ export const buildings = [
           {
     "name": "Art Gallery Gardens",
     "coords": [-1.0862135705909144, 53.962990163201944],
-    "image": "https://yorkmapped.s3.eu-north-1.amazonaws.com/IMG_81501.webp",
+    "image": "https://freddyor.github.io/british-map/videos/IMG_81501.webp",
     "videoUrl": "https://yorkmapped.s3.eu-north-1.amazonaws.com/618b9b58e0814cae8bff55599da3a5a0.mp4", 
     "posterUrl": "https://yorkmapped.s3.eu-north-1.amazonaws.com/IMG_8150.webp",
                 "mode": "normal",
@@ -210,7 +210,7 @@ export const buildings = [
           {
     "name": "The potions cauldron",
     "coords": [-1.0801219805054278, 53.95952005819726],
-    "image": "https://yorkmapped.s3.eu-north-1.amazonaws.com/IMG_81611.webp",
+    "image": "https://freddyor.github.io/british-map/videos/IMG_81611.webp",
     "videoUrl": "https://yorkmapped.s3.eu-north-1.amazonaws.com/82fd00803a654424acfdda4a9ff1a20d.mp4", 
     "posterUrl": "https://yorkmapped.s3.eu-north-1.amazonaws.com/IMG_8161.webp",
                 "mode": "normal",
@@ -219,7 +219,7 @@ export const buildings = [
           {
     "name": "Black Wheat",
     "coords": [-1.079066171526637, 53.95868366032298],
-    "image": "https://yorkmapped.s3.eu-north-1.amazonaws.com/IMG_81631.webp",
+    "image": "https://freddyor.github.io/british-map/videos/IMG_81631.webp",
     "videoUrl": "https://yorkmapped.s3.eu-north-1.amazonaws.com/e345edd55a1e4ed3a6f3f64423d77df7.mp4", 
     "posterUrl": "https://yorkmapped.s3.eu-north-1.amazonaws.com/IMG_8163.webp",
                 "mode": "normal",
