@@ -390,7 +390,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Labels
   const normalLabel = document.createElement('span');
-  normalLabel.textContent = 'Normal';
+  normalLabel.textContent = 'Explore';
   normalLabel.style.fontSize = '12px';
   normalLabel.style.fontWeight = 'bold';
   normalLabel.style.cursor = 'pointer';
