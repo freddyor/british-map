@@ -534,6 +534,79 @@ if (path.endsWith('/history')) {
   supportLink.style.cursor = 'pointer';
   supportLink.style.marginLeft = '10px';
 
+  // --- ADDED: All Markers Button and Popup ---
+  // Create the marker list button
+  const markerListButton = document.createElement('button');
+  markerListButton.textContent = '📍 Show All Locations';
+  markerListButton.className = 'custom-button';
+  markerListButton.style.marginLeft = '10px';
+  markerListButton.style.display = 'block';
+
+  // Create the popup for the marker list
+  const markerListPopup = document.createElement('div');
+  markerListPopup.style.display = 'none';
+  markerListPopup.style.position = 'fixed';
+  markerListPopup.style.top = '90px';
+  markerListPopup.style.left = '50%';
+  markerListPopup.style.transform = 'translateX(-50%)';
+  markerListPopup.style.background = '#fff';
+  markerListPopup.style.padding = '15px 20px';
+  markerListPopup.style.border = '1.5px solid #ccc';
+  markerListPopup.style.borderRadius = '12px';
+  markerListPopup.style.boxShadow = '0 8px 32px 0 rgba(0,0,0,0.22)';
+  markerListPopup.style.zIndex = '10002';
+  markerListPopup.style.maxHeight = '60vh';
+  markerListPopup.style.overflowY = 'auto';
+  markerListPopup.style.minWidth = '220px';
+  markerListPopup.style.fontFamily = "'Poppins', sans-serif";
+  markerListPopup.style.fontSize = '15px';
+  markerListPopup.style.lineHeight = '1.28';
+
+  function populateMarkerList() {
+    markerListPopup.innerHTML = '<b>All Locations & Buildings</b><br><br>';
+    // Combine both locations and buildings
+    const allMarkers = [
+      ...locations.map(l => ({ name: l.name, coords: l.coords })),
+      ...buildings.map(b => ({ name: b.name, coords: b.coords }))
+    ];
+    allMarkers.forEach(({ name, coords }) => {
+      const item = document.createElement('button');
+      item.textContent = name;
+      item.className = 'custom-button';
+      item.style.margin = '4px 0';
+      item.style.width = '100%';
+      item.style.textAlign = 'left';
+      item.style.fontSize = '15px';
+      item.onclick = () => {
+        markerListPopup.style.display = 'none';
+        map.flyTo({ center: coords, zoom: 17, speed: 1.4 });
+      };
+      markerListPopup.appendChild(item);
+    });
+
+    // Add close button
+    const close = document.createElement('button');
+    close.textContent = 'Close';
+    close.className = 'custom-button';
+    close.style.background = '#eee';
+    close.style.color = '#333';
+    close.style.marginTop = '14px';
+    close.onclick = () => markerListPopup.style.display = 'none';
+    markerListPopup.appendChild(close);
+  }
+
+  // Show/hide marker list popup
+  markerListButton.onclick = () => {
+    if (markerListPopup.style.display === 'block') {
+      markerListPopup.style.display = 'none';
+    } else {
+      populateMarkerList();
+      markerListPopup.style.display = 'block';
+    }
+  };
+
+  // --- END ADDED ---
+
   // Dropdown logic
   const dropdownContent = document.createElement('div');
   dropdownContent.style.display = 'none';
@@ -625,16 +698,21 @@ dropdownContent.style.maxWidth = '96vw';
   });
 
   document.addEventListener('click', (event) => {
-    if (!supportLink.contains(event.target) && !dropdownContent.contains(event.target)) {
+    if (!supportLink.contains(event.target) && !dropdownContent.contains(event.target) && !markerListButton.contains(event.target) && !markerListPopup.contains(event.target)) {
       dropdownContent.style.display = 'none';
+      markerListPopup.style.display = 'none';
     }
   });
 
   topBar.appendChild(toggleWrapper);
   topBar.appendChild(divider);
   topBar.appendChild(supportLink);
+  // --- ADDED: Insert marker list button below support link ---
+  topBar.appendChild(markerListButton);
   document.body.appendChild(topBar);
   document.body.appendChild(dropdownContent);
+  // --- ADDED: Append popup to body ---
+  document.body.appendChild(markerListPopup);
 
   // Set initial visual feedback for mode
   setMode(false);
