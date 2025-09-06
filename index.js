@@ -123,7 +123,8 @@ buildings.forEach((building) => {
     overlay.style.left = 0;
     overlay.style.width = '100vw';
     overlay.style.height = '100vh';
-    overlay.style.background = 'rgba(0,0,0,0.75)';
+    overlay.style.backdropFilter = 'blur(15px)';
+overlay.style.background = 'rgba(0,0,0,0.50)'; // keep some dark overlay for contrast
     overlay.style.display = 'flex';
     overlay.style.alignItems = 'center';
     overlay.style.justifyContent = 'center';
@@ -1234,3 +1235,4 @@ document.addEventListener('DOMContentLoaded', () => {
   // Set the dropdown width to match the button width
   dropdownContent.style.width = `${Math.max(button.offsetWidth, 300)}px`;
 });
+
