@@ -123,9 +123,7 @@ buildings.forEach((building) => {
     overlay.style.left = 0;
     overlay.style.width = '100vw';
     overlay.style.height = '100vh';
-    overlay.style.background = 'rgba(0,0,0,0.5)'; // semi-transparent
-overlay.style.backdropFilter = 'blur(15px)';
-overlay.style.webkitBackdropFilter = 'blur(15px)'; // for Safari
+    overlay.style.background = 'rgba(0,0,0,0.75)';
     overlay.style.display = 'flex';
     overlay.style.alignItems = 'center';
     overlay.style.justifyContent = 'center';
@@ -134,16 +132,38 @@ overlay.style.webkitBackdropFilter = 'blur(15px)'; // for Safari
     posterContainer.style.position = 'relative';
     posterContainer.style.marginTop = '-60px';
 
+    // === BLUR PATCH START ===
+    function setBlur(enabled) {
+      // Blur main content containers
+      const targets = [
+        document.getElementById('map'),
+        document.getElementById('bottom-sheet'),
+        document.getElementById('button-group')
+      ];
+      targets.forEach(el => {
+        if (el) el.style.filter = enabled ? 'blur(12px)' : '';
+      });
+      // Optionally, blur all body children except overlay
+      Array.from(document.body.children).forEach(child => {
+        if (child !== overlay && child.style) {
+          child.style.filter = enabled ? 'blur(12px)' : '';
+        }
+      });
+    }
+    // Enable blur when overlay is added
+    setBlur(true);
+    // === BLUR PATCH END ===
+
     // Camera icon button
     const cameraIcon = document.createElement('button');
-    cameraIcon.innerHTML = '📷';
+    cameraIcon.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" height="24" width="24" fill="black" viewBox="0 0 24 24"><path d="M12 9a3 3 0 1 0 0 6 3 3 0 0 0 0-6zm6-3h-1.171l-1.414-1.414a2 2 0 0 [...]';
     cameraIcon.title = 'Open Camera';
     cameraIcon.style.position = 'absolute';
+    cameraIcon.style.top = '0';
     cameraIcon.style.left = '50%';
-    cameraIcon.style.top = '-44px';
-    cameraIcon.style.transform = 'translateX(-50%)';
+    cameraIcon.style.transform = 'translate(-50%, -50%)';  // horizontal center; vertical middle aligned to top edge
     cameraIcon.style.background = 'white';
-    cameraIcon.style.border = '2px solid #9b4dca';
+    cameraIcon.style.border = 'none';
     cameraIcon.style.borderRadius = '50%';
     cameraIcon.style.fontSize = '2.1rem';
     cameraIcon.style.width = '48px';
@@ -235,6 +255,9 @@ overlay.style.webkitBackdropFilter = 'blur(15px)'; // for Safari
         cameraStream.getTracks().forEach((track) => track.stop());
       }
       overlay.remove();
+      // === BLUR PATCH START ===
+      setBlur(false);
+      // === BLUR PATCH END ===
     }
 
     closeBtn.onclick = () => removeOverlayAndPauseVideo();
@@ -307,7 +330,7 @@ overlay.style.webkitBackdropFilter = 'blur(15px)'; // for Safari
 
       // --- FORCE 9:16 VIDEO RATIO ---
       const videoWrapper = document.createElement('div');
-      videoWrapper.style.width = '44vw'; // for portrait, narrower width
+      videoWrapper.style.width = '88vw'; // for portrait, narrower width
       videoWrapper.style.maxHeight = '80vh';
       videoWrapper.style.aspectRatio = '9/16'; // modern browsers, portrait
       videoWrapper.style.overflow = 'hidden';
@@ -320,7 +343,7 @@ overlay.style.webkitBackdropFilter = 'blur(15px)'; // for Safari
       cameraVideo.playsInline = true;
       cameraVideo.style.width = '100%';
       cameraVideo.style.height = '100%';
-      cameraVideo.style.objectFit = 'cover';
+      cameraVideo.style.objectFit = 'contain';
       cameraVideo.style.borderRadius = '14px';
       cameraVideo.style.display = 'block';
       cameraVideo.style.margin = '0 auto';
@@ -980,7 +1003,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   dropdownContent.innerHTML = `
       <div style="display: flex; flex-direction: column; align-items: center;">
-    <img src="https://freddyor.github.io/british-map/videos/IMG_7251.jpeg" 
+    <img src="https://freddyor.github.io/british-map/videos/IMG_7251.jp" 
          alt="Profile Photo" 
          style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover; margin-bottom: 15px;"/>
   </div>
@@ -1236,5 +1259,3 @@ document.addEventListener('DOMContentLoaded', () => {
   // Set the dropdown width to match the button width
   dropdownContent.style.width = `${Math.max(button.offsetWidth, 300)}px`;
 });
-
-
